@@ -14,26 +14,6 @@ const NAV: { to: string; label: string; icon: IconName; end: boolean }[] = [
   { to: '/progress', label: vi.nav.progress, icon: 'chart', end: false },
 ];
 
-// Same mark as the app icon (public/favicon.svg): a chat bubble with code brackets.
-function BrandMark() {
-  return (
-    <svg viewBox="0 0 512 512" width="32" height="32">
-      <path
-        fill="#fff"
-        d="M168 112h176a72 72 0 0 1 72 72v96a72 72 0 0 1-72 72H238l-74 54a8 8 0 0 1-12.6-7.6L160 352a72 72 0 0 1-64-72v-96a72 72 0 0 1 72-72z"
-      />
-      <path
-        fill="none"
-        stroke="#4f46e5"
-        strokeWidth="30"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M206 186l-44 46 44 46M306 186l44 46-44 46M276 178l-40 108"
-      />
-    </svg>
-  );
-}
-
 export function Layout() {
   // .main is the scroll container, so reset it when the route changes.
   const mainRef = useRef<HTMLElement>(null);
@@ -46,9 +26,7 @@ export function Layout() {
     <div className="app">
       <header className="topbar">
         <span className="brand">
-          <span className="brand-mark" aria-hidden>
-            <BrandMark />
-          </span>
+          <img className="brand-mark" src="/favicon.svg" alt="" width="32" height="32" />
           {vi.appName}
         </span>
         <Link to="/settings" className="icon-btn topbar-settings" aria-label={vi.backend.settingsLink} title={vi.backend.settingsLink}>

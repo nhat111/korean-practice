@@ -189,16 +189,11 @@ textarea {
 }
 
 .brand-mark {
-  overflow: hidden;
-  display: grid;
-  place-items: center;
+  display: block;
   width: 32px;
   height: 32px;
-  border-radius: 10px;
-  background: var(--accent-gradient);
-  color: #fff;
-  font-size: 0.95rem;
-  box-shadow: 0 4px 12px -4px rgb(79 70 229 / 60%);
+  border-radius: 9px;
+  box-shadow: 0 0 0 1px var(--border), 0 4px 12px -4px rgb(10 58 140 / 45%);
 }
 
 .icon-btn.topbar-settings {
