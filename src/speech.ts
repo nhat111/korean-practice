@@ -69,9 +69,9 @@ if (isSpeechSupported()) {
 
 /**
  * Speaks `text` with the learner's saved voice, pitch and speed (or the given
- * rate) and resolves when speech ends, fails or is cancelled.
+ * rate, or voice for diagnostics) and resolves when speech ends, fails or is cancelled.
  */
-export function speakKorean(text: string, rate?: number): Promise<void> {
+export function speakKorean(text: string, rate?: number, voiceURI?: string): Promise<void> {
   if (!isSpeechSupported()) return Promise.resolve();
   const prefs = getPrefs();
   const synth = window.speechSynthesis;
@@ -82,7 +82,7 @@ export function speakKorean(text: string, rate?: number): Promise<void> {
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.rate = rate ?? prefs.speechRate;
     utterance.pitch = prefs.deepVoice ? DEEP_PITCH : 1;
-    const voice = pickVoice(prefs.voiceURI);
+    const voice = pickVoice(voiceURI ?? prefs.voiceURI);
     // Match lang to the voice: WebKit picks the default voice for `lang`
     // when the two disagree (e.g. "ko-KR" vs "ko_KR").
     utterance.lang = voice?.lang ?? 'ko-KR';

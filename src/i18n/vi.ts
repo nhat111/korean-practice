@@ -228,6 +228,10 @@ export const vi = {
     test: '▶ Nghe thử',
     change: 'Đổi giọng đọc (nam/nữ) →',
     none: 'Máy chưa có giọng tiếng Hàn nào. Hãy cài thêm theo hướng dẫn bên dưới.',
+    debugTitle: 'Thử từng giọng (chẩn đoán)',
+    debugHelp:
+      'Đây là các giọng tiếng Hàn mà trình duyệt cho app dùng. Bấm ▶ từng dòng: nếu dòng nào cũng ra cùng một giọng thì iOS đang bỏ qua lựa chọn giọng của trang web.',
+    debugDefault: 'mặc định',
     quality: { compact: 'cơ bản', enhanced: 'nâng cao', premium: 'cao cấp' },
     selectedInfo: (name: string, lang: string, local: boolean) =>
       `Đang chọn: ${name} (${lang}, ${local ? 'cài trên máy' : 'giọng online'}). Nếu nghe thử vẫn ra giọng khác, giọng này có thể chưa tải xong: vào Cài đặt của máy, mở mục giọng đọc tiếng Hàn và tải (hoặc tải lại) giọng đó, rồi khởi động lại trình duyệt.`,

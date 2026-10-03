@@ -62,6 +62,33 @@ export function VoiceControl() {
       <button type="button" className="btn btn--ghost" onClick={() => void speakKorean(SAMPLE)}>
         {vi.voice.test}
       </button>
+      {voices.length > 0 && (
+        <details className="voice-debug">
+          <summary>{vi.voice.debugTitle}</summary>
+          <p className="muted small">{vi.voice.debugHelp}</p>
+          <ul className="stack-sm">
+            {voices.map((v) => (
+              <li key={v.voiceURI} className="row-between">
+                <span className="small">
+                  <strong>{shortName(v.name)}</strong>
+                  {quality(v)} · {v.lang}
+                  {v.default ? ` · ${vi.voice.debugDefault}` : ''}
+                  <br />
+                  <code>{v.voiceURI}</code>
+                </span>
+                <button
+                  type="button"
+                  className="icon-btn"
+                  aria-label={`${vi.voice.test} ${v.name}`}
+                  onClick={() => void speakKorean(SAMPLE, undefined, v.voiceURI)}
+                >
+                  ▶
+                </button>
+              </li>
+            ))}
+          </ul>
+        </details>
+      )}
       <VoiceGuide open={!hasMale || voices.length === 0} />
     </div>
   );

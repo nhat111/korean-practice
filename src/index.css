@@ -1519,3 +1519,21 @@ ins {
 .filters .field {
   gap: 4px;
 }
+
+.voice-debug summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+}
+.voice-debug ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.voice-debug code {
+  font-size: 0.75rem;
+  word-break: break-all;
+}
