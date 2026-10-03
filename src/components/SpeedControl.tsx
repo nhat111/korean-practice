@@ -1,8 +1,7 @@
 import { vi } from '../i18n/vi';
 import { isSpeechSupported, speakKorean } from '../speech';
+import { SPEED_SAMPLE } from '../speaking/audioKey';
 import { MAX_RATE, MIN_RATE, setSpeechRate, useSpeechRate } from '../storage/prefs';
-
-const SAMPLE = '이번 주 금요일까지 수정해서 배포하겠습니다.';
 
 /** Slider for the text-to-speech rate (0.5x-1.2x), saved per device. */
 export function SpeedControl() {
@@ -23,7 +22,7 @@ export function SpeedControl() {
         />
       </label>
       {isSpeechSupported() && (
-        <button type="button" className="link-btn small" onClick={() => void speakKorean(SAMPLE)}>
+        <button type="button" className="link-btn small" onClick={() => void speakKorean(SPEED_SAMPLE)}>
           {vi.voice.test}
         </button>
       )}

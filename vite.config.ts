@@ -30,7 +30,7 @@ function pwaPlugin(): Plugin {
     closeBundle() {
       const files = listFiles(outDir)
         .map((f) => relative(outDir, f).split(sep).join('/'))
-        .filter((f) => f !== 'sw.js' && !f.endsWith('.map'))
+        .filter((f) => f !== 'sw.js' && !f.endsWith('.map') && !f.startsWith('audio/'))
         .sort()
       const hash = createHash('sha256')
       for (const f of files) hash.update(f).update(readFileSync(join(outDir, f)))

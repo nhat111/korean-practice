@@ -1,9 +1,9 @@
 import { vi } from '../i18n/vi';
+import { VOICE_SAMPLE as SAMPLE } from '../speaking/audioKey';
 import { guessGender, isSpeechSupported, speakKorean, useKoreanVoices } from '../speech';
 import { setDeepVoice, setVoiceURI, usePrefs } from '../storage/prefs';
 import { VoiceGuide } from './VoiceGuide';
 
-const SAMPLE = '안녕하세요. 오늘 배포 일정 공유드리겠습니다.';
 
 /** "Microsoft InJoon Online (Natural) - Korean (Korea)" → "Microsoft InJoon". */
 function shortName(name: string): string {
@@ -31,6 +31,8 @@ export function VoiceControl() {
 
   return (
     <div className="stack-sm">
+      <h3 className="small">{vi.voice.deviceTitle}</h3>
+      {prefs.voiceSource !== 'device' && <p className="muted small">{vi.voice.deviceFallback}</p>}
       <label className="field">
         <span>{vi.voice.label}</span>
         <select className="select" value={selected} onChange={(e) => setVoiceURI(e.target.value)}>

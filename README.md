@@ -32,6 +32,7 @@ npm run dev        # http://localhost:5173
 | `npm run build`   | Type-check and production build into `dist/`, plus `dist/sw.js` |
 | `npm run check`   | lint + test + build: the same command Vercel runs           |
 | `npm run preview` | Serve `dist/` at http://localhost:4173 (service worker active) |
+| `npm run tts`     | Generate natural-voice MP3s (male InJoon, female SunHi) for new content |
 
 Microphone features need a secure context, which means `localhost` or HTTPS.
 
@@ -41,6 +42,12 @@ Append items to `public/data/scenarios.json`, `emails.json` or `vocab.json` (typ
 `src/types.ts`), then run `npm test`. No code changes are needed. Never rename an existing
 `id`, because saved progress is keyed by it. Invalid content fails `npm run check`, so it
 can't be deployed by accident.
+
+Then run `npm run tts` to generate the natural male/female voice files for the new
+sentences (`pip install edge-tts`, plus `ffmpeg` to compress them). It only creates
+missing files and updates `public/data/audio-index.json`; commit `public/audio/` too.
+Sentences without a file are read by the device voice instead. Edge TTS is an unofficial
+endpoint; behind a TLS-inspecting proxy set `TTS_CA_FILE` to the proxy's CA bundle.
 
 ## Deploy to Vercel
 
@@ -91,7 +98,7 @@ vercel --prod   # production deployment
 - Page navigations go to the network first (with a 3 s timeout), then fall back to the
   cached app shell. Everything else is served from the cache.
 - Works offline: all pages, content, flashcards, progress, recording and text-to-speech
-  (if the device has a Korean voice).
+  (natural-voice MP3s that were played at least once, otherwise the device's Korean voice).
 - Needs a network connection: speech recognition (Chrome sends audio to Google's servers).
   The app shows an error message instead of failing silently.
 

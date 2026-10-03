@@ -8,6 +8,7 @@ import { isRecordingSupported, playAudio, useRecorder } from '../speaking/record
 import { saveSpeakingAttempt, type SelfRating } from '../storage/progress';
 import { ComparisonView } from './ComparisonView';
 import { SpeedControl } from './SpeedControl';
+import { VoiceSourceSwitch } from './VoiceSourceSwitch';
 
 export interface SpeakingLine {
   /** e.g. "scenario:<id>:<turn>" or "vocab:<id>" */
@@ -27,6 +28,7 @@ export function SpeakingDrill({ line }: { line: SpeakingLine }) {
         <p className="muted">{line.vi}</p>
         {isSpeechSupported() && (
           <>
+            <VoiceSourceSwitch />
             <SpeedControl />
             <Link to="/settings" className="link-btn small">
               {vi.voice.change}

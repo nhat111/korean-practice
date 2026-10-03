@@ -6,12 +6,16 @@
 //   cache named after the build version, so the whole app works offline.
 // - Navigations: network first (fresh deploys show up), cached index.html offline.
 // - Everything else that was precached: cache first.
+// - /audio/*.mp3: cache on first use (AUDIO_CACHE survives new versions).
 // - Activate: delete caches from older builds.
 
 const VERSION = '__VERSION__';
 const PRECACHE = __PRECACHE__;
 const CACHE = `kp-${VERSION}`;
 const NAV_TIMEOUT_MS = 3000;
+// Natural-voice MP3s (public/audio) are too many to precache; they are cached
+// on first play and kept across versions (file names are text hashes).
+const AUDIO_CACHE = 'kp-audio-v1';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -27,7 +31,7 @@ self.addEventListener('activate', (event) => {
     caches
       .keys()
       .then((keys) =>
-        Promise.all(keys.filter((k) => k.startsWith('kp-') && k !== CACHE).map((k) => caches.delete(k))),
+        Promise.all(keys.filter((k) => k.startsWith('kp-') && k !== CACHE && k !== AUDIO_CACHE).map((k) => caches.delete(k))),
       )
       .then(() => self.clients.claim()),
   );
@@ -54,6 +58,15 @@ async function handleAsset(request) {
   return cached ?? fetch(request);
 }
 
+async function handleAudio(request) {
+  const cache = await caches.open(AUDIO_CACHE);
+  const cached = await cache.match(request);
+  if (cached) return cached;
+  const response = await fetch(request);
+  if (response.ok) await cache.put(request, response.clone());
+  return response;
+}
+
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   if (request.method !== 'GET') return;
@@ -62,6 +75,8 @@ self.addEventListener('fetch', (event) => {
 
   if (request.mode === 'navigate') {
     event.respondWith(handleNavigation(request));
+  } else if (url.pathname.startsWith('/audio/')) {
+    event.respondWith(handleAudio(request));
   } else if (PRECACHE.includes(url.pathname)) {
     event.respondWith(handleAsset(request));
   }

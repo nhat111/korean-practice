@@ -221,6 +221,11 @@ export const vi = {
   },
   voice: {
     title: 'Giọng đọc',
+    sourceLabel: 'Giọng đọc câu mẫu (nam: InJoon, nữ: SunHi)',
+    source: { male: 'Nam', female: 'Nữ', device: 'Giọng máy' },
+    deviceTitle: 'Giọng của máy',
+    deviceFallback:
+      'Giọng nam/nữ tự nhiên có sẵn cho mọi câu trong bài học. Câu không có sẵn (ví dụ câu do AI tạo) sẽ đọc bằng giọng của máy bên dưới.',
     label: 'Giọng tiếng Hàn',
     auto: 'Tự động (mặc định của máy)',
     gender: { male: 'nam', female: 'nữ' },

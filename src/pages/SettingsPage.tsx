@@ -4,6 +4,7 @@ import { apiErrorMessage } from '../api/messages';
 import { AppVersion } from '../components/AppVersion';
 import { SpeedControl } from '../components/SpeedControl';
 import { VoiceControl } from '../components/VoiceControl';
+import { VoiceSourceSwitch } from '../components/VoiceSourceSwitch';
 import { vi } from '../i18n/vi';
 import { normalizeUrl, setBackendSettings, useBackendSettings } from '../storage/backend';
 import { exportProgress, importProgress } from '../storage/progress';
@@ -104,6 +105,7 @@ export function SettingsPage() {
       {isSpeechSupported() && (
         <section className="card stack-sm">
           <h2>{vi.voice.title}</h2>
+          <VoiceSourceSwitch />
           <SpeedControl />
           <VoiceControl />
         </section>
