@@ -18,6 +18,7 @@ import shutil
 import ssl
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 import edge_tts
@@ -47,7 +48,8 @@ def compress(src: Path, dst: Path) -> None:
 
 async def synth(sem: asyncio.Semaphore, voice: str, text: str, dst: Path, done: list) -> None:
     async with sem:
-        tmp = dst.with_suffix(".tmp.mp3")
+        # Temp file outside public/ so a concurrent `vite build` never sees it.
+        tmp = Path(tempfile.gettempdir()) / f"kp-tts-{dst.parent.name}-{dst.name}"
         for attempt in range(4):
             try:
                 await edge_tts.Communicate(text, voice, proxy=PROXY).save(str(tmp))
