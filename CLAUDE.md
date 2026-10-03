@@ -50,29 +50,39 @@ Korean either.
     without any backend calls.
 - Don't add backend code or dependencies until Phase 2 is explicitly started.
 
-## Intended structure
+## Structure
 
 ```
 /
-├── public/data/          # Learning content (JSON), one file per topic/lesson set
+├── public/data/          # Learning content: scenarios.json, emails.json, vocab.json
 ├── src/
-│   ├── components/       # Reusable UI components
-│   ├── pages/            # Route-level screens
-│   ├── data/             # Content loading + TypeScript types for the JSON schema
-│   ├── storage/          # localStorage access (the only place that touches it)
-│   ├── api/              # Phase 2 backend client (optional, with fallback)
+│   ├── types.ts          # Content types (Scenario, EmailExercise, VocabItem)
+│   ├── components/       # Layout, SpeakButton, ContentGate (loading/error)
+│   ├── pages/            # Home, Scenarios(+Player), Emails(+Exercise), Flashcards, Progress
+│   ├── data/             # validate.ts (runtime checks), content.ts (fetch + useContent)
+│   ├── storage/          # progress.ts: the only module that touches localStorage
+│   ├── srs/sm2.ts        # SM-2 spaced repetition
+│   ├── speech.ts         # SpeechSynthesis (ko-KR)
 │   ├── i18n/vi.ts        # Vietnamese UI strings
-│   └── main.tsx
+│   └── main.tsx, App.tsx # Router setup (react-router, BrowserRouter)
 ├── backend/              # Phase 2 only: Spring Boot 3, Java 21
-├── vercel.json           # SPA rewrites
+├── vercel.json           # SPA rewrites (excludes /data and /assets)
 └── CLAUDE.md
 ```
 
 ## Content (JSON) conventions
 
-- Every JSON file has a matching TypeScript type in `src/data/`. Validate the shape when
-  loading (a small hand-written type guard is enough; no need for a schema library unless it
-  grows).
+- Each file is `{ "version": 1, "items": [...] }`. Item types live in `src/types.ts`; the
+  hand-written runtime checks in `src/data/validate.ts` must mirror them. When a type changes,
+  update both.
+- **Adding content needs no code changes**: append items to the JSON file and run `npm test`
+  (`src/data/content.test.ts` validates every file, unique ids, and for emails that each
+  `corrections[].wrong` is an exact substring of `draft`). At runtime, invalid items are
+  skipped with a console warning instead of breaking the app.
+- Scenario turns have 2-3 choices with exactly one `correct: true`; vary its position.
+- Vocab `tags` are lowercase English (e.g. `dev`, `db`, `deploy`, `pm`, `meeting`, `email`);
+  the flashcard tag filter is built from them. Tech vocab ids start with `t-`, workplace
+  vocab with `w-`. No duplicate `ko` values.
 - Each item has a stable string `id` (e.g. `"standup-001"`). Progress is keyed by these ids,
   so **never rename or reuse an id** once it ships.
 - Typical item fields: `id`, `ko` (Korean), `vi` (Vietnamese meaning), optional `romanization`,
@@ -109,20 +119,21 @@ Korean either.
 
 ## Commands
 
-(Fill in once the project is scaffolded. Expected:)
-
 ```bash
 npm install
 npm run dev        # Vite dev server
-npm run build      # Type-check + production build
-npm run lint
-npm run test       # If/when tests are added (Vitest)
+npm run build      # Type-check (tsc -b) + production build
+npm run lint       # oxlint
+npm test           # Vitest: SM-2 logic + content validation
 
 # Phase 2
 cd backend && ./mvnw spring-boot:run   # or ./gradlew bootRun
 ```
 
-Run `npm run build` (which type-checks) before considering a frontend change done.
+Run `npm run build`, `npm run lint` and `npm test` before considering a change done.
+
+Test files (`src/**/*.test.ts`) are type-checked by `tsconfig.node.json`, not
+`tsconfig.app.json`.
 
 ## Deployment
 

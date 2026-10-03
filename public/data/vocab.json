@@ -1,0 +1,2726 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "baepo",
+      "ko": "배포",
+      "vi": "triển khai, deploy",
+      "romanization": "baepo",
+      "example": {
+        "ko": "오늘 저녁에 운영 서버에 배포할 예정입니다.",
+        "vi": "Dự kiến tối nay sẽ deploy lên server production."
+      },
+      "tags": [
+        "deploy",
+        "schedule"
+      ]
+    },
+    {
+      "id": "yogusahang",
+      "ko": "요구사항",
+      "vi": "yêu cầu (requirement)",
+      "romanization": "yogusahang",
+      "example": {
+        "ko": "요구사항을 다시 한번 확인해 주시겠어요?",
+        "vi": "Anh/chị có thể xác nhận lại yêu cầu một lần nữa được không ạ?"
+      },
+      "tags": [
+        "pm",
+        "meeting"
+      ]
+    },
+    {
+      "id": "t-gaebal",
+      "ko": "개발",
+      "vi": "phát triển (development)",
+      "romanization": "gaebal",
+      "example": {
+        "ko": "이 기능은 다음 주까지 개발을 완료할 예정입니다.",
+        "vi": "Dự kiến sẽ hoàn thành phát triển chức năng này trước tuần sau."
+      },
+      "tags": [
+        "dev"
+      ]
+    },
+    {
+      "id": "t-sujeong",
+      "ko": "수정",
+      "vi": "sửa, chỉnh sửa (fix, modify)",
+      "romanization": "sujeong",
+      "example": {
+        "ko": "말씀하신 부분은 오늘 중으로 수정하겠습니다.",
+        "vi": "Phần anh/chị nói, tôi sẽ sửa trong hôm nay."
+      },
+      "tags": [
+        "dev",
+        "bug"
+      ]
+    },
+    {
+      "id": "t-jangae",
+      "ko": "장애",
+      "vi": "sự cố (incident, outage)",
+      "romanization": "jangae",
+      "example": {
+        "ko": "어젯밤 운영 서버에 장애가 발생했습니다.",
+        "vi": "Tối qua đã xảy ra sự cố trên server production."
+      },
+      "tags": [
+        "incident"
+      ]
+    },
+    {
+      "id": "t-seongneung",
+      "ko": "성능",
+      "vi": "hiệu năng (performance)",
+      "romanization": "seongneung",
+      "example": {
+        "ko": "인덱스를 추가한 후 조회 성능이 많이 좋아졌어요.",
+        "vi": "Sau khi thêm index, hiệu năng truy vấn đã cải thiện nhiều."
+      },
+      "tags": [
+        "performance"
+      ]
+    },
+    {
+      "id": "t-geomjeung",
+      "ko": "검증",
+      "vi": "kiểm chứng, xác minh (validation, verification)",
+      "romanization": "geomjeung",
+      "example": {
+        "ko": "입력값 검증 로직을 서버 쪽에도 추가했습니다.",
+        "vi": "Tôi đã thêm logic validate dữ liệu đầu vào ở cả phía server."
+      },
+      "tags": [
+        "dev",
+        "test"
+      ]
+    },
+    {
+      "id": "t-banyeong",
+      "ko": "반영",
+      "vi": "phản ánh, đưa vào (apply changes)",
+      "romanization": "banyeong",
+      "example": {
+        "ko": "수정 사항은 개발 서버에 반영했습니다.",
+        "vi": "Các chỗ sửa đã được đưa lên server dev."
+      },
+      "tags": [
+        "dev",
+        "deploy"
+      ]
+    },
+    {
+      "id": "t-jeogyong",
+      "ko": "적용",
+      "vi": "áp dụng (apply)",
+      "romanization": "jeogyong",
+      "example": {
+        "ko": "새 보안 정책은 다음 버전부터 적용됩니다.",
+        "vi": "Chính sách bảo mật mới sẽ được áp dụng từ phiên bản tiếp theo."
+      },
+      "tags": [
+        "dev",
+        "security"
+      ]
+    },
+    {
+      "id": "t-igwan",
+      "ko": "이관",
+      "vi": "chuyển giao, di chuyển (migration)",
+      "romanization": "igwan",
+      "example": {
+        "ko": "기존 시스템의 데이터를 새 DB로 이관하고 있습니다.",
+        "vi": "Chúng tôi đang chuyển dữ liệu của hệ thống cũ sang DB mới."
+      },
+      "tags": [
+        "db",
+        "infra"
+      ]
+    },
+    {
+      "id": "t-yeondong",
+      "ko": "연동",
+      "vi": "tích hợp, liên kết (integration)",
+      "romanization": "yeondong",
+      "example": {
+        "ko": "결제 시스템과의 연동 테스트는 내일 진행합니다.",
+        "vi": "Ngày mai sẽ test tích hợp với hệ thống thanh toán."
+      },
+      "tags": [
+        "api"
+      ]
+    },
+    {
+      "id": "t-keomit",
+      "ko": "커밋",
+      "vi": "commit",
+      "romanization": "keomit",
+      "example": {
+        "ko": "작업한 내용은 모두 커밋해 두었습니다.",
+        "vi": "Tôi đã commit toàn bộ nội dung đã làm."
+      },
+      "tags": [
+        "git"
+      ]
+    },
+    {
+      "id": "t-meoji",
+      "ko": "머지",
+      "vi": "merge (gộp nhánh)",
+      "romanization": "meoji",
+      "example": {
+        "ko": "리뷰가 끝나면 메인 브랜치에 머지하겠습니다.",
+        "vi": "Review xong tôi sẽ merge vào nhánh main."
+      },
+      "tags": [
+        "git"
+      ]
+    },
+    {
+      "id": "t-rolbaek",
+      "ko": "롤백",
+      "vi": "rollback (quay lại phiên bản trước)",
+      "romanization": "rolbaek",
+      "example": {
+        "ko": "문제가 생겨서 이전 버전으로 롤백했습니다.",
+        "vi": "Vì phát sinh lỗi nên đã rollback về phiên bản trước."
+      },
+      "tags": [
+        "deploy",
+        "incident"
+      ]
+    },
+    {
+      "id": "t-rogeu",
+      "ko": "로그",
+      "vi": "log (nhật ký hệ thống)",
+      "romanization": "rogeu",
+      "example": {
+        "ko": "에러가 난 시간의 로그를 보내 주시겠어요?",
+        "vi": "Anh/chị gửi giúp tôi log vào thời điểm xảy ra lỗi được không?"
+      },
+      "tags": [
+        "server",
+        "bug"
+      ]
+    },
+    {
+      "id": "t-kwori",
+      "ko": "쿼리",
+      "vi": "query (truy vấn)",
+      "romanization": "kwori",
+      "example": {
+        "ko": "이 쿼리는 실행 시간이 너무 오래 걸려요.",
+        "vi": "Câu query này chạy mất quá nhiều thời gian."
+      },
+      "tags": [
+        "db"
+      ]
+    },
+    {
+      "id": "t-teuraenjaeksyeon",
+      "ko": "트랜잭션",
+      "vi": "transaction (giao dịch DB)",
+      "romanization": "teuraenjaeksyeon",
+      "example": {
+        "ko": "에러가 나면 트랜잭션 전체가 롤백되도록 처리했습니다.",
+        "vi": "Tôi đã xử lý để khi có lỗi thì toàn bộ transaction sẽ được rollback."
+      },
+      "tags": [
+        "db",
+        "spring"
+      ]
+    },
+    {
+      "id": "t-beogeu-jaehyeon",
+      "ko": "버그를 재현하다",
+      "vi": "tái hiện bug (reproduce a bug)",
+      "romanization": "beogeureul jaehyeonhada",
+      "example": {
+        "ko": "개발 환경에서는 버그를 재현하지 못했습니다.",
+        "vi": "Tôi chưa tái hiện được bug trên môi trường dev."
+      },
+      "tags": [
+        "bug",
+        "test"
+      ]
+    },
+    {
+      "id": "t-rogeu-hwagin",
+      "ko": "로그를 확인하다",
+      "vi": "kiểm tra log",
+      "romanization": "rogeureul hwaginhada",
+      "example": {
+        "ko": "지금 서버 로그를 확인해 보겠습니다.",
+        "vi": "Tôi sẽ kiểm tra log server ngay bây giờ."
+      },
+      "tags": [
+        "server",
+        "bug"
+      ]
+    },
+    {
+      "id": "t-beuraenchi",
+      "ko": "브랜치",
+      "vi": "nhánh (branch)",
+      "romanization": "beuraenchi",
+      "example": {
+        "ko": "이번 기능은 별도 브랜치에서 작업하고 있어요.",
+        "vi": "Chức năng lần này tôi đang làm trên một branch riêng."
+      },
+      "tags": [
+        "git"
+      ]
+    },
+    {
+      "id": "t-jeojangso",
+      "ko": "저장소",
+      "vi": "kho lưu trữ (repository)",
+      "romanization": "jeojangso",
+      "example": {
+        "ko": "소스 코드는 회사 Git 저장소에 올려 주세요.",
+        "vi": "Hãy đưa source code lên repository Git của công ty."
+      },
+      "tags": [
+        "git"
+      ]
+    },
+    {
+      "id": "t-pul-rikweseuteu",
+      "ko": "풀 리퀘스트",
+      "vi": "pull request (PR)",
+      "romanization": "pul rikweseuteu",
+      "example": {
+        "ko": "풀 리퀘스트를 올렸으니 리뷰 부탁드립니다.",
+        "vi": "Tôi đã tạo pull request, nhờ anh/chị review giúp."
+      },
+      "tags": [
+        "git"
+      ]
+    },
+    {
+      "id": "t-kodeu-ribyu",
+      "ko": "코드 리뷰",
+      "vi": "review code",
+      "romanization": "kodeu ribyu",
+      "example": {
+        "ko": "코드 리뷰에서 받은 의견은 모두 반영했습니다.",
+        "vi": "Tôi đã sửa theo tất cả góp ý nhận được khi review code."
+      },
+      "tags": [
+        "dev",
+        "git"
+      ]
+    },
+    {
+      "id": "t-chungdol",
+      "ko": "충돌",
+      "vi": "xung đột (conflict)",
+      "romanization": "chungdol",
+      "example": {
+        "ko": "머지할 때 충돌이 나서 직접 해결했어요.",
+        "vi": "Khi merge bị conflict nên tôi đã tự giải quyết."
+      },
+      "tags": [
+        "git"
+      ]
+    },
+    {
+      "id": "t-ripaektoring",
+      "ko": "리팩토링",
+      "vi": "tái cấu trúc code (refactoring)",
+      "romanization": "ripaektoring",
+      "example": {
+        "ko": "중복 코드가 많아서 리팩토링이 필요합니다.",
+        "vi": "Có nhiều code trùng lặp nên cần refactoring."
+      },
+      "tags": [
+        "dev"
+      ]
+    },
+    {
+      "id": "t-yeoe",
+      "ko": "예외",
+      "vi": "ngoại lệ (exception)",
+      "romanization": "yeoe",
+      "example": {
+        "ko": "널 값이 들어와서 예외가 발생했습니다.",
+        "vi": "Do giá trị null được truyền vào nên đã phát sinh exception."
+      },
+      "tags": [
+        "java",
+        "bug"
+      ]
+    },
+    {
+      "id": "t-yeoe-cheori",
+      "ko": "예외 처리",
+      "vi": "xử lý ngoại lệ (exception handling)",
+      "romanization": "yeoe cheori",
+      "example": {
+        "ko": "외부 API 호출 부분에 예외 처리를 추가했습니다.",
+        "vi": "Tôi đã thêm xử lý exception cho phần gọi API bên ngoài."
+      },
+      "tags": [
+        "java",
+        "dev"
+      ]
+    },
+    {
+      "id": "t-danwi-teseuteu",
+      "ko": "단위 테스트",
+      "vi": "unit test (kiểm thử đơn vị)",
+      "romanization": "danwi teseuteu",
+      "example": {
+        "ko": "서비스 클래스에 대한 단위 테스트를 작성했어요.",
+        "vi": "Tôi đã viết unit test cho class service."
+      },
+      "tags": [
+        "test",
+        "java"
+      ]
+    },
+    {
+      "id": "t-tonghap-teseuteu",
+      "ko": "통합 테스트",
+      "vi": "integration test (kiểm thử tích hợp)",
+      "romanization": "tonghap teseuteu",
+      "example": {
+        "ko": "통합 테스트에서 몇 가지 문제가 발견되었습니다.",
+        "vi": "Đã phát hiện một vài vấn đề trong integration test."
+      },
+      "tags": [
+        "test"
+      ]
+    },
+    {
+      "id": "t-hoegwi-teseuteu",
+      "ko": "회귀 테스트",
+      "vi": "regression test (kiểm thử hồi quy)",
+      "romanization": "hoegwi teseuteu",
+      "example": {
+        "ko": "수정 후에 회귀 테스트도 꼭 진행해 주세요.",
+        "vi": "Sau khi sửa, nhất định phải chạy cả regression test."
+      },
+      "tags": [
+        "test"
+      ]
+    },
+    {
+      "id": "t-teseuteu-keiseu",
+      "ko": "테스트 케이스",
+      "vi": "test case",
+      "romanization": "teseuteu keiseu",
+      "example": {
+        "ko": "경계값에 대한 테스트 케이스가 빠져 있습니다.",
+        "vi": "Đang thiếu test case cho giá trị biên."
+      },
+      "tags": [
+        "test"
+      ]
+    },
+    {
+      "id": "t-gyeolham",
+      "ko": "결함",
+      "vi": "lỗi, khiếm khuyết (defect)",
+      "romanization": "gyeolham",
+      "example": {
+        "ko": "QA팀에서 보고한 결함은 모두 열두 건입니다.",
+        "vi": "Tổng số defect mà team QA báo cáo là mười hai lỗi."
+      },
+      "tags": [
+        "test",
+        "bug"
+      ]
+    },
+    {
+      "id": "t-oryu",
+      "ko": "오류",
+      "vi": "lỗi (error)",
+      "romanization": "oryu",
+      "example": {
+        "ko": "로그인할 때 오류 메시지가 표시됩니다.",
+        "vi": "Khi đăng nhập thì hiện thông báo lỗi."
+      },
+      "tags": [
+        "bug"
+      ]
+    },
+    {
+      "id": "t-unyeong-seobeo",
+      "ko": "운영 서버",
+      "vi": "server production (môi trường vận hành)",
+      "romanization": "unyeong seobeo",
+      "example": {
+        "ko": "운영 서버에는 직접 접속하지 마십시오.",
+        "vi": "Xin đừng truy cập trực tiếp vào server production."
+      },
+      "tags": [
+        "server",
+        "deploy"
+      ]
+    },
+    {
+      "id": "t-gaebal-seobeo",
+      "ko": "개발 서버",
+      "vi": "server dev (môi trường phát triển)",
+      "romanization": "gaebal seobeo",
+      "example": {
+        "ko": "먼저 개발 서버에서 확인한 후에 진행하겠습니다.",
+        "vi": "Tôi sẽ kiểm tra trên server dev trước rồi mới tiến hành."
+      },
+      "tags": [
+        "server",
+        "dev"
+      ]
+    },
+    {
+      "id": "t-seuteijing-seobeo",
+      "ko": "스테이징 서버",
+      "vi": "server staging",
+      "romanization": "seuteijing seobeo",
+      "example": {
+        "ko": "스테이징 서버에서 고객사 확인을 받아야 합니다.",
+        "vi": "Cần được phía khách hàng xác nhận trên server staging."
+      },
+      "tags": [
+        "server",
+        "deploy"
+      ]
+    },
+    {
+      "id": "t-hwangyeong-seoljeong",
+      "ko": "환경 설정",
+      "vi": "thiết lập môi trường (configuration)",
+      "romanization": "hwangyeong seoljeong",
+      "example": {
+        "ko": "신규 입사자를 위한 개발 환경 설정 문서를 만들었어요.",
+        "vi": "Tôi đã làm tài liệu thiết lập môi trường dev cho người mới."
+      },
+      "tags": [
+        "dev",
+        "infra"
+      ]
+    },
+    {
+      "id": "t-seoljeong-pail",
+      "ko": "설정 파일",
+      "vi": "file cấu hình (config file)",
+      "romanization": "seoljeong pail",
+      "example": {
+        "ko": "DB 접속 정보는 설정 파일에서 관리합니다.",
+        "vi": "Thông tin kết nối DB được quản lý trong file cấu hình."
+      },
+      "tags": [
+        "spring",
+        "infra"
+      ]
+    },
+    {
+      "id": "t-hwangyeong-byeonsu",
+      "ko": "환경 변수",
+      "vi": "biến môi trường (environment variable)",
+      "romanization": "hwangyeong byeonsu",
+      "example": {
+        "ko": "비밀번호는 코드에 넣지 말고 환경 변수로 관리해 주세요.",
+        "vi": "Đừng đưa mật khẩu vào code mà hãy quản lý bằng biến môi trường."
+      },
+      "tags": [
+        "infra",
+        "security"
+      ]
+    },
+    {
+      "id": "t-teibeul",
+      "ko": "테이블",
+      "vi": "bảng (table)",
+      "romanization": "teibeul",
+      "example": {
+        "ko": "주문 테이블에 컬럼을 하나 추가해야 합니다.",
+        "vi": "Cần thêm một cột vào bảng đơn hàng."
+      },
+      "tags": [
+        "db"
+      ]
+    },
+    {
+      "id": "t-indekseu",
+      "ko": "인덱스",
+      "vi": "chỉ mục (index)",
+      "romanization": "indekseu",
+      "example": {
+        "ko": "검색 조건 컬럼에 인덱스가 없어서 느렸습니다.",
+        "vi": "Vì cột điều kiện tìm kiếm không có index nên bị chậm."
+      },
+      "tags": [
+        "db",
+        "performance"
+      ]
+    },
+    {
+      "id": "t-keolleom",
+      "ko": "컬럼",
+      "vi": "cột (column)",
+      "romanization": "keolleom",
+      "example": {
+        "ko": "이 컬럼은 널 값을 허용하지 않습니다.",
+        "vi": "Cột này không cho phép giá trị null."
+      },
+      "tags": [
+        "db"
+      ]
+    },
+    {
+      "id": "t-gibon-ki",
+      "ko": "기본 키",
+      "vi": "khóa chính (primary key)",
+      "romanization": "gibon ki",
+      "example": {
+        "ko": "사용자 ID를 기본 키로 사용하고 있어요.",
+        "vi": "Đang dùng ID người dùng làm khóa chính."
+      },
+      "tags": [
+        "db"
+      ]
+    },
+    {
+      "id": "t-oerae-ki",
+      "ko": "외래 키",
+      "vi": "khóa ngoại (foreign key)",
+      "romanization": "oerae ki",
+      "example": {
+        "ko": "외래 키 제약 때문에 데이터가 삭제되지 않습니다.",
+        "vi": "Do ràng buộc khóa ngoại nên dữ liệu không xóa được."
+      },
+      "tags": [
+        "db"
+      ]
+    },
+    {
+      "id": "t-jeonggyuhwa",
+      "ko": "정규화",
+      "vi": "chuẩn hóa (normalization)",
+      "romanization": "jeonggyuhwa",
+      "example": {
+        "ko": "테이블 정규화가 안 되어 있어서 중복 데이터가 많습니다.",
+        "vi": "Bảng chưa được chuẩn hóa nên có nhiều dữ liệu trùng lặp."
+      },
+      "tags": [
+        "db"
+      ]
+    },
+    {
+      "id": "t-seullou-kwori",
+      "ko": "슬로우 쿼리",
+      "vi": "slow query (truy vấn chậm)",
+      "romanization": "seullou kwori",
+      "example": {
+        "ko": "DBA가 슬로우 쿼리 목록을 공유해 주었습니다.",
+        "vi": "DBA đã chia sẻ danh sách slow query."
+      },
+      "tags": [
+        "db",
+        "performance"
+      ]
+    },
+    {
+      "id": "t-silhaeng-gyehoek",
+      "ko": "실행 계획",
+      "vi": "execution plan (kế hoạch thực thi query)",
+      "romanization": "silhaeng gyehoek",
+      "example": {
+        "ko": "실행 계획을 보니 풀 스캔을 하고 있었어요.",
+        "vi": "Xem execution plan thì thấy đang full scan."
+      },
+      "tags": [
+        "db",
+        "performance"
+      ]
+    },
+    {
+      "id": "t-jeonghapseong",
+      "ko": "정합성",
+      "vi": "tính nhất quán dữ liệu (data consistency)",
+      "romanization": "jeonghapseong",
+      "example": {
+        "ko": "이관 후에 데이터 정합성을 반드시 확인해야 합니다.",
+        "vi": "Sau khi migrate nhất định phải kiểm tra tính nhất quán của dữ liệu."
+      },
+      "tags": [
+        "db",
+        "test"
+      ]
+    },
+    {
+      "id": "t-baegeop",
+      "ko": "백업",
+      "vi": "sao lưu (backup)",
+      "romanization": "baegeop",
+      "example": {
+        "ko": "작업 전에 DB 백업을 먼저 받아 두겠습니다.",
+        "vi": "Trước khi làm, tôi sẽ backup DB trước."
+      },
+      "tags": [
+        "db",
+        "infra"
+      ]
+    },
+    {
+      "id": "t-bokgu",
+      "ko": "복구",
+      "vi": "khôi phục (recovery, restore)",
+      "romanization": "bokgu",
+      "example": {
+        "ko": "백업 파일로 데이터를 복구했습니다.",
+        "vi": "Đã khôi phục dữ liệu bằng file backup."
+      },
+      "tags": [
+        "db",
+        "incident"
+      ]
+    },
+    {
+      "id": "t-eipiai-hochul",
+      "ko": "API를 호출하다",
+      "vi": "gọi API",
+      "romanization": "eipiaireul hochulhada",
+      "example": {
+        "ko": "화면에서 API를 호출할 때 인증 토큰이 필요합니다.",
+        "vi": "Khi gọi API từ màn hình thì cần token xác thực."
+      },
+      "tags": [
+        "api"
+      ]
+    },
+    {
+      "id": "t-yocheong",
+      "ko": "요청",
+      "vi": "yêu cầu, request",
+      "romanization": "yocheong",
+      "example": {
+        "ko": "요청 데이터 형식이 명세서와 달라요.",
+        "vi": "Định dạng dữ liệu request khác với tài liệu đặc tả."
+      },
+      "tags": [
+        "api"
+      ]
+    },
+    {
+      "id": "t-eungdap",
+      "ko": "응답",
+      "vi": "phản hồi (response)",
+      "romanization": "eungdap",
+      "example": {
+        "ko": "서버에서 응답이 오지 않습니다.",
+        "vi": "Không nhận được response từ server."
+      },
+      "tags": [
+        "api",
+        "server"
+      ]
+    },
+    {
+      "id": "t-parameteo",
+      "ko": "파라미터",
+      "vi": "tham số (parameter)",
+      "romanization": "parameteo",
+      "example": {
+        "ko": "필수 파라미터가 누락되어 400 에러가 났습니다.",
+        "vi": "Do thiếu tham số bắt buộc nên bị lỗi 400."
+      },
+      "tags": [
+        "api"
+      ]
+    },
+    {
+      "id": "t-endeupointeu",
+      "ko": "엔드포인트",
+      "vi": "endpoint",
+      "romanization": "endeupointeu",
+      "example": {
+        "ko": "새로운 엔드포인트 주소를 공유드리겠습니다.",
+        "vi": "Tôi sẽ chia sẻ địa chỉ endpoint mới."
+      },
+      "tags": [
+        "api"
+      ]
+    },
+    {
+      "id": "t-injeung",
+      "ko": "인증",
+      "vi": "xác thực (authentication)",
+      "romanization": "injeung",
+      "example": {
+        "ko": "토큰이 만료되어 인증에 실패했습니다.",
+        "vi": "Token hết hạn nên xác thực thất bại."
+      },
+      "tags": [
+        "security",
+        "api"
+      ]
+    },
+    {
+      "id": "t-inga",
+      "ko": "인가",
+      "vi": "phân quyền (authorization)",
+      "romanization": "inga",
+      "example": {
+        "ko": "인증은 성공했지만 인가 단계에서 403 에러가 납니다.",
+        "vi": "Xác thực thành công nhưng bị lỗi 403 ở bước phân quyền."
+      },
+      "tags": [
+        "security"
+      ]
+    },
+    {
+      "id": "t-tokeun",
+      "ko": "토큰",
+      "vi": "token",
+      "romanization": "tokeun",
+      "example": {
+        "ko": "토큰 유효 시간은 30분으로 설정했어요.",
+        "vi": "Thời gian hiệu lực của token được đặt là 30 phút."
+      },
+      "tags": [
+        "security",
+        "api"
+      ]
+    },
+    {
+      "id": "t-amhohwa",
+      "ko": "암호화",
+      "vi": "mã hóa (encryption)",
+      "romanization": "amhohwa",
+      "example": {
+        "ko": "개인정보는 암호화해서 저장해야 합니다.",
+        "vi": "Thông tin cá nhân phải được mã hóa rồi mới lưu."
+      },
+      "tags": [
+        "security"
+      ]
+    },
+    {
+      "id": "t-chwiyakjeom",
+      "ko": "취약점",
+      "vi": "lỗ hổng bảo mật (vulnerability)",
+      "romanization": "chwiyakjeom",
+      "example": {
+        "ko": "보안 점검에서 SQL 인젝션 취약점이 발견되었습니다.",
+        "vi": "Kiểm tra bảo mật đã phát hiện lỗ hổng SQL injection."
+      },
+      "tags": [
+        "security"
+      ]
+    },
+    {
+      "id": "t-gwonhan",
+      "ko": "권한",
+      "vi": "quyền (permission)",
+      "romanization": "gwonhan",
+      "example": {
+        "ko": "운영 DB 접근 권한을 요청드려도 될까요?",
+        "vi": "Tôi có thể xin quyền truy cập DB production được không ạ?"
+      },
+      "tags": [
+        "security",
+        "infra"
+      ]
+    },
+    {
+      "id": "t-banghwabyeok",
+      "ko": "방화벽",
+      "vi": "tường lửa (firewall)",
+      "romanization": "banghwabyeok",
+      "example": {
+        "ko": "방화벽 때문에 외부 서버에 접속이 안 됩니다.",
+        "vi": "Do tường lửa nên không kết nối được tới server bên ngoài."
+      },
+      "tags": [
+        "infra",
+        "security"
+      ]
+    },
+    {
+      "id": "t-sesyeon",
+      "ko": "세션",
+      "vi": "phiên (session)",
+      "romanization": "sesyeon",
+      "example": {
+        "ko": "일정 시간이 지나면 세션이 만료됩니다.",
+        "vi": "Sau một khoảng thời gian nhất định thì session sẽ hết hạn."
+      },
+      "tags": [
+        "server",
+        "security"
+      ]
+    },
+    {
+      "id": "t-taimaut",
+      "ko": "타임아웃",
+      "vi": "hết thời gian chờ (timeout)",
+      "romanization": "taimaut",
+      "example": {
+        "ko": "외부 API 응답이 늦어서 타임아웃이 발생했어요.",
+        "vi": "Vì API bên ngoài phản hồi chậm nên đã bị timeout."
+      },
+      "tags": [
+        "api",
+        "incident"
+      ]
+    },
+    {
+      "id": "t-eungdap-sokdo",
+      "ko": "응답 속도",
+      "vi": "tốc độ phản hồi (response time)",
+      "romanization": "eungdap sokdo",
+      "example": {
+        "ko": "캐시를 적용한 후 응답 속도가 두 배 빨라졌습니다.",
+        "vi": "Sau khi áp dụng cache, tốc độ phản hồi nhanh gấp đôi."
+      },
+      "tags": [
+        "performance",
+        "api"
+      ]
+    },
+    {
+      "id": "t-buha",
+      "ko": "부하",
+      "vi": "tải (load)",
+      "romanization": "buha",
+      "example": {
+        "ko": "이벤트 기간에는 서버 부하가 크게 증가합니다.",
+        "vi": "Trong thời gian sự kiện, tải server tăng lên rất nhiều."
+      },
+      "tags": [
+        "performance",
+        "server"
+      ]
+    },
+    {
+      "id": "t-buha-teseuteu",
+      "ko": "부하 테스트",
+      "vi": "load test (kiểm thử tải)",
+      "romanization": "buha teseuteu",
+      "example": {
+        "ko": "오픈 전에 부하 테스트를 진행해야 합니다.",
+        "vi": "Trước khi go-live cần tiến hành load test."
+      },
+      "tags": [
+        "test",
+        "performance"
+      ]
+    },
+    {
+      "id": "t-choejeokhwa",
+      "ko": "최적화",
+      "vi": "tối ưu hóa (optimization)",
+      "romanization": "choejeokhwa",
+      "example": {
+        "ko": "이 쿼리는 최적화가 필요해 보입니다.",
+        "vi": "Câu query này có vẻ cần được tối ưu."
+      },
+      "tags": [
+        "performance"
+      ]
+    },
+    {
+      "id": "t-kaesi",
+      "ko": "캐시",
+      "vi": "bộ nhớ đệm (cache)",
+      "romanization": "kaesi",
+      "example": {
+        "ko": "데이터가 바뀌지 않으면 캐시를 지워 보세요.",
+        "vi": "Nếu dữ liệu không thay đổi thì hãy thử xóa cache."
+      },
+      "tags": [
+        "performance",
+        "server"
+      ]
+    },
+    {
+      "id": "t-byeongmok",
+      "ko": "병목",
+      "vi": "nút thắt cổ chai (bottleneck)",
+      "romanization": "byeongmok",
+      "example": {
+        "ko": "DB 커넥션 부분에서 병목이 생기고 있습니다.",
+        "vi": "Đang có bottleneck ở phần connection DB."
+      },
+      "tags": [
+        "performance"
+      ]
+    },
+    {
+      "id": "t-memori-nusu",
+      "ko": "메모리 누수",
+      "vi": "rò rỉ bộ nhớ (memory leak)",
+      "romanization": "memori nusu",
+      "example": {
+        "ko": "메모리 누수 때문에 서버가 자주 멈췄어요.",
+        "vi": "Do rò rỉ bộ nhớ nên server thường xuyên bị treo."
+      },
+      "tags": [
+        "performance",
+        "bug"
+      ]
+    },
+    {
+      "id": "t-seuredeu",
+      "ko": "스레드",
+      "vi": "luồng (thread)",
+      "romanization": "seuredeu",
+      "example": {
+        "ko": "스레드 덤프를 떠서 원인을 분석해 보겠습니다.",
+        "vi": "Tôi sẽ lấy thread dump để phân tích nguyên nhân."
+      },
+      "tags": [
+        "java",
+        "performance"
+      ]
+    },
+    {
+      "id": "t-dongsiseong",
+      "ko": "동시성",
+      "vi": "tính đồng thời (concurrency)",
+      "romanization": "dongsiseong",
+      "example": {
+        "ko": "여러 사용자가 동시에 수정할 때 동시성 문제가 생깁니다.",
+        "vi": "Khi nhiều người dùng sửa cùng lúc thì xảy ra vấn đề concurrency."
+      },
+      "tags": [
+        "java",
+        "bug"
+      ]
+    },
+    {
+      "id": "t-bidonggi",
+      "ko": "비동기",
+      "vi": "bất đồng bộ (asynchronous)",
+      "romanization": "bidonggi",
+      "example": {
+        "ko": "메일 발송은 비동기로 처리하도록 변경했어요.",
+        "vi": "Tôi đã đổi để việc gửi mail được xử lý bất đồng bộ."
+      },
+      "tags": [
+        "java",
+        "performance"
+      ]
+    },
+    {
+      "id": "t-uijonseong",
+      "ko": "의존성",
+      "vi": "phụ thuộc (dependency)",
+      "romanization": "uijonseong",
+      "example": {
+        "ko": "라이브러리 의존성 충돌로 빌드가 실패했습니다.",
+        "vi": "Build thất bại do xung đột dependency của thư viện."
+      },
+      "tags": [
+        "java",
+        "dev"
+      ]
+    },
+    {
+      "id": "t-ijunghwa",
+      "ko": "이중화",
+      "vi": "dự phòng kép (redundancy)",
+      "romanization": "ijunghwa",
+      "example": {
+        "ko": "서버를 이중화해서 장애에 대비하고 있습니다.",
+        "vi": "Chúng tôi dự phòng kép server để đề phòng sự cố."
+      },
+      "tags": [
+        "infra",
+        "server"
+      ]
+    },
+    {
+      "id": "t-johoe",
+      "ko": "조회",
+      "vi": "tra cứu, truy vấn (lookup, select)",
+      "romanization": "johoe",
+      "example": {
+        "ko": "조회 결과가 0건으로 나옵니다.",
+        "vi": "Kết quả tra cứu ra 0 bản ghi."
+      },
+      "tags": [
+        "db",
+        "api"
+      ]
+    },
+    {
+      "id": "t-eonoteisyeon",
+      "ko": "어노테이션",
+      "vi": "annotation",
+      "romanization": "eonoteisyeon",
+      "example": {
+        "ko": "트랜잭션 어노테이션을 서비스 메서드에 붙였어요.",
+        "vi": "Tôi đã gắn annotation @Transactional vào method của service."
+      },
+      "tags": [
+        "java",
+        "spring"
+      ]
+    },
+    {
+      "id": "t-bin",
+      "ko": "빈",
+      "vi": "bean (Spring bean)",
+      "romanization": "bin",
+      "example": {
+        "ko": "빈이 등록되지 않아서 애플리케이션이 실행되지 않습니다.",
+        "vi": "Do bean chưa được đăng ký nên ứng dụng không chạy được."
+      },
+      "tags": [
+        "spring"
+      ]
+    },
+    {
+      "id": "t-uijonseong-jueip",
+      "ko": "의존성 주입",
+      "vi": "tiêm phụ thuộc (dependency injection, DI)",
+      "romanization": "uijonseong jueip",
+      "example": {
+        "ko": "스프링에서는 생성자로 의존성 주입을 하는 것을 권장합니다.",
+        "vi": "Trong Spring, khuyến khích tiêm phụ thuộc qua constructor."
+      },
+      "tags": [
+        "spring",
+        "java"
+      ]
+    },
+    {
+      "id": "t-inteopeiseu",
+      "ko": "인터페이스",
+      "vi": "giao diện (interface)",
+      "romanization": "inteopeiseu",
+      "example": {
+        "ko": "외부 시스템과의 인터페이스 명세를 받았습니다.",
+        "vi": "Tôi đã nhận được đặc tả interface với hệ thống bên ngoài."
+      },
+      "tags": [
+        "api",
+        "java"
+      ]
+    },
+    {
+      "id": "t-meseodeu",
+      "ko": "메서드",
+      "vi": "phương thức (method)",
+      "romanization": "meseodeu",
+      "example": {
+        "ko": "이 메서드는 너무 길어서 나누는 게 좋겠어요.",
+        "vi": "Method này quá dài nên tách ra thì tốt hơn."
+      },
+      "tags": [
+        "java",
+        "dev"
+      ]
+    },
+    {
+      "id": "t-bildeu",
+      "ko": "빌드",
+      "vi": "build",
+      "romanization": "bildeu",
+      "example": {
+        "ko": "테스트가 실패해서 빌드가 깨졌습니다.",
+        "vi": "Vì test thất bại nên build bị hỏng."
+      },
+      "tags": [
+        "dev",
+        "deploy"
+      ]
+    },
+    {
+      "id": "t-keompail",
+      "ko": "컴파일",
+      "vi": "biên dịch (compile)",
+      "romanization": "keompail",
+      "example": {
+        "ko": "자바 버전이 달라서 컴파일 에러가 납니다.",
+        "vi": "Do khác phiên bản Java nên bị lỗi biên dịch."
+      },
+      "tags": [
+        "java",
+        "dev"
+      ]
+    },
+    {
+      "id": "t-beojeon",
+      "ko": "버전",
+      "vi": "phiên bản (version)",
+      "romanization": "beojeon",
+      "example": {
+        "ko": "스프링 부트 버전을 3.2로 올렸습니다.",
+        "vi": "Tôi đã nâng phiên bản Spring Boot lên 3.2."
+      },
+      "tags": [
+        "spring",
+        "deploy"
+      ]
+    },
+    {
+      "id": "t-paechi",
+      "ko": "패치",
+      "vi": "bản vá (patch)",
+      "romanization": "paechi",
+      "example": {
+        "ko": "보안 패치를 이번 주 안에 적용해야 합니다.",
+        "vi": "Cần áp dụng bản vá bảo mật trong tuần này."
+      },
+      "tags": [
+        "security",
+        "deploy"
+      ]
+    },
+    {
+      "id": "t-hatpikseu",
+      "ko": "핫픽스",
+      "vi": "hotfix (bản sửa khẩn cấp)",
+      "romanization": "hatpikseu",
+      "example": {
+        "ko": "긴급한 버그라서 핫픽스로 바로 배포하겠습니다.",
+        "vi": "Vì là bug khẩn cấp nên sẽ deploy ngay bằng hotfix."
+      },
+      "tags": [
+        "bug",
+        "deploy"
+      ]
+    },
+    {
+      "id": "t-moniteoring",
+      "ko": "모니터링",
+      "vi": "giám sát (monitoring)",
+      "romanization": "moniteoring",
+      "example": {
+        "ko": "배포 후 한 시간 동안 모니터링하겠습니다.",
+        "vi": "Sau khi deploy tôi sẽ giám sát trong một tiếng."
+      },
+      "tags": [
+        "infra",
+        "server"
+      ]
+    },
+    {
+      "id": "t-allim",
+      "ko": "알림",
+      "vi": "cảnh báo, thông báo (alert)",
+      "romanization": "allim",
+      "example": {
+        "ko": "CPU 사용률이 90%를 넘으면 알림이 옵니다.",
+        "vi": "Khi mức sử dụng CPU vượt 90% thì sẽ có cảnh báo."
+      },
+      "tags": [
+        "infra",
+        "incident"
+      ]
+    },
+    {
+      "id": "t-jaesijak",
+      "ko": "재시작",
+      "vi": "khởi động lại (restart)",
+      "romanization": "jaesijak",
+      "example": {
+        "ko": "설정을 바꾼 후 서버를 재시작해야 합니다.",
+        "vi": "Sau khi đổi cấu hình phải khởi động lại server."
+      },
+      "tags": [
+        "server",
+        "infra"
+      ]
+    },
+    {
+      "id": "t-seobeo-daun",
+      "ko": "서버 다운",
+      "vi": "server sập (server down)",
+      "romanization": "seobeo daun",
+      "example": {
+        "ko": "트래픽이 몰려서 서버 다운이 발생했습니다.",
+        "vi": "Do lưu lượng tăng đột biến nên server đã bị sập."
+      },
+      "tags": [
+        "incident",
+        "server"
+      ]
+    },
+    {
+      "id": "t-wonin-bunseok",
+      "ko": "원인 분석",
+      "vi": "phân tích nguyên nhân (root cause analysis)",
+      "romanization": "wonin bunseok",
+      "example": {
+        "ko": "장애 원인 분석 결과를 정리해서 공유드리겠습니다.",
+        "vi": "Tôi sẽ tổng hợp kết quả phân tích nguyên nhân sự cố rồi chia sẻ."
+      },
+      "tags": [
+        "incident"
+      ]
+    },
+    {
+      "id": "t-imsi-jochi",
+      "ko": "임시 조치",
+      "vi": "biện pháp tạm thời (workaround)",
+      "romanization": "imsi jochi",
+      "example": {
+        "ko": "우선 임시 조치로 서비스를 정상화했습니다.",
+        "vi": "Trước mắt đã khôi phục dịch vụ bằng biện pháp tạm thời."
+      },
+      "tags": [
+        "incident"
+      ]
+    },
+    {
+      "id": "t-jaebal-bangji",
+      "ko": "재발 방지",
+      "vi": "phòng ngừa tái diễn",
+      "romanization": "jaebal bangji",
+      "example": {
+        "ko": "재발 방지를 위해 모니터링 항목을 추가하겠습니다.",
+        "vi": "Để phòng ngừa tái diễn, chúng tôi sẽ bổ sung hạng mục giám sát."
+      },
+      "tags": [
+        "incident"
+      ]
+    },
+    {
+      "id": "t-yeonghyang-beomwi",
+      "ko": "영향 범위",
+      "vi": "phạm vi ảnh hưởng (impact scope)",
+      "romanization": "yeonghyang beomwi",
+      "example": {
+        "ko": "이번 수정의 영향 범위를 먼저 파악해 주세요.",
+        "vi": "Hãy nắm rõ phạm vi ảnh hưởng của lần sửa này trước."
+      },
+      "tags": [
+        "bug",
+        "test"
+      ]
+    },
+    {
+      "id": "t-juseok",
+      "ko": "주석",
+      "vi": "chú thích (code comment)",
+      "romanization": "juseok",
+      "example": {
+        "ko": "복잡한 로직에는 주석을 달아 주세요.",
+        "vi": "Hãy viết chú thích cho các logic phức tạp."
+      },
+      "tags": [
+        "dev"
+      ]
+    },
+    {
+      "id": "t-soseu-kodeu",
+      "ko": "소스 코드",
+      "vi": "mã nguồn (source code)",
+      "romanization": "soseu kodeu",
+      "example": {
+        "ko": "소스 코드는 납품 전에 정적 분석을 받아야 합니다.",
+        "vi": "Mã nguồn phải được phân tích tĩnh trước khi bàn giao."
+      },
+      "tags": [
+        "dev"
+      ]
+    },
+    {
+      "id": "t-hadeukoding",
+      "ko": "하드코딩",
+      "vi": "hard-code (viết cứng giá trị trong code)",
+      "romanization": "hadeukoding",
+      "example": {
+        "ko": "URL이 하드코딩되어 있어서 환경마다 수정해야 해요.",
+        "vi": "Vì URL bị hard-code nên mỗi môi trường đều phải sửa."
+      },
+      "tags": [
+        "dev"
+      ]
+    },
+    {
+      "id": "t-dibeoging",
+      "ko": "디버깅",
+      "vi": "gỡ lỗi (debugging)",
+      "romanization": "dibeoging",
+      "example": {
+        "ko": "디버깅해 보니 반복문 조건이 잘못되어 있었습니다.",
+        "vi": "Debug thử thì thấy điều kiện vòng lặp bị sai."
+      },
+      "tags": [
+        "dev",
+        "bug"
+      ]
+    },
+    {
+      "id": "t-beogeu-gochida",
+      "ko": "버그를 고치다",
+      "vi": "sửa bug",
+      "romanization": "beogeureul gochida",
+      "example": {
+        "ko": "그 버그는 어제 고쳤는데 아직 반영은 안 됐어요.",
+        "vi": "Bug đó hôm qua tôi đã sửa nhưng vẫn chưa được đưa lên."
+      },
+      "tags": [
+        "bug"
+      ]
+    },
+    {
+      "id": "t-kodeu-pusi",
+      "ko": "코드를 푸시하다",
+      "vi": "push code",
+      "romanization": "kodeureul pusihada",
+      "example": {
+        "ko": "수정한 코드를 원격 저장소에 푸시했습니다.",
+        "vi": "Tôi đã push code đã sửa lên repository từ xa."
+      },
+      "tags": [
+        "git"
+      ]
+    },
+    {
+      "id": "t-kwori-tyuning",
+      "ko": "쿼리를 튜닝하다",
+      "vi": "tinh chỉnh query (query tuning)",
+      "romanization": "kworireul tyuninghada",
+      "example": {
+        "ko": "느린 화면의 쿼리를 튜닝해서 3초에서 0.5초로 줄였습니다.",
+        "vi": "Tôi đã tune query của màn hình chậm, giảm từ 3 giây xuống 0,5 giây."
+      },
+      "tags": [
+        "db",
+        "performance"
+      ]
+    },
+    {
+      "id": "w-iljeong",
+      "ko": "일정",
+      "vi": "lịch trình, kế hoạch thời gian",
+      "romanization": "iljeong",
+      "example": {
+        "ko": "이번 프로젝트 일정이 조금 빠듯합니다.",
+        "vi": "Lịch trình dự án lần này hơi gấp."
+      },
+      "tags": [
+        "schedule",
+        "pm"
+      ]
+    },
+    {
+      "id": "w-gongsu",
+      "ko": "공수",
+      "vi": "công số, khối lượng công (man-day/man-month)",
+      "romanization": "gongsu",
+      "example": {
+        "ko": "이 기능은 공수가 3일 정도 들 것 같습니다.",
+        "vi": "Chức năng này chắc tốn khoảng 3 ngày công."
+      },
+      "tags": [
+        "pm"
+      ]
+    },
+    {
+      "id": "w-magam",
+      "ko": "마감",
+      "vi": "hạn chót, deadline",
+      "romanization": "magam",
+      "example": {
+        "ko": "보고서 마감이 이번 주 금요일입니다.",
+        "vi": "Hạn chót nộp báo cáo là thứ Sáu tuần này."
+      },
+      "tags": [
+        "schedule"
+      ]
+    },
+    {
+      "id": "w-sanchulmul",
+      "ko": "산출물",
+      "vi": "sản phẩm bàn giao (deliverable: tài liệu, mã nguồn...)",
+      "romanization": "sanchulmul",
+      "example": {
+        "ko": "단계별 산출물을 정리해서 제출해 주세요.",
+        "vi": "Hãy tổng hợp và nộp sản phẩm bàn giao của từng giai đoạn."
+      },
+      "tags": [
+        "pm"
+      ]
+    },
+    {
+      "id": "w-beomwi",
+      "ko": "범위",
+      "vi": "phạm vi (scope)",
+      "romanization": "beomwi",
+      "example": {
+        "ko": "이 기능은 이번 계약 범위에 포함되지 않습니다.",
+        "vi": "Chức năng này không nằm trong phạm vi hợp đồng lần này."
+      },
+      "tags": [
+        "pm",
+        "business"
+      ]
+    },
+    {
+      "id": "w-hoeuirok",
+      "ko": "회의록",
+      "vi": "biên bản cuộc họp",
+      "romanization": "hoeuirok",
+      "example": {
+        "ko": "회의가 끝나면 회의록을 공유드리겠습니다.",
+        "vi": "Họp xong tôi sẽ chia sẻ biên bản cuộc họp ạ."
+      },
+      "tags": [
+        "meeting"
+      ]
+    },
+    {
+      "id": "w-angeon",
+      "ko": "안건",
+      "vi": "nội dung cần bàn trong cuộc họp (agenda)",
+      "romanization": "angeon",
+      "example": {
+        "ko": "오늘 회의 안건은 세 가지입니다.",
+        "vi": "Cuộc họp hôm nay có ba nội dung cần bàn."
+      },
+      "tags": [
+        "meeting"
+      ]
+    },
+    {
+      "id": "w-chamseok",
+      "ko": "참석",
+      "vi": "tham dự",
+      "romanization": "chamseok",
+      "example": {
+        "ko": "내일 회의에 참석 가능하신가요?",
+        "vi": "Ngày mai anh/chị có tham dự cuộc họp được không ạ?"
+      },
+      "tags": [
+        "meeting"
+      ]
+    },
+    {
+      "id": "w-bogo",
+      "ko": "보고",
+      "vi": "báo cáo",
+      "romanization": "bogo",
+      "example": {
+        "ko": "진행 상황을 팀장님께 보고드렸습니다.",
+        "vi": "Tôi đã báo cáo tình hình cho trưởng nhóm rồi ạ."
+      },
+      "tags": [
+        "report"
+      ]
+    },
+    {
+      "id": "w-gongyu",
+      "ko": "공유",
+      "vi": "chia sẻ (thông tin, tài liệu)",
+      "romanization": "gongyu",
+      "example": {
+        "ko": "관련 자료를 메일로 공유드리겠습니다.",
+        "vi": "Tôi sẽ chia sẻ tài liệu liên quan qua email ạ."
+      },
+      "tags": [
+        "report",
+        "communication"
+      ]
+    },
+    {
+      "id": "w-jincheok",
+      "ko": "진척",
+      "vi": "tiến triển, tiến độ",
+      "romanization": "jincheok",
+      "example": {
+        "ko": "이번 주 진척 상황을 알려 주시겠어요?",
+        "vi": "Anh/chị cho tôi biết tiến độ tuần này được không ạ?"
+      },
+      "tags": [
+        "report"
+      ]
+    },
+    {
+      "id": "w-jincheongnyul",
+      "ko": "진척률",
+      "vi": "tỷ lệ tiến độ (%)",
+      "romanization": "jincheongnyul",
+      "example": {
+        "ko": "현재 전체 진척률은 70% 정도입니다.",
+        "vi": "Hiện tại tỷ lệ tiến độ tổng thể khoảng 70%."
+      },
+      "tags": [
+        "report",
+        "pm"
+      ]
+    },
+    {
+      "id": "w-hwagin-butakdeurimnida",
+      "ko": "확인 부탁드립니다",
+      "vi": "nhờ anh/chị kiểm tra giúp ạ (câu kết email rất hay dùng)",
+      "romanization": "hwagin butakdeurimnida",
+      "example": {
+        "ko": "첨부한 자료 확인 부탁드립니다.",
+        "vi": "Nhờ anh/chị kiểm tra giúp tài liệu đính kèm ạ."
+      },
+      "tags": [
+        "email",
+        "request"
+      ]
+    },
+    {
+      "id": "w-hoesin",
+      "ko": "회신",
+      "vi": "hồi âm, trả lời (email)",
+      "romanization": "hoesin",
+      "example": {
+        "ko": "내일까지 회신 부탁드립니다.",
+        "vi": "Mong anh/chị hồi âm trước ngày mai ạ."
+      },
+      "tags": [
+        "email"
+      ]
+    },
+    {
+      "id": "w-chamjo",
+      "ko": "참조",
+      "vi": "CC (đồng gửi email); tham khảo",
+      "romanization": "chamjo",
+      "example": {
+        "ko": "이 메일은 팀장님도 참조로 넣었습니다.",
+        "vi": "Email này tôi cũng đã CC cho trưởng nhóm."
+      },
+      "tags": [
+        "email"
+      ]
+    },
+    {
+      "id": "w-cheombu",
+      "ko": "첨부",
+      "vi": "đính kèm",
+      "romanization": "cheombu",
+      "example": {
+        "ko": "견적서를 첨부해서 보내 드립니다.",
+        "vi": "Tôi gửi kèm bảng báo giá ạ."
+      },
+      "tags": [
+        "email"
+      ]
+    },
+    {
+      "id": "w-cheombu-pail",
+      "ko": "첨부 파일",
+      "vi": "tệp đính kèm",
+      "romanization": "cheombu pail",
+      "example": {
+        "ko": "첨부 파일이 열리지 않으면 말씀해 주세요.",
+        "vi": "Nếu không mở được tệp đính kèm thì anh/chị cứ báo tôi nhé."
+      },
+      "tags": [
+        "email"
+      ]
+    },
+    {
+      "id": "w-yanghae-butakdeurimnida",
+      "ko": "양해 부탁드립니다",
+      "vi": "mong anh/chị thông cảm (lịch sự, dùng khi gây bất lợi cho đối phương)",
+      "romanization": "yanghae butakdeurimnida",
+      "example": {
+        "ko": "일정이 하루 늦어지는 점 양해 부탁드립니다.",
+        "vi": "Mong anh/chị thông cảm vì lịch bị trễ một ngày."
+      },
+      "tags": [
+        "request",
+        "apology"
+      ]
+    },
+    {
+      "id": "w-bulpyeoneul-deuryeo-joesonghamnida",
+      "ko": "불편을 드려 죄송합니다",
+      "vi": "xin lỗi vì đã gây bất tiện",
+      "romanization": "bulpyeoneul deuryeo joesonghamnida",
+      "example": {
+        "ko": "회의 시간이 갑자기 변경되어 불편을 드려 죄송합니다.",
+        "vi": "Giờ họp bị thay đổi đột ngột, xin lỗi vì đã gây bất tiện ạ."
+      },
+      "tags": [
+        "apology"
+      ]
+    },
+    {
+      "id": "w-gyeonjeok",
+      "ko": "견적",
+      "vi": "báo giá (ước tính chi phí)",
+      "romanization": "gyeonjeok",
+      "example": {
+        "ko": "추가 기능에 대한 견적을 내 주시겠어요?",
+        "vi": "Anh/chị có thể báo giá cho chức năng bổ sung được không ạ?"
+      },
+      "tags": [
+        "business"
+      ]
+    },
+    {
+      "id": "w-gyeonjeokseo",
+      "ko": "견적서",
+      "vi": "bảng báo giá",
+      "romanization": "gyeonjeokseo",
+      "example": {
+        "ko": "수정된 견적서를 다시 보내 드리겠습니다.",
+        "vi": "Tôi sẽ gửi lại bảng báo giá đã chỉnh sửa ạ."
+      },
+      "tags": [
+        "business"
+      ]
+    },
+    {
+      "id": "w-gyeyak",
+      "ko": "계약",
+      "vi": "hợp đồng",
+      "romanization": "gyeyak",
+      "example": {
+        "ko": "다음 달 초에 계약을 체결할 예정입니다.",
+        "vi": "Dự kiến đầu tháng sau sẽ ký hợp đồng."
+      },
+      "tags": [
+        "business"
+      ]
+    },
+    {
+      "id": "w-gyeyakseo",
+      "ko": "계약서",
+      "vi": "văn bản hợp đồng",
+      "romanization": "gyeyakseo",
+      "example": {
+        "ko": "계약서 내용을 꼼꼼히 검토해 주세요.",
+        "vi": "Hãy xem kỹ nội dung văn bản hợp đồng."
+      },
+      "tags": [
+        "business"
+      ]
+    },
+    {
+      "id": "w-geomsu",
+      "ko": "검수",
+      "vi": "nghiệm thu",
+      "romanization": "geomsu",
+      "example": {
+        "ko": "고객사 검수가 끝나야 대금이 지급됩니다.",
+        "vi": "Phải nghiệm thu xong bên khách hàng thì mới được thanh toán."
+      },
+      "tags": [
+        "business",
+        "pm"
+      ]
+    },
+    {
+      "id": "w-gogaeksa",
+      "ko": "고객사",
+      "vi": "công ty khách hàng",
+      "romanization": "gogaeksa",
+      "example": {
+        "ko": "오후에 고객사 담당자와 미팅이 잡혀 있습니다.",
+        "vi": "Buổi chiều có lịch gặp người phụ trách bên khách hàng."
+      },
+      "tags": [
+        "business"
+      ]
+    },
+    {
+      "id": "w-hyeomnyeoksa",
+      "ko": "협력사",
+      "vi": "công ty đối tác (thường là bên nhận thầu)",
+      "romanization": "hyeomnyeoksa",
+      "example": {
+        "ko": "저희는 협력사로서 개발 업무를 맡고 있습니다.",
+        "vi": "Chúng tôi đảm nhận phần phát triển với tư cách công ty đối tác."
+      },
+      "tags": [
+        "business"
+      ]
+    },
+    {
+      "id": "w-timjangnim",
+      "ko": "팀장님",
+      "vi": "trưởng nhóm (cách gọi kính ngữ)",
+      "romanization": "timjangnim",
+      "example": {
+        "ko": "팀장님, 잠깐 시간 괜찮으세요?",
+        "vi": "Trưởng nhóm ơi, anh/chị có rảnh một chút không ạ?"
+      },
+      "tags": [
+        "title"
+      ]
+    },
+    {
+      "id": "w-daerinim",
+      "ko": "대리님",
+      "vi": "anh/chị 대리 (chức danh nhân viên có kinh nghiệm, trên 사원)",
+      "romanization": "daerinim",
+      "example": {
+        "ko": "대리님, 회의 자료 준비됐습니다.",
+        "vi": "Anh/chị 대리 ơi, tài liệu họp đã chuẩn bị xong rồi ạ."
+      },
+      "tags": [
+        "title"
+      ]
+    },
+    {
+      "id": "w-chaegimnim",
+      "ko": "책임님",
+      "vi": "anh/chị 책임 (chức danh kỹ sư cấp trung ở LG, Samsung...)",
+      "romanization": "chaegimnim",
+      "example": {
+        "ko": "책임님, 이 부분은 어떻게 처리할까요?",
+        "vi": "Anh/chị 책임 ơi, phần này nên xử lý thế nào ạ?"
+      },
+      "tags": [
+        "title"
+      ]
+    },
+    {
+      "id": "w-damdangja",
+      "ko": "담당자",
+      "vi": "người phụ trách",
+      "romanization": "damdangja",
+      "example": {
+        "ko": "이 건의 담당자가 누구신가요?",
+        "vi": "Người phụ trách việc này là ai ạ?"
+      },
+      "tags": [
+        "title",
+        "business"
+      ]
+    },
+    {
+      "id": "w-iljeong-joyul",
+      "ko": "일정을 조율하다",
+      "vi": "điều phối, thống nhất lịch",
+      "romanization": "iljeongeul joyulhada",
+      "example": {
+        "ko": "회의 일정을 조율해서 다시 연락드리겠습니다.",
+        "vi": "Tôi sẽ thống nhất lịch họp rồi liên lạc lại ạ."
+      },
+      "tags": [
+        "schedule"
+      ]
+    },
+    {
+      "id": "w-uigyeon-deurida",
+      "ko": "의견을 드리다",
+      "vi": "gửi ý kiến, góp ý (khiêm nhường)",
+      "romanization": "uigyeoneul deurida",
+      "example": {
+        "ko": "검토 후에 의견을 드리겠습니다.",
+        "vi": "Sau khi xem xét tôi sẽ gửi ý kiến ạ."
+      },
+      "tags": [
+        "communication"
+      ]
+    },
+    {
+      "id": "w-gwajangnim",
+      "ko": "과장님",
+      "vi": "anh/chị 과장 (chức danh trên 대리)",
+      "romanization": "gwajangnim",
+      "example": {
+        "ko": "과장님께서 오후 회의에 들어오신다고 합니다.",
+        "vi": "Nghe nói anh/chị 과장 sẽ vào họp buổi chiều."
+      },
+      "tags": [
+        "title"
+      ]
+    },
+    {
+      "id": "w-bujangnim",
+      "ko": "부장님",
+      "vi": "trưởng phòng (kính ngữ)",
+      "romanization": "bujangnim",
+      "example": {
+        "ko": "부장님께서 다음 주에 출장을 가십니다.",
+        "vi": "Trưởng phòng sẽ đi công tác vào tuần sau."
+      },
+      "tags": [
+        "title"
+      ]
+    },
+    {
+      "id": "w-suseongnim",
+      "ko": "수석님",
+      "vi": "anh/chị 수석 (chức danh chuyên gia cấp cao, trên 책임)",
+      "romanization": "suseongnim",
+      "example": {
+        "ko": "수석님께서 기술 검토를 해 주셨습니다.",
+        "vi": "Anh/chị 수석 đã xem xét về mặt kỹ thuật giúp chúng tôi."
+      },
+      "tags": [
+        "title"
+      ]
+    },
+    {
+      "id": "w-seonimnim",
+      "ko": "선임님",
+      "vi": "anh/chị 선임 (chức danh kỹ sư, dưới 책임)",
+      "romanization": "seonimnim",
+      "example": {
+        "ko": "선임님, 자료 받으셨는지 확인 부탁드립니다.",
+        "vi": "Anh/chị 선임 ơi, nhờ anh/chị kiểm tra xem đã nhận tài liệu chưa ạ."
+      },
+      "tags": [
+        "title"
+      ]
+    },
+    {
+      "id": "w-daepyonim",
+      "ko": "대표님",
+      "vi": "giám đốc điều hành, CEO (kính ngữ)",
+      "romanization": "daepyonim",
+      "example": {
+        "ko": "내일 고객사 대표님이 직접 방문하십니다.",
+        "vi": "Ngày mai giám đốc bên khách hàng sẽ trực tiếp đến thăm."
+      },
+      "tags": [
+        "title",
+        "business"
+      ]
+    },
+    {
+      "id": "w-hoching",
+      "ko": "호칭",
+      "vi": "cách xưng hô",
+      "romanization": "hoching",
+      "example": {
+        "ko": "한국 회사에서는 호칭을 정확하게 쓰는 것이 중요합니다.",
+        "vi": "Ở công ty Hàn Quốc, dùng đúng cách xưng hô là rất quan trọng."
+      },
+      "tags": [
+        "title",
+        "communication"
+      ]
+    },
+    {
+      "id": "w-gyeoljae",
+      "ko": "결재",
+      "vi": "phê duyệt (cấp trên ký duyệt văn bản)",
+      "romanization": "gyeoljae",
+      "example": {
+        "ko": "이 문서는 부장님 결재가 필요합니다.",
+        "vi": "Văn bản này cần trưởng phòng phê duyệt."
+      },
+      "tags": [
+        "business"
+      ]
+    },
+    {
+      "id": "w-seungin",
+      "ko": "승인",
+      "vi": "chấp thuận, phê duyệt",
+      "romanization": "seungin",
+      "example": {
+        "ko": "고객사의 승인을 받은 후에 진행하겠습니다.",
+        "vi": "Sau khi được khách hàng chấp thuận, chúng tôi sẽ tiến hành."
+      },
+      "tags": [
+        "business",
+        "request"
+      ]
+    },
+    {
+      "id": "w-hyeobui",
+      "ko": "협의",
+      "vi": "bàn bạc, thỏa thuận",
+      "romanization": "hyeobui",
+      "example": {
+        "ko": "세부 사항은 고객사와 협의 중입니다.",
+        "vi": "Các chi tiết đang được bàn bạc với khách hàng."
+      },
+      "tags": [
+        "communication",
+        "business"
+      ]
+    },
+    {
+      "id": "w-geomto",
+      "ko": "검토",
+      "vi": "xem xét, rà soát (review)",
+      "romanization": "geomto",
+      "example": {
+        "ko": "보내 주신 자료를 검토해 보겠습니다.",
+        "vi": "Tôi sẽ xem xét tài liệu anh/chị đã gửi ạ."
+      },
+      "tags": [
+        "communication"
+      ]
+    },
+    {
+      "id": "w-munui",
+      "ko": "문의",
+      "vi": "hỏi, thắc mắc (inquiry)",
+      "romanization": "munui",
+      "example": {
+        "ko": "궁금한 점이 있으시면 언제든지 문의해 주세요.",
+        "vi": "Nếu có thắc mắc gì, anh/chị cứ hỏi bất cứ lúc nào ạ."
+      },
+      "tags": [
+        "email",
+        "communication"
+      ]
+    },
+    {
+      "id": "w-yeollakdeurigetseumnida",
+      "ko": "연락드리겠습니다",
+      "vi": "tôi sẽ liên lạc (lại) ạ",
+      "romanization": "yeollakdeurigetseumnida",
+      "example": {
+        "ko": "확인 후 다시 연락드리겠습니다.",
+        "vi": "Kiểm tra xong tôi sẽ liên lạc lại ạ."
+      },
+      "tags": [
+        "email",
+        "communication"
+      ]
+    },
+    {
+      "id": "w-sugo-manheusimnida",
+      "ko": "수고 많으십니다",
+      "vi": "anh/chị vất vả rồi ạ (câu chào mở đầu email)",
+      "romanization": "sugo manheusimnida",
+      "example": {
+        "ko": "안녕하세요, 김 팀장님. 수고 많으십니다.",
+        "vi": "Chào trưởng nhóm Kim, anh/chị vất vả rồi ạ."
+      },
+      "tags": [
+        "email"
+      ]
+    },
+    {
+      "id": "w-jal-butakdeurimnida",
+      "ko": "잘 부탁드립니다",
+      "vi": "rất mong được giúp đỡ, hợp tác",
+      "romanization": "jal butakdeurimnida",
+      "example": {
+        "ko": "앞으로 이 프로젝트에서 잘 부탁드립니다.",
+        "vi": "Rất mong được anh/chị giúp đỡ trong dự án này ạ."
+      },
+      "tags": [
+        "communication"
+      ]
+    },
+    {
+      "id": "w-malsseumhasin",
+      "ko": "말씀하신",
+      "vi": "(điều) anh/chị đã nói (kính ngữ)",
+      "romanization": "malsseumhasin",
+      "example": {
+        "ko": "말씀하신 자료를 첨부했습니다.",
+        "vi": "Tôi đã đính kèm tài liệu anh/chị nói ạ."
+      },
+      "tags": [
+        "communication",
+        "email"
+      ]
+    },
+    {
+      "id": "w-annae",
+      "ko": "안내",
+      "vi": "hướng dẫn, thông báo",
+      "romanization": "annae",
+      "example": {
+        "ko": "회의 장소는 메일로 안내드리겠습니다.",
+        "vi": "Địa điểm họp tôi sẽ thông báo qua email ạ."
+      },
+      "tags": [
+        "email"
+      ]
+    },
+    {
+      "id": "w-byeongyeong-sahang",
+      "ko": "변경 사항",
+      "vi": "các điểm thay đổi",
+      "romanization": "byeongyeong sahang",
+      "example": {
+        "ko": "변경 사항이 있으면 바로 알려 주세요.",
+        "vi": "Nếu có thay đổi gì, hãy báo ngay cho tôi."
+      },
+      "tags": [
+        "pm",
+        "communication"
+      ]
+    },
+    {
+      "id": "w-jiyeon",
+      "ko": "지연",
+      "vi": "chậm trễ",
+      "romanization": "jiyeon",
+      "example": {
+        "ko": "자료 준비가 늦어져서 일정이 지연되었습니다.",
+        "vi": "Do chuẩn bị tài liệu muộn nên lịch bị chậm."
+      },
+      "tags": [
+        "schedule",
+        "apology"
+      ]
+    },
+    {
+      "id": "w-yeonjang",
+      "ko": "연장",
+      "vi": "gia hạn, kéo dài",
+      "romanization": "yeonjang",
+      "example": {
+        "ko": "마감 기한을 일주일 연장할 수 있을까요?",
+        "vi": "Có thể gia hạn hạn chót thêm một tuần được không ạ?"
+      },
+      "tags": [
+        "schedule",
+        "request"
+      ]
+    },
+    {
+      "id": "w-gihan",
+      "ko": "기한",
+      "vi": "thời hạn",
+      "romanization": "gihan",
+      "example": {
+        "ko": "제출 기한을 꼭 지켜 주세요.",
+        "vi": "Xin hãy tuân thủ thời hạn nộp."
+      },
+      "tags": [
+        "schedule"
+      ]
+    },
+    {
+      "id": "w-nappum",
+      "ko": "납품",
+      "vi": "giao hàng, bàn giao sản phẩm cho khách",
+      "romanization": "nappum",
+      "example": {
+        "ko": "최종 납품은 다음 달 말입니다.",
+        "vi": "Bàn giao cuối cùng là cuối tháng sau."
+      },
+      "tags": [
+        "business",
+        "pm"
+      ]
+    },
+    {
+      "id": "w-napgi",
+      "ko": "납기",
+      "vi": "thời hạn giao hàng/bàn giao",
+      "romanization": "napgi",
+      "example": {
+        "ko": "납기를 맞추기 위해 주말에도 작업했습니다.",
+        "vi": "Để kịp thời hạn bàn giao, chúng tôi làm cả cuối tuần."
+      },
+      "tags": [
+        "schedule",
+        "business"
+      ]
+    },
+    {
+      "id": "w-chaksu",
+      "ko": "착수",
+      "vi": "khởi động, bắt tay vào (dự án)",
+      "romanization": "chaksu",
+      "example": {
+        "ko": "다음 주 월요일에 프로젝트에 착수합니다.",
+        "vi": "Thứ Hai tuần sau chúng ta bắt đầu dự án."
+      },
+      "tags": [
+        "pm"
+      ]
+    },
+    {
+      "id": "w-chaksu-hoeui",
+      "ko": "착수 회의",
+      "vi": "họp khởi động dự án (kick-off)",
+      "romanization": "chaksu hoeui",
+      "example": {
+        "ko": "착수 회의에서 프로젝트 목표를 공유했습니다.",
+        "vi": "Chúng tôi đã chia sẻ mục tiêu dự án trong buổi họp khởi động."
+      },
+      "tags": [
+        "meeting",
+        "pm"
+      ]
+    },
+    {
+      "id": "w-wallyo-bogo",
+      "ko": "완료 보고",
+      "vi": "báo cáo hoàn thành",
+      "romanization": "wallyo bogo",
+      "example": {
+        "ko": "작업이 끝나면 완료 보고를 해 주세요.",
+        "vi": "Làm xong việc thì hãy báo cáo hoàn thành nhé."
+      },
+      "tags": [
+        "report"
+      ]
+    },
+    {
+      "id": "w-jugan-bogo",
+      "ko": "주간 보고",
+      "vi": "báo cáo tuần",
+      "romanization": "jugan bogo",
+      "example": {
+        "ko": "매주 금요일에 주간 보고를 작성합니다.",
+        "vi": "Thứ Sáu hằng tuần chúng tôi viết báo cáo tuần."
+      },
+      "tags": [
+        "report"
+      ]
+    },
+    {
+      "id": "w-jeonggi-hoeui",
+      "ko": "정기 회의",
+      "vi": "họp định kỳ",
+      "romanization": "jeonggi hoeui",
+      "example": {
+        "ko": "정기 회의는 매주 화요일 오전 10시입니다.",
+        "vi": "Họp định kỳ vào 10 giờ sáng thứ Ba hằng tuần."
+      },
+      "tags": [
+        "meeting"
+      ]
+    },
+    {
+      "id": "w-hoeuisil",
+      "ko": "회의실",
+      "vi": "phòng họp",
+      "romanization": "hoeuisil",
+      "example": {
+        "ko": "3층 회의실을 예약해 두었습니다.",
+        "vi": "Tôi đã đặt sẵn phòng họp tầng 3."
+      },
+      "tags": [
+        "meeting"
+      ]
+    },
+    {
+      "id": "w-hwasang-hoeui",
+      "ko": "화상 회의",
+      "vi": "họp trực tuyến (qua video)",
+      "romanization": "hwasang hoeui",
+      "example": {
+        "ko": "오늘 회의는 화상 회의로 진행하겠습니다.",
+        "vi": "Cuộc họp hôm nay sẽ tổ chức trực tuyến."
+      },
+      "tags": [
+        "meeting"
+      ]
+    },
+    {
+      "id": "w-bulcham",
+      "ko": "불참",
+      "vi": "vắng mặt, không tham dự",
+      "romanization": "bulcham",
+      "example": {
+        "ko": "개인 사정으로 내일 회의에 불참하게 되었습니다.",
+        "vi": "Vì việc riêng nên tôi không thể tham dự cuộc họp ngày mai."
+      },
+      "tags": [
+        "meeting"
+      ]
+    },
+    {
+      "id": "w-gyeoljeong-sahang",
+      "ko": "결정 사항",
+      "vi": "các nội dung đã quyết định",
+      "romanization": "gyeoljeong sahang",
+      "example": {
+        "ko": "회의 결정 사항을 정리해서 공유드리겠습니다.",
+        "vi": "Tôi sẽ tổng hợp các nội dung đã quyết định trong cuộc họp và chia sẻ ạ."
+      },
+      "tags": [
+        "meeting"
+      ]
+    },
+    {
+      "id": "w-husok-jochi",
+      "ko": "후속 조치",
+      "vi": "việc cần làm tiếp theo (follow-up)",
+      "romanization": "husok jochi",
+      "example": {
+        "ko": "회의 후속 조치를 담당자별로 정리했습니다.",
+        "vi": "Tôi đã tổng hợp các việc cần làm sau cuộc họp theo từng người phụ trách."
+      },
+      "tags": [
+        "meeting",
+        "pm"
+      ]
+    },
+    {
+      "id": "w-isyu-sahang",
+      "ko": "이슈 사항",
+      "vi": "vấn đề phát sinh (issue)",
+      "romanization": "isyu sahang",
+      "example": {
+        "ko": "현재 특별한 이슈 사항은 없습니다.",
+        "vi": "Hiện tại không có vấn đề gì đặc biệt."
+      },
+      "tags": [
+        "report"
+      ]
+    },
+    {
+      "id": "w-riseukeu",
+      "ko": "리스크",
+      "vi": "rủi ro",
+      "romanization": "riseukeu",
+      "example": {
+        "ko": "일정 지연 리스크를 미리 보고드립니다.",
+        "vi": "Tôi xin báo cáo trước rủi ro chậm tiến độ ạ."
+      },
+      "tags": [
+        "pm",
+        "report"
+      ]
+    },
+    {
+      "id": "w-useonsunwi",
+      "ko": "우선순위",
+      "vi": "thứ tự ưu tiên",
+      "romanization": "useonsunwi",
+      "example": {
+        "ko": "우선순위를 정해 주시면 그에 맞춰 진행하겠습니다.",
+        "vi": "Nếu anh/chị quyết định thứ tự ưu tiên, chúng tôi sẽ làm theo đó."
+      },
+      "tags": [
+        "pm"
+      ]
+    },
+    {
+      "id": "w-eommu-bundam",
+      "ko": "업무 분담",
+      "vi": "phân chia công việc",
+      "romanization": "eommu bundam",
+      "example": {
+        "ko": "팀원 간 업무 분담을 다시 조정했습니다.",
+        "vi": "Chúng tôi đã điều chỉnh lại việc phân chia công việc giữa các thành viên."
+      },
+      "tags": [
+        "pm"
+      ]
+    },
+    {
+      "id": "w-insuingye",
+      "ko": "인수인계",
+      "vi": "bàn giao công việc (giữa người với người)",
+      "romanization": "insuingye",
+      "example": {
+        "ko": "휴가 가기 전에 업무 인수인계를 해 주세요.",
+        "vi": "Trước khi nghỉ phép, hãy bàn giao công việc nhé."
+      },
+      "tags": [
+        "pm",
+        "communication"
+      ]
+    },
+    {
+      "id": "w-tuip",
+      "ko": "투입",
+      "vi": "đưa (nhân sự) vào dự án",
+      "romanization": "tuip",
+      "example": {
+        "ko": "다음 달부터 개발자 두 명이 추가로 투입됩니다.",
+        "vi": "Từ tháng sau sẽ bổ sung thêm hai lập trình viên vào dự án."
+      },
+      "tags": [
+        "pm"
+      ]
+    },
+    {
+      "id": "w-yesan",
+      "ko": "예산",
+      "vi": "ngân sách",
+      "romanization": "yesan",
+      "example": {
+        "ko": "고객사 예산에 맞춰 범위를 조정했습니다.",
+        "vi": "Chúng tôi đã điều chỉnh phạm vi cho phù hợp với ngân sách của khách hàng."
+      },
+      "tags": [
+        "business"
+      ]
+    },
+    {
+      "id": "w-biyong",
+      "ko": "비용",
+      "vi": "chi phí",
+      "romanization": "biyong",
+      "example": {
+        "ko": "추가 기능은 별도 비용이 발생합니다.",
+        "vi": "Chức năng bổ sung sẽ phát sinh chi phí riêng."
+      },
+      "tags": [
+        "business"
+      ]
+    },
+    {
+      "id": "w-daegeum",
+      "ko": "대금",
+      "vi": "tiền thanh toán (theo hợp đồng)",
+      "romanization": "daegeum",
+      "example": {
+        "ko": "대금은 매월 말에 지급됩니다.",
+        "vi": "Tiền thanh toán được chi trả vào cuối mỗi tháng."
+      },
+      "tags": [
+        "business"
+      ]
+    },
+    {
+      "id": "w-chuga-yocheong",
+      "ko": "추가 요청",
+      "vi": "yêu cầu bổ sung",
+      "romanization": "chuga yocheong",
+      "example": {
+        "ko": "계약 범위 밖의 추가 요청은 별도로 협의해야 합니다.",
+        "vi": "Yêu cầu bổ sung ngoài phạm vi hợp đồng cần thỏa thuận riêng."
+      },
+      "tags": [
+        "request",
+        "business"
+      ]
+    },
+    {
+      "id": "w-jeanseo",
+      "ko": "제안서",
+      "vi": "bản đề xuất (proposal)",
+      "romanization": "jeanseo",
+      "example": {
+        "ko": "다음 주까지 제안서를 제출해야 합니다.",
+        "vi": "Phải nộp bản đề xuất trước tuần sau."
+      },
+      "tags": [
+        "business"
+      ]
+    },
+    {
+      "id": "w-balpyo",
+      "ko": "발표",
+      "vi": "thuyết trình, trình bày",
+      "romanization": "balpyo",
+      "example": {
+        "ko": "제가 이번 주 진행 상황을 발표하겠습니다.",
+        "vi": "Tôi xin trình bày tình hình tuần này ạ."
+      },
+      "tags": [
+        "meeting",
+        "report"
+      ]
+    },
+    {
+      "id": "w-jiruieungdap",
+      "ko": "질의응답",
+      "vi": "hỏi đáp (Q&A)",
+      "romanization": "jiruieungdap",
+      "example": {
+        "ko": "발표 후에 질의응답 시간이 있겠습니다.",
+        "vi": "Sau phần thuyết trình sẽ có thời gian hỏi đáp."
+      },
+      "tags": [
+        "meeting"
+      ]
+    },
+    {
+      "id": "w-silsu",
+      "ko": "실수",
+      "vi": "sai sót, nhầm lẫn",
+      "romanization": "silsu",
+      "example": {
+        "ko": "제 실수로 잘못된 파일을 보내 드렸습니다. 죄송합니다.",
+        "vi": "Do sơ suất của tôi nên đã gửi nhầm tệp. Tôi xin lỗi ạ."
+      },
+      "tags": [
+        "apology"
+      ]
+    },
+    {
+      "id": "w-joesonghajiman",
+      "ko": "죄송하지만",
+      "vi": "xin lỗi nhưng... (mở đầu lời nhờ vả lịch sự)",
+      "romanization": "joesonghajiman",
+      "example": {
+        "ko": "죄송하지만 회의 시간을 30분 늦출 수 있을까요?",
+        "vi": "Xin lỗi nhưng có thể lùi giờ họp 30 phút được không ạ?"
+      },
+      "tags": [
+        "request",
+        "apology"
+      ]
+    },
+    {
+      "id": "w-hoksi",
+      "ko": "혹시",
+      "vi": "không biết là..., liệu (mở đầu câu hỏi lịch sự)",
+      "romanization": "hoksi",
+      "example": {
+        "ko": "혹시 내일 오후에 시간 괜찮으신가요?",
+        "vi": "Không biết chiều mai anh/chị có rảnh không ạ?"
+      },
+      "tags": [
+        "request",
+        "communication"
+      ]
+    },
+    {
+      "id": "w-sillyejiman",
+      "ko": "실례지만",
+      "vi": "xin thất lễ, cho tôi hỏi...",
+      "romanization": "sillyejiman",
+      "example": {
+        "ko": "실례지만 어느 부서에서 오셨나요?",
+        "vi": "Xin thất lễ, anh/chị đến từ phòng ban nào ạ?"
+      },
+      "tags": [
+        "communication"
+      ]
+    },
+    {
+      "id": "w-geomtohae-jusimyeon-gamsahagetseumnida",
+      "ko": "검토해 주시면 감사하겠습니다",
+      "vi": "rất cảm ơn nếu anh/chị xem xét giúp",
+      "romanization": "geomtohae jusimyeon gamsahagetseumnida",
+      "example": {
+        "ko": "제안서를 검토해 주시면 감사하겠습니다.",
+        "vi": "Rất cảm ơn nếu anh/chị xem xét giúp bản đề xuất ạ."
+      },
+      "tags": [
+        "request",
+        "email"
+      ]
+    },
+    {
+      "id": "w-dareumi-anira",
+      "ko": "다름이 아니라",
+      "vi": "chả là..., chuyện là... (mở đầu vào việc chính)",
+      "romanization": "dareumi anira",
+      "example": {
+        "ko": "다름이 아니라 다음 주 회의 일정 때문에 연락드렸습니다.",
+        "vi": "Chả là tôi liên lạc về lịch họp tuần sau ạ."
+      },
+      "tags": [
+        "email",
+        "communication"
+      ]
+    },
+    {
+      "id": "w-gwallyeonhayeo",
+      "ko": "관련하여",
+      "vi": "liên quan đến... (văn viết trang trọng)",
+      "romanization": "gwallyeonhayeo",
+      "example": {
+        "ko": "계약 조건과 관련하여 몇 가지 문의드립니다.",
+        "vi": "Tôi xin hỏi vài điều liên quan đến điều kiện hợp đồng ạ."
+      },
+      "tags": [
+        "email"
+      ]
+    },
+    {
+      "id": "w-jinhaeng-sanghwang",
+      "ko": "진행 상황",
+      "vi": "tình hình thực hiện",
+      "romanization": "jinhaeng sanghwang",
+      "example": {
+        "ko": "진행 상황을 수시로 공유해 주세요.",
+        "vi": "Hãy thường xuyên chia sẻ tình hình thực hiện."
+      },
+      "tags": [
+        "report"
+      ]
+    },
+    {
+      "id": "w-mamuri",
+      "ko": "마무리",
+      "vi": "hoàn tất, kết thúc",
+      "romanization": "mamuri",
+      "example": {
+        "ko": "이번 주 안에 작업을 마무리하겠습니다.",
+        "vi": "Tôi sẽ hoàn tất công việc trong tuần này."
+      },
+      "tags": [
+        "pm"
+      ]
+    },
+    {
+      "id": "w-sujeong-yocheong",
+      "ko": "수정 요청",
+      "vi": "yêu cầu chỉnh sửa",
+      "romanization": "sujeong yocheong",
+      "example": {
+        "ko": "고객사의 수정 요청을 모두 반영했습니다.",
+        "vi": "Chúng tôi đã áp dụng toàn bộ yêu cầu chỉnh sửa của khách hàng."
+      },
+      "tags": [
+        "request"
+      ]
+    },
+    {
+      "id": "w-pideubaek",
+      "ko": "피드백",
+      "vi": "phản hồi, góp ý (feedback)",
+      "romanization": "pideubaek",
+      "example": {
+        "ko": "피드백 주시면 빠르게 수정하겠습니다.",
+        "vi": "Anh/chị góp ý thì chúng tôi sẽ sửa nhanh ạ."
+      },
+      "tags": [
+        "communication"
+      ]
+    },
+    {
+      "id": "w-sangju",
+      "ko": "상주",
+      "vi": "làm việc thường trú tại chỗ (onsite ở khách hàng)",
+      "romanization": "sangju",
+      "example": {
+        "ko": "저는 고객사에 상주하면서 일하고 있습니다.",
+        "vi": "Tôi đang làm việc onsite tại công ty khách hàng."
+      },
+      "tags": [
+        "business"
+      ]
+    },
+    {
+      "id": "w-iljeong-apdanggida",
+      "ko": "일정을 앞당기다",
+      "vi": "đẩy lịch lên sớm hơn",
+      "romanization": "iljeongeul apdanggida",
+      "example": {
+        "ko": "고객사 요청으로 일정을 일주일 앞당겼습니다.",
+        "vi": "Theo yêu cầu của khách hàng, lịch đã được đẩy sớm lên một tuần."
+      },
+      "tags": [
+        "schedule"
+      ]
+    },
+    {
+      "id": "w-iljeong-millida",
+      "ko": "일정이 밀리다",
+      "vi": "lịch bị lùi, bị trễ",
+      "romanization": "iljeongi millida",
+      "example": {
+        "ko": "다른 업무 때문에 일정이 조금 밀렸습니다.",
+        "vi": "Vì công việc khác nên lịch bị lùi một chút."
+      },
+      "tags": [
+        "schedule"
+      ]
+    },
+    {
+      "id": "w-sigan-doesil-ttae",
+      "ko": "시간 되실 때",
+      "vi": "khi nào anh/chị có thời gian",
+      "romanization": "sigan doesil ttae",
+      "example": {
+        "ko": "시간 되실 때 자료 한번 봐 주세요.",
+        "vi": "Khi nào anh/chị có thời gian thì xem qua tài liệu giúp tôi nhé."
+      },
+      "tags": [
+        "request"
+      ]
+    },
+    {
+      "id": "w-hoesin-gidarigetseumnida",
+      "ko": "회신 기다리겠습니다",
+      "vi": "tôi xin chờ hồi âm (câu kết email)",
+      "romanization": "hoesin gidarigetseumnida",
+      "example": {
+        "ko": "검토하신 후 회신 기다리겠습니다.",
+        "vi": "Tôi xin chờ hồi âm sau khi anh/chị xem xét ạ."
+      },
+      "tags": [
+        "email"
+      ]
+    },
+    {
+      "id": "w-hwaginhaetseumnida",
+      "ko": "확인했습니다",
+      "vi": "tôi đã xem/đã xác nhận",
+      "romanization": "hwaginhaetseumnida",
+      "example": {
+        "ko": "보내 주신 메일 확인했습니다.",
+        "vi": "Tôi đã xem email anh/chị gửi ạ."
+      },
+      "tags": [
+        "email",
+        "communication"
+      ]
+    },
+    {
+      "id": "w-allyeo-jusimyeon",
+      "ko": "알려 주시면",
+      "vi": "nếu anh/chị cho biết",
+      "romanization": "allyeo jusimyeon",
+      "example": {
+        "ko": "가능한 시간을 알려 주시면 일정을 맞추겠습니다.",
+        "vi": "Nếu anh/chị cho biết thời gian rảnh, tôi sẽ sắp xếp lịch cho phù hợp."
+      },
+      "tags": [
+        "request"
+      ]
+    },
+    {
+      "id": "w-balju",
+      "ko": "발주",
+      "vi": "đặt hàng, giao thầu (phía khách hàng)",
+      "romanization": "balju",
+      "example": {
+        "ko": "고객사에서 2차 개발을 발주했습니다.",
+        "vi": "Khách hàng đã đặt hàng giai đoạn phát triển thứ hai."
+      },
+      "tags": [
+        "business"
+      ]
+    },
+    {
+      "id": "w-baljusa",
+      "ko": "발주사",
+      "vi": "bên đặt hàng, chủ đầu tư",
+      "romanization": "baljusa",
+      "example": {
+        "ko": "발주사의 요구에 맞춰 일정을 다시 짰습니다.",
+        "vi": "Chúng tôi đã lập lại lịch theo yêu cầu của bên đặt hàng."
+      },
+      "tags": [
+        "business"
+      ]
+    },
+    {
+      "id": "w-miting",
+      "ko": "미팅",
+      "vi": "buổi gặp, cuộc họp (meeting)",
+      "romanization": "miting",
+      "example": {
+        "ko": "오후 3시에 고객사와 미팅이 있습니다.",
+        "vi": "3 giờ chiều có buổi họp với khách hàng."
+      },
+      "tags": [
+        "meeting"
+      ]
+    },
+    {
+      "id": "w-hyuga",
+      "ko": "휴가",
+      "vi": "nghỉ phép",
+      "romanization": "hyuga",
+      "example": {
+        "ko": "다음 주 월요일부터 수요일까지 휴가 예정입니다.",
+        "vi": "Tôi dự kiến nghỉ phép từ thứ Hai đến thứ Tư tuần sau."
+      },
+      "tags": [
+        "schedule",
+        "communication"
+      ]
+    },
+    {
+      "id": "w-jaetaek-geunmu",
+      "ko": "재택근무",
+      "vi": "làm việc tại nhà (remote)",
+      "romanization": "jaetaek geunmu",
+      "example": {
+        "ko": "내일은 재택근무라서 메신저로 연락 주시면 됩니다.",
+        "vi": "Ngày mai tôi làm việc ở nhà, anh/chị cứ liên hệ qua messenger là được ạ."
+      },
+      "tags": [
+        "communication"
+      ]
+    }
+  ]
+}
