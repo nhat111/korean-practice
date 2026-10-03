@@ -17,7 +17,8 @@ export function VoiceControl() {
   if (!isSpeechSupported()) return null;
 
   const hasMale = voices.some((v) => guessGender(v) === 'male');
-  const selected = voices.some((v) => v.voiceURI === prefs.voiceURI) ? prefs.voiceURI : '';
+  const chosen = voices.find((v) => v.voiceURI === prefs.voiceURI);
+  const selected = chosen ? prefs.voiceURI : '';
 
   return (
     <div className="stack-sm">
@@ -37,6 +38,11 @@ export function VoiceControl() {
         </select>
       </label>
       {voices.length === 0 && <p className="muted small">{vi.voice.none}</p>}
+      {chosen && (
+        <p className="muted small">
+          {vi.voice.selectedInfo(shortName(chosen.name), chosen.lang, chosen.localService)}
+        </p>
+      )}
       <label className="switch">
         <input type="checkbox" checked={prefs.deepVoice} onChange={(e) => setDeepVoice(e.target.checked)} />
         <span>{vi.voice.deep}</span>
