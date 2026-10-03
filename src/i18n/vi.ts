@@ -228,6 +228,7 @@ export const vi = {
     test: '▶ Nghe thử',
     change: 'Đổi giọng đọc (nam/nữ) →',
     none: 'Máy chưa có giọng tiếng Hàn nào. Hãy cài thêm theo hướng dẫn bên dưới.',
+    quality: { compact: 'cơ bản', enhanced: 'nâng cao', premium: 'cao cấp' },
     selectedInfo: (name: string, lang: string, local: boolean) =>
       `Đang chọn: ${name} (${lang}, ${local ? 'cài trên máy' : 'giọng online'}). Nếu nghe thử vẫn ra giọng khác, giọng này có thể chưa tải xong: vào Cài đặt của máy, mở mục giọng đọc tiếng Hàn và tải (hoặc tải lại) giọng đó, rồi khởi động lại trình duyệt.`,
     guide: {

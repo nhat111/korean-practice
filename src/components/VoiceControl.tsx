@@ -10,6 +10,15 @@ function shortName(name: string): string {
   return name.replace(/\s*-\s*Korean.*$/i, '').replace(/\s*Online \(Natural\)/i, '').trim() || name;
 }
 
+/** iOS/macOS ship the same voice in several qualities; tell them apart. */
+function quality(v: SpeechSynthesisVoice): string {
+  const id = `${v.voiceURI} ${v.name}`.toLowerCase();
+  if (id.includes('premium')) return ` · ${vi.voice.quality.premium}`;
+  if (id.includes('enhanced')) return ` · ${vi.voice.quality.enhanced}`;
+  if (id.includes('compact')) return ` · ${vi.voice.quality.compact}`;
+  return '';
+}
+
 /** Choose among the device's Korean voices, plus a lower-pitch option. */
 export function VoiceControl() {
   const prefs = usePrefs();
@@ -32,6 +41,7 @@ export function VoiceControl() {
               <option key={v.voiceURI} value={v.voiceURI}>
                 {shortName(v.name)}
                 {g !== 'unknown' ? ` (${vi.voice.gender[g]})` : ''}
+                {quality(v)}
               </option>
             );
           })}
@@ -40,7 +50,9 @@ export function VoiceControl() {
       {voices.length === 0 && <p className="muted small">{vi.voice.none}</p>}
       {chosen && (
         <p className="muted small">
-          {vi.voice.selectedInfo(shortName(chosen.name), chosen.lang, chosen.localService)}
+          {vi.voice.selectedInfo(shortName(chosen.name) + quality(chosen), chosen.lang, chosen.localService)}
+          <br />
+          <code className="small">{chosen.voiceURI}</code>
         </p>
       )}
       <label className="switch">
