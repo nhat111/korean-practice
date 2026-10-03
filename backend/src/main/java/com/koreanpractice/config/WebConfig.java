@@ -1,5 +1,6 @@
 package com.koreanpractice.config;
 
+import java.util.List;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +19,8 @@ public class WebConfig {
     @Bean
     FilterRegistrationBean<CorsFilter> corsFilter(AppProperties props) {
         var config = new CorsConfiguration();
-        config.setAllowedOrigins(props.corsAllowedOrigins());
+        // Patterns allow Vercel preview URLs, e.g. https://korean-practice-*.vercel.app.
+        config.setAllowedOriginPatterns(normalizeOrigins(props.corsAllowedOrigins()));
         config.addAllowedMethod("GET");
         config.addAllowedMethod("POST");
         config.addAllowedMethod("PUT");
@@ -39,5 +41,15 @@ public class WebConfig {
         bean.addUrlPatterns("/api/*");
         bean.setOrder(Ordered.HIGHEST_PRECEDENCE + 10);
         return bean;
+    }
+
+    /** Trims entries and drops trailing slashes: browsers send origins without them. */
+    static List<String> normalizeOrigins(List<String> origins) {
+        if (origins == null) return List.of();
+        return origins.stream()
+                .map(String::trim)
+                .map(o -> o.replaceAll("/+$", ""))
+                .filter(o -> !o.isEmpty())
+                .toList();
     }
 }

@@ -3,6 +3,13 @@ server:
   port: ${PORT:8080}
   # Render terminates TLS in front of the app.
   forward-headers-strategy: framework
+  # Finish in-flight requests when Render stops the instance.
+  shutdown: graceful
+  tomcat:
+    # A single learner: a few threads are plenty and save memory on the free tier.
+    threads:
+      max: 20
+      min-spare: 2
 
 spring:
   application:
@@ -12,6 +19,7 @@ spring:
 
 app:
   # Comma-separated origins allowed to call /api/** (the Vercel URL + local dev).
+  # Wildcards are allowed, e.g. https://korean-practice-*.vercel.app for preview deploys.
   cors-allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173,http://localhost:4173}
   # Optional shared secret. When set, every /api/** request except /api/health
   # must send it in the X-Access-Key header. Strongly recommended on a public URL,

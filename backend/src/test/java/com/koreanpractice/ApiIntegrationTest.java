@@ -34,7 +34,8 @@ class ApiIntegrationTest {
     @DynamicPropertySource
     static void props(DynamicPropertyRegistry r) {
         r.add("app.access-key", () -> KEY);
-        r.add("app.cors-allowed-origins", () -> ORIGIN);
+        // Trailing slash and a wildcard pattern, as users tend to paste them.
+        r.add("app.cors-allowed-origins", () -> ORIGIN + "/, https://korean-practice-*.vercel.app");
         r.add("app.ai.provider", () -> "none");
         r.add("app.progress.file", () -> tmp.resolve("progress.json").toString());
     }
@@ -68,6 +69,14 @@ class ApiIntegrationTest {
                         .header("Access-Control-Request-Headers", "content-type,x-access-key"))
                 .andExpect(status().isOk())
                 .andExpect(header().string("Access-Control-Allow-Origin", ORIGIN));
+    }
+
+    @Test
+    void vercelPreviewOriginsMatchWildcard() throws Exception {
+        String preview = "https://korean-practice-git-feature-nhat.vercel.app";
+        mvc.perform(get("/api/health").header("Origin", preview))
+                .andExpect(status().isOk())
+                .andExpect(header().string("Access-Control-Allow-Origin", preview));
     }
 
     @Test

@@ -1,18 +1,25 @@
-# Render Blueprint for the optional backend (Phase 2). The frontend works without it.
-# Dashboard: New + > Blueprint > pick this repo. Secrets marked sync: false are
-# entered in the Render dashboard, never committed.
+# Render Blueprint for the optional backend. The frontend works without it.
+# Dashboard: New + > Blueprint > pick this repo. Variables marked sync: false are
+# entered in the Render dashboard during setup and are never committed.
 services:
   - type: web
     name: korean-practice-backend
     runtime: docker
     plan: free
-    rootDir: backend
-    dockerfilePath: ./Dockerfile
+    # Closest region to Vietnam/Korea. Cannot be changed after creation.
+    region: singapore
+    # Paths are relative to the repo root.
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    # Only redeploy when backend files change (not on frontend pushes).
+    buildFilter:
+      paths:
+        - backend/**
     healthCheckPath: /api/health
     autoDeploy: true
     envVars:
       - key: CORS_ALLOWED_ORIGINS
-        sync: false # e.g. https://your-app.vercel.app,http://localhost:5173
+        sync: false # e.g. https://korean-practice.vercel.app,https://korean-practice-*.vercel.app
       - key: APP_ACCESS_KEY
         generateValue: true # copy it from the dashboard into the app's Settings page
       - key: AI_PROVIDER

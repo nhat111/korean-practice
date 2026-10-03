@@ -65,7 +65,7 @@ Add `-H 'X-Access-Key: …'` when `APP_ACCESS_KEY` is set.
 | Variable | Default | Notes |
 | --- | --- | --- |
 | `PORT` | `8080` | Render sets this. |
-| `CORS_ALLOWED_ORIGINS` | `http://localhost:5173,http://localhost:4173` | Comma-separated. Add your Vercel URL. |
+| `CORS_ALLOWED_ORIGINS` | `http://localhost:5173,http://localhost:4173` | Comma-separated. Add your Vercel URL. Wildcards work for preview deploys (`https://korean-practice-*.vercel.app`), and a trailing `/` is ignored. |
 | `APP_ACCESS_KEY` | (empty) | Shared secret for every `/api/**` call except health. **Set it on any public URL**, otherwise anyone who finds the URL can spend your AI credits and overwrite your progress. |
 | `AI_PROVIDER` | `none` | `none`, `claude` or `ollama`. |
 | `ANTHROPIC_API_KEY` | | Needed for `claude`. |
@@ -90,12 +90,30 @@ AI_PROVIDER=ollama OLLAMA_MODEL=qwen2.5:7b ./mvnw spring-boot:run
 Then run the frontend (`npm run dev`), open **Settings (⚙️)**, and enter
 `http://localhost:8080` (plus the access key, if you set one).
 
+## Docker image
+
+`Dockerfile` is a multi-stage build tuned for the free tier (0.1 CPU, 512 MB):
+
+1. **Build stage:** `maven:3.9-eclipse-temurin-21` runs `mvn package`. Dependencies are
+   cached in their own layer.
+2. **Runtime stage:** `eclipse-temurin:21-jre`, running as a non-root user.
+   - The Spring Boot jar is extracted, then a training run creates a **CDS archive** (Class
+     Data Sharing). Measured on 1 CPU: ready in ~2.2 s instead of ~7.9 s, with RSS ~184 MB
+     instead of ~232 MB. This matters most for cold starts.
+   - JVM flags (`JAVA_OPTS`): 60% heap, serial GC, C1-only JIT, small thread stacks, and
+     exit on OOM so that Render restarts the service.
+
+```bash
+docker build -t korean-practice-backend backend/
+docker run --rm -p 8080:8080 -e PORT=8080 korean-practice-backend
+```
+
 ## Deploy to Render (free tier)
 
 1. Push the repo to GitHub.
 2. In Render, go to **New + → Blueprint** and pick the repo. `render.yaml` at the repo root
-   defines a Docker web service from `backend/` on the free plan, with a health check on
-   `/api/health`.
+   defines a Docker web service in **Singapore** (closest to Vietnam/Korea) on the free
+   plan, with a health check on `/api/health`. It only redeploys when `backend/**` changes.
 3. Fill in the environment variables when prompted:
    - `CORS_ALLOWED_ORIGINS`: your Vercel URL, e.g. `https://your-app.vercel.app`
    - `APP_ACCESS_KEY`: generated automatically; copy it from the dashboard
@@ -110,4 +128,7 @@ Free tier caveats:
 - **Ephemeral disk.** `progress.json` is lost on every redeploy or restart. Sync is a
   manual backup or transfer, not durable storage. The browser's `localStorage` is always
   the source of truth.
-- 512 MB RAM. The Dockerfile caps the JVM heap accordingly.
+- 512 MB RAM and 0.1 CPU. The Dockerfile caps the heap and uses CDS to start faster, and
+  Tomcat is limited to 20 threads.
+- An external uptime pinger can keep the service awake, but it uses up the free monthly
+  hours. Waking on demand, as the app does now, is usually enough.
