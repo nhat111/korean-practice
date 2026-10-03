@@ -101,6 +101,7 @@ export const vi = {
     newCards: (n: number) => `Thẻ mới: ${n}`,
     tapToFlip: 'Chạm để lật thẻ',
     example: 'Ví dụ',
+    grammar: 'Ngữ pháp trong câu',
     gradeAgain: 'Quên',
     gradeHard: 'Khó',
     gradeGood: 'Nhớ',

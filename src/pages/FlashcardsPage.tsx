@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ContentGate } from '../components/ContentGate';
+import { GrammarNotes, GrammarSentence } from '../components/GrammarNotes';
 import { SpeakButton } from '../components/SpeakButton';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
@@ -162,11 +163,12 @@ function Flashcard({ item, flipped, onFlip }: { item: VocabItem; flipped: boolea
             <span className="muted small">{vi.flashcards.example}</span>
             <div className="ko-line">
               <p lang="ko" className="ko">
-                {item.example.ko}
+                <GrammarSentence text={item.example.ko} grammar={item.example.grammar} />
               </p>
               <SpeakButton text={item.example.ko} small />
             </div>
             <p className="muted">{item.example.vi}</p>
+            <GrammarNotes grammar={item.example.grammar} />
           </div>
         </div>
       )}

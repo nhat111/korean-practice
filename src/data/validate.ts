@@ -128,6 +128,28 @@ export function validateEmail(v: unknown): string[] {
   return errors;
 }
 
+function checkGrammar(v: unknown, sentence: unknown, path: string, errors: string[]): void {
+  if (v === undefined) return;
+  if (!Array.isArray(v)) {
+    errors.push(`${path}: phải là mảng`);
+    return;
+  }
+  v.forEach((g, i) => {
+    const p = `${path}[${i}]`;
+    if (!isObj(g)) {
+      errors.push(`${p}: phải là object`);
+      return;
+    }
+    requireStrings(g, ['pattern', 'form', 'meaningVi'], p, errors);
+    if (g.noteVi !== undefined && typeof g.noteVi !== 'string') {
+      errors.push(`${p}.noteVi: phải là chuỗi`);
+    }
+    if (typeof g.form === 'string' && typeof sentence === 'string' && !sentence.includes(g.form)) {
+      errors.push(`${p}.form: không tìm thấy trong câu ví dụ`);
+    }
+  });
+}
+
 export function validateVocab(v: unknown): string[] {
   const errors: string[] = [];
   if (!isObj(v)) return ['vocab: phải là object'];
@@ -140,6 +162,7 @@ export function validateVocab(v: unknown): string[] {
     errors.push(`${path}.example: phải là object`);
   } else {
     requireStrings(v.example, ['ko', 'vi'], `${path}.example`, errors);
+    checkGrammar(v.example.grammar, v.example.ko, `${path}.example.grammar`, errors);
   }
   checkTags(v, path, errors);
   return errors;

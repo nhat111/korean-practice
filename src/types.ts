@@ -84,6 +84,18 @@ export interface EmailExercise {
 
 // ---------- Vocabulary ----------
 
+/** A grammar point used in an example sentence. */
+export interface GrammarPoint {
+  /** Dictionary form of the pattern, e.g. "-(으)ㄹ 예정이다". */
+  pattern: string;
+  /** Exact text from the example sentence where it appears; highlighted in the UI. */
+  form: string;
+  /** Short meaning in Vietnamese. */
+  meaningVi: string;
+  /** Optional one-line usage note in Vietnamese (politeness, nuance). */
+  noteVi?: string;
+}
+
 export interface VocabItem {
   /** Stable id; flashcard progress is keyed by it. Never rename. */
   id: string;
@@ -93,6 +105,8 @@ export interface VocabItem {
   example: {
     ko: string;
     vi: string;
+    /** Optional: grammar used in the example, explained when the card is flipped. */
+    grammar?: GrammarPoint[];
   };
   tags: string[];
 }
