@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { vi } from '../i18n/vi';
 import { isSpeechSupported, speakKorean } from '../speech';
 import { compareAnswer, type Comparison } from '../speaking/compare';
-import { isRecognitionSupported, useSpeechRecognition } from '../speaking/recognition';
+import { isRecognitionSupported, recognitionUnsupportedMessage, useSpeechRecognition } from '../speaking/recognition';
 import { isRecordingSupported, playAudio, useRecorder } from '../speaking/recorder';
 import { saveSpeakingAttempt, type SelfRating } from '../storage/progress';
 import { ComparisonView } from './ComparisonView';
@@ -154,7 +154,7 @@ function SpeechCheck({ line }: { line: SpeakingLine }) {
     return (
       <section className="card stack-sm">
         <h2>{vi.speaking.check}</h2>
-        <p className="muted small">{vi.speaking.recognitionUnsupported}</p>
+        <p className="muted small">{recognitionUnsupportedMessage()}</p>
       </section>
     );
   }

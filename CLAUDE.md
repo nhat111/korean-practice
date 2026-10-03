@@ -140,6 +140,9 @@ Korean either.
 - All browser speech features are optional. Always feature-detect (`isSpeechSupported`,
   `isRecordingSupported`, `isRecognitionSupported`) and keep a fallback:
   no SpeechRecognition (e.g. Firefox) → record with MediaRecorder + self-assessment.
+  iOS Home Screen (standalone) mode also counts as unsupported: WebKit's recognizer can hang
+  and freeze the page there. `useSpeechRecognition` cancels TTS before listening and uses
+  timers to force an end if the engine never fires `end`.
 - Recordings are in-memory object URLs only (never stored); speaking *history* (text, score,
   self-rating) is stored in progress, capped at 300 entries.
 - `compareAnswer` in `src/speaking/compare.ts` is pure and unit-tested: score is a

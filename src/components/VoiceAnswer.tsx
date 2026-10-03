@@ -1,7 +1,7 @@
 import { vi } from '../i18n/vi';
 import { isSpeechSupported, speakKorean } from '../speech';
 import { compareAnswer, type Comparison } from '../speaking/compare';
-import { isRecognitionSupported, useSpeechRecognition } from '../speaking/recognition';
+import { isRecognitionSupported, recognitionUnsupportedMessage, useSpeechRecognition } from '../speaking/recognition';
 import { playAudio, useRecorder } from '../speaking/recorder';
 import { ListenButton, RecordButton } from './SpeakingDrill';
 
@@ -52,7 +52,7 @@ function RecordedAnswer({ modelAnswer, answered, onResult }: Props) {
     <div className="stack-sm">
       {!answered && (
         <>
-          <p className="muted small">{vi.speaking.recognitionUnsupported}</p>
+          <p className="muted small">{recognitionUnsupportedMessage()}</p>
           <RecordButton recorder={recorder} />
         </>
       )}
