@@ -67,7 +67,10 @@ Korean either.
 │   ├── i18n/vi.ts        # Vietnamese UI strings
 │   └── main.tsx, App.tsx # Router setup (react-router, BrowserRouter)
 ├── backend/              # Phase 2 only: Spring Boot 3, Java 21
-├── vercel.json           # SPA rewrites (excludes /data and /assets)
+├── public/manifest.webmanifest, public/icons/   # PWA manifest + icons
+├── sw/sw.js              # Service worker template (built into dist/sw.js by vite.config.ts)
+├── vercel.json           # Build command, SPA rewrites, cache headers
+├── README.md             # Setup + deploy steps
 └── CLAUDE.md
 ```
 
@@ -138,21 +141,29 @@ npm install
 npm run dev        # Vite dev server
 npm run build      # Type-check (tsc -b) + production build
 npm run lint       # oxlint
-npm test           # Vitest: SM-2 logic + content validation
+npm test           # Vitest: SM-2, answer comparison, content validation
+npm run check      # lint + test + build (Vercel's build command)
 
 # Phase 2
 cd backend && ./mvnw spring-boot:run   # or ./gradlew bootRun
 ```
 
-Run `npm run build`, `npm run lint` and `npm test` before considering a change done.
+Run `npm run check` before considering a change done.
 
 Test files (`src/**/*.test.ts`) are type-checked by `tsconfig.node.json`, not
 `tsconfig.app.json`.
 
 ## Deployment
 
-- **Vercel**: framework preset Vite, output `dist/`. `vercel.json` rewrites all routes to
-  `index.html` for client-side routing.
+- **Vercel**: `vercel.json` runs `npm run check` (so invalid content blocks a deploy),
+  outputs `dist/`, rewrites client-side routes to `index.html` (not real files like `/data`,
+  `/assets`, `/icons`, `sw.js`) and sets cache headers. Deploy steps are in README.md.
+- **PWA / offline**: `pwaPlugin` in `vite.config.ts` writes `dist/sw.js` after each build
+  with every built file in the precache list and a content-hash version. Navigations are
+  network-first with an offline fallback to `index.html`, and other precached files are
+  cache-first. The service worker is registered only in production builds
+  (`src/registerSW.ts`). When adding new static file types or top-level public folders,
+  update the rewrite exclusions in `vercel.json`.
 - **Render (Phase 2)**: free tier web service from `/backend`. Expect cold starts. Configure
   CORS to allow only the Vercel domain(s) and localhost.
 - No secrets in the frontend. Anything `VITE_*` is public.
