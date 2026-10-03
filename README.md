@@ -10,8 +10,10 @@ built for a Vietnamese Java developer at TOPIK 3. UI in Vietnamese, content in K
   with speech recognition.
 - **Progress**: everything is stored in `localStorage` on the device.
 
-It is a static React + Vite + TypeScript site with no backend. It installs as a PWA and
-works offline. See [CLAUDE.md](CLAUDE.md) for architecture and conventions.
+It is a static React + Vite + TypeScript site. It installs as a PWA and works offline. An
+**optional** Spring Boot backend in [`backend/`](backend/README.md) adds free AI
+conversation, AI email checking and progress sync. The app works fully without it. See
+[CLAUDE.md](CLAUDE.md) for architecture and conventions.
 
 ## Local development
 
@@ -92,6 +94,21 @@ vercel --prod   # production deployment
   (if the device has a Korean voice).
 - Needs a network connection: speech recognition (Chrome sends audio to Google's servers).
   The app shows an error message instead of failing silently.
+
+## Optional backend (Phase 2)
+
+Setup, configuration and Render deployment are in [backend/README.md](backend/README.md).
+In short:
+
+1. Deploy `backend/` to Render using `render.yaml` (**New + → Blueprint**). Set
+   `CORS_ALLOWED_ORIGINS` to your Vercel URL. Set `AI_PROVIDER=claude` and
+   `ANTHROPIC_API_KEY` if you want AI.
+2. In the app, open **⚙️ Settings**, then enter the Render URL and the `APP_ACCESS_KEY`.
+   Alternatively, set `VITE_API_BASE_URL` in Vercel as the default (see `.env.example`).
+   The Settings page overrides it per device.
+
+With no URL configured, the app never calls a backend. If the backend is asleep or down,
+the app shows a notice and keeps working from local data.
 
 ### Troubleshooting
 

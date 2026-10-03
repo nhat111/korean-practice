@@ -48,7 +48,34 @@ Korean either.
     waiting on it.
   - The backend URL comes from an env var (`VITE_API_BASE_URL`). If it is unset, the app runs
     without any backend calls.
-- Don't add backend code or dependencies until Phase 2 is explicitly started.
+- Phase 2 has started: `backend/` exists (see "Backend" below).
+
+## Backend (`backend/`)
+
+- Packages: `ai` (`AiProvider` with `NoAiProvider` default, `ClaudeProvider` via the official
+  Anthropic Java SDK with structured outputs, `OllamaProvider`; chosen in `AiConfig` from
+  `AI_PROVIDER`), `tutor` (prompts + DTOs), `progress` (file store), `web` (controller +
+  error mapping), `config` (properties, CORS filter, access-key filter).
+- Endpoints: `GET /api/health` (always open), `POST /api/roleplay`, `POST /api/email/check`,
+  `GET/PUT /api/progress`. Errors: `{error, message}`; the frontend switches on `error`.
+- Secrets only from env vars (`ANTHROPIC_API_KEY`, `APP_ACCESS_KEY`). Never put them in
+  `application.yml`, the frontend, or the repo.
+- CORS runs as the first servlet filter so error responses (e.g. 401) still carry CORS
+  headers. Keep it that way, or the browser reports auth errors as network errors.
+- The progress snapshot is opaque JSON (the frontend's `kp:progress:v1` object). The backend
+  must not reshape it.
+- Commands: `cd backend && ./mvnw test`, `./mvnw spring-boot:run`. Tests need no API key:
+  `ClaudeProviderTest` runs the real SDK against a local fake HTTP server.
+
+## Frontend ↔ backend rules
+
+- With no URL (`kp:backend:v1` unset and `VITE_API_BASE_URL` unset), no backend request is
+  made and the UI shows nothing backend-related except the ⚙️ Settings link.
+- All calls go through `src/api/client.ts` (timeouts: health 70 s for Render cold starts,
+  AI 120 s, sync 30 s). Network failures set status `offline`, and `BackendBanner` shows a
+  notice. Callers must handle `ApiError` and fall back to static content.
+- Sync is manual (upload / download with confirmation). `importProgress` reuses the same
+  validation as reading localStorage.
 
 ## Structure
 
@@ -60,13 +87,15 @@ Korean either.
 │   ├── components/       # Layout, SpeakButton, ContentGate, SpeakingDrill, VoiceAnswer, ...
 │   ├── pages/            # Home, Scenarios(+Player), Emails(+Exercise), Flashcards, Speaking, Progress
 │   ├── data/             # validate.ts (runtime checks), content.ts (fetch + useContent)
-│   ├── storage/          # progress.ts + prefs.ts: the only modules that touch localStorage
+│   ├── storage/          # progress.ts, prefs.ts, backend.ts: the only modules that touch localStorage
 │   ├── srs/sm2.ts        # SM-2 spaced repetition
 │   ├── speech.ts         # SpeechSynthesis (ko-KR), rate from prefs (0.7x-1x)
 │   ├── speaking/         # compare.ts (answer similarity), recognition.ts, recorder.ts
+│   ├── api/              # client.ts: the ONLY module that calls the backend; messages.ts
 │   ├── i18n/vi.ts        # Vietnamese UI strings
 │   └── main.tsx, App.tsx # Router setup (react-router, BrowserRouter)
-├── backend/              # Phase 2 only: Spring Boot 3, Java 21
+├── backend/              # Optional Spring Boot 3 / Java 21 service (see backend/README.md)
+├── render.yaml           # Render Blueprint for backend/
 ├── public/manifest.webmanifest, public/icons/   # PWA manifest + icons
 ├── sw/sw.js              # Service worker template (built into dist/sw.js by vite.config.ts)
 ├── vercel.json           # Build command, SPA rewrites, cache headers
@@ -111,8 +140,8 @@ Korean either.
 
 - All access goes through `src/storage/`. Components never call `localStorage` directly.
 - Use a single namespaced key prefix (`kp:`) and a **schema version**. Keys:
-  `kp:progress:v1` (learning progress) and `kp:prefs:v1` (device preferences such as speech
-  rate). When the shape changes, write a migration instead of silently dropping user data;
+  `kp:progress:v1` (learning progress), `kp:prefs:v1` (device preferences such as speech
+  rate) and `kp:backend:v1` (optional backend URL + access key). When the shape changes, write a migration instead of silently dropping user data;
   purely additive fields may instead default when missing (as `speaking` does).
 - Wrap reads and writes in try/catch. The app must still work if storage is unavailable or
   contains corrupted data. In that case, fall back to empty progress.
@@ -144,8 +173,9 @@ npm run lint       # oxlint
 npm test           # Vitest: SM-2, answer comparison, content validation
 npm run check      # lint + test + build (Vercel's build command)
 
-# Phase 2
-cd backend && ./mvnw spring-boot:run   # or ./gradlew bootRun
+# Backend (optional)
+cd backend && ./mvnw test
+cd backend && ./mvnw spring-boot:run   # http://localhost:8080
 ```
 
 Run `npm run check` before considering a change done.
@@ -164,6 +194,7 @@ Test files (`src/**/*.test.ts`) are type-checked by `tsconfig.node.json`, not
   cache-first. The service worker is registered only in production builds
   (`src/registerSW.ts`). When adding new static file types or top-level public folders,
   update the rewrite exclusions in `vercel.json`.
-- **Render (Phase 2)**: free tier web service from `/backend`. Expect cold starts. Configure
-  CORS to allow only the Vercel domain(s) and localhost.
+- **Render (backend)**: `render.yaml` Blueprint, Docker, free plan. Expect cold starts and an
+  ephemeral disk. Set `CORS_ALLOWED_ORIGINS` to the Vercel domain(s) and always set
+  `APP_ACCESS_KEY`. Steps are in backend/README.md.
 - No secrets in the frontend. Anything `VITE_*` is public.

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useParams } from 'react-router';
+import { AiEmailCheck } from '../components/AiEmailCheck';
 import { ContentGate } from '../components/ContentGate';
 import { SpeakButton } from '../components/SpeakButton';
 import { useContent } from '../data/content';
@@ -99,6 +100,8 @@ function EmailExerciseView({ exercise }: { exercise: EmailExercise }) {
               {exercise.corrected}
             </pre>
           </section>
+
+          <AiEmailCheck exercise={exercise} text={text} />
 
           <section className="stack-sm">
             <h3>{vi.emails.corrections}</h3>

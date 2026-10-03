@@ -63,19 +63,23 @@ function isRecord(v: unknown): v is Record<string, unknown> {
   return typeof v === 'object' && v !== null && !Array.isArray(v);
 }
 
+/** Validates a stored or imported progress object; null if unusable. */
+function parse(data: unknown): Progress | null {
+  if (!isRecord(data) || data.version !== 1) return null;
+  return {
+    version: 1,
+    cards: isRecord(data.cards) ? (data.cards as Progress['cards']) : {},
+    scenarios: isRecord(data.scenarios) ? (data.scenarios as Progress['scenarios']) : {},
+    emails: isRecord(data.emails) ? (data.emails as Progress['emails']) : {},
+    speaking: Array.isArray(data.speaking) ? (data.speaking as Progress['speaking']) : [],
+  };
+}
+
 function read(): Progress {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return emptyProgress();
-    const data: unknown = JSON.parse(raw);
-    if (!isRecord(data) || data.version !== 1) return emptyProgress();
-    return {
-      version: 1,
-      cards: isRecord(data.cards) ? (data.cards as Progress['cards']) : {},
-      scenarios: isRecord(data.scenarios) ? (data.scenarios as Progress['scenarios']) : {},
-      emails: isRecord(data.emails) ? (data.emails as Progress['emails']) : {},
-      speaking: Array.isArray(data.speaking) ? (data.speaking as Progress['speaking']) : [],
-    };
+    return parse(JSON.parse(raw)) ?? emptyProgress();
   } catch {
     return emptyProgress();
   }
@@ -142,6 +146,22 @@ export function saveSpeakingAttempt(attempt: Omit<SpeakingAttempt, 'at'>): void 
       MAX_SPEAKING_HISTORY,
     ),
   }));
+}
+
+/** Current progress, in the same shape as stored under kp:progress:v1 (for sync). */
+export function exportProgress(): Progress {
+  return current;
+}
+
+/**
+ * Replaces local progress with `data` (e.g. downloaded from the backend).
+ * Returns false and changes nothing if `data` is not valid progress.
+ */
+export function importProgress(data: unknown): boolean {
+  const parsed = parse(data);
+  if (!parsed) return false;
+  update(() => parsed);
+  return true;
 }
 
 export function resetProgress(): void {

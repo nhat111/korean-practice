@@ -1,4 +1,5 @@
-import { NavLink, Outlet } from 'react-router';
+import { Link, NavLink, Outlet } from 'react-router';
+import { BackendBanner } from './BackendBanner';
 import { vi } from '../i18n/vi';
 
 const NAV = [
@@ -20,7 +21,11 @@ export function Layout() {
           </span>
           {vi.appName}
         </span>
+        <Link to="/settings" className="icon-btn topbar-settings" aria-label={vi.backend.settingsLink} title={vi.backend.settingsLink}>
+          ⚙️
+        </Link>
       </header>
+      <BackendBanner />
       <main className="main">
         <Outlet />
       </main>

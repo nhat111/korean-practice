@@ -1,0 +1,36 @@
+# All secrets come from environment variables; never commit keys.
+server:
+  port: ${PORT:8080}
+  # Render terminates TLS in front of the app.
+  forward-headers-strategy: framework
+
+spring:
+  application:
+    name: korean-practice-backend
+  jackson:
+    default-property-inclusion: non_null
+
+app:
+  # Comma-separated origins allowed to call /api/** (the Vercel URL + local dev).
+  cors-allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173,http://localhost:4173}
+  # Optional shared secret. When set, every /api/** request except /api/health
+  # must send it in the X-Access-Key header. Strongly recommended on a public URL,
+  # otherwise anyone who finds the URL can spend your AI credits.
+  access-key: ${APP_ACCESS_KEY:}
+  progress:
+    # Render free tier disk is ephemeral: this file is lost on redeploy/restart.
+    file: ${PROGRESS_FILE:./data/progress.json}
+    max-bytes: 1048576
+  ai:
+    # none | ollama | claude
+    provider: ${AI_PROVIDER:none}
+    request-timeout: ${AI_TIMEOUT:PT90S}
+    claude:
+      # API key is read by the Anthropic SDK from ANTHROPIC_API_KEY.
+      model: ${CLAUDE_MODEL:claude-opus-5-5}
+      # low | medium | high | xhigh | max
+      effort: ${CLAUDE_EFFORT:medium}
+      max-tokens: 16000
+    ollama:
+      base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
+      model: ${OLLAMA_MODEL:qwen2.5:7b}

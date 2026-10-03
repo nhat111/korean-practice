@@ -2,6 +2,7 @@ import { Link } from 'react-router';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
 import { isDue, todayKey } from '../srs/sm2';
+import { useBackendSettings } from '../storage/backend';
 import { useProgress } from '../storage/progress';
 
 const SECTIONS = [
@@ -12,7 +13,12 @@ const SECTIONS = [
   { to: '/progress', icon: '📈', title: vi.nav.progress, desc: vi.home.sections.progress },
 ];
 
+// Shown only when an optional backend is configured.
+const AI_SECTION = { to: '/ai-roleplay', icon: '🤖', title: vi.aiRoleplay.title, desc: vi.aiRoleplay.homeDesc };
+
 export function HomePage() {
+  const backend = useBackendSettings();
+  const sections = backend.url ? [...SECTIONS, AI_SECTION] : SECTIONS;
   const vocab = useContent('vocab');
   const progress = useProgress();
   const today = todayKey();
@@ -33,7 +39,7 @@ export function HomePage() {
         )}
       </section>
       <div className="grid">
-        {SECTIONS.map((s) => (
+        {sections.map((s) => (
           <Link key={s.to} to={s.to} className="card card--link">
             <span className="card-icon" aria-hidden>
               {s.icon}
