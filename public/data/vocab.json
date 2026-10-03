@@ -8,7 +8,20 @@
       "romanization": "baepo",
       "example": {
         "ko": "오늘 저녁에 운영 서버에 배포할 예정입니다.",
-        "vi": "Dự kiến tối nay sẽ deploy lên server production."
+        "vi": "Dự kiến tối nay sẽ deploy lên server production.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄹ 예정이다",
+            "form": "배포할 예정입니다",
+            "meaningVi": "dự định sẽ…, theo kế hoạch sẽ…",
+            "noteVi": "Dùng khi báo lịch trình đã lên kế hoạch; trang trọng hơn -(으)ㄹ 거예요."
+          },
+          {
+            "pattern": "N에",
+            "form": "운영 서버에",
+            "meaningVi": "vào, lên (nơi chốn đích của hành động)"
+          }
+        ]
       },
       "tags": [
         "deploy",
@@ -22,7 +35,21 @@
       "romanization": "yogusahang",
       "example": {
         "ko": "요구사항을 다시 한번 확인해 주시겠어요?",
-        "vi": "Anh/chị có thể xác nhận lại yêu cầu một lần nữa được không ạ?"
+        "vi": "Anh/chị có thể xác nhận lại yêu cầu một lần nữa được không ạ?",
+        "grammar": [
+          {
+            "pattern": "-아/어 주시겠어요?",
+            "form": "확인해 주시겠어요?",
+            "meaningVi": "anh/chị có thể… giúp tôi không?",
+            "noteVi": "Cách nhờ vả lịch sự, rất hay dùng khi yêu cầu khách hàng."
+          },
+          {
+            "pattern": "다시 한번",
+            "form": "다시 한번",
+            "meaningVi": "một lần nữa",
+            "noteVi": "Làm lời nhờ xác nhận lại nghe mềm mỏng hơn."
+          }
+        ]
       },
       "tags": [
         "pm",
@@ -36,7 +63,20 @@
       "romanization": "gaebal",
       "example": {
         "ko": "이 기능은 다음 주까지 개발을 완료할 예정입니다.",
-        "vi": "Dự kiến sẽ hoàn thành phát triển chức năng này trước tuần sau."
+        "vi": "Dự kiến sẽ hoàn thành phát triển chức năng này trước tuần sau.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄹ 예정이다",
+            "form": "완료할 예정입니다",
+            "meaningVi": "dự định sẽ…, theo kế hoạch sẽ…"
+          },
+          {
+            "pattern": "N까지",
+            "form": "다음 주까지",
+            "meaningVi": "cho đến…, hạn chót là…",
+            "noteVi": "Dùng để nêu deadline khi báo cáo tiến độ."
+          }
+        ]
       },
       "tags": [
         "dev"
@@ -49,7 +89,26 @@
       "romanization": "sujeong",
       "example": {
         "ko": "말씀하신 부분은 오늘 중으로 수정하겠습니다.",
-        "vi": "Phần anh/chị nói, tôi sẽ sửa trong hôm nay."
+        "vi": "Phần anh/chị nói, tôi sẽ sửa trong hôm nay.",
+        "grammar": [
+          {
+            "pattern": "-겠습니다",
+            "form": "수정하겠습니다",
+            "meaningVi": "tôi sẽ… (ý chí, cam kết)",
+            "noteVi": "Thể hiện cam kết lịch sự của người nói với khách hàng."
+          },
+          {
+            "pattern": "말씀하시다",
+            "form": "말씀하신",
+            "meaningVi": "(anh/chị) đã nói, đã đề cập",
+            "noteVi": "Kính ngữ của 말하다; dùng cho lời nói của khách hàng, cấp trên."
+          },
+          {
+            "pattern": "N 중으로",
+            "form": "오늘 중으로",
+            "meaningVi": "trong vòng (hôm nay), trước khi hết…"
+          }
+        ]
       },
       "tags": [
         "dev",
@@ -63,7 +122,20 @@
       "romanization": "jangae",
       "example": {
         "ko": "어젯밤 운영 서버에 장애가 발생했습니다.",
-        "vi": "Tối qua đã xảy ra sự cố trên server production."
+        "vi": "Tối qua đã xảy ra sự cố trên server production.",
+        "grammar": [
+          {
+            "pattern": "N이/가 발생하다",
+            "form": "장애가 발생했습니다",
+            "meaningVi": "xảy ra, phát sinh (sự cố, lỗi)",
+            "noteVi": "Cách nói trang trọng khi báo cáo sự cố."
+          },
+          {
+            "pattern": "-았/었습니다",
+            "form": "발생했습니다",
+            "meaningVi": "đã… (quá khứ, trang trọng)"
+          }
+        ]
       },
       "tags": [
         "incident"
@@ -76,7 +148,20 @@
       "romanization": "seongneung",
       "example": {
         "ko": "인덱스를 추가한 후 조회 성능이 많이 좋아졌어요.",
-        "vi": "Sau khi thêm index, hiệu năng truy vấn đã cải thiện nhiều."
+        "vi": "Sau khi thêm index, hiệu năng truy vấn đã cải thiện nhiều.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄴ 후",
+            "form": "추가한 후",
+            "meaningVi": "sau khi…"
+          },
+          {
+            "pattern": "-아/어지다",
+            "form": "좋아졌어요",
+            "meaningVi": "trở nên…, dần dần… hơn",
+            "noteVi": "Diễn tả sự thay đổi trạng thái, như hiệu năng được cải thiện."
+          }
+        ]
       },
       "tags": [
         "performance"
@@ -89,7 +174,20 @@
       "romanization": "geomjeung",
       "example": {
         "ko": "입력값 검증 로직을 서버 쪽에도 추가했습니다.",
-        "vi": "Tôi đã thêm logic validate dữ liệu đầu vào ở cả phía server."
+        "vi": "Tôi đã thêm logic validate dữ liệu đầu vào ở cả phía server.",
+        "grammar": [
+          {
+            "pattern": "N 쪽",
+            "form": "서버 쪽에도",
+            "meaningVi": "phía…, bên…",
+            "noteVi": "Hay dùng: 서버 쪽, 프론트 쪽, 고객사 쪽."
+          },
+          {
+            "pattern": "N에도",
+            "form": "서버 쪽에도",
+            "meaningVi": "cả ở…, ở… cũng"
+          }
+        ]
       },
       "tags": [
         "dev",
@@ -103,7 +201,20 @@
       "romanization": "banyeong",
       "example": {
         "ko": "수정 사항은 개발 서버에 반영했습니다.",
-        "vi": "Các chỗ sửa đã được đưa lên server dev."
+        "vi": "Các chỗ sửa đã được đưa lên server dev.",
+        "grammar": [
+          {
+            "pattern": "N에 반영하다",
+            "form": "개발 서버에 반영했습니다",
+            "meaningVi": "áp dụng, cập nhật vào…",
+            "noteVi": "Dùng khi báo đã đưa thay đổi lên môi trường."
+          },
+          {
+            "pattern": "-았/었습니다",
+            "form": "반영했습니다",
+            "meaningVi": "đã… (quá khứ, trang trọng)"
+          }
+        ]
       },
       "tags": [
         "dev",
@@ -117,7 +228,20 @@
       "romanization": "jeogyong",
       "example": {
         "ko": "새 보안 정책은 다음 버전부터 적용됩니다.",
-        "vi": "Chính sách bảo mật mới sẽ được áp dụng từ phiên bản tiếp theo."
+        "vi": "Chính sách bảo mật mới sẽ được áp dụng từ phiên bản tiếp theo.",
+        "grammar": [
+          {
+            "pattern": "N부터",
+            "form": "다음 버전부터",
+            "meaningVi": "bắt đầu từ…"
+          },
+          {
+            "pattern": "-되다 (bị động)",
+            "form": "적용됩니다",
+            "meaningVi": "được áp dụng",
+            "noteVi": "-하다 → -되다 tạo nghĩa bị động, rất phổ biến trong văn bản IT."
+          }
+        ]
       },
       "tags": [
         "dev",
@@ -131,7 +255,20 @@
       "romanization": "igwan",
       "example": {
         "ko": "기존 시스템의 데이터를 새 DB로 이관하고 있습니다.",
-        "vi": "Chúng tôi đang chuyển dữ liệu của hệ thống cũ sang DB mới."
+        "vi": "Chúng tôi đang chuyển dữ liệu của hệ thống cũ sang DB mới.",
+        "grammar": [
+          {
+            "pattern": "-고 있다",
+            "form": "이관하고 있습니다",
+            "meaningVi": "đang… (tiến hành)",
+            "noteVi": "Dùng khi báo cáo công việc đang thực hiện."
+          },
+          {
+            "pattern": "N(으)로",
+            "form": "새 DB로",
+            "meaningVi": "sang…, đến… (hướng chuyển)"
+          }
+        ]
       },
       "tags": [
         "db",
@@ -145,7 +282,21 @@
       "romanization": "yeondong",
       "example": {
         "ko": "결제 시스템과의 연동 테스트는 내일 진행합니다.",
-        "vi": "Ngày mai sẽ test tích hợp với hệ thống thanh toán."
+        "vi": "Ngày mai sẽ test tích hợp với hệ thống thanh toán.",
+        "grammar": [
+          {
+            "pattern": "N과/와의",
+            "form": "결제 시스템과의",
+            "meaningVi": "(… ) với… (bổ nghĩa cho danh từ)",
+            "noteVi": "과/와 + 의 nối danh từ, phong cách văn viết trang trọng."
+          },
+          {
+            "pattern": "-ㅂ니다/습니다 (lịch đã định)",
+            "form": "내일 진행합니다",
+            "meaningVi": "(ngày mai) sẽ tiến hành",
+            "noteVi": "Thì hiện tại có trạng từ tương lai để nói lịch đã chốt."
+          }
+        ]
       },
       "tags": [
         "api"
@@ -158,7 +309,20 @@
       "romanization": "keomit",
       "example": {
         "ko": "작업한 내용은 모두 커밋해 두었습니다.",
-        "vi": "Tôi đã commit toàn bộ nội dung đã làm."
+        "vi": "Tôi đã commit toàn bộ nội dung đã làm.",
+        "grammar": [
+          {
+            "pattern": "-아/어 두다",
+            "form": "커밋해 두었습니다",
+            "meaningVi": "làm sẵn…, đã… để đó",
+            "noteVi": "Nhấn mạnh việc đã chuẩn bị sẵn cho sau này."
+          },
+          {
+            "pattern": "-(으)ㄴ (định ngữ quá khứ)",
+            "form": "작업한 내용",
+            "meaningVi": "nội dung đã làm"
+          }
+        ]
       },
       "tags": [
         "git"
@@ -171,7 +335,19 @@
       "romanization": "meoji",
       "example": {
         "ko": "리뷰가 끝나면 메인 브랜치에 머지하겠습니다.",
-        "vi": "Review xong tôi sẽ merge vào nhánh main."
+        "vi": "Review xong tôi sẽ merge vào nhánh main.",
+        "grammar": [
+          {
+            "pattern": "-(으)면",
+            "form": "끝나면",
+            "meaningVi": "nếu…, khi… (điều kiện)"
+          },
+          {
+            "pattern": "-겠습니다",
+            "form": "머지하겠습니다",
+            "meaningVi": "tôi sẽ… (ý chí, cam kết)"
+          }
+        ]
       },
       "tags": [
         "git"
@@ -184,7 +360,20 @@
       "romanization": "rolbaek",
       "example": {
         "ko": "문제가 생겨서 이전 버전으로 롤백했습니다.",
-        "vi": "Vì phát sinh lỗi nên đã rollback về phiên bản trước."
+        "vi": "Vì phát sinh lỗi nên đã rollback về phiên bản trước.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "생겨서",
+            "meaningVi": "vì…, do… nên",
+            "noteVi": "Nêu lý do; không dùng với câu mệnh lệnh/đề nghị."
+          },
+          {
+            "pattern": "N(으)로",
+            "form": "이전 버전으로",
+            "meaningVi": "về…, sang… (hướng/đích)"
+          }
+        ]
       },
       "tags": [
         "deploy",
@@ -198,7 +387,20 @@
       "romanization": "rogeu",
       "example": {
         "ko": "에러가 난 시간의 로그를 보내 주시겠어요?",
-        "vi": "Anh/chị gửi giúp tôi log vào thời điểm xảy ra lỗi được không?"
+        "vi": "Anh/chị gửi giúp tôi log vào thời điểm xảy ra lỗi được không?",
+        "grammar": [
+          {
+            "pattern": "-아/어 주시겠어요?",
+            "form": "보내 주시겠어요?",
+            "meaningVi": "anh/chị có thể… giúp tôi không?",
+            "noteVi": "Nhờ khách hàng gửi tài liệu một cách lịch sự."
+          },
+          {
+            "pattern": "-(으)ㄴ (định ngữ quá khứ)",
+            "form": "에러가 난 시간",
+            "meaningVi": "thời điểm đã xảy ra lỗi"
+          }
+        ]
       },
       "tags": [
         "server",
@@ -212,7 +414,20 @@
       "romanization": "kwori",
       "example": {
         "ko": "이 쿼리는 실행 시간이 너무 오래 걸려요.",
-        "vi": "Câu query này chạy mất quá nhiều thời gian."
+        "vi": "Câu query này chạy mất quá nhiều thời gian.",
+        "grammar": [
+          {
+            "pattern": "너무 -아/어요",
+            "form": "너무 오래 걸려요",
+            "meaningVi": "quá… (mức độ vượt mong muốn)"
+          },
+          {
+            "pattern": "시간이 걸리다",
+            "form": "시간이 너무 오래 걸려요",
+            "meaningVi": "mất (nhiều) thời gian",
+            "noteVi": "해요체, dùng khi trao đổi thân mật trong nhóm."
+          }
+        ]
       },
       "tags": [
         "db"
@@ -225,7 +440,25 @@
       "romanization": "teuraenjaeksyeon",
       "example": {
         "ko": "에러가 나면 트랜잭션 전체가 롤백되도록 처리했습니다.",
-        "vi": "Tôi đã xử lý để khi có lỗi thì toàn bộ transaction sẽ được rollback."
+        "vi": "Tôi đã xử lý để khi có lỗi thì toàn bộ transaction sẽ được rollback.",
+        "grammar": [
+          {
+            "pattern": "-도록 하다/처리하다",
+            "form": "롤백되도록 처리했습니다",
+            "meaningVi": "xử lý sao cho…, để…",
+            "noteVi": "-도록 chỉ mục đích/kết quả mong muốn; hay dùng khi giải thích kỹ thuật."
+          },
+          {
+            "pattern": "-(으)면",
+            "form": "나면",
+            "meaningVi": "nếu…, khi…"
+          },
+          {
+            "pattern": "-되다 (bị động)",
+            "form": "롤백되도록",
+            "meaningVi": "được/bị (rollback)"
+          }
+        ]
       },
       "tags": [
         "db",
@@ -239,7 +472,20 @@
       "romanization": "beogeureul jaehyeonhada",
       "example": {
         "ko": "개발 환경에서는 버그를 재현하지 못했습니다.",
-        "vi": "Tôi chưa tái hiện được bug trên môi trường dev."
+        "vi": "Tôi chưa tái hiện được bug trên môi trường dev.",
+        "grammar": [
+          {
+            "pattern": "-지 못하다",
+            "form": "재현하지 못했습니다",
+            "meaningVi": "không thể…, không làm được…",
+            "noteVi": "Nói không làm được do năng lực/hoàn cảnh; trang trọng hơn 못 + V."
+          },
+          {
+            "pattern": "N에서는",
+            "form": "개발 환경에서는",
+            "meaningVi": "ở… thì (đối chiếu)"
+          }
+        ]
       },
       "tags": [
         "bug",
@@ -253,7 +499,20 @@
       "romanization": "rogeureul hwaginhada",
       "example": {
         "ko": "지금 서버 로그를 확인해 보겠습니다.",
-        "vi": "Tôi sẽ kiểm tra log server ngay bây giờ."
+        "vi": "Tôi sẽ kiểm tra log server ngay bây giờ.",
+        "grammar": [
+          {
+            "pattern": "-아/어 보다",
+            "form": "확인해 보겠습니다",
+            "meaningVi": "thử…, … xem",
+            "noteVi": "-아/어 보겠습니다: cách hứa kiểm tra nhẹ nhàng, lịch sự."
+          },
+          {
+            "pattern": "-겠습니다",
+            "form": "보겠습니다",
+            "meaningVi": "tôi sẽ… (ý chí)"
+          }
+        ]
       },
       "tags": [
         "server",
@@ -267,7 +526,19 @@
       "romanization": "beuraenchi",
       "example": {
         "ko": "이번 기능은 별도 브랜치에서 작업하고 있어요.",
-        "vi": "Chức năng lần này tôi đang làm trên một branch riêng."
+        "vi": "Chức năng lần này tôi đang làm trên một branch riêng.",
+        "grammar": [
+          {
+            "pattern": "-고 있다",
+            "form": "작업하고 있어요",
+            "meaningVi": "đang…"
+          },
+          {
+            "pattern": "N에서",
+            "form": "별도 브랜치에서",
+            "meaningVi": "ở…, tại… (nơi diễn ra hành động)"
+          }
+        ]
       },
       "tags": [
         "git"
@@ -280,7 +551,20 @@
       "romanization": "jeojangso",
       "example": {
         "ko": "소스 코드는 회사 Git 저장소에 올려 주세요.",
-        "vi": "Hãy đưa source code lên repository Git của công ty."
+        "vi": "Hãy đưa source code lên repository Git của công ty.",
+        "grammar": [
+          {
+            "pattern": "-아/어 주세요",
+            "form": "올려 주세요",
+            "meaningVi": "hãy… giúp (tôi)",
+            "noteVi": "Yêu cầu lịch sự; với khách hàng nên dùng -아/어 주시겠어요?."
+          },
+          {
+            "pattern": "N에 올리다",
+            "form": "저장소에 올려",
+            "meaningVi": "đưa lên, tải lên…"
+          }
+        ]
       },
       "tags": [
         "git"
@@ -293,7 +577,21 @@
       "romanization": "pul rikweseuteu",
       "example": {
         "ko": "풀 리퀘스트를 올렸으니 리뷰 부탁드립니다.",
-        "vi": "Tôi đã tạo pull request, nhờ anh/chị review giúp."
+        "vi": "Tôi đã tạo pull request, nhờ anh/chị review giúp.",
+        "grammar": [
+          {
+            "pattern": "-(으)니(까)",
+            "form": "올렸으니",
+            "meaningVi": "vì đã…, nên…",
+            "noteVi": "Nêu lý do rồi đưa ra đề nghị; -아서 không dùng được ở đây."
+          },
+          {
+            "pattern": "N 부탁드립니다",
+            "form": "리뷰 부탁드립니다",
+            "meaningVi": "nhờ anh/chị… (lịch sự)",
+            "noteVi": "Cách nhờ vả khiêm nhường rất phổ biến trong email, chat công việc."
+          }
+        ]
       },
       "tags": [
         "git"
@@ -306,7 +604,19 @@
       "romanization": "kodeu ribyu",
       "example": {
         "ko": "코드 리뷰에서 받은 의견은 모두 반영했습니다.",
-        "vi": "Tôi đã sửa theo tất cả góp ý nhận được khi review code."
+        "vi": "Tôi đã sửa theo tất cả góp ý nhận được khi review code.",
+        "grammar": [
+          {
+            "pattern": "N에서 받은",
+            "form": "코드 리뷰에서 받은",
+            "meaningVi": "đã nhận được từ…"
+          },
+          {
+            "pattern": "모두 -았/었습니다",
+            "form": "모두 반영했습니다",
+            "meaningVi": "đã… tất cả"
+          }
+        ]
       },
       "tags": [
         "dev",
@@ -320,7 +630,19 @@
       "romanization": "chungdol",
       "example": {
         "ko": "머지할 때 충돌이 나서 직접 해결했어요.",
-        "vi": "Khi merge bị conflict nên tôi đã tự giải quyết."
+        "vi": "Khi merge bị conflict nên tôi đã tự giải quyết.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄹ 때",
+            "form": "머지할 때",
+            "meaningVi": "khi…, lúc…"
+          },
+          {
+            "pattern": "-아/어서",
+            "form": "나서",
+            "meaningVi": "vì…, nên…"
+          }
+        ]
       },
       "tags": [
         "git"
@@ -333,7 +655,20 @@
       "romanization": "ripaektoring",
       "example": {
         "ko": "중복 코드가 많아서 리팩토링이 필요합니다.",
-        "vi": "Có nhiều code trùng lặp nên cần refactoring."
+        "vi": "Có nhiều code trùng lặp nên cần refactoring.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "많아서",
+            "meaningVi": "vì…, do… nên"
+          },
+          {
+            "pattern": "N이/가 필요하다",
+            "form": "리팩토링이 필요합니다",
+            "meaningVi": "cần…",
+            "noteVi": "Cách đề xuất khách quan, lịch sự khi nêu ý kiến kỹ thuật."
+          }
+        ]
       },
       "tags": [
         "dev"
@@ -346,7 +681,19 @@
       "romanization": "yeoe",
       "example": {
         "ko": "널 값이 들어와서 예외가 발생했습니다.",
-        "vi": "Do giá trị null được truyền vào nên đã phát sinh exception."
+        "vi": "Do giá trị null được truyền vào nên đã phát sinh exception.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "들어와서",
+            "meaningVi": "vì…, do… nên"
+          },
+          {
+            "pattern": "N이/가 발생하다",
+            "form": "예외가 발생했습니다",
+            "meaningVi": "phát sinh, xảy ra"
+          }
+        ]
       },
       "tags": [
         "java",
@@ -360,7 +707,19 @@
       "romanization": "yeoe cheori",
       "example": {
         "ko": "외부 API 호출 부분에 예외 처리를 추가했습니다.",
-        "vi": "Tôi đã thêm xử lý exception cho phần gọi API bên ngoài."
+        "vi": "Tôi đã thêm xử lý exception cho phần gọi API bên ngoài.",
+        "grammar": [
+          {
+            "pattern": "N에 N을/를 추가하다",
+            "form": "부분에 예외 처리를 추가했습니다",
+            "meaningVi": "thêm… vào…"
+          },
+          {
+            "pattern": "-았/었습니다",
+            "form": "추가했습니다",
+            "meaningVi": "đã… (quá khứ, trang trọng)"
+          }
+        ]
       },
       "tags": [
         "java",
@@ -374,7 +733,20 @@
       "romanization": "danwi teseuteu",
       "example": {
         "ko": "서비스 클래스에 대한 단위 테스트를 작성했어요.",
-        "vi": "Tôi đã viết unit test cho class service."
+        "vi": "Tôi đã viết unit test cho class service.",
+        "grammar": [
+          {
+            "pattern": "N에 대한",
+            "form": "서비스 클래스에 대한",
+            "meaningVi": "về…, đối với…",
+            "noteVi": "Bổ nghĩa cho danh từ phía sau; rất hay dùng trong tài liệu."
+          },
+          {
+            "pattern": "-았/었어요",
+            "form": "작성했어요",
+            "meaningVi": "đã… (해요체)"
+          }
+        ]
       },
       "tags": [
         "test",
@@ -388,7 +760,20 @@
       "romanization": "tonghap teseuteu",
       "example": {
         "ko": "통합 테스트에서 몇 가지 문제가 발견되었습니다.",
-        "vi": "Đã phát hiện một vài vấn đề trong integration test."
+        "vi": "Đã phát hiện một vài vấn đề trong integration test.",
+        "grammar": [
+          {
+            "pattern": "-되다 (bị động)",
+            "form": "발견되었습니다",
+            "meaningVi": "được/bị phát hiện",
+            "noteVi": "Bị động giúp báo cáo khách quan, không nhấn vào người gây lỗi."
+          },
+          {
+            "pattern": "몇 가지",
+            "form": "몇 가지 문제",
+            "meaningVi": "một vài (vấn đề)"
+          }
+        ]
       },
       "tags": [
         "test"
@@ -401,7 +786,24 @@
       "romanization": "hoegwi teseuteu",
       "example": {
         "ko": "수정 후에 회귀 테스트도 꼭 진행해 주세요.",
-        "vi": "Sau khi sửa, nhất định phải chạy cả regression test."
+        "vi": "Sau khi sửa, nhất định phải chạy cả regression test.",
+        "grammar": [
+          {
+            "pattern": "-아/어 주세요",
+            "form": "진행해 주세요",
+            "meaningVi": "hãy… giúp"
+          },
+          {
+            "pattern": "N 후에",
+            "form": "수정 후에",
+            "meaningVi": "sau khi…"
+          },
+          {
+            "pattern": "꼭",
+            "form": "꼭 진행해",
+            "meaningVi": "nhất định, nhớ phải…"
+          }
+        ]
       },
       "tags": [
         "test"
@@ -414,7 +816,20 @@
       "romanization": "teseuteu keiseu",
       "example": {
         "ko": "경계값에 대한 테스트 케이스가 빠져 있습니다.",
-        "vi": "Đang thiếu test case cho giá trị biên."
+        "vi": "Đang thiếu test case cho giá trị biên.",
+        "grammar": [
+          {
+            "pattern": "-아/어 있다",
+            "form": "빠져 있습니다",
+            "meaningVi": "đang ở trạng thái… (kết quả còn lại)",
+            "noteVi": "빠져 있다: đang bị thiếu; chỉ trạng thái, khác -고 있다."
+          },
+          {
+            "pattern": "N에 대한",
+            "form": "경계값에 대한",
+            "meaningVi": "về…, đối với…"
+          }
+        ]
       },
       "tags": [
         "test"
@@ -427,7 +842,20 @@
       "romanization": "gyeolham",
       "example": {
         "ko": "QA팀에서 보고한 결함은 모두 열두 건입니다.",
-        "vi": "Tổng số defect mà team QA báo cáo là mười hai lỗi."
+        "vi": "Tổng số defect mà team QA báo cáo là mười hai lỗi.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄴ (định ngữ quá khứ)",
+            "form": "보고한 결함",
+            "meaningVi": "lỗi đã được báo cáo"
+          },
+          {
+            "pattern": "N에서 (chủ thể tổ chức)",
+            "form": "QA팀에서",
+            "meaningVi": "(đội/tổ chức) … đã",
+            "noteVi": "에서 thay 이/가 khi chủ ngữ là nhóm, tổ chức."
+          }
+        ]
       },
       "tags": [
         "test",
@@ -441,7 +869,19 @@
       "romanization": "oryu",
       "example": {
         "ko": "로그인할 때 오류 메시지가 표시됩니다.",
-        "vi": "Khi đăng nhập thì hiện thông báo lỗi."
+        "vi": "Khi đăng nhập thì hiện thông báo lỗi.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄹ 때",
+            "form": "로그인할 때",
+            "meaningVi": "khi…, lúc…"
+          },
+          {
+            "pattern": "-되다 (bị động)",
+            "form": "표시됩니다",
+            "meaningVi": "được hiển thị"
+          }
+        ]
       },
       "tags": [
         "bug"
@@ -454,7 +894,20 @@
       "romanization": "unyeong seobeo",
       "example": {
         "ko": "운영 서버에는 직접 접속하지 마십시오.",
-        "vi": "Xin đừng truy cập trực tiếp vào server production."
+        "vi": "Xin đừng truy cập trực tiếp vào server production.",
+        "grammar": [
+          {
+            "pattern": "-지 마십시오",
+            "form": "접속하지 마십시오",
+            "meaningVi": "xin đừng…, không được…",
+            "noteVi": "하십시오체 rất trang trọng, dùng cho thông báo, quy định."
+          },
+          {
+            "pattern": "N에는",
+            "form": "운영 서버에는",
+            "meaningVi": "đối với…, ở… thì (nhấn mạnh)"
+          }
+        ]
       },
       "tags": [
         "server",
@@ -468,7 +921,19 @@
       "romanization": "gaebal seobeo",
       "example": {
         "ko": "먼저 개발 서버에서 확인한 후에 진행하겠습니다.",
-        "vi": "Tôi sẽ kiểm tra trên server dev trước rồi mới tiến hành."
+        "vi": "Tôi sẽ kiểm tra trên server dev trước rồi mới tiến hành.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄴ 후에",
+            "form": "확인한 후에",
+            "meaningVi": "sau khi…"
+          },
+          {
+            "pattern": "-겠습니다",
+            "form": "진행하겠습니다",
+            "meaningVi": "tôi sẽ… (ý chí, cam kết)"
+          }
+        ]
       },
       "tags": [
         "server",
@@ -482,7 +947,20 @@
       "romanization": "seuteijing seobeo",
       "example": {
         "ko": "스테이징 서버에서 고객사 확인을 받아야 합니다.",
-        "vi": "Cần được phía khách hàng xác nhận trên server staging."
+        "vi": "Cần được phía khách hàng xác nhận trên server staging.",
+        "grammar": [
+          {
+            "pattern": "-아/어야 하다",
+            "form": "받아야 합니다",
+            "meaningVi": "phải…, cần phải…"
+          },
+          {
+            "pattern": "확인을 받다",
+            "form": "확인을 받아야",
+            "meaningVi": "được (ai đó) xác nhận, duyệt",
+            "noteVi": "Hay dùng khi cần khách hàng duyệt trước khi phát hành."
+          }
+        ]
       },
       "tags": [
         "server",
@@ -496,7 +974,19 @@
       "romanization": "hwangyeong seoljeong",
       "example": {
         "ko": "신규 입사자를 위한 개발 환경 설정 문서를 만들었어요.",
-        "vi": "Tôi đã làm tài liệu thiết lập môi trường dev cho người mới."
+        "vi": "Tôi đã làm tài liệu thiết lập môi trường dev cho người mới.",
+        "grammar": [
+          {
+            "pattern": "N을/를 위한",
+            "form": "신규 입사자를 위한",
+            "meaningVi": "dành cho…, vì…"
+          },
+          {
+            "pattern": "-았/었어요",
+            "form": "만들었어요",
+            "meaningVi": "đã… (해요체)"
+          }
+        ]
       },
       "tags": [
         "dev",
@@ -510,7 +1000,20 @@
       "romanization": "seoljeong pail",
       "example": {
         "ko": "DB 접속 정보는 설정 파일에서 관리합니다.",
-        "vi": "Thông tin kết nối DB được quản lý trong file cấu hình."
+        "vi": "Thông tin kết nối DB được quản lý trong file cấu hình.",
+        "grammar": [
+          {
+            "pattern": "N에서 관리하다",
+            "form": "설정 파일에서 관리합니다",
+            "meaningVi": "quản lý ở/trong…"
+          },
+          {
+            "pattern": "-습니다 (hiện tại, thói quen)",
+            "form": "관리합니다",
+            "meaningVi": "(thường) quản lý…, được quản lý…",
+            "noteVi": "Hiện tại dùng để mô tả cách hệ thống được cấu hình."
+          }
+        ]
       },
       "tags": [
         "spring",
@@ -524,7 +1027,25 @@
       "romanization": "hwangyeong byeonsu",
       "example": {
         "ko": "비밀번호는 코드에 넣지 말고 환경 변수로 관리해 주세요.",
-        "vi": "Đừng đưa mật khẩu vào code mà hãy quản lý bằng biến môi trường."
+        "vi": "Đừng đưa mật khẩu vào code mà hãy quản lý bằng biến môi trường.",
+        "grammar": [
+          {
+            "pattern": "-지 말고",
+            "form": "넣지 말고",
+            "meaningVi": "đừng… mà hãy…",
+            "noteVi": "Nối lệnh cấm với đề nghị thay thế."
+          },
+          {
+            "pattern": "-아/어 주세요",
+            "form": "관리해 주세요",
+            "meaningVi": "hãy… giúp"
+          },
+          {
+            "pattern": "N(으)로",
+            "form": "환경 변수로",
+            "meaningVi": "bằng…, dưới dạng…"
+          }
+        ]
       },
       "tags": [
         "infra",
@@ -538,7 +1059,20 @@
       "romanization": "teibeul",
       "example": {
         "ko": "주문 테이블에 컬럼을 하나 추가해야 합니다.",
-        "vi": "Cần thêm một cột vào bảng đơn hàng."
+        "vi": "Cần thêm một cột vào bảng đơn hàng.",
+        "grammar": [
+          {
+            "pattern": "-아/어야 하다",
+            "form": "추가해야 합니다",
+            "meaningVi": "phải…, cần phải…"
+          },
+          {
+            "pattern": "N을/를 하나",
+            "form": "컬럼을 하나",
+            "meaningVi": "một (cái)…",
+            "noteVi": "Số lượng đặt sau danh từ, cách nói tự nhiên."
+          }
+        ]
       },
       "tags": [
         "db"
@@ -551,7 +1085,19 @@
       "romanization": "indekseu",
       "example": {
         "ko": "검색 조건 컬럼에 인덱스가 없어서 느렸습니다.",
-        "vi": "Vì cột điều kiện tìm kiếm không có index nên bị chậm."
+        "vi": "Vì cột điều kiện tìm kiếm không có index nên bị chậm.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "없어서",
+            "meaningVi": "vì…, do… nên"
+          },
+          {
+            "pattern": "-았/었습니다",
+            "form": "느렸습니다",
+            "meaningVi": "đã… (quá khứ, trang trọng)"
+          }
+        ]
       },
       "tags": [
         "db",
@@ -565,7 +1111,15 @@
       "romanization": "keolleom",
       "example": {
         "ko": "이 컬럼은 널 값을 허용하지 않습니다.",
-        "vi": "Cột này không cho phép giá trị null."
+        "vi": "Cột này không cho phép giá trị null.",
+        "grammar": [
+          {
+            "pattern": "-지 않다",
+            "form": "허용하지 않습니다",
+            "meaningVi": "không…",
+            "noteVi": "Phủ định dạng dài, trang trọng hơn 안 + V."
+          }
+        ]
       },
       "tags": [
         "db"
@@ -578,7 +1132,19 @@
       "romanization": "gibon ki",
       "example": {
         "ko": "사용자 ID를 기본 키로 사용하고 있어요.",
-        "vi": "Đang dùng ID người dùng làm khóa chính."
+        "vi": "Đang dùng ID người dùng làm khóa chính.",
+        "grammar": [
+          {
+            "pattern": "N(으)로 사용하다",
+            "form": "기본 키로 사용하고",
+            "meaningVi": "dùng làm…, sử dụng như…"
+          },
+          {
+            "pattern": "-고 있다",
+            "form": "사용하고 있어요",
+            "meaningVi": "đang…, hiện đang…"
+          }
+        ]
       },
       "tags": [
         "db"
@@ -591,7 +1157,25 @@
       "romanization": "oerae ki",
       "example": {
         "ko": "외래 키 제약 때문에 데이터가 삭제되지 않습니다.",
-        "vi": "Do ràng buộc khóa ngoại nên dữ liệu không xóa được."
+        "vi": "Do ràng buộc khóa ngoại nên dữ liệu không xóa được.",
+        "grammar": [
+          {
+            "pattern": "N 때문에",
+            "form": "외래 키 제약 때문에",
+            "meaningVi": "vì…, do…",
+            "noteVi": "Thường nêu nguyên nhân tiêu cực."
+          },
+          {
+            "pattern": "-되다 (bị động)",
+            "form": "삭제되지 않습니다",
+            "meaningVi": "không bị/được xóa"
+          },
+          {
+            "pattern": "-지 않다",
+            "form": "삭제되지 않습니다",
+            "meaningVi": "không…"
+          }
+        ]
       },
       "tags": [
         "db"
@@ -604,7 +1188,20 @@
       "romanization": "jeonggyuhwa",
       "example": {
         "ko": "테이블 정규화가 안 되어 있어서 중복 데이터가 많습니다.",
-        "vi": "Bảng chưa được chuẩn hóa nên có nhiều dữ liệu trùng lặp."
+        "vi": "Bảng chưa được chuẩn hóa nên có nhiều dữ liệu trùng lặp.",
+        "grammar": [
+          {
+            "pattern": "-아/어 있다",
+            "form": "안 되어 있어서",
+            "meaningVi": "ở trạng thái…",
+            "noteVi": "안 되어 있다: chưa được làm (trạng thái)."
+          },
+          {
+            "pattern": "-아/어서",
+            "form": "있어서",
+            "meaningVi": "vì…, do… nên"
+          }
+        ]
       },
       "tags": [
         "db"
@@ -617,7 +1214,15 @@
       "romanization": "seullou kwori",
       "example": {
         "ko": "DBA가 슬로우 쿼리 목록을 공유해 주었습니다.",
-        "vi": "DBA đã chia sẻ danh sách slow query."
+        "vi": "DBA đã chia sẻ danh sách slow query.",
+        "grammar": [
+          {
+            "pattern": "-아/어 주다",
+            "form": "공유해 주었습니다",
+            "meaningVi": "… giúp, … cho (người khác)",
+            "noteVi": "Thể hiện người khác làm giúp mình."
+          }
+        ]
       },
       "tags": [
         "db",
@@ -631,7 +1236,20 @@
       "romanization": "silhaeng gyehoek",
       "example": {
         "ko": "실행 계획을 보니 풀 스캔을 하고 있었어요.",
-        "vi": "Xem execution plan thì thấy đang full scan."
+        "vi": "Xem execution plan thì thấy đang full scan.",
+        "grammar": [
+          {
+            "pattern": "-(으)니(까) (phát hiện)",
+            "form": "보니",
+            "meaningVi": "khi xem thì thấy…",
+            "noteVi": "-아/어 보니: phát hiện điều gì sau khi làm."
+          },
+          {
+            "pattern": "-고 있었다",
+            "form": "하고 있었어요",
+            "meaningVi": "đã đang…"
+          }
+        ]
       },
       "tags": [
         "db",
@@ -645,7 +1263,25 @@
       "romanization": "jeonghapseong",
       "example": {
         "ko": "이관 후에 데이터 정합성을 반드시 확인해야 합니다.",
-        "vi": "Sau khi migrate nhất định phải kiểm tra tính nhất quán của dữ liệu."
+        "vi": "Sau khi migrate nhất định phải kiểm tra tính nhất quán của dữ liệu.",
+        "grammar": [
+          {
+            "pattern": "-아/어야 하다",
+            "form": "확인해야 합니다",
+            "meaningVi": "phải…, cần phải…"
+          },
+          {
+            "pattern": "N 후에",
+            "form": "이관 후에",
+            "meaningVi": "sau…"
+          },
+          {
+            "pattern": "반드시",
+            "form": "반드시 확인해야",
+            "meaningVi": "nhất định, bắt buộc",
+            "noteVi": "Trang trọng hơn 꼭, hay dùng trong quy trình."
+          }
+        ]
       },
       "tags": [
         "db",
@@ -659,7 +1295,24 @@
       "romanization": "baegeop",
       "example": {
         "ko": "작업 전에 DB 백업을 먼저 받아 두겠습니다.",
-        "vi": "Trước khi làm, tôi sẽ backup DB trước."
+        "vi": "Trước khi làm, tôi sẽ backup DB trước.",
+        "grammar": [
+          {
+            "pattern": "-아/어 두다",
+            "form": "받아 두겠습니다",
+            "meaningVi": "làm sẵn…, … để đó"
+          },
+          {
+            "pattern": "N 전에",
+            "form": "작업 전에",
+            "meaningVi": "trước…"
+          },
+          {
+            "pattern": "-겠습니다",
+            "form": "두겠습니다",
+            "meaningVi": "tôi sẽ… (ý chí)"
+          }
+        ]
       },
       "tags": [
         "db",
@@ -673,7 +1326,14 @@
       "romanization": "bokgu",
       "example": {
         "ko": "백업 파일로 데이터를 복구했습니다.",
-        "vi": "Đã khôi phục dữ liệu bằng file backup."
+        "vi": "Đã khôi phục dữ liệu bằng file backup.",
+        "grammar": [
+          {
+            "pattern": "N(으)로",
+            "form": "백업 파일로",
+            "meaningVi": "bằng…, dùng… (phương tiện)"
+          }
+        ]
       },
       "tags": [
         "db",
@@ -687,7 +1347,19 @@
       "romanization": "eipiaireul hochulhada",
       "example": {
         "ko": "화면에서 API를 호출할 때 인증 토큰이 필요합니다.",
-        "vi": "Khi gọi API từ màn hình thì cần token xác thực."
+        "vi": "Khi gọi API từ màn hình thì cần token xác thực.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄹ 때",
+            "form": "호출할 때",
+            "meaningVi": "khi…, lúc…"
+          },
+          {
+            "pattern": "N이/가 필요하다",
+            "form": "토큰이 필요합니다",
+            "meaningVi": "cần…"
+          }
+        ]
       },
       "tags": [
         "api"
@@ -700,7 +1372,15 @@
       "romanization": "yocheong",
       "example": {
         "ko": "요청 데이터 형식이 명세서와 달라요.",
-        "vi": "Định dạng dữ liệu request khác với tài liệu đặc tả."
+        "vi": "Định dạng dữ liệu request khác với tài liệu đặc tả.",
+        "grammar": [
+          {
+            "pattern": "N와/과 다르다",
+            "form": "명세서와 달라요",
+            "meaningVi": "khác với N",
+            "noteVi": "Dùng khi báo dữ liệu không khớp spec; 해요체 hợp với chat nội bộ."
+          }
+        ]
       },
       "tags": [
         "api"
@@ -713,7 +1393,21 @@
       "romanization": "eungdap",
       "example": {
         "ko": "서버에서 응답이 오지 않습니다.",
-        "vi": "Không nhận được response từ server."
+        "vi": "Không nhận được response từ server.",
+        "grammar": [
+          {
+            "pattern": "N에서",
+            "form": "서버에서",
+            "meaningVi": "từ N (nguồn xuất phát của hành động)",
+            "noteVi": "Với tổ chức/hệ thống, 에서 có thể đóng vai chủ ngữ hoặc chỉ nguồn."
+          },
+          {
+            "pattern": "-지 않다",
+            "form": "오지 않습니다",
+            "meaningVi": "không (phủ định động từ)",
+            "noteVi": "Trang trọng hơn 안 와요; hợp khi báo lỗi cho khách hàng."
+          }
+        ]
       },
       "tags": [
         "api",
@@ -727,7 +1421,21 @@
       "romanization": "parameteo",
       "example": {
         "ko": "필수 파라미터가 누락되어 400 에러가 났습니다.",
-        "vi": "Do thiếu tham số bắt buộc nên bị lỗi 400."
+        "vi": "Do thiếu tham số bắt buộc nên bị lỗi 400.",
+        "grammar": [
+          {
+            "pattern": "-되다 (bị động)",
+            "form": "누락되어",
+            "meaningVi": "bị (bỏ sót), dạng bị động của -하다",
+            "noteVi": "Dạng bị động giúp mô tả lỗi khách quan, không đổ lỗi cho ai."
+          },
+          {
+            "pattern": "-아/어서",
+            "form": "누락되어",
+            "meaningVi": "vì... nên (nguyên nhân dẫn đến kết quả)",
+            "noteVi": "-어서 không dùng với câu mệnh lệnh/đề nghị phía sau."
+          }
+        ]
       },
       "tags": [
         "api"
@@ -740,7 +1448,21 @@
       "romanization": "endeupointeu",
       "example": {
         "ko": "새로운 엔드포인트 주소를 공유드리겠습니다.",
-        "vi": "Tôi sẽ chia sẻ địa chỉ endpoint mới."
+        "vi": "Tôi sẽ chia sẻ địa chỉ endpoint mới.",
+        "grammar": [
+          {
+            "pattern": "-아/어 드리다",
+            "form": "공유드리겠습니다",
+            "meaningVi": "làm gì đó cho người trên (khiêm nhường)",
+            "noteVi": "공유드리다 là cách nói khiêm nhường rất phổ biến với khách hàng."
+          },
+          {
+            "pattern": "-겠-",
+            "form": "공유드리겠습니다",
+            "meaningVi": "sẽ (ý chí của người nói)",
+            "noteVi": "Thể hiện cam kết lịch sự khi hứa làm việc gì."
+          }
+        ]
       },
       "tags": [
         "api"
@@ -753,7 +1475,26 @@
       "romanization": "injeung",
       "example": {
         "ko": "토큰이 만료되어 인증에 실패했습니다.",
-        "vi": "Token hết hạn nên xác thực thất bại."
+        "vi": "Token hết hạn nên xác thực thất bại.",
+        "grammar": [
+          {
+            "pattern": "-되다 (bị động)",
+            "form": "만료되어",
+            "meaningVi": "bị/được (hết hạn) – trạng thái bị động"
+          },
+          {
+            "pattern": "-아/어서",
+            "form": "만료되어",
+            "meaningVi": "vì... nên",
+            "noteVi": "Giải thích nguyên nhân lỗi xác thực một cách gọn gàng."
+          },
+          {
+            "pattern": "N에 실패하다",
+            "form": "인증에 실패했습니다",
+            "meaningVi": "thất bại trong việc N",
+            "noteVi": "Đi với trợ từ 에, không dùng 을/를."
+          }
+        ]
       },
       "tags": [
         "security",
@@ -767,7 +1508,20 @@
       "romanization": "inga",
       "example": {
         "ko": "인증은 성공했지만 인가 단계에서 403 에러가 납니다.",
-        "vi": "Xác thực thành công nhưng bị lỗi 403 ở bước phân quyền."
+        "vi": "Xác thực thành công nhưng bị lỗi 403 ở bước phân quyền.",
+        "grammar": [
+          {
+            "pattern": "-지만",
+            "form": "성공했지만",
+            "meaningVi": "nhưng, tuy... nhưng",
+            "noteVi": "Dùng để đối chiếu hai kết quả trong báo cáo lỗi."
+          },
+          {
+            "pattern": "N에서",
+            "form": "인가 단계에서",
+            "meaningVi": "ở/tại (giai đoạn) N"
+          }
+        ]
       },
       "tags": [
         "security"
@@ -780,7 +1534,15 @@
       "romanization": "tokeun",
       "example": {
         "ko": "토큰 유효 시간은 30분으로 설정했어요.",
-        "vi": "Thời gian hiệu lực của token được đặt là 30 phút."
+        "vi": "Thời gian hiệu lực của token được đặt là 30 phút.",
+        "grammar": [
+          {
+            "pattern": "N(으)로 설정하다",
+            "form": "30분으로 설정했어요",
+            "meaningVi": "thiết lập thành N",
+            "noteVi": "(으)로 chỉ giá trị/kết quả được đặt."
+          }
+        ]
       },
       "tags": [
         "security",
@@ -794,7 +1556,21 @@
       "romanization": "amhohwa",
       "example": {
         "ko": "개인정보는 암호화해서 저장해야 합니다.",
-        "vi": "Thông tin cá nhân phải được mã hóa rồi mới lưu."
+        "vi": "Thông tin cá nhân phải được mã hóa rồi mới lưu.",
+        "grammar": [
+          {
+            "pattern": "-아/어서 (trình tự)",
+            "form": "암호화해서 저장해야",
+            "meaningVi": "làm A rồi (bằng cách đó) làm B",
+            "noteVi": "Hai hành động liên kết chặt: mã hóa rồi mới lưu."
+          },
+          {
+            "pattern": "-아/어야 하다",
+            "form": "저장해야 합니다",
+            "meaningVi": "phải, cần phải",
+            "noteVi": "Diễn đạt yêu cầu bắt buộc trong spec, quy định bảo mật."
+          }
+        ]
       },
       "tags": [
         "security"
@@ -807,7 +1583,20 @@
       "romanization": "chwiyakjeom",
       "example": {
         "ko": "보안 점검에서 SQL 인젝션 취약점이 발견되었습니다.",
-        "vi": "Kiểm tra bảo mật đã phát hiện lỗ hổng SQL injection."
+        "vi": "Kiểm tra bảo mật đã phát hiện lỗ hổng SQL injection.",
+        "grammar": [
+          {
+            "pattern": "-되다 (bị động)",
+            "form": "발견되었습니다",
+            "meaningVi": "được/bị phát hiện",
+            "noteVi": "Bị động thường dùng trong báo cáo kết quả kiểm tra."
+          },
+          {
+            "pattern": "N에서",
+            "form": "보안 점검에서",
+            "meaningVi": "trong (đợt) N"
+          }
+        ]
       },
       "tags": [
         "security"
@@ -820,7 +1609,21 @@
       "romanization": "gwonhan",
       "example": {
         "ko": "운영 DB 접근 권한을 요청드려도 될까요?",
-        "vi": "Tôi có thể xin quyền truy cập DB production được không ạ?"
+        "vi": "Tôi có thể xin quyền truy cập DB production được không ạ?",
+        "grammar": [
+          {
+            "pattern": "-아/어도 될까요?",
+            "form": "요청드려도 될까요?",
+            "meaningVi": "tôi ... có được không ạ?",
+            "noteVi": "Cách xin phép lịch sự, mềm mỏng với khách hàng hoặc cấp trên."
+          },
+          {
+            "pattern": "N드리다",
+            "form": "요청드려도",
+            "meaningVi": "(khiêm nhường) xin/gửi N tới người trên",
+            "noteVi": "요청드리다 khiêm nhường hơn 요청하다."
+          }
+        ]
       },
       "tags": [
         "security",
@@ -834,7 +1637,21 @@
       "romanization": "banghwabyeok",
       "example": {
         "ko": "방화벽 때문에 외부 서버에 접속이 안 됩니다.",
-        "vi": "Do tường lửa nên không kết nối được tới server bên ngoài."
+        "vi": "Do tường lửa nên không kết nối được tới server bên ngoài.",
+        "grammar": [
+          {
+            "pattern": "N 때문에",
+            "form": "방화벽 때문에",
+            "meaningVi": "vì, do N",
+            "noteVi": "Sau danh từ dùng 때문에; sau động từ dùng -기 때문에."
+          },
+          {
+            "pattern": "안 + V",
+            "form": "접속이 안 됩니다",
+            "meaningVi": "không (thể) được, không hoạt động",
+            "noteVi": "N이/가 안 되다: cách nói tự nhiên khi chức năng không chạy."
+          }
+        ]
       },
       "tags": [
         "infra",
@@ -848,7 +1665,20 @@
       "romanization": "sesyeon",
       "example": {
         "ko": "일정 시간이 지나면 세션이 만료됩니다.",
-        "vi": "Sau một khoảng thời gian nhất định thì session sẽ hết hạn."
+        "vi": "Sau một khoảng thời gian nhất định thì session sẽ hết hạn.",
+        "grammar": [
+          {
+            "pattern": "-(으)면",
+            "form": "지나면",
+            "meaningVi": "nếu, khi (điều kiện)",
+            "noteVi": "Dùng mô tả quy tắc hoạt động của hệ thống."
+          },
+          {
+            "pattern": "-되다 (bị động)",
+            "form": "만료됩니다",
+            "meaningVi": "bị hết hạn"
+          }
+        ]
       },
       "tags": [
         "server",
@@ -862,7 +1692,15 @@
       "romanization": "taimaut",
       "example": {
         "ko": "외부 API 응답이 늦어서 타임아웃이 발생했어요.",
-        "vi": "Vì API bên ngoài phản hồi chậm nên đã bị timeout."
+        "vi": "Vì API bên ngoài phản hồi chậm nên đã bị timeout.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "늦어서",
+            "meaningVi": "vì... nên",
+            "noteVi": "Nêu nguyên nhân trước, kết quả sau; tự nhiên trong báo cáo sự cố."
+          }
+        ]
       },
       "tags": [
         "api",
@@ -876,7 +1714,21 @@
       "romanization": "eungdap sokdo",
       "example": {
         "ko": "캐시를 적용한 후 응답 속도가 두 배 빨라졌습니다.",
-        "vi": "Sau khi áp dụng cache, tốc độ phản hồi nhanh gấp đôi."
+        "vi": "Sau khi áp dụng cache, tốc độ phản hồi nhanh gấp đôi.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄴ 후",
+            "form": "적용한 후",
+            "meaningVi": "sau khi làm V",
+            "noteVi": "Dùng nêu thay đổi trước/sau khi áp dụng giải pháp."
+          },
+          {
+            "pattern": "-아/어지다",
+            "form": "빨라졌습니다",
+            "meaningVi": "trở nên (biến đổi trạng thái)",
+            "noteVi": "Gắn với tính từ để diễn tả sự thay đổi."
+          }
+        ]
       },
       "tags": [
         "performance",
@@ -890,7 +1742,20 @@
       "romanization": "buha",
       "example": {
         "ko": "이벤트 기간에는 서버 부하가 크게 증가합니다.",
-        "vi": "Trong thời gian sự kiện, tải server tăng lên rất nhiều."
+        "vi": "Trong thời gian sự kiện, tải server tăng lên rất nhiều.",
+        "grammar": [
+          {
+            "pattern": "N에는",
+            "form": "이벤트 기간에는",
+            "meaningVi": "vào (thời gian) N thì (nhấn mạnh)",
+            "noteVi": "에 + 는 nhấn mạnh, đối chiếu với thời gian khác."
+          },
+          {
+            "pattern": "A-게 (trạng từ)",
+            "form": "크게",
+            "meaningVi": "một cách (lớn), biến tính từ thành trạng từ"
+          }
+        ]
       },
       "tags": [
         "performance",
@@ -904,7 +1769,20 @@
       "romanization": "buha teseuteu",
       "example": {
         "ko": "오픈 전에 부하 테스트를 진행해야 합니다.",
-        "vi": "Trước khi go-live cần tiến hành load test."
+        "vi": "Trước khi go-live cần tiến hành load test.",
+        "grammar": [
+          {
+            "pattern": "N 전에",
+            "form": "오픈 전에",
+            "meaningVi": "trước N",
+            "noteVi": "Với động từ dùng -기 전에."
+          },
+          {
+            "pattern": "-아/어야 하다",
+            "form": "진행해야 합니다",
+            "meaningVi": "phải, cần phải"
+          }
+        ]
       },
       "tags": [
         "test",
@@ -918,7 +1796,15 @@
       "romanization": "choejeokhwa",
       "example": {
         "ko": "이 쿼리는 최적화가 필요해 보입니다.",
-        "vi": "Câu query này có vẻ cần được tối ưu."
+        "vi": "Câu query này có vẻ cần được tối ưu.",
+        "grammar": [
+          {
+            "pattern": "-아/어 보이다",
+            "form": "필요해 보입니다",
+            "meaningVi": "trông có vẻ, có vẻ như",
+            "noteVi": "Nêu ý kiến mềm mỏng, tránh khẳng định khi review code."
+          }
+        ]
       },
       "tags": [
         "performance"
@@ -931,7 +1817,25 @@
       "romanization": "kaesi",
       "example": {
         "ko": "데이터가 바뀌지 않으면 캐시를 지워 보세요.",
-        "vi": "Nếu dữ liệu không thay đổi thì hãy thử xóa cache."
+        "vi": "Nếu dữ liệu không thay đổi thì hãy thử xóa cache.",
+        "grammar": [
+          {
+            "pattern": "-(으)면",
+            "form": "바뀌지 않으면",
+            "meaningVi": "nếu (không)"
+          },
+          {
+            "pattern": "-아/어 보다",
+            "form": "지워 보세요",
+            "meaningVi": "thử làm V",
+            "noteVi": "-아/어 보세요: gợi ý nhẹ nhàng, lịch sự."
+          },
+          {
+            "pattern": "-(으)세요",
+            "form": "보세요",
+            "meaningVi": "hãy (mệnh lệnh/đề nghị lịch sự)"
+          }
+        ]
       },
       "tags": [
         "performance",
@@ -945,7 +1849,20 @@
       "romanization": "byeongmok",
       "example": {
         "ko": "DB 커넥션 부분에서 병목이 생기고 있습니다.",
-        "vi": "Đang có bottleneck ở phần connection DB."
+        "vi": "Đang có bottleneck ở phần connection DB.",
+        "grammar": [
+          {
+            "pattern": "-고 있다",
+            "form": "생기고 있습니다",
+            "meaningVi": "đang (tiếp diễn)",
+            "noteVi": "Mô tả vấn đề đang diễn ra trong báo cáo hiện trạng."
+          },
+          {
+            "pattern": "N에서",
+            "form": "부분에서",
+            "meaningVi": "ở/tại N"
+          }
+        ]
       },
       "tags": [
         "performance"
@@ -958,7 +1875,15 @@
       "romanization": "memori nusu",
       "example": {
         "ko": "메모리 누수 때문에 서버가 자주 멈췄어요.",
-        "vi": "Do rò rỉ bộ nhớ nên server thường xuyên bị treo."
+        "vi": "Do rò rỉ bộ nhớ nên server thường xuyên bị treo.",
+        "grammar": [
+          {
+            "pattern": "N 때문에",
+            "form": "메모리 누수 때문에",
+            "meaningVi": "vì, do N",
+            "noteVi": "Thường mang sắc thái nguyên nhân tiêu cực."
+          }
+        ]
       },
       "tags": [
         "performance",
@@ -972,7 +1897,20 @@
       "romanization": "seuredeu",
       "example": {
         "ko": "스레드 덤프를 떠서 원인을 분석해 보겠습니다.",
-        "vi": "Tôi sẽ lấy thread dump để phân tích nguyên nhân."
+        "vi": "Tôi sẽ lấy thread dump để phân tích nguyên nhân.",
+        "grammar": [
+          {
+            "pattern": "-아/어서 (trình tự)",
+            "form": "떠서",
+            "meaningVi": "làm A rồi làm B"
+          },
+          {
+            "pattern": "-아/어 보다",
+            "form": "분석해 보겠습니다",
+            "meaningVi": "thử làm V",
+            "noteVi": "-아/어 보겠습니다: hứa sẽ thử, khiêm tốn và chủ động."
+          }
+        ]
       },
       "tags": [
         "java",
@@ -986,7 +1924,15 @@
       "romanization": "dongsiseong",
       "example": {
         "ko": "여러 사용자가 동시에 수정할 때 동시성 문제가 생깁니다.",
-        "vi": "Khi nhiều người dùng sửa cùng lúc thì xảy ra vấn đề concurrency."
+        "vi": "Khi nhiều người dùng sửa cùng lúc thì xảy ra vấn đề concurrency.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄹ 때",
+            "form": "수정할 때",
+            "meaningVi": "khi, lúc làm V",
+            "noteVi": "Dùng để mô tả điều kiện xảy ra lỗi."
+          }
+        ]
       },
       "tags": [
         "java",
@@ -1000,7 +1946,20 @@
       "romanization": "bidonggi",
       "example": {
         "ko": "메일 발송은 비동기로 처리하도록 변경했어요.",
-        "vi": "Tôi đã đổi để việc gửi mail được xử lý bất đồng bộ."
+        "vi": "Tôi đã đổi để việc gửi mail được xử lý bất đồng bộ.",
+        "grammar": [
+          {
+            "pattern": "-도록 하다",
+            "form": "처리하도록 변경했어요",
+            "meaningVi": "làm cho/để (đạt mục đích)",
+            "noteVi": "-도록 chỉ mục đích hoặc cách thức mong muốn."
+          },
+          {
+            "pattern": "N(으)로",
+            "form": "비동기로",
+            "meaningVi": "theo cách/bằng N"
+          }
+        ]
       },
       "tags": [
         "java",
@@ -1014,7 +1973,15 @@
       "romanization": "uijonseong",
       "example": {
         "ko": "라이브러리 의존성 충돌로 빌드가 실패했습니다.",
-        "vi": "Build thất bại do xung đột dependency của thư viện."
+        "vi": "Build thất bại do xung đột dependency của thư viện.",
+        "grammar": [
+          {
+            "pattern": "N(으)로",
+            "form": "충돌로",
+            "meaningVi": "do, vì N (nguyên nhân)",
+            "noteVi": "N(으)로 chỉ nguyên nhân, trang trọng, hay dùng trong văn bản báo cáo."
+          }
+        ]
       },
       "tags": [
         "java",
@@ -1028,7 +1995,24 @@
       "romanization": "ijunghwa",
       "example": {
         "ko": "서버를 이중화해서 장애에 대비하고 있습니다.",
-        "vi": "Chúng tôi dự phòng kép server để đề phòng sự cố."
+        "vi": "Chúng tôi dự phòng kép server để đề phòng sự cố.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "이중화해서",
+            "meaningVi": "bằng cách làm V, làm V rồi"
+          },
+          {
+            "pattern": "N에 대비하다",
+            "form": "장애에 대비하고",
+            "meaningVi": "chuẩn bị đề phòng N"
+          },
+          {
+            "pattern": "-고 있다",
+            "form": "대비하고 있습니다",
+            "meaningVi": "đang (tiếp diễn)"
+          }
+        ]
       },
       "tags": [
         "infra",
@@ -1042,7 +2026,15 @@
       "romanization": "johoe",
       "example": {
         "ko": "조회 결과가 0건으로 나옵니다.",
-        "vi": "Kết quả tra cứu ra 0 bản ghi."
+        "vi": "Kết quả tra cứu ra 0 bản ghi.",
+        "grammar": [
+          {
+            "pattern": "N(으)로 나오다",
+            "form": "0건으로 나옵니다",
+            "meaningVi": "ra kết quả là N",
+            "noteVi": "Cách nói tự nhiên khi báo kết quả hiển thị/truy vấn."
+          }
+        ]
       },
       "tags": [
         "db",
@@ -1056,7 +2048,15 @@
       "romanization": "eonoteisyeon",
       "example": {
         "ko": "트랜잭션 어노테이션을 서비스 메서드에 붙였어요.",
-        "vi": "Tôi đã gắn annotation @Transactional vào method của service."
+        "vi": "Tôi đã gắn annotation @Transactional vào method của service.",
+        "grammar": [
+          {
+            "pattern": "N에 붙이다",
+            "form": "메서드에 붙였어요",
+            "meaningVi": "gắn/dán vào N",
+            "noteVi": "Developer Hàn dùng 붙이다 cho annotation."
+          }
+        ]
       },
       "tags": [
         "java",
@@ -1070,7 +2070,20 @@
       "romanization": "bin",
       "example": {
         "ko": "빈이 등록되지 않아서 애플리케이션이 실행되지 않습니다.",
-        "vi": "Do bean chưa được đăng ký nên ứng dụng không chạy được."
+        "vi": "Do bean chưa được đăng ký nên ứng dụng không chạy được.",
+        "grammar": [
+          {
+            "pattern": "-지 않아서",
+            "form": "등록되지 않아서",
+            "meaningVi": "vì không... nên",
+            "noteVi": "Kết hợp phủ định -지 않다 với -아서 để nêu nguyên nhân."
+          },
+          {
+            "pattern": "-되다 (bị động)",
+            "form": "등록되지",
+            "meaningVi": "được đăng ký"
+          }
+        ]
       },
       "tags": [
         "spring"
@@ -1083,7 +2096,25 @@
       "romanization": "uijonseong jueip",
       "example": {
         "ko": "스프링에서는 생성자로 의존성 주입을 하는 것을 권장합니다.",
-        "vi": "Trong Spring, khuyến khích tiêm phụ thuộc qua constructor."
+        "vi": "Trong Spring, khuyến khích tiêm phụ thuộc qua constructor.",
+        "grammar": [
+          {
+            "pattern": "-는 것",
+            "form": "하는 것",
+            "meaningVi": "việc làm V (danh từ hóa)",
+            "noteVi": "Danh từ hóa mệnh đề để làm tân ngữ."
+          },
+          {
+            "pattern": "N(으)로",
+            "form": "생성자로",
+            "meaningVi": "bằng, thông qua N (phương tiện)"
+          },
+          {
+            "pattern": "N에서는",
+            "form": "스프링에서는",
+            "meaningVi": "ở/trong N thì"
+          }
+        ]
       },
       "tags": [
         "spring",
@@ -1097,7 +2128,15 @@
       "romanization": "inteopeiseu",
       "example": {
         "ko": "외부 시스템과의 인터페이스 명세를 받았습니다.",
-        "vi": "Tôi đã nhận được đặc tả interface với hệ thống bên ngoài."
+        "vi": "Tôi đã nhận được đặc tả interface với hệ thống bên ngoài.",
+        "grammar": [
+          {
+            "pattern": "N과/와의 N",
+            "form": "외부 시스템과의",
+            "meaningVi": "N giữa/với N (bổ nghĩa danh từ)",
+            "noteVi": "Dạng 과의 thường gặp trong văn bản kỹ thuật."
+          }
+        ]
       },
       "tags": [
         "api",
@@ -1111,7 +2150,20 @@
       "romanization": "meseodeu",
       "example": {
         "ko": "이 메서드는 너무 길어서 나누는 게 좋겠어요.",
-        "vi": "Method này quá dài nên tách ra thì tốt hơn."
+        "vi": "Method này quá dài nên tách ra thì tốt hơn.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "길어서",
+            "meaningVi": "vì... nên"
+          },
+          {
+            "pattern": "-는 게 좋겠다",
+            "form": "나누는 게 좋겠어요",
+            "meaningVi": "nên làm V thì tốt hơn",
+            "noteVi": "Góp ý mềm mỏng khi review code, không ra lệnh."
+          }
+        ]
       },
       "tags": [
         "java",
@@ -1125,7 +2177,20 @@
       "romanization": "bildeu",
       "example": {
         "ko": "테스트가 실패해서 빌드가 깨졌습니다.",
-        "vi": "Vì test thất bại nên build bị hỏng."
+        "vi": "Vì test thất bại nên build bị hỏng.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "실패해서",
+            "meaningVi": "vì... nên"
+          },
+          {
+            "pattern": "N이/가 깨지다",
+            "form": "깨졌습니다",
+            "meaningVi": "bị vỡ/hỏng (build bị fail)",
+            "noteVi": "빌드가 깨지다 là cách nói thông dụng của dev Hàn."
+          }
+        ]
       },
       "tags": [
         "dev",
@@ -1139,7 +2204,20 @@
       "romanization": "keompail",
       "example": {
         "ko": "자바 버전이 달라서 컴파일 에러가 납니다.",
-        "vi": "Do khác phiên bản Java nên bị lỗi biên dịch."
+        "vi": "Do khác phiên bản Java nên bị lỗi biên dịch.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "달라서",
+            "meaningVi": "vì (khác)... nên"
+          },
+          {
+            "pattern": "N이/가 나다",
+            "form": "에러가 납니다",
+            "meaningVi": "phát sinh, xảy ra (lỗi)",
+            "noteVi": "에러가 나다 tự nhiên hơn 에러가 발생하다 trong hội thoại."
+          }
+        ]
       },
       "tags": [
         "java",
@@ -1153,7 +2231,15 @@
       "romanization": "beojeon",
       "example": {
         "ko": "스프링 부트 버전을 3.2로 올렸습니다.",
-        "vi": "Tôi đã nâng phiên bản Spring Boot lên 3.2."
+        "vi": "Tôi đã nâng phiên bản Spring Boot lên 3.2.",
+        "grammar": [
+          {
+            "pattern": "N(으)로 올리다",
+            "form": "3.2로 올렸습니다",
+            "meaningVi": "nâng lên N",
+            "noteVi": "Nâng phiên bản dùng 올리다; hạ phiên bản dùng 내리다."
+          }
+        ]
       },
       "tags": [
         "spring",
@@ -1167,7 +2253,20 @@
       "romanization": "paechi",
       "example": {
         "ko": "보안 패치를 이번 주 안에 적용해야 합니다.",
-        "vi": "Cần áp dụng bản vá bảo mật trong tuần này."
+        "vi": "Cần áp dụng bản vá bảo mật trong tuần này.",
+        "grammar": [
+          {
+            "pattern": "N 안에",
+            "form": "이번 주 안에",
+            "meaningVi": "trong vòng N (thời hạn)",
+            "noteVi": "Dùng nêu deadline rõ ràng."
+          },
+          {
+            "pattern": "-아/어야 하다",
+            "form": "적용해야 합니다",
+            "meaningVi": "phải, cần phải"
+          }
+        ]
       },
       "tags": [
         "security",
@@ -1181,7 +2280,21 @@
       "romanization": "hatpikseu",
       "example": {
         "ko": "긴급한 버그라서 핫픽스로 바로 배포하겠습니다.",
-        "vi": "Vì là bug khẩn cấp nên sẽ deploy ngay bằng hotfix."
+        "vi": "Vì là bug khẩn cấp nên sẽ deploy ngay bằng hotfix.",
+        "grammar": [
+          {
+            "pattern": "N(이)라서",
+            "form": "버그라서",
+            "meaningVi": "vì là N nên",
+            "noteVi": "Dạng nguyên nhân sau danh từ, tự nhiên trong hội thoại."
+          },
+          {
+            "pattern": "-겠-",
+            "form": "배포하겠습니다",
+            "meaningVi": "sẽ (ý định của người nói)",
+            "noteVi": "Thông báo hành động sắp làm một cách lịch sự."
+          }
+        ]
       },
       "tags": [
         "bug",
@@ -1195,7 +2308,24 @@
       "romanization": "moniteoring",
       "example": {
         "ko": "배포 후 한 시간 동안 모니터링하겠습니다.",
-        "vi": "Sau khi deploy tôi sẽ giám sát trong một tiếng."
+        "vi": "Sau khi deploy tôi sẽ giám sát trong một tiếng.",
+        "grammar": [
+          {
+            "pattern": "N 후",
+            "form": "배포 후",
+            "meaningVi": "sau N"
+          },
+          {
+            "pattern": "N 동안",
+            "form": "한 시간 동안",
+            "meaningVi": "trong suốt (khoảng thời gian) N"
+          },
+          {
+            "pattern": "-겠-",
+            "form": "모니터링하겠습니다",
+            "meaningVi": "sẽ (cam kết)"
+          }
+        ]
       },
       "tags": [
         "infra",
@@ -1209,7 +2339,20 @@
       "romanization": "allim",
       "example": {
         "ko": "CPU 사용률이 90%를 넘으면 알림이 옵니다.",
-        "vi": "Khi mức sử dụng CPU vượt 90% thì sẽ có cảnh báo."
+        "vi": "Khi mức sử dụng CPU vượt 90% thì sẽ có cảnh báo.",
+        "grammar": [
+          {
+            "pattern": "-(으)면",
+            "form": "넘으면",
+            "meaningVi": "nếu, khi (điều kiện)",
+            "noteVi": "Mô tả điều kiện kích hoạt cảnh báo."
+          },
+          {
+            "pattern": "N을/를 넘다",
+            "form": "90%를 넘으면",
+            "meaningVi": "vượt quá N"
+          }
+        ]
       },
       "tags": [
         "infra",
@@ -1223,7 +2366,19 @@
       "romanization": "jaesijak",
       "example": {
         "ko": "설정을 바꾼 후 서버를 재시작해야 합니다.",
-        "vi": "Sau khi đổi cấu hình phải khởi động lại server."
+        "vi": "Sau khi đổi cấu hình phải khởi động lại server.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄴ 후",
+            "form": "바꾼 후",
+            "meaningVi": "sau khi làm V"
+          },
+          {
+            "pattern": "-아/어야 하다",
+            "form": "재시작해야 합니다",
+            "meaningVi": "phải, cần phải"
+          }
+        ]
       },
       "tags": [
         "server",
@@ -1237,7 +2392,15 @@
       "romanization": "seobeo daun",
       "example": {
         "ko": "트래픽이 몰려서 서버 다운이 발생했습니다.",
-        "vi": "Do lưu lượng tăng đột biến nên server đã bị sập."
+        "vi": "Do lưu lượng tăng đột biến nên server đã bị sập.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "몰려서",
+            "meaningVi": "vì... nên",
+            "noteVi": "트래픽이 몰리다: lưu lượng dồn tới, cách nói thông dụng."
+          }
+        ]
       },
       "tags": [
         "incident",
@@ -1251,7 +2414,20 @@
       "romanization": "wonin bunseok",
       "example": {
         "ko": "장애 원인 분석 결과를 정리해서 공유드리겠습니다.",
-        "vi": "Tôi sẽ tổng hợp kết quả phân tích nguyên nhân sự cố rồi chia sẻ."
+        "vi": "Tôi sẽ tổng hợp kết quả phân tích nguyên nhân sự cố rồi chia sẻ.",
+        "grammar": [
+          {
+            "pattern": "-아/어서 (trình tự)",
+            "form": "정리해서",
+            "meaningVi": "làm A rồi làm B"
+          },
+          {
+            "pattern": "-아/어 드리다",
+            "form": "공유드리겠습니다",
+            "meaningVi": "làm cho người trên (khiêm nhường)",
+            "noteVi": "Rất hay dùng trong email gửi khách hàng."
+          }
+        ]
       },
       "tags": [
         "incident"
@@ -1264,7 +2440,20 @@
       "romanization": "imsi jochi",
       "example": {
         "ko": "우선 임시 조치로 서비스를 정상화했습니다.",
-        "vi": "Trước mắt đã khôi phục dịch vụ bằng biện pháp tạm thời."
+        "vi": "Trước mắt đã khôi phục dịch vụ bằng biện pháp tạm thời.",
+        "grammar": [
+          {
+            "pattern": "N(으)로",
+            "form": "임시 조치로",
+            "meaningVi": "bằng, bằng cách N"
+          },
+          {
+            "pattern": "우선",
+            "form": "우선",
+            "meaningVi": "trước hết, tạm thời",
+            "noteVi": "Báo rằng đây là bước đầu, sẽ còn xử lý triệt để sau."
+          }
+        ]
       },
       "tags": [
         "incident"
@@ -1277,7 +2466,20 @@
       "romanization": "jaebal bangji",
       "example": {
         "ko": "재발 방지를 위해 모니터링 항목을 추가하겠습니다.",
-        "vi": "Để phòng ngừa tái diễn, chúng tôi sẽ bổ sung hạng mục giám sát."
+        "vi": "Để phòng ngừa tái diễn, chúng tôi sẽ bổ sung hạng mục giám sát.",
+        "grammar": [
+          {
+            "pattern": "N을/를 위해",
+            "form": "재발 방지를 위해",
+            "meaningVi": "để, vì mục đích N",
+            "noteVi": "Cụm cố định trong báo cáo sự cố (재발 방지 대책)."
+          },
+          {
+            "pattern": "-겠-",
+            "form": "추가하겠습니다",
+            "meaningVi": "sẽ (cam kết)"
+          }
+        ]
       },
       "tags": [
         "incident"
@@ -1290,7 +2492,20 @@
       "romanization": "yeonghyang beomwi",
       "example": {
         "ko": "이번 수정의 영향 범위를 먼저 파악해 주세요.",
-        "vi": "Hãy nắm rõ phạm vi ảnh hưởng của lần sửa này trước."
+        "vi": "Hãy nắm rõ phạm vi ảnh hưởng của lần sửa này trước.",
+        "grammar": [
+          {
+            "pattern": "-아/어 주세요",
+            "form": "파악해 주세요",
+            "meaningVi": "hãy làm giúp/cho (yêu cầu lịch sự)",
+            "noteVi": "Yêu cầu lịch sự; với khách hàng nên dùng -아/어 주시겠어요?"
+          },
+          {
+            "pattern": "N의",
+            "form": "이번 수정의",
+            "meaningVi": "của N"
+          }
+        ]
       },
       "tags": [
         "bug",
@@ -1304,7 +2519,20 @@
       "romanization": "juseok",
       "example": {
         "ko": "복잡한 로직에는 주석을 달아 주세요.",
-        "vi": "Hãy viết chú thích cho các logic phức tạp."
+        "vi": "Hãy viết chú thích cho các logic phức tạp.",
+        "grammar": [
+          {
+            "pattern": "N에는",
+            "form": "로직에는",
+            "meaningVi": "ở N thì (nhấn mạnh đối tượng)"
+          },
+          {
+            "pattern": "-아/어 주세요",
+            "form": "달아 주세요",
+            "meaningVi": "hãy làm giúp (yêu cầu lịch sự)",
+            "noteVi": "주석을 달다: viết comment, kết hợp cố định."
+          }
+        ]
       },
       "tags": [
         "dev"
@@ -1317,7 +2545,20 @@
       "romanization": "soseu kodeu",
       "example": {
         "ko": "소스 코드는 납품 전에 정적 분석을 받아야 합니다.",
-        "vi": "Mã nguồn phải được phân tích tĩnh trước khi bàn giao."
+        "vi": "Mã nguồn phải được phân tích tĩnh trước khi bàn giao.",
+        "grammar": [
+          {
+            "pattern": "N 전에",
+            "form": "납품 전에",
+            "meaningVi": "trước N"
+          },
+          {
+            "pattern": "-아/어야 하다",
+            "form": "받아야 합니다",
+            "meaningVi": "phải, cần phải",
+            "noteVi": "Nêu yêu cầu hợp đồng/quy trình một cách trang trọng."
+          }
+        ]
       },
       "tags": [
         "dev"
@@ -1330,7 +2571,25 @@
       "romanization": "hadeukoding",
       "example": {
         "ko": "URL이 하드코딩되어 있어서 환경마다 수정해야 해요.",
-        "vi": "Vì URL bị hard-code nên mỗi môi trường đều phải sửa."
+        "vi": "Vì URL bị hard-code nên mỗi môi trường đều phải sửa.",
+        "grammar": [
+          {
+            "pattern": "-아/어 있다",
+            "form": "하드코딩되어 있어서",
+            "meaningVi": "đang ở trạng thái (kết quả còn lại)",
+            "noteVi": "Mô tả trạng thái hiện tại của code sau một hành động."
+          },
+          {
+            "pattern": "N마다",
+            "form": "환경마다",
+            "meaningVi": "mỗi N, từng N"
+          },
+          {
+            "pattern": "-아/어야 하다",
+            "form": "수정해야 해요",
+            "meaningVi": "phải, cần phải"
+          }
+        ]
       },
       "tags": [
         "dev"
@@ -1343,7 +2602,20 @@
       "romanization": "dibeoging",
       "example": {
         "ko": "디버깅해 보니 반복문 조건이 잘못되어 있었습니다.",
-        "vi": "Debug thử thì thấy điều kiện vòng lặp bị sai."
+        "vi": "Debug thử thì thấy điều kiện vòng lặp bị sai.",
+        "grammar": [
+          {
+            "pattern": "-아/어 보니",
+            "form": "디버깅해 보니",
+            "meaningVi": "thử làm V thì mới thấy",
+            "noteVi": "Dùng khi báo phát hiện sau khi kiểm tra."
+          },
+          {
+            "pattern": "-아/어 있다",
+            "form": "잘못되어 있었습니다",
+            "meaningVi": "ở trạng thái (sai)"
+          }
+        ]
       },
       "tags": [
         "dev",
@@ -1357,7 +2629,21 @@
       "romanization": "beogeureul gochida",
       "example": {
         "ko": "그 버그는 어제 고쳤는데 아직 반영은 안 됐어요.",
-        "vi": "Bug đó hôm qua tôi đã sửa nhưng vẫn chưa được đưa lên."
+        "vi": "Bug đó hôm qua tôi đã sửa nhưng vẫn chưa được đưa lên.",
+        "grammar": [
+          {
+            "pattern": "-는데 / -(으)ㄴ데",
+            "form": "고쳤는데",
+            "meaningVi": "đã... nhưng (tương phản, bối cảnh)",
+            "noteVi": "Nêu bối cảnh rồi thông tin trái kỳ vọng phía sau."
+          },
+          {
+            "pattern": "아직 안 + V",
+            "form": "아직 반영은 안 됐어요",
+            "meaningVi": "vẫn chưa V",
+            "noteVi": "반영되다: được phản ánh/deploy lên môi trường."
+          }
+        ]
       },
       "tags": [
         "bug"
@@ -1370,7 +2656,20 @@
       "romanization": "kodeureul pusihada",
       "example": {
         "ko": "수정한 코드를 원격 저장소에 푸시했습니다.",
-        "vi": "Tôi đã push code đã sửa lên repository từ xa."
+        "vi": "Tôi đã push code đã sửa lên repository từ xa.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄴ (định ngữ quá khứ)",
+            "form": "수정한 코드",
+            "meaningVi": "(N) đã được V",
+            "noteVi": "Định ngữ quá khứ bổ nghĩa cho danh từ."
+          },
+          {
+            "pattern": "N에",
+            "form": "원격 저장소에",
+            "meaningVi": "lên/vào N (đích đến)"
+          }
+        ]
       },
       "tags": [
         "git"
@@ -1383,7 +2682,20 @@
       "romanization": "kworireul tyuninghada",
       "example": {
         "ko": "느린 화면의 쿼리를 튜닝해서 3초에서 0.5초로 줄였습니다.",
-        "vi": "Tôi đã tune query của màn hình chậm, giảm từ 3 giây xuống 0,5 giây."
+        "vi": "Tôi đã tune query của màn hình chậm, giảm từ 3 giây xuống 0,5 giây.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "튜닝해서",
+            "meaningVi": "bằng cách làm V, làm V rồi"
+          },
+          {
+            "pattern": "N에서 N(으)로",
+            "form": "3초에서 0.5초로",
+            "meaningVi": "từ N đến N (thay đổi giá trị)",
+            "noteVi": "Hữu ích khi báo cáo cải thiện hiệu năng bằng con số."
+          }
+        ]
       },
       "tags": [
         "db",
@@ -1397,7 +2709,15 @@
       "romanization": "iljeong",
       "example": {
         "ko": "이번 프로젝트 일정이 조금 빠듯합니다.",
-        "vi": "Lịch trình dự án lần này hơi gấp."
+        "vi": "Lịch trình dự án lần này hơi gấp.",
+        "grammar": [
+          {
+            "pattern": "조금 + A-습니다",
+            "form": "조금 빠듯합니다",
+            "meaningVi": "hơi ... (làm nhẹ mức độ)",
+            "noteVi": "Thêm 조금 để nói về khó khăn một cách mềm mỏng, lịch sự với khách hàng."
+          }
+        ]
       },
       "tags": [
         "schedule",
@@ -1411,7 +2731,20 @@
       "romanization": "gongsu",
       "example": {
         "ko": "이 기능은 공수가 3일 정도 들 것 같습니다.",
-        "vi": "Chức năng này chắc tốn khoảng 3 ngày công."
+        "vi": "Chức năng này chắc tốn khoảng 3 ngày công.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄹ 것 같다",
+            "form": "들 것 같습니다",
+            "meaningVi": "có lẽ sẽ, chắc là (phỏng đoán)",
+            "noteVi": "Dùng khi ước lượng công số, tránh khẳng định chắc chắn."
+          },
+          {
+            "pattern": "N 정도",
+            "form": "3일 정도",
+            "meaningVi": "khoảng, chừng (số lượng)"
+          }
+        ]
       },
       "tags": [
         "pm"
@@ -1424,7 +2757,15 @@
       "romanization": "magam",
       "example": {
         "ko": "보고서 마감이 이번 주 금요일입니다.",
-        "vi": "Hạn chót nộp báo cáo là thứ Sáu tuần này."
+        "vi": "Hạn chót nộp báo cáo là thứ Sáu tuần này.",
+        "grammar": [
+          {
+            "pattern": "N이다 (-입니다)",
+            "form": "금요일입니다",
+            "meaningVi": "là ... (câu khẳng định trang trọng)",
+            "noteVi": "하십시오체, phù hợp khi thông báo hạn chót trong công việc."
+          }
+        ]
       },
       "tags": [
         "schedule"
@@ -1437,7 +2778,25 @@
       "romanization": "sanchulmul",
       "example": {
         "ko": "단계별 산출물을 정리해서 제출해 주세요.",
-        "vi": "Hãy tổng hợp và nộp sản phẩm bàn giao của từng giai đoạn."
+        "vi": "Hãy tổng hợp và nộp sản phẩm bàn giao của từng giai đoạn.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "정리해서",
+            "meaningVi": "làm A rồi (dùng kết quả đó) làm B",
+            "noteVi": "Chỉ trình tự: sắp xếp xong rồi mới nộp."
+          },
+          {
+            "pattern": "-아/어 주세요",
+            "form": "제출해 주세요",
+            "meaningVi": "hãy ... giúp (yêu cầu lịch sự)"
+          },
+          {
+            "pattern": "N별",
+            "form": "단계별",
+            "meaningVi": "theo từng (giai đoạn, loại...)"
+          }
+        ]
       },
       "tags": [
         "pm"
@@ -1450,7 +2809,20 @@
       "romanization": "beomwi",
       "example": {
         "ko": "이 기능은 이번 계약 범위에 포함되지 않습니다.",
-        "vi": "Chức năng này không nằm trong phạm vi hợp đồng lần này."
+        "vi": "Chức năng này không nằm trong phạm vi hợp đồng lần này.",
+        "grammar": [
+          {
+            "pattern": "-지 않다",
+            "form": "포함되지 않습니다",
+            "meaningVi": "không ... (phủ định)",
+            "noteVi": "Phủ định dài, trang trọng hơn 안; hay dùng khi nói về phạm vi hợp đồng."
+          },
+          {
+            "pattern": "-되다 (bị động)",
+            "form": "포함되지",
+            "meaningVi": "được/bị ... (bị động của -하다)"
+          }
+        ]
       },
       "tags": [
         "pm",
@@ -1464,7 +2836,25 @@
       "romanization": "hoeuirok",
       "example": {
         "ko": "회의가 끝나면 회의록을 공유드리겠습니다.",
-        "vi": "Họp xong tôi sẽ chia sẻ biên bản cuộc họp ạ."
+        "vi": "Họp xong tôi sẽ chia sẻ biên bản cuộc họp ạ.",
+        "grammar": [
+          {
+            "pattern": "-(으)면",
+            "form": "끝나면",
+            "meaningVi": "nếu/khi ... thì"
+          },
+          {
+            "pattern": "-아/어 드리다 (N드리다)",
+            "form": "공유드리겠습니다",
+            "meaningVi": "làm ... cho (khiêm nhường)",
+            "noteVi": "공유드리다 là cách nói khiêm nhường rất phổ biến trong công sở."
+          },
+          {
+            "pattern": "-겠습니다",
+            "form": "공유드리겠습니다",
+            "meaningVi": "sẽ ... (ý định, trang trọng)"
+          }
+        ]
       },
       "tags": [
         "meeting"
@@ -1477,7 +2867,15 @@
       "romanization": "angeon",
       "example": {
         "ko": "오늘 회의 안건은 세 가지입니다.",
-        "vi": "Cuộc họp hôm nay có ba nội dung cần bàn."
+        "vi": "Cuộc họp hôm nay có ba nội dung cần bàn.",
+        "grammar": [
+          {
+            "pattern": "N이다 (-입니다)",
+            "form": "세 가지입니다",
+            "meaningVi": "là ... (khẳng định trang trọng)",
+            "noteVi": "Câu mở đầu cuộc họp thường dùng 하십시오체."
+          }
+        ]
       },
       "tags": [
         "meeting"
@@ -1490,7 +2888,20 @@
       "romanization": "chamseok",
       "example": {
         "ko": "내일 회의에 참석 가능하신가요?",
-        "vi": "Ngày mai anh/chị có tham dự cuộc họp được không ạ?"
+        "vi": "Ngày mai anh/chị có tham dự cuộc họp được không ạ?",
+        "grammar": [
+          {
+            "pattern": "-(으)시-",
+            "form": "가능하신가요?",
+            "meaningVi": "kính ngữ chủ thể (tôn trọng người nghe)"
+          },
+          {
+            "pattern": "-(으)ㄴ가요?",
+            "form": "가능하신가요?",
+            "meaningVi": "... không ạ? (hỏi nhẹ nhàng)",
+            "noteVi": "Hỏi mềm mỏng hơn -습니까, hợp khi hỏi lịch của khách."
+          }
+        ]
       },
       "tags": [
         "meeting"
@@ -1503,7 +2914,21 @@
       "romanization": "bogo",
       "example": {
         "ko": "진행 상황을 팀장님께 보고드렸습니다.",
-        "vi": "Tôi đã báo cáo tình hình cho trưởng nhóm rồi ạ."
+        "vi": "Tôi đã báo cáo tình hình cho trưởng nhóm rồi ạ.",
+        "grammar": [
+          {
+            "pattern": "N께",
+            "form": "팀장님께",
+            "meaningVi": "cho, tới (người bề trên)",
+            "noteVi": "Dạng kính ngữ của 에게/한테."
+          },
+          {
+            "pattern": "N드리다",
+            "form": "보고드렸습니다",
+            "meaningVi": "báo cáo (khiêm nhường)",
+            "noteVi": "보고드리다 khiêm nhường hơn 보고하다 khi đối tượng là cấp trên."
+          }
+        ]
       },
       "tags": [
         "report"
@@ -1516,7 +2941,19 @@
       "romanization": "gongyu",
       "example": {
         "ko": "관련 자료를 메일로 공유드리겠습니다.",
-        "vi": "Tôi sẽ chia sẻ tài liệu liên quan qua email ạ."
+        "vi": "Tôi sẽ chia sẻ tài liệu liên quan qua email ạ.",
+        "grammar": [
+          {
+            "pattern": "N(으)로",
+            "form": "메일로",
+            "meaningVi": "bằng, qua (phương tiện)"
+          },
+          {
+            "pattern": "N드리다 + -겠습니다",
+            "form": "공유드리겠습니다",
+            "meaningVi": "sẽ chia sẻ (khiêm nhường)"
+          }
+        ]
       },
       "tags": [
         "report",
@@ -1530,7 +2967,15 @@
       "romanization": "jincheok",
       "example": {
         "ko": "이번 주 진척 상황을 알려 주시겠어요?",
-        "vi": "Anh/chị cho tôi biết tiến độ tuần này được không ạ?"
+        "vi": "Anh/chị cho tôi biết tiến độ tuần này được không ạ?",
+        "grammar": [
+          {
+            "pattern": "-아/어 주시겠어요?",
+            "form": "알려 주시겠어요?",
+            "meaningVi": "anh/chị ... giúp được không ạ?",
+            "noteVi": "Yêu cầu lịch sự, mềm hơn -아/어 주세요."
+          }
+        ]
       },
       "tags": [
         "report"
@@ -1543,7 +2988,15 @@
       "romanization": "jincheongnyul",
       "example": {
         "ko": "현재 전체 진척률은 70% 정도입니다.",
-        "vi": "Hiện tại tỷ lệ tiến độ tổng thể khoảng 70%."
+        "vi": "Hiện tại tỷ lệ tiến độ tổng thể khoảng 70%.",
+        "grammar": [
+          {
+            "pattern": "N 정도",
+            "form": "70% 정도",
+            "meaningVi": "khoảng, chừng",
+            "noteVi": "Dùng khi báo cáo số liệu ước lượng."
+          }
+        ]
       },
       "tags": [
         "report",
@@ -1557,7 +3010,20 @@
       "romanization": "hwagin butakdeurimnida",
       "example": {
         "ko": "첨부한 자료 확인 부탁드립니다.",
-        "vi": "Nhờ anh/chị kiểm tra giúp tài liệu đính kèm ạ."
+        "vi": "Nhờ anh/chị kiểm tra giúp tài liệu đính kèm ạ.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄴ (định ngữ quá khứ)",
+            "form": "첨부한",
+            "meaningVi": "đã ... (bổ nghĩa danh từ)"
+          },
+          {
+            "pattern": "N 부탁드립니다",
+            "form": "확인 부탁드립니다",
+            "meaningVi": "nhờ anh/chị ... ạ",
+            "noteVi": "Câu kết email rất phổ biến, lịch sự và ngắn gọn."
+          }
+        ]
       },
       "tags": [
         "email",
@@ -1571,7 +3037,19 @@
       "romanization": "hoesin",
       "example": {
         "ko": "내일까지 회신 부탁드립니다.",
-        "vi": "Mong anh/chị hồi âm trước ngày mai ạ."
+        "vi": "Mong anh/chị hồi âm trước ngày mai ạ.",
+        "grammar": [
+          {
+            "pattern": "N까지",
+            "form": "내일까지",
+            "meaningVi": "đến, trước (mốc thời gian)"
+          },
+          {
+            "pattern": "N 부탁드립니다",
+            "form": "회신 부탁드립니다",
+            "meaningVi": "nhờ anh/chị ... ạ"
+          }
+        ]
       },
       "tags": [
         "email"
@@ -1584,7 +3062,19 @@
       "romanization": "chamjo",
       "example": {
         "ko": "이 메일은 팀장님도 참조로 넣었습니다.",
-        "vi": "Email này tôi cũng đã CC cho trưởng nhóm."
+        "vi": "Email này tôi cũng đã CC cho trưởng nhóm.",
+        "grammar": [
+          {
+            "pattern": "N도",
+            "form": "팀장님도",
+            "meaningVi": "cũng (cả ...)"
+          },
+          {
+            "pattern": "N(으)로",
+            "form": "참조로",
+            "meaningVi": "với tư cách, dưới dạng"
+          }
+        ]
       },
       "tags": [
         "email"
@@ -1597,7 +3087,20 @@
       "romanization": "cheombu",
       "example": {
         "ko": "견적서를 첨부해서 보내 드립니다.",
-        "vi": "Tôi gửi kèm bảng báo giá ạ."
+        "vi": "Tôi gửi kèm bảng báo giá ạ.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "첨부해서",
+            "meaningVi": "làm A rồi làm B (cách thức)"
+          },
+          {
+            "pattern": "-아/어 드리다",
+            "form": "보내 드립니다",
+            "meaningVi": "làm ... cho (khiêm nhường)",
+            "noteVi": "보내 드립니다 thường dùng trong email gửi tài liệu."
+          }
+        ]
       },
       "tags": [
         "email"
@@ -1610,7 +3113,25 @@
       "romanization": "cheombu pail",
       "example": {
         "ko": "첨부 파일이 열리지 않으면 말씀해 주세요.",
-        "vi": "Nếu không mở được tệp đính kèm thì anh/chị cứ báo tôi nhé."
+        "vi": "Nếu không mở được tệp đính kèm thì anh/chị cứ báo tôi nhé.",
+        "grammar": [
+          {
+            "pattern": "-지 않다",
+            "form": "열리지 않으면",
+            "meaningVi": "không ... (phủ định)"
+          },
+          {
+            "pattern": "-(으)면",
+            "form": "않으면",
+            "meaningVi": "nếu ... thì"
+          },
+          {
+            "pattern": "말씀하다 + -아/어 주세요",
+            "form": "말씀해 주세요",
+            "meaningVi": "xin hãy nói (kính ngữ)",
+            "noteVi": "말씀하다 là kính ngữ của 말하다, dùng với khách."
+          }
+        ]
       },
       "tags": [
         "email"
@@ -1623,7 +3144,20 @@
       "romanization": "yanghae butakdeurimnida",
       "example": {
         "ko": "일정이 하루 늦어지는 점 양해 부탁드립니다.",
-        "vi": "Mong anh/chị thông cảm vì lịch bị trễ một ngày."
+        "vi": "Mong anh/chị thông cảm vì lịch bị trễ một ngày.",
+        "grammar": [
+          {
+            "pattern": "-아/어지다",
+            "form": "늦어지는",
+            "meaningVi": "trở nên ... (biến đổi trạng thái)"
+          },
+          {
+            "pattern": "-는 점",
+            "form": "늦어지는 점",
+            "meaningVi": "việc/điểm ... (danh từ hóa)",
+            "noteVi": "-는 점 양해 부탁드립니다: mẫu xin lỗi trang trọng."
+          }
+        ]
       },
       "tags": [
         "request",
@@ -1637,7 +3171,26 @@
       "romanization": "bulpyeoneul deuryeo joesonghamnida",
       "example": {
         "ko": "회의 시간이 갑자기 변경되어 불편을 드려 죄송합니다.",
-        "vi": "Giờ họp bị thay đổi đột ngột, xin lỗi vì đã gây bất tiện ạ."
+        "vi": "Giờ họp bị thay đổi đột ngột, xin lỗi vì đã gây bất tiện ạ.",
+        "grammar": [
+          {
+            "pattern": "-되다 (bị động)",
+            "form": "변경되어",
+            "meaningVi": "được/bị ... (bị động)"
+          },
+          {
+            "pattern": "-아/어서 (lý do)",
+            "form": "변경되어",
+            "meaningVi": "vì ... nên",
+            "noteVi": "-어 là dạng rút gọn của -어서, trang trọng trong văn viết."
+          },
+          {
+            "pattern": "-아/어 죄송합니다",
+            "form": "드려 죄송합니다",
+            "meaningVi": "xin lỗi vì đã ...",
+            "noteVi": "불편을 드려 죄송합니다: câu xin lỗi chuẩn trong công việc."
+          }
+        ]
       },
       "tags": [
         "apology"
@@ -1650,7 +3203,19 @@
       "romanization": "gyeonjeok",
       "example": {
         "ko": "추가 기능에 대한 견적을 내 주시겠어요?",
-        "vi": "Anh/chị có thể báo giá cho chức năng bổ sung được không ạ?"
+        "vi": "Anh/chị có thể báo giá cho chức năng bổ sung được không ạ?",
+        "grammar": [
+          {
+            "pattern": "N에 대한",
+            "form": "추가 기능에 대한",
+            "meaningVi": "về, đối với (bổ nghĩa danh từ)"
+          },
+          {
+            "pattern": "-아/어 주시겠어요?",
+            "form": "내 주시겠어요?",
+            "meaningVi": "anh/chị ... giúp được không ạ?"
+          }
+        ]
       },
       "tags": [
         "business"
@@ -1663,7 +3228,19 @@
       "romanization": "gyeonjeokseo",
       "example": {
         "ko": "수정된 견적서를 다시 보내 드리겠습니다.",
-        "vi": "Tôi sẽ gửi lại bảng báo giá đã chỉnh sửa ạ."
+        "vi": "Tôi sẽ gửi lại bảng báo giá đã chỉnh sửa ạ.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄴ (định ngữ)",
+            "form": "수정된",
+            "meaningVi": "đã được ... (bổ nghĩa danh từ)"
+          },
+          {
+            "pattern": "-아/어 드리겠습니다",
+            "form": "보내 드리겠습니다",
+            "meaningVi": "sẽ ... cho anh/chị (khiêm nhường)"
+          }
+        ]
       },
       "tags": [
         "business"
@@ -1676,7 +3253,20 @@
       "romanization": "gyeyak",
       "example": {
         "ko": "다음 달 초에 계약을 체결할 예정입니다.",
-        "vi": "Dự kiến đầu tháng sau sẽ ký hợp đồng."
+        "vi": "Dự kiến đầu tháng sau sẽ ký hợp đồng.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄹ 예정이다",
+            "form": "체결할 예정입니다",
+            "meaningVi": "dự định sẽ ...",
+            "noteVi": "Dùng thông báo lịch trình đã lên kế hoạch, trang trọng."
+          },
+          {
+            "pattern": "N 초",
+            "form": "다음 달 초",
+            "meaningVi": "đầu (tháng, năm...)"
+          }
+        ]
       },
       "tags": [
         "business"
@@ -1689,7 +3279,19 @@
       "romanization": "gyeyakseo",
       "example": {
         "ko": "계약서 내용을 꼼꼼히 검토해 주세요.",
-        "vi": "Hãy xem kỹ nội dung văn bản hợp đồng."
+        "vi": "Hãy xem kỹ nội dung văn bản hợp đồng.",
+        "grammar": [
+          {
+            "pattern": "-아/어 주세요",
+            "form": "검토해 주세요",
+            "meaningVi": "hãy ... giúp (yêu cầu lịch sự)"
+          },
+          {
+            "pattern": "A-이/히 (trạng từ)",
+            "form": "꼼꼼히",
+            "meaningVi": "một cách kỹ lưỡng"
+          }
+        ]
       },
       "tags": [
         "business"
@@ -1702,7 +3304,20 @@
       "romanization": "geomsu",
       "example": {
         "ko": "고객사 검수가 끝나야 대금이 지급됩니다.",
-        "vi": "Phải nghiệm thu xong bên khách hàng thì mới được thanh toán."
+        "vi": "Phải nghiệm thu xong bên khách hàng thì mới được thanh toán.",
+        "grammar": [
+          {
+            "pattern": "-아/어야",
+            "form": "끝나야",
+            "meaningVi": "phải ... thì mới",
+            "noteVi": "Nêu điều kiện bắt buộc, hay dùng khi nói về quy trình thanh toán."
+          },
+          {
+            "pattern": "-되다 (bị động)",
+            "form": "지급됩니다",
+            "meaningVi": "được ... (bị động)"
+          }
+        ]
       },
       "tags": [
         "business",
@@ -1716,7 +3331,20 @@
       "romanization": "gogaeksa",
       "example": {
         "ko": "오후에 고객사 담당자와 미팅이 잡혀 있습니다.",
-        "vi": "Buổi chiều có lịch gặp người phụ trách bên khách hàng."
+        "vi": "Buổi chiều có lịch gặp người phụ trách bên khách hàng.",
+        "grammar": [
+          {
+            "pattern": "-아/어 있다",
+            "form": "잡혀 있습니다",
+            "meaningVi": "đang ở trạng thái ... (kết quả còn duy trì)"
+          },
+          {
+            "pattern": "bị động -히-",
+            "form": "잡혀",
+            "meaningVi": "được/bị ... (bị động của 잡다)",
+            "noteVi": "미팅이 잡히다: cuộc họp đã được sắp xếp."
+          }
+        ]
       },
       "tags": [
         "business"
@@ -1729,7 +3357,25 @@
       "romanization": "hyeomnyeoksa",
       "example": {
         "ko": "저희는 협력사로서 개발 업무를 맡고 있습니다.",
-        "vi": "Chúng tôi đảm nhận phần phát triển với tư cách công ty đối tác."
+        "vi": "Chúng tôi đảm nhận phần phát triển với tư cách công ty đối tác.",
+        "grammar": [
+          {
+            "pattern": "N(으)로서",
+            "form": "협력사로서",
+            "meaningVi": "với tư cách là ..."
+          },
+          {
+            "pattern": "-고 있다",
+            "form": "맡고 있습니다",
+            "meaningVi": "đang ... (hành động tiếp diễn)"
+          },
+          {
+            "pattern": "저희",
+            "form": "저희는",
+            "meaningVi": "chúng tôi (khiêm nhường)",
+            "noteVi": "Dùng 저희 thay 우리 khi nói với khách hàng."
+          }
+        ]
       },
       "tags": [
         "business"
@@ -1742,7 +3388,15 @@
       "romanization": "timjangnim",
       "example": {
         "ko": "팀장님, 잠깐 시간 괜찮으세요?",
-        "vi": "Trưởng nhóm ơi, anh/chị có rảnh một chút không ạ?"
+        "vi": "Trưởng nhóm ơi, anh/chị có rảnh một chút không ạ?",
+        "grammar": [
+          {
+            "pattern": "-(으)세요?",
+            "form": "괜찮으세요?",
+            "meaningVi": "... không ạ? (hỏi kính ngữ)",
+            "noteVi": "Mẫu hỏi xin thời gian cấp trên một cách lịch sự."
+          }
+        ]
       },
       "tags": [
         "title"
@@ -1755,7 +3409,15 @@
       "romanization": "daerinim",
       "example": {
         "ko": "대리님, 회의 자료 준비됐습니다.",
-        "vi": "Anh/chị 대리 ơi, tài liệu họp đã chuẩn bị xong rồi ạ."
+        "vi": "Anh/chị 대리 ơi, tài liệu họp đã chuẩn bị xong rồi ạ.",
+        "grammar": [
+          {
+            "pattern": "-됐다 (-되었다)",
+            "form": "준비됐습니다",
+            "meaningVi": "đã được ... xong",
+            "noteVi": "준비됐습니다: báo đã chuẩn bị xong, ngắn gọn khi báo cáo."
+          }
+        ]
       },
       "tags": [
         "title"
@@ -1768,7 +3430,20 @@
       "romanization": "chaegimnim",
       "example": {
         "ko": "책임님, 이 부분은 어떻게 처리할까요?",
-        "vi": "Anh/chị 책임 ơi, phần này nên xử lý thế nào ạ?"
+        "vi": "Anh/chị 책임 ơi, phần này nên xử lý thế nào ạ?",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄹ까요?",
+            "form": "처리할까요?",
+            "meaningVi": "tôi nên ... nhé? (xin ý kiến)",
+            "noteVi": "Hỏi ý kiến cấp trên về cách xử lý."
+          },
+          {
+            "pattern": "어떻게",
+            "form": "어떻게 처리할까요?",
+            "meaningVi": "như thế nào, bằng cách nào"
+          }
+        ]
       },
       "tags": [
         "title"
@@ -1781,7 +3456,15 @@
       "romanization": "damdangja",
       "example": {
         "ko": "이 건의 담당자가 누구신가요?",
-        "vi": "Người phụ trách việc này là ai ạ?"
+        "vi": "Người phụ trách việc này là ai ạ?",
+        "grammar": [
+          {
+            "pattern": "-(으)시- + -(으)ㄴ가요?",
+            "form": "누구신가요?",
+            "meaningVi": "là ai ạ? (hỏi kính trọng)",
+            "noteVi": "Mềm mỏng và lịch sự hơn 누구예요, hợp khi hỏi khách hàng."
+          }
+        ]
       },
       "tags": [
         "title",
@@ -1795,7 +3478,19 @@
       "romanization": "iljeongeul joyulhada",
       "example": {
         "ko": "회의 일정을 조율해서 다시 연락드리겠습니다.",
-        "vi": "Tôi sẽ thống nhất lịch họp rồi liên lạc lại ạ."
+        "vi": "Tôi sẽ thống nhất lịch họp rồi liên lạc lại ạ.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "조율해서",
+            "meaningVi": "làm A rồi làm B"
+          },
+          {
+            "pattern": "N드리다 + -겠습니다",
+            "form": "연락드리겠습니다",
+            "meaningVi": "sẽ liên lạc (khiêm nhường)"
+          }
+        ]
       },
       "tags": [
         "schedule"
@@ -1808,7 +3503,20 @@
       "romanization": "uigyeoneul deurida",
       "example": {
         "ko": "검토 후에 의견을 드리겠습니다.",
-        "vi": "Sau khi xem xét tôi sẽ gửi ý kiến ạ."
+        "vi": "Sau khi xem xét tôi sẽ gửi ý kiến ạ.",
+        "grammar": [
+          {
+            "pattern": "N 후에",
+            "form": "검토 후에",
+            "meaningVi": "sau khi ..."
+          },
+          {
+            "pattern": "-겠습니다",
+            "form": "드리겠습니다",
+            "meaningVi": "sẽ ... (ý định, trang trọng)",
+            "noteVi": "의견을 드리다: khiêm nhường của 의견을 주다."
+          }
+        ]
       },
       "tags": [
         "communication"
@@ -1821,7 +3529,21 @@
       "romanization": "gwajangnim",
       "example": {
         "ko": "과장님께서 오후 회의에 들어오신다고 합니다.",
-        "vi": "Nghe nói anh/chị 과장 sẽ vào họp buổi chiều."
+        "vi": "Nghe nói anh/chị 과장 sẽ vào họp buổi chiều.",
+        "grammar": [
+          {
+            "pattern": "께서",
+            "form": "과장님께서",
+            "meaningVi": "trợ từ chủ ngữ kính ngữ",
+            "noteVi": "Dùng thay 이/가 khi chủ ngữ là cấp trên."
+          },
+          {
+            "pattern": "-(으)ㄴ다고 하다",
+            "form": "들어오신다고 합니다",
+            "meaningVi": "nghe nói, (ai đó) bảo là ...",
+            "noteVi": "Câu tường thuật gián tiếp, truyền đạt lời người khác."
+          }
+        ]
       },
       "tags": [
         "title"
@@ -1834,7 +3556,19 @@
       "romanization": "bujangnim",
       "example": {
         "ko": "부장님께서 다음 주에 출장을 가십니다.",
-        "vi": "Trưởng phòng sẽ đi công tác vào tuần sau."
+        "vi": "Trưởng phòng sẽ đi công tác vào tuần sau.",
+        "grammar": [
+          {
+            "pattern": "께서",
+            "form": "부장님께서",
+            "meaningVi": "trợ từ chủ ngữ kính ngữ"
+          },
+          {
+            "pattern": "-(으)시-",
+            "form": "가십니다",
+            "meaningVi": "kính ngữ chủ thể"
+          }
+        ]
       },
       "tags": [
         "title"
@@ -1847,7 +3581,20 @@
       "romanization": "suseongnim",
       "example": {
         "ko": "수석님께서 기술 검토를 해 주셨습니다.",
-        "vi": "Anh/chị 수석 đã xem xét về mặt kỹ thuật giúp chúng tôi."
+        "vi": "Anh/chị 수석 đã xem xét về mặt kỹ thuật giúp chúng tôi.",
+        "grammar": [
+          {
+            "pattern": "께서",
+            "form": "수석님께서",
+            "meaningVi": "trợ từ chủ ngữ kính ngữ"
+          },
+          {
+            "pattern": "-아/어 주시다",
+            "form": "해 주셨습니다",
+            "meaningVi": "(người trên) đã ... giúp cho",
+            "noteVi": "Thể hiện biết ơn và tôn trọng người làm giúp."
+          }
+        ]
       },
       "tags": [
         "title"
@@ -1860,7 +3607,20 @@
       "romanization": "seonimnim",
       "example": {
         "ko": "선임님, 자료 받으셨는지 확인 부탁드립니다.",
-        "vi": "Anh/chị 선임 ơi, nhờ anh/chị kiểm tra xem đã nhận tài liệu chưa ạ."
+        "vi": "Anh/chị 선임 ơi, nhờ anh/chị kiểm tra xem đã nhận tài liệu chưa ạ.",
+        "grammar": [
+          {
+            "pattern": "-(으)시-",
+            "form": "받으셨는지",
+            "meaningVi": "kính ngữ chủ thể"
+          },
+          {
+            "pattern": "-는지",
+            "form": "받으셨는지",
+            "meaningVi": "liệu ... hay không",
+            "noteVi": "Câu hỏi gián tiếp lồng trong câu nhờ xác nhận."
+          }
+        ]
       },
       "tags": [
         "title"
@@ -1873,7 +3633,20 @@
       "romanization": "daepyonim",
       "example": {
         "ko": "내일 고객사 대표님이 직접 방문하십니다.",
-        "vi": "Ngày mai giám đốc bên khách hàng sẽ trực tiếp đến thăm."
+        "vi": "Ngày mai giám đốc bên khách hàng sẽ trực tiếp đến thăm.",
+        "grammar": [
+          {
+            "pattern": "-(으)시-",
+            "form": "방문하십니다",
+            "meaningVi": "kính ngữ chủ thể",
+            "noteVi": "-십니다: kính ngữ + 하십시오체, dùng khi nói về khách cấp cao."
+          },
+          {
+            "pattern": "직접",
+            "form": "직접 방문하십니다",
+            "meaningVi": "trực tiếp, đích thân"
+          }
+        ]
       },
       "tags": [
         "title",
@@ -1887,7 +3660,19 @@
       "romanization": "hoching",
       "example": {
         "ko": "한국 회사에서는 호칭을 정확하게 쓰는 것이 중요합니다.",
-        "vi": "Ở công ty Hàn Quốc, dùng đúng cách xưng hô là rất quan trọng."
+        "vi": "Ở công ty Hàn Quốc, dùng đúng cách xưng hô là rất quan trọng.",
+        "grammar": [
+          {
+            "pattern": "-는 것",
+            "form": "쓰는 것이",
+            "meaningVi": "việc ... (danh từ hóa)"
+          },
+          {
+            "pattern": "N에서는",
+            "form": "한국 회사에서는",
+            "meaningVi": "ở ... thì (nhấn mạnh, đối chiếu)"
+          }
+        ]
       },
       "tags": [
         "title",
@@ -1901,7 +3686,15 @@
       "romanization": "gyeoljae",
       "example": {
         "ko": "이 문서는 부장님 결재가 필요합니다.",
-        "vi": "Văn bản này cần trưởng phòng phê duyệt."
+        "vi": "Văn bản này cần trưởng phòng phê duyệt.",
+        "grammar": [
+          {
+            "pattern": "N이/가 필요하다",
+            "form": "결재가 필요합니다",
+            "meaningVi": "cần ...",
+            "noteVi": "Chủ ngữ là thứ cần, dùng 이/가 chứ không dùng 을/를."
+          }
+        ]
       },
       "tags": [
         "business"
@@ -1914,7 +3707,19 @@
       "romanization": "seungin",
       "example": {
         "ko": "고객사의 승인을 받은 후에 진행하겠습니다.",
-        "vi": "Sau khi được khách hàng chấp thuận, chúng tôi sẽ tiến hành."
+        "vi": "Sau khi được khách hàng chấp thuận, chúng tôi sẽ tiến hành.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄴ 후에",
+            "form": "받은 후에",
+            "meaningVi": "sau khi ..."
+          },
+          {
+            "pattern": "-겠습니다",
+            "form": "진행하겠습니다",
+            "meaningVi": "sẽ ... (ý định, trang trọng)"
+          }
+        ]
       },
       "tags": [
         "business",
@@ -1928,7 +3733,20 @@
       "romanization": "hyeobui",
       "example": {
         "ko": "세부 사항은 고객사와 협의 중입니다.",
-        "vi": "Các chi tiết đang được bàn bạc với khách hàng."
+        "vi": "Các chi tiết đang được bàn bạc với khách hàng.",
+        "grammar": [
+          {
+            "pattern": "N 중이다",
+            "form": "협의 중입니다",
+            "meaningVi": "đang ... (trong quá trình)",
+            "noteVi": "Hay dùng để báo việc chưa chốt, đang trao đổi."
+          },
+          {
+            "pattern": "N와/과",
+            "form": "고객사와",
+            "meaningVi": "với (đối tác cùng làm)"
+          }
+        ]
       },
       "tags": [
         "communication",
@@ -1942,7 +3760,20 @@
       "romanization": "geomto",
       "example": {
         "ko": "보내 주신 자료를 검토해 보겠습니다.",
-        "vi": "Tôi sẽ xem xét tài liệu anh/chị đã gửi ạ."
+        "vi": "Tôi sẽ xem xét tài liệu anh/chị đã gửi ạ.",
+        "grammar": [
+          {
+            "pattern": "-아/어 주신",
+            "form": "보내 주신",
+            "meaningVi": "mà anh/chị đã ... cho (kính ngữ)"
+          },
+          {
+            "pattern": "-아/어 보다",
+            "form": "검토해 보겠습니다",
+            "meaningVi": "thử ..., xem ...",
+            "noteVi": "검토해 보겠습니다: nhận xem xét, không hứa chắc kết quả."
+          }
+        ]
       },
       "tags": [
         "communication"
@@ -1955,7 +3786,19 @@
       "romanization": "munui",
       "example": {
         "ko": "궁금한 점이 있으시면 언제든지 문의해 주세요.",
-        "vi": "Nếu có thắc mắc gì, anh/chị cứ hỏi bất cứ lúc nào ạ."
+        "vi": "Nếu có thắc mắc gì, anh/chị cứ hỏi bất cứ lúc nào ạ.",
+        "grammar": [
+          {
+            "pattern": "-(으)시면",
+            "form": "있으시면",
+            "meaningVi": "nếu (anh/chị) ... (kính ngữ)"
+          },
+          {
+            "pattern": "-아/어 주세요",
+            "form": "문의해 주세요",
+            "meaningVi": "hãy ... (yêu cầu lịch sự)"
+          }
+        ]
       },
       "tags": [
         "email",
@@ -1969,7 +3812,19 @@
       "romanization": "yeollakdeurigetseumnida",
       "example": {
         "ko": "확인 후 다시 연락드리겠습니다.",
-        "vi": "Kiểm tra xong tôi sẽ liên lạc lại ạ."
+        "vi": "Kiểm tra xong tôi sẽ liên lạc lại ạ.",
+        "grammar": [
+          {
+            "pattern": "N 후",
+            "form": "확인 후",
+            "meaningVi": "sau khi ..."
+          },
+          {
+            "pattern": "N드리다 + -겠습니다",
+            "form": "연락드리겠습니다",
+            "meaningVi": "sẽ liên lạc lại (khiêm nhường)"
+          }
+        ]
       },
       "tags": [
         "email",
@@ -1983,7 +3838,15 @@
       "romanization": "sugo manheusimnida",
       "example": {
         "ko": "안녕하세요, 김 팀장님. 수고 많으십니다.",
-        "vi": "Chào trưởng nhóm Kim, anh/chị vất vả rồi ạ."
+        "vi": "Chào trưởng nhóm Kim, anh/chị vất vả rồi ạ.",
+        "grammar": [
+          {
+            "pattern": "-(으)시-",
+            "form": "많으십니다",
+            "meaningVi": "kính ngữ chủ thể",
+            "noteVi": "수고 많으십니다: lời chào xã giao với đối tác, không dùng với người dưới."
+          }
+        ]
       },
       "tags": [
         "email"
@@ -1996,7 +3859,20 @@
       "romanization": "jal butakdeurimnida",
       "example": {
         "ko": "앞으로 이 프로젝트에서 잘 부탁드립니다.",
-        "vi": "Rất mong được anh/chị giúp đỡ trong dự án này ạ."
+        "vi": "Rất mong được anh/chị giúp đỡ trong dự án này ạ.",
+        "grammar": [
+          {
+            "pattern": "N에서",
+            "form": "프로젝트에서",
+            "meaningVi": "ở, trong (phạm vi, nơi chốn)"
+          },
+          {
+            "pattern": "잘 부탁드립니다",
+            "form": "잘 부탁드립니다",
+            "meaningVi": "mong được giúp đỡ",
+            "noteVi": "Câu chào khi bắt đầu hợp tác, rất quan trọng trong văn hóa Hàn."
+          }
+        ]
       },
       "tags": [
         "communication"
@@ -2009,7 +3885,20 @@
       "romanization": "malsseumhasin",
       "example": {
         "ko": "말씀하신 자료를 첨부했습니다.",
-        "vi": "Tôi đã đính kèm tài liệu anh/chị nói ạ."
+        "vi": "Tôi đã đính kèm tài liệu anh/chị nói ạ.",
+        "grammar": [
+          {
+            "pattern": "-(으)신 (định ngữ kính ngữ)",
+            "form": "말씀하신",
+            "meaningVi": "mà anh/chị đã nói",
+            "noteVi": "말씀하신 자료: tài liệu anh/chị đã nhắc, lịch sự với khách."
+          },
+          {
+            "pattern": "-았/었습니다",
+            "form": "첨부했습니다",
+            "meaningVi": "đã ... (quá khứ, trang trọng)"
+          }
+        ]
       },
       "tags": [
         "communication",
@@ -2023,7 +3912,19 @@
       "romanization": "annae",
       "example": {
         "ko": "회의 장소는 메일로 안내드리겠습니다.",
-        "vi": "Địa điểm họp tôi sẽ thông báo qua email ạ."
+        "vi": "Địa điểm họp tôi sẽ thông báo qua email ạ.",
+        "grammar": [
+          {
+            "pattern": "N(으)로",
+            "form": "메일로",
+            "meaningVi": "bằng, qua (phương tiện)"
+          },
+          {
+            "pattern": "N드리다 + -겠습니다",
+            "form": "안내드리겠습니다",
+            "meaningVi": "sẽ thông báo/hướng dẫn (khiêm nhường)"
+          }
+        ]
       },
       "tags": [
         "email"
@@ -2036,7 +3937,19 @@
       "romanization": "byeongyeong sahang",
       "example": {
         "ko": "변경 사항이 있으면 바로 알려 주세요.",
-        "vi": "Nếu có thay đổi gì, hãy báo ngay cho tôi."
+        "vi": "Nếu có thay đổi gì, hãy báo ngay cho tôi.",
+        "grammar": [
+          {
+            "pattern": "-(으)면",
+            "form": "있으면",
+            "meaningVi": "nếu ... thì"
+          },
+          {
+            "pattern": "-아/어 주세요",
+            "form": "알려 주세요",
+            "meaningVi": "hãy ... cho (yêu cầu lịch sự)"
+          }
+        ]
       },
       "tags": [
         "pm",
@@ -2050,7 +3963,25 @@
       "romanization": "jiyeon",
       "example": {
         "ko": "자료 준비가 늦어져서 일정이 지연되었습니다.",
-        "vi": "Do chuẩn bị tài liệu muộn nên lịch bị chậm."
+        "vi": "Do chuẩn bị tài liệu muộn nên lịch bị chậm.",
+        "grammar": [
+          {
+            "pattern": "-아/어지다",
+            "form": "늦어져서",
+            "meaningVi": "trở nên ... (biến đổi)"
+          },
+          {
+            "pattern": "-아/어서 (lý do)",
+            "form": "늦어져서",
+            "meaningVi": "vì ... nên",
+            "noteVi": "Dùng giải thích nguyên nhân chậm tiến độ, không dùng với mệnh lệnh."
+          },
+          {
+            "pattern": "-되다 (bị động)",
+            "form": "지연되었습니다",
+            "meaningVi": "bị ... (bị động)"
+          }
+        ]
       },
       "tags": [
         "schedule",
@@ -2064,7 +3995,20 @@
       "romanization": "yeonjang",
       "example": {
         "ko": "마감 기한을 일주일 연장할 수 있을까요?",
-        "vi": "Có thể gia hạn hạn chót thêm một tuần được không ạ?"
+        "vi": "Có thể gia hạn hạn chót thêm một tuần được không ạ?",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄹ 수 있다",
+            "form": "연장할 수 있을까요?",
+            "meaningVi": "có thể ...",
+            "noteVi": "-(으)ㄹ 수 있을까요?: hỏi xin phép, rất mềm mỏng."
+          },
+          {
+            "pattern": "-(으)ㄹ까요?",
+            "form": "있을까요?",
+            "meaningVi": "... được không ạ? (hỏi ý kiến)"
+          }
+        ]
       },
       "tags": [
         "schedule",
@@ -2078,7 +4022,15 @@
       "romanization": "gihan",
       "example": {
         "ko": "제출 기한을 꼭 지켜 주세요.",
-        "vi": "Xin hãy tuân thủ thời hạn nộp."
+        "vi": "Xin hãy tuân thủ thời hạn nộp.",
+        "grammar": [
+          {
+            "pattern": "-아/어 주세요",
+            "form": "지켜 주세요",
+            "meaningVi": "Xin hãy (làm gì) giúp",
+            "noteVi": "Yêu cầu lịch sự kiểu 해요체; thêm 꼭 để nhấn mạnh 'nhất định'."
+          }
+        ]
       },
       "tags": [
         "schedule"
@@ -2091,7 +4043,15 @@
       "romanization": "nappum",
       "example": {
         "ko": "최종 납품은 다음 달 말입니다.",
-        "vi": "Bàn giao cuối cùng là cuối tháng sau."
+        "vi": "Bàn giao cuối cùng là cuối tháng sau.",
+        "grammar": [
+          {
+            "pattern": "N은/는 N입니다",
+            "form": "최종 납품은 다음 달 말입니다",
+            "meaningVi": "N là N (câu định nghĩa trang trọng)",
+            "noteVi": "하십시오체, dùng khi thông báo mốc thời gian chính thức cho khách hàng."
+          }
+        ]
       },
       "tags": [
         "business",
@@ -2105,7 +4065,21 @@
       "romanization": "napgi",
       "example": {
         "ko": "납기를 맞추기 위해 주말에도 작업했습니다.",
-        "vi": "Để kịp thời hạn bàn giao, chúng tôi làm cả cuối tuần."
+        "vi": "Để kịp thời hạn bàn giao, chúng tôi làm cả cuối tuần.",
+        "grammar": [
+          {
+            "pattern": "-기 위해(서)",
+            "form": "맞추기 위해",
+            "meaningVi": "Để (đạt mục đích)",
+            "noteVi": "Vế trước là mục đích; trang trọng hơn -(으)려고."
+          },
+          {
+            "pattern": "N에도",
+            "form": "주말에도",
+            "meaningVi": "Cả vào (thời điểm) cũng",
+            "noteVi": "도 sau 에 nhấn mạnh nỗ lực vượt mức bình thường."
+          }
+        ]
       },
       "tags": [
         "schedule",
@@ -2119,7 +4093,15 @@
       "romanization": "chaksu",
       "example": {
         "ko": "다음 주 월요일에 프로젝트에 착수합니다.",
-        "vi": "Thứ Hai tuần sau chúng ta bắt đầu dự án."
+        "vi": "Thứ Hai tuần sau chúng ta bắt đầu dự án.",
+        "grammar": [
+          {
+            "pattern": "N에 착수하다",
+            "form": "프로젝트에 착수합니다",
+            "meaningVi": "Bắt tay vào (dự án, công việc)",
+            "noteVi": "Động từ 착수하다 đi với trợ từ 에, không dùng 을/를."
+          }
+        ]
       },
       "tags": [
         "pm"
@@ -2132,7 +4114,20 @@
       "romanization": "chaksu hoeui",
       "example": {
         "ko": "착수 회의에서 프로젝트 목표를 공유했습니다.",
-        "vi": "Chúng tôi đã chia sẻ mục tiêu dự án trong buổi họp khởi động."
+        "vi": "Chúng tôi đã chia sẻ mục tiêu dự án trong buổi họp khởi động.",
+        "grammar": [
+          {
+            "pattern": "N에서",
+            "form": "착수 회의에서",
+            "meaningVi": "Tại, trong (cuộc họp, nơi chốn)"
+          },
+          {
+            "pattern": "-았/었습니다",
+            "form": "공유했습니다",
+            "meaningVi": "Đã (làm) – quá khứ trang trọng",
+            "noteVi": "Dùng khi báo cáo việc đã hoàn thành."
+          }
+        ]
       },
       "tags": [
         "meeting",
@@ -2146,7 +4141,20 @@
       "romanization": "wallyo bogo",
       "example": {
         "ko": "작업이 끝나면 완료 보고를 해 주세요.",
-        "vi": "Làm xong việc thì hãy báo cáo hoàn thành nhé."
+        "vi": "Làm xong việc thì hãy báo cáo hoàn thành nhé.",
+        "grammar": [
+          {
+            "pattern": "-(으)면",
+            "form": "끝나면",
+            "meaningVi": "Nếu / khi (điều kiện)",
+            "noteVi": "Ở đây mang nghĩa 'khi xong việc thì...'."
+          },
+          {
+            "pattern": "-아/어 주세요",
+            "form": "해 주세요",
+            "meaningVi": "Xin hãy (làm gì) giúp"
+          }
+        ]
       },
       "tags": [
         "report"
@@ -2159,7 +4167,15 @@
       "romanization": "jugan bogo",
       "example": {
         "ko": "매주 금요일에 주간 보고를 작성합니다.",
-        "vi": "Thứ Sáu hằng tuần chúng tôi viết báo cáo tuần."
+        "vi": "Thứ Sáu hằng tuần chúng tôi viết báo cáo tuần.",
+        "grammar": [
+          {
+            "pattern": "매N",
+            "form": "매주 금요일에",
+            "meaningVi": "Mỗi, hằng (tuần, ngày, tháng)",
+            "noteVi": "Diễn tả thói quen, quy trình định kỳ."
+          }
+        ]
       },
       "tags": [
         "report"
@@ -2172,7 +4188,15 @@
       "romanization": "jeonggi hoeui",
       "example": {
         "ko": "정기 회의는 매주 화요일 오전 10시입니다.",
-        "vi": "Họp định kỳ vào 10 giờ sáng thứ Ba hằng tuần."
+        "vi": "Họp định kỳ vào 10 giờ sáng thứ Ba hằng tuần.",
+        "grammar": [
+          {
+            "pattern": "N은/는 N입니다",
+            "form": "정기 회의는 매주 화요일 오전 10시입니다",
+            "meaningVi": "N là N (thông báo trang trọng)",
+            "noteVi": "Mẫu câu gọn để thông báo lịch họp."
+          }
+        ]
       },
       "tags": [
         "meeting"
@@ -2185,7 +4209,15 @@
       "romanization": "hoeuisil",
       "example": {
         "ko": "3층 회의실을 예약해 두었습니다.",
-        "vi": "Tôi đã đặt sẵn phòng họp tầng 3."
+        "vi": "Tôi đã đặt sẵn phòng họp tầng 3.",
+        "grammar": [
+          {
+            "pattern": "-아/어 두다",
+            "form": "예약해 두었습니다",
+            "meaningVi": "Làm sẵn, làm trước để chuẩn bị",
+            "noteVi": "Cho thấy sự chủ động chuẩn bị trước, rất hay dùng ở công sở."
+          }
+        ]
       },
       "tags": [
         "meeting"
@@ -2198,7 +4230,20 @@
       "romanization": "hwasang hoeui",
       "example": {
         "ko": "오늘 회의는 화상 회의로 진행하겠습니다.",
-        "vi": "Cuộc họp hôm nay sẽ tổ chức trực tuyến."
+        "vi": "Cuộc họp hôm nay sẽ tổ chức trực tuyến.",
+        "grammar": [
+          {
+            "pattern": "N(으)로",
+            "form": "화상 회의로",
+            "meaningVi": "Bằng, theo hình thức (phương thức)"
+          },
+          {
+            "pattern": "-겠습니다",
+            "form": "진행하겠습니다",
+            "meaningVi": "Sẽ (ý định, thông báo lịch sự)",
+            "noteVi": "Người chủ trì dùng để tuyên bố cách tiến hành một cách trang trọng."
+          }
+        ]
       },
       "tags": [
         "meeting"
@@ -2211,7 +4256,21 @@
       "romanization": "bulcham",
       "example": {
         "ko": "개인 사정으로 내일 회의에 불참하게 되었습니다.",
-        "vi": "Vì việc riêng nên tôi không thể tham dự cuộc họp ngày mai."
+        "vi": "Vì việc riêng nên tôi không thể tham dự cuộc họp ngày mai.",
+        "grammar": [
+          {
+            "pattern": "N(으)로",
+            "form": "개인 사정으로",
+            "meaningVi": "Vì, do (nguyên nhân)",
+            "noteVi": "Cách nói lý do ngắn gọn, lịch sự, không cần giải thích chi tiết."
+          },
+          {
+            "pattern": "-게 되다",
+            "form": "불참하게 되었습니다",
+            "meaningVi": "Thành ra, rốt cuộc phải (làm gì)",
+            "noteVi": "Làm câu nghe khách quan, nhẹ nhàng hơn khi báo tin không tốt."
+          }
+        ]
       },
       "tags": [
         "meeting"
@@ -2224,7 +4283,21 @@
       "romanization": "gyeoljeong sahang",
       "example": {
         "ko": "회의 결정 사항을 정리해서 공유드리겠습니다.",
-        "vi": "Tôi sẽ tổng hợp các nội dung đã quyết định trong cuộc họp và chia sẻ ạ."
+        "vi": "Tôi sẽ tổng hợp các nội dung đã quyết định trong cuộc họp và chia sẻ ạ.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "정리해서",
+            "meaningVi": "Rồi (hành động nối tiếp)",
+            "noteVi": "Hành động trước là tiền đề cho hành động sau."
+          },
+          {
+            "pattern": "-아/어 드리다",
+            "form": "공유드리겠습니다",
+            "meaningVi": "Làm (gì) cho (người trên) – khiêm nhường",
+            "noteVi": "N+드리다 (공유드리다) rất phổ biến trong email công việc."
+          }
+        ]
       },
       "tags": [
         "meeting"
@@ -2237,7 +4310,20 @@
       "romanization": "husok jochi",
       "example": {
         "ko": "회의 후속 조치를 담당자별로 정리했습니다.",
-        "vi": "Tôi đã tổng hợp các việc cần làm sau cuộc họp theo từng người phụ trách."
+        "vi": "Tôi đã tổng hợp các việc cần làm sau cuộc họp theo từng người phụ trách.",
+        "grammar": [
+          {
+            "pattern": "N별로",
+            "form": "담당자별로",
+            "meaningVi": "Theo từng (N), phân theo N",
+            "noteVi": "Hay dùng khi chia việc: 담당자별, 기능별, 일자별."
+          },
+          {
+            "pattern": "-았/었습니다",
+            "form": "정리했습니다",
+            "meaningVi": "Đã (làm) – quá khứ trang trọng"
+          }
+        ]
       },
       "tags": [
         "meeting",
@@ -2251,7 +4337,15 @@
       "romanization": "isyu sahang",
       "example": {
         "ko": "현재 특별한 이슈 사항은 없습니다.",
-        "vi": "Hiện tại không có vấn đề gì đặc biệt."
+        "vi": "Hiện tại không có vấn đề gì đặc biệt.",
+        "grammar": [
+          {
+            "pattern": "N은/는 없습니다",
+            "form": "이슈 사항은 없습니다",
+            "meaningVi": "Không có N",
+            "noteVi": "Câu chuẩn trong 데일리 스탠드업 khi không có vấn đề."
+          }
+        ]
       },
       "tags": [
         "report"
@@ -2264,7 +4358,15 @@
       "romanization": "riseukeu",
       "example": {
         "ko": "일정 지연 리스크를 미리 보고드립니다.",
-        "vi": "Tôi xin báo cáo trước rủi ro chậm tiến độ ạ."
+        "vi": "Tôi xin báo cáo trước rủi ro chậm tiến độ ạ.",
+        "grammar": [
+          {
+            "pattern": "-아/어 드리다 (보고드리다)",
+            "form": "보고드립니다",
+            "meaningVi": "Báo cáo (lên cấp trên) – khiêm nhường",
+            "noteVi": "보고드리다 lịch sự hơn 보고하다 khi nói với khách hàng."
+          }
+        ]
       },
       "tags": [
         "pm",
@@ -2278,7 +4380,25 @@
       "romanization": "useonsunwi",
       "example": {
         "ko": "우선순위를 정해 주시면 그에 맞춰 진행하겠습니다.",
-        "vi": "Nếu anh/chị quyết định thứ tự ưu tiên, chúng tôi sẽ làm theo đó."
+        "vi": "Nếu anh/chị quyết định thứ tự ưu tiên, chúng tôi sẽ làm theo đó.",
+        "grammar": [
+          {
+            "pattern": "-아/어 주시면",
+            "form": "정해 주시면",
+            "meaningVi": "Nếu (anh/chị) làm giúp thì",
+            "noteVi": "Kính ngữ -시- + điều kiện -(으)면; đề nghị khéo léo."
+          },
+          {
+            "pattern": "N에 맞춰(서)",
+            "form": "그에 맞춰",
+            "meaningVi": "Theo, phù hợp với N"
+          },
+          {
+            "pattern": "-겠습니다",
+            "form": "진행하겠습니다",
+            "meaningVi": "Sẽ (cam kết của người nói)"
+          }
+        ]
       },
       "tags": [
         "pm"
@@ -2291,7 +4411,20 @@
       "romanization": "eommu bundam",
       "example": {
         "ko": "팀원 간 업무 분담을 다시 조정했습니다.",
-        "vi": "Chúng tôi đã điều chỉnh lại việc phân chia công việc giữa các thành viên."
+        "vi": "Chúng tôi đã điều chỉnh lại việc phân chia công việc giữa các thành viên.",
+        "grammar": [
+          {
+            "pattern": "N 간",
+            "form": "팀원 간",
+            "meaningVi": "Giữa các N",
+            "noteVi": "Văn viết/trang trọng, tương đương N 사이."
+          },
+          {
+            "pattern": "다시 -았/었습니다",
+            "form": "다시 조정했습니다",
+            "meaningVi": "Đã (làm) lại"
+          }
+        ]
       },
       "tags": [
         "pm"
@@ -2304,7 +4437,19 @@
       "romanization": "insuingye",
       "example": {
         "ko": "휴가 가기 전에 업무 인수인계를 해 주세요.",
-        "vi": "Trước khi nghỉ phép, hãy bàn giao công việc nhé."
+        "vi": "Trước khi nghỉ phép, hãy bàn giao công việc nhé.",
+        "grammar": [
+          {
+            "pattern": "-기 전에",
+            "form": "가기 전에",
+            "meaningVi": "Trước khi (làm gì)"
+          },
+          {
+            "pattern": "-아/어 주세요",
+            "form": "해 주세요",
+            "meaningVi": "Xin hãy (làm gì) giúp"
+          }
+        ]
       },
       "tags": [
         "pm",
@@ -2318,7 +4463,20 @@
       "romanization": "tuip",
       "example": {
         "ko": "다음 달부터 개발자 두 명이 추가로 투입됩니다.",
-        "vi": "Từ tháng sau sẽ bổ sung thêm hai lập trình viên vào dự án."
+        "vi": "Từ tháng sau sẽ bổ sung thêm hai lập trình viên vào dự án.",
+        "grammar": [
+          {
+            "pattern": "N부터",
+            "form": "다음 달부터",
+            "meaningVi": "Bắt đầu từ (thời điểm)"
+          },
+          {
+            "pattern": "N이/가 투입되다 (bị động -되다)",
+            "form": "투입됩니다",
+            "meaningVi": "Được đưa vào, được bổ sung (nhân lực)",
+            "noteVi": "Dạng -되다 nhấn mạnh kết quả, không nêu người quyết định."
+          }
+        ]
       },
       "tags": [
         "pm"
@@ -2331,7 +4489,15 @@
       "romanization": "yesan",
       "example": {
         "ko": "고객사 예산에 맞춰 범위를 조정했습니다.",
-        "vi": "Chúng tôi đã điều chỉnh phạm vi cho phù hợp với ngân sách của khách hàng."
+        "vi": "Chúng tôi đã điều chỉnh phạm vi cho phù hợp với ngân sách của khách hàng.",
+        "grammar": [
+          {
+            "pattern": "N에 맞춰(서)",
+            "form": "예산에 맞춰",
+            "meaningVi": "Theo, phù hợp với N",
+            "noteVi": "Hay dùng khi giải thích lý do điều chỉnh phạm vi, lịch trình."
+          }
+        ]
       },
       "tags": [
         "business"
@@ -2344,7 +4510,15 @@
       "romanization": "biyong",
       "example": {
         "ko": "추가 기능은 별도 비용이 발생합니다.",
-        "vi": "Chức năng bổ sung sẽ phát sinh chi phí riêng."
+        "vi": "Chức năng bổ sung sẽ phát sinh chi phí riêng.",
+        "grammar": [
+          {
+            "pattern": "N이/가 발생하다",
+            "form": "비용이 발생합니다",
+            "meaningVi": "Phát sinh (chi phí, lỗi, sự cố)",
+            "noteVi": "Cách nói khách quan, lịch sự khi báo khách về chi phí thêm."
+          }
+        ]
       },
       "tags": [
         "business"
@@ -2357,7 +4531,15 @@
       "romanization": "daegeum",
       "example": {
         "ko": "대금은 매월 말에 지급됩니다.",
-        "vi": "Tiền thanh toán được chi trả vào cuối mỗi tháng."
+        "vi": "Tiền thanh toán được chi trả vào cuối mỗi tháng.",
+        "grammar": [
+          {
+            "pattern": "-되다 (bị động)",
+            "form": "지급됩니다",
+            "meaningVi": "Được (chi trả, thực hiện)",
+            "noteVi": "Câu bị động trang trọng, thường gặp trong hợp đồng."
+          }
+        ]
       },
       "tags": [
         "business"
@@ -2370,7 +4552,20 @@
       "romanization": "chuga yocheong",
       "example": {
         "ko": "계약 범위 밖의 추가 요청은 별도로 협의해야 합니다.",
-        "vi": "Yêu cầu bổ sung ngoài phạm vi hợp đồng cần thỏa thuận riêng."
+        "vi": "Yêu cầu bổ sung ngoài phạm vi hợp đồng cần thỏa thuận riêng.",
+        "grammar": [
+          {
+            "pattern": "-아/어야 하다",
+            "form": "협의해야 합니다",
+            "meaningVi": "Phải (làm gì)",
+            "noteVi": "Nêu nguyên tắc rõ ràng nhưng vẫn lịch sự với khách hàng."
+          },
+          {
+            "pattern": "N 밖의",
+            "form": "계약 범위 밖의",
+            "meaningVi": "Nằm ngoài (phạm vi) N"
+          }
+        ]
       },
       "tags": [
         "request",
@@ -2384,7 +4579,19 @@
       "romanization": "jeanseo",
       "example": {
         "ko": "다음 주까지 제안서를 제출해야 합니다.",
-        "vi": "Phải nộp bản đề xuất trước tuần sau."
+        "vi": "Phải nộp bản đề xuất trước tuần sau.",
+        "grammar": [
+          {
+            "pattern": "N까지",
+            "form": "다음 주까지",
+            "meaningVi": "Đến hạn, trước (thời điểm)"
+          },
+          {
+            "pattern": "-아/어야 하다",
+            "form": "제출해야 합니다",
+            "meaningVi": "Phải (làm gì)"
+          }
+        ]
       },
       "tags": [
         "business"
@@ -2397,7 +4604,15 @@
       "romanization": "balpyo",
       "example": {
         "ko": "제가 이번 주 진행 상황을 발표하겠습니다.",
-        "vi": "Tôi xin trình bày tình hình tuần này ạ."
+        "vi": "Tôi xin trình bày tình hình tuần này ạ.",
+        "grammar": [
+          {
+            "pattern": "-겠습니다",
+            "form": "발표하겠습니다",
+            "meaningVi": "Sẽ (ý định, lời mở đầu trang trọng)",
+            "noteVi": "Câu mở đầu chuẩn khi bắt đầu thuyết trình."
+          }
+        ]
       },
       "tags": [
         "meeting",
@@ -2411,7 +4626,20 @@
       "romanization": "jiruieungdap",
       "example": {
         "ko": "발표 후에 질의응답 시간이 있겠습니다.",
-        "vi": "Sau phần thuyết trình sẽ có thời gian hỏi đáp."
+        "vi": "Sau phần thuyết trình sẽ có thời gian hỏi đáp.",
+        "grammar": [
+          {
+            "pattern": "N 후에",
+            "form": "발표 후에",
+            "meaningVi": "Sau (N)"
+          },
+          {
+            "pattern": "-겠습니다 (phỏng đoán/thông báo)",
+            "form": "있겠습니다",
+            "meaningVi": "Sẽ có (thông báo lịch sự)",
+            "noteVi": "-겠- làm lời thông báo mềm và trang trọng hơn 있습니다."
+          }
+        ]
       },
       "tags": [
         "meeting"
@@ -2424,7 +4652,20 @@
       "romanization": "silsu",
       "example": {
         "ko": "제 실수로 잘못된 파일을 보내 드렸습니다. 죄송합니다.",
-        "vi": "Do sơ suất của tôi nên đã gửi nhầm tệp. Tôi xin lỗi ạ."
+        "vi": "Do sơ suất của tôi nên đã gửi nhầm tệp. Tôi xin lỗi ạ.",
+        "grammar": [
+          {
+            "pattern": "N(으)로",
+            "form": "제 실수로",
+            "meaningVi": "Do, vì (nguyên nhân)",
+            "noteVi": "Nhận lỗi trực tiếp, thể hiện trách nhiệm."
+          },
+          {
+            "pattern": "-아/어 드리다",
+            "form": "보내 드렸습니다",
+            "meaningVi": "Làm (gì) cho người trên – khiêm nhường"
+          }
+        ]
       },
       "tags": [
         "apology"
@@ -2437,7 +4678,21 @@
       "romanization": "joesonghajiman",
       "example": {
         "ko": "죄송하지만 회의 시간을 30분 늦출 수 있을까요?",
-        "vi": "Xin lỗi nhưng có thể lùi giờ họp 30 phút được không ạ?"
+        "vi": "Xin lỗi nhưng có thể lùi giờ họp 30 phút được không ạ?",
+        "grammar": [
+          {
+            "pattern": "-지만",
+            "form": "죄송하지만",
+            "meaningVi": "Nhưng, tuy (mở đầu lời nhờ vả)",
+            "noteVi": "Đệm trước lời đề nghị để giảm độ đột ngột."
+          },
+          {
+            "pattern": "-(으)ㄹ 수 있을까요?",
+            "form": "늦출 수 있을까요?",
+            "meaningVi": "Có thể (làm) được không ạ?",
+            "noteVi": "Hỏi ý kiến khéo léo, lịch sự hơn -아/어 주세요."
+          }
+        ]
       },
       "tags": [
         "request",
@@ -2451,7 +4706,20 @@
       "romanization": "hoksi",
       "example": {
         "ko": "혹시 내일 오후에 시간 괜찮으신가요?",
-        "vi": "Không biết chiều mai anh/chị có rảnh không ạ?"
+        "vi": "Không biết chiều mai anh/chị có rảnh không ạ?",
+        "grammar": [
+          {
+            "pattern": "-(으)시-",
+            "form": "괜찮으신가요?",
+            "meaningVi": "Kính ngữ chủ thể (người nghe)"
+          },
+          {
+            "pattern": "-(으)ㄴ가요?",
+            "form": "괜찮으신가요?",
+            "meaningVi": "...phải không ạ? (hỏi nhẹ nhàng)",
+            "noteVi": "Đuôi hỏi mềm mỏng, đi cùng 혹시 khi hẹn lịch."
+          }
+        ]
       },
       "tags": [
         "request",
@@ -2465,7 +4733,20 @@
       "romanization": "sillyejiman",
       "example": {
         "ko": "실례지만 어느 부서에서 오셨나요?",
-        "vi": "Xin thất lễ, anh/chị đến từ phòng ban nào ạ?"
+        "vi": "Xin thất lễ, anh/chị đến từ phòng ban nào ạ?",
+        "grammar": [
+          {
+            "pattern": "-지만",
+            "form": "실례지만",
+            "meaningVi": "Xin lỗi nhưng (mở đầu câu hỏi)"
+          },
+          {
+            "pattern": "-(으)시-",
+            "form": "오셨나요?",
+            "meaningVi": "Kính ngữ chủ thể",
+            "noteVi": "-셨나요? = -시- + quá khứ + đuôi hỏi mềm."
+          }
+        ]
       },
       "tags": [
         "communication"
@@ -2478,7 +4759,15 @@
       "romanization": "geomtohae jusimyeon gamsahagetseumnida",
       "example": {
         "ko": "제안서를 검토해 주시면 감사하겠습니다.",
-        "vi": "Rất cảm ơn nếu anh/chị xem xét giúp bản đề xuất ạ."
+        "vi": "Rất cảm ơn nếu anh/chị xem xét giúp bản đề xuất ạ.",
+        "grammar": [
+          {
+            "pattern": "-아/어 주시면 감사하겠습니다",
+            "form": "검토해 주시면 감사하겠습니다",
+            "meaningVi": "Nếu anh/chị (làm) giúp thì rất cảm ơn",
+            "noteVi": "Cách nhờ vả rất lịch sự, chuẩn mực trong email công việc."
+          }
+        ]
       },
       "tags": [
         "request",
@@ -2492,7 +4781,25 @@
       "romanization": "dareumi anira",
       "example": {
         "ko": "다름이 아니라 다음 주 회의 일정 때문에 연락드렸습니다.",
-        "vi": "Chả là tôi liên lạc về lịch họp tuần sau ạ."
+        "vi": "Chả là tôi liên lạc về lịch họp tuần sau ạ.",
+        "grammar": [
+          {
+            "pattern": "다름이 아니라",
+            "form": "다름이 아니라",
+            "meaningVi": "Không có gì khác, chẳng là...",
+            "noteVi": "Mở đầu nêu lý do liên lạc, rất hay dùng trong email/điện thoại."
+          },
+          {
+            "pattern": "N 때문에",
+            "form": "일정 때문에",
+            "meaningVi": "Vì, do N"
+          },
+          {
+            "pattern": "연락드리다",
+            "form": "연락드렸습니다",
+            "meaningVi": "Liên lạc (khiêm nhường)"
+          }
+        ]
       },
       "tags": [
         "email",
@@ -2506,7 +4813,20 @@
       "romanization": "gwallyeonhayeo",
       "example": {
         "ko": "계약 조건과 관련하여 몇 가지 문의드립니다.",
-        "vi": "Tôi xin hỏi vài điều liên quan đến điều kiện hợp đồng ạ."
+        "vi": "Tôi xin hỏi vài điều liên quan đến điều kiện hợp đồng ạ.",
+        "grammar": [
+          {
+            "pattern": "N와/과 관련하여",
+            "form": "계약 조건과 관련하여",
+            "meaningVi": "Liên quan đến N",
+            "noteVi": "Dạng văn viết trang trọng; văn nói hay dùng 관련해서."
+          },
+          {
+            "pattern": "문의드리다",
+            "form": "문의드립니다",
+            "meaningVi": "Xin hỏi, xin được hỏi (khiêm nhường)"
+          }
+        ]
       },
       "tags": [
         "email"
@@ -2519,7 +4839,15 @@
       "romanization": "jinhaeng sanghwang",
       "example": {
         "ko": "진행 상황을 수시로 공유해 주세요.",
-        "vi": "Hãy thường xuyên chia sẻ tình hình thực hiện."
+        "vi": "Hãy thường xuyên chia sẻ tình hình thực hiện.",
+        "grammar": [
+          {
+            "pattern": "-아/어 주세요",
+            "form": "공유해 주세요",
+            "meaningVi": "Xin hãy (làm gì) giúp",
+            "noteVi": "수시로 = thường xuyên, bất cứ lúc nào cần."
+          }
+        ]
       },
       "tags": [
         "report"
@@ -2532,7 +4860,19 @@
       "romanization": "mamuri",
       "example": {
         "ko": "이번 주 안에 작업을 마무리하겠습니다.",
-        "vi": "Tôi sẽ hoàn tất công việc trong tuần này."
+        "vi": "Tôi sẽ hoàn tất công việc trong tuần này.",
+        "grammar": [
+          {
+            "pattern": "N 안에",
+            "form": "이번 주 안에",
+            "meaningVi": "Trong vòng (khoảng thời gian)"
+          },
+          {
+            "pattern": "-겠습니다",
+            "form": "마무리하겠습니다",
+            "meaningVi": "Sẽ (cam kết của người nói)"
+          }
+        ]
       },
       "tags": [
         "pm"
@@ -2545,7 +4885,15 @@
       "romanization": "sujeong yocheong",
       "example": {
         "ko": "고객사의 수정 요청을 모두 반영했습니다.",
-        "vi": "Chúng tôi đã áp dụng toàn bộ yêu cầu chỉnh sửa của khách hàng."
+        "vi": "Chúng tôi đã áp dụng toàn bộ yêu cầu chỉnh sửa của khách hàng.",
+        "grammar": [
+          {
+            "pattern": "모두 -았/었습니다",
+            "form": "모두 반영했습니다",
+            "meaningVi": "Đã (làm) tất cả",
+            "noteVi": "반영하다 = phản ánh/áp dụng yêu cầu vào sản phẩm."
+          }
+        ]
       },
       "tags": [
         "request"
@@ -2558,7 +4906,25 @@
       "romanization": "pideubaek",
       "example": {
         "ko": "피드백 주시면 빠르게 수정하겠습니다.",
-        "vi": "Anh/chị góp ý thì chúng tôi sẽ sửa nhanh ạ."
+        "vi": "Anh/chị góp ý thì chúng tôi sẽ sửa nhanh ạ.",
+        "grammar": [
+          {
+            "pattern": "-(으)시면",
+            "form": "주시면",
+            "meaningVi": "Nếu (anh/chị) cho/gửi thì",
+            "noteVi": "주시다 là kính ngữ của 주다."
+          },
+          {
+            "pattern": "-게 (부사형)",
+            "form": "빠르게",
+            "meaningVi": "Một cách (nhanh)"
+          },
+          {
+            "pattern": "-겠습니다",
+            "form": "수정하겠습니다",
+            "meaningVi": "Sẽ (cam kết)"
+          }
+        ]
       },
       "tags": [
         "communication"
@@ -2571,7 +4937,20 @@
       "romanization": "sangju",
       "example": {
         "ko": "저는 고객사에 상주하면서 일하고 있습니다.",
-        "vi": "Tôi đang làm việc onsite tại công ty khách hàng."
+        "vi": "Tôi đang làm việc onsite tại công ty khách hàng.",
+        "grammar": [
+          {
+            "pattern": "-(으)면서",
+            "form": "상주하면서",
+            "meaningVi": "Vừa... vừa..., trong khi",
+            "noteVi": "Hai hành động cùng diễn ra đồng thời."
+          },
+          {
+            "pattern": "-고 있다",
+            "form": "일하고 있습니다",
+            "meaningVi": "Đang (làm gì)"
+          }
+        ]
       },
       "tags": [
         "business"
@@ -2584,7 +4963,19 @@
       "romanization": "iljeongeul apdanggida",
       "example": {
         "ko": "고객사 요청으로 일정을 일주일 앞당겼습니다.",
-        "vi": "Theo yêu cầu của khách hàng, lịch đã được đẩy sớm lên một tuần."
+        "vi": "Theo yêu cầu của khách hàng, lịch đã được đẩy sớm lên một tuần.",
+        "grammar": [
+          {
+            "pattern": "N(으)로",
+            "form": "요청으로",
+            "meaningVi": "Theo, do (nguyên nhân)"
+          },
+          {
+            "pattern": "N을/를 앞당기다",
+            "form": "앞당겼습니다",
+            "meaningVi": "Đẩy sớm lên, rút ngắn (lịch)"
+          }
+        ]
       },
       "tags": [
         "schedule"
@@ -2597,7 +4988,20 @@
       "romanization": "iljeongi millida",
       "example": {
         "ko": "다른 업무 때문에 일정이 조금 밀렸습니다.",
-        "vi": "Vì công việc khác nên lịch bị lùi một chút."
+        "vi": "Vì công việc khác nên lịch bị lùi một chút.",
+        "grammar": [
+          {
+            "pattern": "N 때문에",
+            "form": "다른 업무 때문에",
+            "meaningVi": "Vì, do N"
+          },
+          {
+            "pattern": "밀리다 (bị động)",
+            "form": "밀렸습니다",
+            "meaningVi": "Bị lùi, bị chậm (lịch)",
+            "noteVi": "Dạng bị động giúp câu báo trễ nghe khách quan, nhẹ hơn."
+          }
+        ]
       },
       "tags": [
         "schedule"
@@ -2610,7 +5014,20 @@
       "romanization": "sigan doesil ttae",
       "example": {
         "ko": "시간 되실 때 자료 한번 봐 주세요.",
-        "vi": "Khi nào anh/chị có thời gian thì xem qua tài liệu giúp tôi nhé."
+        "vi": "Khi nào anh/chị có thời gian thì xem qua tài liệu giúp tôi nhé.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄹ 때",
+            "form": "되실 때",
+            "meaningVi": "Khi (làm gì)",
+            "noteVi": "되시다 có kính ngữ -시-: 'khi anh/chị rảnh'."
+          },
+          {
+            "pattern": "-아/어 주세요",
+            "form": "봐 주세요",
+            "meaningVi": "Xin hãy (làm gì) giúp"
+          }
+        ]
       },
       "tags": [
         "request"
@@ -2623,7 +5040,20 @@
       "romanization": "hoesin gidarigetseumnida",
       "example": {
         "ko": "검토하신 후 회신 기다리겠습니다.",
-        "vi": "Tôi xin chờ hồi âm sau khi anh/chị xem xét ạ."
+        "vi": "Tôi xin chờ hồi âm sau khi anh/chị xem xét ạ.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄴ 후(에)",
+            "form": "검토하신 후",
+            "meaningVi": "Sau khi (làm gì)",
+            "noteVi": "Có -시- kính ngữ cho hành động của khách."
+          },
+          {
+            "pattern": "-겠습니다",
+            "form": "기다리겠습니다",
+            "meaningVi": "Sẽ (chờ) – câu kết email lịch sự"
+          }
+        ]
       },
       "tags": [
         "email"
@@ -2636,7 +5066,15 @@
       "romanization": "hwaginhaetseumnida",
       "example": {
         "ko": "보내 주신 메일 확인했습니다.",
-        "vi": "Tôi đã xem email anh/chị gửi ạ."
+        "vi": "Tôi đã xem email anh/chị gửi ạ.",
+        "grammar": [
+          {
+            "pattern": "-아/어 주신 N",
+            "form": "보내 주신",
+            "meaningVi": "N mà (anh/chị) đã (làm) cho",
+            "noteVi": "Định ngữ quá khứ + kính ngữ, thể hiện sự tôn trọng người gửi."
+          }
+        ]
       },
       "tags": [
         "email",
@@ -2650,7 +5088,24 @@
       "romanization": "allyeo jusimyeon",
       "example": {
         "ko": "가능한 시간을 알려 주시면 일정을 맞추겠습니다.",
-        "vi": "Nếu anh/chị cho biết thời gian rảnh, tôi sẽ sắp xếp lịch cho phù hợp."
+        "vi": "Nếu anh/chị cho biết thời gian rảnh, tôi sẽ sắp xếp lịch cho phù hợp.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄴ/는 N",
+            "form": "가능한 시간",
+            "meaningVi": "N (mà) có thể (định ngữ)"
+          },
+          {
+            "pattern": "-아/어 주시면",
+            "form": "알려 주시면",
+            "meaningVi": "Nếu anh/chị cho biết thì"
+          },
+          {
+            "pattern": "-겠습니다",
+            "form": "맞추겠습니다",
+            "meaningVi": "Sẽ (điều chỉnh) – cam kết"
+          }
+        ]
       },
       "tags": [
         "request"
@@ -2663,7 +5118,15 @@
       "romanization": "balju",
       "example": {
         "ko": "고객사에서 2차 개발을 발주했습니다.",
-        "vi": "Khách hàng đã đặt hàng giai đoạn phát triển thứ hai."
+        "vi": "Khách hàng đã đặt hàng giai đoạn phát triển thứ hai.",
+        "grammar": [
+          {
+            "pattern": "N에서 (chủ ngữ tổ chức)",
+            "form": "고객사에서",
+            "meaningVi": "Phía (công ty, tổ chức) – làm chủ ngữ",
+            "noteVi": "Khi chủ ngữ là tổ chức, dùng 에서 thay cho 이/가."
+          }
+        ]
       },
       "tags": [
         "business"
@@ -2676,7 +5139,20 @@
       "romanization": "baljusa",
       "example": {
         "ko": "발주사의 요구에 맞춰 일정을 다시 짰습니다.",
-        "vi": "Chúng tôi đã lập lại lịch theo yêu cầu của bên đặt hàng."
+        "vi": "Chúng tôi đã lập lại lịch theo yêu cầu của bên đặt hàng.",
+        "grammar": [
+          {
+            "pattern": "N에 맞춰(서)",
+            "form": "요구에 맞춰",
+            "meaningVi": "Theo, phù hợp với N"
+          },
+          {
+            "pattern": "다시 -았/었습니다",
+            "form": "다시 짰습니다",
+            "meaningVi": "Đã (làm) lại",
+            "noteVi": "일정을 짜다 = lên lịch trình."
+          }
+        ]
       },
       "tags": [
         "business"
@@ -2689,7 +5165,14 @@
       "romanization": "miting",
       "example": {
         "ko": "오후 3시에 고객사와 미팅이 있습니다.",
-        "vi": "3 giờ chiều có buổi họp với khách hàng."
+        "vi": "3 giờ chiều có buổi họp với khách hàng.",
+        "grammar": [
+          {
+            "pattern": "N와/과",
+            "form": "고객사와",
+            "meaningVi": "Với N (đối tượng cùng làm)"
+          }
+        ]
       },
       "tags": [
         "meeting"
@@ -2702,7 +5185,20 @@
       "romanization": "hyuga",
       "example": {
         "ko": "다음 주 월요일부터 수요일까지 휴가 예정입니다.",
-        "vi": "Tôi dự kiến nghỉ phép từ thứ Hai đến thứ Tư tuần sau."
+        "vi": "Tôi dự kiến nghỉ phép từ thứ Hai đến thứ Tư tuần sau.",
+        "grammar": [
+          {
+            "pattern": "N부터 N까지",
+            "form": "월요일부터 수요일까지",
+            "meaningVi": "Từ N đến N"
+          },
+          {
+            "pattern": "N 예정이다",
+            "form": "휴가 예정입니다",
+            "meaningVi": "Dự định, theo kế hoạch sẽ",
+            "noteVi": "Cách báo nghỉ phép trang trọng, ngắn gọn."
+          }
+        ]
       },
       "tags": [
         "schedule",
@@ -2716,7 +5212,21 @@
       "romanization": "jaetaek geunmu",
       "example": {
         "ko": "내일은 재택근무라서 메신저로 연락 주시면 됩니다.",
-        "vi": "Ngày mai tôi làm việc ở nhà, anh/chị cứ liên hệ qua messenger là được ạ."
+        "vi": "Ngày mai tôi làm việc ở nhà, anh/chị cứ liên hệ qua messenger là được ạ.",
+        "grammar": [
+          {
+            "pattern": "N(이)라서",
+            "form": "재택근무라서",
+            "meaningVi": "Vì là N nên",
+            "noteVi": "Văn nói thân mật-lịch sự; trang trọng hơn là -이기 때문에."
+          },
+          {
+            "pattern": "-(으)면 되다",
+            "form": "주시면 됩니다",
+            "meaningVi": "Chỉ cần (làm) là được",
+            "noteVi": "Hướng dẫn nhẹ nhàng cho đối phương cách liên lạc."
+          }
+        ]
       },
       "tags": [
         "communication"
