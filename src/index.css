@@ -189,6 +189,7 @@ textarea {
 }
 
 .brand-mark {
+  overflow: hidden;
   display: grid;
   place-items: center;
   width: 32px;
