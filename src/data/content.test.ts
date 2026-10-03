@@ -4,6 +4,7 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
+import { SCENARIO_CATEGORIES } from './scenarioFilter';
 import { parseEmails, parseScenarios, parseSongs, parseVocab, type ParseResult } from './validate';
 
 function load(name: string): unknown {
@@ -32,6 +33,14 @@ describe('vocab.json', () => {
     const seen = new Set<string>();
     const dupes = items.filter((v) => (seen.has(v.ko) ? true : (seen.add(v.ko), false)));
     expect(dupes.map((v) => v.ko)).toEqual([]);
+  });
+});
+
+describe('scenarios.json categories', () => {
+  it('uses only the known categories (labels live in vi.scenarios.categories)', () => {
+    const { items } = parseScenarios(load('scenarios.json'));
+    const unknown = items.filter((s) => !(SCENARIO_CATEGORIES as readonly string[]).includes(s.category));
+    expect(unknown.map((s) => `${s.id}: ${s.category}`)).toEqual([]);
   });
 });
 

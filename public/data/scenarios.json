@@ -6,7 +6,7 @@
       "title": "Báo cáo tiến độ chức năng đăng nhập",
       "titleKo": "로그인 기능 진행 상황 보고",
       "description": "PM phía khách hàng (김 팀장님) gọi điện hỏi tiến độ chức năng đăng nhập mà team bạn đang phát triển.",
-      "category": "progress-report",
+      "category": "pm",
       "tags": [
         "진행 상황",
         "일정",
@@ -89,7 +89,7 @@
       "title": "Xin lùi deadline chức năng thanh toán",
       "titleKo": "결제 기능 일정 연장 요청",
       "description": "Team gặp lỗi khi tích hợp cổng thanh toán (PG) và không kịp deadline thứ Hai. Khách hàng hỏi về tiến độ, bạn cần xin thêm thời gian một cách lịch sự.",
-      "category": "deadline-extension",
+      "category": "pm",
       "tags": [
         "일정",
         "연장",
@@ -172,7 +172,7 @@
       "title": "Báo cáo trong buổi daily scrum",
       "titleKo": "데일리 스크럼 보고",
       "description": "Mỗi sáng 9 giờ, team họp daily scrum online cùng 박 팀장님 phía khách hàng. Đến lượt bạn báo cáo việc hôm qua, việc hôm nay và các vấn đề đang gặp.",
-      "category": "daily-scrum",
+      "category": "meeting",
       "tags": [
         "데일리 스크럼",
         "회의",
@@ -255,7 +255,7 @@
       "title": "Làm rõ yêu cầu không rõ ràng trong spec",
       "titleKo": "모호한 요구사항 확인",
       "description": "Trong tài liệu yêu cầu có dòng \"회원은 포인트를 사용할 수 있다\" nhưng không ghi rõ điều kiện. Bạn gọi cho 이 과장님 phía khách hàng để xác nhận trước khi bắt đầu code.",
-      "category": "clarify-spec",
+      "category": "communication",
       "tags": [
         "요구사항",
         "확인",
@@ -338,7 +338,7 @@
       "title": "Báo lỗi phát hiện trong QA cho khách hàng",
       "titleKo": "QA 중 발견된 버그 보고",
       "description": "Trong giai đoạn QA, team bạn phát hiện lỗi: khi hủy đơn hàng, điểm (point) không được hoàn lại. Bạn cần báo cho 정 대리님 phía khách hàng và trao đổi kế hoạch sửa.",
-      "category": "bug-report",
+      "category": "qa",
       "tags": [
         "버그",
         "QA",
@@ -421,7 +421,7 @@
       "title": "Cuộc gọi khẩn về sự cố production",
       "titleKo": "운영 장애 대응 통화",
       "description": "Tối thứ Sáu, trang thanh toán trên môi trường production bị lỗi 500. 최 부장님 phía khách hàng gọi điện gấp. Bạn cần giải thích tình hình, mức độ ảnh hưởng và kế hoạch khôi phục.",
-      "category": "incident-response",
+      "category": "incident",
       "tags": [
         "장애",
         "운영",
@@ -504,7 +504,7 @@
       "title": "Khách yêu cầu thêm tính năng giữa sprint",
       "titleKo": "스프린트 중 기능 추가 요청 대응",
       "description": "Sprint đang đi được nửa chặng, 한 팀장님 phía khách hàng muốn thêm chức năng đăng nhập bằng Kakao. Bạn cần thương lượng lịch sự: không từ chối thẳng nhưng cũng không nhận bừa.",
-      "category": "scope-change",
+      "category": "pm",
       "tags": [
         "요구사항 변경",
         "일정",
@@ -587,7 +587,7 @@
       "title": "Giải thích quyết định kỹ thuật cho khách không chuyên",
       "titleKo": "기술 선택 설명 (Redis 캐시)",
       "description": "Team đề xuất dùng Redis làm cache cho trang danh sách sản phẩm. 윤 실장님 phía khách hàng không có nền tảng kỹ thuật, muốn hiểu tại sao cần và có tốn thêm chi phí không.",
-      "category": "tech-explanation",
+      "category": "tech",
       "tags": [
         "기술 설명",
         "캐시",
@@ -670,7 +670,7 @@
       "title": "Phản hồi góp ý code review từ senior người Hàn",
       "titleKo": "시니어 개발자 코드 리뷰 피드백 대응",
       "description": "강 책임님, senior developer phía khách hàng, review Pull Request của bạn và gọi để góp ý. Bạn cần tiếp nhận góp ý một cách cầu thị, giải thích khi cần và thống nhất cách sửa.",
-      "category": "code-review",
+      "category": "tech",
       "tags": [
         "코드 리뷰",
         "PR",
@@ -753,7 +753,7 @@
       "title": "Xin khách cấp quyền truy cập và dữ liệu test",
       "titleKo": "접근 권한 및 테스트 데이터 요청",
       "description": "Team bạn bắt đầu giai đoạn phát triển nhưng chưa có tài khoản VPN, tài khoản DB và thẻ test để kiểm thử thanh toán. Bạn gọi cho 서 대리님 phía khách hàng để nhờ hỗ trợ.",
-      "category": "access-request",
+      "category": "communication",
       "tags": [
         "권한 요청",
         "VPN",
@@ -836,7 +836,7 @@
       "title": "Họp báo cáo tuần với PM phía khách hàng",
       "titleKo": "주간 보고 회의",
       "description": "Chiều thứ Sáu, bạn thay mặt team họp báo cáo tuần (주간 보고) với 오 팀장님, PM phía khách hàng: tổng kết tuần này, kế hoạch tuần sau và các rủi ro.",
-      "category": "weekly-report",
+      "category": "meeting",
       "tags": [
         "주간 보고",
         "회의",
@@ -919,7 +919,7 @@
       "title": "Buổi họp đầu tiên với team khách hàng mới",
       "titleKo": "신규 고객사 킥오프 미팅 자기소개",
       "description": "Dự án mới bắt đầu. Trong buổi họp online đầu tiên (킥오프 미팅) với team khách hàng, 장 팀장님 mời bạn tự giới thiệu và trao đổi cách làm việc.",
-      "category": "onboarding",
+      "category": "meeting",
       "tags": [
         "자기소개",
         "킥오프",
@@ -1002,7 +1002,7 @@
       "title": "Ước tính công số cho chức năng lọc tìm kiếm",
       "titleKo": "검색 필터 기능 공수 산정",
       "description": "Khách hàng (이 과장님) vừa gửi yêu cầu chức năng lọc tìm kiếm sản phẩm và hỏi ngay trong cuộc họp: làm mất bao lâu? Bạn cần đưa ra ước tính hợp lý mà không hứa quá sức.",
-      "category": "estimation",
+      "category": "pm",
       "tags": [
         "공수 산정",
         "일정",
@@ -1085,7 +1085,7 @@
       "title": "Điều tra màn hình danh sách đơn hàng bị chậm",
       "titleKo": "주문 목록 화면 성능 개선 보고",
       "description": "Khách hàng báo rằng người dùng phàn nàn màn hình danh sách đơn hàng tải rất chậm. Bạn cần tiếp nhận, điều tra nguyên nhân và báo cáo kết quả kèm số liệu.",
-      "category": "performance",
+      "category": "tech",
       "tags": [
         "성능",
         "장애 대응",
@@ -1168,7 +1168,7 @@
       "title": "Phân loại góp ý sau UAT",
       "titleKo": "UAT 피드백 이슈 분류",
       "description": "Sau đợt kiểm thử nghiệm thu (UAT), khách hàng gửi danh sách 15 vấn đề. Trong buổi họp, bạn cần phân loại đâu là bug, đâu là yêu cầu thay đổi, và đưa ra lịch xử lý.",
-      "category": "uat",
+      "category": "qa",
       "tags": [
         "인수 테스트",
         "버그",
@@ -1252,7 +1252,7 @@
       "title": "Thống nhất lịch deploy và bảo trì ban đêm",
       "titleKo": "운영 배포 일정 조율",
       "description": "Phiên bản mới đã sẵn sàng. Bạn cần thống nhất với khách hàng lịch deploy lên production, bao gồm khung giờ bảo trì ban đêm và kế hoạch khi có sự cố.",
-      "category": "deployment",
+      "category": "release",
       "tags": [
         "배포",
         "일정 조율",
@@ -1335,7 +1335,7 @@
       "title": "Xin lỗi vì migrate sai dữ liệu",
       "titleKo": "데이터 이관 오류 사과 및 재발 방지",
       "description": "Team bạn chạy script chuyển dữ liệu hội viên sang hệ thống mới nhưng cột địa chỉ bị map sai. Khách hàng phát hiện và gọi hỏi. Bạn cần xin lỗi, báo phạm vi ảnh hưởng và đề xuất biện pháp phòng ngừa.",
-      "category": "apology",
+      "category": "incident",
       "tags": [
         "사과",
         "데이터 이관",
@@ -1418,7 +1418,7 @@
       "title": "Từ chối khéo yêu cầu làm dashboard trong 1 ngày",
       "titleKo": "무리한 일정 요청 정중하게 거절하기",
       "description": "Khách hàng cần báo cáo với giám đốc vào ngày mai và yêu cầu làm xong toàn bộ dashboard quản trị trong 1 ngày. Việc này cần khoảng 1 tuần. Bạn phải từ chối lịch sự và đưa ra phương án thay thế.",
-      "category": "negotiation",
+      "category": "pm",
       "tags": [
         "거절",
         "일정",
@@ -1501,7 +1501,7 @@
       "title": "Bàn giao công việc khi thành viên rời dự án",
       "titleKo": "담당자 변경 및 인수인계 안내",
       "description": "Anh Tuấn, thành viên chủ chốt của team, sẽ nghỉ việc cuối tháng. Khách hàng lo ngại công việc bị gián đoạn. Bạn cần giới thiệu người thay thế và kế hoạch bàn giao (인수인계).",
-      "category": "handover",
+      "category": "communication",
       "tags": [
         "인수인계",
         "담당자 변경",
@@ -1584,7 +1584,7 @@
       "title": "Xử lý lỗi tích hợp API với vendor khác của khách",
       "titleKo": "타 업체 API 연동 이슈 3자 협의",
       "description": "Hệ thống của bạn gọi API tích điểm do một công ty khác (A사) phát triển cho khách hàng, nhưng tích hợp bị lỗi. A사 nói lỗi do team bạn. Bạn cần trình bày sự thật và điều phối giữa ba bên.",
-      "category": "integration",
+      "category": "tech",
       "tags": [
         "API 연동",
         "협업",
@@ -1750,7 +1750,7 @@
       "title": "Họp tổng kết dự án và cảm ơn khách hàng",
       "titleKo": "프로젝트 종료 회고 및 감사 인사",
       "description": "Dự án đã go-live thành công. Trong buổi họp tổng kết (회고), 김 팀장님 phía khách hàng cảm ơn team và hỏi về những điểm cần cải thiện. Bạn cần đáp lễ, góp ý xây dựng và giữ quan hệ cho dự án sau.",
-      "category": "retrospective",
+      "category": "meeting",
       "tags": [
         "회고",
         "감사 인사",
