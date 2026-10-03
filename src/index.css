@@ -1124,6 +1124,9 @@ ins {
 .backend-banner--offline {
   background: var(--surface-2);
 }
+.backend-banner--update {
+  background: var(--primary-soft);
+}
 .backend-banner .link-btn {
   min-height: 32px;
 }

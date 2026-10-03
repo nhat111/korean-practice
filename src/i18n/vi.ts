@@ -325,6 +325,10 @@ export const vi = {
     link: 'Liên hệ với bài hát',
     atWork: 'Dùng ở công ty',
   },
+  update: {
+    message: 'Đã có phiên bản mới (nội dung, tính năng).',
+    reload: 'Tải lại',
+  },
   backend: {
     settingsLink: 'Cài đặt',
     banner: {

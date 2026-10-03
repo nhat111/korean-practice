@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router';
 import { BackendBanner } from './BackendBanner';
 import { Icon, type IconName } from './Icon';
+import { UpdateBanner } from './UpdateBanner';
 import { vi } from '../i18n/vi';
 
 const NAV: { to: string; label: string; icon: IconName; end: boolean }[] = [
@@ -34,6 +35,7 @@ export function Layout() {
           <Icon name="settings" size={22} />
         </Link>
       </header>
+      <UpdateBanner />
       <BackendBanner />
       <main className="main" ref={mainRef}>
         <div className="main-inner">

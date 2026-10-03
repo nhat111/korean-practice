@@ -214,7 +214,9 @@ Test files (`src/**/*.test.ts`) are type-checked by `tsconfig.node.json`, not
   with every built file in the precache list and a content-hash version. Navigations are
   network-first with an offline fallback to `index.html`, and other precached files are
   cache-first. The service worker is registered only in production builds
-  (`src/registerSW.ts`). When adding new static file types or top-level public folders,
+  (`src/registerSW.ts`). When a new worker takes over a page that already had one
+  (`controllerchange`), `UpdateBanner` asks the user to reload; the app also calls
+  `registration.update()` whenever it returns to the foreground. When adding new static file types or top-level public folders,
   update the rewrite exclusions in `vercel.json`.
 - **Render (backend)**: `render.yaml` Blueprint, Docker, free plan. Expect cold starts and an
   ephemeral disk. Set `CORS_ALLOWED_ORIGINS` to the Vercel domain(s) and always set
