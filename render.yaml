@@ -19,7 +19,7 @@ services:
     autoDeploy: true
     envVars:
       - key: CORS_ALLOWED_ORIGINS
-        sync: false # e.g. https://korean-practice.vercel.app,https://korean-practice-*.vercel.app
+        sync: false # e.g. https://kodevtalk.vercel.app,https://korean-practice-*.vercel.app
       - key: APP_ACCESS_KEY
         generateValue: true # copy it from the dashboard into the app's Settings page
       - key: AI_PROVIDER

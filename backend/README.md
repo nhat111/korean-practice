@@ -115,7 +115,7 @@ docker run --rm -p 8080:8080 -e PORT=8080 korean-practice-backend
    defines a Docker web service in **Singapore** (closest to Vietnam/Korea) on the free
    plan, with a health check on `/api/health`. It only redeploys when `backend/**` changes.
 3. Fill in the environment variables when prompted:
-   - `CORS_ALLOWED_ORIGINS`: your Vercel URL, e.g. `https://your-app.vercel.app`
+   - `CORS_ALLOWED_ORIGINS`: your Vercel URL, e.g. `https://kodevtalk.vercel.app` (plus `https://korean-practice-*.vercel.app` for preview deploys)
    - `APP_ACCESS_KEY`: generated automatically; copy it from the dashboard
    - To enable AI, set `AI_PROVIDER=claude` and `ANTHROPIC_API_KEY`
 4. After the deploy, open the app → **Settings**, then enter the Render URL and the access
