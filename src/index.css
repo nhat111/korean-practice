@@ -1,6 +1,6 @@
 /*
  * KoDevTalk design system
- * - Indigo primary with an indigo→violet accent gradient
+ * - Korean-flag palette: flag blue primary, blue→navy accent gradient, red highlights
  * - Radii: sm 10 / md 14 / lg 20; two shadow levels
  * - All text/background pairs meet WCAG AA (≥ 4.5:1 for body text)
  */
@@ -13,11 +13,12 @@
   --text: #0f172a;
   --muted: #5b6478;
   --border: #e3e6ef;
-  --primary: #4f46e5;
-  --primary-hover: #4338ca;
+  --primary: #0047a0;
+  --primary-hover: #003a85;
   --primary-text: #ffffff;
-  --primary-soft: #eef0ff;
-  --accent-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  --primary-soft: #e8f0fb;
+  --accent-gradient: linear-gradient(135deg, #0b4fb3 0%, #0a2a66 100%);
+  --accent-red: #cd2e3a;
   --ok: #15803d;
   --ok-bg: #ecfdf3;
   --bad: #c62828;
@@ -25,7 +26,7 @@
   --warn: #b45309;
   --warn-bg: #fff7e6;
   --mark: #fde68a;
-  --focus-ring: 0 0 0 3px rgb(79 70 229 / 35%);
+  --focus-ring: 0 0 0 3px rgb(0 71 160 / 35%);
 
   --radius-sm: 10px;
   --radius-md: 14px;
@@ -53,11 +54,12 @@
     --text: #e8eaf3;
     --muted: #9aa3b8;
     --border: #262c3d;
-    --primary: #8b93ff;
-    --primary-hover: #a5abff;
+    --primary: #7cb0ff;
+    --primary-hover: #9cc3ff;
     --primary-text: #0b0d14;
-    --primary-soft: #232a4d;
-    --accent-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    --primary-soft: #15284a;
+    --accent-gradient: linear-gradient(135deg, #0b4fb3 0%, #0a2a66 100%);
+    --accent-red: #ff6b75;
     --ok: #4ade80;
     --ok-bg: #0f2a1b;
     --bad: #f87171;
@@ -65,7 +67,7 @@
     --warn: #fbbf24;
     --warn-bg: #2b2210;
     --mark: #6b5a12;
-    --focus-ring: 0 0 0 3px rgb(139 147 255 / 40%);
+    --focus-ring: 0 0 0 3px rgb(124 176 255 / 40%);
     --shadow-sm: none;
     --shadow: 0 6px 24px -10px rgb(0 0 0 / 60%);
   }
@@ -434,7 +436,7 @@ textarea {
   padding: 10px 18px;
   border-radius: 999px;
   background: #fff;
-  color: #3730a3;
+  color: #0a2a66;
   text-decoration: none;
   font-weight: 700;
   box-shadow: 0 6px 16px -8px rgb(15 23 42 / 50%);
@@ -455,7 +457,7 @@ textarea {
   background: var(--accent-gradient);
   color: #fff;
   overflow: hidden;
-  box-shadow: 0 12px 32px -14px rgb(79 70 229 / 70%);
+  box-shadow: 0 12px 32px -14px rgb(10 58 140 / 60%);
 }
 .hero::after {
   /* Soft decorative glow. */
@@ -467,6 +469,20 @@ textarea {
   border-radius: 50%;
   background: radial-gradient(circle, rgb(255 255 255 / 22%), transparent 70%);
   pointer-events: none;
+}
+.hero::before {
+  /* Faint red glow, a nod to the flag's taegeuk. */
+  content: '';
+  position: absolute;
+  inset: auto auto -45% -25%;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(205 46 58 / 30%), transparent 70%);
+  pointer-events: none;
+}
+.hero > * {
+  position: relative;
 }
 .hero h1 {
   font-size: 1.45rem;
@@ -1018,7 +1034,17 @@ ins {
   line-height: 1.6;
 }
 
+.speed-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+.speed-row .link-btn {
+  flex: none;
+  min-height: 44px;
+}
 .speed {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -1378,7 +1404,7 @@ ins {
   border-radius: var(--radius-lg);
   background: var(--accent-gradient);
   color: #fff;
-  box-shadow: 0 12px 32px -14px rgb(79 70 229 / 70%);
+  box-shadow: 0 12px 32px -14px rgb(10 58 140 / 60%);
 }
 .song-hero p {
   color: rgb(255 255 255 / 90%);

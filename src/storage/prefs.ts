@@ -6,8 +6,8 @@ import { useSyncExternalStore } from 'react';
 
 const STORAGE_KEY = 'kp:prefs:v1';
 
-export const MIN_RATE = 0.7;
-export const MAX_RATE = 1;
+export const MIN_RATE = 0.5;
+export const MAX_RATE = 1.2;
 const DEFAULT_RATE = 0.9;
 
 export interface Prefs {

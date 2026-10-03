@@ -134,7 +134,7 @@ Korean either.
 
 ## Speaking practice
 
-- Voice: `kp:prefs:v1` holds `speechRate`, `voiceURI` ('' = automatic) and `deepVoice`
+- Voice: `kp:prefs:v1` holds `speechRate` (0.5-1.2), `voiceURI` ('' = automatic) and `deepVoice`
   (pitch 0.7 to approximate a male voice). Missing fields default, so old prefs still load.
   Voice gender is only guessed from known voice names (`guessGender` in `speech.ts`).
 - All browser speech features are optional. Always feature-detect (`isSpeechSupported`,
@@ -177,9 +177,11 @@ Korean either.
   never scroll; only `.main` does. Don't reintroduce document scrolling or fixed/sticky bars.
 - Touch targets are at least 44px. No hover-only interactions.
 - Design system (top of `src/index.css`): use the CSS tokens (`--primary`, `--primary-soft`,
-  `--accent-gradient`, `--surface*`, `--radius-sm/md/lg`, `--shadow-sm`/`--shadow`,
+  `--accent-gradient`, `--accent-red`, `--surface*`, `--radius-sm/md/lg`, `--shadow-sm`/`--shadow`,
   `--focus-ring`) instead of hard-coded colors; keep text/background pairs at WCAG AA. The app
-  is branded **KoDevTalk** (name in `vi.appName`, manifest, `index.html`).
+  is branded **KoDevTalk** (name in `vi.appName`, manifest, `index.html`) with a Korean-flag
+  palette (flag blue `#0047a0`, navy, red accents). The icon (`public/favicon.svg`, PNGs in
+  `public/icons/`) is a navy chat bubble with `</>` over a faded taegeuk; the header shows `favicon.svg`.
 - Voice install help lives in `VoiceGuide` (per-platform steps with English and Vietnamese
   OS menu names, data in `vi.voice.guide`).
 - Icons: use `<Icon name=… />` from `src/components/Icon.tsx` (inline Lucide paths, no icon
