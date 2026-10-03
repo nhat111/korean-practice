@@ -117,7 +117,8 @@ Korean either.
   the flashcard tag filter is built from them. Tech vocab ids start with `t-`, workplace
   vocab with `w-`. No duplicate `ko` values.
 - Vocab `example.grammar` (optional): 1-3 `GrammarPoint`s per sentence (`pattern`, `form`,
-  `meaningVi`, optional `noteVi`). `form` must be an exact substring of `example.ko` (validated);
+  `meaningVi`, optional `noteVi`). `pattern` uses TOPIK notation only (`-아/어서`, `-(으)ㄴ 후에`,
+  `N와/과`; no Vietnamese inside, tested). `form` must be an exact substring of `example.ko` (validated);
   it is highlighted with numbers on the flipped flashcard, overlapping forms share one highlight.
 - Each item has a stable string `id` (e.g. `"standup-001"`). Progress is keyed by these ids,
   so **never rename or reuse an id** once it ships.

@@ -151,7 +151,7 @@
         "vi": "Sau khi thêm index, hiệu năng truy vấn đã cải thiện nhiều.",
         "grammar": [
           {
-            "pattern": "-(으)ㄴ 후",
+            "pattern": "-(으)ㄴ 후에",
             "form": "추가한 후",
             "meaningVi": "sau khi…"
           },
@@ -236,9 +236,9 @@
             "meaningVi": "bắt đầu từ…"
           },
           {
-            "pattern": "-되다 (bị động)",
+            "pattern": "-되다",
             "form": "적용됩니다",
-            "meaningVi": "được áp dụng",
+            "meaningVi": "bị động: được áp dụng",
             "noteVi": "-하다 → -되다 tạo nghĩa bị động, rất phổ biến trong văn bản IT."
           }
         ]
@@ -285,15 +285,15 @@
         "vi": "Ngày mai sẽ test tích hợp với hệ thống thanh toán.",
         "grammar": [
           {
-            "pattern": "N과/와의",
+            "pattern": "N와/과의",
             "form": "결제 시스템과의",
             "meaningVi": "(… ) với… (bổ nghĩa cho danh từ)",
             "noteVi": "과/와 + 의 nối danh từ, phong cách văn viết trang trọng."
           },
           {
-            "pattern": "-ㅂ니다/습니다 (lịch đã định)",
+            "pattern": "-(스)ㅂ니다",
             "form": "내일 진행합니다",
-            "meaningVi": "(ngày mai) sẽ tiến hành",
+            "meaningVi": "lịch đã định: (ngày mai) sẽ tiến hành",
             "noteVi": "Thì hiện tại có trạng từ tương lai để nói lịch đã chốt."
           }
         ]
@@ -318,9 +318,9 @@
             "noteVi": "Nhấn mạnh việc đã chuẩn bị sẵn cho sau này."
           },
           {
-            "pattern": "-(으)ㄴ (định ngữ quá khứ)",
+            "pattern": "-(으)ㄴ",
             "form": "작업한 내용",
-            "meaningVi": "nội dung đã làm"
+            "meaningVi": "định ngữ quá khứ: nội dung đã làm"
           }
         ]
       },
@@ -396,9 +396,9 @@
             "noteVi": "Nhờ khách hàng gửi tài liệu một cách lịch sự."
           },
           {
-            "pattern": "-(으)ㄴ (định ngữ quá khứ)",
+            "pattern": "-(으)ㄴ",
             "form": "에러가 난 시간",
-            "meaningVi": "thời điểm đã xảy ra lỗi"
+            "meaningVi": "định ngữ quá khứ: thời điểm đã xảy ra lỗi"
           }
         ]
       },
@@ -443,7 +443,7 @@
         "vi": "Tôi đã xử lý để khi có lỗi thì toàn bộ transaction sẽ được rollback.",
         "grammar": [
           {
-            "pattern": "-도록 하다/처리하다",
+            "pattern": "-도록 하다",
             "form": "롤백되도록 처리했습니다",
             "meaningVi": "xử lý sao cho…, để…",
             "noteVi": "-도록 chỉ mục đích/kết quả mong muốn; hay dùng khi giải thích kỹ thuật."
@@ -454,9 +454,9 @@
             "meaningVi": "nếu…, khi…"
           },
           {
-            "pattern": "-되다 (bị động)",
+            "pattern": "-되다",
             "form": "롤백되도록",
-            "meaningVi": "được/bị (rollback)"
+            "meaningVi": "bị động: được/bị (rollback)"
           }
         ]
       },
@@ -763,9 +763,9 @@
         "vi": "Đã phát hiện một vài vấn đề trong integration test.",
         "grammar": [
           {
-            "pattern": "-되다 (bị động)",
+            "pattern": "-되다",
             "form": "발견되었습니다",
-            "meaningVi": "được/bị phát hiện",
+            "meaningVi": "bị động: được/bị phát hiện",
             "noteVi": "Bị động giúp báo cáo khách quan, không nhấn vào người gây lỗi."
           },
           {
@@ -845,14 +845,14 @@
         "vi": "Tổng số defect mà team QA báo cáo là mười hai lỗi.",
         "grammar": [
           {
-            "pattern": "-(으)ㄴ (định ngữ quá khứ)",
+            "pattern": "-(으)ㄴ",
             "form": "보고한 결함",
-            "meaningVi": "lỗi đã được báo cáo"
+            "meaningVi": "định ngữ quá khứ: lỗi đã được báo cáo"
           },
           {
-            "pattern": "N에서 (chủ thể tổ chức)",
+            "pattern": "N에서",
             "form": "QA팀에서",
-            "meaningVi": "(đội/tổ chức) … đã",
+            "meaningVi": "chủ thể tổ chức: (đội/tổ chức) … đã",
             "noteVi": "에서 thay 이/가 khi chủ ngữ là nhóm, tổ chức."
           }
         ]
@@ -877,9 +877,9 @@
             "meaningVi": "khi…, lúc…"
           },
           {
-            "pattern": "-되다 (bị động)",
+            "pattern": "-되다",
             "form": "표시됩니다",
-            "meaningVi": "được hiển thị"
+            "meaningVi": "bị động: được hiển thị"
           }
         ]
       },
@@ -1008,9 +1008,9 @@
             "meaningVi": "quản lý ở/trong…"
           },
           {
-            "pattern": "-습니다 (hiện tại, thói quen)",
+            "pattern": "-(스)ㅂ니다",
             "form": "관리합니다",
-            "meaningVi": "(thường) quản lý…, được quản lý…",
+            "meaningVi": "hiện tại, thói quen: (thường) quản lý…, được quản lý…",
             "noteVi": "Hiện tại dùng để mô tả cách hệ thống được cấu hình."
           }
         ]
@@ -1166,9 +1166,9 @@
             "noteVi": "Thường nêu nguyên nhân tiêu cực."
           },
           {
-            "pattern": "-되다 (bị động)",
+            "pattern": "-되다",
             "form": "삭제되지 않습니다",
-            "meaningVi": "không bị/được xóa"
+            "meaningVi": "bị động: không bị/được xóa"
           },
           {
             "pattern": "-지 않다",
@@ -1239,9 +1239,9 @@
         "vi": "Xem execution plan thì thấy đang full scan.",
         "grammar": [
           {
-            "pattern": "-(으)니(까) (phát hiện)",
+            "pattern": "-(으)니(까)",
             "form": "보니",
-            "meaningVi": "khi xem thì thấy…",
+            "meaningVi": "phát hiện: khi xem thì thấy…",
             "noteVi": "-아/어 보니: phát hiện điều gì sau khi làm."
           },
           {
@@ -1424,7 +1424,7 @@
         "vi": "Do thiếu tham số bắt buộc nên bị lỗi 400.",
         "grammar": [
           {
-            "pattern": "-되다 (bị động)",
+            "pattern": "-되다",
             "form": "누락되어",
             "meaningVi": "bị (bỏ sót), dạng bị động của -하다",
             "noteVi": "Dạng bị động giúp mô tả lỗi khách quan, không đổ lỗi cho ai."
@@ -1478,7 +1478,7 @@
         "vi": "Token hết hạn nên xác thực thất bại.",
         "grammar": [
           {
-            "pattern": "-되다 (bị động)",
+            "pattern": "-되다",
             "form": "만료되어",
             "meaningVi": "bị/được (hết hạn) – trạng thái bị động"
           },
@@ -1559,9 +1559,9 @@
         "vi": "Thông tin cá nhân phải được mã hóa rồi mới lưu.",
         "grammar": [
           {
-            "pattern": "-아/어서 (trình tự)",
+            "pattern": "-아/어서",
             "form": "암호화해서 저장해야",
-            "meaningVi": "làm A rồi (bằng cách đó) làm B",
+            "meaningVi": "trình tự: làm A rồi (bằng cách đó) làm B",
             "noteVi": "Hai hành động liên kết chặt: mã hóa rồi mới lưu."
           },
           {
@@ -1586,9 +1586,9 @@
         "vi": "Kiểm tra bảo mật đã phát hiện lỗ hổng SQL injection.",
         "grammar": [
           {
-            "pattern": "-되다 (bị động)",
+            "pattern": "-되다",
             "form": "발견되었습니다",
-            "meaningVi": "được/bị phát hiện",
+            "meaningVi": "bị động: được/bị phát hiện",
             "noteVi": "Bị động thường dùng trong báo cáo kết quả kiểm tra."
           },
           {
@@ -1674,9 +1674,9 @@
             "noteVi": "Dùng mô tả quy tắc hoạt động của hệ thống."
           },
           {
-            "pattern": "-되다 (bị động)",
+            "pattern": "-되다",
             "form": "만료됩니다",
-            "meaningVi": "bị hết hạn"
+            "meaningVi": "bị động: bị hết hạn"
           }
         ]
       },
@@ -1717,7 +1717,7 @@
         "vi": "Sau khi áp dụng cache, tốc độ phản hồi nhanh gấp đôi.",
         "grammar": [
           {
-            "pattern": "-(으)ㄴ 후",
+            "pattern": "-(으)ㄴ 후에",
             "form": "적용한 후",
             "meaningVi": "sau khi làm V",
             "noteVi": "Dùng nêu thay đổi trước/sau khi áp dụng giải pháp."
@@ -1751,7 +1751,7 @@
             "noteVi": "에 + 는 nhấn mạnh, đối chiếu với thời gian khác."
           },
           {
-            "pattern": "A-게 (trạng từ)",
+            "pattern": "-게",
             "form": "크게",
             "meaningVi": "một cách (lớn), biến tính từ thành trạng từ"
           }
@@ -1900,9 +1900,9 @@
         "vi": "Tôi sẽ lấy thread dump để phân tích nguyên nhân.",
         "grammar": [
           {
-            "pattern": "-아/어서 (trình tự)",
+            "pattern": "-아/어서",
             "form": "떠서",
-            "meaningVi": "làm A rồi làm B"
+            "meaningVi": "trình tự: làm A rồi làm B"
           },
           {
             "pattern": "-아/어 보다",
@@ -2079,9 +2079,9 @@
             "noteVi": "Kết hợp phủ định -지 않다 với -아서 để nêu nguyên nhân."
           },
           {
-            "pattern": "-되다 (bị động)",
+            "pattern": "-되다",
             "form": "등록되지",
-            "meaningVi": "được đăng ký"
+            "meaningVi": "bị động: được đăng ký"
           }
         ]
       },
@@ -2131,7 +2131,7 @@
         "vi": "Tôi đã nhận được đặc tả interface với hệ thống bên ngoài.",
         "grammar": [
           {
-            "pattern": "N과/와의 N",
+            "pattern": "N와/과의",
             "form": "외부 시스템과의",
             "meaningVi": "N giữa/với N (bổ nghĩa danh từ)",
             "noteVi": "Dạng 과의 thường gặp trong văn bản kỹ thuật."
@@ -2311,7 +2311,7 @@
         "vi": "Sau khi deploy tôi sẽ giám sát trong một tiếng.",
         "grammar": [
           {
-            "pattern": "N 후",
+            "pattern": "N 후에",
             "form": "배포 후",
             "meaningVi": "sau N"
           },
@@ -2369,7 +2369,7 @@
         "vi": "Sau khi đổi cấu hình phải khởi động lại server.",
         "grammar": [
           {
-            "pattern": "-(으)ㄴ 후",
+            "pattern": "-(으)ㄴ 후에",
             "form": "바꾼 후",
             "meaningVi": "sau khi làm V"
           },
@@ -2417,9 +2417,9 @@
         "vi": "Tôi sẽ tổng hợp kết quả phân tích nguyên nhân sự cố rồi chia sẻ.",
         "grammar": [
           {
-            "pattern": "-아/어서 (trình tự)",
+            "pattern": "-아/어서",
             "form": "정리해서",
-            "meaningVi": "làm A rồi làm B"
+            "meaningVi": "trình tự: làm A rồi làm B"
           },
           {
             "pattern": "-아/어 드리다",
@@ -2659,9 +2659,9 @@
         "vi": "Tôi đã push code đã sửa lên repository từ xa.",
         "grammar": [
           {
-            "pattern": "-(으)ㄴ (định ngữ quá khứ)",
+            "pattern": "-(으)ㄴ",
             "form": "수정한 코드",
-            "meaningVi": "(N) đã được V",
+            "meaningVi": "định ngữ quá khứ: (N) đã được V",
             "noteVi": "Định ngữ quá khứ bổ nghĩa cho danh từ."
           },
           {
@@ -2760,7 +2760,7 @@
         "vi": "Hạn chót nộp báo cáo là thứ Sáu tuần này.",
         "grammar": [
           {
-            "pattern": "N이다 (-입니다)",
+            "pattern": "N이다",
             "form": "금요일입니다",
             "meaningVi": "là ... (câu khẳng định trang trọng)",
             "noteVi": "하십시오체, phù hợp khi thông báo hạn chót trong công việc."
@@ -2818,7 +2818,7 @@
             "noteVi": "Phủ định dài, trang trọng hơn 안; hay dùng khi nói về phạm vi hợp đồng."
           },
           {
-            "pattern": "-되다 (bị động)",
+            "pattern": "-되다",
             "form": "포함되지",
             "meaningVi": "được/bị ... (bị động của -하다)"
           }
@@ -2844,9 +2844,9 @@
             "meaningVi": "nếu/khi ... thì"
           },
           {
-            "pattern": "-아/어 드리다 (N드리다)",
+            "pattern": "N드리다",
             "form": "공유드리겠습니다",
-            "meaningVi": "làm ... cho (khiêm nhường)",
+            "meaningVi": "N드리다: làm ... cho (khiêm nhường)",
             "noteVi": "공유드리다 là cách nói khiêm nhường rất phổ biến trong công sở."
           },
           {
@@ -2870,7 +2870,7 @@
         "vi": "Cuộc họp hôm nay có ba nội dung cần bàn.",
         "grammar": [
           {
-            "pattern": "N이다 (-입니다)",
+            "pattern": "N이다",
             "form": "세 가지입니다",
             "meaningVi": "là ... (khẳng định trang trọng)",
             "noteVi": "Câu mở đầu cuộc họp thường dùng 하십시오체."
@@ -3013,9 +3013,9 @@
         "vi": "Nhờ anh/chị kiểm tra giúp tài liệu đính kèm ạ.",
         "grammar": [
           {
-            "pattern": "-(으)ㄴ (định ngữ quá khứ)",
+            "pattern": "-(으)ㄴ",
             "form": "첨부한",
-            "meaningVi": "đã ... (bổ nghĩa danh từ)"
+            "meaningVi": "định ngữ quá khứ: đã ... (bổ nghĩa danh từ)"
           },
           {
             "pattern": "N 부탁드립니다",
@@ -3126,7 +3126,7 @@
             "meaningVi": "nếu ... thì"
           },
           {
-            "pattern": "말씀하다 + -아/어 주세요",
+            "pattern": "-아/어 주세요",
             "form": "말씀해 주세요",
             "meaningVi": "xin hãy nói (kính ngữ)",
             "noteVi": "말씀하다 là kính ngữ của 말하다, dùng với khách."
@@ -3174,14 +3174,14 @@
         "vi": "Giờ họp bị thay đổi đột ngột, xin lỗi vì đã gây bất tiện ạ.",
         "grammar": [
           {
-            "pattern": "-되다 (bị động)",
+            "pattern": "-되다",
             "form": "변경되어",
             "meaningVi": "được/bị ... (bị động)"
           },
           {
-            "pattern": "-아/어서 (lý do)",
+            "pattern": "-아/어서",
             "form": "변경되어",
-            "meaningVi": "vì ... nên",
+            "meaningVi": "lý do: vì ... nên",
             "noteVi": "-어 là dạng rút gọn của -어서, trang trọng trong văn viết."
           },
           {
@@ -3231,9 +3231,9 @@
         "vi": "Tôi sẽ gửi lại bảng báo giá đã chỉnh sửa ạ.",
         "grammar": [
           {
-            "pattern": "-(으)ㄴ (định ngữ)",
+            "pattern": "-(으)ㄴ",
             "form": "수정된",
-            "meaningVi": "đã được ... (bổ nghĩa danh từ)"
+            "meaningVi": "định ngữ: đã được ... (bổ nghĩa danh từ)"
           },
           {
             "pattern": "-아/어 드리겠습니다",
@@ -3287,9 +3287,9 @@
             "meaningVi": "hãy ... giúp (yêu cầu lịch sự)"
           },
           {
-            "pattern": "A-이/히 (trạng từ)",
+            "pattern": "-이/히",
             "form": "꼼꼼히",
-            "meaningVi": "một cách kỹ lưỡng"
+            "meaningVi": "trạng từ: một cách kỹ lưỡng"
           }
         ]
       },
@@ -3313,7 +3313,7 @@
             "noteVi": "Nêu điều kiện bắt buộc, hay dùng khi nói về quy trình thanh toán."
           },
           {
-            "pattern": "-되다 (bị động)",
+            "pattern": "-되다",
             "form": "지급됩니다",
             "meaningVi": "được ... (bị động)"
           }
@@ -3339,7 +3339,7 @@
             "meaningVi": "đang ở trạng thái ... (kết quả còn duy trì)"
           },
           {
-            "pattern": "bị động -히-",
+            "pattern": "-히-",
             "form": "잡혀",
             "meaningVi": "được/bị ... (bị động của 잡다)",
             "noteVi": "미팅이 잡히다: cuộc họp đã được sắp xếp."
@@ -3412,7 +3412,7 @@
         "vi": "Anh/chị 대리 ơi, tài liệu họp đã chuẩn bị xong rồi ạ.",
         "grammar": [
           {
-            "pattern": "-됐다 (-되었다)",
+            "pattern": "-되다",
             "form": "준비됐습니다",
             "meaningVi": "đã được ... xong",
             "noteVi": "준비됐습니다: báo đã chuẩn bị xong, ngắn gọn khi báo cáo."
@@ -3459,7 +3459,7 @@
         "vi": "Người phụ trách việc này là ai ạ?",
         "grammar": [
           {
-            "pattern": "-(으)시- + -(으)ㄴ가요?",
+            "pattern": "-(으)신가요?",
             "form": "누구신가요?",
             "meaningVi": "là ai ạ? (hỏi kính trọng)",
             "noteVi": "Mềm mỏng và lịch sự hơn 누구예요, hợp khi hỏi khách hàng."
@@ -3815,7 +3815,7 @@
         "vi": "Kiểm tra xong tôi sẽ liên lạc lại ạ.",
         "grammar": [
           {
-            "pattern": "N 후",
+            "pattern": "N 후에",
             "form": "확인 후",
             "meaningVi": "sau khi ..."
           },
@@ -3888,9 +3888,9 @@
         "vi": "Tôi đã đính kèm tài liệu anh/chị nói ạ.",
         "grammar": [
           {
-            "pattern": "-(으)신 (định ngữ kính ngữ)",
+            "pattern": "-(으)신",
             "form": "말씀하신",
-            "meaningVi": "mà anh/chị đã nói",
+            "meaningVi": "định ngữ kính ngữ: mà anh/chị đã nói",
             "noteVi": "말씀하신 자료: tài liệu anh/chị đã nhắc, lịch sự với khách."
           },
           {
@@ -3971,13 +3971,13 @@
             "meaningVi": "trở nên ... (biến đổi)"
           },
           {
-            "pattern": "-아/어서 (lý do)",
+            "pattern": "-아/어서",
             "form": "늦어져서",
-            "meaningVi": "vì ... nên",
+            "meaningVi": "lý do: vì ... nên",
             "noteVi": "Dùng giải thích nguyên nhân chậm tiến độ, không dùng với mệnh lệnh."
           },
           {
-            "pattern": "-되다 (bị động)",
+            "pattern": "-되다",
             "form": "지연되었습니다",
             "meaningVi": "bị ... (bị động)"
           }
@@ -4361,7 +4361,7 @@
         "vi": "Tôi xin báo cáo trước rủi ro chậm tiến độ ạ.",
         "grammar": [
           {
-            "pattern": "-아/어 드리다 (보고드리다)",
+            "pattern": "N드리다",
             "form": "보고드립니다",
             "meaningVi": "Báo cáo (lên cấp trên) – khiêm nhường",
             "noteVi": "보고드리다 lịch sự hơn 보고하다 khi nói với khách hàng."
@@ -4471,9 +4471,9 @@
             "meaningVi": "Bắt đầu từ (thời điểm)"
           },
           {
-            "pattern": "N이/가 투입되다 (bị động -되다)",
+            "pattern": "N이/가 투입되다",
             "form": "투입됩니다",
-            "meaningVi": "Được đưa vào, được bổ sung (nhân lực)",
+            "meaningVi": "bị động -되다: Được đưa vào, được bổ sung (nhân lực)",
             "noteVi": "Dạng -되다 nhấn mạnh kết quả, không nêu người quyết định."
           }
         ]
@@ -4534,9 +4534,9 @@
         "vi": "Tiền thanh toán được chi trả vào cuối mỗi tháng.",
         "grammar": [
           {
-            "pattern": "-되다 (bị động)",
+            "pattern": "-되다",
             "form": "지급됩니다",
-            "meaningVi": "Được (chi trả, thực hiện)",
+            "meaningVi": "bị động: Được (chi trả, thực hiện)",
             "noteVi": "Câu bị động trang trọng, thường gặp trong hợp đồng."
           }
         ]
@@ -4634,9 +4634,9 @@
             "meaningVi": "Sau (N)"
           },
           {
-            "pattern": "-겠습니다 (phỏng đoán/thông báo)",
+            "pattern": "-겠습니다",
             "form": "있겠습니다",
-            "meaningVi": "Sẽ có (thông báo lịch sự)",
+            "meaningVi": "phỏng đoán/thông báo: Sẽ có (thông báo lịch sự)",
             "noteVi": "-겠- làm lời thông báo mềm và trang trọng hơn 있습니다."
           }
         ]
@@ -4915,7 +4915,7 @@
             "noteVi": "주시다 là kính ngữ của 주다."
           },
           {
-            "pattern": "-게 (부사형)",
+            "pattern": "-게",
             "form": "빠르게",
             "meaningVi": "Một cách (nhanh)"
           },
@@ -4996,9 +4996,9 @@
             "meaningVi": "Vì, do N"
           },
           {
-            "pattern": "밀리다 (bị động)",
+            "pattern": "밀리다",
             "form": "밀렸습니다",
-            "meaningVi": "Bị lùi, bị chậm (lịch)",
+            "meaningVi": "bị động: Bị lùi, bị chậm (lịch)",
             "noteVi": "Dạng bị động giúp câu báo trễ nghe khách quan, nhẹ hơn."
           }
         ]
@@ -5043,7 +5043,7 @@
         "vi": "Tôi xin chờ hồi âm sau khi anh/chị xem xét ạ.",
         "grammar": [
           {
-            "pattern": "-(으)ㄴ 후(에)",
+            "pattern": "-(으)ㄴ 후에",
             "form": "검토하신 후",
             "meaningVi": "Sau khi (làm gì)",
             "noteVi": "Có -시- kính ngữ cho hành động của khách."
@@ -5069,7 +5069,7 @@
         "vi": "Tôi đã xem email anh/chị gửi ạ.",
         "grammar": [
           {
-            "pattern": "-아/어 주신 N",
+            "pattern": "-아/어 주신",
             "form": "보내 주신",
             "meaningVi": "N mà (anh/chị) đã (làm) cho",
             "noteVi": "Định ngữ quá khứ + kính ngữ, thể hiện sự tôn trọng người gửi."
@@ -5121,9 +5121,9 @@
         "vi": "Khách hàng đã đặt hàng giai đoạn phát triển thứ hai.",
         "grammar": [
           {
-            "pattern": "N에서 (chủ ngữ tổ chức)",
+            "pattern": "N에서",
             "form": "고객사에서",
-            "meaningVi": "Phía (công ty, tổ chức) – làm chủ ngữ",
+            "meaningVi": "chủ ngữ tổ chức: Phía (công ty, tổ chức) – làm chủ ngữ",
             "noteVi": "Khi chủ ngữ là tổ chức, dùng 에서 thay cho 이/가."
           }
         ]

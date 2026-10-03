@@ -33,3 +33,15 @@ describe('vocab.json', () => {
     expect(dupes.map((v) => v.ko)).toEqual([]);
   });
 });
+
+describe('vocab.json grammar notation', () => {
+  it('uses Korean notation only in patterns (N/A/V placeholders allowed; notes go in meaningVi)', () => {
+    const { items } = parseVocab(load('vocab.json'));
+    const bad = items.flatMap((v) =>
+      (v.example.grammar ?? [])
+        .map((g) => g.pattern)
+        .filter((p) => /[A-Za-zÀ-ỹ]{2,}/.test(p.replace(/\b[NAV]\b/g, ''))),
+    );
+    expect(bad).toEqual([]);
+  });
+});
