@@ -89,7 +89,7 @@ Korean either.
 │   ├── data/             # validate.ts (runtime checks), content.ts (fetch + useContent)
 │   ├── storage/          # progress.ts, prefs.ts, backend.ts: the only modules that touch localStorage
 │   ├── srs/sm2.ts        # SM-2 spaced repetition
-│   ├── speech.ts         # SpeechSynthesis (ko-KR), rate from prefs (0.7x-1x)
+│   ├── speech.ts         # SpeechSynthesis (ko-KR): voice, pitch and rate from prefs
 │   ├── speaking/         # compare.ts (answer similarity), recognition.ts, recorder.ts
 │   ├── api/              # client.ts: the ONLY module that calls the backend; messages.ts
 │   ├── i18n/vi.ts        # Vietnamese UI strings
@@ -126,6 +126,9 @@ Korean either.
 
 ## Speaking practice
 
+- Voice: `kp:prefs:v1` holds `speechRate`, `voiceURI` ('' = automatic) and `deepVoice`
+  (pitch 0.7 to approximate a male voice). Missing fields default, so old prefs still load.
+  Voice gender is only guessed from known voice names (`guessGender` in `speech.ts`).
 - All browser speech features are optional. Always feature-detect (`isSpeechSupported`,
   `isRecordingSupported`, `isRecognitionSupported`) and keep a fallback:
   no SpeechRecognition (e.g. Firefox) → record with MediaRecorder + self-assessment.
@@ -159,6 +162,8 @@ Korean either.
 - **Mobile-first.** The main use is practicing on a phone. Design for ~360px width first,
   then scale up.
 - Touch targets are at least 44px. No hover-only interactions.
+- Icons: use `<Icon name=… />` from `src/components/Icon.tsx` (inline Lucide paths, no icon
+  dependency). Add new icons there; don't use emoji as UI icons in navigation or buttons.
 - Use a font stack that renders Hangul well (e.g. `"Pretendard", "Noto Sans KR", system-ui`)
   and also covers Vietnamese diacritics.
 - Respect `prefers-color-scheme` and `prefers-reduced-motion`.

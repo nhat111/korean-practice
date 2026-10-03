@@ -1,5 +1,6 @@
 import { isSpeechSupported, speakKorean } from '../speech';
 import { vi } from '../i18n/vi';
+import { Icon } from './Icon';
 
 interface Props {
   text: string;
@@ -21,7 +22,7 @@ export function SpeakButton({ text, small }: Props) {
       aria-label={vi.common.speak}
       title={vi.common.speak}
     >
-      🔊
+      <Icon name="volume" size={small ? 18 : 22} />
     </button>
   );
 }

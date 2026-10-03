@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router';
 import { vi } from '../i18n/vi';
 import { isSpeechSupported, speakKorean } from '../speech';
 import { compareAnswer, type Comparison } from '../speaking/compare';
@@ -24,7 +25,14 @@ export function SpeakingDrill({ line }: { line: SpeakingLine }) {
           {line.ko}
         </p>
         <p className="muted">{line.vi}</p>
-        {isSpeechSupported() && <SpeedControl />}
+        {isSpeechSupported() && (
+          <>
+            <SpeedControl />
+            <Link to="/settings" className="link-btn small">
+              {vi.voice.change}
+            </Link>
+          </>
+        )}
       </section>
       <Shadowing line={line} />
       <SpeechCheck line={line} />

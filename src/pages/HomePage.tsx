@@ -1,20 +1,28 @@
 import { Link } from 'react-router';
+import { Icon, type IconName } from '../components/Icon';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
 import { isDue, todayKey } from '../srs/sm2';
 import { useBackendSettings } from '../storage/backend';
 import { useProgress } from '../storage/progress';
 
-const SECTIONS = [
-  { to: '/scenarios', icon: '💬', title: vi.nav.scenarios, desc: vi.home.sections.scenarios },
-  { to: '/emails', icon: '✉️', title: vi.nav.emails, desc: vi.home.sections.emails },
-  { to: '/flashcards', icon: '🃏', title: vi.nav.flashcards, desc: vi.home.sections.flashcards },
-  { to: '/speaking', icon: '🎤', title: vi.nav.speaking, desc: vi.home.sections.speaking },
-  { to: '/progress', icon: '📈', title: vi.nav.progress, desc: vi.home.sections.progress },
+interface Section {
+  to: string;
+  icon: IconName;
+  title: string;
+  desc: string;
+}
+
+const SECTIONS: Section[] = [
+  { to: '/scenarios', icon: 'chat', title: vi.nav.scenarios, desc: vi.home.sections.scenarios },
+  { to: '/emails', icon: 'mail', title: vi.nav.emails, desc: vi.home.sections.emails },
+  { to: '/flashcards', icon: 'cards', title: vi.nav.flashcards, desc: vi.home.sections.flashcards },
+  { to: '/speaking', icon: 'mic', title: vi.nav.speaking, desc: vi.home.sections.speaking },
+  { to: '/progress', icon: 'chart', title: vi.nav.progress, desc: vi.home.sections.progress },
 ];
 
 // Shown only when an optional backend is configured.
-const AI_SECTION = { to: '/ai-roleplay', icon: '🤖', title: vi.aiRoleplay.title, desc: vi.aiRoleplay.homeDesc };
+const AI_SECTION: Section = { to: '/ai-roleplay', icon: 'bot', title: vi.aiRoleplay.title, desc: vi.aiRoleplay.homeDesc };
 
 export function HomePage() {
   const backend = useBackendSettings();
@@ -41,8 +49,8 @@ export function HomePage() {
       <div className="grid">
         {sections.map((s) => (
           <Link key={s.to} to={s.to} className="card card--link">
-            <span className="card-icon" aria-hidden>
-              {s.icon}
+            <span className="card-icon">
+              <Icon name={s.icon} />
             </span>
             <h2>{s.title}</h2>
             <p className="muted">{s.desc}</p>

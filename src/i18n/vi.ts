@@ -179,6 +179,18 @@ export const vi = {
     errNetwork: 'Lỗi mạng: nhận dạng giọng nói cần kết nối Internet.',
     errRecognition: 'Lỗi nhận dạng giọng nói',
   },
+  voice: {
+    title: 'Giọng đọc',
+    label: 'Giọng tiếng Hàn',
+    auto: 'Tự động (mặc định của máy)',
+    gender: { male: 'nam', female: 'nữ' },
+    deep: 'Giọng trầm (giả lập giọng nam)',
+    test: '▶ Nghe thử',
+    change: 'Đổi giọng đọc (nam/nữ) →',
+    none: 'Máy chưa có giọng tiếng Hàn nào. Hãy cài thêm theo hướng dẫn bên dưới.',
+    installHint:
+      'Muốn có giọng nam thật? Android: Cài đặt → Chuyển văn bản thành giọng nói → Dịch vụ Google → tiếng Hàn → chọn giọng nam. iPhone: Cài đặt → Trợ năng → Nội dung được đọc → Giọng nói → Tiếng Hàn. Windows: Cài đặt → Thời gian & ngôn ngữ → Giọng nói → thêm tiếng Hàn (giọng InJoon). Sau đó tải lại trang.',
+  },
   backend: {
     settingsLink: 'Cài đặt',
     banner: {

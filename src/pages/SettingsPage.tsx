@@ -1,9 +1,12 @@
 import { useState, type FormEvent } from 'react';
 import { checkBackend, getRemoteProgress, putRemoteProgress, useBackendStatus } from '../api/client';
 import { apiErrorMessage } from '../api/messages';
+import { SpeedControl } from '../components/SpeedControl';
+import { VoiceControl } from '../components/VoiceControl';
 import { vi } from '../i18n/vi';
 import { normalizeUrl, setBackendSettings, useBackendSettings } from '../storage/backend';
 import { exportProgress, importProgress } from '../storage/progress';
+import { isSpeechSupported } from '../speech';
 
 function isValidUrl(url: string): boolean {
   try {
@@ -96,6 +99,14 @@ export function SettingsPage() {
   return (
     <div className="stack">
       <h1>{vi.settings.title}</h1>
+
+      {isSpeechSupported() && (
+        <section className="card stack-sm">
+          <h2>{vi.voice.title}</h2>
+          <SpeedControl />
+          <VoiceControl />
+        </section>
+      )}
 
       <section className="card stack-sm">
         <h2>{vi.settings.backendTitle}</h2>
