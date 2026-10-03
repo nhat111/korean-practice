@@ -161,6 +161,9 @@ Korean either.
 
 - **Mobile-first.** The main use is practicing on a phone. Design for ~360px width first,
   then scale up.
+- Layout: `.app` is `position: fixed`, sized by `--app-height` (= `window.innerHeight`, set in
+  `src/viewport.ts`) because `100dvh` can exceed the visible area on iOS Chrome. `html`/`body`
+  never scroll; only `.main` does. Don't reintroduce document scrolling or fixed/sticky bars.
 - Touch targets are at least 44px. No hover-only interactions.
 - Design system (top of `src/index.css`): use the CSS tokens (`--primary`, `--primary-soft`,
   `--accent-gradient`, `--surface*`, `--radius-sm/md/lg`, `--shadow-sm`/`--shadow`,

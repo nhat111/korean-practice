@@ -87,14 +87,15 @@
 html,
 body {
   height: 100%;
+  /* The document itself never scrolls (see .app). */
+  overflow: hidden;
+  overscroll-behavior: none;
 }
 
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  /* The document itself never scrolls (see .app), so no rubber-banding. */
-  overscroll-behavior: none;
 }
 
 h1,
@@ -146,16 +147,22 @@ textarea {
 /* ---------- Layout ---------- */
 
 /*
- * App shell: header, scrollable content, bottom nav, sized to the visible
- * viewport. Only .main scrolls. This avoids position: fixed/sticky on the
- * document, which mobile browsers (notably iOS) misplace while their toolbars
- * expand and collapse.
+ * App shell: header, scrollable content, bottom nav, pinned to the visible
+ * viewport. Only .main scrolls; the document never does, so mobile browser
+ * toolbars don't expand/collapse and shift things around. The height comes
+ * from window.innerHeight (--app-height, set in src/viewport.ts) because
+ * 100dvh can exceed the visible area on iOS Chrome.
  */
 .app {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
-  height: 100vh; /* fallback for browsers without dvh */
+  height: 100vh; /* fallbacks before JS runs */
   height: 100dvh;
+  height: var(--app-height, 100dvh);
   overflow: hidden;
 }
 

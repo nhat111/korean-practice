@@ -4,6 +4,9 @@ import { BrowserRouter } from 'react-router';
 import { App } from './App';
 import './index.css';
 import { registerServiceWorker } from './registerSW';
+import { trackAppHeight } from './viewport';
+
+trackAppHeight();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
