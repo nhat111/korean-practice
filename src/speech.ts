@@ -1,5 +1,7 @@
 // Reads Korean text aloud with the browser's SpeechSynthesis (ko-KR).
 
+import { getSpeechRate } from './storage/prefs';
+
 export function isSpeechSupported(): boolean {
   return typeof window !== 'undefined' && 'speechSynthesis' in window;
 }
@@ -16,16 +18,24 @@ if (isSpeechSupported()) {
   window.speechSynthesis.getVoices();
 }
 
-export function speakKorean(text: string, rate = 0.9): void {
-  if (!isSpeechSupported()) return;
+/**
+ * Speaks `text` at the given rate (default: the user's saved speed) and
+ * resolves when speech ends, fails or is cancelled.
+ */
+export function speakKorean(text: string, rate = getSpeechRate()): Promise<void> {
+  if (!isSpeechSupported()) return Promise.resolve();
   const synth = window.speechSynthesis;
   synth.cancel();
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = 'ko-KR';
-  utterance.rate = rate;
-  const voice = findKoreanVoice();
-  if (voice) utterance.voice = voice;
-  synth.speak(utterance);
+  return new Promise((resolve) => {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'ko-KR';
+    utterance.rate = rate;
+    const voice = findKoreanVoice();
+    if (voice) utterance.voice = voice;
+    utterance.onend = () => resolve();
+    utterance.onerror = () => resolve();
+    synth.speak(utterance);
+  });
 }
 
 export function stopSpeaking(): void {

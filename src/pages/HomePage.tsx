@@ -8,6 +8,7 @@ const SECTIONS = [
   { to: '/scenarios', icon: '💬', title: vi.nav.scenarios, desc: vi.home.sections.scenarios },
   { to: '/emails', icon: '✉️', title: vi.nav.emails, desc: vi.home.sections.emails },
   { to: '/flashcards', icon: '🃏', title: vi.nav.flashcards, desc: vi.home.sections.flashcards },
+  { to: '/speaking', icon: '🎤', title: vi.nav.speaking, desc: vi.home.sections.speaking },
   { to: '/progress', icon: '📈', title: vi.nav.progress, desc: vi.home.sections.progress },
 ];
 

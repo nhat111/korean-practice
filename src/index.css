@@ -679,3 +679,102 @@ ins {
   height: 100%;
   background: var(--primary);
 }
+
+/* ---------- Speaking ---------- */
+
+.badge--bad {
+  background: var(--bad-bg);
+  color: var(--bad);
+}
+
+.error {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--bad-bg);
+  color: var(--bad);
+}
+
+.drill-line {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.speed {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.speed input {
+  width: 100%;
+  min-height: 44px;
+  accent-color: var(--primary);
+}
+
+.interim {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--surface-2);
+  color: var(--muted);
+}
+
+.recording-dot::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--bad);
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.voice-toggle {
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+.score-badge {
+  align-self: flex-start;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 4px 12px;
+}
+
+.tokens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  font-size: 1.05rem;
+}
+.tok {
+  padding: 0 4px;
+  border-radius: 4px;
+}
+.tok--match {
+  background: var(--ok-bg);
+  color: var(--ok);
+}
+.tok--partial {
+  background: var(--warn-bg);
+  color: var(--warn);
+}
+.tok--missing {
+  background: var(--bad-bg);
+  color: var(--bad);
+  text-decoration: underline wavy;
+}
+.tok--extra {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}

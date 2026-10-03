@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
 import { isDue, isMastered, todayKey } from '../srs/sm2';
@@ -24,6 +25,14 @@ export function ProgressPage() {
             scenarioResults.length,
         )
       : 0;
+
+  const [weekAgo] = useState(() => Date.now() - 7 * 24 * 60 * 60 * 1000);
+  const speakingWeek = progress.speaking.filter((a) => Date.parse(a.at) >= weekAgo).length;
+  const scored = progress.speaking.filter((a) => a.score !== undefined);
+  const avgSpeaking =
+    scored.length > 0
+      ? `${Math.round(scored.reduce((s, a) => s + (a.score ?? 0), 0) / scored.length)}%`
+      : '–';
 
   const total = (s: { status: string; items?: unknown[] }) =>
     s.status === 'ready' && s.items ? s.items.length : '…';
@@ -61,6 +70,15 @@ export function ProgressPage() {
             label={vi.progress.completed}
             value={`${Object.keys(progress.emails).length}/${total(emails)}`}
           />
+        </div>
+      </section>
+
+      <section className="card stack-sm">
+        <h2>{vi.progress.speaking}</h2>
+        <div className="stats">
+          <Stat label={vi.progress.attempts} value={progress.speaking.length} />
+          <Stat label={vi.progress.last7Days} value={speakingWeek} />
+          <Stat label={vi.progress.avgSpeakingScore} value={avgSpeaking} />
         </div>
       </section>
 

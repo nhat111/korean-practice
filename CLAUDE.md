@@ -57,12 +57,13 @@ Korean either.
 ├── public/data/          # Learning content: scenarios.json, emails.json, vocab.json
 ├── src/
 │   ├── types.ts          # Content types (Scenario, EmailExercise, VocabItem)
-│   ├── components/       # Layout, SpeakButton, ContentGate (loading/error)
-│   ├── pages/            # Home, Scenarios(+Player), Emails(+Exercise), Flashcards, Progress
+│   ├── components/       # Layout, SpeakButton, ContentGate, SpeakingDrill, VoiceAnswer, ...
+│   ├── pages/            # Home, Scenarios(+Player), Emails(+Exercise), Flashcards, Speaking, Progress
 │   ├── data/             # validate.ts (runtime checks), content.ts (fetch + useContent)
-│   ├── storage/          # progress.ts: the only module that touches localStorage
+│   ├── storage/          # progress.ts + prefs.ts: the only modules that touch localStorage
 │   ├── srs/sm2.ts        # SM-2 spaced repetition
-│   ├── speech.ts         # SpeechSynthesis (ko-KR)
+│   ├── speech.ts         # SpeechSynthesis (ko-KR), rate from prefs (0.7x-1x)
+│   ├── speaking/         # compare.ts (answer similarity), recognition.ts, recorder.ts
 │   ├── i18n/vi.ts        # Vietnamese UI strings
 │   └── main.tsx, App.tsx # Router setup (react-router, BrowserRouter)
 ├── backend/              # Phase 2 only: Spring Boot 3, Java 21
@@ -91,12 +92,25 @@ Korean either.
 - Korean content must be natural workplace Korean. Pay attention to the politeness level and
   mention it in `note` when it matters.
 
+## Speaking practice
+
+- All browser speech features are optional. Always feature-detect (`isSpeechSupported`,
+  `isRecordingSupported`, `isRecognitionSupported`) and keep a fallback:
+  no SpeechRecognition (e.g. Firefox) → record with MediaRecorder + self-assessment.
+- Recordings are in-memory object URLs only (never stored); speaking *history* (text, score,
+  self-rating) is stored in progress, capped at 300 entries.
+- `compareAnswer` in `src/speaking/compare.ts` is pure and unit-tested: score is a
+  character-level similarity (ignores spaces/punctuation), highlighting is per 어절.
+- Chromium headless has no mic or recognition: browser tests use
+  `--use-fake-device-for-media-stream` and mock `webkitSpeechRecognition`/`speechSynthesis`.
+
 ## localStorage conventions
 
 - All access goes through `src/storage/`. Components never call `localStorage` directly.
-- Use a single namespaced key prefix (e.g. `kp:`) and a **schema version** (e.g.
-  `kp:progress:v1`). When the shape changes, write a migration instead of silently dropping
-  user data.
+- Use a single namespaced key prefix (`kp:`) and a **schema version**. Keys:
+  `kp:progress:v1` (learning progress) and `kp:prefs:v1` (device preferences such as speech
+  rate). When the shape changes, write a migration instead of silently dropping user data;
+  purely additive fields may instead default when missing (as `speaking` does).
 - Wrap reads and writes in try/catch. The app must still work if storage is unavailable or
   contains corrupted data. In that case, fall back to empty progress.
 

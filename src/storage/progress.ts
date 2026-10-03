@@ -21,6 +21,28 @@ export interface EmailResult {
   lastDone: string;
 }
 
+export type SpeakingMode = 'shadowing' | 'check' | 'roleplay';
+export type SelfRating = 'good' | 'ok' | 'bad';
+
+export interface SpeakingAttempt {
+  /** ISO timestamp. */
+  at: string;
+  mode: SpeakingMode;
+  /** Where the line came from, e.g. "scenario:<id>:<turn>" or "vocab:<id>". */
+  source: string;
+  /** The Korean line the learner tried to say. */
+  target: string;
+  /** Speech recognition result, when available. */
+  transcript?: string;
+  /** 0-100 similarity score from speech recognition. */
+  score?: number;
+  /** Self-assessment when recognition is unavailable. */
+  selfRating?: SelfRating;
+}
+
+/** Only the most recent attempts are kept to stay well under storage limits. */
+const MAX_SPEAKING_HISTORY = 300;
+
 export interface Progress {
   version: 1;
   /** Flashcard SM-2 state keyed by VocabItem id. */
@@ -29,10 +51,12 @@ export interface Progress {
   scenarios: Record<string, ScenarioResult>;
   /** Keyed by EmailExercise id. */
   emails: Record<string, EmailResult>;
+  /** Newest first. Added after v1 shipped; older data reads as []. */
+  speaking: SpeakingAttempt[];
 }
 
 function emptyProgress(): Progress {
-  return { version: 1, cards: {}, scenarios: {}, emails: {} };
+  return { version: 1, cards: {}, scenarios: {}, emails: {}, speaking: [] };
 }
 
 function isRecord(v: unknown): v is Record<string, unknown> {
@@ -50,6 +74,7 @@ function read(): Progress {
       cards: isRecord(data.cards) ? (data.cards as Progress['cards']) : {},
       scenarios: isRecord(data.scenarios) ? (data.scenarios as Progress['scenarios']) : {},
       emails: isRecord(data.emails) ? (data.emails as Progress['emails']) : {},
+      speaking: Array.isArray(data.speaking) ? (data.speaking as Progress['speaking']) : [],
     };
   } catch {
     return emptyProgress();
@@ -107,6 +132,16 @@ export function saveEmailDone(id: string): void {
     };
     return { ...p, emails: { ...p.emails, [id]: result } };
   });
+}
+
+export function saveSpeakingAttempt(attempt: Omit<SpeakingAttempt, 'at'>): void {
+  update((p) => ({
+    ...p,
+    speaking: [{ ...attempt, at: new Date().toISOString() }, ...p.speaking].slice(
+      0,
+      MAX_SPEAKING_HISTORY,
+    ),
+  }));
 }
 
 export function resetProgress(): void {

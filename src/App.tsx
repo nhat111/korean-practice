@@ -8,6 +8,7 @@ import { HomePage } from './pages/HomePage';
 import { ProgressPage } from './pages/ProgressPage';
 import { ScenarioPlayerPage } from './pages/ScenarioPlayerPage';
 import { ScenariosPage } from './pages/ScenariosPage';
+import { SpeakingPage } from './pages/SpeakingPage';
 
 export function App() {
   return (
@@ -19,6 +20,7 @@ export function App() {
         <Route path="emails" element={<EmailsPage />} />
         <Route path="emails/:id" element={<EmailExercisePage />} />
         <Route path="flashcards" element={<FlashcardsPage />} />
+        <Route path="speaking" element={<SpeakingPage />} />
         <Route path="progress" element={<ProgressPage />} />
         <Route
           path="*"

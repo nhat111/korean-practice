@@ -6,6 +6,7 @@ const NAV = [
   { to: '/scenarios', label: vi.nav.scenarios, icon: '💬', end: false },
   { to: '/emails', label: vi.nav.emails, icon: '✉️', end: false },
   { to: '/flashcards', label: vi.nav.flashcards, icon: '🃏', end: false },
+  { to: '/speaking', label: vi.nav.speaking, icon: '🎤', end: false },
   { to: '/progress', label: vi.nav.progress, icon: '📈', end: false },
 ];
 

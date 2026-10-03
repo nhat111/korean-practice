@@ -16,7 +16,7 @@ export function SpeakButton({ text, small }: Props) {
       onClick={(e) => {
         // Don't trigger parent click handlers (e.g. flipping a flashcard).
         e.stopPropagation();
-        speakKorean(text);
+        void speakKorean(text);
       }}
       aria-label={vi.common.speak}
       title={vi.common.speak}
