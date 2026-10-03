@@ -1,4 +1,5 @@
-import { Link, NavLink, Outlet } from 'react-router';
+import { useEffect, useRef } from 'react';
+import { Link, NavLink, Outlet, useLocation } from 'react-router';
 import { BackendBanner } from './BackendBanner';
 import { Icon, type IconName } from './Icon';
 import { vi } from '../i18n/vi';
@@ -13,6 +14,13 @@ const NAV: { to: string; label: string; icon: IconName; end: boolean }[] = [
 ];
 
 export function Layout() {
+  // .main is the scroll container, so reset it when the route changes.
+  const mainRef = useRef<HTMLElement>(null);
+  const { pathname } = useLocation();
+  useEffect(() => {
+    mainRef.current?.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div className="app">
       <header className="topbar">
@@ -27,8 +35,10 @@ export function Layout() {
         </Link>
       </header>
       <BackendBanner />
-      <main className="main">
-        <Outlet />
+      <main className="main" ref={mainRef}>
+        <div className="main-inner">
+          <Outlet />
+        </div>
       </main>
       <nav className="bottom-nav" aria-label="Điều hướng chính">
         {NAV.map((item) => (
