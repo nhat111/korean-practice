@@ -1,4 +1,4 @@
-# Luyện tiếng Hàn IT
+# KoDevTalk (Luyện tiếng Hàn IT)
 
 A practice app for Korean IT workplace communication with Korean clients (outsourcing),
 built for a Vietnamese Java developer at TOPIK 3. UI in Vietnamese, content in Korean.

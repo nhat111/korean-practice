@@ -162,6 +162,12 @@ Korean either.
 - **Mobile-first.** The main use is practicing on a phone. Design for ~360px width first,
   then scale up.
 - Touch targets are at least 44px. No hover-only interactions.
+- Design system (top of `src/index.css`): use the CSS tokens (`--primary`, `--primary-soft`,
+  `--accent-gradient`, `--surface*`, `--radius-sm/md/lg`, `--shadow-sm`/`--shadow`,
+  `--focus-ring`) instead of hard-coded colors; keep text/background pairs at WCAG AA. The app
+  is branded **KoDevTalk** (name in `vi.appName`, manifest, `index.html`).
+- Voice install help lives in `VoiceGuide` (per-platform steps with English and Vietnamese
+  OS menu names, data in `vi.voice.guide`).
 - Icons: use `<Icon name=… />` from `src/components/Icon.tsx` (inline Lucide paths, no icon
   dependency). Add new icons there; don't use emoji as UI icons in navigation or buttons.
 - Use a font stack that renders Hangul well (e.g. `"Pretendard", "Noto Sans KR", system-ui`)

@@ -1,6 +1,7 @@
 import { vi } from '../i18n/vi';
 import { guessGender, isSpeechSupported, speakKorean, useKoreanVoices } from '../speech';
 import { setDeepVoice, setVoiceURI, usePrefs } from '../storage/prefs';
+import { VoiceGuide } from './VoiceGuide';
 
 const SAMPLE = '안녕하세요. 오늘 배포 일정 공유드리겠습니다.';
 
@@ -43,7 +44,7 @@ export function VoiceControl() {
       <button type="button" className="btn btn--ghost" onClick={() => void speakKorean(SAMPLE)}>
         {vi.voice.test}
       </button>
-      {!hasMale && <p className="muted small">{vi.voice.installHint}</p>}
+      <VoiceGuide open={!hasMale || voices.length === 0} />
     </div>
   );
 }

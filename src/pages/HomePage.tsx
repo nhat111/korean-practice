@@ -34,18 +34,32 @@ export function HomePage() {
     vocab.status === 'ready'
       ? vocab.items.filter((v) => isDue(progress.cards[v.id], today)).length
       : 0;
+  const stats = [
+    { value: due, label: vi.home.statDue },
+    { value: Object.keys(progress.cards).length, label: vi.home.statLearned },
+    { value: Object.keys(progress.scenarios).length, label: vi.home.statScenarios },
+  ];
 
   return (
     <div className="stack">
       <section className="hero">
         <h1>{vi.home.greeting}</h1>
         <p>{vi.home.intro}</p>
+        <div className="hero-stats">
+          {stats.map((s) => (
+            <div key={s.label} className="hero-stat">
+              <strong>{s.value}</strong>
+              <span>{s.label}</span>
+            </div>
+          ))}
+        </div>
         {vocab.status === 'ready' && (
           <Link to="/flashcards" className="pill">
             {due > 0 ? vi.home.dueToday(due) : vi.home.noDue}
           </Link>
         )}
       </section>
+      <h2 className="section-title">{vi.home.practice}</h2>
       <div className="grid">
         {sections.map((s) => (
           <Link key={s.to} to={s.to} className="card card--link">

@@ -1,6 +1,6 @@
 {
-  "name": "Luyện tiếng Hàn IT",
-  "short_name": "Tiếng Hàn IT",
+  "name": "KoDevTalk · Tiếng Hàn cho dev",
+  "short_name": "KoDevTalk",
   "description": "Luyện giao tiếp tiếng Hàn với khách hàng trong môi trường IT outsourcing.",
   "lang": "vi",
   "id": "/",
@@ -9,15 +9,51 @@
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#f6f7fb",
-  "theme_color": "#2563eb",
-  "categories": ["education", "productivity"],
+  "theme_color": "#4f46e5",
+  "categories": [
+    "education",
+    "productivity"
+  ],
   "icons": [
-    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ],
   "shortcuts": [
-    { "name": "Ôn từ vựng", "url": "/flashcards", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] },
-    { "name": "Luyện nói", "url": "/speaking", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] }
+    {
+      "name": "Ôn từ vựng",
+      "url": "/flashcards",
+      "icons": [
+        {
+          "src": "/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Luyện nói",
+      "url": "/speaking",
+      "icons": [
+        {
+          "src": "/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
   ]
 }
