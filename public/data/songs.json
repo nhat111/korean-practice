@@ -1,0 +1,560 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "bigbang-haru-haru",
+      "title": "하루하루",
+      "artist": "BIGBANG",
+      "year": 2008,
+      "aboutVi": "Bản hit hip-hop buồn về chia tay của BIGBANG, đứng đầu bảng xếp hạng nhiều tuần năm 2008.",
+      "youtubeQuery": "BIGBANG 하루하루 MV",
+      "words": [
+        {
+          "ko": "하루하루",
+          "vi": "từng ngày, ngày qua ngày"
+        },
+        {
+          "ko": "매일",
+          "vi": "mỗi ngày",
+          "noteVi": "Trang trọng hơn 날마다 trong văn viết."
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "N마다",
+          "meaningVi": "mỗi N, cứ mỗi N",
+          "linkVi": "하루하루 = ngày qua ngày; cách nói 'mỗi …' trong công việc là N마다.",
+          "example": {
+            "ko": "일주일마다 고객사와 정기 회의를 합니다.",
+            "vi": "Mỗi tuần đều họp định kỳ với khách hàng."
+          }
+        }
+      ]
+    },
+    {
+      "id": "bigbang-lies",
+      "title": "거짓말",
+      "artist": "BIGBANG",
+      "year": 2007,
+      "aboutVi": "Bài hát đưa BIGBANG lên hàng đầu K-pop năm 2007, giai điệu điện tử bắt tai.",
+      "youtubeQuery": "BIGBANG 거짓말 MV",
+      "words": [
+        {
+          "ko": "거짓말",
+          "vi": "lời nói dối"
+        },
+        {
+          "ko": "거짓말하다",
+          "vi": "nói dối"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "-(으)면 안 되다",
+          "meaningVi": "không được (làm gì)",
+          "linkVi": "Tên bài là 'lời nói dối': ở công ty, không được hứa suông với khách.",
+          "example": {
+            "ko": "확인되지 않은 일정은 고객에게 약속하면 안 됩니다.",
+            "vi": "Không được hứa với khách những lịch chưa được xác nhận."
+          },
+          "noteVi": "Có rủi ro trễ hạn thì báo sớm, đừng che giấu."
+        }
+      ]
+    },
+    {
+      "id": "bigbang-last-farewell",
+      "title": "마지막 인사",
+      "artist": "BIGBANG",
+      "year": 2007,
+      "aboutVi": "Bài hát sôi động nhưng nói về lời chào tạm biệt cuối cùng, hit lớn cuối năm 2007.",
+      "youtubeQuery": "BIGBANG 마지막 인사 MV",
+      "words": [
+        {
+          "ko": "마지막",
+          "vi": "cuối cùng"
+        },
+        {
+          "ko": "인사",
+          "vi": "lời chào"
+        },
+        {
+          "ko": "인사드리다",
+          "vi": "chào hỏi (kính ngữ)",
+          "noteVi": "Dùng 드리다 khi chào người trên, khách hàng."
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "N드리다",
+          "meaningVi": "làm N (khiêm nhường, hướng tới người trên)",
+          "linkVi": "인사 → 인사드리다: cách nói lễ phép khi chào khách.",
+          "example": {
+            "ko": "프로젝트를 마치며 그동안 도와주셔서 감사 인사드립니다.",
+            "vi": "Kết thúc dự án, em xin gửi lời cảm ơn vì đã giúp đỡ trong thời gian qua."
+          },
+          "noteVi": "Tương tự: 보고드리다, 연락드리다, 문의드리다."
+        }
+      ]
+    },
+    {
+      "id": "wondergirls-nobody",
+      "title": "Nobody",
+      "artist": "Wonder Girls",
+      "year": 2008,
+      "aboutVi": "Hit retro phủ sóng khắp châu Á, điệu nhảy và điệp khúc 'I want nobody' ai cũng thuộc.",
+      "youtubeQuery": "Wonder Girls Nobody MV",
+      "words": [
+        {
+          "ko": "아무도",
+          "vi": "không ai (đi với phủ định)"
+        },
+        {
+          "ko": "밖에",
+          "vi": "ngoài … ra (đi với phủ định)"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "N밖에 없다",
+          "meaningVi": "chỉ có N",
+          "linkVi": "'Nobody but you' = ngoài bạn ra không ai cả → N밖에 없다.",
+          "example": {
+            "ko": "이 모듈을 아는 사람은 김 책임님밖에 없습니다.",
+            "vi": "Người hiểu module này chỉ có anh Kim."
+          },
+          "noteVi": "밖에 luôn đi với động từ phủ định (없다, 안 되다, 못 하다)."
+        }
+      ]
+    },
+    {
+      "id": "wondergirls-tell-me",
+      "title": "Tell Me",
+      "artist": "Wonder Girls",
+      "year": 2007,
+      "aboutVi": "Bài hát tạo nên cơn sốt 'Tell Me dance' năm 2007, mở đầu làn sóng nhóm nữ.",
+      "youtubeQuery": "Wonder Girls Tell Me MV",
+      "words": [
+        {
+          "ko": "말하다",
+          "vi": "nói"
+        },
+        {
+          "ko": "알려 주다",
+          "vi": "cho biết, báo cho"
+        },
+        {
+          "ko": "말씀하다",
+          "vi": "nói (kính ngữ)"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "-아/어 주시겠어요?",
+          "meaningVi": "có thể … giúp được không ạ? (nhờ lịch sự)",
+          "linkVi": "'Tell me' = hãy nói cho mình; với khách phải nhờ thật lịch sự.",
+          "example": {
+            "ko": "변경 사항을 메일로 알려 주시겠어요?",
+            "vi": "Anh/chị có thể báo thay đổi qua email giúp em được không ạ?"
+          },
+          "noteVi": "말해 줘 (반말) chỉ dùng với bạn bè; với khách dùng -아/어 주시겠어요?"
+        }
+      ]
+    },
+    {
+      "id": "snsd-gee",
+      "title": "Gee",
+      "artist": "소녀시대",
+      "year": 2009,
+      "aboutVi": "Bài hát 'quốc dân' của Girls' Generation, giữ hạng 1 nhiều tuần liên tiếp năm 2009.",
+      "youtubeQuery": "소녀시대 Gee MV",
+      "words": [
+        {
+          "ko": "설레다",
+          "vi": "hồi hộp, rung động"
+        },
+        {
+          "ko": "너무",
+          "vi": "quá, rất"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "너무 A-아/어서",
+          "meaningVi": "quá … nên …",
+          "linkVi": "Bài hát về cảm giác 'quá' rung động; mẫu 'quá … nên' rất hay dùng khi giải thích.",
+          "example": {
+            "ko": "요청 사항이 너무 많아서 이번 주 안에 모두 처리하기 어렵습니다.",
+            "vi": "Yêu cầu quá nhiều nên khó xử lý hết trong tuần này."
+          }
+        }
+      ]
+    },
+    {
+      "id": "snsd-into-the-new-world",
+      "title": "다시 만난 세계",
+      "artist": "소녀시대",
+      "year": 2007,
+      "aboutVi": "Bài hát debut của Girls' Generation, về sau trở thành bài hát tượng trưng cho hy vọng của giới trẻ Hàn.",
+      "youtubeQuery": "소녀시대 다시 만난 세계 MV",
+      "words": [
+        {
+          "ko": "다시",
+          "vi": "lại, một lần nữa"
+        },
+        {
+          "ko": "만나다",
+          "vi": "gặp"
+        },
+        {
+          "ko": "세계",
+          "vi": "thế giới"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "-(으)ㄴ + N",
+          "meaningVi": "N đã … (định ngữ quá khứ)",
+          "linkVi": "다시 만난 세계 = thế giới đã gặp lại: 만나다 → 만난 + N.",
+          "example": {
+            "ko": "지난 회의에서 말씀하신 기능은 이미 반영했습니다.",
+            "vi": "Chức năng anh/chị nói trong buổi họp trước đã được áp dụng rồi."
+          }
+        }
+      ]
+    },
+    {
+      "id": "superjunior-sorry-sorry",
+      "title": "Sorry, Sorry",
+      "artist": "슈퍼주니어",
+      "year": 2009,
+      "aboutVi": "Bài hát với điệu nhảy xoa tay nổi tiếng, giúp Super Junior bùng nổ khắp châu Á năm 2009.",
+      "youtubeQuery": "Super Junior Sorry Sorry MV",
+      "words": [
+        {
+          "ko": "미안하다",
+          "vi": "xin lỗi (thân mật)"
+        },
+        {
+          "ko": "죄송하다",
+          "vi": "xin lỗi (trang trọng)",
+          "noteVi": "Luôn dùng với khách hàng, cấp trên."
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "-아/어서 죄송합니다",
+          "meaningVi": "xin lỗi vì …",
+          "linkVi": "Bài hát toàn 'Sorry'; ở công ty xin lỗi phải kèm lý do và dùng 죄송합니다.",
+          "example": {
+            "ko": "답변이 늦어서 죄송합니다.",
+            "vi": "Xin lỗi vì đã trả lời muộn."
+          },
+          "noteVi": "미안해 là 반말: chỉ dùng với bạn thân, không dùng với khách."
+        }
+      ]
+    },
+    {
+      "id": "tvxq-mirotic",
+      "title": "주문 -MIROTIC-",
+      "artist": "동방신기",
+      "year": 2008,
+      "aboutVi": "Bài hát mạnh mẽ nổi tiếng nhất của TVXQ, đạt nhiều giải thưởng năm 2008.",
+      "youtubeQuery": "동방신기 주문 MIROTIC MV",
+      "words": [
+        {
+          "ko": "주문",
+          "vi": "thần chú; cũng là 'đơn đặt hàng'",
+          "noteVi": "Trong IT/thương mại, 주문 thường là order/đơn hàng."
+        },
+        {
+          "ko": "주문하다",
+          "vi": "đặt hàng"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "N(으)로 인해",
+          "meaningVi": "do N, vì N (trang trọng)",
+          "linkVi": "주문 nghĩa 'thần chú' trong bài, nhưng ở công ty là 'đơn hàng' — dùng khi báo nguyên nhân.",
+          "example": {
+            "ko": "주문량 증가로 인해 서버 증설이 필요합니다.",
+            "vi": "Do lượng đơn hàng tăng nên cần mở rộng server."
+          },
+          "noteVi": "Văn phong báo cáo/email; nói chuyện thường dùng N 때문에."
+        }
+      ]
+    },
+    {
+      "id": "2ne1-i-am-the-best",
+      "title": "내가 제일 잘 나가",
+      "artist": "2NE1",
+      "year": 2011,
+      "aboutVi": "Bài hát đầy tự tin của 2NE1, từng làm nhạc nền quảng cáo và sân khấu khắp nơi.",
+      "youtubeQuery": "2NE1 내가 제일 잘 나가 MV",
+      "words": [
+        {
+          "ko": "제일",
+          "vi": "nhất"
+        },
+        {
+          "ko": "잘 나가다",
+          "vi": "đang nổi, đang thành công",
+          "noteVi": "Khẩu ngữ, không dùng trong báo cáo."
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "가장/제일 + A",
+          "meaningVi": "… nhất",
+          "linkVi": "내가 제일 잘 나가 = mình là người đỉnh nhất.",
+          "example": {
+            "ko": "검토해 보니 이 방법이 가장 빠르고 안전합니다.",
+            "vi": "Xem xét thì cách này nhanh và an toàn nhất."
+          },
+          "noteVi": "가장 trang trọng hơn 제일, hợp với văn viết và báo cáo."
+        }
+      ]
+    },
+    {
+      "id": "iu-good-day",
+      "title": "좋은 날",
+      "artist": "아이유",
+      "year": 2010,
+      "aboutVi": "Bài hát giúp IU trở thành 'em gái quốc dân', nổi tiếng với đoạn lên nốt cao ba lần.",
+      "youtubeQuery": "아이유 좋은 날 MV",
+      "words": [
+        {
+          "ko": "좋다",
+          "vi": "tốt, thích"
+        },
+        {
+          "ko": "날",
+          "vi": "ngày"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "A-(으)ㄴ + N",
+          "meaningVi": "N mà … (tính từ bổ nghĩa danh từ)",
+          "linkVi": "좋다 → 좋은 날 (ngày đẹp trời): tính từ + -(으)ㄴ đứng trước danh từ.",
+          "example": {
+            "ko": "더 좋은 방법이 있으면 편하게 말씀해 주세요.",
+            "vi": "Nếu có cách tốt hơn thì cứ thoải mái cho em biết ạ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "psy-gangnam-style",
+      "title": "강남스타일",
+      "artist": "싸이",
+      "year": 2012,
+      "aboutVi": "MV đầu tiên trên YouTube vượt 1 tỷ lượt xem, đưa 'điệu nhảy cưỡi ngựa' ra toàn thế giới.",
+      "youtubeQuery": "PSY 강남스타일 MV",
+      "words": [
+        {
+          "ko": "스타일",
+          "vi": "phong cách"
+        },
+        {
+          "ko": "강남",
+          "vi": "Gangnam (khu phố ở Seoul)"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "N처럼",
+          "meaningVi": "giống như N",
+          "linkVi": "강남스타일 = kiểu Gangnam; nói 'làm giống như …' dùng N처럼.",
+          "example": {
+            "ko": "기존 화면처럼 버튼을 오른쪽 위에 배치하겠습니다.",
+            "vi": "Em sẽ đặt nút ở góc trên bên phải giống màn hình cũ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "buskerbusker-cherry-blossom-ending",
+      "title": "벚꽃 엔딩",
+      "artist": "버스커 버스커",
+      "year": 2012,
+      "aboutVi": "Bài hát mùa xuân 'kinh điển', năm nào hoa anh đào nở cũng quay lại bảng xếp hạng.",
+      "youtubeQuery": "버스커 버스커 벚꽃 엔딩 MV",
+      "words": [
+        {
+          "ko": "벚꽃",
+          "vi": "hoa anh đào"
+        },
+        {
+          "ko": "봄",
+          "vi": "mùa xuân"
+        },
+        {
+          "ko": "엔딩",
+          "vi": "kết thúc (ending)"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "-(으)ㄹ 때마다",
+          "meaningVi": "mỗi khi …",
+          "linkVi": "Mỗi khi xuân về là bài hát lại được nghe lại → -(으)ㄹ 때마다.",
+          "example": {
+            "ko": "배포할 때마다 체크리스트를 꼭 확인합니다.",
+            "vi": "Mỗi lần deploy em đều kiểm tra checklist."
+          }
+        }
+      ]
+    },
+    {
+      "id": "cnblue-loner",
+      "title": "외톨이야",
+      "artist": "씨엔블루",
+      "year": 2010,
+      "aboutVi": "Bài hát debut của CNBLUE, đưa ban nhạc rock thần tượng lên đỉnh năm 2010.",
+      "youtubeQuery": "CNBLUE 외톨이야 MV",
+      "words": [
+        {
+          "ko": "외톨이",
+          "vi": "người cô độc, kẻ lẻ loi"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "N(이)야 → N입니다",
+          "meaningVi": "là N (반말 → trang trọng)",
+          "linkVi": "외톨이야 = 'là kẻ cô độc' ở dạng 반말 (-야).",
+          "example": {
+            "ko": "저는 이번 프로젝트의 백엔드 담당자입니다.",
+            "vi": "Tôi là người phụ trách backend của dự án lần này."
+          },
+          "noteVi": "-(이)야 chỉ dùng với bạn bè; với khách dùng -입니다 hoặc -이에요/예요."
+        }
+      ]
+    },
+    {
+      "id": "2pm-again-and-again",
+      "title": "Again & Again",
+      "artist": "2PM",
+      "year": 2009,
+      "aboutVi": "Hit mang phong cách 'beast idol' mạnh mẽ của 2PM năm 2009.",
+      "youtubeQuery": "2PM Again & Again MV",
+      "words": [
+        {
+          "ko": "다시",
+          "vi": "lại"
+        },
+        {
+          "ko": "한 번 더",
+          "vi": "thêm một lần nữa"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "다시 한번 -아/어 주시겠어요?",
+          "meaningVi": "… lại một lần nữa được không ạ?",
+          "linkVi": "'Again & again' = lặp lại; câu cứu cánh khi họp mà chưa nghe kịp.",
+          "example": {
+            "ko": "죄송하지만 다시 한번 설명해 주시겠어요?",
+            "vi": "Xin lỗi, anh/chị giải thích lại một lần nữa được không ạ?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "kimjongkook-lovable",
+      "title": "사랑스러워",
+      "artist": "김종국",
+      "year": 2005,
+      "aboutVi": "Bản tình ca vui tươi của Kim Jong Kook, rất phổ biến ở karaoke Hàn những năm 2000.",
+      "youtubeQuery": "김종국 사랑스러워",
+      "words": [
+        {
+          "ko": "사랑스럽다",
+          "vi": "đáng yêu"
+        },
+        {
+          "ko": "갑작스럽다",
+          "vi": "đột ngột"
+        },
+        {
+          "ko": "부담스럽다",
+          "vi": "thấy áp lực, ngại"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "N + -스럽다",
+          "meaningVi": "có vẻ/đầy tính chất N (tạo tính từ)",
+          "linkVi": "사랑 + 스럽다 = 사랑스럽다 (đáng yêu).",
+          "example": {
+            "ko": "갑작스러운 일정 변경으로 불편을 드려 죄송합니다.",
+            "vi": "Xin lỗi vì thay đổi lịch đột ngột gây bất tiện cho anh/chị."
+          },
+          "noteVi": "Hay gặp ở công ty: 갑작스럽다, 자연스럽다, 부담스럽다."
+        }
+      ]
+    },
+    {
+      "id": "davichi-8282",
+      "title": "8282",
+      "artist": "다비치",
+      "year": 2009,
+      "aboutVi": "Bài hát của Davichi; 8282 đọc là '팔이팔이', gần âm với 빨리빨리 (nhanh lên).",
+      "youtubeQuery": "다비치 8282 MV",
+      "words": [
+        {
+          "ko": "빨리",
+          "vi": "nhanh"
+        },
+        {
+          "ko": "빨리빨리",
+          "vi": "nhanh nhanh lên",
+          "noteVi": "Văn hóa 'ppalli-ppalli' nổi tiếng ở công ty Hàn."
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "-는 대로",
+          "meaningVi": "ngay khi …",
+          "linkVi": "8282 = 'nhanh lên'; với khách, thay vì giục, hãy hứa phản hồi ngay khi có kết quả.",
+          "example": {
+            "ko": "확인되는 대로 바로 연락드리겠습니다.",
+            "vi": "Ngay khi xác nhận được, em sẽ liên lạc ngay ạ."
+          },
+          "noteVi": "Lịch sự và chuyên nghiệp hơn nhiều so với nói '빨리 할게요'."
+        }
+      ]
+    },
+    {
+      "id": "leeseunggi-because-youre-my-woman",
+      "title": "내 여자라니까",
+      "artist": "이승기",
+      "year": 2004,
+      "aboutVi": "Bài hát debut của Lee Seung Gi, tạo nên trào lưu 'chàng trai kém tuổi' giữa thập niên 2000.",
+      "youtubeQuery": "이승기 내 여자라니까",
+      "words": [
+        {
+          "ko": "내",
+          "vi": "của tôi (dạng ngắn của 나의)"
+        },
+        {
+          "ko": "여자",
+          "vi": "phụ nữ"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "-(이)라니까(요)",
+          "meaningVi": "đã bảo là … mà (nhấn mạnh, hơi bực)",
+          "linkVi": "내 여자라니까 = 'đã bảo em là người của anh mà'.",
+          "example": {
+            "ko": "그 버그는 어제 이미 수정했다니까요.",
+            "vi": "Lỗi đó em đã sửa từ hôm qua rồi mà."
+          },
+          "noteVi": "Mang sắc thái bực bội: chỉ dùng với đồng nghiệp thân. Với khách nói '어제 수정 완료했습니다'."
+        }
+      ]
+    }
+  ]
+}

@@ -110,3 +110,39 @@ export interface VocabItem {
   };
   tags: string[];
 }
+
+// ---------- Songs ----------
+// Lyrics are copyrighted: never store lyric lines. Only the title, short
+// words/phrases, and original example sentences written for this app.
+
+export interface SongWord {
+  ko: string;
+  vi: string;
+  noteVi?: string;
+}
+
+export interface SongGrammar {
+  /** TOPIK-style notation, e.g. "-(으)ㄹ 때마다". */
+  pattern: string;
+  meaningVi: string;
+  /** How the pattern relates to the song title/theme (Vietnamese). */
+  linkVi: string;
+  /** Original workplace example sentence (not a lyric). */
+  example: { ko: string; vi: string };
+  noteVi?: string;
+}
+
+export interface SongLesson {
+  /** Stable id; never rename. */
+  id: string;
+  /** Korean title as released. */
+  title: string;
+  artist: string;
+  year: number;
+  /** Short intro to the song (Vietnamese). */
+  aboutVi: string;
+  /** YouTube search query for the official MV. */
+  youtubeQuery: string;
+  words: SongWord[];
+  grammar: SongGrammar[];
+}

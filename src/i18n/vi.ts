@@ -38,6 +38,7 @@ export const vi = {
       scenarios: 'Luyện hội thoại với khách hàng: báo cáo tiến độ, hỏi spec, báo bug…',
       emails: 'Sửa lỗi email & tin nhắn công việc, học 하십시오체 / 해요체',
       flashcards: 'Ôn từ vựng IT với lặp lại ngắt quãng (SM-2)',
+      songs: 'Từ vựng & ngữ pháp qua các hit K-pop thập niên 2000',
       speaking: 'Shadowing, ghi âm và kiểm tra phát âm bằng nhận dạng giọng nói',
       progress: 'Xem thống kê việc học của bạn',
     },
@@ -280,6 +281,17 @@ export const vi = {
         },
       },
     },
+  },
+  songs: {
+    title: 'Học qua bài hát',
+    intro:
+      'Những bản hit 8x, 9x đều thuộc. Mỗi bài có từ vựng, ngữ pháp và câu ví dụ dùng được ở công ty.',
+    copyright: 'Lời bài hát có bản quyền nên app không chép lời. Hãy nghe bài trên YouTube rồi học phần bên dưới.',
+    listen: 'Nghe trên YouTube',
+    words: 'Từ vựng',
+    grammar: 'Ngữ pháp',
+    link: 'Liên hệ với bài hát',
+    atWork: 'Dùng ở công ty',
   },
   backend: {
     settingsLink: 'Cài đặt',

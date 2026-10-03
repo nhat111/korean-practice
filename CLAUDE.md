@@ -81,7 +81,7 @@ Korean either.
 
 ```
 /
-├── public/data/          # Learning content: scenarios.json, emails.json, vocab.json
+├── public/data/          # Learning content: scenarios.json, emails.json, vocab.json, songs.json
 ├── src/
 │   ├── types.ts          # Content types (Scenario, EmailExercise, VocabItem)
 │   ├── components/       # Layout, SpeakButton, ContentGate, SpeakingDrill, VoiceAnswer, ...
@@ -120,6 +120,10 @@ Korean either.
   `meaningVi`, optional `noteVi`). `pattern` uses TOPIK notation only (`-아/어서`, `-(으)ㄴ 후에`,
   `N와/과`; no Vietnamese inside, tested). `form` must be an exact substring of `example.ko` (validated);
   it is highlighted with numbers on the flipped flashcard, overlapping forms share one highlight.
+- `songs.json` (`SongLesson`, pages `/songs` and `/songs/:id`): K-pop hits for learners born in
+  the 80s/90s. **Lyrics are copyrighted: never store or quote lyric lines.** Only title, artist,
+  year, a short intro, words from the title/theme, and grammar with *original* workplace example
+  sentences; listening happens via a YouTube search link.
 - Each item has a stable string `id` (e.g. `"standup-001"`). Progress is keyed by these ids,
   so **never rename or reuse an id** once it ships.
 - Typical item fields: `id`, `ko` (Korean), `vi` (Vietnamese meaning), optional `romanization`,

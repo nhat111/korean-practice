@@ -8,6 +8,7 @@ import type {
   EmailExercise,
   Politeness,
   Scenario,
+  SongLesson,
   ScenarioChoice,
   ScenarioTurn,
   VocabItem,
@@ -168,6 +169,37 @@ export function validateVocab(v: unknown): string[] {
   return errors;
 }
 
+export function validateSong(v: unknown): string[] {
+  const errors: string[] = [];
+  if (!isObj(v)) return ['song: phải là object'];
+  const path = `song(${String(v.id)})`;
+  requireStrings(v, ['id', 'title', 'artist', 'aboutVi', 'youtubeQuery'], path, errors);
+  if (typeof v.year !== 'number' || !Number.isInteger(v.year)) errors.push(`${path}.year: phải là số nguyên`);
+  if (!Array.isArray(v.words) || v.words.length === 0) {
+    errors.push(`${path}.words: cần ít nhất 1 từ`);
+  } else {
+    v.words.forEach((w, i) => {
+      if (!isObj(w)) errors.push(`${path}.words[${i}]: phải là object`);
+      else requireStrings(w, ['ko', 'vi'], `${path}.words[${i}]`, errors);
+    });
+  }
+  if (!Array.isArray(v.grammar) || v.grammar.length === 0) {
+    errors.push(`${path}.grammar: cần ít nhất 1 mẫu ngữ pháp`);
+  } else {
+    v.grammar.forEach((g, i) => {
+      const p = `${path}.grammar[${i}]`;
+      if (!isObj(g)) {
+        errors.push(`${p}: phải là object`);
+        return;
+      }
+      requireStrings(g, ['pattern', 'meaningVi', 'linkVi'], p, errors);
+      if (!isObj(g.example)) errors.push(`${p}.example: phải là object`);
+      else requireStrings(g.example, ['ko', 'vi'], `${p}.example`, errors);
+    });
+  }
+  return errors;
+}
+
 export interface ParseResult<T> {
   items: T[];
   errors: string[];
@@ -212,6 +244,10 @@ export function parseScenarios(data: unknown): ParseResult<Scenario> {
 
 export function parseEmails(data: unknown): ParseResult<EmailExercise> {
   return parseContentFile<EmailExercise>(data, validateEmail);
+}
+
+export function parseSongs(data: unknown): ParseResult<SongLesson> {
+  return parseContentFile<SongLesson>(data, validateSong);
 }
 
 export function parseVocab(data: unknown): ParseResult<VocabItem> {

@@ -4,7 +4,7 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { parseEmails, parseScenarios, parseVocab, type ParseResult } from './validate';
+import { parseEmails, parseScenarios, parseSongs, parseVocab, type ParseResult } from './validate';
 
 function load(name: string): unknown {
   return JSON.parse(readFileSync(resolve(process.cwd(), 'public/data', name), 'utf8'));
@@ -14,6 +14,7 @@ const files: [string, (data: unknown) => ParseResult<{ id: string }>][] = [
   ['scenarios.json', parseScenarios],
   ['emails.json', parseEmails],
   ['vocab.json', parseVocab],
+  ['songs.json', parseSongs],
 ];
 
 describe.each(files)('%s', (name, parse) => {

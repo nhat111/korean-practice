@@ -18,6 +18,7 @@ const SECTIONS: Section[] = [
   { to: '/emails', icon: 'mail', title: vi.nav.emails, desc: vi.home.sections.emails },
   { to: '/flashcards', icon: 'cards', title: vi.nav.flashcards, desc: vi.home.sections.flashcards },
   { to: '/speaking', icon: 'mic', title: vi.nav.speaking, desc: vi.home.sections.speaking },
+  { to: '/songs', icon: 'music', title: vi.songs.title, desc: vi.home.sections.songs },
   { to: '/progress', icon: 'chart', title: vi.nav.progress, desc: vi.home.sections.progress },
 ];
 

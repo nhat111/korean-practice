@@ -10,6 +10,8 @@ import { ProgressPage } from './pages/ProgressPage';
 import { ScenarioPlayerPage } from './pages/ScenarioPlayerPage';
 import { ScenariosPage } from './pages/ScenariosPage';
 import { SettingsPage } from './pages/SettingsPage';
+import { SongDetailPage } from './pages/SongDetailPage';
+import { SongsPage } from './pages/SongsPage';
 import { SpeakingPage } from './pages/SpeakingPage';
 
 export function App() {
@@ -23,6 +25,8 @@ export function App() {
         <Route path="emails/:id" element={<EmailExercisePage />} />
         <Route path="flashcards" element={<FlashcardsPage />} />
         <Route path="speaking" element={<SpeakingPage />} />
+        <Route path="songs" element={<SongsPage />} />
+        <Route path="songs/:id" element={<SongDetailPage />} />
         <Route path="progress" element={<ProgressPage />} />
         <Route path="settings" element={<SettingsPage />} />
         <Route path="ai-roleplay" element={<AiRoleplayPage />} />
