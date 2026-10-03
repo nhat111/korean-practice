@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react';
 import { checkBackend, getRemoteProgress, putRemoteProgress, useBackendStatus } from '../api/client';
 import { apiErrorMessage } from '../api/messages';
+import { AppVersion } from '../components/AppVersion';
 import { SpeedControl } from '../components/SpeedControl';
 import { VoiceControl } from '../components/VoiceControl';
 import { vi } from '../i18n/vi';
@@ -176,6 +177,8 @@ export function SettingsPage() {
           {syncMsg && <p className={syncMsg.ok ? 'muted small' : 'error'}>{syncMsg.text}</p>}
         </section>
       )}
+
+      <AppVersion />
     </div>
   );
 }

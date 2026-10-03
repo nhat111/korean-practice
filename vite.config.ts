@@ -2,6 +2,7 @@ import react from '@vitejs/plugin-react'
 import { createHash } from 'node:crypto'
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join, relative, resolve, sep } from 'node:path'
+import { execSync } from 'node:child_process'
 import { defineConfig, type Plugin } from 'vite'
 
 /** Recursively lists files under `dir`. */
@@ -45,6 +46,22 @@ function pwaPlugin(): Plugin {
 }
 
 // https://vite.dev/config/
+// Shown in Settings so the learner can tell which deploy is running.
+function appVersion(): string {
+  let sha = process.env.VERCEL_GIT_COMMIT_SHA ?? ''
+  if (!sha) {
+    try {
+      sha = execSync('git rev-parse HEAD').toString().trim()
+    } catch {
+      sha = 'dev'
+    }
+  }
+  const date = new Date().toISOString().slice(0, 16).replace('T', ' ')
+  return `${sha.slice(0, 7)} · ${date} UTC`
+}
+
+// https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), pwaPlugin()],
+  define: { __APP_VERSION__: JSON.stringify(appVersion()) },
 })

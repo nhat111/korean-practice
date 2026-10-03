@@ -333,6 +333,13 @@ export const vi = {
   update: {
     message: 'Đã có phiên bản mới (nội dung, tính năng).',
     reload: 'Tải lại',
+    title: 'Phiên bản app',
+    current: 'Đang chạy bản',
+    check: 'Kiểm tra cập nhật',
+    checking: 'Đang kiểm tra…',
+    latest: 'Bạn đang dùng bản mới nhất.',
+    unavailable: 'Không kiểm tra được trên trình duyệt này. Hãy đóng hẳn app rồi mở lại.',
+    error: 'Không kiểm tra được (có thể đang mất mạng). Thử lại sau.',
   },
   backend: {
     settingsLink: 'Cài đặt',

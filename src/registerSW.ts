@@ -42,3 +42,28 @@ export function registerServiceWorker(): void {
       });
   });
 }
+
+export type UpdateCheck = 'reloading' | 'latest' | 'unavailable';
+
+/**
+ * Manual "check for updates": asks the browser to fetch sw.js now and, if a
+ * new version installs, reloads into it.
+ */
+export async function checkForUpdate(): Promise<UpdateCheck> {
+  if (!import.meta.env.PROD || !('serviceWorker' in navigator)) return 'unavailable';
+  const reg = await navigator.serviceWorker.getRegistration();
+  if (!reg) return 'unavailable';
+  await reg.update();
+  const incoming = reg.installing ?? reg.waiting;
+  if (!incoming) return 'latest';
+  // sw.js calls skipWaiting(), so the new worker takes over on its own.
+  await new Promise<void>((resolve) => {
+    const timer = setTimeout(resolve, 15000);
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      clearTimeout(timer);
+      resolve();
+    }, { once: true });
+  });
+  window.location.reload();
+  return 'reloading';
+}
