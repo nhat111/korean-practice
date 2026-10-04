@@ -13,8 +13,11 @@ function Tokens({ tokens }: { tokens: Token[] }) {
   );
 }
 
-/** Score + word-level highlight of model answer vs. what was heard. */
-export function ComparisonView({ result }: { result: Comparison }) {
+/**
+ * Score + word-level highlight of model answer vs. what was heard.
+ * `spokenLabel` replaces "what the machine heard" (e.g. for typed answers).
+ */
+export function ComparisonView({ result, spokenLabel }: { result: Comparison; spokenLabel?: string }) {
   const pass = result.score >= PASS_SCORE;
   return (
     <div className="comparison stack-sm">
@@ -26,7 +29,7 @@ export function ComparisonView({ result }: { result: Comparison }) {
         <Tokens tokens={result.model} />
       </div>
       <div className="stack-xs">
-        <h3>{vi.speaking.transcript}</h3>
+        <h3>{spokenLabel ?? vi.speaking.transcript}</h3>
         <Tokens tokens={result.spoken} />
       </div>
       <p className="legend small">

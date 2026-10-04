@@ -1,6 +1,6 @@
 # Spec: custom interview questions ("Bộ câu hỏi của tôi")
 
-Status: **not implemented**. Agreed scope for a first, minimal version. Read `CLAUDE.md` first.
+Status: **implemented** (first, minimal version, branch `korean-practice`). Read `CLAUDE.md` first.
 
 ## Goal
 

@@ -86,9 +86,10 @@ Korean either.
 ├── src/
 │   ├── types.ts          # Content types (Scenario, EmailExercise, VocabItem)
 │   ├── components/       # Layout, SpeakButton, ContentGate, SpeakingDrill, VoiceAnswer, ...
-│   ├── pages/            # Home, Scenarios(+Player), Emails(+Exercise), Flashcards, Speaking, Progress
+│   ├── pages/            # Home, Scenarios(+Player), Emails(+Exercise), Flashcards, Speaking, Progress, Custom(+Practice)
 │   ├── data/             # validate.ts (runtime checks), content.ts (fetch + useContent)
-│   ├── storage/          # progress.ts, prefs.ts, backend.ts: the only modules that touch localStorage
+│   ├── storage/          # progress.ts, prefs.ts, backend.ts, custom.ts: the only modules that touch localStorage
+│   ├── custom/           # Custom questions: parse.ts (Q:/A:/VI: text), items.ts (validate/merge), score.ts (best score, "chưa thuộc")
 │   ├── srs/sm2.ts        # SM-2 spaced repetition
 │   ├── speech.ts         # SpeechSynthesis (ko-KR): voice, pitch and rate from prefs
 │   ├── speaking/         # compare.ts (answer similarity), recognition.ts, recorder.ts
@@ -161,12 +162,35 @@ Korean either.
 - Chromium headless has no mic or recognition: browser tests use
   `--use-fake-device-for-media-stream` and mock `webkitSpeechRecognition`/`speechSynthesis`.
 
+## Custom questions ("Bộ câu hỏi của tôi")
+
+Spec: `docs/custom-questions.md` (implemented). The learner pastes their own interview questions.
+
+- Routes: `/custom` (paste + preview, list, filter "chưa thuộc", export/import `.json`, delete) and
+  `/custom/:id` (practice; `?weak=1` walks only the not-yet-learned questions). Entry card at the
+  top of the Scenarios page.
+- Input is `Q:` / `A:` / optional `VI:` blocks separated by blank lines. `parseCustomQuestions`
+  (`src/custom/parse.ts`) is pure and returns items + per-block errors (messages in `vi.custom.errors`).
+  A missing blank line between two questions is reported as `repeatedPrefix`, not guessed.
+- Storage: `kp:custom:v1` = `{ version: 1, items: [{ id, q, a, vi?, createdAt }] }`, id `custom-<random>`,
+  only through `src/storage/custom.ts`. Questions that differ only by case/spacing count as duplicates
+  and are skipped on paste and import. Export/import use the same shape and `readCustomData` validation.
+- Results are not stored with the questions: each scored attempt (voice or typed) is saved with
+  `saveSpeakingAttempt({ mode: 'check', source: 'custom:<id>' })`. "Best score" and "chưa thuộc"
+  (never scored, or best < `PASS_SCORE`) are derived from that history by `src/custom/score.ts`, so they
+  only look at the last 300 attempts (the history cap).
+- Practice reuses `VoiceAnswer` (recognition, or recording fallback with no score), a typed answer box,
+  and `compareAnswer` + `ComparisonView`. The question and model answer are read by `speakKorean`, which
+  falls back to the device voice because custom text has no pre-generated MP3.
+- Not done (shown to the user as limits): natural-voice audio for custom text, AI correction of the
+  learner's Korean, backend sync of the questions.
+
 ## localStorage conventions
 
 - All access goes through `src/storage/`. Components never call `localStorage` directly.
 - Use a single namespaced key prefix (`kp:`) and a **schema version**. Keys:
   `kp:progress:v1` (learning progress), `kp:prefs:v1` (device preferences such as speech
-  rate) and `kp:backend:v1` (optional backend URL + access key). When the shape changes, write a migration instead of silently dropping user data;
+  rate), `kp:backend:v1` (optional backend URL + access key) and `kp:custom:v1` (the learner's own questions). When the shape changes, write a migration instead of silently dropping user data;
   purely additive fields may instead default when missing (as `speaking` does).
 - Wrap reads and writes in try/catch. The app must still work if storage is unavailable or
   contains corrupted data. In that case, fall back to empty progress.

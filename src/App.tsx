@@ -2,6 +2,8 @@ import { Link, Route, Routes } from 'react-router';
 import { Layout } from './components/Layout';
 import { vi } from './i18n/vi';
 import { AiRoleplayPage } from './pages/AiRoleplayPage';
+import { CustomPage } from './pages/CustomPage';
+import { CustomPracticePage } from './pages/CustomPracticePage';
 import { EmailExercisePage } from './pages/EmailExercisePage';
 import { EmailsPage } from './pages/EmailsPage';
 import { FlashcardsPage } from './pages/FlashcardsPage';
@@ -21,6 +23,8 @@ export function App() {
         <Route index element={<HomePage />} />
         <Route path="scenarios" element={<ScenariosPage />} />
         <Route path="scenarios/:id" element={<ScenarioPlayerPage />} />
+        <Route path="custom" element={<CustomPage />} />
+        <Route path="custom/:id" element={<CustomPracticePage />} />
         <Route path="emails" element={<EmailsPage />} />
         <Route path="emails/:id" element={<EmailExercisePage />} />
         <Route path="flashcards" element={<FlashcardsPage />} />
