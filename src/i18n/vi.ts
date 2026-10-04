@@ -103,6 +103,72 @@ export const vi = {
     again: 'Luyện lại',
     toList: 'Về danh sách',
   },
+  custom: {
+    title: 'Bộ câu hỏi của tôi',
+    entryHint: (n: number) =>
+      n === 0 ? 'Tự thêm câu hỏi phỏng vấn để luyện nói hoặc gõ' : `${n} câu · luyện nói hoặc gõ`,
+    intro:
+      'Dán câu hỏi và câu trả lời mẫu của bạn, rồi luyện nói hoặc gõ. Điểm tính giống trang Luyện nói.',
+    formatTitle: 'Cách nhập',
+    formatHelp:
+      'Mỗi câu là một khối, các khối cách nhau một dòng trống. Q: (câu hỏi) và A: (câu trả lời mẫu) là bắt buộc, VI: (nghĩa tiếng Việt) có thể bỏ qua.',
+    formatExample: 'Q: 넥사크로에서 공통 함수는 어떻게 관리하셨어요?\nA: 공통 함수는 lib 폴더에 모아서 사용했습니다.\nVI: Tôi gom hàm dùng chung vào thư mục lib.',
+    inputLabel: 'Dán câu hỏi',
+    preview: 'Xem trước',
+    previewValid: (n: number) => `${n} câu hợp lệ`,
+    previewErrors: (n: number) => `${n} lỗi`,
+    previewNothing: 'Chưa thấy câu hỏi nào. Kiểm tra lại các dòng Q: và A:.',
+    save: (n: number) => `Lưu ${n} câu`,
+    saved: (added: number, duplicates: number) =>
+      duplicates > 0
+        ? `Đã lưu ${added} câu, bỏ qua ${duplicates} câu trùng.`
+        : `Đã lưu ${added} câu.`,
+    errors: {
+      missingQ: (block: number) => `Khối ${block}: thiếu dòng "Q:" (câu hỏi).`,
+      missingA: (block: number) => `Khối ${block}: thiếu dòng "A:" (câu trả lời).`,
+      emptyValue: (block: number, field?: string) => `Khối ${block}: dòng "${field}:" đang trống.`,
+      repeatedPrefix: (block: number, field?: string) =>
+        `Khối ${block}: có hai dòng "${field}:" trong cùng một khối. Hãy thêm một dòng trống giữa các câu.`,
+      stray: (block: number, text?: string) =>
+        `Khối ${block}: dòng "${text}" nằm ngoài Q:, A: và VI:.`,
+    },
+    export: 'Xuất file .json',
+    import: 'Nhập file .json',
+    exportEmpty: 'Chưa có câu hỏi để xuất.',
+    importDone: (added: number, duplicates: number, invalid: number) => {
+      const parts = [`Đã nhập ${added} câu`];
+      if (duplicates > 0) parts.push(`bỏ qua ${duplicates} câu trùng`);
+      if (invalid > 0) parts.push(`${invalid} mục không hợp lệ`);
+      return `${parts.join(', ')}.`;
+    },
+    importNotJson: 'Không đọc được file này: đây không phải file JSON.',
+    importInvalid: 'File này không đúng định dạng bộ câu hỏi của app.',
+    listTitle: 'Câu hỏi đã lưu',
+    filterAll: (n: number) => `Tất cả ${n}`,
+    filterWeak: (n: number) => `Chưa thuộc ${n}`,
+    empty: 'Chưa có câu hỏi nào. Hãy dán vài câu ở phía trên.',
+    weakEmpty: 'Bạn đã thuộc hết các câu rồi!',
+    practice: 'Luyện',
+    practiceWeak: 'Luyện các câu chưa thuộc',
+    notPracticed: 'Chưa luyện',
+    best: (score: number) => `Cao nhất ${score}%`,
+    remove: 'Xóa',
+    removeConfirm: 'Xóa câu hỏi này?',
+    backToList: '← Bộ câu hỏi',
+    questionLabel: 'Câu hỏi',
+    listenQuestion: '▶ Nghe câu hỏi',
+    modeVoice: 'Nói',
+    modeText: 'Gõ',
+    typePlaceholder: 'Gõ câu trả lời bằng tiếng Hàn…',
+    typeLabel: 'Câu trả lời của bạn',
+    check: 'Chấm điểm',
+    typedAnswer: 'Bạn đã gõ',
+    retry: 'Làm lại',
+    limitVoice:
+      'Câu bạn nhập được đọc bằng giọng của máy (iPhone dùng giọng Yuna), không có giọng tự nhiên như câu mẫu có sẵn.',
+    limitCheck:
+      'App chưa kiểm tra ngữ pháp tiếng Hàn của bạn. Điểm chỉ cho biết câu của bạn giống câu mẫu đến đâu.',
+  },
   emails: {
     title: 'Sửa email',
     done: (n: number) => `Đã làm ${n} lần`,

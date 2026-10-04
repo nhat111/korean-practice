@@ -10,6 +10,7 @@ import {
   type StatusFilter,
 } from '../data/scenarioFilter';
 import { vi } from '../i18n/vi';
+import { useCustomItems } from '../storage/custom';
 import { useProgress } from '../storage/progress';
 import type { Scenario } from '../types';
 
@@ -43,9 +44,14 @@ function useScenarioQuery(): [ScenarioQuery, (patch: Partial<ScenarioQuery>) => 
 
 export function ScenariosPage() {
   const state = useContent('scenarios');
+  const custom = useCustomItems();
   return (
     <div className="stack">
       <h1>{vi.scenarios.title}</h1>
+      <Link to="/custom" className="card card--link stack-xs">
+        <h2>{vi.custom.title}</h2>
+        <p className="muted small">{vi.custom.entryHint(custom.length)}</p>
+      </Link>
       <ContentGate state={state}>
         {(items) => (items.length === 0 ? <p className="muted">{vi.common.empty}</p> : <ScenarioList items={items} />)}
       </ContentGate>
