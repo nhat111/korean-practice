@@ -68,6 +68,7 @@ function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
   const modes: Mode[] = canAnswerByVoice ? ['choice', 'free', 'voice'] : ['choice', 'free'];
 
   const total = scenario.turns.length;
+  const partner = scenario.category === 'interview' ? vi.scenarios.interviewer : vi.scenarios.client;
   const turnIndex = records.length;
   const finished = turnIndex >= total;
   const turn = finished ? null : scenario.turns[turnIndex];
@@ -150,7 +151,7 @@ function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
       <div className="chat">
         {records.map((r, i) => (
           <div key={i} className="chat-pair">
-            <Bubble who="client" text={scenario.turns[i].client} />
+            <Bubble who="client" text={scenario.turns[i].client} partner={partner} />
             <Bubble who="you" text={r.answer} correct={r.correct} plain={r.recorded} />
           </div>
         ))}
@@ -165,7 +166,7 @@ function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
             </button>
           </div>
 
-          <Bubble who="client" text={turn.client} />
+          <Bubble who="client" text={turn.client} partner={partner} />
           {voiceOn && (
             <button
               type="button"
@@ -355,11 +356,14 @@ function ChoiceFeedback({
 
 function Bubble({
   who,
+  partner,
   text,
   correct,
   plain,
 }: {
   who: 'client' | 'you';
+  /** Label for the other side (client or interviewer). */
+  partner?: string;
   text: string;
   correct?: boolean;
   /** Render as plain text (no Korean speak button). */
@@ -369,7 +373,7 @@ function Bubble({
   if (correct === false) cls.push('bubble--wrong');
   return (
     <div className={cls.join(' ')}>
-      <span className="bubble-who">{who === 'client' ? vi.scenarios.client : vi.scenarios.you}</span>
+      <span className="bubble-who">{who === 'client' ? (partner ?? vi.scenarios.client) : vi.scenarios.you}</span>
       {plain ? <p className="muted">{text}</p> : <KoreanLine text={text} />}
     </div>
   );

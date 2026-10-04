@@ -58,6 +58,7 @@ export const vi = {
       communication: 'Giao tiếp',
       meeting: 'Họp',
       'daily-life': 'Đời sống công sở',
+      interview: 'Phỏng vấn',
     } as Record<string, string>,
     statusLabel: 'Trạng thái',
     status: {
@@ -82,6 +83,7 @@ export const vi = {
     notPlayed: 'Chưa luyện',
     turnOf: (i: number, n: number) => `Lượt ${i}/${n}`,
     client: 'Khách hàng',
+    interviewer: 'Người phỏng vấn',
     you: 'Bạn',
     showHint: 'Xem gợi ý',
     hideHint: 'Ẩn gợi ý',

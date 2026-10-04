@@ -19,6 +19,7 @@ export const SCENARIO_CATEGORIES = [
   'communication',
   'meeting',
   'daily-life',
+  'interview',
 ] as const;
 export type ScenarioCategory = (typeof SCENARIO_CATEGORIES)[number];
 
