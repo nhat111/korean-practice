@@ -525,7 +525,8 @@ textarea {
 
 .ko,
 .ko-line p {
-  font-size: 1.05rem;
+  /* Hangul stays at least ~18px. */
+  font-size: 1.125rem;
 }
 .ko-sub {
   color: var(--muted);
@@ -1029,7 +1030,8 @@ ins {
 }
 
 .drill-line {
-  font-size: 1.3rem;
+  /* The sentence being practiced: ~23px. */
+  font-size: 1.45rem;
   font-weight: 700;
   line-height: 1.6;
 }
@@ -1062,22 +1064,6 @@ ins {
   color: var(--muted);
 }
 
-.recording-dot {
-  display: inline-flex;
-  align-items: center;
-  font-weight: 600;
-  color: var(--bad);
-}
-.recording-dot::before {
-  content: '';
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin-right: 8px;
-  border-radius: 50%;
-  background: var(--bad);
-  animation: pulse 1s infinite;
-}
 @keyframes pulse {
   50% {
     opacity: 0.3;
@@ -1562,4 +1548,284 @@ ins {
 }
 .custom-preview > li:first-child {
   border-top: 0;
+}
+
+/* ---------- Speaking core (SpeakPractice) ---------- */
+
+.record-control {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.record-btn {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent-red);
+  color: #fff;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  /* Hold-to-talk: no text selection, callout or double-tap zoom. */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+  transition: transform 0.1s;
+}
+.record-btn:active:not(:disabled) {
+  transform: scale(0.94);
+}
+.record-btn:disabled {
+  opacity: 0.6;
+}
+.record-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+.record-btn--on {
+  background: var(--bad);
+  animation: rec-ring 1.2s infinite;
+}
+@keyframes rec-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgb(205 46 58 / 45%);
+  }
+  100% {
+    box-shadow: 0 0 0 16px rgb(205 46 58 / 0%);
+  }
+}
+.record-side {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.level {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 36px;
+}
+.level span {
+  width: 6px;
+  height: 100%;
+  border-radius: 3px;
+  background: var(--accent-red);
+  transform: scaleY(0.12);
+  transform-origin: center;
+  transition: transform 0.06s linear;
+}
+.level--idle span {
+  animation: pulse 1s infinite;
+}
+
+.chips {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip {
+  min-height: 44px;
+  min-width: 52px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.chip--on {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+.chip:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.rate-row > .btn,
+.play-row > .btn {
+  flex: 1 1 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.auto-check {
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.syllables {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+.syl {
+  padding: 0 1px;
+  border-radius: 4px;
+}
+.syl--ok {
+  color: var(--ok);
+}
+.syl--miss {
+  background: var(--bad-bg);
+  color: var(--bad);
+  text-decoration: underline wavy;
+}
+
+.pron {
+  font-size: 1.1rem;
+  color: var(--primary);
+  letter-spacing: 0.02em;
+}
+.notes summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: var(--primary);
+  cursor: pointer;
+}
+.notes ul {
+  margin: 0;
+  padding-left: 20px;
+}
+.listen-btn {
+  align-self: flex-start;
+}
+.guide > ul {
+  margin: 0;
+  padding: 0 14px 14px 32px;
+}
+
+/* ---------- Patterns ---------- */
+
+.drill-line .part-slot,
+.drill-line .part-josa {
+  padding: 0 1px;
+}
+.frame {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.9;
+}
+.frame-slot,
+.part-slot {
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+.frame-josa,
+.part-josa {
+  padding: 1px 4px;
+  border-radius: 6px;
+  background: var(--warn-bg);
+  color: var(--warn);
+}
+.cue {
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background: var(--surface-2);
+}
+.cue-vi {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.cue .badge {
+  margin-right: 6px;
+}
+
+/* ---------- Scenario countdown ---------- */
+
+.countdown {
+  position: relative;
+  overflow: hidden;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  font-weight: 700;
+}
+.countdown span {
+  position: relative;
+}
+.countdown-bar {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: var(--primary-soft);
+  transition: width 0.2s linear;
+}
+.countdown--low {
+  color: var(--bad);
+}
+.countdown--low .countdown-bar {
+  background: var(--bad-bg);
+}
+
+/* ---------- Home / daily ---------- */
+
+.daily-cta,
+.survival-card {
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+}
+.daily-cta .card-icon,
+.survival-card .card-icon {
+  flex: none;
+  margin: 0;
+}
+.daily-cta {
+  border-color: color-mix(in srgb, var(--primary) 45%, var(--border));
+  background: var(--primary-soft);
+}
+.survival-card .card-icon {
+  background: var(--bad-bg);
+  color: var(--accent-red);
+}
+.streak {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+}
+.daily-nav {
+  /* Keep the main action within thumb reach at the end of the step. */
+  justify-content: space-between;
+}
+.daily-nav > .btn {
+  flex: 1 1 0;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+}
+.check input {
+  width: 22px;
+  height: 22px;
+  accent-color: var(--primary);
+}
+
+.flashcard-word--vi {
+  font-size: 1.4rem;
+}
+.type-badge {
+  margin-left: 8px;
+  vertical-align: middle;
 }

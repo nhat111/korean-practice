@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { compareAnswer, normalize, similarity } from './compare';
+import { compareAnswer, normalize, similarity, syllableDiff } from './compare';
 
 describe('normalize', () => {
   it('strips punctuation and collapses spaces', () => {
@@ -45,5 +45,16 @@ describe('compareAnswer', () => {
     expect(r.score).toBe(0);
     expect(r.spoken).toEqual([]);
     expect(r.model[0].status).toBe('missing');
+  });
+});
+
+describe('syllableDiff', () => {
+  it('marks heard and missed syllables, ignoring spaces and punctuation', () => {
+    const d = syllableDiff('확인했습니다.', '확인 했니다');
+    expect(d.map((s) => s.ch).join('')).toBe('확인했습니다.');
+    expect(d.map((s) => s.ok)).toEqual([true, true, true, false, true, true, null]);
+  });
+  it('marks everything missed when nothing matches', () => {
+    expect(syllableDiff('배포', '').map((s) => s.ok)).toEqual([false, false]);
   });
 });

@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { Link } from 'react-router';
+import { Icon } from '../components/Icon';
 import { ContentGate } from '../components/ContentGate';
 import { SpeakingDrill, type SpeakingLine } from '../components/SpeakingDrill';
 import { useContent } from '../data/content';
@@ -30,6 +32,22 @@ export function SpeakingPage() {
     <div className="stack">
       <h1>{vi.speaking.title}</h1>
       <SupportInfo />
+      <div className="grid">
+        <Link to="/shadowing" className="card card--link">
+          <span className="card-icon">
+            <Icon name="waves" />
+          </span>
+          <h2>{vi.shadowing.title}</h2>
+          <p className="muted">{vi.home.sections.shadowing}</p>
+        </Link>
+        <Link to="/patterns" className="card card--link">
+          <span className="card-icon">
+            <Icon name="puzzle" />
+          </span>
+          <h2>{vi.patterns.title}</h2>
+          <p className="muted">{vi.home.sections.patterns}</p>
+        </Link>
+      </div>
 
       <div className="segmented" role="tablist">
         {(['scenarios', 'vocab'] as const).map((s) => (

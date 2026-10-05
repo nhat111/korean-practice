@@ -1,0 +1,274 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "pt-01",
+      "pattern": "{noun}{은/는} 현재 {n}% 진행되었습니다.",
+      "vi": "{noun} hiện đã xong khoảng {n}%.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "로그인 기능",
+            "vi": "chức năng đăng nhập"
+          },
+          {
+            "ko": "결제 기능",
+            "vi": "chức năng thanh toán"
+          },
+          {
+            "ko": "관리자 화면",
+            "vi": "màn hình quản trị"
+          },
+          {
+            "ko": "API 연동",
+            "vi": "kết nối API"
+          }
+        ],
+        "n": [
+          {
+            "ko": "30",
+            "vi": "30"
+          },
+          {
+            "ko": "50",
+            "vi": "50"
+          },
+          {
+            "ko": "70",
+            "vi": "70"
+          },
+          {
+            "ko": "90",
+            "vi": "90"
+          }
+        ]
+      },
+      "note": "Báo tiến độ trong daily/weekly. 진행되었습니다 trang trọng hơn 했어요."
+    },
+    {
+      "id": "pt-02",
+      "pattern": "{noun}{을/를} 완료했습니다.",
+      "vi": "Đã hoàn thành {noun}.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "API 개발",
+            "vi": "phát triển API"
+          },
+          {
+            "ko": "단위 테스트",
+            "vi": "unit test"
+          },
+          {
+            "ko": "DB 설계",
+            "vi": "thiết kế DB"
+          },
+          {
+            "ko": "코드 리뷰",
+            "vi": "review code"
+          },
+          {
+            "ko": "화면 수정",
+            "vi": "sửa màn hình"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pt-03",
+      "pattern": "{noun}에서 오류가 발생했습니다.",
+      "vi": "Có lỗi xảy ra ở {noun}.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "운영 서버",
+            "vi": "server production"
+          },
+          {
+            "ko": "결제 화면",
+            "vi": "màn hình thanh toán"
+          },
+          {
+            "ko": "배치 작업",
+            "vi": "batch job"
+          },
+          {
+            "ko": "로그인 API",
+            "vi": "API đăng nhập"
+          }
+        ]
+      },
+      "note": "-에서: nơi xảy ra sự việc. Không đổi theo patchim."
+    },
+    {
+      "id": "pt-04",
+      "pattern": "{noun}{은/는} {date}까지 완료하겠습니다.",
+      "vi": "Tôi sẽ hoàn thành {noun} trước {date}.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "수정 작업",
+            "vi": "việc sửa"
+          },
+          {
+            "ko": "테스트",
+            "vi": "test"
+          },
+          {
+            "ko": "문서 작성",
+            "vi": "viết tài liệu"
+          },
+          {
+            "ko": "배포 준비",
+            "vi": "chuẩn bị deploy"
+          }
+        ],
+        "date": [
+          {
+            "ko": "내일",
+            "vi": "ngày mai"
+          },
+          {
+            "ko": "금요일",
+            "vi": "thứ Sáu"
+          },
+          {
+            "ko": "이번 주",
+            "vi": "tuần này"
+          },
+          {
+            "ko": "오늘 오후",
+            "vi": "chiều nay"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pt-05",
+      "pattern": "{noun} 관련해서 확인 부탁드립니다.",
+      "vi": "Nhờ anh/chị kiểm tra phần liên quan đến {noun}.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "요구사항",
+            "vi": "yêu cầu"
+          },
+          {
+            "ko": "화면 설계",
+            "vi": "thiết kế màn hình"
+          },
+          {
+            "ko": "테스트 결과",
+            "vi": "kết quả test"
+          },
+          {
+            "ko": "배포 일정",
+            "vi": "lịch deploy"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pt-06",
+      "pattern": "{noun}{이/가} 필요합니다.",
+      "vi": "Tôi cần {noun}.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "테스트 계정",
+            "vi": "tài khoản test"
+          },
+          {
+            "ko": "접근 권한",
+            "vi": "quyền truy cập"
+          },
+          {
+            "ko": "API 문서",
+            "vi": "tài liệu API"
+          },
+          {
+            "ko": "샘플 데이터",
+            "vi": "dữ liệu mẫu"
+          }
+        ]
+      },
+      "note": "Thêm \"혹시\" ở đầu hoặc \"~이/가 필요한데요\" để mềm hơn khi nhờ khách."
+    },
+    {
+      "id": "pt-07",
+      "pattern": "{noun}{은/는} 어떻게 처리하면 될까요?",
+      "vi": "{noun} thì nên xử lý thế nào ạ?",
+      "slots": {
+        "noun": [
+          {
+            "ko": "예외 케이스",
+            "vi": "trường hợp ngoại lệ"
+          },
+          {
+            "ko": "중복 데이터",
+            "vi": "dữ liệu trùng"
+          },
+          {
+            "ko": "기존 데이터",
+            "vi": "dữ liệu cũ"
+          },
+          {
+            "ko": "빈 값",
+            "vi": "giá trị rỗng"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pt-08",
+      "pattern": "혹시 {noun}{을/를} 공유해 주실 수 있을까요?",
+      "vi": "Anh/chị có thể chia sẻ {noun} được không ạ?",
+      "slots": {
+        "noun": [
+          {
+            "ko": "화면 설계서",
+            "vi": "tài liệu thiết kế màn hình"
+          },
+          {
+            "ko": "로그",
+            "vi": "log"
+          },
+          {
+            "ko": "테스트 데이터",
+            "vi": "dữ liệu test"
+          },
+          {
+            "ko": "에러 화면 캡처",
+            "vi": "ảnh chụp màn hình lỗi"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pt-09",
+      "pattern": "{noun}{으로/로} 보내 드리겠습니다.",
+      "vi": "Tôi sẽ gửi qua {noun} ạ.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "메일",
+            "vi": "email"
+          },
+          {
+            "ko": "슬랙",
+            "vi": "Slack"
+          },
+          {
+            "ko": "카톡",
+            "vi": "KakaoTalk"
+          },
+          {
+            "ko": "채팅",
+            "vi": "chat"
+          }
+        ]
+      },
+      "note": "으로/로: sau patchim dùng 으로, nhưng sau ㄹ (메일) và nguyên âm dùng 로."
+    }
+  ]
+}

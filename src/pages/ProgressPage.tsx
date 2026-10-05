@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
+import { streak } from '../practice/plan';
 import { isDue, isMastered, todayKey } from '../srs/sm2';
 import { resetProgress, useProgress } from '../storage/progress';
 
@@ -33,6 +34,10 @@ export function ProgressPage() {
     scored.length > 0
       ? `${Math.round(scored.reduce((s, a) => s + (a.score ?? 0), 0) / scored.length)}%`
       : '–';
+
+  const drills = Object.entries(progress.srs).filter(([k]) => k.startsWith('shadowing:') || k.startsWith('pattern:'));
+  const drillsDue = drills.filter(([, c]) => isDue(c, today)).length;
+  const recordMinutes = Math.round(Object.values(progress.daily).reduce((n, d) => n + (d.recordMs || 0), 0) / 60000);
 
   const total = (s: { status: string; items?: unknown[] }) =>
     s.status === 'ready' && s.items ? s.items.length : '…';
@@ -79,6 +84,18 @@ export function ProgressPage() {
           <Stat label={vi.progress.attempts} value={progress.speaking.length} />
           <Stat label={vi.progress.last7Days} value={speakingWeek} />
           <Stat label={vi.progress.avgSpeakingScore} value={avgSpeaking} />
+        </div>
+        <div className="stats">
+          <Stat label={vi.progress.streak} value={streak(progress.daily, today)} />
+          <Stat label={vi.progress.minutesTotal} value={recordMinutes} />
+        </div>
+      </section>
+
+      <section className="card stack-sm">
+        <h2>{vi.progress.drills}</h2>
+        <div className="stats">
+          <Stat label={vi.progress.drillsPracticed} value={drills.length} />
+          <Stat label={vi.progress.drillsDue} value={drillsDue} />
         </div>
       </section>
 

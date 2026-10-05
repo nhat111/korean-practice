@@ -4,7 +4,7 @@ import { checkBackend, roleplay, useBackendStatus, type ChatTurn, type RoleplayR
 import { apiErrorMessage } from '../api/messages';
 import { AiCorrectionList } from '../components/AiCorrectionList';
 import { KoreanLine } from '../components/SpeakButton';
-import { ListenButton } from '../components/SpeakingDrill';
+import { ListenButton } from '../components/SpeakPractice';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
 import { isRecognitionSupported, useSpeechRecognition } from '../speaking/recognition';

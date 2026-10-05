@@ -96,12 +96,20 @@ export interface GrammarPoint {
   noteVi?: string;
 }
 
+/** Word class, used by the speaking flashcards. */
+export type VocabType = 'noun' | 'verb' | 'phrase';
+
 export interface VocabItem {
   /** Stable id; flashcard progress is keyed by it. Never rename. */
   id: string;
   ko: string;
   vi: string;
   romanization?: string;
+  /** Actual pronunciation after sound changes, e.g. "[화긴하다]". Only when it differs from the spelling. */
+  pron?: string;
+  type?: VocabType;
+  /** Common combination, e.g. "로그를 확인하다". */
+  collocation?: string;
   example: {
     ko: string;
     vi: string;
@@ -145,4 +153,44 @@ export interface SongLesson {
   youtubeQuery: string;
   words: SongWord[];
   grammar: SongGrammar[];
+}
+
+// ---------- Shadowing ----------
+
+export interface ShadowingItem {
+  /** Stable id; SRS progress is keyed by it. Never rename. */
+  id: string;
+  /** 1 (short, everyday) to 3 (longer). */
+  level: number;
+  /** Deck, e.g. "progress", "bug", "survival", "cushion". Labels live in vi.shadowing.topics. */
+  topic: string;
+  ko: string;
+  /** Actual pronunciation of the whole sentence, e.g. "[화긴해 보겓씀니다]". */
+  pron: string;
+  vi: string;
+  /** Sound-change explanations (Vietnamese). */
+  notes?: string[];
+}
+
+// ---------- Sentence patterns ----------
+
+/** A word that can fill a slot, with its meaning for the Vietnamese cue. */
+export interface PatternFiller {
+  ko: string;
+  vi: string;
+}
+
+export interface PatternItem {
+  /** Stable id; SRS progress is keyed by it. Never rename. */
+  id: string;
+  /**
+   * Korean frame. `{name}` is a slot from `slots`; `{은/는}`-style pairs are
+   * particles chosen by the batchim of the text before them (see josa.ts).
+   */
+  pattern: string;
+  /** Vietnamese frame with the same `{name}` slots (filled with `vi`). */
+  vi: string;
+  slots: Record<string, PatternFiller[]>;
+  /** Usage note (Vietnamese). */
+  note?: string;
 }

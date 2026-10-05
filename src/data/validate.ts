@@ -2,20 +2,25 @@
 // list of problems (empty = valid) so a bad item can be skipped with a clear
 // message instead of crashing the app.
 
+import { patternProblems } from '../patterns/fill';
 import type {
   CorrectionType,
   EmailCorrection,
   EmailExercise,
+  PatternItem,
   Politeness,
   Scenario,
   SongLesson,
   ScenarioChoice,
   ScenarioTurn,
+  ShadowingItem,
   VocabItem,
+  VocabType,
 } from '../types';
 
 type Obj = Record<string, unknown>;
 
+const VOCAB_TYPES: readonly VocabType[] = ['noun', 'verb', 'phrase'];
 const POLITENESS: readonly Politeness[] = ['hasipsio', 'haeyo'];
 const CORRECTION_TYPES: readonly CorrectionType[] = [
   'grammar',
@@ -156,8 +161,12 @@ export function validateVocab(v: unknown): string[] {
   if (!isObj(v)) return ['vocab: phải là object'];
   const path = `vocab(${String(v.id)})`;
   requireStrings(v, ['id', 'ko', 'vi'], path, errors);
-  if (v.romanization !== undefined && typeof v.romanization !== 'string') {
-    errors.push(`${path}.romanization: phải là chuỗi`);
+  for (const k of ['romanization', 'pron', 'collocation']) {
+    if (v[k] !== undefined && !isNonEmptyString(v[k])) errors.push(`${path}.${k}: phải là chuỗi không rỗng`);
+  }
+  if (v.pron !== undefined && !isPron(v.pron)) errors.push(`${path}.pron: phải có dạng [...]`);
+  if (v.type !== undefined && !VOCAB_TYPES.includes(v.type as VocabType)) {
+    errors.push(`${path}.type: phải là một trong ${VOCAB_TYPES.join(', ')}`);
   }
   if (!isObj(v.example)) {
     errors.push(`${path}.example: phải là object`);
@@ -166,6 +175,52 @@ export function validateVocab(v: unknown): string[] {
     checkGrammar(v.example.grammar, v.example.ko, `${path}.example.grammar`, errors);
   }
   checkTags(v, path, errors);
+  return errors;
+}
+
+function isPron(v: unknown): boolean {
+  return typeof v === 'string' && /^\[[^[\]]+\]$/.test(v.trim());
+}
+
+export function validateShadowing(v: unknown): string[] {
+  const errors: string[] = [];
+  if (!isObj(v)) return ['shadowing: phải là object'];
+  const path = `shadowing(${String(v.id)})`;
+  requireStrings(v, ['id', 'topic', 'ko', 'pron', 'vi'], path, errors);
+  if (typeof v.level !== 'number' || !Number.isInteger(v.level) || v.level < 1 || v.level > 3) {
+    errors.push(`${path}.level: phải là số nguyên 1-3`);
+  }
+  if (isNonEmptyString(v.pron) && !isPron(v.pron)) errors.push(`${path}.pron: phải có dạng [...]`);
+  if (v.notes !== undefined && !(isStringArray(v.notes) && v.notes.every(isNonEmptyString))) {
+    errors.push(`${path}.notes: phải là mảng chuỗi không rỗng`);
+  }
+  return errors;
+}
+
+export function validatePattern(v: unknown): string[] {
+  const errors: string[] = [];
+  if (!isObj(v)) return ['pattern: phải là object'];
+  const path = `pattern(${String(v.id)})`;
+  requireStrings(v, ['id', 'pattern', 'vi'], path, errors);
+  if (v.note !== undefined && !isNonEmptyString(v.note)) errors.push(`${path}.note: phải là chuỗi không rỗng`);
+  if (!isObj(v.slots) || Object.keys(v.slots).length === 0) {
+    errors.push(`${path}.slots: cần ít nhất 1 slot`);
+    return errors;
+  }
+  for (const [name, fillers] of Object.entries(v.slots)) {
+    if (!Array.isArray(fillers) || fillers.length === 0) {
+      errors.push(`${path}.slots.${name}: cần ít nhất 1 từ`);
+      continue;
+    }
+    fillers.forEach((f, i) => {
+      if (!isObj(f)) errors.push(`${path}.slots.${name}[${i}]: phải là object { ko, vi }`);
+      else requireStrings(f, ['ko', 'vi'], `${path}.slots.${name}[${i}]`, errors);
+    });
+  }
+  if (errors.length === 0 && isNonEmptyString(v.pattern) && isNonEmptyString(v.vi)) {
+    const item = v as unknown as PatternItem;
+    errors.push(...patternProblems(item).map((p) => `${path}: ${p}`));
+  }
   return errors;
 }
 
@@ -252,4 +307,12 @@ export function parseSongs(data: unknown): ParseResult<SongLesson> {
 
 export function parseVocab(data: unknown): ParseResult<VocabItem> {
   return parseContentFile<VocabItem>(data, validateVocab);
+}
+
+export function parseShadowing(data: unknown): ParseResult<ShadowingItem> {
+  return parseContentFile<ShadowingItem>(data, validateShadowing);
+}
+
+export function parsePatterns(data: unknown): ParseResult<PatternItem> {
+  return parseContentFile<PatternItem>(data, validatePattern);
 }
