@@ -177,6 +177,16 @@ Korean either.
   `practice/decks.ts`: `shadowing:<id>`, `pattern:<id>`, `scenario:<id>:<turn>`, `vocab-speak:<id>`;
   rating → SM-2 grade 1/3/4). `revealed={false}` hides the model until the learner asked for the answer.
   Recognition is an optional `AutoCheck` inside it. Denied microphone shows `MicHelp`.
+- Long lines are split by `splitParts` (`src/speaking/segments.ts`: sentences, plus commas inside
+  sentences over 22 characters) so `SpeakPractice` can drill one part at a time; parts get their own
+  MP3s (`spokenTexts` adds them for scenario model answers, vocab examples and shadowing). Only the
+  whole line is self-rated into the SRS.
+- One-tap shadowing: model → `recorder.start({ autoStop: true })` (stops ~1.3 s after the speaker goes
+  quiet, using the analyser level over a calibrated noise floor) → own recording → model. The level
+  meter shares one AudioContext that must be resumed inside a tap (`unlockAudioInput`), or iOS keeps it
+  suspended and the level reads 0.
+- Recognition runs `continuous` (ended by our silence timer) so long answers aren't cut at the first
+  pause, except on Android where Chrome repeats results; transcripts are rebuilt from `e.results`.
 - `compareAnswer` in `src/speaking/compare.ts` is pure and unit-tested: score is a
   character-level similarity (ignores spaces/punctuation), highlighting is per 어절.
 - Chromium headless has no mic or recognition: browser tests use

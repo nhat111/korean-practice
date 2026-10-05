@@ -17,6 +17,8 @@ built for a Vietnamese Java developer at TOPIK 3. UI in Vietnamese, content in K
     flashcards** (Vietnamese → say it in Korean).
   - **Luyện 5 phút hôm nay**: 3 shadowing + 3 patterns + 1 survival + 1 scenario turn,
     due items first; streak, lines spoken today and minutes recorded on the home page.
+  Long lines can be shadowed part by part, and "Nghe → nói → so sánh" does model → record (auto-stops
+  when you go quiet) → playback in one tap.
   Speech recognition is an optional extra (syllable-level highlighting); everything works with
   recording alone, including the iPhone Home Screen app.
 - **Progress**: everything is stored in `localStorage` on the device; Settings can export and

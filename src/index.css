@@ -1900,3 +1900,22 @@ ins {
   margin-left: 8px;
   vertical-align: middle;
 }
+
+/* ---------- One-tap shadowing and parts ---------- */
+
+.one-tap {
+  width: 100%;
+}
+.one-tap-phase {
+  font-weight: 700;
+  color: var(--primary);
+}
+.part-target {
+  padding: 10px 14px;
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius-sm);
+  background: var(--primary-soft);
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
