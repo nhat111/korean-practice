@@ -43,7 +43,10 @@ export function ComparisonView({ result, spokenLabel }: { result: Comparison; sp
       <div className="stack-xs">
         <h3>{vi.speaking.bySyllable}</h3>
         <Syllables syllables={result.syllables} />
-        <p className="muted small">{vi.speaking.bySyllableHelp}</p>
+        <p className="legend small">
+          <span className="syl syl--ok">{vi.speaking.syllableHeard}</span>
+          <span className="syl syl--miss">{vi.speaking.syllableMissed}</span>
+        </p>
       </div>
       <div className="stack-xs">
         <h3>{vi.speaking.model}</h3>

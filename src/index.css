@@ -1565,7 +1565,8 @@ ins {
   height: 72px;
   border: none;
   border-radius: 50%;
-  background: var(--accent-red);
+  /* Same strong red in both themes: the dark-mode accent is too pale for a white icon. */
+  background: #d32f3c;
   color: #fff;
   box-shadow: var(--shadow);
   cursor: pointer;
@@ -1587,7 +1588,7 @@ ins {
   box-shadow: var(--focus-ring);
 }
 .record-btn--on {
-  background: var(--bad);
+  background: #b71c2a;
   animation: rec-ring 1.2s infinite;
 }
 @keyframes rec-ring {
@@ -1614,7 +1615,7 @@ ins {
   width: 6px;
   height: 100%;
   border-radius: 3px;
-  background: var(--accent-red);
+  background: #d32f3c;
   transform: scaleY(0.12);
   transform-origin: center;
   transition: transform 0.06s linear;
@@ -1651,11 +1652,81 @@ ins {
   box-shadow: var(--focus-ring);
 }
 
-.rate-row > .btn,
-.play-row > .btn {
-  flex: 1 1 0;
-  padding-left: 10px;
-  padding-right: 10px;
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 64px;
+  padding: 8px 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    background-color 0.15s,
+    border-color 0.15s,
+    transform 0.1s;
+}
+.tile:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.tile:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+.tile:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.tile .icon {
+  color: var(--primary);
+}
+.tile--bad .icon {
+  color: var(--bad);
+}
+.tile--ok .icon {
+  color: var(--warn);
+}
+.tile--good .icon {
+  color: var(--ok);
+}
+.tile--bad.tile--on {
+  border-color: var(--bad);
+  background: var(--bad-bg);
+  color: var(--bad);
+}
+.tile--ok.tile--on {
+  border-color: var(--warn);
+  background: var(--warn-bg);
+  color: var(--warn);
+}
+.tile--good.tile--on {
+  border-color: var(--ok);
+  background: var(--ok-bg);
+  color: var(--ok);
+}
+.auto-check-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  text-align: left;
+}
+.auto-check-open .icon {
+  flex: none;
 }
 .auto-check {
   padding-top: 8px;
@@ -1663,24 +1734,24 @@ ins {
 }
 
 .syllables {
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 1.35rem;
-  font-weight: 700;
-  line-height: 1.6;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.75;
   white-space: pre-wrap;
-}
-.syl {
-  padding: 0 1px;
-  border-radius: 4px;
+  overflow-wrap: anywhere;
 }
 .syl--ok {
   color: var(--ok);
 }
 .syl--miss {
-  background: var(--bad-bg);
   color: var(--bad);
-  text-decoration: underline wavy;
+  opacity: 0.75;
+  text-decoration: underline dotted;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+.legend .syl {
+  font-weight: 600;
 }
 
 .pron {

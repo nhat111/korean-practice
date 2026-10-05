@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router';
 import { ComparisonView } from '../components/ComparisonView';
 import { ContentGate } from '../components/ContentGate';
 import { Icon } from '../components/Icon';
+import { RatingButtons } from '../components/SpeakPractice';
 import { KoreanLine } from '../components/SpeakButton';
 import { VoiceAnswer } from '../components/VoiceAnswer';
 import { useContent } from '../data/content';
@@ -71,12 +72,6 @@ const MODE_LABELS: Record<Mode, string> = {
   free: vi.scenarios.modeFree,
   voice: vi.speaking.modeVoice,
 };
-
-const RATINGS: { value: SelfRating; className: string }[] = [
-  { value: 'bad', className: 'btn--bad' },
-  { value: 'ok', className: 'btn--warn' },
-  { value: 'good', className: 'btn--ok' },
-];
 
 function ratingFromScore(score: number): SelfRating | null {
   return score >= PASS_SCORE ? 'good' : null;
@@ -353,19 +348,7 @@ function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
                 </div>
               )}
               <p className="muted">{vi.scenarios.selfAssess}</p>
-              <div className="row rate-row">
-                {RATINGS.map((r) => (
-                  <button
-                    key={r.value}
-                    type="button"
-                    className={pending.rating === r.value ? `btn ${r.className}` : 'btn btn--ghost'}
-                    aria-pressed={pending.rating === r.value}
-                    onClick={() => setPending({ ...pending, rating: r.value })}
-                  >
-                    {vi.practice.rate[r.value]}
-                  </button>
-                ))}
-              </div>
+              <RatingButtons selected={pending.rating} onRate={(rating) => setPending({ ...pending, rating })} />
             </div>
           )}
 

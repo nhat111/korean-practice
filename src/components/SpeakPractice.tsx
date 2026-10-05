@@ -9,7 +9,7 @@ import { review, todayKey } from '../srs/sm2';
 import { setSpeechRate, useSpeechRate } from '../storage/prefs';
 import { getProgressSnapshot, saveReview, saveSpeakingAttempt, type SelfRating, type SpeakingMode } from '../storage/progress';
 import { ComparisonView } from './ComparisonView';
-import { Icon } from './Icon';
+import { Icon, type IconName } from './Icon';
 
 type Recorder = ReturnType<typeof useRecorder>;
 
@@ -149,10 +149,10 @@ export function RateChips() {
   );
 }
 
-const RATINGS: { value: SelfRating; className: string }[] = [
-  { value: 'bad', className: 'btn btn--bad' },
-  { value: 'ok', className: 'btn btn--warn' },
-  { value: 'good', className: 'btn btn--ok' },
+const RATINGS: { value: SelfRating; icon: IconName }[] = [
+  { value: 'bad', icon: 'x' },
+  { value: 'ok', icon: 'minus' },
+  { value: 'good', icon: 'check' },
 ];
 
 /** "Chưa được / Gần đúng / Tốt". Saves to history and, with `srsKey`, schedules the next review. */
@@ -186,20 +186,37 @@ export function SelfRate({
   return (
     <div className="stack-xs">
       <p className="muted small">{vi.practice.rateTitle}</p>
-      <div className="row rate-row">
-        {RATINGS.map((r) => (
-          <button
-            key={r.value}
-            type="button"
-            className={rated === null || rated.rating === r.value ? r.className : 'btn btn--ghost'}
-            disabled={rated !== null}
-            onClick={() => rate(r.value)}
-          >
-            {vi.practice.rate[r.value]}
-          </button>
-        ))}
-      </div>
+      <RatingButtons selected={rated?.rating ?? null} disabled={rated !== null} onRate={rate} />
       {rated && <p className="muted small">{srsKey ? vi.practice.rated(rated.days) : `✓ ${vi.speaking.saved}`}</p>}
+    </div>
+  );
+}
+
+/** Three tiles: Chưa được / Gần đúng / Tốt (icon above a one-line label). */
+export function RatingButtons({
+  selected,
+  disabled,
+  onRate,
+}: {
+  selected: SelfRating | null;
+  disabled?: boolean;
+  onRate: (rating: SelfRating) => void;
+}) {
+  return (
+    <div className="tiles" role="group" aria-label={vi.practice.rateTitle}>
+      {RATINGS.map((r) => (
+        <button
+          key={r.value}
+          type="button"
+          className={`tile tile--${r.value}${selected === r.value ? ' tile--on' : ''}`}
+          aria-pressed={selected === r.value}
+          disabled={disabled && selected !== r.value}
+          onClick={() => !disabled && onRate(r.value)}
+        >
+          <Icon name={r.icon} size={20} />
+          <span>{vi.practice.rate[r.value]}</span>
+        </button>
+      ))}
     </div>
   );
 }
@@ -214,20 +231,24 @@ export function ComparePlayback({ ko, url }: { ko: string; url: string | null })
   }
   return (
     <div className="stack-xs">
-      <div className="row play-row">
+      <p className="muted small">{vi.practice.listenTitle}</p>
+      <div className="tiles">
         {canSpeak && (
-          <button type="button" className="btn btn--ghost" onClick={() => void speakKorean(ko)}>
-            {vi.practice.playModel}
+          <button type="button" className="tile" onClick={() => void speakKorean(ko)}>
+            <Icon name="volume" size={20} />
+            <span>{vi.practice.playModel}</span>
           </button>
         )}
         {url && (
-          <button type="button" className="btn btn--ghost" onClick={() => void playAudio(url)}>
-            {vi.practice.playMine}
+          <button type="button" className="tile" onClick={() => void playAudio(url)}>
+            <Icon name="user" size={20} />
+            <span>{vi.practice.playMine}</span>
           </button>
         )}
         {url && canSpeak && (
-          <button type="button" className="btn btn--ghost" onClick={() => void interleave(url)}>
-            {vi.practice.playInterleave}
+          <button type="button" className="tile" onClick={() => void interleave(url)}>
+            <Icon name="repeat" size={20} />
+            <span>{vi.practice.playInterleave}</span>
           </button>
         )}
       </div>
@@ -307,9 +328,10 @@ export function SpeakPractice({
         <ComparePlayback ko={ko} url={hasRecording ? recorder.url : null} />
       ) : (
         hasRecording && (
-          <div className="row play-row">
-            <button type="button" className="btn btn--ghost" onClick={() => recorder.url && void playAudio(recorder.url)}>
-              {vi.practice.playMine}
+          <div className="tiles">
+            <button type="button" className="tile" onClick={() => recorder.url && void playAudio(recorder.url)}>
+              <Icon name="user" size={20} />
+              <span>{vi.practice.playMine}</span>
             </button>
           </div>
         )
@@ -330,8 +352,8 @@ function AutoCheck({ ko, source }: { ko: string; source: string }) {
 
   if (!open) {
     return (
-      <button type="button" className="link-btn small" onClick={() => setOpen(true)}>
-        {vi.practice.autoCheck}
+      <button type="button" className="link-btn small auto-check-open" onClick={() => setOpen(true)}>
+        <Icon name="mic" size={18} /> {vi.practice.autoCheck}
       </button>
     );
   }
@@ -375,13 +397,13 @@ export function ListenButton({
   if (recognition.status === 'listening') {
     return (
       <button type="button" className="btn btn--bad" onClick={recognition.stop}>
-        {vi.speaking.stopListening}
+        <Icon name="stop" size={18} /> {vi.speaking.stopListening}
       </button>
     );
   }
   return (
     <button type="button" className="btn" onClick={onStart}>
-      {again ? vi.speaking.tryAgain : (label ?? vi.speaking.speak)}
+      <Icon name="mic" size={18} /> {again ? vi.speaking.tryAgain : (label ?? vi.speaking.speak)}
     </button>
   );
 }
