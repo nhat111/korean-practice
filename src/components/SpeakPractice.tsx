@@ -3,8 +3,9 @@ import { vi } from '../i18n/vi';
 import { gradeFor } from '../practice/decks';
 import { isSpeechSupported, speakKorean, stopSpeaking } from '../speech';
 import { compareAnswer, type Comparison } from '../speaking/compare';
+import { splitParts } from '../speaking/segments';
 import { isRecognitionSupported, useSpeechRecognition } from '../speaking/recognition';
-import { isRecordingSupported, playAudio, useRecorder } from '../speaking/recorder';
+import { isRecordingSupported, playAudio, unlockAudioInput, useRecorder } from '../speaking/recorder';
 import { review, todayKey } from '../srs/sm2';
 import { setSpeechRate, useSpeechRate } from '../storage/prefs';
 import { getProgressSnapshot, saveReview, saveSpeakingAttempt, type SelfRating, type SpeakingMode } from '../storage/progress';
@@ -298,7 +299,58 @@ interface Props {
  * recognition is an optional extra; everything works with recording alone,
  * and without a microphone the learner can still listen, repeat and rate.
  */
-export function SpeakPractice({
+export function SpeakPractice(props: Props) {
+  const { ko, revealed = true } = props;
+  // Long lines can be shadowed part by part (each part has its own MP3).
+  const parts = revealed ? splitParts(ko) : [];
+  const [part, setPart] = useState<number | null>(null);
+  const target = part !== null && parts[part] ? parts[part] : ko;
+  const isPart = target !== ko;
+
+  return (
+    <div className="speak-practice stack-sm">
+      {parts.length > 0 && (
+        <div className="stack-xs">
+          <span className="muted small">{vi.practice.parts}</span>
+          <div className="chips" role="group" aria-label={vi.practice.parts}>
+            <button
+              type="button"
+              className={isPart ? 'chip' : 'chip chip--on'}
+              aria-pressed={!isPart}
+              onClick={() => setPart(null)}
+            >
+              {vi.practice.whole}
+            </button>
+            {parts.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                className={part === i ? 'chip chip--on' : 'chip'}
+                aria-pressed={part === i}
+                onClick={() => setPart(i)}
+              >
+                {i + 1}
+              </button>
+            ))}
+          </div>
+          {isPart ? (
+            <p lang="ko" className="part-target">
+              {target}
+            </p>
+          ) : (
+            <p className="muted small">{vi.practice.partsHelp}</p>
+          )}
+        </div>
+      )}
+      {/* Remount per part so the recording and rating reset. */}
+      <PracticeCore key={target} {...props} ko={target} isPart={isPart} />
+    </div>
+  );
+}
+
+type Phase = 'idle' | 'listen' | 'speak' | 'replay';
+
+function PracticeCore({
   ko,
   source,
   mode = 'shadowing',
@@ -307,16 +359,55 @@ export function SpeakPractice({
   noRating,
   autoCheck = true,
   revealed = true,
-}: Props) {
+  isPart,
+}: Props & { isPart: boolean }) {
   const recorder = useRecorder();
   const canRecord = isRecordingSupported();
   const hasRecording = recorder.url !== null && recorder.status === 'idle';
+  const [phase, setPhase] = useState<Phase>('idle');
+  const alive = useRef(true);
 
-  useEffect(() => stopSpeaking, []);
+  useEffect(() => {
+    alive.current = true;
+    return () => {
+      alive.current = false;
+      stopSpeaking();
+    };
+  }, []);
+
+  /** One tap: model → record until the learner goes quiet → mine → model. */
+  async function oneTap() {
+    unlockAudioInput(); // recording starts after an await, outside this tap
+    setPhase('listen');
+    await speakKorean(ko);
+    if (!alive.current) return;
+    setPhase('speak');
+    const url = await recorder.start({ autoStop: true });
+    if (!alive.current) return;
+    if (url) {
+      setPhase('replay');
+      await playAudio(url);
+      if (!alive.current) return;
+      await speakKorean(ko);
+    }
+    if (alive.current) setPhase('idle');
+  }
+
+  const busy = phase !== 'idle';
 
   return (
-    <div className="speak-practice stack-sm">
+    <>
       {revealed && <RateChips />}
+      {revealed && canRecord && isSpeechSupported() && (
+        <div className="stack-xs">
+          <button type="button" className="btn one-tap" disabled={busy || recorder.status !== 'idle'} onClick={() => void oneTap()}>
+            <Icon name="zap" size={18} /> {vi.practice.oneTap}
+          </button>
+          <p className={busy ? 'one-tap-phase' : 'muted small'} aria-live="polite">
+            {busy ? vi.practice.phase[phase] : vi.practice.oneTapHelp}
+          </p>
+        </div>
+      )}
       {canRecord ? (
         <RecordControl recorder={recorder} onStart={stopSpeaking} />
       ) : (
@@ -336,11 +427,14 @@ export function SpeakPractice({
           </div>
         )
       )}
-      {revealed && !noRating && (hasRecording || !canRecord) && (
-        <SelfRate key={recorder.url ?? 'none'} ko={ko} source={source} mode={mode} srsKey={srsKey} onRated={onRated} />
-      )}
+      {revealed && !noRating && (hasRecording || !canRecord) && !busy &&
+        (isPart ? (
+          <p className="muted small">{vi.practice.partRateHint}</p>
+        ) : (
+          <SelfRate key={recorder.url ?? 'none'} ko={ko} source={source} mode={mode} srsKey={srsKey} onRated={onRated} />
+        ))}
       {revealed && autoCheck && isRecognitionSupported() && <AutoCheck ko={ko} source={source} />}
-    </div>
+    </>
   );
 }
 

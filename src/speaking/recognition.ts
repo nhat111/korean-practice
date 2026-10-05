@@ -45,6 +45,10 @@ export function isIosStandalone(): boolean {
   return ios && standalone;
 }
 
+function isAndroid(): boolean {
+  return typeof navigator !== 'undefined' && /Android/i.test(navigator.userAgent);
+}
+
 export function isRecognitionSupported(): boolean {
   return getCtor() !== undefined && !isIosStandalone();
 }
@@ -57,7 +61,7 @@ export function recognitionUnsupportedMessage(): string {
 // Some engines (notably iOS WebKit) occasionally never fire `end`, which
 // would leave the UI stuck in "listening". These timers force an end.
 const NO_SPEECH_MS = 8000; // nothing heard at all since start
-const SILENCE_MS = 3000; // no new result since the last one
+const SILENCE_MS = 2500; // no new result since the last one
 const STOP_GRACE_MS = 1500; // after stop(), wait this long for `end`
 
 export type RecognitionStatus = 'idle' | 'listening' | 'error';
@@ -108,7 +112,10 @@ export function useSpeechRecognition() {
 
     const rec = new Ctor();
     rec.lang = 'ko-KR';
-    rec.continuous = false;
+    // Keep listening through short pauses so long answers aren't cut after the
+    // first phrase; our silence timer ends the session. Android Chrome repeats
+    // results in continuous mode, so it ends at the first pause instead.
+    rec.continuous = !isAndroid();
     rec.interimResults = true;
     rec.maxAlternatives = 1;
 
@@ -147,12 +154,16 @@ export function useSpeechRecognition() {
     };
 
     rec.onresult = (e) => {
+      // e.results holds the whole session: rebuild instead of appending, so a
+      // re-delivered result is never counted twice.
+      let final = '';
       let partial = '';
-      for (let i = e.resultIndex; i < e.results.length; i++) {
+      for (let i = 0; i < e.results.length; i++) {
         const r = e.results[i];
-        if (r.isFinal) finalText += r[0].transcript;
+        if (r.isFinal) final += r[0].transcript;
         else partial += r[0].transcript;
       }
+      finalText = final;
       partialText = partial;
       setInterim(finalText + partial);
       arm(SILENCE_MS, () => finish());

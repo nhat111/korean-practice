@@ -1,6 +1,8 @@
 // Pre-generated natural voices (Edge TTS, see scripts/tts.py). Each spoken
-// sentence is stored at /audio/<voice>/<audioKey(text)>.mp3. This module has
-// no imports so scripts/tts-jobs.ts can load it directly with Node.
+// sentence is stored at /audio/<voice>/<audioKey(text)>.mp3. Imports use
+// explicit .ts extensions so scripts/tts-jobs.ts can load it directly with Node.
+
+import { splitParts } from './segments.ts';
 
 export const NATURAL_VOICES = {
   male: 'ko-KR-InJoonNeural',
@@ -42,21 +44,27 @@ interface ContentFiles {
   patternSentences: string[];
 }
 
+/** A practice line and, if it is long, each part the learner can shadow separately. */
+function addWithParts(out: Set<string>, text: string): void {
+  out.add(text);
+  for (const p of splitParts(text)) out.add(p);
+}
+
 /** Every Korean sentence the app can read aloud from static content. */
 export function spokenTexts(c: ContentFiles): string[] {
   const out = new Set<string>([VOICE_SAMPLE, SPEED_SAMPLE]);
   for (const s of c.scenarios)
     for (const t of s.turns) {
       out.add(t.client);
-      out.add(t.modelAnswer);
+      addWithParts(out, t.modelAnswer);
       for (const ch of t.choices) out.add(ch.ko);
     }
   for (const v of c.vocab) {
     out.add(v.ko);
     if (v.collocation) out.add(v.collocation);
-    out.add(v.example.ko);
+    addWithParts(out, v.example.ko);
   }
-  for (const s of c.shadowing) out.add(s.ko);
+  for (const s of c.shadowing) addWithParts(out, s.ko);
   for (const s of c.patternSentences) out.add(s);
   for (const e of c.emails) out.add(e.corrected);
   for (const s of c.songs) {
