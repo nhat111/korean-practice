@@ -34,9 +34,12 @@ export const SPEED_SAMPLE = '이번 주 금요일까지 수정해서 배포하�
 
 interface ContentFiles {
   scenarios: { turns: { client: string; modelAnswer: string; choices: { ko: string }[] }[] }[];
-  vocab: { ko: string; example: { ko: string } }[];
+  vocab: { ko: string; collocation?: string; example: { ko: string } }[];
   emails: { corrected: string }[];
   songs: { words: { ko: string }[]; grammar: { example: { ko: string } }[] }[];
+  shadowing: { ko: string }[];
+  /** Every filled pattern sentence (see allFills in patterns/fill.ts). */
+  patternSentences: string[];
 }
 
 /** Every Korean sentence the app can read aloud from static content. */
@@ -50,8 +53,11 @@ export function spokenTexts(c: ContentFiles): string[] {
     }
   for (const v of c.vocab) {
     out.add(v.ko);
+    if (v.collocation) out.add(v.collocation);
     out.add(v.example.ko);
   }
+  for (const s of c.shadowing) out.add(s.ko);
+  for (const s of c.patternSentences) out.add(s);
   for (const e of c.emails) out.add(e.corrected);
   for (const s of c.songs) {
     for (const w of s.words) out.add(w.ko);

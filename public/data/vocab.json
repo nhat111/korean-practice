@@ -5231,6 +5231,670 @@
       "tags": [
         "communication"
       ]
+    },
+    {
+      "id": "w-hwaginhada",
+      "ko": "확인하다",
+      "vi": "kiểm tra, xác nhận",
+      "pron": "[화긴하다]",
+      "type": "verb",
+      "collocation": "로그를 확인하다",
+      "example": {
+        "ko": "배포 전에 설정 파일을 다시 확인하겠습니다.",
+        "vi": "Trước khi deploy tôi sẽ kiểm tra lại file cấu hình."
+      },
+      "tags": [
+        "verb",
+        "report"
+      ]
+    },
+    {
+      "id": "w-sujeonghada",
+      "ko": "수정하다",
+      "vi": "sửa",
+      "type": "verb",
+      "collocation": "버그를 수정하다",
+      "example": {
+        "ko": "말씀하신 버그는 어제 수정했습니다.",
+        "vi": "Bug anh/chị nói tôi đã sửa hôm qua."
+      },
+      "tags": [
+        "verb",
+        "bug"
+      ]
+    },
+    {
+      "id": "w-banyeonghada",
+      "ko": "반영하다",
+      "vi": "áp dụng (thay đổi vào hệ thống)",
+      "pron": "[바녕하다]",
+      "type": "verb",
+      "collocation": "수정 사항을 반영하다",
+      "example": {
+        "ko": "피드백 주신 내용은 다음 버전에 반영하겠습니다.",
+        "vi": "Nội dung góp ý tôi sẽ áp dụng vào phiên bản tiếp theo."
+      },
+      "tags": [
+        "verb",
+        "deploy"
+      ]
+    },
+    {
+      "id": "w-gongyuhada",
+      "ko": "공유하다",
+      "vi": "chia sẻ",
+      "type": "verb",
+      "collocation": "자료를 공유하다",
+      "example": {
+        "ko": "회의 자료는 오늘 오후에 공유하겠습니다.",
+        "vi": "Tài liệu họp tôi sẽ chia sẻ vào chiều nay."
+      },
+      "tags": [
+        "verb",
+        "report"
+      ]
+    },
+    {
+      "id": "w-jaehyeondoeda",
+      "ko": "재현되다",
+      "vi": "tái hiện được (lỗi)",
+      "type": "verb",
+      "collocation": "오류가 재현되다",
+      "example": {
+        "ko": "개발 환경에서는 오류가 재현되지 않습니다.",
+        "vi": "Ở môi trường dev thì lỗi không tái hiện."
+      },
+      "tags": [
+        "verb",
+        "bug"
+      ]
+    },
+    {
+      "id": "w-balsaenghada",
+      "ko": "발생하다",
+      "vi": "phát sinh, xảy ra",
+      "pron": "[발쌩하다]",
+      "type": "verb",
+      "collocation": "오류가 발생하다",
+      "example": {
+        "ko": "오늘 아침에 결제 오류가 발생했습니다.",
+        "vi": "Sáng nay đã xảy ra lỗi thanh toán."
+      },
+      "tags": [
+        "verb",
+        "incident"
+      ]
+    },
+    {
+      "id": "w-paakhada",
+      "ko": "파악하다",
+      "vi": "nắm được, xác định",
+      "pron": "[파아카다]",
+      "type": "verb",
+      "collocation": "원인을 파악하다",
+      "example": {
+        "ko": "현재 장애 원인을 파악하고 있습니다.",
+        "vi": "Hiện tôi đang xác định nguyên nhân sự cố."
+      },
+      "tags": [
+        "verb",
+        "incident"
+      ]
+    },
+    {
+      "id": "w-jochihada",
+      "ko": "조치하다",
+      "vi": "xử lý, khắc phục",
+      "type": "verb",
+      "collocation": "긴급 조치하다",
+      "example": {
+        "ko": "임시로 조치했고 근본 원인은 확인 중입니다.",
+        "vi": "Tôi đã xử lý tạm thời, nguyên nhân gốc đang kiểm tra."
+      },
+      "tags": [
+        "verb",
+        "incident"
+      ]
+    },
+    {
+      "id": "w-jeogyonghada",
+      "ko": "적용하다",
+      "vi": "áp dụng",
+      "pron": "[저굥하다]",
+      "type": "verb",
+      "collocation": "패치를 적용하다",
+      "example": {
+        "ko": "보안 패치를 운영 서버에 적용했습니다.",
+        "vi": "Đã áp dụng bản vá bảo mật lên server production."
+      },
+      "tags": [
+        "verb",
+        "deploy"
+      ]
+    },
+    {
+      "id": "w-geomtohada",
+      "ko": "검토하다",
+      "vi": "xem xét, review",
+      "type": "verb",
+      "collocation": "요구사항을 검토하다",
+      "example": {
+        "ko": "요구사항을 검토한 후에 일정을 말씀드리겠습니다.",
+        "vi": "Sau khi xem xét yêu cầu, tôi sẽ báo lịch."
+      },
+      "tags": [
+        "verb",
+        "pm"
+      ]
+    },
+    {
+      "id": "w-yocheonghada",
+      "ko": "요청하다",
+      "vi": "yêu cầu, đề nghị",
+      "type": "verb",
+      "collocation": "리뷰를 요청하다",
+      "example": {
+        "ko": "팀장님께 코드 리뷰를 요청했습니다.",
+        "vi": "Tôi đã nhờ trưởng nhóm review code."
+      },
+      "tags": [
+        "verb",
+        "dev"
+      ]
+    },
+    {
+      "id": "w-munuihada",
+      "ko": "문의하다",
+      "vi": "hỏi, liên hệ hỏi",
+      "pron": "[무니하다]",
+      "type": "verb",
+      "collocation": "담당자에게 문의하다",
+      "example": {
+        "ko": "권한 문제는 인프라 담당자에게 문의해 보겠습니다.",
+        "vi": "Vấn đề quyền tôi sẽ hỏi người phụ trách hạ tầng."
+      },
+      "tags": [
+        "verb",
+        "communication"
+      ]
+    },
+    {
+      "id": "w-damdanghada",
+      "ko": "담당하다",
+      "vi": "phụ trách",
+      "type": "verb",
+      "collocation": "프론트엔드를 담당하다",
+      "example": {
+        "ko": "저는 이번 프로젝트에서 백엔드를 담당하고 있습니다.",
+        "vi": "Trong dự án này tôi phụ trách backend."
+      },
+      "tags": [
+        "verb",
+        "pm"
+      ]
+    },
+    {
+      "id": "w-jiyeondoeda",
+      "ko": "지연되다",
+      "vi": "bị chậm trễ",
+      "type": "verb",
+      "collocation": "일정이 지연되다",
+      "example": {
+        "ko": "외부 API 문제로 일정이 이틀 지연되었습니다.",
+        "vi": "Do lỗi API bên ngoài nên lịch bị chậm hai ngày."
+      },
+      "tags": [
+        "verb",
+        "schedule"
+      ]
+    },
+    {
+      "id": "w-nurakdoeda",
+      "ko": "누락되다",
+      "vi": "bị sót",
+      "pron": "[누락뙤다]",
+      "type": "verb",
+      "collocation": "데이터가 누락되다",
+      "example": {
+        "ko": "일부 주문 데이터가 누락된 것을 확인했습니다.",
+        "vi": "Tôi đã xác nhận một phần dữ liệu đơn hàng bị sót."
+      },
+      "tags": [
+        "verb",
+        "db"
+      ]
+    },
+    {
+      "id": "w-jungbokdoeda",
+      "ko": "중복되다",
+      "vi": "bị trùng",
+      "pron": "[중복뙤다]",
+      "type": "verb",
+      "collocation": "데이터가 중복되다",
+      "example": {
+        "ko": "버튼을 두 번 누르면 데이터가 중복됩니다.",
+        "vi": "Bấm nút hai lần thì dữ liệu bị trùng."
+      },
+      "tags": [
+        "verb",
+        "db"
+      ]
+    },
+    {
+      "id": "w-yeondonghada",
+      "ko": "연동하다",
+      "vi": "kết nối, tích hợp",
+      "type": "verb",
+      "collocation": "API를 연동하다",
+      "example": {
+        "ko": "이번 주에 결제 API를 연동할 예정입니다.",
+        "vi": "Tuần này dự định tích hợp API thanh toán."
+      },
+      "tags": [
+        "verb",
+        "api"
+      ]
+    },
+    {
+      "id": "w-hoesinhada",
+      "ko": "회신하다",
+      "vi": "phản hồi, trả lời (mail)",
+      "type": "verb",
+      "collocation": "메일에 회신하다",
+      "example": {
+        "ko": "고객사 메일에 오늘 중으로 회신하겠습니다.",
+        "vi": "Tôi sẽ trả lời mail của khách trong hôm nay."
+      },
+      "tags": [
+        "verb",
+        "email"
+      ]
+    },
+    {
+      "id": "t-hwamyeon",
+      "ko": "화면",
+      "vi": "màn hình",
+      "type": "noun",
+      "collocation": "화면이 안 뜨다",
+      "example": {
+        "ko": "로그인 후에 화면이 하얗게 나옵니다.",
+        "vi": "Sau khi đăng nhập, màn hình hiện trắng."
+      },
+      "tags": [
+        "ui",
+        "bug"
+      ]
+    },
+    {
+      "id": "t-beoteun",
+      "ko": "버튼",
+      "vi": "nút",
+      "type": "noun",
+      "collocation": "버튼을 누르다",
+      "example": {
+        "ko": "저장 버튼을 눌러도 반응이 없습니다.",
+        "vi": "Bấm nút lưu cũng không có phản hồi."
+      },
+      "tags": [
+        "ui",
+        "bug"
+      ]
+    },
+    {
+      "id": "t-paeop",
+      "ko": "팝업",
+      "vi": "popup",
+      "pron": "[파법]",
+      "type": "noun",
+      "collocation": "팝업이 뜨다",
+      "example": {
+        "ko": "삭제할 때 확인 팝업이 뜨도록 수정했습니다.",
+        "vi": "Tôi đã sửa để khi xoá sẽ hiện popup xác nhận."
+      },
+      "tags": [
+        "ui"
+      ]
+    },
+    {
+      "id": "t-imnyeokgap",
+      "ko": "입력값",
+      "vi": "giá trị nhập",
+      "pron": "[임녁깝]",
+      "type": "noun",
+      "collocation": "입력값을 검증하다",
+      "example": {
+        "ko": "입력값이 비어 있으면 오류 메시지를 보여 줍니다.",
+        "vi": "Nếu giá trị nhập trống thì hiện thông báo lỗi."
+      },
+      "tags": [
+        "ui",
+        "dev"
+      ]
+    },
+    {
+      "id": "t-pilsugap",
+      "ko": "필수값",
+      "vi": "giá trị bắt buộc",
+      "pron": "[필쑤깝]",
+      "type": "noun",
+      "collocation": "필수값을 입력하다",
+      "example": {
+        "ko": "이메일은 필수값이라서 비워 둘 수 없습니다.",
+        "vi": "Email là trường bắt buộc nên không để trống được."
+      },
+      "tags": [
+        "ui",
+        "dev"
+      ]
+    },
+    {
+      "id": "t-yuhyoseong-geomsa",
+      "ko": "유효성 검사",
+      "vi": "kiểm tra hợp lệ (validation)",
+      "pron": "[유효썽 검사]",
+      "type": "noun",
+      "collocation": "유효성 검사를 추가하다",
+      "example": {
+        "ko": "전화번호 형식에 대한 유효성 검사를 추가했습니다.",
+        "vi": "Đã thêm validation cho định dạng số điện thoại."
+      },
+      "tags": [
+        "ui",
+        "dev"
+      ]
+    },
+    {
+      "id": "t-kaepcheo",
+      "ko": "캡처",
+      "vi": "ảnh chụp màn hình",
+      "type": "noun",
+      "collocation": "화면을 캡처하다",
+      "example": {
+        "ko": "오류 화면을 캡처해서 보내 주시면 감사하겠습니다.",
+        "vi": "Anh/chị chụp màn hình lỗi gửi giúp tôi ạ."
+      },
+      "tags": [
+        "ui",
+        "bug"
+      ]
+    },
+    {
+      "id": "t-jaehyeon-gyeongno",
+      "ko": "재현 경로",
+      "vi": "các bước tái hiện lỗi",
+      "pron": "[재현 경노]",
+      "type": "noun",
+      "collocation": "재현 경로를 정리하다",
+      "example": {
+        "ko": "재현 경로를 정리해서 이슈에 남겼습니다.",
+        "vi": "Tôi đã ghi các bước tái hiện vào issue."
+      },
+      "tags": [
+        "bug",
+        "test"
+      ]
+    },
+    {
+      "id": "t-oryu-mesiji",
+      "ko": "오류 메시지",
+      "vi": "thông báo lỗi",
+      "type": "noun",
+      "collocation": "오류 메시지가 나오다",
+      "example": {
+        "ko": "저장할 때 이런 오류 메시지가 나옵니다.",
+        "vi": "Khi lưu thì hiện thông báo lỗi thế này."
+      },
+      "tags": [
+        "ui",
+        "bug"
+      ]
+    },
+    {
+      "id": "t-mongnok",
+      "ko": "목록",
+      "vi": "danh sách",
+      "pron": "[몽녹]",
+      "type": "noun",
+      "collocation": "목록을 조회하다",
+      "example": {
+        "ko": "목록 화면에서 검색이 느립니다.",
+        "vi": "Ở màn hình danh sách, tìm kiếm bị chậm."
+      },
+      "tags": [
+        "ui"
+      ]
+    },
+    {
+      "id": "t-sangse-hwamyeon",
+      "ko": "상세 화면",
+      "vi": "màn hình chi tiết",
+      "type": "noun",
+      "collocation": "상세 화면으로 이동하다",
+      "example": {
+        "ko": "목록에서 항목을 누르면 상세 화면으로 이동합니다.",
+        "vi": "Bấm vào mục trong danh sách thì chuyển sang màn hình chi tiết."
+      },
+      "tags": [
+        "ui"
+      ]
+    },
+    {
+      "id": "t-geomsaek-jogeon",
+      "ko": "검색 조건",
+      "vi": "điều kiện tìm kiếm",
+      "pron": "[검색 쪼껀]",
+      "type": "noun",
+      "collocation": "검색 조건을 추가하다",
+      "example": {
+        "ko": "날짜를 검색 조건에 추가해 달라는 요청이 있었습니다.",
+        "vi": "Có yêu cầu thêm ngày vào điều kiện tìm kiếm."
+      },
+      "tags": [
+        "ui",
+        "pm"
+      ]
+    },
+    {
+      "id": "t-jeongnyeol",
+      "ko": "정렬",
+      "vi": "sắp xếp",
+      "pron": "[정녈]",
+      "type": "noun",
+      "collocation": "최신순으로 정렬하다",
+      "example": {
+        "ko": "목록을 최신순으로 정렬하도록 변경했습니다.",
+        "vi": "Đã đổi để danh sách sắp xếp theo mới nhất."
+      },
+      "tags": [
+        "ui"
+      ]
+    },
+    {
+      "id": "t-peiji-idong",
+      "ko": "페이지 이동",
+      "vi": "chuyển trang",
+      "type": "noun",
+      "collocation": "페이지 이동 시",
+      "example": {
+        "ko": "페이지 이동 시 입력한 내용이 사라집니다.",
+        "vi": "Khi chuyển trang thì nội dung đã nhập bị mất."
+      },
+      "tags": [
+        "ui",
+        "bug"
+      ]
+    },
+    {
+      "id": "t-saerogochim",
+      "ko": "새로고침",
+      "vi": "tải lại trang (refresh)",
+      "type": "noun",
+      "collocation": "새로고침을 하다",
+      "example": {
+        "ko": "새로고침을 하면 정상적으로 보입니다.",
+        "vi": "Refresh lại thì hiển thị bình thường."
+      },
+      "tags": [
+        "ui",
+        "bug"
+      ]
+    },
+    {
+      "id": "w-hyeonjae",
+      "ko": "현재",
+      "vi": "hiện tại, hiện giờ",
+      "type": "phrase",
+      "example": {
+        "ko": "현재 테스트 서버에서 확인 중입니다.",
+        "vi": "Hiện tôi đang kiểm tra trên server test."
+      },
+      "tags": [
+        "time",
+        "report"
+      ]
+    },
+    {
+      "id": "w-oneul-jungeuro",
+      "ko": "오늘 중으로",
+      "vi": "trong hôm nay",
+      "type": "phrase",
+      "example": {
+        "ko": "수정본은 오늘 중으로 보내 드리겠습니다.",
+        "vi": "Bản sửa tôi sẽ gửi trong hôm nay."
+      },
+      "tags": [
+        "time",
+        "report"
+      ]
+    },
+    {
+      "id": "w-naeilkkaji",
+      "ko": "내일까지",
+      "vi": "đến (hạn) ngày mai",
+      "type": "phrase",
+      "example": {
+        "ko": "테스트 결과는 내일까지 정리하겠습니다.",
+        "vi": "Kết quả test tôi sẽ tổng hợp trước ngày mai."
+      },
+      "tags": [
+        "time",
+        "report"
+      ]
+    },
+    {
+      "id": "w-ibeon-ju-ane",
+      "ko": "이번 주 안에",
+      "vi": "trong tuần này",
+      "pron": "[이번 주 아네]",
+      "type": "phrase",
+      "example": {
+        "ko": "남은 작업은 이번 주 안에 마무리할 예정입니다.",
+        "vi": "Phần việc còn lại dự định xong trong tuần này."
+      },
+      "tags": [
+        "time",
+        "report"
+      ]
+    },
+    {
+      "id": "w-geoui",
+      "ko": "거의",
+      "vi": "gần như",
+      "pron": "[거이]",
+      "type": "phrase",
+      "example": {
+        "ko": "로그인 기능은 거의 다 끝났습니다.",
+        "vi": "Chức năng đăng nhập gần như xong rồi."
+      },
+      "tags": [
+        "degree",
+        "report"
+      ]
+    },
+    {
+      "id": "w-daebubun",
+      "ko": "대부분",
+      "vi": "phần lớn",
+      "type": "phrase",
+      "example": {
+        "ko": "대부분의 테스트 케이스는 통과했습니다.",
+        "vi": "Phần lớn test case đã pass."
+      },
+      "tags": [
+        "degree",
+        "report"
+      ]
+    },
+    {
+      "id": "w-ilbu",
+      "ko": "일부",
+      "vi": "một phần",
+      "type": "phrase",
+      "example": {
+        "ko": "일부 화면에서만 문제가 발생합니다.",
+        "vi": "Lỗi chỉ xảy ra ở một số màn hình."
+      },
+      "tags": [
+        "degree",
+        "report"
+      ]
+    },
+    {
+      "id": "w-ajik",
+      "ko": "아직",
+      "vi": "vẫn chưa",
+      "type": "phrase",
+      "example": {
+        "ko": "아직 원인을 찾지 못했습니다.",
+        "vi": "Tôi vẫn chưa tìm ra nguyên nhân."
+      },
+      "tags": [
+        "time",
+        "report"
+      ]
+    },
+    {
+      "id": "w-imi",
+      "ko": "이미",
+      "vi": "đã… rồi",
+      "type": "phrase",
+      "example": {
+        "ko": "그 버그는 이미 수정되었습니다.",
+        "vi": "Bug đó đã được sửa rồi."
+      },
+      "tags": [
+        "time",
+        "report"
+      ]
+    },
+    {
+      "id": "w-useon",
+      "ko": "우선",
+      "vi": "trước hết, ưu tiên",
+      "type": "phrase",
+      "example": {
+        "ko": "우선 급한 버그부터 처리하겠습니다.",
+        "vi": "Trước hết tôi sẽ xử lý bug gấp."
+      },
+      "tags": [
+        "time",
+        "report"
+      ]
+    },
+    {
+      "id": "w-ildan",
+      "ko": "일단",
+      "vi": "tạm thời, trước mắt",
+      "pron": "[일딴]",
+      "type": "phrase",
+      "example": {
+        "ko": "일단 롤백하고 원인을 확인하겠습니다.",
+        "vi": "Trước mắt tôi rollback rồi kiểm tra nguyên nhân."
+      },
+      "tags": [
+        "time",
+        "incident"
+      ]
     }
   ]
 }

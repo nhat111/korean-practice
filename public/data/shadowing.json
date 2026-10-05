@@ -1,0 +1,386 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "sh-01",
+      "level": 1,
+      "topic": "request",
+      "ko": "확인해 보겠습니다.",
+      "pron": "[화긴해 보겓씀니다]",
+      "vi": "Để tôi kiểm tra thử.",
+      "notes": [
+        "확인 → [화긴]: patchim ㄱ nối sang nguyên âm phía sau (연음).",
+        "겠습니다 → [겓씀니다]: patchim ㅆ đọc như ㄷ, kéo ㅅ phía sau thành ㅆ."
+      ]
+    },
+    {
+      "id": "sh-02",
+      "level": 1,
+      "topic": "request",
+      "ko": "확인 후 다시 말씀드리겠습니다.",
+      "pron": "[화긴 후 다시 말씀드리겓씀니다]",
+      "vi": "Kiểm tra xong tôi sẽ báo lại ạ.",
+      "notes": [
+        "확인 → [화긴]: patchim ㄱ nối sang nguyên âm phía sau (연음).",
+        "말씀드리다: cách nói khiêm nhường của 말하다, dùng khi nói với khách hoặc cấp trên."
+      ]
+    },
+    {
+      "id": "sh-03",
+      "level": 1,
+      "topic": "progress",
+      "ko": "로그인 기능은 개발 완료했습니다.",
+      "pron": "[로그인 기능은 개발 왈료핻씀니다]",
+      "vi": "Chức năng đăng nhập đã phát triển xong.",
+      "notes": [
+        "완료 → [왈료]: ㄴ+ㄹ đọc thành ㄹㄹ (유음화).",
+        "했습니다 → [핻씀니다]: patchim ㅆ đọc như ㄷ, ㅂ+ㄴ → ㅁ+ㄴ."
+      ]
+    },
+    {
+      "id": "sh-04",
+      "level": 1,
+      "topic": "progress",
+      "ko": "현재 테스트 진행 중입니다.",
+      "pron": "[현재 테스트 진행 중임니다]",
+      "vi": "Hiện đang test ạ.",
+      "notes": [
+        "중입니다 → [중임니다]: ㅂ trước ㄴ đọc thành ㅁ."
+      ]
+    },
+    {
+      "id": "sh-05",
+      "level": 1,
+      "topic": "bug",
+      "ko": "오늘 중으로 수정하겠습니다.",
+      "pron": "[오늘 중으로 수정하겓씀니다]",
+      "vi": "Trong hôm nay tôi sẽ sửa.",
+      "notes": [
+        "겠습니다 → [겓씀니다]: patchim ㅆ đọc như ㄷ, kéo ㅅ phía sau thành ㅆ.",
+        "오늘 중으로: trong (phạm vi) hôm nay; nói \"오늘까지\" cũng được."
+      ]
+    },
+    {
+      "id": "sh-06",
+      "level": 1,
+      "topic": "progress",
+      "ko": "수정 사항을 반영했습니다.",
+      "pron": "[수정 사항을 바녕핻씀니다]",
+      "vi": "Đã áp dụng phần chỉnh sửa.",
+      "notes": [
+        "반영 → [바녕]: ㄴ nối sang nguyên âm phía sau (연음).",
+        "했습니다 → [핻씀니다]: patchim ㅆ đọc như ㄷ, ㅂ+ㄴ → ㅁ+ㄴ."
+      ]
+    },
+    {
+      "id": "sh-07",
+      "level": 1,
+      "topic": "bug",
+      "ko": "해당 오류는 재현되지 않습니다.",
+      "pron": "[해당 오류는 재현되지 안씀니다]",
+      "vi": "Lỗi đó không tái hiện được.",
+      "notes": [
+        "않습니다 → [안씀니다]: ㅎ câm, ㅅ đọc căng thành ㅆ."
+      ]
+    },
+    {
+      "id": "sh-08",
+      "level": 1,
+      "topic": "bug",
+      "ko": "원인을 파악하고 있습니다.",
+      "pron": "[워니늘 파아카고 읻씀니다]",
+      "vi": "Tôi đang tìm nguyên nhân.",
+      "notes": [
+        "원인을 → [워니늘]: nối âm liên tiếp, đừng ngắt từng chữ.",
+        "파악하고 → [파아카고]: ㄱ+ㅎ → ㅋ (격음화).",
+        "있습니다 → [읻씀니다]."
+      ]
+    },
+    {
+      "id": "sh-09",
+      "level": 1,
+      "topic": "progress",
+      "ko": "개발 서버에 배포했습니다.",
+      "pron": "[개발 서버에 배포핻씀니다]",
+      "vi": "Đã deploy lên server dev.",
+      "notes": [
+        "했습니다 → [핻씀니다]: patchim ㅆ đọc như ㄷ, ㅂ+ㄴ → ㅁ+ㄴ."
+      ]
+    },
+    {
+      "id": "sh-10",
+      "level": 2,
+      "topic": "bug",
+      "ko": "로그를 확인해 보니 타임아웃이 발생했습니다.",
+      "pron": "[로그를 화긴해 보니 타이마우시 발쌩핻씀니다]",
+      "vi": "Xem log thì thấy bị timeout.",
+      "notes": [
+        "타임아웃이 → [타이마우시]: patchim ㅅ nối sang 이 và đọc là ㅅ.",
+        "발생 → [발쌩]: từ Hán, ㄹ + ㅅ → ㅆ (경음화).",
+        "-아/어 보니: làm thử rồi mới phát hiện ra."
+      ]
+    },
+    {
+      "id": "sh-11",
+      "level": 2,
+      "topic": "schedule",
+      "ko": "일정이 조금 지연될 것 같습니다.",
+      "pron": "[일쩡이 조금 지연될 껃 갇씀니다]",
+      "vi": "Có vẻ lịch sẽ chậm một chút.",
+      "notes": [
+        "일정 → [일쩡]: từ Hán, ㄹ + ㅈ → ㅉ.",
+        "-(으)ㄹ 것 → [껃]: sau đuôi -ㄹ, ㄱ đọc căng.",
+        "같습니다 → [갇씀니다]."
+      ]
+    },
+    {
+      "id": "sh-12",
+      "level": 1,
+      "topic": "progress",
+      "ko": "내일까지 공유드리겠습니다.",
+      "pron": "[내일까지 공유드리겓씀니다]",
+      "vi": "Đến mai tôi sẽ chia sẻ ạ.",
+      "notes": [
+        "겠습니다 → [겓씀니다]: patchim ㅆ đọc như ㄷ, kéo ㅅ phía sau thành ㅆ.",
+        "공유드리다: chia sẻ (khiêm nhường), rất hay dùng với khách."
+      ]
+    },
+    {
+      "id": "sh-13",
+      "level": 2,
+      "topic": "request",
+      "ko": "관련 자료를 보내 주시면 감사하겠습니다.",
+      "pron": "[괄련 자료를 보내 주시면 감사하겓씀니다]",
+      "vi": "Nếu anh/chị gửi tài liệu liên quan thì tôi rất cảm ơn.",
+      "notes": [
+        "관련 → [괄련]: ㄴ+ㄹ → ㄹㄹ (유음화).",
+        "-아/어 주시면 감사하겠습니다: cách nhờ vả lịch sự, an toàn trong email và họp."
+      ]
+    },
+    {
+      "id": "sh-14",
+      "level": 1,
+      "topic": "progress",
+      "ko": "코드 리뷰 요청드렸습니다.",
+      "pron": "[코드 리뷰 요청드렫씀니다]",
+      "vi": "Tôi đã gửi yêu cầu review code.",
+      "notes": [
+        "드렸습니다 → [드렫씀니다]."
+      ]
+    },
+    {
+      "id": "sh-15",
+      "level": 2,
+      "topic": "progress",
+      "ko": "입력값 검증 로직을 추가했습니다.",
+      "pron": "[임녁깝 검증 로지글 추가핻씀니다]",
+      "vi": "Đã thêm logic kiểm tra giá trị nhập.",
+      "notes": [
+        "입력 → [임녁]: ㅂ+ㄹ → ㅁ+ㄴ (비음화).",
+        "값 → [깝]: trong từ ghép, ㄱ đọc căng.",
+        "로직을 → [로지글] (연음)."
+      ]
+    },
+    {
+      "id": "sv-01",
+      "level": 1,
+      "topic": "survival",
+      "ko": "죄송하지만 다시 한 번 말씀해 주시겠어요?",
+      "pron": "[죄송하지만 다시 한 번 말씀해 주시게써요]",
+      "vi": "Xin lỗi, anh/chị nói lại giúp tôi được không ạ?",
+      "notes": [
+        "겠어요 → [게써요]: ㅆ nối sang nguyên âm phía sau.",
+        "Dùng khi nghe không kịp. Đừng giả vờ hiểu rồi trả lời sai."
+      ]
+    },
+    {
+      "id": "sv-02",
+      "level": 2,
+      "topic": "survival",
+      "ko": "조금만 천천히 말씀해 주시면 감사하겠습니다.",
+      "pron": "[조금만 천천히 말씀해 주시면 감사하겓씀니다]",
+      "vi": "Nếu anh/chị nói chậm lại một chút thì tốt quá ạ.",
+      "notes": [
+        "겠습니다 → [겓씀니다]: patchim ㅆ đọc như ㄷ, kéo ㅅ phía sau thành ㅆ.",
+        "Dùng khi khách nói nhanh."
+      ]
+    },
+    {
+      "id": "sv-03",
+      "level": 2,
+      "topic": "survival",
+      "ko": "제가 이해한 게 맞는지 확인드려도 될까요?",
+      "pron": "[제가 이해한 게 만는지 화긴드려도 될까요]",
+      "vi": "Cho tôi xác nhận lại xem mình hiểu có đúng không ạ?",
+      "notes": [
+        "맞는지 → [만는지]: ㅈ đọc như ㄷ, rồi ㄷ+ㄴ → ㄴ+ㄴ (비음화).",
+        "Nói câu này trước khi tóm tắt lại ý của khách."
+      ]
+    },
+    {
+      "id": "sv-04",
+      "level": 2,
+      "topic": "survival",
+      "ko": "정리하면, 금요일까지 배포가 필요하다는 말씀이시죠?",
+      "pron": "[정니하면 그묘일까지 배포가 피료하다는 말쓰미시죠]",
+      "vi": "Tóm lại, ý anh/chị là cần deploy trước thứ Sáu phải không ạ?",
+      "notes": [
+        "정리 → [정니]: ㅇ + ㄹ → ㄹ đọc thành ㄴ.",
+        "필요 → [피료], 금요일 → [그묘일] (연음).",
+        "Thay phần giữa bằng nội dung bạn hiểu: 정리하면, ~(이)라는/~다는 말씀이시죠?"
+      ]
+    },
+    {
+      "id": "sv-05",
+      "level": 1,
+      "topic": "survival",
+      "ko": "잠시만요, 확인해 보겠습니다.",
+      "pron": "[잠시만뇨 화긴해 보겓씀니다]",
+      "vi": "Chờ tôi một chút, để tôi kiểm tra.",
+      "notes": [
+        "잠시만요 → [잠시만뇨]: người Hàn thường chèn ㄴ trước 요.",
+        "Câu giờ khi cần tra cứu."
+      ]
+    },
+    {
+      "id": "sv-06",
+      "level": 2,
+      "topic": "survival",
+      "ko": "그 부분은 확인 후 다시 말씀드리겠습니다.",
+      "pron": "[그 부부는 화긴 후 다시 말씀드리겓씀니다]",
+      "vi": "Phần đó tôi kiểm tra rồi sẽ báo lại ạ.",
+      "notes": [
+        "부분은 → [부부는] (연음).",
+        "Dùng khi chưa chắc câu trả lời: an toàn hơn là đoán."
+      ]
+    },
+    {
+      "id": "sv-07",
+      "level": 2,
+      "topic": "survival",
+      "ko": "혹시 화면 공유해 주실 수 있을까요?",
+      "pron": "[혹씨 화면 공유해 주실 쑤 이쓸까요]",
+      "vi": "Anh/chị chia sẻ màn hình giúp tôi được không ạ?",
+      "notes": [
+        "혹시 → [혹씨]: ㅅ sau patchim ㄱ đọc căng.",
+        "-ㄹ 수 → [ㄹ 쑤]: sau đuôi -ㄹ, ㅅ đọc căng.",
+        "있을까요 → [이쓸까요]."
+      ]
+    },
+    {
+      "id": "sv-08",
+      "level": 1,
+      "topic": "survival",
+      "ko": "채팅으로 남겨 주시면 감사하겠습니다.",
+      "pron": "[채팅으로 남겨 주시면 감사하겓씀니다]",
+      "vi": "Anh/chị để lại qua chat giúp tôi ạ.",
+      "notes": [
+        "Dùng khi thông tin dài hoặc có nhiều con số, tên file, URL."
+      ]
+    },
+    {
+      "id": "sv-09",
+      "level": 1,
+      "topic": "survival",
+      "ko": "이건 한국어로 뭐라고 하나요?",
+      "pron": "[이건 한구거로 뭐라고 하나요]",
+      "vi": "Cái này tiếng Hàn gọi là gì ạ?",
+      "notes": [
+        "한국어 → [한구거] (연음).",
+        "Khi quên từ: chỉ vào màn hình hoặc nói từ tiếng Anh rồi hỏi câu này."
+      ]
+    },
+    {
+      "id": "sv-10",
+      "level": 1,
+      "topic": "survival",
+      "ko": "죄송합니다, 소리가 잘 안 들립니다.",
+      "pron": "[죄송함니다 소리가 잘 안 들림니다]",
+      "vi": "Xin lỗi, tôi nghe không rõ ạ.",
+      "notes": [
+        "-습니다 → [씀니다]: ㅅ sau patchim đọc căng thành ㅆ, ㅂ trước ㄴ đọc thành ㅁ (비음화).",
+        "Dùng khi họp online bị rè, mất tiếng."
+      ]
+    },
+    {
+      "id": "cs-01",
+      "level": 2,
+      "topic": "cushion",
+      "ko": "번거로우시겠지만 로그 파일을 한 번 더 보내 주시겠어요?",
+      "pron": "[번거로우시겓찌만 로그 파이를 한 번 더 보내 주시게써요]",
+      "vi": "Phiền anh/chị một chút, anh/chị gửi lại file log giúp tôi được không ạ?",
+      "notes": [
+        "번거로우시겠지만: \"chắc sẽ phiền anh/chị nhưng…\", đặt trước lời nhờ vả.",
+        "겠지만 → [겓찌만]: ㅈ sau ㄷ đọc căng."
+      ]
+    },
+    {
+      "id": "cs-02",
+      "level": 2,
+      "topic": "cushion",
+      "ko": "바쁘신 와중에 죄송하지만 잠시 통화 가능하실까요?",
+      "pron": "[바쁘신 와중에 죄송하지만 잠시 통화 가능하실까요]",
+      "vi": "Xin lỗi đã làm phiền lúc anh/chị đang bận, mình gọi điện một chút được không ạ?",
+      "notes": [
+        "바쁘신 와중에 죄송하지만: mở đầu lịch sự khi làm gián đoạn người khác."
+      ]
+    },
+    {
+      "id": "cs-03",
+      "level": 2,
+      "topic": "cushion",
+      "ko": "혹시 괜찮으시다면 내일 오전에 미팅할 수 있을까요?",
+      "pron": "[혹씨 괜차느시다면 내일 오저네 미팅할 쑤 이쓸까요]",
+      "vi": "Nếu anh/chị thấy được thì sáng mai mình họp được không ạ?",
+      "notes": [
+        "괜찮으시다면 → [괜차느시다면]: ㅎ câm.",
+        "혹시 괜찮으시다면: làm lời đề nghị mềm hơn, khách dễ từ chối mà không ngại."
+      ]
+    },
+    {
+      "id": "cs-04",
+      "level": 2,
+      "topic": "cushion",
+      "ko": "일정이 하루 늦어지는 점 양해 부탁드립니다.",
+      "pron": "[일쩡이 하루 느저지는 점 양해 부탁뜨림니다]",
+      "vi": "Mong anh/chị thông cảm vì lịch bị chậm một ngày.",
+      "notes": [
+        "부탁드립니다 → [부탁뜨림니다]: ㄷ sau patchim ㄱ đọc căng.",
+        "~는 점 양해 부탁드립니다: xin thông cảm về việc ~."
+      ]
+    },
+    {
+      "id": "cs-05",
+      "level": 1,
+      "topic": "cushion",
+      "ko": "수정 내용 확인 부탁드립니다.",
+      "pron": "[수정 내용 화긴 부탁뜨림니다]",
+      "vi": "Nhờ anh/chị kiểm tra nội dung đã sửa.",
+      "notes": [
+        "Câu kết thường gặp nhất trong email, Slack."
+      ]
+    },
+    {
+      "id": "cs-06",
+      "level": 2,
+      "topic": "cushion",
+      "ko": "말씀하신 부분은 오늘 중으로 반영하겠습니다.",
+      "pron": "[말씀하신 부부는 오늘 중으로 바녕하겓씀니다]",
+      "vi": "Phần anh/chị nói, tôi sẽ áp dụng trong hôm nay.",
+      "notes": [
+        "말씀하신 부분은: \"về phần anh/chị đã nói\" — cho khách thấy mình đã nghe."
+      ]
+    },
+    {
+      "id": "cs-07",
+      "level": 2,
+      "topic": "cushion",
+      "ko": "요청하신 내용은 검토 후 회신드리겠습니다.",
+      "pron": "[요청하신 내용은 검토 후 회신드리겓씀니다]",
+      "vi": "Nội dung anh/chị yêu cầu, tôi sẽ xem xét rồi phản hồi.",
+      "notes": [
+        "검토 후 회신드리겠습니다: chưa hứa ngay, cho mình thời gian xem lại."
+      ]
+    }
+  ]
+}

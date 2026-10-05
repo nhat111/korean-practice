@@ -149,7 +149,6 @@ function getPlayer(): HTMLAudioElement {
 async function playNatural(voice: NaturalVoice, text: string, rate: number): Promise<void> {
   stopSpeaking();
   const id = playId;
-  const audio = getPlayer();
   // fetch + blob (not audio.src = url) so the service worker can cache the
   // file for offline use without having to answer media range requests.
   const res = await fetch(audioUrl(voice, text));
@@ -157,12 +156,17 @@ async function playNatural(voice: NaturalVoice, text: string, rate: number): Pro
   const blob = await res.blob();
   if (id !== playId) return; // superseded or stopped meanwhile
   const url = URL.createObjectURL(blob);
+  return playOnPlayer(url, rate).finally(() => URL.revokeObjectURL(url));
+}
+
+/** Plays `url` on the shared (iOS-unlocked) element; rejects if playback fails. */
+function playOnPlayer(url: string, rate: number): Promise<void> {
+  const audio = getPlayer();
   return new Promise<void>((resolve, reject) => {
     const done = (err?: unknown) => {
       audio.removeEventListener('ended', onEnd);
       audio.removeEventListener('pause', onEnd);
       audio.removeEventListener('error', onError);
-      URL.revokeObjectURL(url);
       if (err === undefined) resolve();
       else reject(err);
     };
@@ -177,6 +181,16 @@ async function playNatural(voice: NaturalVoice, text: string, rate: number): Pro
     audio.playbackRate = rate;
     audio.play().catch((e: unknown) => done(e ?? new Error('play failed')));
   });
+}
+
+/**
+ * Plays a recording (object URL) at normal speed on the same element as the
+ * model audio, so "model → mine → model" works without extra taps on iOS.
+ * Resolves when playback ends, fails or is stopped.
+ */
+export function playRecording(url: string): Promise<void> {
+  stopSpeaking();
+  return playOnPlayer(url, 1).catch(() => undefined);
 }
 
 export function stopSpeaking(): void {

@@ -1,12 +1,24 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ContentGate } from '../components/ContentGate';
 import { GrammarNotes, GrammarSentence } from '../components/GrammarNotes';
 import { SpeakButton } from '../components/SpeakButton';
+import { ComparePlayback, MicHelp, RecordControl } from '../components/SpeakPractice';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
+import { srsKey } from '../practice/decks';
+import { speakKorean, stopSpeaking } from '../speech';
+import { isRecordingSupported, useRecorder } from '../speaking/recorder';
 import { isDue, review, todayKey, type CardState, type Grade } from '../srs/sm2';
-import { saveCard, useProgress, type Progress } from '../storage/progress';
+import { usePrefs } from '../storage/prefs';
+import { saveCard, saveReview, useProgress, type Progress } from '../storage/progress';
 import type { VocabItem } from '../types';
+
+/** Read: Korean → meaning. Speak: meaning → say it in Korean (separate SRS schedule). */
+type CardMode = 'read' | 'speak';
+
+function cardState(progress: Progress, mode: CardMode, id: string): CardState | undefined {
+  return mode === 'read' ? progress.cards[id] : progress.srs[srsKey.vocabSpeak(id)];
+}
 
 const NEW_PER_SESSION = 10;
 
@@ -20,6 +32,7 @@ const GRADES: { grade: Grade; label: string; className: string }[] = [
 export function FlashcardsPage() {
   const state = useContent('vocab');
   const [tag, setTag] = useState('');
+  const [mode, setMode] = useState<CardMode>('read');
 
   return (
     <div className="stack">
@@ -30,6 +43,20 @@ export function FlashcardsPage() {
           const filtered = tag ? items.filter((v) => v.tags.includes(tag)) : items;
           return (
             <>
+              <div className="segmented" role="tablist">
+                {(['read', 'speak'] as const).map((m) => (
+                  <button
+                    key={m}
+                    type="button"
+                    role="tab"
+                    aria-selected={mode === m}
+                    className={mode === m ? 'active' : ''}
+                    onClick={() => setMode(m)}
+                  >
+                    {m === 'read' ? vi.flashcards.modeRead : vi.flashcards.modeSpeak}
+                  </button>
+                ))}
+              </div>
               {tags.length > 1 && (
                 <select
                   className="select"
@@ -46,7 +73,7 @@ export function FlashcardsPage() {
                 </select>
               )}
               {/* Remount the session when the filter changes. */}
-              <FlashcardSession key={tag} items={filtered} />
+              <FlashcardSession key={`${mode}:${tag}`} items={filtered} mode={mode} />
             </>
           );
         }}
@@ -56,41 +83,45 @@ export function FlashcardsPage() {
 }
 
 /** Due cards first (oldest due date first), then up to `limit` new cards. */
-function buildQueue(items: VocabItem[], progress: Progress, today: string, limit: number): string[] {
+function buildQueue(items: VocabItem[], progress: Progress, mode: CardMode, today: string, limit: number): string[] {
+  const card = (id: string) => cardState(progress, mode, id);
   const due = items
-    .filter((v) => isDue(progress.cards[v.id], today))
-    .sort((a, b) => progress.cards[a.id].due.localeCompare(progress.cards[b.id].due))
+    .filter((v) => isDue(card(v.id), today))
+    .sort((a, b) => (card(a.id)?.due ?? '').localeCompare(card(b.id)?.due ?? ''))
     .map((v) => v.id);
   const fresh = items
-    .filter((v) => !progress.cards[v.id])
+    .filter((v) => !card(v.id))
     .slice(0, limit)
     .map((v) => v.id);
   return [...due, ...fresh];
 }
 
-function FlashcardSession({ items }: { items: VocabItem[] }) {
+function FlashcardSession({ items, mode }: { items: VocabItem[]; mode: CardMode }) {
   const progress = useProgress();
   const today = todayKey();
   // The queue is fixed when the session starts so cards don't jump around
   // while progress updates.
-  const [queue, setQueue] = useState(() => buildQueue(items, progress, today, NEW_PER_SESSION));
+  const [queue, setQueue] = useState(() => buildQueue(items, progress, mode, today, NEW_PER_SESSION));
   const [flipped, setFlipped] = useState(false);
 
+  const card = (id: string) => cardState(progress, mode, id);
   const byId = new Map(items.map((v) => [v.id, v]));
-  const dueCount = items.filter((v) => isDue(progress.cards[v.id], today)).length;
-  const newCount = items.filter((v) => !progress.cards[v.id]).length;
+  const dueCount = items.filter((v) => isDue(card(v.id), today)).length;
+  const newCount = items.filter((v) => !card(v.id)).length;
   const current = queue.length > 0 ? byId.get(queue[0]) : undefined;
 
   function grade(g: Grade) {
     if (!current) return;
-    saveCard(current.id, review(progress.cards[current.id], g, today));
+    const next = review(card(current.id), g, today);
+    if (mode === 'read') saveCard(current.id, next);
+    else saveReview(srsKey.vocabSpeak(current.id), next);
     // Forgotten cards come back at the end of this session.
     setQueue((q) => (g < 3 ? [...q.slice(1), q[0]] : q.slice(1)));
     setFlipped(false);
   }
 
   function learnMore() {
-    setQueue(buildQueue(items, progress, today, NEW_PER_SESSION));
+    setQueue(buildQueue(items, progress, mode, today, NEW_PER_SESSION));
   }
 
   return (
@@ -113,13 +144,14 @@ function FlashcardSession({ items }: { items: VocabItem[] }) {
         </section>
       ) : (
         <>
-          <Flashcard item={current} flipped={flipped} onFlip={() => setFlipped(true)} />
+          <Flashcard item={current} flipped={flipped} mode={mode} onFlip={() => setFlipped(true)} />
+          {mode === 'speak' && <SpeakTools key={current.id} item={current} flipped={flipped} />}
           {flipped && (
             <div className="grades">
               {GRADES.map(({ grade: g, label, className }) => (
                 <button key={g} type="button" className={className} onClick={() => grade(g)}>
                   <span>{label}</span>
-                  <small>{vi.flashcards.nextReview(preview(progress.cards[current.id], g, today))}</small>
+                  <small>{vi.flashcards.nextReview(preview(card(current.id), g, today))}</small>
                 </button>
               ))}
             </div>
@@ -134,7 +166,19 @@ function preview(card: CardState | undefined, g: Grade, today: string): number {
   return review(card, g, today).interval;
 }
 
-function Flashcard({ item, flipped, onFlip }: { item: VocabItem; flipped: boolean; onFlip: () => void }) {
+function Flashcard({
+  item,
+  flipped,
+  mode,
+  onFlip,
+}: {
+  item: VocabItem;
+  flipped: boolean;
+  mode: CardMode;
+  onFlip: () => void;
+}) {
+  const { showPron } = usePrefs();
+  const speak = mode === 'speak';
   return (
     <div
       className={flipped ? 'flashcard flipped' : 'flashcard'}
@@ -149,16 +193,42 @@ function Flashcard({ item, flipped, onFlip }: { item: VocabItem; flipped: boolea
       }}
     >
       <div className="flashcard-front">
-        <p lang="ko" className="flashcard-word">
-          {item.ko}
-        </p>
-        <SpeakButton text={item.ko} />
-        {!flipped && <p className="muted">{vi.flashcards.tapToFlip}</p>}
+        {speak && !flipped ? (
+          <>
+            <p className="flashcard-word flashcard-word--vi">{item.vi}</p>
+            {item.type && <span className="badge">{vi.flashcards.type[item.type]}</span>}
+            <p className="muted">{vi.flashcards.speakPrompt}</p>
+          </>
+        ) : (
+          <>
+            <p lang="ko" className="flashcard-word">
+              {item.ko}
+            </p>
+            <SpeakButton text={item.ko} />
+            {!flipped && <p className="muted">{vi.flashcards.tapToFlip}</p>}
+          </>
+        )}
       </div>
       {flipped && (
         <div className="flashcard-back stack-sm">
-          {item.romanization && <p className="muted">[{item.romanization}]</p>}
-          <p className="flashcard-meaning">{item.vi}</p>
+          {showPron && (item.pron || item.romanization) && (
+            <p className="muted" lang="ko">
+              {item.pron && <span className="pron">{item.pron}</span>} {item.romanization && `[${item.romanization}]`}
+            </p>
+          )}
+          <p className="flashcard-meaning">
+            {item.vi}
+            {item.type && <span className="badge type-badge">{vi.flashcards.type[item.type]}</span>}
+          </p>
+          {item.collocation && (
+            <div className="ko-line">
+              <span className="muted small">{vi.flashcards.collocation}:</span>
+              <p lang="ko" className="ko">
+                {item.collocation}
+              </p>
+              <SpeakButton text={item.collocation} small />
+            </div>
+          )}
           <div className="example">
             <span className="muted small">{vi.flashcards.example}</span>
             <div className="ko-line">
@@ -172,6 +242,28 @@ function Flashcard({ item, flipped, onFlip }: { item: VocabItem; flipped: boolea
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+/** Speaking mode: record the answer before flipping, then compare with the model. */
+function SpeakTools({ item, flipped }: { item: VocabItem; flipped: boolean }) {
+  const recorder = useRecorder();
+  const ready = recorder.url !== null && recorder.status === 'idle';
+
+  // Read the answer aloud when the card is turned over.
+  useEffect(() => {
+    if (flipped) void speakKorean(item.ko);
+    return stopSpeaking;
+  }, [flipped, item.ko]);
+
+  if (!isRecordingSupported()) return null;
+  return (
+    <div className="stack-sm">
+      {!flipped && <RecordControl recorder={recorder} onStart={stopSpeaking} />}
+      {recorder.error && <p className="error">{recorder.error}</p>}
+      {recorder.errorKind === 'denied' && <MicHelp />}
+      {flipped && ready && <ComparePlayback ko={item.ko} url={recorder.url} />}
     </div>
   );
 }

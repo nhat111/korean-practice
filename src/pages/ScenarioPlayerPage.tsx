@@ -1,16 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router';
 import { ComparisonView } from '../components/ComparisonView';
 import { ContentGate } from '../components/ContentGate';
+import { Icon } from '../components/Icon';
 import { KoreanLine } from '../components/SpeakButton';
 import { VoiceAnswer } from '../components/VoiceAnswer';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
+import { gradeFor, srsKey } from '../practice/decks';
 import { isSpeechSupported, speakKorean, stopSpeaking } from '../speech';
 import { PASS_SCORE, type Comparison } from '../speaking/compare';
 import { isRecognitionSupported } from '../speaking/recognition';
 import { isRecordingSupported } from '../speaking/recorder';
-import { saveScenarioResult, saveSpeakingAttempt } from '../storage/progress';
+import { review, todayKey } from '../srs/sm2';
+import { ANSWER_TIMERS, setAnswerTimer, usePrefs } from '../storage/prefs';
+import {
+  getProgressSnapshot,
+  saveReview,
+  saveScenarioResult,
+  saveSpeakingAttempt,
+  type SelfRating,
+} from '../storage/progress';
 import type { Scenario, ScenarioChoice } from '../types';
 
 export function ScenarioPlayerPage() {
@@ -46,14 +56,31 @@ interface TurnRecord {
 /** Answer submitted for the current turn, waiting for "next". */
 type Pending =
   | { kind: 'choice'; index: number }
-  | { kind: 'free'; text: string; selfCorrect: boolean | null }
-  | { kind: 'voice'; text: string; comparison: Comparison | null; selfCorrect: boolean | null };
+  | { kind: 'free'; text: string; rating: SelfRating | null }
+  | {
+      kind: 'voice';
+      text: string;
+      comparison: Comparison | null;
+      rating: SelfRating | null;
+      /** No answer before the countdown ended. */
+      timedOut?: boolean;
+    };
 
 const MODE_LABELS: Record<Mode, string> = {
   choice: vi.scenarios.modeChoice,
   free: vi.scenarios.modeFree,
   voice: vi.speaking.modeVoice,
 };
+
+const RATINGS: { value: SelfRating; className: string }[] = [
+  { value: 'bad', className: 'btn--bad' },
+  { value: 'ok', className: 'btn--warn' },
+  { value: 'good', className: 'btn--ok' },
+];
+
+function ratingFromScore(score: number): SelfRating | null {
+  return score >= PASS_SCORE ? 'good' : null;
+}
 
 function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
   const [records, setRecords] = useState<TurnRecord[]>([]);
@@ -62,6 +89,11 @@ function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
   const [freeText, setFreeText] = useState('');
   const [pending, setPending] = useState<Pending | null>(null);
   const [voiceOn, setVoiceOn] = useState(false);
+  const { answerTimer } = usePrefs();
+  // Countdown: the turn it runs for (starts after the client line is read),
+  // and whether the learner already started answering.
+  const [timerTurn, setTimerTurn] = useState<number | null>(null);
+  const [answeringTurn, setAnsweringTurn] = useState<number | null>(null);
 
   const canAnswerByVoice = isRecognitionSupported() || isRecordingSupported();
   const canRoleplay = isSpeechSupported() && canAnswerByVoice;
@@ -72,11 +104,19 @@ function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
   const turnIndex = records.length;
   const finished = turnIndex >= total;
   const turn = finished ? null : scenario.turns[turnIndex];
+  const timed = mode === 'voice' && answerTimer > 0;
 
-  // Voice roleplay: the client speaks each new line aloud.
+  // Voice roleplay: the client speaks each new line aloud, then the countdown starts.
   const clientLine = turn?.client;
   useEffect(() => {
-    if (voiceOn && clientLine) void speakKorean(clientLine);
+    if (!clientLine) return;
+    let active = true;
+    const startTimer = () => active && setTimerTurn(turnIndex);
+    if (voiceOn) void speakKorean(clientLine).then(startTimer);
+    else startTimer();
+    return () => {
+      active = false;
+    };
   }, [voiceOn, clientLine, turnIndex]);
   useEffect(() => stopSpeaking, []);
 
@@ -87,20 +127,28 @@ function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
     if (!on) stopSpeaking();
   }
 
+  function startContinuous() {
+    if (answerTimer === 0) setAnswerTimer(15);
+    setMode('voice');
+    if (!voiceOn) setVoiceOn(true);
+  }
+
   function finishTurn(p: Pending, t: Scenario['turns'][number]) {
     if (p.kind === 'choice') {
       goNext({ answer: t.choices[p.index].ko, correct: t.choices[p.index].correct });
       return;
     }
-    const correct = p.selfCorrect === true;
+    const rating = p.rating ?? 'bad';
+    const correct = rating !== 'bad';
+    const key = srsKey.scenario(scenario.id, turnIndex);
+    saveReview(key, review(getProgressSnapshot().srs[key], gradeFor(rating), todayKey()));
     if (p.kind === 'voice') {
       saveSpeakingAttempt({
         mode: 'roleplay',
-        source: `scenario:${scenario.id}:${turnIndex}`,
+        source: key,
         target: t.modelAnswer,
-        ...(p.comparison
-          ? { transcript: p.text, score: p.comparison.score }
-          : { selfRating: correct ? 'good' : 'bad' }),
+        ...(p.comparison ? { transcript: p.text, score: p.comparison.score } : {}),
+        selfRating: rating,
       });
     }
     goNext({ answer: p.text, correct, recorded: p.kind === 'voice' && !p.comparison });
@@ -118,6 +166,8 @@ function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
   }
 
   function restart() {
+    setTimerTurn(null);
+    setAnsweringTurn(null);
     setRecords([]);
     setPending(null);
     setFreeText('');
@@ -135,16 +185,24 @@ function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
         </p>
         <p className="muted">{scenario.description}</p>
         {canRoleplay && !finished && (
-          <button
-            type="button"
-            className={voiceOn ? 'btn btn--ok voice-toggle' : 'btn btn--ghost voice-toggle'}
-            aria-pressed={voiceOn}
-            onClick={toggleVoice}
-          >
-            {vi.speaking.voiceRoleplay}
-          </button>
+          <div className="row">
+            <button
+              type="button"
+              className={voiceOn ? 'btn btn--ok voice-toggle' : 'btn btn--ghost voice-toggle'}
+              aria-pressed={voiceOn}
+              onClick={toggleVoice}
+            >
+              {vi.speaking.voiceRoleplay}
+            </button>
+            {!(voiceOn && timed) && (
+              <button type="button" className="btn btn--ghost voice-toggle" onClick={startContinuous}>
+                {vi.scenarioSpeak.continuous}
+              </button>
+            )}
+          </div>
         )}
         {voiceOn && !finished && <p className="muted small">{vi.speaking.voiceRoleplayOn}</p>}
+        {!voiceOn && canRoleplay && !finished && <p className="muted small">{vi.scenarioSpeak.continuousHelp}</p>}
       </header>
 
       {/* Conversation so far */}
@@ -195,7 +253,26 @@ function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
                 ))}
               </div>
 
-              {mode === 'voice' ? null : mode === 'choice' ? (
+              {mode === 'voice' ? (
+                <>
+                  <TimerChoice />
+                  {timed && timerTurn === turnIndex && answeringTurn !== turnIndex && (
+                    <Countdown
+                      key={turnIndex}
+                      seconds={answerTimer}
+                      onTimeout={() =>
+                        setPending({
+                          kind: 'voice',
+                          text: vi.scenarioSpeak.timedOut,
+                          comparison: null,
+                          rating: null,
+                          timedOut: true,
+                        })
+                      }
+                    />
+                  )}
+                </>
+              ) : mode === 'choice' ? (
                 <div className="choices">
                   {turn.choices.map((c, i) => (
                     <button
@@ -215,7 +292,7 @@ function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
                   onSubmit={(e) => {
                     e.preventDefault();
                     if (freeText.trim()) {
-                      setPending({ kind: 'free', text: freeText.trim(), selfCorrect: null });
+                      setPending({ kind: 'free', text: freeText.trim(), rating: null });
                     }
                   }}
                 >
@@ -240,12 +317,13 @@ function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
               key={turnIndex}
               modelAnswer={turn.modelAnswer}
               answered={pending !== null}
+              onStart={() => setAnsweringTurn(turnIndex)}
               onResult={(text, comparison) =>
                 setPending({
                   kind: 'voice',
                   text,
                   comparison,
-                  selfCorrect: comparison ? comparison.score >= PASS_SCORE : null,
+                  rating: comparison ? ratingFromScore(comparison.score) : null,
                 })
               }
             />
@@ -255,8 +333,17 @@ function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
             <ChoiceFeedback choices={turn.choices} selected={pending.index} />
           )}
 
+          {pending !== null && pending.kind !== 'choice' && (
+            <div className="model">
+              <h3>{vi.scenarios.modelAnswer}</h3>
+              <KoreanLine text={turn.modelAnswer} />
+              <p className="muted">{turn.modelAnswerVi}</p>
+            </div>
+          )}
+
           {(pending?.kind === 'free' || pending?.kind === 'voice') && (
             <div className="stack-sm">
+              {pending.kind === 'voice' && pending.timedOut && <p className="hint">⏱ {vi.scenarioSpeak.timeUp}</p>}
               {pending.kind === 'voice' && pending.comparison ? (
                 <ComparisonView result={pending.comparison} />
               ) : pending.kind === 'voice' ? null : (
@@ -266,26 +353,23 @@ function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
                 </div>
               )}
               <p className="muted">{vi.scenarios.selfAssess}</p>
-              <div className="row">
-                <button
-                  type="button"
-                  className={pending.selfCorrect === true ? 'btn btn--ok' : 'btn btn--ghost'}
-                  onClick={() => setPending({ ...pending, selfCorrect: true })}
-                >
-                  ✓ {vi.scenarios.selfGood}
-                </button>
-                <button
-                  type="button"
-                  className={pending.selfCorrect === false ? 'btn btn--bad' : 'btn btn--ghost'}
-                  onClick={() => setPending({ ...pending, selfCorrect: false })}
-                >
-                  ✗ {vi.scenarios.selfBad}
-                </button>
+              <div className="row rate-row">
+                {RATINGS.map((r) => (
+                  <button
+                    key={r.value}
+                    type="button"
+                    className={pending.rating === r.value ? `btn ${r.className}` : 'btn btn--ghost'}
+                    aria-pressed={pending.rating === r.value}
+                    onClick={() => setPending({ ...pending, rating: r.value })}
+                  >
+                    {vi.practice.rate[r.value]}
+                  </button>
+                ))}
               </div>
             </div>
           )}
 
-          {pending !== null && (
+          {pending?.kind === 'choice' && (
             <div className="model">
               <h3>{vi.scenarios.modelAnswer}</h3>
               <KoreanLine text={turn.modelAnswer} />
@@ -297,7 +381,7 @@ function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
             <button
               type="button"
               className="btn"
-              disabled={pending.kind !== 'choice' && pending.selfCorrect === null}
+              disabled={pending.kind !== 'choice' && pending.rating === null}
               onClick={() => finishTurn(pending, turn)}
             >
               {turnIndex + 1 === total ? vi.common.finish : vi.common.next}
@@ -321,6 +405,55 @@ function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
         </section>
       )}
     </>
+  );
+}
+
+/** Off / 10 / 15 / 20 seconds to answer (saved in prefs). */
+function TimerChoice() {
+  const { answerTimer } = usePrefs();
+  return (
+    <div className="chips" role="group" aria-label={vi.scenarioSpeak.timer}>
+      <span className="muted small">
+        <Icon name="timer" size={16} /> {vi.scenarioSpeak.timer}
+      </span>
+      {ANSWER_TIMERS.map((t) => (
+        <button
+          key={t}
+          type="button"
+          className={answerTimer === t ? 'chip chip--on' : 'chip'}
+          aria-pressed={answerTimer === t}
+          onClick={() => setAnswerTimer(t)}
+        >
+          {t === 0 ? vi.scenarioSpeak.timerOff : vi.scenarioSpeak.timerValue(t)}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+function Countdown({ seconds, onTimeout }: { seconds: number; onTimeout: () => void }) {
+  const [left, setLeft] = useState(seconds);
+  const timeoutRef = useRef(onTimeout);
+  useEffect(() => {
+    timeoutRef.current = onTimeout;
+  });
+  useEffect(() => {
+    const end = Date.now() + seconds * 1000;
+    const t = window.setInterval(() => {
+      const s = Math.max(0, Math.ceil((end - Date.now()) / 1000));
+      setLeft(s);
+      if (s === 0) {
+        window.clearInterval(t);
+        timeoutRef.current();
+      }
+    }, 200);
+    return () => window.clearInterval(t);
+  }, [seconds]);
+  return (
+    <div className={left <= 3 ? 'countdown countdown--low' : 'countdown'} role="timer" aria-live="off">
+      <div className="countdown-bar" style={{ width: `${(100 * left) / seconds}%` }} />
+      <span>{vi.scenarioSpeak.timeLeft(left)}</span>
+    </div>
   );
 }
 

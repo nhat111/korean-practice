@@ -18,6 +18,8 @@ export interface Comparison {
   score: number;
   model: Token[];
   spoken: Token[];
+  /** Model sentence per syllable, marked heard/missed. */
+  syllables: Syllable[];
 }
 
 const PUNCT = /[.,!?~…·"'“”‘’()[\]{}:;<>「」『』\-–—/\\]/g;
@@ -112,8 +114,30 @@ export function compareAnswer(model: string, spoken: string): Comparison {
     score: Math.round(100 * similarity(model, spoken)),
     model: modelTokens,
     spoken: spokenTokens,
+    syllables: syllableDiff(model, spoken),
   };
 }
 
 /** Score at or above which a spoken answer counts as correct. */
 export const PASS_SCORE = 70;
+
+export interface Syllable {
+  ch: string;
+  /** true = heard, false = missed, null = space/punctuation (not scored). */
+  ok: boolean | null;
+}
+
+/**
+ * The model sentence split into characters (Hangul syllables), each marked as
+ * heard or missed in the spoken text. Uses the same LCS as the score, so
+ * spacing and punctuation never count.
+ */
+export function syllableDiff(model: string, spoken: string): Syllable[] {
+  const display = [...model.normalize('NFC')];
+  const scored = display.flatMap((ch, i) => (PUNCT_OR_SPACE.test(ch) ? [] : [{ ch: ch.toLowerCase(), i }]));
+  const heard = chars(spoken).map((ch) => ({ ch, i: -1 }));
+  const matched = new Set(lcsPairs(scored, heard, (a, b) => a.ch === b.ch).map(([k]) => scored[k].i));
+  return display.map((ch, i) => ({ ch, ok: PUNCT_OR_SPACE.test(ch) ? null : matched.has(i) }));
+}
+
+const PUNCT_OR_SPACE = /^[\s.,!?~…·"'“”‘’()[\]{}:;<>「」『』\-–—/\\]$/;

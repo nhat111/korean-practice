@@ -1,5 +1,21 @@
 import { vi } from '../i18n/vi';
-import { PASS_SCORE, type Comparison, type Token } from '../speaking/compare';
+import { PASS_SCORE, type Comparison, type Syllable, type Token } from '../speaking/compare';
+
+function Syllables({ syllables }: { syllables: Syllable[] }) {
+  return (
+    <p lang="ko" className="syllables">
+      {syllables.map((s, i) =>
+        s.ok === null ? (
+          <span key={i}>{s.ch}</span>
+        ) : (
+          <span key={i} className={s.ok ? 'syl syl--ok' : 'syl syl--miss'}>
+            {s.ch}
+          </span>
+        ),
+      )}
+    </p>
+  );
+}
 
 function Tokens({ tokens }: { tokens: Token[] }) {
   return (
@@ -24,6 +40,11 @@ export function ComparisonView({ result, spokenLabel }: { result: Comparison; sp
       <span className={pass ? 'badge badge--ok score-badge' : 'badge badge--bad score-badge'}>
         {vi.speaking.score(result.score)}
       </span>
+      <div className="stack-xs">
+        <h3>{vi.speaking.bySyllable}</h3>
+        <Syllables syllables={result.syllables} />
+        <p className="muted small">{vi.speaking.bySyllableHelp}</p>
+      </div>
       <div className="stack-xs">
         <h3>{vi.speaking.model}</h3>
         <Tokens tokens={result.model} />

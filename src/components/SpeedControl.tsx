@@ -10,13 +10,13 @@ export function SpeedControl() {
     <div className="speed-row">
       <label className="speed">
         <span>
-          {vi.speaking.speed}: <strong>{rate.toFixed(1)}x</strong>
+          {vi.speaking.speed}: <strong>{Number(rate.toFixed(2))}x</strong>
         </span>
         <input
           type="range"
           min={MIN_RATE}
           max={MAX_RATE}
-          step={0.1}
+          step={0.05}
           value={rate}
           onChange={(e) => setSpeechRate(Number(e.target.value))}
         />

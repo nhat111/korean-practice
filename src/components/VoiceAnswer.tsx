@@ -1,9 +1,8 @@
 import { vi } from '../i18n/vi';
-import { isSpeechSupported, speakKorean } from '../speech';
 import { compareAnswer, type Comparison } from '../speaking/compare';
 import { isRecognitionSupported, recognitionUnsupportedMessage, useSpeechRecognition } from '../speaking/recognition';
-import { playAudio, useRecorder } from '../speaking/recorder';
-import { ListenButton, RecordButton } from './SpeakingDrill';
+import { useRecorder } from '../speaking/recorder';
+import { ComparePlayback, ListenButton, MicHelp, RecordControl } from './SpeakPractice';
 
 interface Props {
   modelAnswer: string;
@@ -11,6 +10,8 @@ interface Props {
   answered: boolean;
   /** `comparison` is null when the answer was only recorded (no recognition). */
   onResult: (text: string, comparison: Comparison | null) => void;
+  /** Called when the learner starts speaking (e.g. to pause a countdown). */
+  onStart?: () => void;
 }
 
 /**
@@ -21,7 +22,7 @@ export function VoiceAnswer(props: Props) {
   return isRecognitionSupported() ? <RecognizedAnswer {...props} /> : <RecordedAnswer {...props} />;
 }
 
-function RecognizedAnswer({ modelAnswer, answered, onResult }: Props) {
+function RecognizedAnswer({ modelAnswer, answered, onResult, onStart }: Props) {
   const recognition = useSpeechRecognition();
   return (
     <div className="stack-sm">
@@ -29,9 +30,10 @@ function RecognizedAnswer({ modelAnswer, answered, onResult }: Props) {
         recognition={recognition}
         again={answered}
         label={vi.speaking.voiceAnswer}
-        onStart={() =>
-          recognition.start((transcript) => onResult(transcript, compareAnswer(modelAnswer, transcript)))
-        }
+        onStart={() => {
+          onStart?.();
+          recognition.start((transcript) => onResult(transcript, compareAnswer(modelAnswer, transcript)));
+        }}
       />
       {recognition.status === 'listening' && (
         <p lang="ko" className="interim">
@@ -39,11 +41,12 @@ function RecognizedAnswer({ modelAnswer, answered, onResult }: Props) {
         </p>
       )}
       {recognition.error && <p className="error">{recognition.error}</p>}
+      {answered && <ComparePlayback ko={modelAnswer} url={null} />}
     </div>
   );
 }
 
-function RecordedAnswer({ modelAnswer, answered, onResult }: Props) {
+function RecordedAnswer({ modelAnswer, answered, onResult, onStart }: Props) {
   const recorder = useRecorder();
   const { url } = recorder;
   const ready = url !== null && recorder.status === 'idle';
@@ -53,39 +56,17 @@ function RecordedAnswer({ modelAnswer, answered, onResult }: Props) {
       {!answered && (
         <>
           <p className="muted small">{recognitionUnsupportedMessage()}</p>
-          <RecordButton recorder={recorder} />
+          <RecordControl recorder={recorder} onStart={onStart} />
         </>
       )}
-      {recorder.status === 'recording' && <p className="recording-dot">{vi.speaking.recording}</p>}
       {recorder.error && <p className="error">{recorder.error}</p>}
-      {ready && (
-        <div className="row">
-          <button type="button" className="btn btn--ghost" onClick={() => void playAudio(url)}>
-            {vi.speaking.playRecording}
-          </button>
-          {answered && isSpeechSupported() && (
-            <button
-              type="button"
-              className="btn btn--ghost"
-              onClick={async () => {
-                await speakKorean(modelAnswer);
-                await playAudio(url);
-              }}
-            >
-              {vi.speaking.playBoth}
-            </button>
-          )}
-          {!answered && (
-            <button
-              type="button"
-              className="btn"
-              onClick={() => onResult(vi.speaking.recordedAnswer, null)}
-            >
-              {vi.speaking.useRecording}
-            </button>
-          )}
-        </div>
+      {recorder.errorKind === 'denied' && <MicHelp />}
+      {ready && !answered && (
+        <button type="button" className="btn" onClick={() => onResult(vi.speaking.recordedAnswer, null)}>
+          {vi.speaking.useRecording}
+        </button>
       )}
+      {answered && <ComparePlayback ko={modelAnswer} url={ready ? url : null} />}
     </div>
   );
 }

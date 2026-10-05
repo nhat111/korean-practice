@@ -6,9 +6,21 @@ built for a Vietnamese Java developer at TOPIK 3. UI in Vietnamese, content in K
 - **Scenarios**: scripted client dialogues. Answer by choice, free text or voice.
 - **Emails**: fix a Korean email draft, then see the corrections explained.
 - **Flashcards**: 200+ IT and workplace words with SM-2 spaced repetition.
-- **Speaking**: shadowing (TTS at 0.7x-1x plus recording) and a pronunciation check
-  with speech recognition.
-- **Progress**: everything is stored in `localStorage` on the device.
+- **Speaking**: one shared core (`SpeakPractice`: tap or hold to record with a level meter,
+  model / mine / interleaved playback, 0.7x-1x model speed, self-rating into SM-2), used by:
+  - **Shadowing** (`shadowing.json`): sentences with their real pronunciation (`pron`,
+    e.g. `[화긴해 보겓씀니다]`), a "câu cứu nguy" survival deck and polite cushion phrases;
+    show-text or listen-only mode.
+  - **Pattern drills** (`patterns.json`): say a frame with new words; particles (은/는, 이/가,
+    을/를, 으로/로…) follow the batchim automatically (`src/speaking/josa.ts`).
+  - **Scenarios "Tự nói"** with an optional 10-20 s answer countdown, and **speaking
+    flashcards** (Vietnamese → say it in Korean).
+  - **Luyện 5 phút hôm nay**: 3 shadowing + 3 patterns + 1 survival + 1 scenario turn,
+    due items first; streak, lines spoken today and minutes recorded on the home page.
+  Speech recognition is an optional extra (syllable-level highlighting); everything works with
+  recording alone, including the iPhone Home Screen app.
+- **Progress**: everything is stored in `localStorage` on the device; Settings can export and
+  import it as a JSON file (iOS may clear site data).
 
 It is a static React + Vite + TypeScript site. It installs as a PWA and works offline. An
 **optional** Spring Boot backend in [`backend/`](backend/README.md) adds free AI
@@ -38,7 +50,8 @@ Microphone features need a secure context, which means `localhost` or HTTPS.
 
 ## Adding content
 
-Append items to `public/data/scenarios.json`, `emails.json` or `vocab.json` (types are in
+Append items to `public/data/scenarios.json`, `emails.json`, `vocab.json`, `shadowing.json`
+or `patterns.json` (types are in
 `src/types.ts`), then run `npm test`. No code changes are needed. Never rename an existing
 `id`, because saved progress is keyed by it. Invalid content fails `npm run check`, so it
 can't be deployed by accident.

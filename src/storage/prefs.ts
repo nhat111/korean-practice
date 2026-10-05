@@ -21,9 +21,23 @@ export interface Prefs {
   voiceURI: string;
   /** Lower pitch, to approximate a male voice when the device only has female ones. */
   deepVoice: boolean;
+  /** Show the actual pronunciation ([화긴]) and romanization under Korean lines. */
+  showPron: boolean;
+  /** Seconds to answer in scenario "Tự nói" mode; 0 = no countdown. */
+  answerTimer: AnswerTimer;
 }
 
-const DEFAULTS: Prefs = { speechRate: DEFAULT_RATE, voiceSource: 'male', voiceURI: '', deepVoice: false };
+export const ANSWER_TIMERS = [0, 10, 15, 20] as const;
+export type AnswerTimer = (typeof ANSWER_TIMERS)[number];
+
+const DEFAULTS: Prefs = {
+  speechRate: DEFAULT_RATE,
+  voiceSource: 'male',
+  voiceURI: '',
+  deepVoice: false,
+  showPron: true,
+  answerTimer: 0,
+};
 
 function clampRate(r: number): number {
   return Math.min(MAX_RATE, Math.max(MIN_RATE, r));
@@ -33,13 +47,15 @@ function read(): Prefs {
   try {
     const data: unknown = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if (typeof data === 'object' && data !== null) {
-      const { speechRate, voiceSource, voiceURI, deepVoice } = data as Record<string, unknown>;
+      const { speechRate, voiceSource, voiceURI, deepVoice, showPron, answerTimer } = data as Record<string, unknown>;
       return {
         speechRate:
           typeof speechRate === 'number' && Number.isFinite(speechRate) ? clampRate(speechRate) : DEFAULT_RATE,
         voiceSource: VOICE_SOURCES.find((v) => v === voiceSource) ?? DEFAULTS.voiceSource,
         voiceURI: typeof voiceURI === 'string' ? voiceURI : '',
         deepVoice: deepVoice === true,
+        showPron: showPron !== false,
+        answerTimer: ANSWER_TIMERS.find((t) => t === answerTimer) ?? DEFAULTS.answerTimer,
       };
     }
   } catch {
@@ -96,4 +112,12 @@ export function setVoiceURI(voiceURI: string): void {
 
 export function setDeepVoice(deepVoice: boolean): void {
   save({ ...current, deepVoice });
+}
+
+export function setShowPron(showPron: boolean): void {
+  save({ ...current, showPron });
+}
+
+export function setAnswerTimer(answerTimer: AnswerTimer): void {
+  save({ ...current, answerTimer });
 }

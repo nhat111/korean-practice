@@ -5,7 +5,17 @@ import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { SCENARIO_CATEGORIES } from './scenarioFilter';
-import { parseEmails, parseScenarios, parseSongs, parseVocab, type ParseResult } from './validate';
+import {
+  parseEmails,
+  parsePatterns,
+  parseScenarios,
+  parseShadowing,
+  parseSongs,
+  parseVocab,
+  type ParseResult,
+} from './validate';
+import { allFills } from '../patterns/fill';
+import { SHADOWING_TOPICS } from '../practice/decks';
 
 function load(name: string): unknown {
   return JSON.parse(readFileSync(resolve(process.cwd(), 'public/data', name), 'utf8'));
@@ -16,6 +26,8 @@ const files: [string, (data: unknown) => ParseResult<{ id: string }>][] = [
   ['emails.json', parseEmails],
   ['vocab.json', parseVocab],
   ['songs.json', parseSongs],
+  ['shadowing.json', parseShadowing],
+  ['patterns.json', parsePatterns],
 ];
 
 describe.each(files)('%s', (name, parse) => {
@@ -53,5 +65,29 @@ describe('vocab.json grammar notation', () => {
         .filter((p) => /[A-Za-zÀ-ỹ]{2,}/.test(p.replace(/\b[NAV]\b/g, ''))),
     );
     expect(bad).toEqual([]);
+  });
+});
+
+describe('shadowing.json', () => {
+  it('uses only the known topics (labels live in vi.shadowing.topics)', () => {
+    const { items } = parseShadowing(load('shadowing.json'));
+    const unknown = items.filter((s) => !(SHADOWING_TOPICS as readonly string[]).includes(s.topic));
+    expect(unknown.map((s) => `${s.id}: ${s.topic}`)).toEqual([]);
+  });
+  it('has no duplicate sentences', () => {
+    const { items } = parseShadowing(load('shadowing.json'));
+    expect(new Set(items.map((s) => s.ko)).size).toBe(items.length);
+  });
+  it('has a survival deck for the home page', () => {
+    const { items } = parseShadowing(load('shadowing.json'));
+    expect(items.some((s) => s.topic === 'survival')).toBe(true);
+  });
+});
+
+describe('patterns.json', () => {
+  it('fills every combination without leftover braces', () => {
+    const { items } = parsePatterns(load('patterns.json'));
+    const bad = items.flatMap((p) => allFills(p)).filter((f) => /[{}]/.test(f.ko + f.vi));
+    expect(bad.map((f) => f.ko)).toEqual([]);
   });
 });

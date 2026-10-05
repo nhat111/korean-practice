@@ -2,7 +2,7 @@
 // versioned key and exposed through a tiny store + React hook.
 
 import { useSyncExternalStore } from 'react';
-import type { CardState } from '../srs/sm2';
+import { todayKey, type CardState } from '../srs/sm2';
 
 const STORAGE_KEY = 'kp:progress:v1';
 
@@ -21,7 +21,7 @@ export interface EmailResult {
   lastDone: string;
 }
 
-export type SpeakingMode = 'shadowing' | 'check' | 'roleplay';
+export type SpeakingMode = 'shadowing' | 'check' | 'roleplay' | 'pattern';
 export type SelfRating = 'good' | 'ok' | 'bad';
 
 export interface SpeakingAttempt {
@@ -43,6 +43,19 @@ export interface SpeakingAttempt {
 /** Only the most recent attempts are kept to stay well under storage limits. */
 const MAX_SPEAKING_HISTORY = 300;
 
+/** Activity on one local day (for the streak and daily stats). */
+export interface DayStats {
+  /** Lines spoken (speaking attempts saved). */
+  spoken: number;
+  /** Flashcard reviews. */
+  reviews: number;
+  /** Total recording time in milliseconds. */
+  recordMs: number;
+}
+
+/** About a year of daily stats is kept. */
+const MAX_DAYS = 400;
+
 export interface Progress {
   version: 1;
   /** Flashcard SM-2 state keyed by VocabItem id. */
@@ -53,10 +66,17 @@ export interface Progress {
   emails: Record<string, EmailResult>;
   /** Newest first. Added after v1 shipped; older data reads as []. */
   speaking: SpeakingAttempt[];
+  /**
+   * SM-2 state for speaking drills, keyed "<type>:<id>" (see practice/decks.ts):
+   * shadowing, pattern, scenario turns, speaking flashcards. Added later; older data reads as {}.
+   */
+  srs: Record<string, CardState>;
+  /** Keyed by local date YYYY-MM-DD. Added later; older data reads as {}. */
+  daily: Record<string, DayStats>;
 }
 
 function emptyProgress(): Progress {
-  return { version: 1, cards: {}, scenarios: {}, emails: {}, speaking: [] };
+  return { version: 1, cards: {}, scenarios: {}, emails: {}, speaking: [], srs: {}, daily: {} };
 }
 
 function isRecord(v: unknown): v is Record<string, unknown> {
@@ -72,6 +92,8 @@ function parse(data: unknown): Progress | null {
     scenarios: isRecord(data.scenarios) ? (data.scenarios as Progress['scenarios']) : {},
     emails: isRecord(data.emails) ? (data.emails as Progress['emails']) : {},
     speaking: Array.isArray(data.speaking) ? (data.speaking as Progress['speaking']) : [],
+    srs: isRecord(data.srs) ? (data.srs as Progress['srs']) : {},
+    daily: isRecord(data.daily) ? (data.daily as Progress['daily']) : {},
   };
 }
 
@@ -107,12 +129,43 @@ function update(fn: (p: Progress) => Progress): void {
   listeners.forEach((l) => l());
 }
 
+/** Current progress outside React (e.g. inside an event handler). */
+export function getProgressSnapshot(): Progress {
+  return current;
+}
+
 export function useProgress(): Progress {
   return useSyncExternalStore(subscribe, () => current);
 }
 
+/** Adds to today's stats; missing fields of older entries count as 0. */
+function bumpDay(p: Progress, add: Partial<DayStats>): Progress['daily'] {
+  const day = todayKey();
+  const prev = p.daily[day];
+  const next: DayStats = {
+    spoken: (prev?.spoken ?? 0) + (add.spoken ?? 0),
+    reviews: (prev?.reviews ?? 0) + (add.reviews ?? 0),
+    recordMs: (prev?.recordMs ?? 0) + (add.recordMs ?? 0),
+  };
+  const daily = { ...p.daily, [day]: next };
+  const days = Object.keys(daily).sort();
+  for (const old of days.slice(0, Math.max(0, days.length - MAX_DAYS))) delete daily[old];
+  return daily;
+}
+
 export function saveCard(id: string, state: CardState): void {
-  update((p) => ({ ...p, cards: { ...p.cards, [id]: state } }));
+  update((p) => ({ ...p, cards: { ...p.cards, [id]: state }, daily: bumpDay(p, { reviews: 1 }) }));
+}
+
+/** Saves the SM-2 state of a speaking drill item (key from `srsKey`). */
+export function saveReview(key: string, state: CardState): void {
+  update((p) => ({ ...p, srs: { ...p.srs, [key]: state }, daily: bumpDay(p, { reviews: 1 }) }));
+}
+
+/** Adds a finished recording's length to today's stats. */
+export function addRecordingTime(ms: number): void {
+  if (!(ms > 0)) return;
+  update((p) => ({ ...p, daily: bumpDay(p, { recordMs: Math.round(ms) }) }));
 }
 
 export function saveScenarioResult(id: string, score: number, totalTurns: number): void {
@@ -145,6 +198,7 @@ export function saveSpeakingAttempt(attempt: Omit<SpeakingAttempt, 'at'>): void 
       0,
       MAX_SPEAKING_HISTORY,
     ),
+    daily: bumpDay(p, { spoken: 1 }),
   }));
 }
 

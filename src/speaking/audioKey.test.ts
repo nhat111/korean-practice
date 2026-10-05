@@ -1,5 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
+import { allFills } from '../patterns/fill';
 import { audioKey, audioUrl, spokenTexts } from './audioKey';
 
 const load = (name: string) => JSON.parse(readFileSync(`public/data/${name}.json`, 'utf8')).items;
@@ -17,6 +18,8 @@ describe('audioKey', () => {
       vocab: load('vocab'),
       emails: load('emails'),
       songs: load('songs'),
+      shadowing: load('shadowing'),
+      patternSentences: load('patterns').flatMap(allFills).map((f: { ko: string }) => f.ko),
     });
     expect(texts.length).toBeGreaterThan(1000);
     expect(new Set(texts.map(audioKey)).size).toBe(texts.length);
