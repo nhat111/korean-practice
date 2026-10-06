@@ -1893,8 +1893,56 @@ ins {
   accent-color: var(--primary);
 }
 
+.flashcard--speak {
+  min-height: 200px;
+}
+.flashcard-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
 .flashcard-word--vi {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  line-height: 1.3;
+  text-align: center;
+}
+.syllable-hint {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--primary);
+}
+.example-details > summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--primary);
+  cursor: pointer;
+}
+.speak-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+.speak-actions > .btn {
+  flex: none;
+}
+.record-control--compact {
+  gap: 12px;
+  min-width: 0;
+}
+.record-control--compact .record-btn {
+  width: 56px;
+  height: 56px;
 }
 .type-badge {
   margin-left: 8px;
