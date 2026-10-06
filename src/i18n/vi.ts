@@ -223,6 +223,7 @@ export const vi = {
     sessionDoneHint: 'Quay lại vào ngày mai để ôn tiếp.',
     learnMore: 'Học thêm thẻ mới',
     remaining: (n: number) => `Còn ${n} thẻ`,
+    toSongs: 'Học qua bài hát →',
     modeRead: 'Hàn → Việt',
     modeSpeak: 'Nói (Việt → Hàn)',
     collocation: 'Cụm hay dùng',
@@ -428,7 +429,7 @@ export const vi = {
     deep: 'Giọng trầm (giả lập giọng nam)',
     test: '▶ Nghe thử',
     change: 'Đổi giọng đọc (nam/nữ) →',
-    none: 'Máy chưa có giọng tiếng Hàn nào. Hãy cài thêm theo hướng dẫn bên dưới.',
+    none: 'Máy chưa có giọng tiếng Hàn nào. Câu mẫu vẫn đọc bằng giọng nam/nữ tự nhiên có sẵn trong app.',
     debugTitle: 'Thử từng giọng (chẩn đoán)',
     debugHelp:
       'Đây là các giọng tiếng Hàn mà trình duyệt cho app dùng. Bấm ▶ từng dòng: nếu dòng nào cũng ra cùng một giọng thì iOS đang bỏ qua lựa chọn giọng của trang web.',
@@ -436,93 +437,6 @@ export const vi = {
     quality: { compact: 'cơ bản', enhanced: 'nâng cao', premium: 'cao cấp' },
     selectedInfo: (name: string, lang: string, local: boolean) =>
       `Đang chọn: ${name} (${lang}, ${local ? 'cài trên máy' : 'giọng online'}). Nếu nghe thử vẫn ra giọng khác, giọng này có thể chưa tải xong: vào Cài đặt của máy, mở mục giọng đọc tiếng Hàn và tải (hoặc tải lại) giọng đó, rồi khởi động lại trình duyệt.`,
-    guide: {
-      title: 'Cách thêm / đổi giọng đọc trên máy',
-      intro:
-        'Giọng đọc lấy từ hệ điều hành. Muốn có thêm giọng (ví dụ giọng nam), cài trong cài đặt của máy rồi quay lại đây chọn.',
-      platformLabel: 'Máy của bạn',
-      menuLangLabel: 'Ngôn ngữ menu của máy',
-      menuLang: { en: 'English', vi: 'Tiếng Việt' },
-      detected: '(máy này)',
-      vendorNote: 'Tên menu có thể hơi khác tùy phiên bản hoặc hãng máy.',
-      platforms: {
-        ios: {
-          name: 'iPhone / iPad',
-          steps: [
-            {
-              path: {
-                en: ['Settings', 'Accessibility', 'Spoken Content'],
-                vi: ['Cài đặt', 'Trợ năng', 'Nội dung được đọc'],
-              },
-              note: 'Mở phần đọc nội dung của iPhone.',
-            },
-            {
-              path: { en: ['Voices', 'Korean'], vi: ['Giọng nói', 'Tiếng Hàn'] },
-              note: 'Nghe thử từng giọng, chọn giọng bạn thích (có cả giọng nam) và bấm tải về nếu có biểu tượng đám mây.',
-            },
-            {
-              path: { en: [], vi: [] },
-              note: 'Đóng hẳn trình duyệt/app rồi mở lại, vào ⚙️ Cài đặt → Giọng tiếng Hàn để chọn giọng vừa tải. Safari và Chrome trên iPhone dùng chung giọng của máy.',
-            },
-          ],
-        },
-        android: {
-          name: 'Android',
-          steps: [
-            {
-              path: {
-                en: ['Settings', 'System', 'Languages & input', 'Text-to-speech output'],
-                vi: ['Cài đặt', 'Hệ thống', 'Ngôn ngữ và phương thức nhập', 'Đầu ra chuyển văn bản thành giọng nói'],
-              },
-              note: 'Samsung: Settings › General management › Text-to-speech (Cài đặt › Quản lý chung › Chuyển văn bản thành giọng nói).',
-            },
-            {
-              path: {
-                en: ['Preferred engine: Speech Services by Google', '⚙ Settings', 'Install voice data', 'Korean'],
-                vi: ['Công cụ ưu tiên: Dịch vụ lời nói của Google', '⚙ Cài đặt', 'Cài đặt dữ liệu giọng nói', 'Tiếng Hàn'],
-              },
-              note: 'Tải gói tiếng Hàn, nghe thử các giọng (I, II, III, IV) và chọn giọng bạn thích, có giọng nam.',
-            },
-            {
-              path: { en: [], vi: [] },
-              note: 'Đóng hẳn Chrome rồi mở lại. Chrome trên Android thường chỉ hiện một giọng tiếng Hàn: chính là giọng bạn vừa chọn trong máy, nên ở app cứ để "Tự động".',
-            },
-          ],
-        },
-        windows: {
-          name: 'Windows',
-          steps: [
-            {
-              path: {
-                en: ['Settings', 'Time & language', 'Speech', 'Add voices', 'Korean'],
-                vi: ['Cài đặt', 'Thời gian & ngôn ngữ', 'Giọng nói', 'Thêm giọng nói', 'Tiếng Hàn'],
-              },
-              note: 'Cài gói giọng tiếng Hàn của Windows.',
-            },
-            {
-              path: { en: [], vi: [] },
-              note: 'Dùng Microsoft Edge sẽ có sẵn giọng tự nhiên SunHi (nữ) và InJoon (nam), không cần cài thêm. Tải lại trang rồi chọn ở trên.',
-            },
-          ],
-        },
-        mac: {
-          name: 'Mac',
-          steps: [
-            {
-              path: {
-                en: ['System Settings', 'Accessibility', 'Spoken Content', 'System voice', 'Manage Voices…', 'Korean'],
-                vi: ['Cài đặt hệ thống', 'Trợ năng', 'Nội dung được đọc', 'Giọng nói hệ thống', 'Quản lý giọng nói…', 'Tiếng Hàn'],
-              },
-              note: 'Tick các giọng tiếng Hàn muốn dùng để tải về.',
-            },
-            {
-              path: { en: [], vi: [] },
-              note: 'Tải lại trang rồi chọn giọng ở trên.',
-            },
-          ],
-        },
-      },
-    },
   },
   songs: {
     title: 'Học qua bài hát',

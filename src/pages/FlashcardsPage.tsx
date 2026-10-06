@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router';
 import { ContentGate } from '../components/ContentGate';
 import { GrammarNotes, GrammarSentence } from '../components/GrammarNotes';
 import { SpeakButton } from '../components/SpeakButton';
@@ -36,7 +37,12 @@ export function FlashcardsPage() {
 
   return (
     <div className="stack">
-      <h1>{vi.flashcards.title}</h1>
+      <div className="row-between">
+        <h1>{vi.flashcards.title}</h1>
+        <Link to="/songs" className="link-btn small">
+          {vi.flashcards.toSongs}
+        </Link>
+      </div>
       <ContentGate state={state}>
         {(items) => {
           const tags = [...new Set(items.flatMap((v) => v.tags))].sort();
