@@ -2,7 +2,6 @@ import { vi } from '../i18n/vi';
 import { VOICE_SAMPLE as SAMPLE } from '../speaking/audioKey';
 import { guessGender, isSpeechSupported, speakKorean, useKoreanVoices } from '../speech';
 import { setDeepVoice, setVoiceURI, usePrefs } from '../storage/prefs';
-import { VoiceGuide } from './VoiceGuide';
 
 
 /** "Microsoft InJoon Online (Natural) - Korean (Korea)" → "Microsoft InJoon". */
@@ -25,7 +24,6 @@ export function VoiceControl() {
   const voices = useKoreanVoices();
   if (!isSpeechSupported()) return null;
 
-  const hasMale = voices.some((v) => guessGender(v) === 'male');
   const chosen = voices.find((v) => v.voiceURI === prefs.voiceURI);
   const selected = chosen ? prefs.voiceURI : '';
 
@@ -91,7 +89,6 @@ export function VoiceControl() {
           </ul>
         </details>
       )}
-      <VoiceGuide open={!hasMale || voices.length === 0} />
     </div>
   );
 }

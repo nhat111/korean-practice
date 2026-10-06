@@ -248,8 +248,9 @@ Spec: `docs/custom-questions.md` (implemented). The learner pastes their own int
   is branded **KoDevTalk** (name in `vi.appName`, manifest, `index.html`) with a Korean-flag
   palette (flag blue `#0047a0`, navy, red accents). The icon (`public/favicon.svg`, PNGs in
   `public/icons/`) is a navy chat bubble with `</>` over a faded taegeuk; the header shows `favicon.svg`.
-- Voice install help lives in `VoiceGuide` (per-platform steps with English and Vietnamese
-  OS menu names, data in `vi.voice.guide`).
+- Bottom nav has 5 tabs (Trang chủ, Luyện nói, Hội thoại, Từ vựng, Tiến độ; `NAV` in `Layout.tsx`).
+  Each tab also lights up for related pages (`also`: shadowing/patterns, custom/emails, songs).
+  Pages without a tab need an entry from Home or a tab page; don't add a sixth tab.
 - Icons: use `<Icon name=… />` from `src/components/Icon.tsx` (inline Lucide paths, no icon
   dependency). Add new icons there; don't use emoji as UI icons in navigation or buttons.
 - Use a font stack that renders Hangul well (e.g. `"Pretendard", "Noto Sans KR", system-ui`)

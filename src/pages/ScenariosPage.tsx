@@ -48,10 +48,16 @@ export function ScenariosPage() {
   return (
     <div className="stack">
       <h1>{vi.scenarios.title}</h1>
-      <Link to="/custom" className="card card--link stack-xs">
-        <h2>{vi.custom.title}</h2>
-        <p className="muted small">{vi.custom.entryHint(custom.length)}</p>
-      </Link>
+      <div className="grid">
+        <Link to="/custom" className="card card--link stack-xs">
+          <h2>{vi.custom.title}</h2>
+          <p className="muted small">{vi.custom.entryHint(custom.length)}</p>
+        </Link>
+        <Link to="/emails" className="card card--link stack-xs">
+          <h2>{vi.nav.emails}</h2>
+          <p className="muted small">{vi.home.sections.emails}</p>
+        </Link>
+      </div>
       <ContentGate state={state}>
         {(items) => (items.length === 0 ? <p className="muted">{vi.common.empty}</p> : <ScenarioList items={items} />)}
       </ContentGate>
