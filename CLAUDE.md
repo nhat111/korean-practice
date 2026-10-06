@@ -172,8 +172,9 @@ Korean either.
   self-rating) is stored in progress, capped at 300 entries. Recordings play on the same shared
   `<audio>` element as the model (`playRecording` in `speech.ts`) so "model → mine → model" works on iOS.
 - `SpeakPractice` is the shared speaking core (record by tap or hold, level meter from an
-  `AnalyserNode`, compare playback, 0.7/0.85/1x chips = the global `speechRate`, 3-level
-  self-rating). With `srsKey` the rating schedules the item in `Progress.srs` (keys from `srsKey` in
+  `AnalyserNode`, a player-style row "Nghe mẫu · Ghi âm · Tự động" with one status line under it,
+  parts + a speed button cycling 0.7/0.85/1x (= the global `speechRate`) in a toolbar, 3-level
+  self-rating). Keep it compact: no extra help paragraphs. With `srsKey` the rating schedules the item in `Progress.srs` (keys from `srsKey` in
   `practice/decks.ts`: `shadowing:<id>`, `pattern:<id>`, `scenario:<id>:<turn>`, `vocab-speak:<id>`;
   rating → SM-2 grade 1/3/4). `revealed={false}` hides the model until the learner asked for the answer.
   Recognition is an optional `AutoCheck` inside it. Denied microphone shows `MicHelp`.

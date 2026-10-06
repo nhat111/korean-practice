@@ -17,31 +17,31 @@ type Recorder = ReturnType<typeof useRecorder>;
 /** Holding the button longer than this means "hold to talk": release stops. */
 const HOLD_MS = 450;
 
-/** Big record button: tap to start/stop, or hold to talk and release. */
-export function RecordControl({
-  recorder,
-  onStart,
-  hint,
-  compact,
-}: {
-  recorder: Recorder;
-  onStart?: () => void;
-  /** Replaces the idle help text. */
-  hint?: string;
-  /** Smaller button, for action bars. */
-  compact?: boolean;
-}) {
-  const pressedAt = useRef(0);
+/** Seconds since the current recording started (0 when idle). */
+function useElapsed(recorder: Recorder): number {
   const [now, setNow] = useState(0);
   const recording = recorder.status === 'recording';
-  const busy = recorder.status === 'requesting';
-  const elapsed = recorder.startedAt ? Math.max(0, Math.floor((now - recorder.startedAt) / 1000)) : 0;
-
   useEffect(() => {
     if (!recording) return;
     const t = window.setInterval(() => setNow(Date.now()), 250);
     return () => window.clearInterval(t);
   }, [recording]);
+  return recorder.startedAt ? Math.max(0, Math.floor((now - recorder.startedAt) / 1000)) : 0;
+}
+
+/** Round record button: tap to start/stop, or hold to talk and release. */
+export function RecordButton({
+  recorder,
+  onStart,
+  compact,
+}: {
+  recorder: Recorder;
+  onStart?: () => void;
+  compact?: boolean;
+}) {
+  const pressedAt = useRef(0);
+  const recording = recorder.status === 'recording';
+  const busy = recorder.status === 'requesting';
 
   function down(e: PointerEvent<HTMLButtonElement>) {
     if (e.button !== 0) return;
@@ -63,38 +63,62 @@ export function RecordControl({
   }
 
   return (
+    <button
+      type="button"
+      className={['record-btn', recording && 'record-btn--on', compact && 'record-btn--compact'].filter(Boolean).join(' ')}
+      aria-pressed={recording}
+      aria-label={recording ? vi.practice.stop : vi.practice.record}
+      disabled={busy}
+      onPointerDown={down}
+      onPointerUp={up}
+      onPointerCancel={up}
+      onContextMenu={(e) => e.preventDefault()}
+      onClick={(e) => {
+        // Keyboard activation (pointer presses are handled above).
+        if (e.detail !== 0) return;
+        if (recording) recorder.stop();
+        else {
+          onStart?.();
+          void recorder.start();
+        }
+      }}
+    >
+      <Icon name={recording ? 'stop' : 'mic'} size={compact ? 24 : 30} />
+    </button>
+  );
+}
+
+/** Record button with a side label (level meter + seconds while recording). */
+export function RecordControl({
+  recorder,
+  onStart,
+  hint,
+  compact,
+}: {
+  recorder: Recorder;
+  onStart?: () => void;
+  /** Replaces the idle help text. */
+  hint?: string;
+  /** Smaller button, for action bars. */
+  compact?: boolean;
+}) {
+  const elapsed = useElapsed(recorder);
+  return (
     <div className={compact ? 'record-control record-control--compact' : 'record-control'}>
-      <button
-        type="button"
-        className={recording ? 'record-btn record-btn--on' : 'record-btn'}
-        aria-pressed={recording}
-        aria-label={recording ? vi.practice.stop : vi.practice.record}
-        disabled={busy}
-        onPointerDown={down}
-        onPointerUp={up}
-        onPointerCancel={up}
-        onContextMenu={(e) => e.preventDefault()}
-        onClick={(e) => {
-          // Keyboard activation (pointer presses are handled above).
-          if (e.detail !== 0) return;
-          if (recording) recorder.stop();
-          else {
-            onStart?.();
-            void recorder.start();
-          }
-        }}
-      >
-        <Icon name={recording ? 'stop' : 'mic'} size={compact ? 24 : 30} />
-      </button>
+      <RecordButton recorder={recorder} onStart={onStart} compact={compact} />
       <div className="record-side">
-        {recording ? (
+        {recorder.status === 'recording' ? (
           <>
             <LevelMeter analyser={recorder.analyser} />
             <span className="small">{vi.practice.seconds(elapsed)}</span>
           </>
         ) : (
           <span className="muted small">
-            {busy ? vi.practice.requesting : recorder.url ? vi.practice.recordAgain : (hint ?? vi.practice.recordHint)}
+            {recorder.status === 'requesting'
+              ? vi.practice.requesting
+              : recorder.url
+                ? vi.practice.recordAgain
+                : (hint ?? vi.practice.recordHint)}
           </span>
         )}
       </div>
@@ -141,24 +165,20 @@ function LevelMeter({ analyser }: { analyser: AnalyserNode | null }) {
 
 const RATES = [0.7, 0.85, 1] as const;
 
-/** Model audio speed: 0.7x / 0.85x / 1x (stored as the global speech rate). */
-export function RateChips() {
+/** Model audio speed; each tap moves to the next of 0.7x / 0.85x / 1x (the global speech rate). */
+function SpeedButton() {
   const rate = useSpeechRate();
+  const i = RATES.findIndex((r) => Math.abs(rate - r) < 0.01);
+  const next = RATES[(i + 1) % RATES.length];
   return (
-    <div className="chips" role="group" aria-label={vi.practice.speed}>
-      <span className="muted small">{vi.practice.speed}</span>
-      {RATES.map((r) => (
-        <button
-          key={r}
-          type="button"
-          className={Math.abs(rate - r) < 0.01 ? 'chip chip--on' : 'chip'}
-          aria-pressed={Math.abs(rate - r) < 0.01}
-          onClick={() => setSpeechRate(r)}
-        >
-          {r}x
-        </button>
-      ))}
-    </div>
+    <button
+      type="button"
+      className="chip speed-chip"
+      aria-label={`${vi.practice.speed}: ${Number(rate.toFixed(2))}x`}
+      onClick={() => setSpeechRate(next)}
+    >
+      <Icon name="gauge" size={16} /> {Number(rate.toFixed(2))}x
+    </button>
   );
 }
 
@@ -321,38 +341,32 @@ export function SpeakPractice(props: Props) {
 
   return (
     <div className="speak-practice stack-sm">
-      {parts.length > 0 && (
-        <div className="stack-xs">
-          <span className="muted small">{vi.practice.parts}</span>
-          <div className="chips" role="group" aria-label={vi.practice.parts}>
-            <button
-              type="button"
-              className={isPart ? 'chip' : 'chip chip--on'}
-              aria-pressed={!isPart}
-              onClick={() => setPart(null)}
-            >
-              {vi.practice.whole}
-            </button>
-            {parts.map((_, i) => (
-              <button
-                key={i}
-                type="button"
-                className={part === i ? 'chip chip--on' : 'chip'}
-                aria-pressed={part === i}
-                onClick={() => setPart(i)}
-              >
-                {i + 1}
-              </button>
-            ))}
-          </div>
-          {isPart ? (
-            <p lang="ko" className="part-target">
-              {target}
-            </p>
+      {revealed && (
+        <div className="sp-toolbar">
+          {parts.length > 0 ? (
+            <div className="segmented segmented--small" role="group" aria-label={vi.practice.parts}>
+              {[null, ...parts.map((_, i) => i)].map((p) => (
+                <button
+                  key={String(p)}
+                  type="button"
+                  className={(p === null ? !isPart : part === p) ? 'active' : ''}
+                  aria-pressed={p === null ? !isPart : part === p}
+                  onClick={() => setPart(p)}
+                >
+                  {p === null ? vi.practice.whole : p + 1}
+                </button>
+              ))}
+            </div>
           ) : (
-            <p className="muted small">{vi.practice.partsHelp}</p>
+            <span />
           )}
+          {isSpeechSupported() && <SpeedButton />}
         </div>
+      )}
+      {isPart && (
+        <p lang="ko" className="part-target">
+          {target}
+        </p>
       )}
       {/* Remount per part so the recording and rating reset. */}
       <PracticeCore key={target} {...props} ko={target} isPart={isPart} />
@@ -406,38 +420,87 @@ function PracticeCore({
   }
 
   const busy = phase !== 'idle';
+  const recording = recorder.status === 'recording';
+  const elapsed = useElapsed(recorder);
+  const canSpeak = isSpeechSupported();
+  const mine = hasRecording ? recorder.url : null;
+
+  async function interleave(url: string) {
+    await speakKorean(ko);
+    await playAudio(url);
+    await speakKorean(ko);
+  }
+
+  const status = recording ? null : busy ? (
+    <span className="sp-phase">{vi.practice.phase[phase]}</span>
+  ) : recorder.status === 'requesting' ? (
+    vi.practice.requesting
+  ) : revealed && canSpeak ? (
+    `${vi.practice.controlsHint} ${vi.practice.autoHint}`
+  ) : (
+    vi.practice.controlsHint
+  );
 
   return (
     <>
-      {revealed && <RateChips />}
-      {revealed && canRecord && isSpeechSupported() && (
-        <div className="stack-xs">
-          <button type="button" className="btn one-tap" disabled={busy || recorder.status !== 'idle'} onClick={() => void oneTap()}>
-            <Icon name="zap" size={18} /> {vi.practice.oneTap}
-          </button>
-          <p className={busy ? 'one-tap-phase' : 'muted small'} aria-live="polite">
-            {busy ? vi.practice.phase[phase] : vi.practice.oneTapHelp}
-          </p>
-        </div>
-      )}
       {canRecord ? (
-        <RecordControl recorder={recorder} onStart={stopSpeaking} />
+        <div className="sp-controls">
+          {revealed && canSpeak ? (
+            <button type="button" className="sp-side" onClick={() => void speakKorean(ko)}>
+              <span className="sp-side-icon">
+                <Icon name="volume" size={22} />
+              </span>
+              {vi.practice.playModel}
+            </button>
+          ) : (
+            <span className="sp-side" aria-hidden />
+          )}
+          <div className="sp-main">
+            <RecordButton recorder={recorder} onStart={stopSpeaking} />
+            <span className="sp-label">{recording ? vi.practice.seconds(elapsed) : vi.practice.record}</span>
+          </div>
+          {revealed && canSpeak ? (
+            <button
+              type="button"
+              className="sp-side"
+              disabled={busy || recorder.status !== 'idle'}
+              onClick={() => void oneTap()}
+            >
+              <span className="sp-side-icon">
+                <Icon name="zap" size={22} />
+              </span>
+              {vi.practice.oneTap}
+            </button>
+          ) : (
+            <span className="sp-side" aria-hidden />
+          )}
+        </div>
       ) : (
-        <p className="muted small">{vi.practice.noRecording}</p>
+        <>
+          <p className="muted small">{vi.practice.noRecording}</p>
+          {revealed && <ComparePlayback ko={ko} url={null} />}
+        </>
+      )}
+      {canRecord && (
+        <div className="sp-status" aria-live="polite">
+          {recording ? <LevelMeter analyser={recorder.analyser} /> : <span className="muted small">{status}</span>}
+        </div>
       )}
       {recorder.error && <p className="error">{recorder.error}</p>}
       {recorder.errorKind === 'denied' && <MicHelp />}
-      {revealed ? (
-        <ComparePlayback ko={ko} url={hasRecording ? recorder.url : null} />
-      ) : (
-        hasRecording && (
-          <div className="tiles">
-            <button type="button" className="tile" onClick={() => recorder.url && void playAudio(recorder.url)}>
-              <Icon name="user" size={20} />
-              <span>{vi.practice.playMine}</span>
+      {mine && (
+        <div className="tiles tiles--2">
+          <button type="button" className="tile" onClick={() => void playAudio(mine)}>
+            <Icon name="user" size={20} />
+            <span>{vi.practice.playMine}</span>
+          </button>
+          {revealed && canSpeak && (
+            <button type="button" className="tile" onClick={() => void interleave(mine)}>
+              <Icon name="repeat" size={20} />
+              <span>{vi.practice.playInterleave}</span>
             </button>
-          </div>
-        )
+          )}
+        </div>
       )}
       {revealed && !noRating && (hasRecording || !canRecord) && !busy &&
         (isPart ? (

@@ -5,6 +5,7 @@ import { srsKey } from '../practice/decks';
 import { batchimOf } from '../speaking/josa';
 import type { SelfRating } from '../storage/progress';
 import type { PatternItem } from '../types';
+import { Icon } from './Icon';
 import { SpeakPractice } from './SpeakPractice';
 
 /** The frame with slots shown as [noun] and particles as 은/는. */
@@ -105,8 +106,8 @@ export function PatternDrill({ item, onRated }: { item: PatternItem; onRated?: (
         revealed={revealed}
         onRated={onRated}
       />
-      <button type="button" className="link-btn" onClick={another}>
-        {vi.patterns.another}
+      <button type="button" className="link-btn icon-link" onClick={another}>
+        <Icon name="repeat" size={18} /> {vi.patterns.another}
       </button>
     </section>
   );
