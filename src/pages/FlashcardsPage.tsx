@@ -145,7 +145,9 @@ function FlashcardSession({ items, mode }: { items: VocabItem[]; mode: CardMode 
       ) : (
         <>
           <Flashcard item={current} flipped={flipped} mode={mode} onFlip={() => setFlipped(true)} />
-          {mode === 'speak' && <SpeakTools key={current.id} item={current} flipped={flipped} />}
+          {mode === 'speak' && (
+            <SpeakTools key={current.id} item={current} flipped={flipped} onFlip={() => setFlipped(true)} />
+          )}
           {flipped && (
             <div className="grades">
               {GRADES.map(({ grade: g, label, className }) => (
@@ -181,7 +183,7 @@ function Flashcard({
   const speak = mode === 'speak';
   return (
     <div
-      className={flipped ? 'flashcard flipped' : 'flashcard'}
+      className={['flashcard', flipped && 'flipped', speak && 'flashcard--speak'].filter(Boolean).join(' ')}
       role="button"
       tabIndex={0}
       onClick={onFlip}
@@ -195,9 +197,10 @@ function Flashcard({
       <div className="flashcard-front">
         {speak && !flipped ? (
           <>
+            <span className="flashcard-label">{vi.flashcards.speakLabel}</span>
             <p className="flashcard-word flashcard-word--vi">{item.vi}</p>
             {item.type && <span className="badge">{vi.flashcards.type[item.type]}</span>}
-            <p className="muted">{vi.flashcards.speakPrompt}</p>
+            <SyllableHint ko={item.ko} />
           </>
         ) : (
           <>
@@ -229,25 +232,65 @@ function Flashcard({
               <SpeakButton text={item.collocation} small />
             </div>
           )}
-          <div className="example">
-            <span className="muted small">{vi.flashcards.example}</span>
-            <div className="ko-line">
-              <p lang="ko" className="ko">
-                <GrammarSentence text={item.example.ko} grammar={item.example.grammar} />
-              </p>
-              <SpeakButton text={item.example.ko} small />
-            </div>
-            <p className="muted">{item.example.vi}</p>
-            <GrammarNotes grammar={item.example.grammar} />
-          </div>
+          {speak ? (
+            // Keep the card short so compare + grades stay in view.
+            <details className="example-details">
+              <summary>{vi.flashcards.showExample}</summary>
+              <Example item={item} />
+            </details>
+          ) : (
+            <Example item={item} />
+          )}
         </div>
       )}
     </div>
   );
 }
 
-/** Speaking mode: record the answer before flipping, then compare with the model. */
-function SpeakTools({ item, flipped }: { item: VocabItem; flipped: boolean }) {
+function Example({ item }: { item: VocabItem }) {
+  return (
+    <div className="example">
+      <span className="muted small">{vi.flashcards.example}</span>
+      <div className="ko-line">
+        <p lang="ko" className="ko">
+          <GrammarSentence text={item.example.ko} grammar={item.example.grammar} />
+        </p>
+        <SpeakButton text={item.example.ko} small />
+      </div>
+      <p className="muted">{item.example.vi}</p>
+      <GrammarNotes grammar={item.example.grammar} />
+    </div>
+  );
+}
+
+/** First syllable plus one dot per remaining syllable, e.g. 확인하다 → 확 · · · */
+function SyllableHint({ ko }: { ko: string }) {
+  const [shown, setShown] = useState(false);
+  if (!shown) {
+    return (
+      <button
+        type="button"
+        className="link-btn small"
+        onClick={(e) => {
+          e.stopPropagation(); // don't flip the card
+          setShown(true);
+        }}
+      >
+        {vi.flashcards.hint}
+      </button>
+    );
+  }
+  const [first, ...rest] = [...ko];
+  return (
+    <p lang="ko" className="syllable-hint" aria-label={vi.flashcards.hint}>
+      {first}
+      {rest.map((c) => (c === ' ' ? ' ' : '·')).join('')}
+    </p>
+  );
+}
+
+/** Speaking mode: record the answer, flip, then compare with the model. */
+function SpeakTools({ item, flipped, onFlip }: { item: VocabItem; flipped: boolean; onFlip: () => void }) {
   const recorder = useRecorder();
   const ready = recorder.url !== null && recorder.status === 'idle';
 
@@ -257,10 +300,26 @@ function SpeakTools({ item, flipped }: { item: VocabItem; flipped: boolean }) {
     return stopSpeaking;
   }, [flipped, item.ko]);
 
-  if (!isRecordingSupported()) return null;
   return (
     <div className="stack-sm">
-      {!flipped && <RecordControl recorder={recorder} onStart={stopSpeaking} />}
+      {!flipped && (
+        <div className="speak-actions">
+          {isRecordingSupported() && (
+            <RecordControl recorder={recorder} onStart={stopSpeaking} hint={vi.flashcards.recordHint} compact />
+          )}
+          <button
+            type="button"
+            className="btn"
+            disabled={recorder.status === 'recording'}
+            onClick={() => {
+              if (recorder.status === 'recording') recorder.stop();
+              onFlip();
+            }}
+          >
+            {vi.flashcards.flip}
+          </button>
+        </div>
+      )}
       {recorder.error && <p className="error">{recorder.error}</p>}
       {recorder.errorKind === 'denied' && <MicHelp />}
       {flipped && ready && <ComparePlayback ko={item.ko} url={recorder.url} />}

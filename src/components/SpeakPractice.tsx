@@ -18,7 +18,19 @@ type Recorder = ReturnType<typeof useRecorder>;
 const HOLD_MS = 450;
 
 /** Big record button: tap to start/stop, or hold to talk and release. */
-export function RecordControl({ recorder, onStart }: { recorder: Recorder; onStart?: () => void }) {
+export function RecordControl({
+  recorder,
+  onStart,
+  hint,
+  compact,
+}: {
+  recorder: Recorder;
+  onStart?: () => void;
+  /** Replaces the idle help text. */
+  hint?: string;
+  /** Smaller button, for action bars. */
+  compact?: boolean;
+}) {
   const pressedAt = useRef(0);
   const [now, setNow] = useState(0);
   const recording = recorder.status === 'recording';
@@ -51,7 +63,7 @@ export function RecordControl({ recorder, onStart }: { recorder: Recorder; onSta
   }
 
   return (
-    <div className="record-control">
+    <div className={compact ? 'record-control record-control--compact' : 'record-control'}>
       <button
         type="button"
         className={recording ? 'record-btn record-btn--on' : 'record-btn'}
@@ -72,7 +84,7 @@ export function RecordControl({ recorder, onStart }: { recorder: Recorder; onSta
           }
         }}
       >
-        <Icon name={recording ? 'stop' : 'mic'} size={30} />
+        <Icon name={recording ? 'stop' : 'mic'} size={compact ? 24 : 30} />
       </button>
       <div className="record-side">
         {recording ? (
@@ -82,7 +94,7 @@ export function RecordControl({ recorder, onStart }: { recorder: Recorder; onSta
           </>
         ) : (
           <span className="muted small">
-            {busy ? vi.practice.requesting : recorder.url ? vi.practice.recordAgain : vi.practice.recordHint}
+            {busy ? vi.practice.requesting : recorder.url ? vi.practice.recordAgain : (hint ?? vi.practice.recordHint)}
           </span>
         )}
       </div>
