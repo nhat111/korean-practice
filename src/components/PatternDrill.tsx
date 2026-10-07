@@ -5,6 +5,7 @@ import { srsKey } from '../practice/decks';
 import { batchimOf } from '../speaking/josa';
 import type { SelfRating } from '../storage/progress';
 import type { PatternItem } from '../types';
+import { ReportButton } from './ReportButton';
 import { Icon } from './Icon';
 import { SpeakPractice } from './SpeakPractice';
 
@@ -86,6 +87,7 @@ export function PatternDrill({ item, onRated }: { item: PatternItem; onRated?: (
         <div className="model stack-xs">
           <h3>{vi.patterns.answer}</h3>
           <Answer parts={filled.parts} />
+          <ReportButton reportKey={srsKey.pattern(item.id)} ko={filled.ko} />
           {josaNotes(filled.parts).map((n) => (
             <p key={n} lang="ko" className="muted small">
               {n}

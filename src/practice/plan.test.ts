@@ -54,6 +54,22 @@ describe('buildDailyPlan', () => {
     expect(plan[7]).toEqual({ kind: 'scenario', id: 'standup-001', turn: 1 });
   });
 
+  it('adds one listening (numbers) and one interpreting step when that content exists', () => {
+    const plan = buildDailyPlan(
+      {
+        ...content,
+        numbers: [{ id: 'n-01', kind: 'money', ko: 'x', vi: 'y', choices: ['a', 'b'], answer: 0 }],
+        interpret: [{ id: 'ip-01', topic: 'meeting', vi: 'v', ko: 'k' }],
+      },
+      { 'listen:number:n-01': card(today) },
+      today,
+    );
+    expect(plan.slice(-2)).toEqual([
+      { kind: 'listen', id: 'n-01' },
+      { kind: 'interpret', id: 'ip-01' },
+    ]);
+  });
+
   it('skips parts with no content', () => {
     expect(buildDailyPlan({ shadowing: [], patterns: [], scenarios: [] }, {}, today)).toEqual([]);
   });

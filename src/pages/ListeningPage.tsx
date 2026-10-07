@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import { ComparisonView } from '../components/ComparisonView';
+import { ListenChoice, ListenReveal } from '../components/ListenChoice';
+import { saveListenResult } from '../practice/listenResult';
 import { ListenPlayer as Player } from '../components/ListenPlayer';
-import { KoreanLine } from '../components/SpeakButton';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
 import {
@@ -17,19 +18,11 @@ import {
 } from '../practice/listening';
 import { stopSpeaking } from '../speech';
 import { compareAnswer, PASS_SCORE, type Comparison } from '../speaking/compare';
-import { review, todayKey } from '../srs/sm2';
-import { getProgressSnapshot, saveReview } from '../storage/progress';
 import type { NumberItem } from '../types';
 
 type Mode = 'meaning' | 'dictation' | 'numbers';
 const MODES: Mode[] = ['meaning', 'dictation', 'numbers'];
 const SESSION = 10;
-
-/** Every answered question schedules its line in the SRS (key "listen:<source>"). */
-function saveResult(key: string, correct: boolean) {
-  const k = `listen:${key}`;
-  saveReview(k, review(getProgressSnapshot().srs[k], correct ? 4 : 1, todayKey()));
-}
 
 export function ListeningPage() {
   const [mode, setMode] = useState<Mode>('meaning');
@@ -124,7 +117,7 @@ function Session({ mode, content, numbers }: { mode: Mode; content: ListenConten
   const ko = current.kind === 'choice' ? current.q.ko : current.line.ko;
 
   function onAnswer(ok: boolean) {
-    saveResult(key, ok);
+    saveListenResult(key, ok);
     if (ok) setCorrect((c) => c + 1);
     setAnswered(true);
   }
@@ -147,7 +140,7 @@ function Session({ mode, content, numbers }: { mode: Mode; content: ListenConten
       <section className="card stack-sm" key={`${index}:${key}`}>
         <Player ko={ko} />
         {current.kind === 'choice' ? (
-          <ChoiceAnswer
+          <ListenChoice
             q={current.q}
             prompt={mode === 'numbers' ? vi.listening.pickNumber : vi.listening.pick}
             onAnswer={onAnswer}
@@ -162,44 +155,6 @@ function Session({ mode, content, numbers }: { mode: Mode; content: ListenConten
         )}
       </section>
     </>
-  );
-}
-
-function ChoiceAnswer({
-  q,
-  prompt,
-  onAnswer,
-}: {
-  q: ChoiceQuestion;
-  prompt: string;
-  onAnswer: (ok: boolean) => void;
-}) {
-  const [picked, setPicked] = useState<number | null>(null);
-  return (
-    <div className="stack-sm">
-      <p className="muted small">{prompt}</p>
-      <div className="choices">
-        {q.options.map((o, i) => {
-          const cls =
-            picked === null ? 'choice' : i === q.answer ? 'choice choice--ok' : i === picked ? 'choice choice--bad' : 'choice';
-          return (
-            <button
-              key={o}
-              type="button"
-              className={cls}
-              disabled={picked !== null}
-              onClick={() => {
-                setPicked(i);
-                onAnswer(i === q.answer);
-              }}
-            >
-              {o}
-            </button>
-          );
-        })}
-      </div>
-      {picked !== null && <Reveal ko={q.ko} vi={q.vi} ok={picked === q.answer} />}
-    </div>
   );
 }
 
@@ -240,19 +195,9 @@ function DictationAnswer({ line, onAnswer }: { line: ListenLine; onAnswer: (ok: 
       ) : (
         <>
           <ComparisonView result={result} spokenLabel={vi.listening.typed} />
-          <Reveal ko={line.ko} vi={line.vi} ok={result.score >= PASS_SCORE} />
+          <ListenReveal reportKey={line.key} ko={line.ko} vi={line.vi} ok={result.score >= PASS_SCORE} />
         </>
       )}
-    </div>
-  );
-}
-
-function Reveal({ ko, vi: meaning, ok }: { ko: string; vi: string; ok: boolean }) {
-  return (
-    <div className={ok ? 'feedback feedback--ok' : 'feedback feedback--bad'}>
-      <strong>{ok ? `✓ ${vi.listening.right}` : `✗ ${vi.listening.wrong}`}</strong>
-      <KoreanLine text={ko} />
-      {meaning && <p>{meaning}</p>}
     </div>
   );
 }

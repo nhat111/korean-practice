@@ -15,18 +15,15 @@ interface Section {
   desc: string;
 }
 
+// Six main entries; the rest (patterns, songs, progress…) live under the tabs.
 const SECTIONS: Section[] = [
   { to: '/shadowing', icon: 'waves', title: vi.shadowing.title, desc: vi.home.sections.shadowing },
-  { to: '/patterns', icon: 'puzzle', title: vi.patterns.title, desc: vi.home.sections.patterns },
   { to: '/listening', icon: 'headphones', title: vi.listening.title, desc: vi.listening.homeDesc },
   { to: '/interpret', icon: 'languages', title: vi.interpret.title, desc: vi.interpret.homeDesc },
   { to: '/scenarios', icon: 'chat', title: vi.nav.scenarios, desc: vi.home.sections.scenarios },
-  { to: '/emails', icon: 'mail', title: vi.nav.emails, desc: vi.home.sections.emails },
   { to: '/flashcards', icon: 'cards', title: vi.nav.flashcards, desc: vi.home.sections.flashcards },
-  { to: '/speaking', icon: 'mic', title: vi.nav.speaking, desc: vi.home.sections.speaking },
-  { to: '/songs', icon: 'music', title: vi.songs.title, desc: vi.home.sections.songs },
-  { to: '/progress', icon: 'chart', title: vi.nav.progress, desc: vi.home.sections.progress },
-];
+  { to: '/emails', icon: 'mail', title: vi.nav.emails, desc: vi.home.sections.emails },
+]
 
 // Shown only when an optional backend is configured.
 const AI_SECTION: Section = { to: '/ai-roleplay', icon: 'bot', title: vi.aiRoleplay.title, desc: vi.aiRoleplay.homeDesc };

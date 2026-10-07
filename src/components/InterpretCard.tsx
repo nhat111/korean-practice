@@ -4,6 +4,7 @@ import { srsKey } from '../practice/decks';
 import { stopSpeaking } from '../speech';
 import type { SelfRating } from '../storage/progress';
 import type { InterpretItem } from '../types';
+import { ReportButton } from './ReportButton';
 import { ListenPlayer } from './ListenPlayer';
 import { KoreanLine } from './SpeakButton';
 import { SelfRate, SpeakPractice } from './SpeakPractice';
@@ -37,6 +38,7 @@ export function InterpretCard({
         </>
       )}
       {item.note && <p className="muted small">{item.note}</p>}
+      <ReportButton reportKey={srsKey.interpret(item.id)} ko={item.ko} />
     </div>
   );
   const reveal = (

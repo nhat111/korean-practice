@@ -2138,3 +2138,25 @@ ins {
   font-weight: 700;
   color: var(--text);
 }
+
+/* ---------- Báo câu sai ---------- */
+
+.report-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  min-height: 44px;
+  color: var(--muted);
+  font-weight: 600;
+}
+.report-btn--on {
+  color: var(--warn);
+}
+.report-list li {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}

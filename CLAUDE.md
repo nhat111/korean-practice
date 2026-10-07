@@ -206,6 +206,11 @@ Korean either.
   failed (`reps === 0`) or that stay hard (`ef < 2.0`), last-failed first, max 20. `WeakPage` resolves each
   key back to its content and drill (shadowing, pattern, scenario turn; `listen:*` and `vocab-speak:*` are
   shadowed again with `SpeakPractice`, rated into the same key). Keys whose content is gone are skipped.
+- "Báo câu sai": `ReportButton` (key + Korean line + optional note) sits under shadowing lines, pattern answers,
+  interpret answers, scenario model answers, listening reveals and flashcard examples. Settings lists the flags
+  and exports them as JSON so content can be fixed; nothing is uploaded.
+- The daily 5-minute plan is 3 shadowing, 3 patterns, 1 survival, 1 scenario turn, 1 listening "Số, ngày giờ"
+  (`listen:number:<id>`) and 1 interpreting Việt → Hàn (`interpret:<id>`), due items first.
 - Progress shows a 7-day bar chart of recording minutes (`WeekChart`, one series: no legend, value labels
   only on today and the max, a tooltip per bar and an `sr-only` table).
 - `compareAnswer` in `src/speaking/compare.ts` is pure and unit-tested: score is a
@@ -242,7 +247,7 @@ Spec: `docs/custom-questions.md` (implemented). The learner pastes their own int
 - Use a single namespaced key prefix (`kp:`) and a **schema version**. Keys:
   `kp:progress:v1` (learning progress; `srs` and `daily` (per-day lines spoken, reviews, recording ms,
   ~400 days) were added later and default to `{}`), `kp:prefs:v1` (device preferences such as speech
-  rate, `showPron`, `answerTimer`), `kp:backend:v1` (optional backend URL + access key) and `kp:custom:v1` (the learner's own questions). When the shape changes, write a migration instead of silently dropping user data;
+  rate, `showPron`, `answerTimer`), `kp:backend:v1` (optional backend URL + access key), `kp:custom:v1` (the learner's own questions) and `kp:reports:v1` ("Báo câu sai" flags, `src/storage/reports.ts`). When the shape changes, write a migration instead of silently dropping user data;
   purely additive fields may instead default when missing (as `speaking` does).
 - Wrap reads and writes in try/catch. The app must still work if storage is unavailable or
   contains corrupted data. In that case, fall back to empty progress.
@@ -271,7 +276,8 @@ Spec: `docs/custom-questions.md` (implemented). The learner pastes their own int
   `public/icons/`) is a navy chat bubble with `</>` over a faded taegeuk; the header shows `favicon.svg`.
 - Bottom nav has 5 tabs (Trang chủ, Luyện nói, Hội thoại, Từ vựng, Tiến độ; `NAV` in `Layout.tsx`).
   Each tab also lights up for related pages (`also`: shadowing/patterns, custom/emails, songs).
-  Pages without a tab need an entry from Home or a tab page; don't add a sixth tab.
+  Pages without a tab need an entry from Home or a tab page; don't add a sixth tab. Home keeps six entry cards
+  (Shadowing, Luyện nghe, Phiên dịch, Hội thoại, Từ vựng, Email); everything else is reached from the tabs.
 - Icons: use `<Icon name=… />` from `src/components/Icon.tsx` (inline Lucide paths, no icon
   dependency). Add new icons there; don't use emoji as UI icons in navigation or buttons.
 - Use a font stack that renders Hangul well (e.g. `"Pretendard", "Noto Sans KR", system-ui`)

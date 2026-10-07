@@ -5,6 +5,7 @@ import { srsKey } from '../practice/decks';
 import { speakKorean, stopSpeaking } from '../speech';
 import type { SelfRating } from '../storage/progress';
 import type { Scenario } from '../types';
+import { ReportButton } from './ReportButton';
 import { KoreanLine } from './SpeakButton';
 import { SpeakPractice } from './SpeakPractice';
 
@@ -52,6 +53,7 @@ export function ScenarioTurnDrill({
             {t.modelAnswer}
           </p>
           <p className="muted">{t.modelAnswerVi}</p>
+          <ReportButton reportKey={key} ko={t.modelAnswer} />
         </div>
       ) : (
         <button type="button" className="btn btn--ghost" onClick={() => setRevealed(true)}>
