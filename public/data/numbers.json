@@ -288,6 +288,198 @@
         "85.000.000 ₩"
       ],
       "answer": 0
+    },
+    {
+      "id": "n-25",
+      "kind": "time",
+      "ko": "회의는 오전 10시 반에 시작합니다.",
+      "vi": "Cuộc họp bắt đầu lúc 10 giờ rưỡi sáng.",
+      "choices": [
+        "10:30",
+        "12:30",
+        "10:00"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-26",
+      "kind": "date",
+      "ko": "오픈 일정은 4월 1일로 확정되었습니다.",
+      "vi": "Ngày ra mắt đã được chốt là 1/4.",
+      "choices": [
+        "1/4",
+        "4/1",
+        "1/10"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-27",
+      "kind": "money",
+      "ko": "라이선스 비용은 연간 600만 원입니다.",
+      "vi": "Phí bản quyền là 6 triệu won mỗi năm.",
+      "choices": [
+        "6.000.000 ₩ / năm",
+        "600.000 ₩ / năm",
+        "60.000.000 ₩ / năm"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-28",
+      "kind": "number",
+      "ko": "서버 세 대를 추가로 증설할 예정입니다.",
+      "vi": "Dự kiến tăng thêm 3 server.",
+      "choices": [
+        "Thêm 3 server",
+        "Thêm 4 server",
+        "Thêm 13 server"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-29",
+      "kind": "time",
+      "ko": "장애는 오전 9시 15분에 발생했습니다.",
+      "vi": "Sự cố xảy ra lúc 9 giờ 15 sáng.",
+      "choices": [
+        "09:15",
+        "09:50",
+        "19:15"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-30",
+      "kind": "number",
+      "ko": "에러가 하루에 약 천 건 정도 발생합니다.",
+      "vi": "Mỗi ngày phát sinh khoảng 1.000 lỗi.",
+      "choices": [
+        "~1.000 / ngày",
+        "~100 / ngày",
+        "~10.000 / ngày"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-31",
+      "kind": "date",
+      "ko": "계약 기간은 내년 3월 31일까지입니다.",
+      "vi": "Thời hạn hợp đồng đến ngày 31/3 năm sau.",
+      "choices": [
+        "Đến 31/3 năm sau",
+        "Đến 3/1 năm sau",
+        "Đến 31/3 năm nay"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-32",
+      "kind": "money",
+      "ko": "건당 처리 비용은 50원입니다.",
+      "vi": "Chi phí xử lý mỗi lượt là 50 won.",
+      "choices": [
+        "50 ₩ / lượt",
+        "15 ₩ / lượt",
+        "500 ₩ / lượt"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-33",
+      "kind": "number",
+      "ko": "이번 스프린트에서 버그 17건을 수정했습니다.",
+      "vi": "Sprint này đã sửa 17 bug.",
+      "choices": [
+        "17 bug",
+        "70 bug",
+        "7 bug"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-34",
+      "kind": "time",
+      "ko": "배치 작업은 매일 새벽 3시에 실행됩니다.",
+      "vi": "Batch chạy lúc 3 giờ sáng mỗi ngày.",
+      "choices": [
+        "03:00 mỗi ngày",
+        "13:00 mỗi ngày",
+        "03:00 mỗi tuần"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-35",
+      "kind": "number",
+      "ko": "페이지 로딩 시간이 2.5초에서 1.2초로 개선되었습니다.",
+      "vi": "Thời gian tải trang cải thiện từ 2,5 giây còn 1,2 giây.",
+      "choices": [
+        "2,5 s → 1,2 s",
+        "2,5 s → 2,1 s",
+        "1,5 s → 1,2 s"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-36",
+      "kind": "date",
+      "ko": "다음 정기 점검은 격주 수요일입니다.",
+      "vi": "Lần bảo trì định kỳ tiếp theo vào thứ Tư cách tuần.",
+      "choices": [
+        "Thứ Tư cách tuần",
+        "Thứ Tư hằng tuần",
+        "Thứ Năm cách tuần"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-37",
+      "kind": "money",
+      "ko": "총 예산은 2억 원입니다.",
+      "vi": "Tổng ngân sách là 200 triệu won.",
+      "choices": [
+        "200.000.000 ₩",
+        "20.000.000 ₩",
+        "2.000.000.000 ₩"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-38",
+      "kind": "number",
+      "ko": "동시 접속자가 5천 명을 넘으면 서버가 느려집니다.",
+      "vi": "Khi số người truy cập đồng thời vượt 5.000 thì server chậm.",
+      "choices": [
+        "Trên 5.000 người",
+        "Trên 500 người",
+        "Trên 50.000 người"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-39",
+      "kind": "time",
+      "ko": "점심시간 이후인 1시부터 다시 진행하겠습니다.",
+      "vi": "Sau giờ ăn trưa, từ 1 giờ chúng ta tiếp tục.",
+      "choices": [
+        "Từ 13:00",
+        "Từ 11:00",
+        "Từ 01:00"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-40",
+      "kind": "date",
+      "ko": "휴가는 8월 둘째 주에 쓸 예정입니다.",
+      "vi": "Tôi dự định nghỉ phép vào tuần thứ hai của tháng 8.",
+      "choices": [
+        "Tuần 2 tháng 8",
+        "Tuần 2 tháng 2",
+        "Tuần đầu tháng 8"
+      ],
+      "answer": 0
     }
   ]
 }

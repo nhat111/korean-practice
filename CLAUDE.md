@@ -124,7 +124,7 @@ Korean either.
   `meaningVi`, optional `noteVi`). `pattern` uses TOPIK notation only (`-아/어서`, `-(으)ㄴ 후에`,
   `N와/과`; no Vietnamese inside, tested). `form` must be an exact substring of `example.ko` (validated);
   it is highlighted with numbers on the flipped flashcard, overlapping forms share one highlight.
-- `shadowing.json` (`ShadowingItem`): `id` (`sh-`, `sv-` survival, `cs-` cushion), `level` 1-3,
+- `shadowing.json` (`ShadowingItem`): `id` (`sh-`, `sv-` survival, `cs-` cushion, `mt-` meeting, `tc-` tech), `level` 1-3,
   `topic` (one of `SHADOWING_TOPICS` in `src/practice/decks.ts`, labels in `vi.shadowing.topics`; tested),
   `ko`, `pron` (whole sentence in `[...]`, standard sound-change rules: 연음, 비음화, 유음화, 경음화),
   `vi`, optional `notes` (Vietnamese). The `survival` deck is pinned on the home page.

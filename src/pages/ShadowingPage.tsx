@@ -45,21 +45,20 @@ function ShadowingDeck({ items }: { items: ShadowingItem[] }) {
 
   return (
     <>
-      <div className="chips chips--wrap" role="group">
-        <button type="button" className={topic === '' ? 'chip chip--on' : 'chip'} onClick={() => pick('')}>
-          {vi.shadowing.allTopics}
-        </button>
-        {due.length > 0 && (
-          <button type="button" className={topic === DUE ? 'chip chip--on' : 'chip'} onClick={() => pick(DUE)}>
-            {vi.shadowing.dueOnly(due.length)}
-          </button>
-        )}
+      <select
+        className="select"
+        value={topic}
+        onChange={(e) => pick(e.target.value)}
+        aria-label={vi.interpret.topicLabel}
+      >
+        <option value="">{vi.shadowing.allTopicsCount(items.length)}</option>
+        {due.length > 0 && <option value={DUE}>{vi.shadowing.dueOnly(due.length)}</option>}
         {topics.map((t) => (
-          <button key={t} type="button" className={topic === t ? 'chip chip--on' : 'chip'} onClick={() => pick(t)}>
-            {vi.shadowing.topics[t]}
-          </button>
+          <option key={t} value={t}>
+            {`${vi.shadowing.topics[t]} (${items.filter((s) => s.topic === t).length})`}
+          </option>
         ))}
-      </div>
+      </select>
       <div className="segmented" role="tablist">
         {[false, true].map((h) => (
           <button
