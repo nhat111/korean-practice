@@ -194,3 +194,20 @@ export interface PatternItem {
   /** Usage note (Vietnamese). */
   note?: string;
 }
+
+// ---------- Listening: numbers, dates, money ----------
+
+export type NumberKind = 'date' | 'time' | 'money' | 'number';
+
+/** A sentence with a number/date/amount; the learner picks what they heard. */
+export interface NumberItem {
+  /** Stable id; never rename. */
+  id: string;
+  kind: NumberKind;
+  ko: string;
+  vi: string;
+  /** Answer options in Vietnamese notation (2-4); shuffled in the UI. */
+  choices: string[];
+  /** Index of the correct choice. */
+  answer: number;
+}

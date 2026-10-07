@@ -12,6 +12,7 @@ const texts = spokenTexts({
   emails: load('emails'),
   songs: load('songs'),
   shadowing: load('shadowing'),
+  numbers: load('numbers'),
   patternSentences: load('patterns').flatMap(allFills).map((f: { ko: string }) => f.ko),
 });
 const jobs = new Map(texts.map((text) => [audioKey(text), text]));

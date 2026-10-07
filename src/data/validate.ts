@@ -7,6 +7,8 @@ import type {
   CorrectionType,
   EmailCorrection,
   EmailExercise,
+  NumberItem,
+  NumberKind,
   PatternItem,
   Politeness,
   Scenario,
@@ -224,6 +226,28 @@ export function validatePattern(v: unknown): string[] {
   return errors;
 }
 
+const NUMBER_KINDS: readonly NumberKind[] = ['date', 'time', 'money', 'number'];
+
+export function validateNumber(v: unknown): string[] {
+  const errors: string[] = [];
+  if (!isObj(v)) return ['number: phải là object'];
+  const path = `number(${String(v.id)})`;
+  requireStrings(v, ['id', 'ko', 'vi'], path, errors);
+  if (!NUMBER_KINDS.includes(v.kind as NumberKind)) {
+    errors.push(`${path}.kind: phải là một trong ${NUMBER_KINDS.join(', ')}`);
+  }
+  const choices = v.choices;
+  if (!isStringArray(choices) || choices.length < 2 || choices.length > 4 || !choices.every(isNonEmptyString)) {
+    errors.push(`${path}.choices: cần 2-4 chuỗi không rỗng`);
+  } else {
+    if (new Set(choices).size !== choices.length) errors.push(`${path}.choices: có lựa chọn trùng`);
+    if (typeof v.answer !== 'number' || !Number.isInteger(v.answer) || v.answer < 0 || v.answer >= choices.length) {
+      errors.push(`${path}.answer: phải là chỉ số trong choices`);
+    }
+  }
+  return errors;
+}
+
 export function validateSong(v: unknown): string[] {
   const errors: string[] = [];
   if (!isObj(v)) return ['song: phải là object'];
@@ -315,4 +339,8 @@ export function parseShadowing(data: unknown): ParseResult<ShadowingItem> {
 
 export function parsePatterns(data: unknown): ParseResult<PatternItem> {
   return parseContentFile<PatternItem>(data, validatePattern);
+}
+
+export function parseNumbers(data: unknown): ParseResult<NumberItem> {
+  return parseContentFile<NumberItem>(data, validateNumber);
 }

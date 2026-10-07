@@ -1996,3 +1996,46 @@ ins {
   gap: 6px;
   align-self: flex-start;
 }
+
+/* ---------- Listening ---------- */
+
+.listen-player {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.listen-play {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--primary-text);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+.listen-play:active {
+  transform: scale(0.94);
+}
+.listen-play:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+.choice--ok,
+.choice--ok:disabled {
+  border-color: var(--ok);
+  background: var(--ok-bg);
+  color: var(--ok);
+  opacity: 1;
+}
+.choice--bad,
+.choice--bad:disabled {
+  border-color: var(--bad);
+  background: var(--bad-bg);
+  color: var(--bad);
+  opacity: 1;
+}

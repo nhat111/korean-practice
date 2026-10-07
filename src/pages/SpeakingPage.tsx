@@ -47,6 +47,13 @@ export function SpeakingPage() {
           <h2>{vi.patterns.title}</h2>
           <p className="muted">{vi.home.sections.patterns}</p>
         </Link>
+        <Link to="/listening" className="card card--link">
+          <span className="card-icon">
+            <Icon name="headphones" />
+          </span>
+          <h2>{vi.listening.title}</h2>
+          <p className="muted">{vi.listening.homeDesc}</p>
+        </Link>
       </div>
 
       <div className="segmented" role="tablist">

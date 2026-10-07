@@ -9,6 +9,7 @@ import { EmailExercisePage } from './pages/EmailExercisePage';
 import { EmailsPage } from './pages/EmailsPage';
 import { FlashcardsPage } from './pages/FlashcardsPage';
 import { HomePage } from './pages/HomePage';
+import { ListeningPage } from './pages/ListeningPage';
 import { PatternsPage } from './pages/PatternsPage';
 import { ProgressPage } from './pages/ProgressPage';
 import { ScenarioPlayerPage } from './pages/ScenarioPlayerPage';
@@ -34,6 +35,7 @@ export function App() {
         <Route path="speaking" element={<SpeakingPage />} />
         <Route path="shadowing" element={<ShadowingPage />} />
         <Route path="patterns" element={<PatternsPage />} />
+        <Route path="listening" element={<ListeningPage />} />
         <Route path="daily" element={<DailyPage />} />
         <Route path="songs" element={<SongsPage />} />
         <Route path="songs/:id" element={<SongDetailPage />} />
