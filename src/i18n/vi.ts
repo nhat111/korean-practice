@@ -372,6 +372,25 @@ export const vi = {
     again: 'Nghe lượt mới',
     back: 'Về Luyện nói',
   },
+  weak: {
+    title: 'Câu cần luyện lại',
+    count: (n: number) => `${n} câu bạn chấm "Chưa được" hoặc hay sai. Luyện lại ngay.`,
+    none: 'Chưa có câu nào. Câu bạn chấm "Chưa được" hoặc nghe sai sẽ hiện ở đây.',
+    intro: (n: number) => `${n} câu bạn hay sai, câu sai gần nhất ở trên cùng. Luyện lần lượt hoặc chọn một câu.`,
+    start: 'Luyện lần lượt',
+    kinds: {
+      shadowing: 'Shadowing',
+      pattern: 'Mẫu câu',
+      scenario: 'Hội thoại',
+      vocab: 'Từ vựng (nói)',
+      listen: 'Nghe',
+    },
+    emptyTitle: 'Không có câu yếu 🎉',
+    empty: 'Bạn chưa có câu nào bị chấm "Chưa được". Cứ luyện tiếp, câu khó sẽ được gom vào đây.',
+    doneTitle: 'Xong lượt luyện lại',
+    done: 'Câu bạn chấm "Tốt" sẽ ra khỏi danh sách; câu vẫn khó sẽ quay lại lần sau.',
+    toProgress: 'Về Tiến độ',
+  },
   shadowing: {
     title: 'Shadowing',
     intro:
@@ -590,6 +609,9 @@ export const vi = {
   },
   progress: {
     title: 'Tiến độ học',
+    week: '7 ngày qua',
+    weekCaption: 'Số phút ghi âm mỗi ngày (chạm vào cột để xem số câu đã nói).',
+    dayTip: (day: string, minutes: number, spoken: number) => `${day}: ${minutes} phút ghi âm, ${spoken} câu đã nói`,
     vocab: 'Từ vựng',
     learned: 'Đã học',
     mastered: 'Thuộc lâu (≥ 21 ngày)',

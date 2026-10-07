@@ -1,7 +1,11 @@
 import { useState } from 'react';
+import { Link } from 'react-router';
+import { Icon } from '../components/Icon';
+import { WeekChart } from '../components/WeekChart';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
 import { streak } from '../practice/plan';
+import { lastDays, weakKeys } from '../practice/weak';
 import { isDue, isMastered, todayKey } from '../srs/sm2';
 import { resetProgress, useProgress } from '../storage/progress';
 
@@ -11,6 +15,7 @@ export function ProgressPage() {
   const scenarios = useContent('scenarios');
   const emails = useContent('emails');
   const today = todayKey();
+  const weak = weakKeys(progress.srs).length;
 
   const vocabIds = vocab.status === 'ready' ? vocab.items.map((v) => v.id) : [];
   const cards = vocabIds.map((id) => progress.cards[id]).filter((c) => c !== undefined);
@@ -45,6 +50,21 @@ export function ProgressPage() {
   return (
     <div className="stack">
       <h1>{vi.progress.title}</h1>
+
+      <section className="card stack-sm">
+        <h2>{vi.progress.week}</h2>
+        <WeekChart days={lastDays(progress.daily, today)} />
+      </section>
+
+      <Link to="/weak" className="card card--link weak-cta">
+        <span className="card-icon">
+          <Icon name="target" />
+        </span>
+        <div>
+          <h2>{vi.weak.title}</h2>
+          <p className="muted">{weak > 0 ? vi.weak.count(weak) : vi.weak.none}</p>
+        </div>
+      </Link>
 
       <section className="card stack-sm">
         <h2>{vi.progress.vocab}</h2>

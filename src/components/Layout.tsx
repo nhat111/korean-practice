@@ -12,7 +12,7 @@ const NAV: { to: string; label: string; icon: IconName; also: string[] }[] = [
   { to: '/speaking', label: vi.nav.speaking, icon: 'mic', also: ['/shadowing', '/patterns', '/listening'] },
   { to: '/scenarios', label: vi.nav.scenarios, icon: 'chat', also: ['/custom', '/emails', '/ai-roleplay'] },
   { to: '/flashcards', label: vi.nav.flashcards, icon: 'cards', also: ['/songs'] },
-  { to: '/progress', label: vi.nav.progress, icon: 'chart', also: [] },
+  { to: '/progress', label: vi.nav.progress, icon: 'chart', also: ['/weak'] },
 ];
 
 function isUnder(pathname: string, base: string): boolean {
