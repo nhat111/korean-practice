@@ -16,6 +16,7 @@ import { ScenarioPlayerPage } from './pages/ScenarioPlayerPage';
 import { ScenariosPage } from './pages/ScenariosPage';
 import { SettingsPage } from './pages/SettingsPage';
 import { ShadowingPage } from './pages/ShadowingPage';
+import { WeakPage } from './pages/WeakPage';
 import { SongDetailPage } from './pages/SongDetailPage';
 import { SongsPage } from './pages/SongsPage';
 import { SpeakingPage } from './pages/SpeakingPage';
@@ -37,6 +38,7 @@ export function App() {
         <Route path="patterns" element={<PatternsPage />} />
         <Route path="listening" element={<ListeningPage />} />
         <Route path="daily" element={<DailyPage />} />
+        <Route path="weak" element={<WeakPage />} />
         <Route path="songs" element={<SongsPage />} />
         <Route path="songs/:id" element={<SongDetailPage />} />
         <Route path="progress" element={<ProgressPage />} />
