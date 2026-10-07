@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from 'react';
 import { Link } from 'react-router';
+import { InterpretCard } from '../components/InterpretCard';
 import { PatternDrill } from '../components/PatternDrill';
 import { ScenarioTurnDrill } from '../components/ScenarioTurnDrill';
 import { ShadowingCard } from '../components/ShadowingCard';
@@ -9,7 +10,7 @@ import { vi } from '../i18n/vi';
 import { weakKeys } from '../practice/weak';
 import { splitParts } from '../speaking/segments';
 import { getProgressSnapshot } from '../storage/progress';
-import type { NumberItem, PatternItem, Scenario, ShadowingItem, VocabItem } from '../types';
+import type { InterpretItem, NumberItem, PatternItem, Scenario, ShadowingItem, VocabItem } from '../types';
 
 interface Content {
   shadowing: ShadowingItem[];
@@ -17,9 +18,10 @@ interface Content {
   scenarios: Scenario[];
   vocab: VocabItem[];
   numbers: NumberItem[];
+  interpret: InterpretItem[];
 }
 
-type WeakKind = 'shadowing' | 'pattern' | 'scenario' | 'vocab' | 'listen';
+type WeakKind = 'shadowing' | 'pattern' | 'scenario' | 'vocab' | 'listen' | 'interpret';
 
 interface WeakItem {
   key: string;
@@ -72,6 +74,19 @@ function resolve(key: string, c: Content): WeakItem | null {
         ? { key, kind: 'scenario', ko: t.modelAnswer, render: (r) => <ScenarioTurnDrill scenario={scenario} turn={turn} onRated={r} /> }
         : null;
     }
+    case 'interpret':
+    case 'interpret-ko': {
+      const item = c.interpret.find((x) => x.id === id);
+      const direction = type === 'interpret' ? 'vi-ko' : 'ko-vi';
+      return item
+        ? {
+            key,
+            kind: 'interpret',
+            ko: direction === 'vi-ko' ? item.vi : item.ko,
+            render: (r) => <InterpretCard item={item} direction={direction} onRated={r} />,
+          }
+        : null;
+    }
     case 'vocab-speak': {
       const v = c.vocab.find((x) => x.id === id);
       return v ? { key, kind: 'vocab', ko: v.ko, render: (r) => lineDrill(key, v.ko, v.vi, r) } : null;
@@ -113,7 +128,8 @@ export function WeakPage() {
   const scenarios = useContent('scenarios');
   const vocab = useContent('vocab');
   const numbers = useContent('numbers');
-  const states = [shadowing, patterns, scenarios, vocab, numbers];
+  const interpret = useContent('interpret');
+  const states = [shadowing, patterns, scenarios, vocab, numbers, interpret];
 
   return (
     <div className="stack">
@@ -125,7 +141,8 @@ export function WeakPage() {
       patterns.status === 'ready' &&
       scenarios.status === 'ready' &&
       vocab.status === 'ready' &&
-      numbers.status === 'ready' ? (
+      numbers.status === 'ready' &&
+      interpret.status === 'ready' ? (
         <WeakSession
           content={{
             shadowing: shadowing.items,
@@ -133,6 +150,7 @@ export function WeakPage() {
             scenarios: scenarios.items,
             vocab: vocab.items,
             numbers: numbers.items,
+            interpret: interpret.items,
           }}
         />
       ) : states.some((s) => s.status === 'error') ? (

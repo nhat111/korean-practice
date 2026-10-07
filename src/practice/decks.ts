@@ -11,12 +11,19 @@ export type ShadowingTopic = (typeof SHADOWING_TOPICS)[number];
 /** Topics drawn for the "shadowing" part of the daily session (survival has its own slot). */
 export const DAILY_SHADOWING_TOPICS: readonly string[] = ['progress', 'bug', 'schedule', 'request', 'cushion'];
 
+/** Interpreting topics, in display order. Labels live in vi.interpret.topics. */
+export const INTERPRET_TOPICS = ['meeting', 'schedule', 'bug', 'scope', 'cost', 'handover'] as const;
+
 /** Keys in Progress.srs: "<type>:<id>". */
 export const srsKey = {
   shadowing: (id: string) => `shadowing:${id}`,
   pattern: (id: string) => `pattern:${id}`,
   scenario: (id: string, turn: number) => `scenario:${id}:${turn}`,
   vocabSpeak: (id: string) => `vocab-speak:${id}`,
+  /** Vietnamese → say it in Korean. */
+  interpret: (id: string) => `interpret:${id}`,
+  /** Korean → say it in Vietnamese. */
+  interpretKo: (id: string) => `interpret-ko:${id}`,
 };
 
 /** SM-2 grade for a self-rating: not yet → again tomorrow, close → hard, good → good. */

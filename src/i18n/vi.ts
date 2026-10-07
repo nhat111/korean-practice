@@ -277,6 +277,7 @@ export const vi = {
       check: 'Kiểm tra',
       roleplay: 'Nhập vai',
       pattern: 'Mẫu câu',
+      interpret: 'Phiên dịch',
     },
     ratingLabel: {
       good: 'Giống',
@@ -372,6 +373,26 @@ export const vi = {
     again: 'Nghe lượt mới',
     back: 'Về Luyện nói',
   },
+  interpret: {
+    title: 'Phiên dịch nói',
+    homeDesc: 'Nghe ý của team Việt, nói lại ngay bằng tiếng Hàn cho khách (và ngược lại)',
+    intro:
+      'Luyện vai trò BrSE: đọc câu tiếng Việt rồi nói ngay bằng tiếng Hàn, hoặc nghe câu tiếng Hàn rồi nói lại bằng tiếng Việt. Nói xong mới xem đáp án.',
+    directions: { 'vi-ko': 'Việt → Hàn', 'ko-vi': 'Hàn → Việt' },
+    topics: {
+      meeting: 'Họp',
+      schedule: 'Lịch',
+      bug: 'Bug & sự cố',
+      scope: 'Phạm vi',
+      cost: 'Chi phí, công số',
+      handover: 'Bàn giao',
+    } as Record<string, string>,
+    topicLabel: 'Chủ đề',
+    allTopics: 'Tất cả chủ đề',
+    sayKo: 'Nói câu này bằng tiếng Hàn',
+    sayVi: 'Nghe rồi nói lại bằng tiếng Việt, sau đó xem đáp án và tự chấm.',
+    answer: 'Đáp án',
+  },
   weak: {
     title: 'Câu cần luyện lại',
     count: (n: number) => `${n} câu bạn chấm "Chưa được" hoặc hay sai. Luyện lại ngay.`,
@@ -384,6 +405,7 @@ export const vi = {
       scenario: 'Hội thoại',
       vocab: 'Từ vựng (nói)',
       listen: 'Nghe',
+      interpret: 'Phiên dịch',
     },
     emptyTitle: 'Không có câu yếu 🎉',
     empty: 'Bạn chưa có câu nào bị chấm "Chưa được". Cứ luyện tiếp, câu khó sẽ được gom vào đây.',

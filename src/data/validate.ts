@@ -7,6 +7,7 @@ import type {
   CorrectionType,
   EmailCorrection,
   EmailExercise,
+  InterpretItem,
   NumberItem,
   NumberKind,
   PatternItem,
@@ -248,6 +249,15 @@ export function validateNumber(v: unknown): string[] {
   return errors;
 }
 
+export function validateInterpret(v: unknown): string[] {
+  const errors: string[] = [];
+  if (!isObj(v)) return ['interpret: phải là object'];
+  const path = `interpret(${String(v.id)})`;
+  requireStrings(v, ['id', 'topic', 'vi', 'ko'], path, errors);
+  if (v.note !== undefined && !isNonEmptyString(v.note)) errors.push(`${path}.note: phải là chuỗi không rỗng`);
+  return errors;
+}
+
 export function validateSong(v: unknown): string[] {
   const errors: string[] = [];
   if (!isObj(v)) return ['song: phải là object'];
@@ -343,4 +353,8 @@ export function parsePatterns(data: unknown): ParseResult<PatternItem> {
 
 export function parseNumbers(data: unknown): ParseResult<NumberItem> {
   return parseContentFile<NumberItem>(data, validateNumber);
+}
+
+export function parseInterpret(data: unknown): ParseResult<InterpretItem> {
+  return parseContentFile<InterpretItem>(data, validateInterpret);
 }

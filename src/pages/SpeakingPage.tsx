@@ -54,6 +54,13 @@ export function SpeakingPage() {
           <h2>{vi.listening.title}</h2>
           <p className="muted">{vi.listening.homeDesc}</p>
         </Link>
+        <Link to="/interpret" className="card card--link">
+          <span className="card-icon">
+            <Icon name="languages" />
+          </span>
+          <h2>{vi.interpret.title}</h2>
+          <p className="muted">{vi.interpret.homeDesc}</p>
+        </Link>
       </div>
 
       <div className="segmented" role="tablist">

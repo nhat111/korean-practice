@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "ip-01",
+      "topic": "meeting",
+      "vi": "Team bên tôi đã xem xong tài liệu, có ba câu hỏi.",
+      "ko": "저희 팀에서 문서를 다 검토했고, 질문이 세 가지 있습니다."
+    },
+    {
+      "id": "ip-02",
+      "topic": "schedule",
+      "vi": "Vì môi trường test chưa sẵn sàng nên lịch test có thể chậm khoảng hai ngày.",
+      "ko": "테스트 환경이 아직 준비되지 않아서 테스트 일정이 이틀 정도 지연될 수 있습니다.",
+      "note": "-아/어서: nêu lý do trước, kết quả sau. \"이틀\" = 2 ngày (không nói 2일 khi nói chuyện)."
+    },
+    {
+      "id": "ip-03",
+      "topic": "bug",
+      "vi": "Lỗi này chỉ xảy ra trên iPhone, Android thì bình thường.",
+      "ko": "이 오류는 아이폰에서만 발생하고, 안드로이드에서는 정상입니다."
+    },
+    {
+      "id": "ip-04",
+      "topic": "scope",
+      "vi": "Chức năng này không nằm trong phạm vi hợp đồng.",
+      "ko": "이 기능은 계약 범위에 포함되어 있지 않습니다."
+    },
+    {
+      "id": "ip-05",
+      "topic": "cost",
+      "vi": "Nếu thêm chức năng này thì cần thêm khoảng 0,5 MM.",
+      "ko": "이 기능을 추가하려면 약 0.5MM가 더 필요합니다.",
+      "note": "-(으)려면: \"nếu muốn… thì\". 0.5 đọc là \"영 점 오\"."
+    },
+    {
+      "id": "ip-06",
+      "topic": "schedule",
+      "vi": "Chúng tôi muốn deploy vào tối thứ Sáu, sau giờ làm việc.",
+      "ko": "금요일 업무 시간 이후 저녁에 배포하고 싶습니다."
+    },
+    {
+      "id": "ip-07",
+      "topic": "bug",
+      "vi": "Nguyên nhân là do dữ liệu cũ bị trùng.",
+      "ko": "원인은 기존 데이터가 중복된 것 때문입니다."
+    },
+    {
+      "id": "ip-08",
+      "topic": "meeting",
+      "vi": "Phần này tôi sẽ giải thích bằng sơ đồ.",
+      "ko": "이 부분은 그림으로 설명드리겠습니다.",
+      "note": "설명드리다: cách nói khiêm nhường của 설명하다, dùng với khách."
+    },
+    {
+      "id": "ip-09",
+      "topic": "handover",
+      "vi": "Từ tuần sau, anh Minh sẽ phụ trách phần backend thay tôi.",
+      "ko": "다음 주부터는 제 대신 민 님이 백엔드를 담당하게 됩니다.",
+      "note": "Khi nhắc đồng nghiệp trước mặt khách, dùng tên + 님. -게 되다: sự thay đổi đã được quyết định."
+    },
+    {
+      "id": "ip-10",
+      "topic": "bug",
+      "vi": "Chúng tôi đã sửa xong và đang test lại.",
+      "ko": "수정은 완료했고, 현재 재테스트 중입니다."
+    },
+    {
+      "id": "ip-11",
+      "topic": "scope",
+      "vi": "Yêu cầu này làm ở giai đoạn 2 có được không ạ?",
+      "ko": "이 요청은 2차 개발에서 진행해도 될까요?"
+    },
+    {
+      "id": "ip-12",
+      "topic": "schedule",
+      "vi": "Nếu spec được chốt trước thứ Tư thì chúng tôi kịp lịch.",
+      "ko": "수요일까지 사양이 확정되면 일정에 맞출 수 있습니다."
+    },
+    {
+      "id": "ip-13",
+      "topic": "cost",
+      "vi": "Chi phí server sẽ tăng khoảng 20% mỗi tháng.",
+      "ko": "서버 비용이 매달 약 20% 증가할 예정입니다."
+    },
+    {
+      "id": "ip-14",
+      "topic": "meeting",
+      "vi": "Tôi xin tóm tắt lại nội dung đã chốt hôm nay.",
+      "ko": "오늘 결정된 내용을 정리해 보겠습니다."
+    },
+    {
+      "id": "ip-15",
+      "topic": "bug",
+      "vi": "Hiện chưa tái hiện được, anh/chị gửi giúp tôi các bước tái hiện nhé.",
+      "ko": "현재 재현이 되지 않아서, 재현 절차를 보내 주시면 감사하겠습니다.",
+      "note": "-아/어 주시면 감사하겠습니다: cách nhờ lịch sự, an toàn nhất với khách."
+    },
+    {
+      "id": "ip-16",
+      "topic": "handover",
+      "vi": "Tài liệu bàn giao đã được tải lên thư mục chung.",
+      "ko": "인수인계 문서는 공유 폴더에 올려 두었습니다.",
+      "note": "-아/어 두다: làm sẵn để dùng sau."
+    },
+    {
+      "id": "ip-17",
+      "topic": "schedule",
+      "vi": "Do nghỉ Tết, team chúng tôi nghỉ từ ngày 14 đến 20 tháng 2.",
+      "ko": "설 연휴로 인해 저희 팀은 2월 14일부터 20일까지 휴무입니다."
+    },
+    {
+      "id": "ip-18",
+      "topic": "scope",
+      "vi": "Chúng tôi hiểu yêu cầu là chỉ admin mới được xoá dữ liệu, đúng không ạ?",
+      "ko": "데이터 삭제는 관리자만 가능하다는 요구사항으로 이해했는데, 맞을까요?",
+      "note": "-다는 것으로 이해했는데, 맞을까요?: mẫu câu xác nhận lại cách hiểu."
+    },
+    {
+      "id": "ip-19",
+      "topic": "cost",
+      "vi": "Báo giá chi tiết tôi sẽ gửi trong tuần này.",
+      "ko": "상세 견적은 이번 주 안에 보내 드리겠습니다."
+    },
+    {
+      "id": "ip-20",
+      "topic": "meeting",
+      "vi": "Xin lỗi, đường truyền không ổn định, tôi xin vào lại.",
+      "ko": "죄송합니다. 연결이 불안정해서 다시 접속하겠습니다."
+    },
+    {
+      "id": "ip-21",
+      "topic": "bug",
+      "vi": "Đã xử lý tạm thời, bản sửa chính thức sẽ deploy vào ngày mai.",
+      "ko": "임시 조치는 완료했고, 정식 수정본은 내일 배포할 예정입니다."
+    },
+    {
+      "id": "ip-22",
+      "topic": "schedule",
+      "vi": "Chúng tôi cần thêm một tuần để test hiệu năng.",
+      "ko": "성능 테스트를 위해 일주일이 더 필요합니다."
+    },
+    {
+      "id": "ip-23",
+      "topic": "meeting",
+      "vi": "Ý kiến của team Việt Nam hơi khác một chút.",
+      "ko": "베트남 팀의 의견은 조금 다릅니다.",
+      "note": "Khi truyền đạt ý kiến khác, giữ giọng trung tính rồi nêu lý do ngay sau."
+    },
+    {
+      "id": "ip-24",
+      "topic": "handover",
+      "vi": "Tài khoản và quyền truy cập sẽ được chuyển giao trước ngày 30.",
+      "ko": "계정과 접근 권한은 30일까지 이관하겠습니다."
+    }
+  ]
+}

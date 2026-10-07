@@ -9,7 +9,7 @@ import { vi } from '../i18n/vi';
 // highlighted. Pages without a tab (songs, emails…) are reached from Home or a tab page.
 const NAV: { to: string; label: string; icon: IconName; also: string[] }[] = [
   { to: '/', label: vi.nav.home, icon: 'home', also: ['/daily'] },
-  { to: '/speaking', label: vi.nav.speaking, icon: 'mic', also: ['/shadowing', '/patterns', '/listening'] },
+  { to: '/speaking', label: vi.nav.speaking, icon: 'mic', also: ['/shadowing', '/patterns', '/listening', '/interpret'] },
   { to: '/scenarios', label: vi.nav.scenarios, icon: 'chat', also: ['/custom', '/emails', '/ai-roleplay'] },
   { to: '/flashcards', label: vi.nav.flashcards, icon: 'cards', also: ['/songs'] },
   { to: '/progress', label: vi.nav.progress, icon: 'chart', also: ['/weak'] },

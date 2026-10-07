@@ -7,6 +7,7 @@ import { describe, expect, it } from 'vitest';
 import { SCENARIO_CATEGORIES } from './scenarioFilter';
 import {
   parseEmails,
+  parseInterpret,
   parseNumbers,
   parsePatterns,
   parseScenarios,
@@ -16,7 +17,7 @@ import {
   type ParseResult,
 } from './validate';
 import { allFills } from '../patterns/fill';
-import { SHADOWING_TOPICS } from '../practice/decks';
+import { INTERPRET_TOPICS, SHADOWING_TOPICS } from '../practice/decks';
 
 function load(name: string): unknown {
   return JSON.parse(readFileSync(resolve(process.cwd(), 'public/data', name), 'utf8'));
@@ -30,6 +31,7 @@ const files: [string, (data: unknown) => ParseResult<{ id: string }>][] = [
   ['shadowing.json', parseShadowing],
   ['patterns.json', parsePatterns],
   ['numbers.json', parseNumbers],
+  ['interpret.json', parseInterpret],
 ];
 
 describe.each(files)('%s', (name, parse) => {
@@ -91,5 +93,13 @@ describe('patterns.json', () => {
     const { items } = parsePatterns(load('patterns.json'));
     const bad = items.flatMap((p) => allFills(p)).filter((f) => /[{}]/.test(f.ko + f.vi));
     expect(bad.map((f) => f.ko)).toEqual([]);
+  });
+});
+
+describe('interpret.json', () => {
+  it('uses only the known topics (labels live in vi.interpret.topics)', () => {
+    const { items } = parseInterpret(load('interpret.json'));
+    const unknown = items.filter((s) => !(INTERPRET_TOPICS as readonly string[]).includes(s.topic));
+    expect(unknown.map((s) => `${s.id}: ${s.topic}`)).toEqual([]);
   });
 });

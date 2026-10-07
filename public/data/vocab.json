@@ -5895,6 +5895,68 @@
         "time",
         "incident"
       ]
+    },
+    {
+      "id": "w-yogeonjeonguiseo",
+      "ko": "요건정의서",
+      "vi": "tài liệu định nghĩa yêu cầu",
+      "pron": "[요껀정의서]",
+      "type": "noun",
+      "collocation": "요건정의서를 작성하다",
+      "example": {
+        "ko": "요건정의서 리뷰는 다음 주 월요일에 진행할 예정입니다.",
+        "vi": "Buổi review tài liệu định nghĩa yêu cầu dự kiến vào thứ Hai tuần sau."
+      },
+      "tags": [
+        "pm",
+        "document"
+      ]
+    },
+    {
+      "id": "w-hwamyeonseolgyeseo",
+      "ko": "화면설계서",
+      "vi": "tài liệu thiết kế màn hình",
+      "type": "noun",
+      "collocation": "화면설계서를 검토하다",
+      "example": {
+        "ko": "화면설계서와 실제 화면이 다른 부분을 정리했습니다.",
+        "vi": "Tôi đã tổng hợp những chỗ màn hình thực tế khác với tài liệu thiết kế."
+      },
+      "tags": [
+        "pm",
+        "document"
+      ]
+    },
+    {
+      "id": "w-jiui-gwallipyo",
+      "ko": "질의 관리표",
+      "vi": "bảng quản lý câu hỏi (QnA)",
+      "pron": "[지릐 괄리표]",
+      "type": "noun",
+      "collocation": "질의 관리표에 정리하다",
+      "example": {
+        "ko": "확인이 필요한 내용은 질의 관리표에 정리해 두었습니다.",
+        "vi": "Những nội dung cần xác nhận tôi đã tổng hợp vào bảng QnA."
+      },
+      "tags": [
+        "pm",
+        "document"
+      ]
+    },
+    {
+      "id": "w-byeongyeong-yocheong",
+      "ko": "변경 요청",
+      "vi": "yêu cầu thay đổi (change request)",
+      "type": "noun",
+      "collocation": "변경 요청으로 처리하다",
+      "example": {
+        "ko": "이 건은 결함이 아니라 변경 요청으로 처리하겠습니다.",
+        "vi": "Việc này không phải lỗi, tôi sẽ xử lý như một yêu cầu thay đổi."
+      },
+      "tags": [
+        "pm",
+        "business"
+      ]
     }
   ]
 }

@@ -21,7 +21,7 @@ export interface EmailResult {
   lastDone: string;
 }
 
-export type SpeakingMode = 'shadowing' | 'check' | 'roleplay' | 'pattern';
+export type SpeakingMode = 'shadowing' | 'check' | 'roleplay' | 'pattern' | 'interpret';
 export type SelfRating = 'good' | 'ok' | 'bad';
 
 export interface SpeakingAttempt {

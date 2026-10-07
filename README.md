@@ -19,6 +19,8 @@ built for a Vietnamese Java developer at TOPIK 3. UI in Vietnamese, content in K
     due items first; streak, lines spoken today and minutes recorded on the home page.
   Long lines can be shadowed part by part, and "Nghe → nói → so sánh" does model → record (auto-stops
   when you go quiet) → playback in one tap.
+  **Interpreting** (`/interpret`): BrSE-style, read Vietnamese and say it in Korean, or hear Korean
+  and say it in Vietnamese.
   **Listening** (`/listening`): pick the meaning, type what you hear, or catch numbers, dates and
   amounts (`numbers.json`), at natural speed with replay and slow playback.
   Speech recognition is an optional extra (syllable-level highlighting); everything works with
