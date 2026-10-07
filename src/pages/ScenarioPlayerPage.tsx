@@ -5,6 +5,7 @@ import { ContentGate } from '../components/ContentGate';
 import { Icon } from '../components/Icon';
 import { RatingButtons } from '../components/SpeakPractice';
 import { KoreanLine } from '../components/SpeakButton';
+import { ReportButton } from '../components/ReportButton';
 import { VoiceAnswer } from '../components/VoiceAnswer';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
@@ -333,6 +334,7 @@ function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
               <h3>{vi.scenarios.modelAnswer}</h3>
               <KoreanLine text={turn.modelAnswer} />
               <p className="muted">{turn.modelAnswerVi}</p>
+              <ReportButton reportKey={srsKey.scenario(scenario.id, turnIndex)} ko={turn.modelAnswer} />
             </div>
           )}
 
@@ -357,6 +359,7 @@ function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
               <h3>{vi.scenarios.modelAnswer}</h3>
               <KoreanLine text={turn.modelAnswer} />
               <p className="muted">{turn.modelAnswerVi}</p>
+              <ReportButton reportKey={srsKey.scenario(scenario.id, turnIndex)} ko={turn.modelAnswer} />
             </div>
           )}
 

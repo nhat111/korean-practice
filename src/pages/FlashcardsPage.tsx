@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import { ContentGate } from '../components/ContentGate';
 import { GrammarNotes, GrammarSentence } from '../components/GrammarNotes';
+import { ReportButton } from '../components/ReportButton';
 import { SpeakButton } from '../components/SpeakButton';
 import { ComparePlayback, MicHelp, RecordControl } from '../components/SpeakPractice';
 import { useContent } from '../data/content';
@@ -264,6 +265,7 @@ function Example({ item }: { item: VocabItem }) {
         <SpeakButton text={item.example.ko} small />
       </div>
       <p className="muted">{item.example.vi}</p>
+      <ReportButton reportKey={`vocab:${item.id}`} ko={item.example.ko} />
       <GrammarNotes grammar={item.example.grammar} />
     </div>
   );

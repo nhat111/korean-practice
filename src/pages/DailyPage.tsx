@@ -1,25 +1,45 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
+import { InterpretCard } from '../components/InterpretCard';
+import { ListenChoice } from '../components/ListenChoice';
+import { saveListenResult } from '../practice/listenResult';
+import { ListenPlayer } from '../components/ListenPlayer';
 import { PatternDrill } from '../components/PatternDrill';
 import { ScenarioTurnDrill } from '../components/ScenarioTurnDrill';
 import { ShadowingCard } from '../components/ShadowingCard';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
+import { numberQuestion } from '../practice/listening';
 import { buildDailyPlan, type DailyContent, type DailyStep } from '../practice/plan';
 import { todayKey } from '../srs/sm2';
 import { getProgressSnapshot, useProgress } from '../storage/progress';
+import type { NumberItem } from '../types';
 
 export function DailyPage() {
   const shadowing = useContent('shadowing');
   const patterns = useContent('patterns');
   const scenarios = useContent('scenarios');
-  const states = [shadowing, patterns, scenarios];
+  const numbers = useContent('numbers');
+  const interpret = useContent('interpret');
+  const states = [shadowing, patterns, scenarios, numbers, interpret];
 
   return (
     <div className="stack">
       <h1>{vi.daily.title}</h1>
-      {shadowing.status === 'ready' && patterns.status === 'ready' && scenarios.status === 'ready' ? (
-        <DailySession content={{ shadowing: shadowing.items, patterns: patterns.items, scenarios: scenarios.items }} />
+      {shadowing.status === 'ready' &&
+      patterns.status === 'ready' &&
+      scenarios.status === 'ready' &&
+      numbers.status === 'ready' &&
+      interpret.status === 'ready' ? (
+        <DailySession
+          content={{
+            shadowing: shadowing.items,
+            patterns: patterns.items,
+            scenarios: scenarios.items,
+            numbers: numbers.items,
+            interpret: interpret.items,
+          }}
+        />
       ) : states.some((s) => s.status === 'error') ? (
         <p className="error">{vi.daily.empty}</p>
       ) : (
@@ -87,6 +107,14 @@ function Step({ step, content, onRated }: { step: DailyStep; content: DailyConte
       const item = content.patterns.find((p) => p.id === step.id);
       return item ? <PatternDrill item={item} onRated={onRated} /> : null;
     }
+    case 'listen': {
+      const item = content.numbers?.find((n) => n.id === step.id);
+      return item ? <ListenStep item={item} onDone={onRated} /> : null;
+    }
+    case 'interpret': {
+      const item = content.interpret?.find((i) => i.id === step.id);
+      return item ? <InterpretCard item={item} direction="vi-ko" onRated={onRated} /> : null;
+    }
     case 'scenario': {
       const scenario = content.scenarios.find((s) => s.id === step.id);
       return scenario?.turns[step.turn] ? (
@@ -94,6 +122,24 @@ function Step({ step, content, onRated }: { step: DailyStep; content: DailyConte
       ) : null;
     }
   }
+}
+
+/** One "Số, ngày giờ" question; answering it (right or wrong) completes the step. */
+function ListenStep({ item, onDone }: { item: NumberItem; onDone: () => void }) {
+  const [q] = useState(() => numberQuestion(item));
+  return (
+    <section className="card stack-sm">
+      <ListenPlayer ko={q.ko} />
+      <ListenChoice
+        q={q}
+        prompt={vi.listening.pickNumber}
+        onAnswer={(ok) => {
+          saveListenResult(q.key, ok);
+          onDone();
+        }}
+      />
+    </section>
+  );
 }
 
 function DailyDone({ onAgain }: { onAgain: () => void }) {

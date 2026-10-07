@@ -5,6 +5,7 @@ import { isSpeechSupported, speakKorean } from '../speech';
 import { usePrefs } from '../storage/prefs';
 import type { SelfRating } from '../storage/progress';
 import type { ShadowingItem } from '../types';
+import { ReportButton } from './ReportButton';
 import { SpeakPractice } from './SpeakPractice';
 
 /** One shadowing sentence: listen (repeat), read the real pronunciation, record, compare, rate. */
@@ -43,6 +44,7 @@ export function ShadowingCard({
             </p>
           )}
           <p className="muted">{item.vi}</p>
+          <ReportButton reportKey={srsKey.shadowing(item.id)} ko={item.ko} />
           {item.notes && item.notes.length > 0 && (
             <details className="notes">
               <summary>{vi.practice.notes}</summary>

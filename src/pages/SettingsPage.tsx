@@ -8,6 +8,7 @@ import { VoiceSourceSwitch } from '../components/VoiceSourceSwitch';
 import { vi } from '../i18n/vi';
 import { normalizeUrl, setBackendSettings, useBackendSettings } from '../storage/backend';
 import { ANSWER_TIMERS, setAnswerTimer, setShowPron, usePrefs } from '../storage/prefs';
+import { clearReports, exportReports, removeReport, useReports } from '../storage/reports';
 import { exportProgress, importProgress } from '../storage/progress';
 import { isSpeechSupported } from '../speech';
 
@@ -114,6 +115,7 @@ export function SettingsPage() {
 
       <PracticeSettings />
       <BackupSettings />
+      <ReportSettings />
 
       <section className="card stack-sm">
         <h2>{vi.settings.backendTitle}</h2>
@@ -223,15 +225,7 @@ function BackupSettings() {
   const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
 
   function download() {
-    const blob = new Blob([JSON.stringify(exportProgress(), null, 1)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `kodevtalk-tien-do-${new Date().toISOString().slice(0, 10)}.json`;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    downloadJson(exportProgress(), `kodevtalk-tien-do-${new Date().toISOString().slice(0, 10)}.json`);
     setMsg({ ok: true, text: vi.settings.exported });
   }
 
@@ -273,4 +267,64 @@ function BackupSettings() {
       {msg && <p className={msg.ok ? 'muted small' : 'error'}>{msg.text}</p>}
     </section>
   );
+}
+
+/** Flagged sentences ("Báo câu sai"): list, export as JSON, clear. */
+function ReportSettings() {
+  const reports = useReports();
+
+  function download() {
+    downloadJson(exportReports(), `kodevtalk-cau-bao-sai-${new Date().toISOString().slice(0, 10)}.json`);
+  }
+
+  return (
+    <section className="card stack-sm">
+      <h2>{vi.report.settingsTitle}</h2>
+      <p className="muted small">{vi.report.settingsHelp}</p>
+      {reports.length === 0 ? (
+        <p className="muted small">{vi.report.none}</p>
+      ) : (
+        <>
+          <p className="small">
+            <strong>{vi.report.count(reports.length)}</strong>
+          </p>
+          <ul className="list report-list">
+            {reports.map((r) => (
+              <li key={`${r.key}|${r.ko}`} className="card stack-xs">
+                <div className="stack-xs">
+                  <p lang="ko">{r.ko}</p>
+                  {r.note && <p className="muted small">{r.note}</p>}
+                </div>
+                <button type="button" className="link-btn small" onClick={() => removeReport(r.key, r.ko)}>
+                  {vi.report.remove}
+                </button>
+              </li>
+            ))}
+          </ul>
+          <button type="button" className="btn btn--ghost" onClick={download}>
+            {vi.report.export}
+          </button>
+          <button
+            type="button"
+            className="btn btn--ghost btn--danger"
+            onClick={() => window.confirm(vi.report.clearConfirm) && clearReports()}
+          >
+            {vi.report.clear}
+          </button>
+        </>
+      )}
+    </section>
+  );
+}
+
+function downloadJson(data: unknown, filename: string) {
+  const blob = new Blob([JSON.stringify(data, null, 1)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
 }

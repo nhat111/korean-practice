@@ -2,16 +2,18 @@
 // computes the streak shown on the home page. Pure, unit-tested.
 
 import { addDays, type CardState } from '../srs/sm2';
-import type { PatternItem, Scenario, ShadowingItem } from '../types';
+import type { InterpretItem, NumberItem, PatternItem, Scenario, ShadowingItem } from '../types';
 import { DAILY_SHADOWING_TOPICS, srsKey } from './decks';
 
 export type DailyStep =
   | { kind: 'shadowing'; id: string }
   | { kind: 'pattern'; id: string }
   | { kind: 'survival'; id: string }
-  | { kind: 'scenario'; id: string; turn: number };
+  | { kind: 'scenario'; id: string; turn: number }
+  | { kind: 'listen'; id: string }
+  | { kind: 'interpret'; id: string };
 
-export const DAILY_COUNTS = { shadowing: 3, pattern: 3, survival: 1, scenario: 1 } as const;
+export const DAILY_COUNTS = { shadowing: 3, pattern: 3, survival: 1, scenario: 1, listen: 1, interpret: 1 } as const;
 
 function shuffle<T>(items: T[], rand: () => number): T[] {
   const a = [...items];
@@ -47,6 +49,9 @@ export interface DailyContent {
   shadowing: ShadowingItem[];
   patterns: PatternItem[];
   scenarios: Scenario[];
+  /** Listening "Số, ngày giờ" items (optional so older callers/tests still work). */
+  numbers?: NumberItem[];
+  interpret?: InterpretItem[];
 }
 
 export function buildDailyPlan(
@@ -79,6 +84,14 @@ export function buildDailyPlan(
     // "scenario:<id>:<turn>"; ids never contain ':'.
     const [, id, turn] = k.split(':');
     steps.push({ kind: 'scenario', id, turn: Number(turn) });
+  }
+  const listenKeys = (content.numbers ?? []).map((n) => `listen:number:${n.id}`);
+  for (const k of pickKeys(listenKeys, srs, today, DAILY_COUNTS.listen, rand)) {
+    steps.push({ kind: 'listen', id: k.slice('listen:number:'.length) });
+  }
+  const interpretKeys = (content.interpret ?? []).map((i) => srsKey.interpret(i.id));
+  for (const k of pickKeys(interpretKeys, srs, today, DAILY_COUNTS.interpret, rand)) {
+    steps.push({ kind: 'interpret', id: idOf(k) });
   }
   return steps;
 }
