@@ -211,3 +211,18 @@ export interface NumberItem {
   /** Index of the correct choice. */
   answer: number;
 }
+
+// ---------- Interpreting (Vietnamese <-> Korean, spoken) ----------
+
+export interface InterpretItem {
+  /** Stable id; SRS progress is keyed by it. Never rename. */
+  id: string;
+  /** One of INTERPRET_TOPICS in practice/decks.ts (labels in vi.interpret.topics). */
+  topic: string;
+  /** What the Vietnamese team says. */
+  vi: string;
+  /** Natural Korean rendering for the client. */
+  ko: string;
+  /** Usage or grammar note (Vietnamese). */
+  note?: string;
+}

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import { ComparisonView } from '../components/ComparisonView';
-import { Icon } from '../components/Icon';
+import { ListenPlayer as Player } from '../components/ListenPlayer';
 import { KoreanLine } from '../components/SpeakButton';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
@@ -15,7 +15,7 @@ import {
   type ListenContent,
   type ListenLine,
 } from '../practice/listening';
-import { speakKorean, stopSpeaking } from '../speech';
+import { stopSpeaking } from '../speech';
 import { compareAnswer, PASS_SCORE, type Comparison } from '../speaking/compare';
 import { review, todayKey } from '../srs/sm2';
 import { getProgressSnapshot, saveReview } from '../storage/progress';
@@ -24,7 +24,6 @@ import type { NumberItem } from '../types';
 type Mode = 'meaning' | 'dictation' | 'numbers';
 const MODES: Mode[] = ['meaning', 'dictation', 'numbers'];
 const SESSION = 10;
-const SLOW_RATE = 0.75;
 
 /** Every answered question schedules its line in the SRS (key "listen:<source>"). */
 function saveResult(key: string, correct: boolean) {
@@ -163,33 +162,6 @@ function Session({ mode, content, numbers }: { mode: Mode; content: ListenConten
         )}
       </section>
     </>
-  );
-}
-
-/** Plays the line at natural speed on mount; buttons replay it normally or slowly. */
-function Player({ ko }: { ko: string }) {
-  const [plays, setPlays] = useState(0);
-  useEffect(() => {
-    void speakKorean(ko, 1);
-  }, [ko]);
-
-  function play(rate: number) {
-    setPlays((p) => p + 1);
-    void speakKorean(ko, rate);
-  }
-
-  return (
-    <div className="listen-player">
-      <button type="button" className="listen-play" onClick={() => play(1)} aria-label={vi.listening.play}>
-        <Icon name="headphones" size={30} />
-      </button>
-      <div className="stack-xs">
-        <button type="button" className="chip" onClick={() => play(SLOW_RATE)}>
-          {vi.listening.slow}
-        </button>
-        <span className="muted small">{plays > 0 ? vi.listening.replays(plays) : vi.listening.playHint}</span>
-      </div>
-    </div>
   );
 }
 

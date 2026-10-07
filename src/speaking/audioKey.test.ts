@@ -20,6 +20,7 @@ describe('audioKey', () => {
       songs: load('songs'),
       shadowing: load('shadowing'),
       numbers: load('numbers'),
+      interpret: load('interpret'),
       patternSentences: load('patterns').flatMap(allFills).map((f: { ko: string }) => f.ko),
     });
     expect(texts.length).toBeGreaterThan(1000);
