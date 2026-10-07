@@ -86,12 +86,12 @@ Korean either.
 ├── src/
 │   ├── types.ts          # Content types (Scenario, EmailExercise, VocabItem)
 │   ├── components/       # Layout, SpeakButton, ContentGate, SpeakPractice (speaking core), ShadowingCard, PatternDrill, ScenarioTurnDrill, VoiceAnswer, ...
-│   ├── pages/            # Home, Daily, Shadowing, Patterns, Listening, Scenarios(+Player), Emails(+Exercise), Flashcards, Speaking, Progress, Custom(+Practice)
+│   ├── pages/            # Home, Daily, Weak, Shadowing, Patterns, Listening, Scenarios(+Player), Emails(+Exercise), Flashcards, Speaking, Progress, Custom(+Practice)
 │   ├── data/             # validate.ts (runtime checks), content.ts (fetch + useContent)
 │   ├── storage/          # progress.ts, prefs.ts, backend.ts, custom.ts: the only modules that touch localStorage
 │   ├── custom/           # Custom questions: parse.ts (Q:/A:/VI: text), items.ts (validate/merge), score.ts (best score, "chưa thuộc")
 │   ├── srs/sm2.ts        # SM-2 spaced repetition
-│   ├── practice/         # decks.ts (topics, SRS keys, rating → grade), plan.ts (daily 5-minute plan, streak), listening.ts (listening questions)
+│   ├── practice/         # decks.ts (topics, SRS keys, rating → grade), plan.ts (daily 5-minute plan, streak), listening.ts (listening questions), weak.ts (weak items, 7-day stats)
 │   ├── patterns/fill.ts  # Fill pattern frames, pick particles (pure, tested)
 │   ├── speech.ts         # SpeechSynthesis (ko-KR): voice, pitch and rate from prefs
 │   ├── speaking/         # compare.ts (answer similarity, syllable diff), josa.ts (은/는 by batchim), recognition.ts, recorder.ts
@@ -197,6 +197,12 @@ Korean either.
   "Số, ngày giờ" (`numbers.json`). Lines play at 1x on show, with replay and 0.75x. Each answer is
   saved in the SRS as `listen:<source key>` (grade 4 right / 1 wrong). Question building is pure in
   `src/practice/listening.ts`.
+- "Câu cần luyện lại" (`/weak`, from Progress and Home): `weakKeys` picks SRS entries whose last rating
+  failed (`reps === 0`) or that stay hard (`ef < 2.0`), last-failed first, max 20. `WeakPage` resolves each
+  key back to its content and drill (shadowing, pattern, scenario turn; `listen:*` and `vocab-speak:*` are
+  shadowed again with `SpeakPractice`, rated into the same key). Keys whose content is gone are skipped.
+- Progress shows a 7-day bar chart of recording minutes (`WeekChart`, one series: no legend, value labels
+  only on today and the max, a tooltip per bar and an `sr-only` table).
 - `compareAnswer` in `src/speaking/compare.ts` is pure and unit-tested: score is a
   character-level similarity (ignores spaces/punctuation), highlighting is per 어절.
 - Chromium headless has no mic or recognition: browser tests use

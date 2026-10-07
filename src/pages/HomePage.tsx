@@ -3,6 +3,7 @@ import { Icon, type IconName } from '../components/Icon';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
 import { streak } from '../practice/plan';
+import { weakKeys } from '../practice/weak';
 import { isDue, todayKey } from '../srs/sm2';
 import { useBackendSettings } from '../storage/backend';
 import { useProgress } from '../storage/progress';
@@ -41,6 +42,7 @@ export function HomePage() {
       : 0;
   const todayStats = progress.daily[today];
   const days = streak(progress.daily, today);
+  const weak = weakKeys(progress.srs).length;
   const stats = [
     { value: days, label: vi.home.statStreak },
     { value: todayStats?.spoken ?? 0, label: vi.home.statSpokenToday },
@@ -78,6 +80,17 @@ export function HomePage() {
           <p className="muted">{(todayStats?.spoken ?? 0) > 0 ? vi.home.dailyDone : vi.home.dailyDesc}</p>
         </div>
       </Link>
+      {weak > 0 && (
+        <Link to="/weak" className="card card--link weak-cta">
+          <span className="card-icon">
+            <Icon name="target" />
+          </span>
+          <div>
+            <h2>{vi.weak.title}</h2>
+            <p className="muted">{vi.weak.count(weak)}</p>
+          </div>
+        </Link>
+      )}
       <Link to="/shadowing?topic=survival" className="card card--link survival-card">
         <span className="card-icon">
           <Icon name="lifebuoy" />
