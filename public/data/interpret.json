@@ -152,6 +152,234 @@
       "topic": "handover",
       "vi": "Tài khoản và quyền truy cập sẽ được chuyển giao trước ngày 30.",
       "ko": "계정과 접근 권한은 30일까지 이관하겠습니다."
+    },
+    {
+      "id": "ip-25",
+      "topic": "meeting",
+      "vi": "Hôm nay tôi sẽ thay anh Minh trình bày.",
+      "ko": "오늘은 민 님 대신 제가 발표하겠습니다."
+    },
+    {
+      "id": "ip-26",
+      "topic": "meeting",
+      "vi": "Chúng ta nghỉ 5 phút rồi tiếp tục nhé.",
+      "ko": "5분 정도 쉬었다가 계속 진행하겠습니다.",
+      "note": "-았/었다가: làm xong việc này rồi chuyển sang việc khác."
+    },
+    {
+      "id": "ip-27",
+      "topic": "meeting",
+      "vi": "Câu hỏi đó tôi xin trả lời sau cuộc họp.",
+      "ko": "그 질문은 회의가 끝난 후에 답변드리겠습니다."
+    },
+    {
+      "id": "ip-28",
+      "topic": "meeting",
+      "vi": "Team Việt Nam đồng ý với phương án B.",
+      "ko": "베트남 팀은 B안에 동의합니다.",
+      "note": "B안: phương án B. Tương tự A안, 1안, 2안."
+    },
+    {
+      "id": "ip-29",
+      "topic": "meeting",
+      "vi": "Anh/chị có câu hỏi nào khác không ạ?",
+      "ko": "혹시 다른 질문 있으신가요?"
+    },
+    {
+      "id": "ip-30",
+      "topic": "meeting",
+      "vi": "Nội dung hôm nay tôi sẽ gửi lại bằng email.",
+      "ko": "오늘 내용은 메일로 다시 정리해서 보내 드리겠습니다."
+    },
+    {
+      "id": "ip-31",
+      "topic": "schedule",
+      "vi": "Lịch deploy được dời sang thứ Hai tuần sau.",
+      "ko": "배포 일정은 다음 주 월요일로 변경되었습니다."
+    },
+    {
+      "id": "ip-32",
+      "topic": "schedule",
+      "vi": "Nếu được thì chúng tôi muốn họp vào buổi sáng.",
+      "ko": "가능하면 오전에 회의를 하고 싶습니다."
+    },
+    {
+      "id": "ip-33",
+      "topic": "schedule",
+      "vi": "Chúng tôi sẽ hoàn thành sớm hơn kế hoạch khoảng hai ngày.",
+      "ko": "계획보다 이틀 정도 빨리 끝날 것 같습니다."
+    },
+    {
+      "id": "ip-34",
+      "topic": "schedule",
+      "vi": "Để kịp lịch, team sẽ làm thêm giờ cuối tuần này.",
+      "ko": "일정을 맞추기 위해 이번 주말에 추가 근무를 하겠습니다.",
+      "note": "추가 근무 / 특근: làm thêm (ngày nghỉ)."
+    },
+    {
+      "id": "ip-35",
+      "topic": "schedule",
+      "vi": "Lịch test tích hợp vẫn chưa được chốt.",
+      "ko": "통합 테스트 일정은 아직 확정되지 않았습니다."
+    },
+    {
+      "id": "ip-36",
+      "topic": "schedule",
+      "vi": "Chúng tôi cần biết lịch họp trước thứ Năm.",
+      "ko": "목요일 전까지 회의 일정을 알려 주시면 감사하겠습니다.",
+      "note": "Biến \"cần biết\" thành lời nhờ lịch sự: -아/어 주시면 감사하겠습니다."
+    },
+    {
+      "id": "ip-37",
+      "topic": "bug",
+      "vi": "Lỗi này xảy ra khi có nhiều người truy cập cùng lúc.",
+      "ko": "이 오류는 동시에 많은 사용자가 접속할 때 발생합니다."
+    },
+    {
+      "id": "ip-38",
+      "topic": "bug",
+      "vi": "Chúng tôi đang tìm nguyên nhân, khoảng 1 tiếng nữa sẽ báo lại.",
+      "ko": "현재 원인을 파악 중이고, 1시간 후에 다시 공유드리겠습니다."
+    },
+    {
+      "id": "ip-39",
+      "topic": "bug",
+      "vi": "Dữ liệu của khách hàng không bị mất.",
+      "ko": "고객 데이터는 손실되지 않았습니다."
+    },
+    {
+      "id": "ip-40",
+      "topic": "bug",
+      "vi": "Bản sửa đã được deploy lên server staging để anh/chị kiểm tra.",
+      "ko": "확인하실 수 있도록 수정본을 스테이징 서버에 배포했습니다.",
+      "note": "-(으)ㄹ 수 있도록: để (ai đó) có thể..."
+    },
+    {
+      "id": "ip-41",
+      "topic": "bug",
+      "vi": "Lỗi này có từ phiên bản trước, không phải do lần sửa này.",
+      "ko": "이 오류는 이번 수정 때문이 아니라 이전 버전부터 있던 문제입니다.",
+      "note": "N 때문이 아니라: không phải vì N mà là..."
+    },
+    {
+      "id": "ip-42",
+      "topic": "bug",
+      "vi": "Chúng tôi sẽ thêm test để lỗi này không lặp lại.",
+      "ko": "같은 오류가 재발하지 않도록 테스트를 추가하겠습니다."
+    },
+    {
+      "id": "ip-43",
+      "topic": "scope",
+      "vi": "Yêu cầu này cần thêm thời gian, chúng tôi xin báo lại sau khi ước tính.",
+      "ko": "이 요청은 추가 시간이 필요해서, 공수를 산정한 후에 다시 말씀드리겠습니다."
+    },
+    {
+      "id": "ip-44",
+      "topic": "scope",
+      "vi": "Nếu bỏ chức năng này thì vẫn kịp lịch.",
+      "ko": "이 기능을 제외하면 일정에 맞출 수 있습니다."
+    },
+    {
+      "id": "ip-45",
+      "topic": "scope",
+      "vi": "Chúng tôi đề xuất làm phiên bản đơn giản trước.",
+      "ko": "먼저 간단한 버전으로 진행하는 것을 제안드립니다.",
+      "note": "제안드리다: đề xuất (khiêm nhường)."
+    },
+    {
+      "id": "ip-46",
+      "topic": "scope",
+      "vi": "Thiết kế này khác với tài liệu đã thống nhất trước đó.",
+      "ko": "이 디자인은 이전에 합의한 문서와 다릅니다."
+    },
+    {
+      "id": "ip-47",
+      "topic": "scope",
+      "vi": "Phần này bên khách sẽ làm hay bên chúng tôi làm ạ?",
+      "ko": "이 부분은 고객사에서 진행하시나요, 아니면 저희가 진행할까요?",
+      "note": "Câu hỏi lựa chọn: -나요, 아니면 -(으)ㄹ까요?"
+    },
+    {
+      "id": "ip-48",
+      "topic": "scope",
+      "vi": "Chúng tôi hiểu là chỉ cần hỗ trợ Chrome thôi, đúng không ạ?",
+      "ko": "크롬만 지원하면 되는 것으로 이해했는데, 맞을까요?"
+    },
+    {
+      "id": "ip-49",
+      "topic": "cost",
+      "vi": "Chi phí bảo trì mỗi tháng khoảng 3 triệu won.",
+      "ko": "월 유지보수 비용은 약 300만 원입니다.",
+      "note": "300만 원: tiền Hàn đếm theo 만 (10.000)."
+    },
+    {
+      "id": "ip-50",
+      "topic": "cost",
+      "vi": "Nếu thêm một người thì có thể rút ngắn hai tuần.",
+      "ko": "인원을 한 명 추가하면 2주 정도 단축할 수 있습니다."
+    },
+    {
+      "id": "ip-51",
+      "topic": "cost",
+      "vi": "Khoản này nằm ngoài báo giá ban đầu.",
+      "ko": "이 부분은 처음 견적에 포함되지 않은 내용입니다."
+    },
+    {
+      "id": "ip-52",
+      "topic": "cost",
+      "vi": "Chúng tôi có thể giảm chi phí nếu dùng thư viện có sẵn.",
+      "ko": "기존 라이브러리를 활용하면 비용을 줄일 수 있습니다."
+    },
+    {
+      "id": "ip-53",
+      "topic": "cost",
+      "vi": "Công số thực tế tháng này vượt kế hoạch khoảng 10%.",
+      "ko": "이번 달 공수 실적이 계획보다 약 10% 초과했습니다."
+    },
+    {
+      "id": "ip-54",
+      "topic": "cost",
+      "vi": "Báo giá có hiệu lực trong 30 ngày.",
+      "ko": "견적은 30일간 유효합니다."
+    },
+    {
+      "id": "ip-55",
+      "topic": "handover",
+      "vi": "Tài liệu vận hành đã viết xong, đang chờ review.",
+      "ko": "운영 매뉴얼은 작성 완료했고, 현재 리뷰를 기다리고 있습니다."
+    },
+    {
+      "id": "ip-56",
+      "topic": "handover",
+      "vi": "Tôi sẽ nghỉ phép từ ngày mai, việc gấp xin liên hệ anh Tuấn.",
+      "ko": "내일부터 휴가인데, 급한 일은 투안 님께 연락 주시면 됩니다.",
+      "note": "님께: kính ngữ của 에게, dùng khi nói về người nhận."
+    },
+    {
+      "id": "ip-57",
+      "topic": "handover",
+      "vi": "Mật khẩu server tôi sẽ gửi riêng, không gửi qua chat.",
+      "ko": "서버 비밀번호는 채팅이 아니라 별도로 전달드리겠습니다.",
+      "note": "Thông tin bảo mật: nói rõ kênh gửi riêng."
+    },
+    {
+      "id": "ip-58",
+      "topic": "handover",
+      "vi": "Sau khi bàn giao, chúng tôi hỗ trợ thêm một tháng.",
+      "ko": "이관 후에도 한 달간 추가로 지원해 드립니다."
+    },
+    {
+      "id": "ip-59",
+      "topic": "handover",
+      "vi": "Người mới sẽ tham gia dự án từ tuần sau.",
+      "ko": "다음 주부터 새로운 멤버가 프로젝트에 합류합니다.",
+      "note": "합류하다: gia nhập (dự án, team)."
+    },
+    {
+      "id": "ip-60",
+      "topic": "handover",
+      "vi": "Source code đã được đẩy lên repository của khách.",
+      "ko": "소스 코드는 고객사 저장소에 푸시했습니다."
     }
   ]
 }

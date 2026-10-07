@@ -418,12 +418,15 @@ export const vi = {
     intro:
       'Nghe mẫu (có thể nghe lại nhiều lần) → đọc cách đọc thực tế → ghi âm → nghe so sánh → tự chấm. Kết quả được đưa vào lịch ôn tập.',
     allTopics: 'Tất cả',
+    allTopicsCount: (n: number) => `Tất cả chủ đề (${n})`,
     topics: {
       survival: 'Câu cứu nguy',
       progress: 'Báo tiến độ',
       bug: 'Bug & sự cố',
       schedule: 'Lịch / trễ hạn',
       request: 'Xác nhận & nhờ vả',
+      meeting: 'Họp',
+      tech: 'Kỹ thuật',
       cushion: 'Từ đệm lịch sự',
     } as Record<string, string>,
     dueOnly: (n: number) => `Đến hạn ôn (${n})`,
@@ -449,7 +452,7 @@ export const vi = {
       other: 'có patchim',
     },
     list: 'Các khung câu',
-    slotLabels: { noun: 'N', n: 'số', date: 'thời gian' } as Record<string, string>,
+    slotLabels: { noun: 'N', n: 'số', date: 'thời gian', person: 'người', tool: 'kênh' } as Record<string, string>,
   },
   daily: {
     title: 'Luyện 5 phút hôm nay',

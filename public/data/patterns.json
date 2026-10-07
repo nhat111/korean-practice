@@ -269,6 +269,446 @@
         ]
       },
       "note": "으로/로: sau patchim dùng 으로, nhưng sau ㄹ (메일) và nguyên âm dùng 로."
+    },
+    {
+      "id": "pt-10",
+      "pattern": "{noun}{은/는} {date}에 배포할 예정입니다.",
+      "vi": "{noun} dự kiến deploy vào {date}.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "로그인 기능",
+            "vi": "chức năng đăng nhập"
+          },
+          {
+            "ko": "결제 모듈",
+            "vi": "module thanh toán"
+          },
+          {
+            "ko": "관리자 화면",
+            "vi": "màn hình quản trị"
+          },
+          {
+            "ko": "알림 기능",
+            "vi": "chức năng thông báo"
+          }
+        ],
+        "date": [
+          {
+            "ko": "금요일",
+            "vi": "thứ Sáu"
+          },
+          {
+            "ko": "다음 주 월요일",
+            "vi": "thứ Hai tuần sau"
+          },
+          {
+            "ko": "15일",
+            "vi": "ngày 15"
+          },
+          {
+            "ko": "이번 달 말",
+            "vi": "cuối tháng này"
+          }
+        ]
+      },
+      "note": "-(으)ㄹ 예정입니다: báo lịch đã lên kế hoạch, trang trọng hơn -(으)ㄹ 거예요."
+    },
+    {
+      "id": "pt-11",
+      "pattern": "{person}께 {noun} 관련해서 문의드렸습니다.",
+      "vi": "Tôi đã hỏi {person} về {noun}.",
+      "slots": {
+        "person": [
+          {
+            "ko": "팀장님",
+            "vi": "trưởng nhóm"
+          },
+          {
+            "ko": "담당자님",
+            "vi": "người phụ trách"
+          },
+          {
+            "ko": "인프라 담당자님",
+            "vi": "người phụ trách hạ tầng"
+          },
+          {
+            "ko": "디자이너님",
+            "vi": "designer"
+          }
+        ],
+        "noun": [
+          {
+            "ko": "권한 설정",
+            "vi": "cài đặt quyền"
+          },
+          {
+            "ko": "서버 증설",
+            "vi": "tăng cấu hình server"
+          },
+          {
+            "ko": "화면 디자인",
+            "vi": "thiết kế màn hình"
+          },
+          {
+            "ko": "테스트 일정",
+            "vi": "lịch test"
+          }
+        ]
+      },
+      "note": "께: dạng kính ngữ của 에게. 문의드리다: hỏi (khiêm nhường)."
+    },
+    {
+      "id": "pt-12",
+      "pattern": "{noun}{이/가} 아직 확정되지 않았습니다.",
+      "vi": "{noun} vẫn chưa được chốt.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "디자인",
+            "vi": "thiết kế"
+          },
+          {
+            "ko": "요구사항",
+            "vi": "yêu cầu"
+          },
+          {
+            "ko": "배포 일정",
+            "vi": "lịch deploy"
+          },
+          {
+            "ko": "API 스펙",
+            "vi": "spec API"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pt-13",
+      "pattern": "{noun} 때문에 일정이 {n}일 정도 지연될 것 같습니다.",
+      "vi": "Vì {noun} nên lịch có thể chậm khoảng {n} ngày.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "외부 API 장애",
+            "vi": "sự cố API bên ngoài"
+          },
+          {
+            "ko": "사양 변경",
+            "vi": "thay đổi spec"
+          },
+          {
+            "ko": "테스트 환경 문제",
+            "vi": "vấn đề môi trường test"
+          },
+          {
+            "ko": "인력 부족",
+            "vi": "thiếu nhân lực"
+          }
+        ],
+        "n": [
+          {
+            "ko": "2",
+            "vi": "2"
+          },
+          {
+            "ko": "3",
+            "vi": "3"
+          },
+          {
+            "ko": "5",
+            "vi": "5"
+          }
+        ]
+      },
+      "note": "N 때문에: vì N (nêu nguyên nhân khách quan). -(으)ㄹ 것 같습니다 làm câu báo tin xấu mềm hơn."
+    },
+    {
+      "id": "pt-14",
+      "pattern": "{noun}{을/를} {tool}{으로/로} 보내 드렸습니다.",
+      "vi": "Tôi đã gửi {noun} qua {tool}.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "테스트 결과",
+            "vi": "kết quả test"
+          },
+          {
+            "ko": "회의록",
+            "vi": "biên bản họp"
+          },
+          {
+            "ko": "견적서",
+            "vi": "báo giá"
+          },
+          {
+            "ko": "수정본",
+            "vi": "bản đã sửa"
+          }
+        ],
+        "tool": [
+          {
+            "ko": "메일",
+            "vi": "email"
+          },
+          {
+            "ko": "슬랙",
+            "vi": "Slack"
+          },
+          {
+            "ko": "카톡",
+            "vi": "KakaoTalk"
+          }
+        ]
+      },
+      "note": "으로/로: sau ㄹ (메일) và nguyên âm (슬랙 có patchim ㄱ → 으로)."
+    },
+    {
+      "id": "pt-15",
+      "pattern": "{noun}{은/는} {person}{이/가} 담당하고 있습니다.",
+      "vi": "{noun} do {person} phụ trách.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "프론트엔드",
+            "vi": "frontend"
+          },
+          {
+            "ko": "백엔드",
+            "vi": "backend"
+          },
+          {
+            "ko": "테스트",
+            "vi": "test"
+          },
+          {
+            "ko": "배포",
+            "vi": "deploy"
+          }
+        ],
+        "person": [
+          {
+            "ko": "민 님",
+            "vi": "anh Minh"
+          },
+          {
+            "ko": "투안 님",
+            "vi": "anh Tuấn"
+          },
+          {
+            "ko": "하 님",
+            "vi": "chị Hà"
+          },
+          {
+            "ko": "팀장님",
+            "vi": "trưởng nhóm"
+          }
+        ]
+      },
+      "note": "Nhắc đồng nghiệp trước mặt khách: tên + 님."
+    },
+    {
+      "id": "pt-16",
+      "pattern": "{noun}에 대한 테스트는 모두 통과했습니다.",
+      "vi": "Test cho {noun} đã pass hết.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "로그인",
+            "vi": "đăng nhập"
+          },
+          {
+            "ko": "회원가입",
+            "vi": "đăng ký thành viên"
+          },
+          {
+            "ko": "결제",
+            "vi": "thanh toán"
+          },
+          {
+            "ko": "검색 기능",
+            "vi": "chức năng tìm kiếm"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pt-17",
+      "pattern": "{noun}{을/를} 추가하려면 약 {n}일이 필요합니다.",
+      "vi": "Để thêm {noun} cần khoảng {n} ngày.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "엑셀 다운로드",
+            "vi": "tải Excel"
+          },
+          {
+            "ko": "다국어 지원",
+            "vi": "hỗ trợ đa ngôn ngữ"
+          },
+          {
+            "ko": "알림 기능",
+            "vi": "chức năng thông báo"
+          },
+          {
+            "ko": "권한 관리",
+            "vi": "quản lý quyền"
+          }
+        ],
+        "n": [
+          {
+            "ko": "2",
+            "vi": "2"
+          },
+          {
+            "ko": "3",
+            "vi": "3"
+          },
+          {
+            "ko": "5",
+            "vi": "5"
+          }
+        ]
+      },
+      "note": "-(으)려면: nếu muốn... thì."
+    },
+    {
+      "id": "pt-18",
+      "pattern": "{noun}{과/와} 관련된 오류를 수정했습니다.",
+      "vi": "Tôi đã sửa lỗi liên quan đến {noun}.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "로그인",
+            "vi": "đăng nhập"
+          },
+          {
+            "ko": "파일 업로드",
+            "vi": "upload file"
+          },
+          {
+            "ko": "날짜 계산",
+            "vi": "tính ngày"
+          },
+          {
+            "ko": "페이지 이동",
+            "vi": "chuyển trang"
+          }
+        ]
+      },
+      "note": "과/와: sau patchim dùng 과, sau nguyên âm dùng 와."
+    },
+    {
+      "id": "pt-19",
+      "pattern": "{date}까지 {noun}{을/를} 공유해 주실 수 있을까요?",
+      "vi": "Anh/chị có thể chia sẻ {noun} trước {date} không ạ?",
+      "slots": {
+        "date": [
+          {
+            "ko": "내일",
+            "vi": "ngày mai"
+          },
+          {
+            "ko": "수요일",
+            "vi": "thứ Tư"
+          },
+          {
+            "ko": "이번 주 금요일",
+            "vi": "thứ Sáu tuần này"
+          },
+          {
+            "ko": "오늘 오후",
+            "vi": "chiều nay"
+          }
+        ],
+        "noun": [
+          {
+            "ko": "화면설계서",
+            "vi": "tài liệu thiết kế màn hình"
+          },
+          {
+            "ko": "테스트 데이터",
+            "vi": "dữ liệu test"
+          },
+          {
+            "ko": "접속 정보",
+            "vi": "thông tin kết nối"
+          },
+          {
+            "ko": "디자인 시안",
+            "vi": "bản thiết kế mẫu"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pt-20",
+      "pattern": "{noun}{으로/로} 인해 서비스가 잠시 중단되었습니다.",
+      "vi": "Do {noun} nên dịch vụ tạm thời bị gián đoạn.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "서버 점검",
+            "vi": "bảo trì server"
+          },
+          {
+            "ko": "네트워크 장애",
+            "vi": "sự cố mạng"
+          },
+          {
+            "ko": "DB 마이그레이션",
+            "vi": "migration DB"
+          },
+          {
+            "ko": "배포 작업",
+            "vi": "việc deploy"
+          }
+        ]
+      },
+      "note": "N(으)로 인해: do N (trang trọng, hay dùng trong thông báo sự cố)."
+    },
+    {
+      "id": "pt-21",
+      "pattern": "혹시 {noun}{은/는} {date}에 가능하실까요?",
+      "vi": "{noun} vào {date} thì anh/chị có tiện không ạ?",
+      "slots": {
+        "noun": [
+          {
+            "ko": "회의",
+            "vi": "cuộc họp"
+          },
+          {
+            "ko": "코드 리뷰",
+            "vi": "review code"
+          },
+          {
+            "ko": "통화",
+            "vi": "cuộc gọi"
+          },
+          {
+            "ko": "시연",
+            "vi": "buổi demo"
+          }
+        ],
+        "date": [
+          {
+            "ko": "내일 오전",
+            "vi": "sáng mai"
+          },
+          {
+            "ko": "목요일 오후",
+            "vi": "chiều thứ Năm"
+          },
+          {
+            "ko": "다음 주 화요일",
+            "vi": "thứ Ba tuần sau"
+          },
+          {
+            "ko": "3시",
+            "vi": "3 giờ"
+          }
+        ]
+      }
     }
   ]
 }
