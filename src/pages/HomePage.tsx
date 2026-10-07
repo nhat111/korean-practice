@@ -17,6 +17,7 @@ interface Section {
 const SECTIONS: Section[] = [
   { to: '/shadowing', icon: 'waves', title: vi.shadowing.title, desc: vi.home.sections.shadowing },
   { to: '/patterns', icon: 'puzzle', title: vi.patterns.title, desc: vi.home.sections.patterns },
+  { to: '/listening', icon: 'headphones', title: vi.listening.title, desc: vi.listening.homeDesc },
   { to: '/scenarios', icon: 'chat', title: vi.nav.scenarios, desc: vi.home.sections.scenarios },
   { to: '/emails', icon: 'mail', title: vi.nav.emails, desc: vi.home.sections.emails },
   { to: '/flashcards', icon: 'cards', title: vi.nav.flashcards, desc: vi.home.sections.flashcards },

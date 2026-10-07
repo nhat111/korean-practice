@@ -7,6 +7,7 @@ import { describe, expect, it } from 'vitest';
 import { SCENARIO_CATEGORIES } from './scenarioFilter';
 import {
   parseEmails,
+  parseNumbers,
   parsePatterns,
   parseScenarios,
   parseShadowing,
@@ -28,6 +29,7 @@ const files: [string, (data: unknown) => ParseResult<{ id: string }>][] = [
   ['songs.json', parseSongs],
   ['shadowing.json', parseShadowing],
   ['patterns.json', parsePatterns],
+  ['numbers.json', parseNumbers],
 ];
 
 describe.each(files)('%s', (name, parse) => {

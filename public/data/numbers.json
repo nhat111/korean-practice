@@ -1,0 +1,293 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "n-01",
+      "kind": "time",
+      "ko": "배포는 10월 3일 토요일 밤 10시에 진행하겠습니다.",
+      "vi": "Deploy sẽ tiến hành lúc 10 giờ tối thứ Bảy ngày 3/10.",
+      "choices": [
+        "3/10 (T7) 22:00",
+        "10/3 (T7) 22:00",
+        "3/10 (T7) 10:00"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-02",
+      "kind": "time",
+      "ko": "회의는 내일 오후 2시 반에 시작합니다.",
+      "vi": "Cuộc họp bắt đầu lúc 2 giờ rưỡi chiều mai.",
+      "choices": [
+        "Mai 14:30",
+        "Mai 12:30",
+        "Mai 14:00"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-03",
+      "kind": "money",
+      "ko": "견적 금액은 1,500만 원입니다.",
+      "vi": "Số tiền báo giá là 15 triệu won.",
+      "choices": [
+        "15.000.000 ₩",
+        "1.500.000 ₩",
+        "150.000.000 ₩"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-04",
+      "kind": "number",
+      "ko": "이번 작업은 3MM 정도 예상됩니다.",
+      "vi": "Công việc lần này dự kiến khoảng 3 MM (man-month).",
+      "choices": [
+        "3 MM",
+        "13 MM",
+        "30 MM"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-05",
+      "kind": "number",
+      "ko": "현재 진척률은 75퍼센트입니다.",
+      "vi": "Tiến độ hiện tại là 75%.",
+      "choices": [
+        "75%",
+        "57%",
+        "25%"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-06",
+      "kind": "time",
+      "ko": "오류가 5분 간격으로 발생하고 있습니다.",
+      "vi": "Lỗi đang xảy ra cách nhau 5 phút.",
+      "choices": [
+        "Mỗi 5 phút",
+        "Mỗi 15 phút",
+        "Mỗi 50 phút"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-07",
+      "kind": "date",
+      "ko": "다음 주 수요일까지 회신 부탁드립니다.",
+      "vi": "Nhờ anh/chị phản hồi trước thứ Tư tuần sau.",
+      "choices": [
+        "Thứ Tư tuần sau",
+        "Thứ Tư tuần này",
+        "Thứ Năm tuần sau"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-08",
+      "kind": "time",
+      "ko": "서버 점검은 새벽 2시부터 4시까지입니다.",
+      "vi": "Bảo trì server từ 2 giờ đến 4 giờ sáng.",
+      "choices": [
+        "02:00–04:00",
+        "14:00–16:00",
+        "12:00–14:00"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-09",
+      "kind": "number",
+      "ko": "테스트 케이스는 총 128개입니다.",
+      "vi": "Tổng cộng có 128 test case.",
+      "choices": [
+        "128",
+        "182",
+        "1.028"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-10",
+      "kind": "number",
+      "ko": "응답 시간이 3초에서 0.8초로 줄었습니다.",
+      "vi": "Thời gian phản hồi giảm từ 3 giây xuống 0,8 giây.",
+      "choices": [
+        "3 s → 0,8 s",
+        "3 s → 8 s",
+        "0,3 s → 0,8 s"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-11",
+      "kind": "date",
+      "ko": "납기는 12월 15일입니다.",
+      "vi": "Hạn giao hàng là ngày 15/12.",
+      "choices": [
+        "15/12",
+        "5/12",
+        "15/11"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-12",
+      "kind": "number",
+      "ko": "동시 접속자는 약 2만 명입니다.",
+      "vi": "Số người truy cập đồng thời khoảng 20 nghìn.",
+      "choices": [
+        "~20.000 người",
+        "~2.000 người",
+        "~200.000 người"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-13",
+      "kind": "money",
+      "ko": "월 유지보수 비용은 300만 원입니다.",
+      "vi": "Chi phí bảo trì mỗi tháng là 3 triệu won.",
+      "choices": [
+        "3.000.000 ₩ / tháng",
+        "300.000 ₩ / tháng",
+        "30.000.000 ₩ / tháng"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-14",
+      "kind": "time",
+      "ko": "오늘 오후 6시 이후에는 배포가 불가합니다.",
+      "vi": "Sau 6 giờ chiều nay thì không deploy được.",
+      "choices": [
+        "Sau 18:00",
+        "Sau 16:00",
+        "Trước 18:00"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-15",
+      "kind": "number",
+      "ko": "로그 보관 기간은 90일입니다.",
+      "vi": "Thời gian lưu log là 90 ngày.",
+      "choices": [
+        "90 ngày",
+        "19 ngày",
+        "9 ngày"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-16",
+      "kind": "date",
+      "ko": "1차 테스트는 11월 첫째 주에 진행합니다.",
+      "vi": "Test vòng 1 tiến hành vào tuần đầu tháng 11.",
+      "choices": [
+        "Tuần đầu tháng 11",
+        "Tuần đầu tháng 10",
+        "Tuần thứ hai tháng 11"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-17",
+      "kind": "number",
+      "ko": "회의실은 7층 702호입니다.",
+      "vi": "Phòng họp ở tầng 7, phòng 702.",
+      "choices": [
+        "Tầng 7, phòng 702",
+        "Tầng 2, phòng 702",
+        "Tầng 7, phòng 720"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-18",
+      "kind": "number",
+      "ko": "에러율이 0.5퍼센트 미만이어야 합니다.",
+      "vi": "Tỉ lệ lỗi phải dưới 0,5%.",
+      "choices": [
+        "Dưới 0,5%",
+        "Dưới 5%",
+        "Trên 0,5%"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-19",
+      "kind": "number",
+      "ko": "개발 인원은 총 4명이고 기간은 6주입니다.",
+      "vi": "Tổng cộng 4 người phát triển, thời gian 6 tuần.",
+      "choices": [
+        "4 người, 6 tuần",
+        "6 người, 4 tuần",
+        "4 người, 6 tháng"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-20",
+      "kind": "money",
+      "ko": "서버 비용이 월 120만 원 정도 나옵니다.",
+      "vi": "Chi phí server khoảng 1,2 triệu won mỗi tháng.",
+      "choices": [
+        "~1.200.000 ₩ / tháng",
+        "~12.000.000 ₩ / tháng",
+        "~120.000 ₩ / tháng"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-21",
+      "kind": "time",
+      "ko": "금요일 오전 9시 반까지 보고서를 제출해 주세요.",
+      "vi": "Hãy nộp báo cáo trước 9 giờ rưỡi sáng thứ Sáu.",
+      "choices": [
+        "T6 09:30",
+        "T6 19:30",
+        "T5 09:30"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-22",
+      "kind": "time",
+      "ko": "작업 시간은 약 40분 소요될 예정입니다.",
+      "vi": "Thời gian làm dự kiến khoảng 40 phút.",
+      "choices": [
+        "~40 phút",
+        "~14 phút",
+        "~4 tiếng"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-23",
+      "kind": "date",
+      "ko": "1월 2일부터 정상 근무합니다.",
+      "vi": "Từ ngày 2/1 làm việc bình thường.",
+      "choices": [
+        "Từ 2/1",
+        "Từ 1/2",
+        "Từ 12/1"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "n-24",
+      "kind": "money",
+      "ko": "추가 개발 비용은 850만 원으로 산정했습니다.",
+      "vi": "Chi phí phát triển thêm được tính là 8,5 triệu won.",
+      "choices": [
+        "8.500.000 ₩",
+        "850.000 ₩",
+        "85.000.000 ₩"
+      ],
+      "answer": 0
+    }
+  ]
+}

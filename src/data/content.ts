@@ -2,9 +2,10 @@
 // the session; adding items to the JSON files needs no code changes.
 
 import { useEffect, useState } from 'react';
-import type { EmailExercise, PatternItem, Scenario, ShadowingItem, SongLesson, VocabItem } from '../types';
+import type { EmailExercise, NumberItem, PatternItem, Scenario, ShadowingItem, SongLesson, VocabItem } from '../types';
 import {
   parseEmails,
+  parseNumbers,
   parsePatterns,
   parseScenarios,
   parseShadowing,
@@ -20,6 +21,7 @@ interface ContentMap {
   songs: SongLesson;
   shadowing: ShadowingItem;
   patterns: PatternItem;
+  numbers: NumberItem;
 }
 
 export type ContentKind = keyof ContentMap;
@@ -31,6 +33,7 @@ const parsers: { [K in ContentKind]: (data: unknown) => ParseResult<ContentMap[K
   songs: parseSongs,
   shadowing: parseShadowing,
   patterns: parsePatterns,
+  numbers: parseNumbers,
 };
 
 const cache = new Map<ContentKind, Promise<unknown[]>>();
