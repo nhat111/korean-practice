@@ -5957,6 +5957,1839 @@
         "pm",
         "business"
       ]
+    },
+    {
+      "id": "t-baechi",
+      "ko": "배치",
+      "vi": "batch (tác vụ chạy theo lịch)",
+      "type": "noun",
+      "collocation": "배치가 실패하다",
+      "example": {
+        "ko": "정산 배치는 매일 새벽 2시에 실행됩니다.",
+        "vi": "Batch quyết toán chạy lúc 2 giờ sáng mỗi ngày.",
+        "grammar": [
+          {
+            "pattern": "N에",
+            "form": "새벽 2시에",
+            "meaningVi": "vào lúc (thời điểm)"
+          }
+        ]
+      },
+      "tags": [
+        "dev",
+        "server",
+        "maintenance"
+      ]
+    },
+    {
+      "id": "t-legeosi",
+      "ko": "레거시",
+      "vi": "legacy, hệ thống/code cũ",
+      "type": "noun",
+      "collocation": "레거시 시스템",
+      "example": {
+        "ko": "레거시 코드라서 수정하기 전에 영향 범위를 꼭 확인해야 합니다.",
+        "vi": "Vì là code legacy nên trước khi sửa nhất định phải kiểm tra phạm vi ảnh hưởng.",
+        "grammar": [
+          {
+            "pattern": "N(이)라서",
+            "form": "코드라서",
+            "meaningVi": "vì là N"
+          },
+          {
+            "pattern": "-기 전에",
+            "form": "수정하기 전에",
+            "meaningVi": "trước khi"
+          }
+        ]
+      },
+      "tags": [
+        "dev",
+        "maintenance"
+      ]
+    },
+    {
+      "id": "t-jeonhwan",
+      "ko": "전환",
+      "vi": "chuyển đổi (migration)",
+      "type": "noun",
+      "collocation": "JSP로 전환하다",
+      "example": {
+        "ko": "기존 화면을 JSP로 전환하는 작업을 진행하고 있습니다.",
+        "vi": "Tôi đang làm việc chuyển các màn hình cũ sang JSP.",
+        "grammar": [
+          {
+            "pattern": "N(으)로",
+            "form": "JSP로",
+            "meaningVi": "sang, thành (hướng thay đổi)"
+          },
+          {
+            "pattern": "-고 있다",
+            "form": "진행하고 있습니다",
+            "meaningVi": "đang (làm)"
+          }
+        ]
+      },
+      "tags": [
+        "dev",
+        "ui",
+        "maintenance"
+      ]
+    },
+    {
+      "id": "t-gaepyeon",
+      "ko": "개편",
+      "vi": "cải tổ, làm mới (giao diện, hệ thống)",
+      "type": "noun",
+      "collocation": "화면 개편",
+      "example": {
+        "ko": "화면 개편에 따라 일부 메뉴 위치가 바뀝니다.",
+        "vi": "Theo đợt làm mới màn hình, vị trí một số menu sẽ thay đổi.",
+        "grammar": [
+          {
+            "pattern": "N에 따라",
+            "form": "개편에 따라",
+            "meaningVi": "theo, do (sự thay đổi N)",
+            "noteVi": "Hay dùng trong thông báo chính thức."
+          }
+        ]
+      },
+      "tags": [
+        "ui",
+        "pm"
+      ]
+    },
+    {
+      "id": "t-gongtong-kodeu",
+      "ko": "공통 코드",
+      "vi": "mã dùng chung (bảng code chung)",
+      "type": "noun",
+      "collocation": "공통 코드를 등록하다",
+      "example": {
+        "ko": "주문 상태 값은 공통 코드 테이블에서 관리하고 있습니다.",
+        "vi": "Giá trị trạng thái đơn hàng được quản lý trong bảng mã dùng chung.",
+        "grammar": [
+          {
+            "pattern": "N에서",
+            "form": "테이블에서",
+            "meaningVi": "ở, tại (nơi diễn ra hành động)"
+          }
+        ]
+      },
+      "tags": [
+        "dev",
+        "db"
+      ]
+    },
+    {
+      "id": "t-peureimwokeu",
+      "ko": "프레임워크",
+      "vi": "framework",
+      "type": "noun",
+      "collocation": "프레임워크를 업그레이드하다",
+      "example": {
+        "ko": "이 시스템은 전자정부 프레임워크를 기반으로 만들어졌습니다.",
+        "vi": "Hệ thống này được xây dựng trên nền eGovFrame.",
+        "grammar": [
+          {
+            "pattern": "N을/를 기반으로",
+            "form": "프레임워크를 기반으로",
+            "meaningVi": "dựa trên nền N"
+          },
+          {
+            "pattern": "-아/어지다",
+            "form": "만들어졌습니다",
+            "meaningVi": "được (bị động)"
+          }
+        ]
+      },
+      "tags": [
+        "dev",
+        "java",
+        "spring"
+      ]
+    },
+    {
+      "id": "t-raibeureori",
+      "ko": "라이브러리",
+      "vi": "thư viện (library)",
+      "type": "noun",
+      "collocation": "라이브러리를 추가하다",
+      "example": {
+        "ko": "보안 취약점 때문에 라이브러리 버전을 올려야 합니다.",
+        "vi": "Vì lỗ hổng bảo mật nên phải nâng phiên bản thư viện.",
+        "grammar": [
+          {
+            "pattern": "N 때문에",
+            "form": "취약점 때문에",
+            "meaningVi": "vì N"
+          },
+          {
+            "pattern": "-아/어야 하다",
+            "form": "올려야 합니다",
+            "meaningVi": "phải"
+          }
+        ]
+      },
+      "tags": [
+        "dev",
+        "security"
+      ]
+    },
+    {
+      "id": "t-beuraujeo",
+      "ko": "브라우저",
+      "vi": "trình duyệt",
+      "type": "noun",
+      "collocation": "브라우저를 변경하다",
+      "example": {
+        "ko": "사용하시는 브라우저 버전을 알려 주시겠어요?",
+        "vi": "Anh/chị cho biết phiên bản trình duyệt đang dùng được không?",
+        "grammar": [
+          {
+            "pattern": "-아/어 주시겠어요?",
+            "form": "알려 주시겠어요?",
+            "meaningVi": "làm ơn… giúp được không? (nhờ lịch sự)"
+          }
+        ]
+      },
+      "tags": [
+        "ui",
+        "dev"
+      ]
+    },
+    {
+      "id": "t-hohwanseong",
+      "ko": "호환성",
+      "vi": "tính tương thích",
+      "pron": "[호환썽]",
+      "type": "noun",
+      "collocation": "호환성을 확인하다",
+      "example": {
+        "ko": "새 버전은 기존 데이터와 호환성 문제가 없습니다.",
+        "vi": "Phiên bản mới không có vấn đề tương thích với dữ liệu cũ.",
+        "grammar": [
+          {
+            "pattern": "N와/과",
+            "form": "데이터와",
+            "meaningVi": "với N"
+          }
+        ]
+      },
+      "tags": [
+        "dev",
+        "test"
+      ]
+    },
+    {
+      "id": "t-hangeul-kkaejim",
+      "ko": "한글 깨짐",
+      "vi": "lỗi vỡ chữ Hàn (lỗi font/encoding)",
+      "type": "phrase",
+      "collocation": "한글이 깨지다",
+      "example": {
+        "ko": "엑셀로 내려받으면 한글이 깨지는 문제가 있습니다.",
+        "vi": "Có lỗi tải về Excel thì chữ Hàn bị vỡ.",
+        "grammar": [
+          {
+            "pattern": "-(으)면",
+            "form": "내려받으면",
+            "meaningVi": "nếu, khi"
+          },
+          {
+            "pattern": "-는 문제",
+            "form": "깨지는 문제",
+            "meaningVi": "vấn đề (mà)…"
+          }
+        ]
+      },
+      "tags": [
+        "bug",
+        "ui"
+      ]
+    },
+    {
+      "id": "t-inkoding",
+      "ko": "인코딩",
+      "vi": "encoding (mã hóa ký tự)",
+      "type": "noun",
+      "collocation": "인코딩을 UTF-8로 맞추다",
+      "example": {
+        "ko": "파일 인코딩을 UTF-8로 바꾸니까 문제가 해결되었습니다.",
+        "vi": "Đổi encoding file sang UTF-8 thì vấn đề được giải quyết.",
+        "grammar": [
+          {
+            "pattern": "-(으)니까",
+            "form": "바꾸니까",
+            "meaningVi": "làm… thì (phát hiện kết quả)"
+          }
+        ]
+      },
+      "tags": [
+        "dev",
+        "bug"
+      ]
+    },
+    {
+      "id": "t-jeojang-peurosijeo",
+      "ko": "저장 프로시저",
+      "vi": "stored procedure",
+      "type": "noun",
+      "collocation": "저장 프로시저를 호출하다",
+      "example": {
+        "ko": "정산 로직은 대부분 저장 프로시저 안에 있습니다.",
+        "vi": "Phần lớn logic quyết toán nằm trong stored procedure.",
+        "grammar": [
+          {
+            "pattern": "N 안에",
+            "form": "프로시저 안에",
+            "meaningVi": "bên trong N"
+          }
+        ]
+      },
+      "tags": [
+        "db",
+        "dev"
+      ]
+    },
+    {
+      "id": "t-jipgye",
+      "ko": "집계",
+      "vi": "tổng hợp số liệu",
+      "pron": "[집꼐]",
+      "type": "noun",
+      "collocation": "통계를 집계하다",
+      "example": {
+        "ko": "월말에는 매출 집계에 시간이 오래 걸립니다.",
+        "vi": "Cuối tháng việc tổng hợp doanh thu mất nhiều thời gian.",
+        "grammar": [
+          {
+            "pattern": "N에 시간이 걸리다",
+            "form": "집계에 시간이 오래 걸립니다",
+            "meaningVi": "mất thời gian cho N"
+          }
+        ]
+      },
+      "tags": [
+        "db",
+        "report"
+      ]
+    },
+    {
+      "id": "t-deiteo-chuchul",
+      "ko": "데이터 추출",
+      "vi": "trích xuất dữ liệu",
+      "type": "noun",
+      "collocation": "데이터를 추출하다",
+      "example": {
+        "ko": "지난달 주문 내역 데이터 추출을 요청드립니다.",
+        "vi": "Tôi xin yêu cầu trích xuất dữ liệu lịch sử đơn hàng tháng trước.",
+        "grammar": [
+          {
+            "pattern": "N을/를 요청드리다",
+            "form": "추출을 요청드립니다",
+            "meaningVi": "xin yêu cầu N (khiêm nhường)"
+          }
+        ]
+      },
+      "tags": [
+        "db",
+        "request",
+        "maintenance"
+      ]
+    },
+    {
+      "id": "t-jeonggi-baepo",
+      "ko": "정기 배포",
+      "vi": "deploy định kỳ",
+      "type": "noun",
+      "collocation": "정기 배포에 포함하다",
+      "example": {
+        "ko": "이번 수정 사항은 목요일 정기 배포에 포함하겠습니다.",
+        "vi": "Nội dung sửa lần này tôi sẽ đưa vào đợt deploy định kỳ thứ Năm.",
+        "grammar": [
+          {
+            "pattern": "N에 포함하다",
+            "form": "배포에 포함하겠습니다",
+            "meaningVi": "đưa vào N"
+          }
+        ]
+      },
+      "tags": [
+        "deploy",
+        "schedule"
+      ]
+    },
+    {
+      "id": "t-gingeup-baepo",
+      "ko": "긴급 배포",
+      "vi": "deploy khẩn",
+      "type": "noun",
+      "collocation": "긴급 배포 승인",
+      "example": {
+        "ko": "결제 오류 때문에 오늘 밤 긴급 배포가 필요합니다.",
+        "vi": "Vì lỗi thanh toán nên tối nay cần deploy khẩn.",
+        "grammar": [
+          {
+            "pattern": "N이/가 필요하다",
+            "form": "배포가 필요합니다",
+            "meaningVi": "cần N"
+          }
+        ]
+      },
+      "tags": [
+        "deploy",
+        "incident"
+      ]
+    },
+    {
+      "id": "t-jeomgeom",
+      "ko": "점검",
+      "vi": "kiểm tra, bảo trì định kỳ",
+      "type": "noun",
+      "collocation": "시스템 점검",
+      "example": {
+        "ko": "점검 시간 동안에는 서비스를 이용하실 수 없습니다.",
+        "vi": "Trong thời gian bảo trì, quý vị không thể sử dụng dịch vụ.",
+        "grammar": [
+          {
+            "pattern": "N 동안",
+            "form": "점검 시간 동안",
+            "meaningVi": "trong suốt N"
+          },
+          {
+            "pattern": "-(으)ㄹ 수 없다",
+            "form": "이용하실 수 없습니다",
+            "meaningVi": "không thể"
+          }
+        ]
+      },
+      "tags": [
+        "server",
+        "maintenance"
+      ]
+    },
+    {
+      "id": "t-jaesilhaeng",
+      "ko": "재실행",
+      "vi": "chạy lại",
+      "type": "noun",
+      "collocation": "배치를 재실행하다",
+      "example": {
+        "ko": "원인을 수정한 후에 배치를 재실행했습니다.",
+        "vi": "Sau khi sửa nguyên nhân, tôi đã chạy lại batch.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄴ 후에",
+            "form": "수정한 후에",
+            "meaningVi": "sau khi"
+          }
+        ]
+      },
+      "tags": [
+        "server",
+        "incident"
+      ]
+    },
+    {
+      "id": "t-jaesido",
+      "ko": "재시도",
+      "vi": "thử lại (retry)",
+      "type": "noun",
+      "collocation": "재시도 횟수",
+      "example": {
+        "ko": "응답이 없으면 세 번까지 재시도하도록 설정했습니다.",
+        "vi": "Tôi đã cài đặt để nếu không có phản hồi thì thử lại tối đa 3 lần.",
+        "grammar": [
+          {
+            "pattern": "N까지",
+            "form": "세 번까지",
+            "meaningVi": "đến (tối đa) N"
+          },
+          {
+            "pattern": "-도록",
+            "form": "재시도하도록",
+            "meaningVi": "để cho, sao cho"
+          }
+        ]
+      },
+      "tags": [
+        "dev",
+        "api"
+      ]
+    },
+    {
+      "id": "t-jeopsok",
+      "ko": "접속",
+      "vi": "truy cập, kết nối",
+      "pron": "[접쏙]",
+      "type": "noun",
+      "collocation": "서버에 접속하다",
+      "example": {
+        "ko": "VPN에 접속이 안 돼서 서버를 확인할 수 없습니다.",
+        "vi": "Không kết nối được VPN nên tôi không kiểm tra được server.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "안 돼서",
+            "meaningVi": "vì… nên"
+          }
+        ]
+      },
+      "tags": [
+        "server",
+        "infra"
+      ]
+    },
+    {
+      "id": "t-gyejeong",
+      "ko": "계정",
+      "vi": "tài khoản",
+      "type": "noun",
+      "collocation": "계정을 발급하다",
+      "example": {
+        "ko": "신규 직원 계정은 오늘 중으로 발급해 드리겠습니다.",
+        "vi": "Tài khoản cho nhân viên mới tôi sẽ cấp trong hôm nay.",
+        "grammar": [
+          {
+            "pattern": "-아/어 드리다",
+            "form": "발급해 드리겠습니다",
+            "meaningVi": "làm (gì) cho người trên (khiêm nhường)"
+          }
+        ]
+      },
+      "tags": [
+        "security",
+        "maintenance"
+      ]
+    },
+    {
+      "id": "t-jamgeum",
+      "ko": "잠금",
+      "vi": "khóa (tài khoản, màn hình)",
+      "type": "noun",
+      "collocation": "계정 잠금",
+      "example": {
+        "ko": "비밀번호를 다섯 번 틀리면 계정이 잠금 처리됩니다.",
+        "vi": "Nhập sai mật khẩu 5 lần thì tài khoản bị khóa.",
+        "grammar": [
+          {
+            "pattern": "-(으)면",
+            "form": "틀리면",
+            "meaningVi": "nếu, hễ"
+          }
+        ]
+      },
+      "tags": [
+        "security"
+      ]
+    },
+    {
+      "id": "t-haeje",
+      "ko": "해제",
+      "vi": "gỡ, mở (khóa), hủy (cài đặt)",
+      "type": "noun",
+      "collocation": "잠금을 해제하다",
+      "example": {
+        "ko": "계정 잠금은 방금 해제해 드렸습니다.",
+        "vi": "Tôi vừa mở khóa tài khoản cho anh/chị.",
+        "grammar": [
+          {
+            "pattern": "-아/어 드렸다",
+            "form": "해제해 드렸습니다",
+            "meaningVi": "đã làm giúp (khiêm nhường)"
+          }
+        ]
+      },
+      "tags": [
+        "security"
+      ]
+    },
+    {
+      "id": "t-bimilbeonho-chogihwa",
+      "ko": "비밀번호 초기화",
+      "vi": "reset mật khẩu",
+      "type": "noun",
+      "collocation": "비밀번호를 초기화하다",
+      "example": {
+        "ko": "비밀번호 초기화 후에는 임시 비밀번호가 메일로 발송됩니다.",
+        "vi": "Sau khi reset mật khẩu, mật khẩu tạm sẽ được gửi qua mail.",
+        "grammar": [
+          {
+            "pattern": "N 후에",
+            "form": "초기화 후에",
+            "meaningVi": "sau N"
+          },
+          {
+            "pattern": "N(으)로",
+            "form": "메일로",
+            "meaningVi": "bằng, qua (phương tiện)"
+          }
+        ]
+      },
+      "tags": [
+        "security",
+        "maintenance"
+      ]
+    },
+    {
+      "id": "t-injeungseo",
+      "ko": "인증서",
+      "vi": "chứng chỉ (SSL...)",
+      "type": "noun",
+      "collocation": "인증서를 갱신하다",
+      "example": {
+        "ko": "SSL 인증서가 다음 달에 만료될 예정입니다.",
+        "vi": "Chứng chỉ SSL dự kiến sẽ hết hạn vào tháng sau.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄹ 예정이다",
+            "form": "만료될 예정입니다",
+            "meaningVi": "dự kiến sẽ"
+          }
+        ]
+      },
+      "tags": [
+        "security",
+        "server"
+      ]
+    },
+    {
+      "id": "t-mallyo",
+      "ko": "만료",
+      "vi": "hết hạn",
+      "pron": "[말료]",
+      "type": "noun",
+      "collocation": "기간이 만료되다",
+      "example": {
+        "ko": "세션이 만료되어 다시 로그인해야 합니다.",
+        "vi": "Session đã hết hạn nên phải đăng nhập lại.",
+        "grammar": [
+          {
+            "pattern": "-아/어",
+            "form": "만료되어",
+            "meaningVi": "vì… (nối nguyên nhân, văn viết)"
+          }
+        ]
+      },
+      "tags": [
+        "security",
+        "server"
+      ]
+    },
+    {
+      "id": "t-gaengsin",
+      "ko": "갱신",
+      "vi": "gia hạn, cập nhật lại",
+      "type": "noun",
+      "collocation": "계약을 갱신하다",
+      "example": {
+        "ko": "인증서 갱신은 고객사에서 진행해 주셔야 합니다.",
+        "vi": "Việc gia hạn chứng chỉ phải do phía khách thực hiện.",
+        "grammar": [
+          {
+            "pattern": "-아/어 주셔야 하다",
+            "form": "진행해 주셔야 합니다",
+            "meaningVi": "cần anh/chị làm giúp (lịch sự)"
+          }
+        ]
+      },
+      "tags": [
+        "security",
+        "business"
+      ]
+    },
+    {
+      "id": "t-haesi",
+      "ko": "해시",
+      "vi": "hash (băm)",
+      "type": "noun",
+      "collocation": "해시로 저장하다",
+      "example": {
+        "ko": "비밀번호는 복호화할 수 없는 해시 값으로 저장합니다.",
+        "vi": "Mật khẩu được lưu dưới dạng giá trị hash không thể giải mã.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄹ 수 없는 N",
+            "form": "복호화할 수 없는",
+            "meaningVi": "N không thể…"
+          }
+        ]
+      },
+      "tags": [
+        "security",
+        "dev"
+      ]
+    },
+    {
+      "id": "t-masking",
+      "ko": "마스킹",
+      "vi": "che (dữ liệu cá nhân)",
+      "type": "noun",
+      "collocation": "개인정보를 마스킹하다",
+      "example": {
+        "ko": "로그에 남는 전화번호는 모두 마스킹 처리했습니다.",
+        "vi": "Số điện thoại ghi trong log đều đã được che.",
+        "grammar": [
+          {
+            "pattern": "-는 N",
+            "form": "남는 전화번호",
+            "meaningVi": "N (mà) … (định ngữ hiện tại)"
+          }
+        ]
+      },
+      "tags": [
+        "security"
+      ]
+    },
+    {
+      "id": "t-yongnyang",
+      "ko": "용량",
+      "vi": "dung lượng",
+      "pron": "[용냥]",
+      "type": "noun",
+      "collocation": "디스크 용량이 부족하다",
+      "example": {
+        "ko": "로그 파일 때문에 서버 디스크 용량이 부족합니다.",
+        "vi": "Vì file log nên dung lượng đĩa server bị thiếu.",
+        "grammar": [
+          {
+            "pattern": "N 때문에",
+            "form": "파일 때문에",
+            "meaningVi": "vì N"
+          }
+        ]
+      },
+      "tags": [
+        "server",
+        "infra"
+      ]
+    },
+    {
+      "id": "t-jeungseol",
+      "ko": "증설",
+      "vi": "tăng thêm, mở rộng (server, thiết bị)",
+      "type": "noun",
+      "collocation": "서버를 증설하다",
+      "example": {
+        "ko": "이벤트 기간에는 서버를 두 대 증설할 예정입니다.",
+        "vi": "Trong thời gian sự kiện dự kiến sẽ tăng thêm 2 server.",
+        "grammar": [
+          {
+            "pattern": "N에는",
+            "form": "기간에는",
+            "meaningVi": "vào (thời gian) N thì"
+          }
+        ]
+      },
+      "tags": [
+        "infra",
+        "server"
+      ]
+    },
+    {
+      "id": "t-wonbok",
+      "ko": "원복",
+      "vi": "khôi phục nguyên trạng (rollback)",
+      "type": "noun",
+      "collocation": "설정을 원복하다",
+      "example": {
+        "ko": "문제가 생기면 바로 이전 설정으로 원복하겠습니다.",
+        "vi": "Nếu có vấn đề, tôi sẽ khôi phục ngay về cấu hình trước.",
+        "grammar": [
+          {
+            "pattern": "-(으)면",
+            "form": "생기면",
+            "meaningVi": "nếu"
+          }
+        ]
+      },
+      "tags": [
+        "deploy",
+        "incident"
+      ]
+    },
+    {
+      "id": "t-sangtaegap",
+      "ko": "상태 값",
+      "vi": "giá trị trạng thái",
+      "pron": "[상태 깝]",
+      "type": "noun",
+      "collocation": "상태 값을 변경하다",
+      "example": {
+        "ko": "주문 세 건의 상태 값이 잘못 저장되어 있습니다.",
+        "vi": "Giá trị trạng thái của 3 đơn hàng đang bị lưu sai.",
+        "grammar": [
+          {
+            "pattern": "-아/어 있다",
+            "form": "저장되어 있습니다",
+            "meaningVi": "đang ở trạng thái (kết quả còn lại)"
+          }
+        ]
+      },
+      "tags": [
+        "db",
+        "bug"
+      ]
+    },
+    {
+      "id": "t-peuronteuendeu",
+      "ko": "프론트엔드",
+      "vi": "frontend",
+      "type": "noun",
+      "collocation": "프론트엔드 개발",
+      "example": {
+        "ko": "프론트엔드는 JSP와 자바스크립트로 개발하고 있습니다.",
+        "vi": "Phần frontend đang được phát triển bằng JSP và JavaScript.",
+        "grammar": [
+          {
+            "pattern": "N와/과",
+            "form": "JSP와",
+            "meaningVi": "N và"
+          }
+        ]
+      },
+      "tags": [
+        "dev",
+        "ui"
+      ]
+    },
+    {
+      "id": "t-baegendeu",
+      "ko": "백엔드",
+      "vi": "backend",
+      "type": "noun",
+      "collocation": "백엔드 API",
+      "example": {
+        "ko": "백엔드 쪽은 수정 없이 화면만 바꾸면 됩니다.",
+        "vi": "Phía backend không cần sửa, chỉ cần đổi màn hình thôi.",
+        "grammar": [
+          {
+            "pattern": "N 없이",
+            "form": "수정 없이",
+            "meaningVi": "không cần N, mà không có N"
+          },
+          {
+            "pattern": "-(으)면 되다",
+            "form": "바꾸면 됩니다",
+            "meaningVi": "chỉ cần… là được"
+          }
+        ]
+      },
+      "tags": [
+        "dev",
+        "api"
+      ]
+    },
+    {
+      "id": "t-keomponeonteu",
+      "ko": "컴포넌트",
+      "vi": "component",
+      "type": "noun",
+      "collocation": "공통 컴포넌트",
+      "example": {
+        "ko": "자주 쓰는 팝업은 공통 컴포넌트로 분리했습니다.",
+        "vi": "Các popup hay dùng đã được tách ra thành component chung.",
+        "grammar": [
+          {
+            "pattern": "N(으)로 분리하다",
+            "form": "컴포넌트로 분리했습니다",
+            "meaningVi": "tách ra thành N"
+          }
+        ]
+      },
+      "tags": [
+        "dev",
+        "ui"
+      ]
+    },
+    {
+      "id": "t-pejing",
+      "ko": "페이징",
+      "vi": "phân trang (paging)",
+      "type": "noun",
+      "collocation": "페이징 처리",
+      "example": {
+        "ko": "데이터가 많아서 목록에 페이징 처리를 추가했습니다.",
+        "vi": "Vì dữ liệu nhiều nên tôi đã thêm phân trang cho danh sách.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "많아서",
+            "meaningVi": "vì… nên"
+          }
+        ]
+      },
+      "tags": [
+        "ui",
+        "performance"
+      ]
+    },
+    {
+      "id": "t-sokdo-jeoha",
+      "ko": "속도 저하",
+      "vi": "giảm tốc độ, chậm đi",
+      "pron": "[속또 저하]",
+      "type": "noun",
+      "collocation": "속도 저하가 발생하다",
+      "example": {
+        "ko": "사용자가 몰리는 시간에 속도 저하가 발생합니다.",
+        "vi": "Vào giờ người dùng đông thì xảy ra tình trạng chậm.",
+        "grammar": [
+          {
+            "pattern": "-는 시간에",
+            "form": "몰리는 시간에",
+            "meaningVi": "vào lúc (mà)…"
+          }
+        ]
+      },
+      "tags": [
+        "performance",
+        "incident"
+      ]
+    },
+    {
+      "id": "t-pail-eopeurodeu",
+      "ko": "파일 업로드",
+      "vi": "upload file",
+      "type": "noun",
+      "collocation": "파일을 업로드하다",
+      "example": {
+        "ko": "10MB가 넘는 파일은 업로드할 수 없도록 제한했습니다.",
+        "vi": "Tôi đã giới hạn để không thể upload file quá 10MB.",
+        "grammar": [
+          {
+            "pattern": "-도록",
+            "form": "없도록",
+            "meaningVi": "để cho, sao cho"
+          }
+        ]
+      },
+      "tags": [
+        "ui",
+        "dev"
+      ]
+    },
+    {
+      "id": "t-naeryeobatda",
+      "ko": "내려받다",
+      "vi": "tải về (download)",
+      "pron": "[내려받따]",
+      "type": "verb",
+      "collocation": "엑셀을 내려받다",
+      "example": {
+        "ko": "조회한 결과는 엑셀로 내려받으실 수 있습니다.",
+        "vi": "Kết quả tra cứu có thể tải về dạng Excel.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄹ 수 있다",
+            "form": "내려받으실 수 있습니다",
+            "meaningVi": "có thể",
+            "noteVi": "-으시- là kính ngữ khi nói về hành động của khách."
+          }
+        ]
+      },
+      "tags": [
+        "ui",
+        "verb"
+      ]
+    },
+    {
+      "id": "w-yujibosu",
+      "ko": "유지보수",
+      "vi": "bảo trì (maintenance)",
+      "type": "noun",
+      "collocation": "유지보수 계약",
+      "example": {
+        "ko": "오픈 후에는 저희 팀이 유지보수를 담당하게 됩니다.",
+        "vi": "Sau khi ra mắt, team chúng tôi sẽ phụ trách bảo trì.",
+        "grammar": [
+          {
+            "pattern": "-게 되다",
+            "form": "담당하게 됩니다",
+            "meaningVi": "sẽ (được sắp xếp/trở thành)"
+          }
+        ]
+      },
+      "tags": [
+        "business",
+        "maintenance"
+      ]
+    },
+    {
+      "id": "w-unyeong",
+      "ko": "운영",
+      "vi": "vận hành",
+      "type": "noun",
+      "collocation": "운영 업무",
+      "example": {
+        "ko": "운영 중인 시스템이라서 낮에는 배포할 수 없습니다.",
+        "vi": "Vì hệ thống đang vận hành nên ban ngày không thể deploy.",
+        "grammar": [
+          {
+            "pattern": "N 중",
+            "form": "운영 중인",
+            "meaningVi": "đang N"
+          },
+          {
+            "pattern": "N(이)라서",
+            "form": "시스템이라서",
+            "meaningVi": "vì là N"
+          }
+        ]
+      },
+      "tags": [
+        "business",
+        "maintenance"
+      ]
+    },
+    {
+      "id": "w-jeopsu",
+      "ko": "접수",
+      "vi": "tiếp nhận (yêu cầu, hồ sơ)",
+      "pron": "[접쑤]",
+      "type": "noun",
+      "collocation": "요청이 접수되다",
+      "example": {
+        "ko": "요청하신 건은 정상적으로 접수되었습니다.",
+        "vi": "Yêu cầu của anh/chị đã được tiếp nhận.",
+        "grammar": [
+          {
+            "pattern": "-(으)신 N",
+            "form": "요청하신 건",
+            "meaningVi": "N mà anh/chị đã… (kính ngữ)"
+          }
+        ]
+      },
+      "tags": [
+        "request",
+        "maintenance"
+      ]
+    },
+    {
+      "id": "w-cheori",
+      "ko": "처리",
+      "vi": "xử lý",
+      "type": "noun",
+      "collocation": "처리 완료",
+      "example": {
+        "ko": "이번 달 요청은 대부분 처리 완료했습니다.",
+        "vi": "Phần lớn yêu cầu tháng này đã xử lý xong.",
+        "grammar": [
+          {
+            "pattern": "N 완료하다",
+            "form": "처리 완료했습니다",
+            "meaningVi": "đã hoàn tất N"
+          }
+        ]
+      },
+      "tags": [
+        "report",
+        "maintenance"
+      ]
+    },
+    {
+      "id": "w-micheori",
+      "ko": "미처리",
+      "vi": "chưa xử lý",
+      "type": "noun",
+      "collocation": "미처리 건",
+      "example": {
+        "ko": "미처리 건 두 개는 다음 주에 처리할 예정입니다.",
+        "vi": "Hai việc chưa xử lý dự kiến sẽ làm vào tuần sau.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄹ 예정이다",
+            "form": "처리할 예정입니다",
+            "meaningVi": "dự kiến sẽ"
+          }
+        ]
+      },
+      "tags": [
+        "report",
+        "maintenance"
+      ]
+    },
+    {
+      "id": "w-wolgan-bogo",
+      "ko": "월간 보고",
+      "vi": "báo cáo tháng",
+      "type": "noun",
+      "collocation": "월간 보고서",
+      "example": {
+        "ko": "월간 보고서는 매월 첫째 주 금요일에 제출합니다.",
+        "vi": "Báo cáo tháng được nộp vào thứ Sáu tuần đầu mỗi tháng.",
+        "grammar": [
+          {
+            "pattern": "N에",
+            "form": "금요일에",
+            "meaningVi": "vào (thời điểm)"
+          }
+        ]
+      },
+      "tags": [
+        "report",
+        "pm"
+      ]
+    },
+    {
+      "id": "w-unyeong-hyeonhwang",
+      "ko": "운영 현황",
+      "vi": "tình hình vận hành",
+      "type": "noun",
+      "collocation": "운영 현황을 보고하다",
+      "example": {
+        "ko": "9월 운영 현황을 아래와 같이 보고드립니다.",
+        "vi": "Tôi xin báo cáo tình hình vận hành tháng 9 như dưới đây.",
+        "grammar": [
+          {
+            "pattern": "N와/과 같이",
+            "form": "아래와 같이",
+            "meaningVi": "như N",
+            "noteVi": "Câu mở đầu chuẩn của báo cáo/email."
+          }
+        ]
+      },
+      "tags": [
+        "report",
+        "email"
+      ]
+    },
+    {
+      "id": "w-sayu",
+      "ko": "사유",
+      "vi": "lý do (văn bản)",
+      "type": "noun",
+      "collocation": "변경 사유",
+      "example": {
+        "ko": "데이터 수정 사유를 메일로 보내 주시기 바랍니다.",
+        "vi": "Xin anh/chị gửi lý do sửa dữ liệu qua mail.",
+        "grammar": [
+          {
+            "pattern": "-아/어 주시기 바랍니다",
+            "form": "보내 주시기 바랍니다",
+            "meaningVi": "mong anh/chị… (văn viết trang trọng)"
+          }
+        ]
+      },
+      "tags": [
+        "email",
+        "business"
+      ]
+    },
+    {
+      "id": "w-hyeopjo",
+      "ko": "협조",
+      "vi": "hợp tác, hỗ trợ",
+      "pron": "[협쪼]",
+      "type": "noun",
+      "collocation": "협조를 요청드리다",
+      "example": {
+        "ko": "주말 작업을 위해 VPN 권한 협조를 요청드립니다.",
+        "vi": "Để làm việc cuối tuần, tôi xin anh/chị hỗ trợ quyền VPN.",
+        "grammar": [
+          {
+            "pattern": "N을/를 위해",
+            "form": "작업을 위해",
+            "meaningVi": "để (phục vụ) N"
+          }
+        ]
+      },
+      "tags": [
+        "request",
+        "email"
+      ]
+    },
+    {
+      "id": "w-hwakjeong",
+      "ko": "확정",
+      "vi": "chốt, xác định chính thức",
+      "pron": "[확쩡]",
+      "type": "noun",
+      "collocation": "일정이 확정되다",
+      "example": {
+        "ko": "배포 일정이 확정되면 바로 공유드리겠습니다.",
+        "vi": "Lịch deploy chốt xong là tôi chia sẻ ngay.",
+        "grammar": [
+          {
+            "pattern": "-(으)면",
+            "form": "확정되면",
+            "meaningVi": "khi, nếu"
+          }
+        ]
+      },
+      "tags": [
+        "schedule",
+        "pm"
+      ]
+    },
+    {
+      "id": "w-migyeol-sahang",
+      "ko": "미결 사항",
+      "vi": "điểm chưa giải quyết/chưa chốt",
+      "pron": "[미결 싸항]",
+      "type": "noun",
+      "collocation": "미결 사항을 정리하다",
+      "example": {
+        "ko": "미결 사항은 다음 회의 전까지 정리해 두겠습니다.",
+        "vi": "Các điểm chưa chốt tôi sẽ tổng hợp sẵn trước cuộc họp tới.",
+        "grammar": [
+          {
+            "pattern": "N 전까지",
+            "form": "회의 전까지",
+            "meaningVi": "trước (hạn) N"
+          },
+          {
+            "pattern": "-아/어 두다",
+            "form": "정리해 두겠습니다",
+            "meaningVi": "làm sẵn"
+          }
+        ]
+      },
+      "tags": [
+        "meeting",
+        "pm"
+      ]
+    },
+    {
+      "id": "w-yangsik",
+      "ko": "양식",
+      "vi": "mẫu biểu, form",
+      "type": "noun",
+      "collocation": "요청 양식",
+      "example": {
+        "ko": "변경 요청은 이 양식에 맞춰 작성해 주세요.",
+        "vi": "Yêu cầu thay đổi xin viết theo mẫu này.",
+        "grammar": [
+          {
+            "pattern": "N에 맞춰",
+            "form": "양식에 맞춰",
+            "meaningVi": "theo, khớp với N"
+          }
+        ]
+      },
+      "tags": [
+        "document",
+        "request"
+      ]
+    },
+    {
+      "id": "w-jeolcha",
+      "ko": "절차",
+      "vi": "thủ tục, quy trình",
+      "type": "noun",
+      "collocation": "승인 절차",
+      "example": {
+        "ko": "운영 DB 수정은 승인 절차를 거쳐야 합니다.",
+        "vi": "Sửa DB production phải qua thủ tục phê duyệt.",
+        "grammar": [
+          {
+            "pattern": "N을/를 거치다",
+            "form": "절차를 거쳐야",
+            "meaningVi": "trải qua N"
+          }
+        ]
+      },
+      "tags": [
+        "pm",
+        "maintenance"
+      ]
+    },
+    {
+      "id": "w-gyujeong",
+      "ko": "규정",
+      "vi": "quy định",
+      "type": "noun",
+      "collocation": "보안 규정",
+      "example": {
+        "ko": "보안 규정상 비밀번호는 메신저로 보낼 수 없습니다.",
+        "vi": "Theo quy định bảo mật, không được gửi mật khẩu qua messenger.",
+        "grammar": [
+          {
+            "pattern": "N상",
+            "form": "규정상",
+            "meaningVi": "xét theo N, về mặt N"
+          }
+        ]
+      },
+      "tags": [
+        "security",
+        "business"
+      ]
+    },
+    {
+      "id": "w-byeongyeong-donggyeol",
+      "ko": "변경 동결",
+      "vi": "đóng băng thay đổi (change freeze)",
+      "type": "noun",
+      "collocation": "변경 동결 기간",
+      "example": {
+        "ko": "연말에는 변경 동결 기간이라 배포가 불가능합니다.",
+        "vi": "Cuối năm là thời gian đóng băng thay đổi nên không thể deploy.",
+        "grammar": [
+          {
+            "pattern": "N(이)라",
+            "form": "기간이라",
+            "meaningVi": "vì là N (dạng rút gọn của -이라서)"
+          }
+        ]
+      },
+      "tags": [
+        "deploy",
+        "schedule"
+      ]
+    },
+    {
+      "id": "w-jijeok-sahang",
+      "ko": "지적 사항",
+      "vi": "điểm bị chỉ ra (khi kiểm tra)",
+      "pron": "[지적 싸항]",
+      "type": "noun",
+      "collocation": "지적 사항을 조치하다",
+      "example": {
+        "ko": "보안 점검에서 나온 지적 사항은 이번 달 안에 조치하겠습니다.",
+        "vi": "Các điểm bị chỉ ra trong đợt kiểm tra bảo mật sẽ được xử lý trong tháng này.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄴ N",
+            "form": "나온 지적 사항",
+            "meaningVi": "N đã… (định ngữ quá khứ)"
+          }
+        ]
+      },
+      "tags": [
+        "security",
+        "report"
+      ]
+    },
+    {
+      "id": "w-jochi-gyehoek",
+      "ko": "조치 계획",
+      "vi": "kế hoạch xử lý",
+      "type": "noun",
+      "collocation": "조치 계획을 수립하다",
+      "example": {
+        "ko": "상세 조치 계획은 이번 주 안에 보내 드리겠습니다.",
+        "vi": "Kế hoạch xử lý chi tiết tôi sẽ gửi trong tuần này.",
+        "grammar": [
+          {
+            "pattern": "N 안에",
+            "form": "이번 주 안에",
+            "meaningVi": "trong vòng N"
+          }
+        ]
+      },
+      "tags": [
+        "report",
+        "incident"
+      ]
+    },
+    {
+      "id": "w-buje",
+      "ko": "부재",
+      "vi": "vắng mặt",
+      "type": "noun",
+      "collocation": "부재 중",
+      "example": {
+        "ko": "제가 부재 중일 때는 투안 선임에게 연락 주세요.",
+        "vi": "Khi tôi vắng mặt, xin liên hệ anh Tuấn.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄹ 때",
+            "form": "부재 중일 때",
+            "meaningVi": "khi"
+          }
+        ]
+      },
+      "tags": [
+        "communication",
+        "email"
+      ]
+    },
+    {
+      "id": "w-naeseon",
+      "ko": "내선",
+      "vi": "số máy lẻ nội bộ",
+      "type": "noun",
+      "collocation": "내선 번호",
+      "example": {
+        "ko": "급한 일이 있으시면 내선 1234번으로 전화 주세요.",
+        "vi": "Nếu có việc gấp, xin gọi số nội bộ 1234.",
+        "grammar": [
+          {
+            "pattern": "-(으)시면",
+            "form": "있으시면",
+            "meaningVi": "nếu (anh/chị) có… (kính ngữ)"
+          }
+        ]
+      },
+      "tags": [
+        "communication"
+      ]
+    },
+    {
+      "id": "w-jeondal",
+      "ko": "전달",
+      "vi": "chuyển (lời, tài liệu)",
+      "type": "noun",
+      "collocation": "말씀을 전달하다",
+      "example": {
+        "ko": "말씀하신 내용은 개발팀에 그대로 전달하겠습니다.",
+        "vi": "Nội dung anh/chị nói tôi sẽ chuyển nguyên cho team dev.",
+        "grammar": [
+          {
+            "pattern": "N에(게) 전달하다",
+            "form": "개발팀에 그대로 전달하겠습니다",
+            "meaningVi": "chuyển cho N"
+          }
+        ]
+      },
+      "tags": [
+        "communication"
+      ]
+    },
+    {
+      "id": "w-ilsi",
+      "ko": "일시",
+      "vi": "ngày giờ",
+      "pron": "[일씨]",
+      "type": "noun",
+      "collocation": "작업 일시",
+      "example": {
+        "ko": "작업 일시는 10월 10일 오전 9시입니다.",
+        "vi": "Ngày giờ thực hiện là 9 giờ sáng ngày 10/10.",
+        "grammar": [
+          {
+            "pattern": "N은/는 N입니다",
+            "form": "일시는",
+            "meaningVi": "N là N (trình bày thông tin)"
+          }
+        ]
+      },
+      "tags": [
+        "schedule",
+        "email"
+      ]
+    },
+    {
+      "id": "w-gonghyuil",
+      "ko": "공휴일",
+      "vi": "ngày lễ (nghỉ chính thức)",
+      "type": "noun",
+      "collocation": "공휴일과 겹치다",
+      "example": {
+        "ko": "배포일이 공휴일과 겹쳐서 하루 앞당기겠습니다.",
+        "vi": "Ngày deploy trùng ngày lễ nên tôi sẽ đẩy sớm lên một ngày.",
+        "grammar": [
+          {
+            "pattern": "N와/과 겹치다",
+            "form": "공휴일과 겹쳐서",
+            "meaningVi": "trùng với N"
+          }
+        ]
+      },
+      "tags": [
+        "schedule"
+      ]
+    },
+    {
+      "id": "w-geunmu",
+      "ko": "근무",
+      "vi": "làm việc (đi làm)",
+      "type": "noun",
+      "collocation": "근무 시간",
+      "example": {
+        "ko": "베트남 팀의 근무 시간은 한국 시간으로 오전 10시부터입니다.",
+        "vi": "Giờ làm việc của team Việt Nam bắt đầu từ 10 giờ sáng giờ Hàn.",
+        "grammar": [
+          {
+            "pattern": "N(으)로",
+            "form": "한국 시간으로",
+            "meaningVi": "theo (tiêu chuẩn) N"
+          }
+        ]
+      },
+      "tags": [
+        "time",
+        "communication"
+      ]
+    },
+    {
+      "id": "w-yagan-jageop",
+      "ko": "야간 작업",
+      "vi": "làm việc ban đêm",
+      "pron": "[야간 자겁]",
+      "type": "noun",
+      "collocation": "야간 작업을 진행하다",
+      "example": {
+        "ko": "DB 작업은 사용자가 적은 야간에 진행하는 것이 좋겠습니다.",
+        "vi": "Việc làm DB nên tiến hành vào ban đêm khi ít người dùng thì tốt hơn.",
+        "grammar": [
+          {
+            "pattern": "-는 것이 좋겠다",
+            "form": "진행하는 것이 좋겠습니다",
+            "meaningVi": "nên… thì tốt hơn (đề xuất mềm)"
+          }
+        ]
+      },
+      "tags": [
+        "deploy",
+        "schedule"
+      ]
+    },
+    {
+      "id": "w-dangjik",
+      "ko": "당직",
+      "vi": "trực (ca trực)",
+      "type": "noun",
+      "collocation": "당직자",
+      "example": {
+        "ko": "연휴 기간에도 당직자가 장애에 대응할 예정입니다.",
+        "vi": "Kể cả kỳ nghỉ dài cũng sẽ có người trực ứng phó sự cố.",
+        "grammar": [
+          {
+            "pattern": "N에도",
+            "form": "기간에도",
+            "meaningVi": "kể cả trong N"
+          }
+        ]
+      },
+      "tags": [
+        "incident",
+        "schedule"
+      ]
+    },
+    {
+      "id": "w-cheonggu",
+      "ko": "청구",
+      "vi": "yêu cầu thanh toán, tính phí",
+      "type": "noun",
+      "collocation": "비용을 청구하다",
+      "example": {
+        "ko": "추가 작업 비용은 다음 달에 함께 청구하겠습니다.",
+        "vi": "Chi phí làm thêm sẽ tính chung vào tháng sau.",
+        "grammar": [
+          {
+            "pattern": "-겠-",
+            "form": "청구하겠습니다",
+            "meaningVi": "sẽ (ý định, cam kết)"
+          }
+        ]
+      },
+      "tags": [
+        "business"
+      ]
+    },
+    {
+      "id": "w-harin",
+      "ko": "할인",
+      "vi": "giảm giá",
+      "pron": "[하린]",
+      "type": "noun",
+      "collocation": "할인을 적용하다",
+      "example": {
+        "ko": "1년 계약을 하시면 10% 할인이 가능합니다.",
+        "vi": "Nếu ký hợp đồng 1 năm thì có thể giảm 10%.",
+        "grammar": [
+          {
+            "pattern": "-(으)시면",
+            "form": "하시면",
+            "meaningVi": "nếu anh/chị… (kính ngữ)"
+          }
+        ]
+      },
+      "tags": [
+        "business"
+      ]
+    },
+    {
+      "id": "w-byeoldo",
+      "ko": "별도",
+      "vi": "riêng, tách riêng",
+      "pron": "[별또]",
+      "type": "noun",
+      "collocation": "별도 견적",
+      "example": {
+        "ko": "신규 기능은 별도로 견적을 드리겠습니다.",
+        "vi": "Chức năng mới tôi sẽ gửi báo giá riêng.",
+        "grammar": [
+          {
+            "pattern": "N(으)로",
+            "form": "별도로",
+            "meaningVi": "một cách N (trạng từ hóa)"
+          }
+        ]
+      },
+      "tags": [
+        "business"
+      ]
+    },
+    {
+      "id": "w-sanjeong",
+      "ko": "산정",
+      "vi": "ước tính, tính toán (công số, chi phí)",
+      "type": "noun",
+      "collocation": "공수를 산정하다",
+      "example": {
+        "ko": "공수를 산정한 후에 일정을 다시 말씀드리겠습니다.",
+        "vi": "Sau khi ước tính công số, tôi sẽ báo lại lịch.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄴ 후에",
+            "form": "산정한 후에",
+            "meaningVi": "sau khi"
+          }
+        ]
+      },
+      "tags": [
+        "pm",
+        "business"
+      ]
+    },
+    {
+      "id": "w-sian",
+      "ko": "시안",
+      "vi": "bản phác thảo, bản nháp thiết kế",
+      "type": "noun",
+      "collocation": "화면 시안",
+      "example": {
+        "ko": "다음 회의 때 화면 시안을 두 가지 준비하겠습니다.",
+        "vi": "Buổi họp tới tôi sẽ chuẩn bị hai bản phác màn hình.",
+        "grammar": [
+          {
+            "pattern": "N 때",
+            "form": "회의 때",
+            "meaningVi": "vào lúc N"
+          }
+        ]
+      },
+      "tags": [
+        "ui",
+        "meeting"
+      ]
+    },
+    {
+      "id": "w-jeongnihada",
+      "ko": "정리하다",
+      "vi": "sắp xếp, tổng hợp lại",
+      "pron": "[정니하다]",
+      "type": "verb",
+      "collocation": "내용을 정리하다",
+      "example": {
+        "ko": "오늘 논의한 내용을 정리해서 메일로 보내 드리겠습니다.",
+        "vi": "Tôi sẽ tổng hợp nội dung thảo luận hôm nay rồi gửi mail.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "정리해서",
+            "meaningVi": "làm… rồi (nối hành động liên tiếp)"
+          }
+        ]
+      },
+      "tags": [
+        "verb",
+        "meeting"
+      ]
+    },
+    {
+      "id": "w-chajil",
+      "ko": "차질",
+      "vi": "trục trặc, ảnh hưởng xấu (tới kế hoạch)",
+      "type": "noun",
+      "collocation": "일정에 차질이 생기다",
+      "example": {
+        "ko": "자료가 늦어지면 일정에 차질이 생길 수 있습니다.",
+        "vi": "Nếu tài liệu chậm thì lịch có thể bị ảnh hưởng.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄹ 수 있다",
+            "form": "생길 수 있습니다",
+            "meaningVi": "có thể (xảy ra)"
+          }
+        ]
+      },
+      "tags": [
+        "schedule",
+        "pm"
+      ]
+    },
+    {
+      "id": "w-yeonghyang",
+      "ko": "영향",
+      "vi": "ảnh hưởng",
+      "type": "noun",
+      "collocation": "영향을 주다",
+      "example": {
+        "ko": "이번 수정은 다른 화면에는 영향을 주지 않습니다.",
+        "vi": "Lần sửa này không ảnh hưởng tới các màn hình khác.",
+        "grammar": [
+          {
+            "pattern": "-지 않다",
+            "form": "주지 않습니다",
+            "meaningVi": "không (phủ định)"
+          }
+        ]
+      },
+      "tags": [
+        "dev",
+        "test"
+      ]
+    },
+    {
+      "id": "w-uiroe",
+      "ko": "의뢰",
+      "vi": "ủy thác, nhờ làm (chính thức)",
+      "type": "noun",
+      "collocation": "작업을 의뢰하다",
+      "example": {
+        "ko": "고객사에서 데이터 이관 작업을 의뢰했습니다.",
+        "vi": "Phía khách đã giao (nhờ) việc chuyển dữ liệu.",
+        "grammar": [
+          {
+            "pattern": "N에서",
+            "form": "고객사에서",
+            "meaningVi": "N (chủ ngữ là tổ chức)",
+            "noteVi": "Với cơ quan, công ty, 에서 có thể làm chủ ngữ thay 이/가."
+          }
+        ]
+      },
+      "tags": [
+        "business",
+        "request"
+      ]
+    },
+    {
+      "id": "w-gongji",
+      "ko": "공지",
+      "vi": "thông báo (chung)",
+      "type": "noun",
+      "collocation": "공지를 올리다",
+      "example": {
+        "ko": "점검 일정은 사용자 게시판에 공지하겠습니다.",
+        "vi": "Lịch bảo trì tôi sẽ thông báo trên bảng tin người dùng.",
+        "grammar": [
+          {
+            "pattern": "N에",
+            "form": "게시판에",
+            "meaningVi": "lên, ở (nơi chốn)"
+          }
+        ]
+      },
+      "tags": [
+        "communication",
+        "maintenance"
+      ]
+    },
+    {
+      "id": "w-annaemun",
+      "ko": "안내문",
+      "vi": "văn bản hướng dẫn, thông báo",
+      "type": "noun",
+      "collocation": "안내문을 작성하다",
+      "example": {
+        "ko": "브라우저 변경 방법을 안내문으로 만들어 드리겠습니다.",
+        "vi": "Tôi sẽ làm văn bản hướng dẫn cách đổi trình duyệt.",
+        "grammar": [
+          {
+            "pattern": "N(으)로 만들다",
+            "form": "안내문으로 만들어",
+            "meaningVi": "làm thành N"
+          }
+        ]
+      },
+      "tags": [
+        "document",
+        "communication"
+      ]
+    },
+    {
+      "id": "w-daeeung",
+      "ko": "대응",
+      "vi": "ứng phó, xử lý (sự cố, yêu cầu)",
+      "type": "noun",
+      "collocation": "장애 대응",
+      "example": {
+        "ko": "장애가 발생하면 30분 안에 대응하는 것이 원칙입니다.",
+        "vi": "Nguyên tắc là khi xảy ra sự cố phải ứng phó trong vòng 30 phút.",
+        "grammar": [
+          {
+            "pattern": "-는 것이 원칙이다",
+            "form": "대응하는 것이 원칙입니다",
+            "meaningVi": "nguyên tắc là…"
+          }
+        ]
+      },
+      "tags": [
+        "incident",
+        "maintenance"
+      ]
+    },
+    {
+      "id": "w-gingeup",
+      "ko": "긴급",
+      "vi": "khẩn cấp",
+      "type": "noun",
+      "collocation": "긴급 요청",
+      "example": {
+        "ko": "긴급한 건은 메일보다 전화로 연락 주시면 빠릅니다.",
+        "vi": "Việc khẩn cấp thì gọi điện nhanh hơn gửi mail.",
+        "grammar": [
+          {
+            "pattern": "N보다",
+            "form": "메일보다",
+            "meaningVi": "hơn N (so sánh)"
+          }
+        ]
+      },
+      "tags": [
+        "incident",
+        "communication"
+      ]
+    },
+    {
+      "id": "w-hwakbo",
+      "ko": "확보",
+      "vi": "đảm bảo có, giữ được (thời gian, nhân lực)",
+      "pron": "[확뽀]",
+      "type": "noun",
+      "collocation": "시간을 확보하다",
+      "example": {
+        "ko": "테스트 기간을 충분히 확보해야 품질을 지킬 수 있습니다.",
+        "vi": "Phải đảm bảo đủ thời gian test thì mới giữ được chất lượng.",
+        "grammar": [
+          {
+            "pattern": "-아/어야",
+            "form": "확보해야",
+            "meaningVi": "phải… thì mới"
+          }
+        ]
+      },
+      "tags": [
+        "pm",
+        "test"
+      ]
+    },
+    {
+      "id": "w-miruda",
+      "ko": "미루다",
+      "vi": "hoãn, dời lại",
+      "type": "verb",
+      "collocation": "일정을 미루다",
+      "example": {
+        "ko": "회의를 다음 주로 미뤄도 괜찮으실까요?",
+        "vi": "Dời cuộc họp sang tuần sau có được không ạ?",
+        "grammar": [
+          {
+            "pattern": "-아/어도 괜찮다",
+            "form": "미뤄도 괜찮으실까요",
+            "meaningVi": "… cũng được chứ? (xin phép)"
+          }
+        ]
+      },
+      "tags": [
+        "verb",
+        "schedule"
+      ]
     }
   ]
 }

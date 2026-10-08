@@ -709,6 +709,702 @@
           }
         ]
       }
+    },
+    {
+      "id": "pt-22",
+      "pattern": "{noun} 건은 현재 원인을 분석하고 있습니다.",
+      "vi": "Vụ {noun} hiện đang được phân tích nguyên nhân.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "로그인 오류",
+            "vi": "lỗi đăng nhập"
+          },
+          {
+            "ko": "배치 실패",
+            "vi": "batch bị lỗi"
+          },
+          {
+            "ko": "데이터 누락",
+            "vi": "thiếu dữ liệu"
+          },
+          {
+            "ko": "화면 깨짐",
+            "vi": "vỡ giao diện"
+          }
+        ]
+      },
+      "note": "Câu trả lời tạm thời khi khách hỏi về sự cố mà chưa có kết luận. '건' = vụ, việc (dùng nhiều trong vận hành)."
+    },
+    {
+      "id": "pt-23",
+      "pattern": "{noun}{을/를} 반영하기 전에 {env}에서 먼저 테스트하겠습니다.",
+      "vi": "Trước khi áp dụng {noun}, tôi sẽ test trước trên {env}.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "수정 사항",
+            "vi": "nội dung sửa"
+          },
+          {
+            "ko": "설정 변경",
+            "vi": "thay đổi cấu hình"
+          },
+          {
+            "ko": "신규 쿼리",
+            "vi": "query mới"
+          },
+          {
+            "ko": "보안 패치",
+            "vi": "bản vá bảo mật"
+          }
+        ],
+        "env": [
+          {
+            "ko": "개발 서버",
+            "vi": "server dev"
+          },
+          {
+            "ko": "스테이징 서버",
+            "vi": "server staging"
+          },
+          {
+            "ko": "테스트 환경",
+            "vi": "môi trường test"
+          }
+        ]
+      },
+      "note": "-기 전에: trước khi. Câu trấn an khách rằng sẽ không đụng thẳng vào production."
+    },
+    {
+      "id": "pt-24",
+      "pattern": "{noun}{이/가} 정상적으로 동작하는지 확인 부탁드립니다.",
+      "vi": "Nhờ anh/chị kiểm tra giúp {noun} có hoạt động bình thường không.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "결제 화면",
+            "vi": "màn hình thanh toán"
+          },
+          {
+            "ko": "엑셀 다운로드",
+            "vi": "tải Excel"
+          },
+          {
+            "ko": "비밀번호 변경",
+            "vi": "đổi mật khẩu"
+          },
+          {
+            "ko": "메일 발송",
+            "vi": "gửi mail"
+          }
+        ]
+      },
+      "note": "-는지: (xem) có… không. Dùng sau khi deploy bản sửa, nhờ khách test lại."
+    },
+    {
+      "id": "pt-25",
+      "pattern": "{noun}{은/는} {reason} 때문에 이번 배포에 포함하기 어렵습니다.",
+      "vi": "{noun} khó đưa vào lần deploy này vì {reason}.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "검색 기능 개선",
+            "vi": "cải thiện chức năng tìm kiếm"
+          },
+          {
+            "ko": "알림 기능",
+            "vi": "chức năng thông báo"
+          },
+          {
+            "ko": "화면 수정 요청",
+            "vi": "yêu cầu sửa màn hình"
+          }
+        ],
+        "reason": [
+          {
+            "ko": "테스트 일정",
+            "vi": "lịch test"
+          },
+          {
+            "ko": "승인 절차",
+            "vi": "thủ tục phê duyệt"
+          },
+          {
+            "ko": "DB 변경",
+            "vi": "thay đổi DB"
+          }
+        ]
+      },
+      "note": "N 때문에 + -기 어렵습니다: từ chối mềm, có nêu lý do. Nên kèm đề xuất thời điểm khác."
+    },
+    {
+      "id": "pt-26",
+      "pattern": "{date} {time}부터 {n} 시간 동안 시스템 점검이 있을 예정입니다.",
+      "vi": "Dự kiến bảo trì hệ thống trong {n} tiếng, bắt đầu từ {time} {date}.",
+      "slots": {
+        "date": [
+          {
+            "ko": "이번 주 토요일",
+            "vi": "thứ Bảy tuần này"
+          },
+          {
+            "ko": "다음 주 수요일",
+            "vi": "thứ Tư tuần sau"
+          },
+          {
+            "ko": "10월 15일",
+            "vi": "ngày 15/10"
+          }
+        ],
+        "time": [
+          {
+            "ko": "새벽 2시",
+            "vi": "2 giờ sáng"
+          },
+          {
+            "ko": "밤 11시",
+            "vi": "11 giờ đêm"
+          }
+        ],
+        "n": [
+          {
+            "ko": "두",
+            "vi": "2"
+          },
+          {
+            "ko": "세",
+            "vi": "3"
+          },
+          {
+            "ko": "네",
+            "vi": "4"
+          }
+        ]
+      },
+      "note": "Giờ đọc bằng số thuần Hàn: 두 시간, 세 시간. 새벽 = rạng sáng (0-5 giờ)."
+    },
+    {
+      "id": "pt-27",
+      "pattern": "운영 서버의 {noun} 데이터를 수정해도 될지 확인 부탁드립니다.",
+      "vi": "Nhờ anh/chị xác nhận giúp có được sửa dữ liệu {noun} trên server production không.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "주문",
+            "vi": "đơn hàng"
+          },
+          {
+            "ko": "회원",
+            "vi": "hội viên"
+          },
+          {
+            "ko": "재고",
+            "vi": "tồn kho"
+          },
+          {
+            "ko": "정산",
+            "vi": "quyết toán"
+          }
+        ]
+      },
+      "note": "-아/어도 될지: liệu có được… không. Sửa dữ liệu production luôn phải xin phép trước."
+    },
+    {
+      "id": "pt-28",
+      "pattern": "{noun}{은/는} 매일 {time}에 자동으로 실행됩니다.",
+      "vi": "{noun} tự động chạy lúc {time} hằng ngày.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "정산 배치",
+            "vi": "batch quyết toán"
+          },
+          {
+            "ko": "백업 작업",
+            "vi": "tác vụ backup"
+          },
+          {
+            "ko": "통계 집계",
+            "vi": "tổng hợp thống kê"
+          },
+          {
+            "ko": "메일 발송",
+            "vi": "gửi mail"
+          }
+        ],
+        "time": [
+          {
+            "ko": "새벽 1시",
+            "vi": "1 giờ sáng"
+          },
+          {
+            "ko": "새벽 3시",
+            "vi": "3 giờ sáng"
+          },
+          {
+            "ko": "오전 6시",
+            "vi": "6 giờ sáng"
+          }
+        ]
+      },
+      "note": "Giải thích lịch batch khi bàn giao vận hành. 1시 = 한 시, 3시 = 세 시."
+    },
+    {
+      "id": "pt-29",
+      "pattern": "어젯밤 {noun}{이/가} 실패해서 지금 다시 실행하고 있습니다.",
+      "vi": "Đêm qua {noun} bị lỗi nên giờ tôi đang chạy lại.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "정산 배치",
+            "vi": "batch quyết toán"
+          },
+          {
+            "ko": "데이터 백업",
+            "vi": "backup dữ liệu"
+          },
+          {
+            "ko": "파일 전송",
+            "vi": "truyền file"
+          },
+          {
+            "ko": "통계 집계",
+            "vi": "tổng hợp thống kê"
+          }
+        ]
+      },
+      "note": "-아/어서 nêu nguyên nhân → hành động. Báo sớm trước khi khách tự phát hiện."
+    },
+    {
+      "id": "pt-30",
+      "pattern": "{noun}에 대한 영향 범위를 확인한 후 다시 말씀드리겠습니다.",
+      "vi": "Sau khi kiểm tra phạm vi ảnh hưởng của {noun}, tôi sẽ báo lại.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "이번 수정",
+            "vi": "lần sửa này"
+          },
+          {
+            "ko": "DB 변경",
+            "vi": "thay đổi DB"
+          },
+          {
+            "ko": "라이브러리 업데이트",
+            "vi": "cập nhật thư viện"
+          },
+          {
+            "ko": "설정 변경",
+            "vi": "thay đổi cấu hình"
+          }
+        ]
+      },
+      "note": "-(으)ㄴ 후: sau khi. Câu 'mua thời gian' an toàn khi chưa chắc thay đổi ảnh hưởng tới đâu."
+    },
+    {
+      "id": "pt-31",
+      "pattern": "{noun} 관련 자료가 있으면 {tool}{으로/로} 보내 주시겠어요?",
+      "vi": "Nếu có tài liệu liên quan {noun}, anh/chị gửi giúp qua {tool} được không?",
+      "slots": {
+        "noun": [
+          {
+            "ko": "기존 화면",
+            "vi": "màn hình cũ"
+          },
+          {
+            "ko": "업무 규칙",
+            "vi": "quy tắc nghiệp vụ"
+          },
+          {
+            "ko": "테스트 데이터",
+            "vi": "dữ liệu test"
+          },
+          {
+            "ko": "에러 로그",
+            "vi": "log lỗi"
+          }
+        ],
+        "tool": [
+          {
+            "ko": "메일",
+            "vi": "mail"
+          },
+          {
+            "ko": "메신저",
+            "vi": "messenger"
+          },
+          {
+            "ko": "공유 폴더",
+            "vi": "thư mục chung"
+          }
+        ]
+      },
+      "note": "-아/어 주시겠어요?: nhờ vả lịch sự (해요체). Trong email nên đổi thành 보내 주시면 감사하겠습니다."
+    },
+    {
+      "id": "pt-32",
+      "pattern": "{noun} 화면을 JSP로 전환하는 작업은 {n}% 정도 끝났습니다.",
+      "vi": "Việc chuyển màn hình {noun} sang JSP đã xong khoảng {n}%.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "회원 관리",
+            "vi": "quản lý hội viên"
+          },
+          {
+            "ko": "주문 목록",
+            "vi": "danh sách đơn hàng"
+          },
+          {
+            "ko": "공지사항",
+            "vi": "thông báo"
+          },
+          {
+            "ko": "통계",
+            "vi": "thống kê"
+          }
+        ],
+        "n": [
+          {
+            "ko": "20",
+            "vi": "20"
+          },
+          {
+            "ko": "40",
+            "vi": "40"
+          },
+          {
+            "ko": "60",
+            "vi": "60"
+          },
+          {
+            "ko": "80",
+            "vi": "80"
+          }
+        ]
+      },
+      "note": "전환 = chuyển đổi (migration màn hình). % đọc là 퍼센트: 40% = 사십 퍼센트."
+    },
+    {
+      "id": "pt-33",
+      "pattern": "{noun} 화면에서 {action} 오류가 발생합니다.",
+      "vi": "Ở màn hình {noun}, lỗi xảy ra {action}.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "주문 관리",
+            "vi": "quản lý đơn hàng"
+          },
+          {
+            "ko": "회원 상세",
+            "vi": "chi tiết hội viên"
+          },
+          {
+            "ko": "정산 내역",
+            "vi": "lịch sử quyết toán"
+          }
+        ],
+        "action": [
+          {
+            "ko": "저장할 때",
+            "vi": "khi lưu"
+          },
+          {
+            "ko": "조회할 때",
+            "vi": "khi tra cứu"
+          },
+          {
+            "ko": "엑셀을 내려받을 때",
+            "vi": "khi tải Excel"
+          }
+        ]
+      },
+      "note": "-(으)ㄹ 때: khi. Báo lỗi nên nói rõ màn hình + thao tác để bên kia tái hiện được."
+    },
+    {
+      "id": "pt-34",
+      "pattern": "{browser}에서만 {noun}{이/가} 제대로 표시되지 않습니다.",
+      "vi": "Chỉ trên {browser} thì {noun} không hiển thị đúng.",
+      "slots": {
+        "browser": [
+          {
+            "ko": "인터넷 익스플로러",
+            "vi": "Internet Explorer"
+          },
+          {
+            "ko": "사파리",
+            "vi": "Safari"
+          },
+          {
+            "ko": "모바일 크롬",
+            "vi": "Chrome trên điện thoại"
+          }
+        ],
+        "noun": [
+          {
+            "ko": "달력",
+            "vi": "lịch chọn ngày"
+          },
+          {
+            "ko": "표",
+            "vi": "bảng"
+          },
+          {
+            "ko": "팝업 창",
+            "vi": "cửa sổ popup"
+          },
+          {
+            "ko": "버튼",
+            "vi": "nút"
+          }
+        ]
+      },
+      "note": "N에서만: chỉ ở N. 제대로 -지 않다: không… đúng cách. Rất hay gặp với hệ thống legacy."
+    },
+    {
+      "id": "pt-35",
+      "pattern": "{noun}{은/는} 다음 정기 배포 때 함께 반영하겠습니다.",
+      "vi": "{noun} tôi sẽ áp dụng cùng đợt deploy định kỳ tới.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "문구 수정",
+            "vi": "sửa câu chữ"
+          },
+          {
+            "ko": "버튼 위치 변경",
+            "vi": "đổi vị trí nút"
+          },
+          {
+            "ko": "검색 조건 추가",
+            "vi": "thêm điều kiện tìm kiếm"
+          },
+          {
+            "ko": "로그 개선",
+            "vi": "cải thiện log"
+          }
+        ]
+      },
+      "note": "Gom các sửa nhỏ vào 정기 배포 (deploy định kỳ) thay vì deploy lẻ."
+    },
+    {
+      "id": "pt-36",
+      "pattern": "{noun}{은/는} {person}의 승인을 받은 후에 진행하겠습니다.",
+      "vi": "{noun} sẽ tiến hành sau khi được {person} duyệt.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "운영 DB 수정",
+            "vi": "sửa DB production"
+          },
+          {
+            "ko": "서버 재시작",
+            "vi": "restart server"
+          },
+          {
+            "ko": "방화벽 설정 변경",
+            "vi": "đổi cấu hình firewall"
+          }
+        ],
+        "person": [
+          {
+            "ko": "팀장님",
+            "vi": "trưởng nhóm"
+          },
+          {
+            "ko": "고객사 담당자",
+            "vi": "người phụ trách bên khách"
+          },
+          {
+            "ko": "보안팀",
+            "vi": "team bảo mật"
+          }
+        ]
+      },
+      "note": "-(으)ㄴ 후에: sau khi. Nói rõ quy trình phê duyệt để khách yên tâm."
+    },
+    {
+      "id": "pt-37",
+      "pattern": "혹시 {noun}{이/가} 언제부터 발생했는지 알 수 있을까요?",
+      "vi": "Cho tôi hỏi {noun} xảy ra từ khi nào ạ?",
+      "slots": {
+        "noun": [
+          {
+            "ko": "이 오류",
+            "vi": "lỗi này"
+          },
+          {
+            "ko": "이 현상",
+            "vi": "hiện tượng này"
+          },
+          {
+            "ko": "속도 저하",
+            "vi": "tình trạng chậm"
+          },
+          {
+            "ko": "로그인 실패",
+            "vi": "đăng nhập thất bại"
+          }
+        ]
+      },
+      "note": "Câu hỏi đầu tiên khi điều tra: từ khi nào. 혹시 + -(으)ㄹ 수 있을까요? rất mềm."
+    },
+    {
+      "id": "pt-38",
+      "pattern": "{noun}{을/를} 확인해 보니 {cause}{이/가} 원인이었습니다.",
+      "vi": "Kiểm tra {noun} thì thấy nguyên nhân là {cause}.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "로그",
+            "vi": "log"
+          },
+          {
+            "ko": "소스 코드",
+            "vi": "source code"
+          },
+          {
+            "ko": "쿼리",
+            "vi": "query"
+          }
+        ],
+        "cause": [
+          {
+            "ko": "설정 누락",
+            "vi": "thiếu cấu hình"
+          },
+          {
+            "ko": "인덱스 누락",
+            "vi": "thiếu index"
+          },
+          {
+            "ko": "캐시 문제",
+            "vi": "vấn đề cache"
+          },
+          {
+            "ko": "권한 문제",
+            "vi": "vấn đề quyền"
+          }
+        ]
+      },
+      "note": "-아/어 보니: làm thử thì thấy… Dùng khi báo kết quả điều tra."
+    },
+    {
+      "id": "pt-39",
+      "pattern": "{noun}{이/가} 느려서 {n}초 이상 걸리고 있습니다.",
+      "vi": "{noun} chậm, đang mất hơn {n} giây.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "목록 조회",
+            "vi": "tra cứu danh sách"
+          },
+          {
+            "ko": "로그인 처리",
+            "vi": "xử lý đăng nhập"
+          },
+          {
+            "ko": "파일 업로드",
+            "vi": "upload file"
+          },
+          {
+            "ko": "검색",
+            "vi": "tìm kiếm"
+          }
+        ],
+        "n": [
+          {
+            "ko": "5",
+            "vi": "5"
+          },
+          {
+            "ko": "10",
+            "vi": "10"
+          },
+          {
+            "ko": "30",
+            "vi": "30"
+          }
+        ]
+      },
+      "note": "Giây đọc bằng số Hán Hàn: 5초 = 오 초, 30초 = 삼십 초. Báo hiệu năng nên có con số."
+    },
+    {
+      "id": "pt-40",
+      "pattern": "{date}까지 {noun} 일정을 다시 정리해서 공유드리겠습니다.",
+      "vi": "Trước {date}, tôi sẽ sắp xếp lại lịch {noun} rồi gửi anh/chị.",
+      "slots": {
+        "date": [
+          {
+            "ko": "오늘 오후",
+            "vi": "chiều nay"
+          },
+          {
+            "ko": "내일 오전",
+            "vi": "sáng mai"
+          },
+          {
+            "ko": "이번 주 금요일",
+            "vi": "thứ Sáu tuần này"
+          }
+        ],
+        "noun": [
+          {
+            "ko": "전체",
+            "vi": "tổng thể"
+          },
+          {
+            "ko": "테스트",
+            "vi": "test"
+          },
+          {
+            "ko": "배포",
+            "vi": "deploy"
+          },
+          {
+            "ko": "이관",
+            "vi": "chuyển giao"
+          }
+        ]
+      },
+      "note": "공유드리다 = chia sẻ (khiêm nhường). Hay dùng sau khi lịch bị thay đổi."
+    },
+    {
+      "id": "pt-41",
+      "pattern": "{noun}{은/는} 저희 쪽이 아니라 {party} 쪽 문제로 보입니다.",
+      "vi": "{noun} có vẻ không phải do bên chúng tôi mà là vấn đề phía {party}.",
+      "slots": {
+        "noun": [
+          {
+            "ko": "이번 오류",
+            "vi": "lỗi lần này"
+          },
+          {
+            "ko": "응답 지연",
+            "vi": "phản hồi chậm"
+          },
+          {
+            "ko": "연결 끊김",
+            "vi": "mất kết nối"
+          }
+        ],
+        "party": [
+          {
+            "ko": "외부 API 업체",
+            "vi": "nhà cung cấp API bên ngoài"
+          },
+          {
+            "ko": "네트워크 팀",
+            "vi": "team network"
+          },
+          {
+            "ko": "결제 대행사",
+            "vi": "đơn vị trung gian thanh toán"
+          }
+        ]
+      },
+      "note": "-(으)로 보입니다: có vẻ là. Không khẳng định chắc chắn khi đẩy trách nhiệm sang bên khác; nên kèm bằng chứng (log)."
     }
   ]
 }
