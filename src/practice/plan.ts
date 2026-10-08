@@ -59,7 +59,10 @@ export function buildDailyPlan(
   srs: Record<string, CardState>,
   today: string,
   rand: () => number = Math.random,
+  /** 1 = the 5-minute session; 2 and 3 for 10 and 15 minutes. */
+  scale = 1,
 ): DailyStep[] {
+  const n = (count: number) => count * scale;
   const idOf = (key: string) => key.slice(key.indexOf(':') + 1);
 
   const shadowKeys = content.shadowing
@@ -70,27 +73,27 @@ export function buildDailyPlan(
   const turnKeys = content.scenarios.flatMap((s) => s.turns.map((_, i) => srsKey.scenario(s.id, i)));
 
   const steps: DailyStep[] = [
-    ...pickKeys(shadowKeys, srs, today, DAILY_COUNTS.shadowing, rand).map(
+    ...pickKeys(shadowKeys, srs, today, n(DAILY_COUNTS.shadowing), rand).map(
       (k): DailyStep => ({ kind: 'shadowing', id: idOf(k) }),
     ),
-    ...pickKeys(patternKeys, srs, today, DAILY_COUNTS.pattern, rand).map(
+    ...pickKeys(patternKeys, srs, today, n(DAILY_COUNTS.pattern), rand).map(
       (k): DailyStep => ({ kind: 'pattern', id: idOf(k) }),
     ),
-    ...pickKeys(survivalKeys, srs, today, DAILY_COUNTS.survival, rand).map(
+    ...pickKeys(survivalKeys, srs, today, n(DAILY_COUNTS.survival), rand).map(
       (k): DailyStep => ({ kind: 'survival', id: idOf(k) }),
     ),
   ];
-  for (const k of pickKeys(turnKeys, srs, today, DAILY_COUNTS.scenario, rand)) {
+  for (const k of pickKeys(turnKeys, srs, today, n(DAILY_COUNTS.scenario), rand)) {
     // "scenario:<id>:<turn>"; ids never contain ':'.
     const [, id, turn] = k.split(':');
     steps.push({ kind: 'scenario', id, turn: Number(turn) });
   }
   const listenKeys = (content.numbers ?? []).map((n) => `listen:number:${n.id}`);
-  for (const k of pickKeys(listenKeys, srs, today, DAILY_COUNTS.listen, rand)) {
+  for (const k of pickKeys(listenKeys, srs, today, n(DAILY_COUNTS.listen), rand)) {
     steps.push({ kind: 'listen', id: k.slice('listen:number:'.length) });
   }
   const interpretKeys = (content.interpret ?? []).map((i) => srsKey.interpret(i.id));
-  for (const k of pickKeys(interpretKeys, srs, today, DAILY_COUNTS.interpret, rand)) {
+  for (const k of pickKeys(interpretKeys, srs, today, n(DAILY_COUNTS.interpret), rand)) {
     steps.push({ kind: 'interpret', id: idOf(k) });
   }
   return steps;

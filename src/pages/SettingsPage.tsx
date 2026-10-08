@@ -1,4 +1,5 @@
 import { useRef, useState, type ChangeEvent, type FormEvent } from 'react';
+import { useNavigate } from 'react-router';
 import { checkBackend, getRemoteProgress, putRemoteProgress, useBackendStatus } from '../api/client';
 import { apiErrorMessage } from '../api/messages';
 import { AppVersion } from '../components/AppVersion';
@@ -7,7 +8,16 @@ import { VoiceControl } from '../components/VoiceControl';
 import { VoiceSourceSwitch } from '../components/VoiceSourceSwitch';
 import { vi } from '../i18n/vi';
 import { normalizeUrl, setBackendSettings, useBackendSettings } from '../storage/backend';
-import { ANSWER_TIMERS, setAnswerTimer, setShowPron, usePrefs } from '../storage/prefs';
+import {
+  ANSWER_TIMERS,
+  DAILY_MINUTES,
+  restartOnboarding,
+  setAnalytics,
+  setAnswerTimer,
+  setDailyMinutes,
+  setShowPron,
+  usePrefs,
+} from '../storage/prefs';
 import { clearReports, exportReports, removeReport, useReports } from '../storage/reports';
 import { exportProgress, importProgress } from '../storage/progress';
 import { isSpeechSupported } from '../speech';
@@ -113,6 +123,7 @@ export function SettingsPage() {
         </section>
       )}
 
+      <ProfileSettings />
       <PracticeSettings />
       <BackupSettings />
       <ReportSettings />
@@ -327,4 +338,60 @@ function downloadJson(data: unknown, filename: string) {
   a.click();
   a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+const FEEDBACK_URL = typeof import.meta.env.VITE_FEEDBACK_URL === 'string' ? import.meta.env.VITE_FEEDBACK_URL : '';
+
+/** Role / level / daily goal from the welcome screen, plus stats opt-out and feedback. */
+function ProfileSettings() {
+  const { profile, analytics } = usePrefs();
+  const navigate = useNavigate();
+  return (
+    <section className="card stack-sm">
+      <h2>{vi.profile.title}</h2>
+      {profile ? (
+        <>
+          <p className="small">
+            {vi.welcome.roles[profile.role].title} · {vi.welcome.levels[profile.level].title}
+          </p>
+          <label className="field">
+            <span>{vi.profile.minutes}</span>
+            <select
+              className="select"
+              value={profile.minutes}
+              onChange={(e) => setDailyMinutes(DAILY_MINUTES.find((m) => m === Number(e.target.value)) ?? 5)}
+            >
+              {DAILY_MINUTES.map((m) => (
+                <option key={m} value={m}>
+                  {vi.welcome.minutes(m)}
+                </option>
+              ))}
+            </select>
+          </label>
+        </>
+      ) : (
+        <p className="muted small">{vi.profile.none}</p>
+      )}
+      <button
+        type="button"
+        className="btn btn--ghost"
+        onClick={() => {
+          restartOnboarding();
+          navigate('/');
+        }}
+      >
+        {vi.profile.redo}
+      </button>
+      <label className="check">
+        <input type="checkbox" checked={analytics} onChange={(e) => setAnalytics(e.target.checked)} />
+        <span>{vi.profile.analytics}</span>
+      </label>
+      <p className="muted small">{vi.profile.analyticsNote}</p>
+      {FEEDBACK_URL && (
+        <a href={FEEDBACK_URL} target="_blank" rel="noreferrer" className="btn btn--ghost">
+          {vi.growth.feedback}
+        </a>
+      )}
+    </section>
+  );
 }

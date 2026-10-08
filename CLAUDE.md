@@ -4,8 +4,10 @@ Guidance for Claude Code when working in this repository.
 
 ## Project purpose
 
-A practice app for one learner: a **Vietnamese Java developer at TOPIK level 3** who works
-in outsourcing and needs to communicate with **Korean clients** in an IT workplace.
+A practice app for **Vietnamese IT people (developers, BrSE/comtors, testers, job seekers) at
+TOPIK 2–4** who work in outsourcing and need to communicate with **Korean clients**. It started as
+a tool for one Java developer at TOPIK 3 and is now opened to that wider group: no accounts, everything
+stays on the device, and a first-run welcome asks for role, level and daily minutes.
 
 Content should target realistic situations, for example:
 - Daily stand-ups, progress reports, and explaining delays (진행 상황 보고, 일정 지연 설명)
@@ -249,6 +251,9 @@ Spec: `docs/custom-questions.md` (implemented). The learner pastes their own int
   ~400 days) were added later and default to `{}`), `kp:prefs:v1` (device preferences such as speech
   rate, `showPron`, `answerTimer`), `kp:backend:v1` (optional backend URL + access key), `kp:custom:v1` (the learner's own questions) and `kp:reports:v1` ("Báo câu sai" flags, `src/storage/reports.ts`). When the shape changes, write a migration instead of silently dropping user data;
   purely additive fields may instead default when missing (as `speaking` does).
+- `kp:prefs:v1` also holds `profile` (`{ role, level, minutes }` or null), `onboarded`, `analytics`
+  (default true) and `installHintDismissed`; missing fields default, so old prefs still load. Existing
+  learners see the welcome once and can skip it.
 - Wrap reads and writes in try/catch. The app must still work if storage is unavailable or
   contains corrupted data. In that case, fall back to empty progress.
 
@@ -324,3 +329,16 @@ Test files (`src/**/*.test.ts`) are type-checked by `tsconfig.node.json`, not
   ephemeral disk. Set `CORS_ALLOWED_ORIGINS` to the Vercel domain(s) and always set
   `APP_ACCESS_KEY`. Steps are in backend/README.md.
 - No secrets in the frontend. Anything `VITE_*` is public.
+- **Growth** (first run, stats, sharing):
+  - `Welcome` (shown on Home until `onboarded`): intro, then role → TOPIK level → daily minutes.
+    The level sets the model speed (0.8/0.9/1x); minutes scale the daily plan (`buildDailyPlan` `scale`
+    = minutes / 5); the role picks the "Gợi ý cho bạn" card on Home.
+  - Vercel Web Analytics (`@vercel/analytics`, `AppAnalytics` + `src/analytics.ts`): page views and a few
+    named events (`onboarding`, `daily_done`, `install_hint`), no cookies, never recordings or learning
+    content. Every send checks `prefs.analytics` (toggle + note in Settings). Enable "Web Analytics" in
+    the Vercel project to receive data.
+  - `InstallHint` on Home: native prompt where `beforeinstallprompt` exists (captured in `src/install.ts`),
+    Share → Add to Home Screen steps on iOS; hidden when installed or closed.
+  - Link previews: Open Graph tags in `index.html` with the absolute `https://kodevtalk.vercel.app/og.jpg`
+    (1200×630). Update both if the domain changes.
+  - `VITE_FEEDBACK_URL` (optional, e.g. a Google Form) shows a "Góp ý" link on Home and in Settings.

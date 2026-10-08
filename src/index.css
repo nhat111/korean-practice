@@ -2160,3 +2160,82 @@ ins {
   justify-content: space-between;
   gap: 8px;
 }
+
+/* ---------- Welcome (first run) ---------- */
+
+.welcome {
+  padding-bottom: 12px;
+}
+.welcome-logo {
+  border-radius: 14px;
+  background: #fff;
+  padding: 4px;
+}
+.welcome-benefits {
+  gap: 10px;
+}
+.welcome-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.welcome-benefit .card-icon {
+  flex: none;
+  margin: 0;
+}
+.welcome-benefit h2 {
+  font-size: 1.05rem;
+}
+.welcome-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.welcome-option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  min-height: 64px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.welcome-option strong {
+  font-size: 1.05rem;
+}
+.welcome-option--on {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+.welcome-option:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+.welcome-option:active {
+  transform: scale(0.99);
+}
+
+.suggest-card,
+.install-hint {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+}
+.install-hint {
+  align-items: flex-start;
+}
+.suggest-card .card-icon,
+.install-hint .card-icon {
+  flex: none;
+  margin: 0;
+}
+.feedback-link {
+  align-self: center;
+}

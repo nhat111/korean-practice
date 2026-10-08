@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import { InterpretCard } from '../components/InterpretCard';
 import { ListenChoice } from '../components/ListenChoice';
 import { saveListenResult } from '../practice/listenResult';
 import { ListenPlayer } from '../components/ListenPlayer';
+import { trackEvent } from '../analytics';
 import { PatternDrill } from '../components/PatternDrill';
 import { ScenarioTurnDrill } from '../components/ScenarioTurnDrill';
 import { ShadowingCard } from '../components/ShadowingCard';
@@ -12,6 +13,7 @@ import { vi } from '../i18n/vi';
 import { numberQuestion } from '../practice/listening';
 import { buildDailyPlan, type DailyContent, type DailyStep } from '../practice/plan';
 import { todayKey } from '../srs/sm2';
+import { getPrefs } from '../storage/prefs';
 import { getProgressSnapshot, useProgress } from '../storage/progress';
 import type { NumberItem } from '../types';
 
@@ -25,7 +27,7 @@ export function DailyPage() {
 
   return (
     <div className="stack">
-      <h1>{vi.daily.title}</h1>
+      <h1>{vi.growth.dailyTitle(getPrefs().profile?.minutes ?? 5)}</h1>
       {shadowing.status === 'ready' &&
       patterns.status === 'ready' &&
       scenarios.status === 'ready' &&
@@ -50,9 +52,10 @@ export function DailyPage() {
 }
 
 function DailySession({ content }: { content: DailyContent }) {
+  const scale = (getPrefs().profile?.minutes ?? 5) / 5;
   const [round, setRound] = useState(0);
   // The plan is fixed for the session; "again" builds a new one.
-  const [plan, setPlan] = useState(() => buildDailyPlan(content, getProgressSnapshot().srs, todayKey()));
+  const [plan, setPlan] = useState(() => buildDailyPlan(content, getProgressSnapshot().srs, todayKey(), Math.random, scale));
   const [index, setIndex] = useState(0);
   const [rated, setRated] = useState(false);
 
@@ -62,7 +65,7 @@ function DailySession({ content }: { content: DailyContent }) {
   }
 
   function again() {
-    setPlan(buildDailyPlan(content, getProgressSnapshot().srs, todayKey()));
+    setPlan(buildDailyPlan(content, getProgressSnapshot().srs, todayKey(), Math.random, scale));
     setIndex(0);
     setRated(false);
     setRound((r) => r + 1);
@@ -144,6 +147,7 @@ function ListenStep({ item, onDone }: { item: NumberItem; onDone: () => void }) 
 
 function DailyDone({ onAgain }: { onAgain: () => void }) {
   const { daily } = useProgress();
+  useEffect(() => trackEvent('daily_done', { minutes: getPrefs().profile?.minutes ?? 5 }), []);
   const today = daily[todayKey()];
   const minutes = ((today?.recordMs ?? 0) / 60000).toFixed(1);
   return (
