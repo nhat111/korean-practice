@@ -914,6 +914,612 @@
         "담당자변경",
         "메신저"
       ]
+    },
+    {
+      "id": "monthly-operation-report",
+      "title": "Email báo cáo vận hành hàng tháng",
+      "situation": "Gửi email cho 이 팀장님 (trưởng nhóm phía khách hàng) báo cáo tình hình vận hành-bảo trì tháng 9: số yêu cầu đã xử lý, sự cố và kế hoạch tháng sau.",
+      "politeness": "hasipsio",
+      "politenessNote": "Báo cáo định kỳ gửi cấp quản lý của khách là văn bản chính thức, dùng 하십시오체 và trình bày theo mục để dễ đọc.",
+      "draft": "제목: 9월 보고\n\n이 팀장님, 안녕하세요.\nABC 유지보수팀 응우옌이에요.\n9월에 요청 32건을 받았고 30건을 다 했어요.\n남은 2건은 다음주에 할께요.\n장애는 1건 있었는데 금방 고쳤어요.\n자세한건 첨부파일 보세요.\n감사합니다.",
+      "corrected": "제목: [ABC] 9월 운영 유지보수 월간 보고\n\n이 팀장님, 안녕하십니까.\nABC 유지보수팀 응우옌입니다.\n9월 운영 현황을 아래와 같이 보고드립니다.\n1. 요청 처리: 총 32건 접수, 30건 처리 완료\n2. 미처리 2건: 다음 주 중 처리 예정\n3. 장애: 1건 발생, 당일 조치 완료\n자세한 내용은 첨부 파일을 확인해 주시기 바랍니다.\n감사합니다.",
+      "corrections": [
+        {
+          "wrong": "제목: 9월 보고",
+          "right": "제목: [ABC] 9월 운영 유지보수 월간 보고",
+          "type": "format",
+          "explanation": "Tiêu đề báo cáo định kỳ nên có [tên công ty], tháng và loại báo cáo để khách tìm lại dễ dàng."
+        },
+        {
+          "wrong": "응우옌이에요.",
+          "right": "응우옌입니다.",
+          "type": "politeness",
+          "explanation": "Báo cáo chính thức nên dùng 하십시오체 thống nhất: '-입니다' thay vì '-이에요'."
+        },
+        {
+          "wrong": "9월에 요청 32건을 받았고 30건을 다 했어요.",
+          "right": "1. 요청 처리: 총 32건 접수, 30건 처리 완료",
+          "type": "format",
+          "explanation": "Báo cáo nên chia mục, dùng danh từ Hán Hàn ngắn gọn (접수, 처리 완료) thay vì câu nói chuyện."
+        },
+        {
+          "wrong": "할께요",
+          "right": "처리 예정",
+          "type": "spelling",
+          "explanation": "'할께요' sai chính tả, đúng là '할게요'. Nhưng trong báo cáo nên viết '처리 예정' (dự kiến xử lý)."
+        },
+        {
+          "wrong": "다음주",
+          "right": "다음 주",
+          "type": "spelling",
+          "explanation": "'다음 주' viết cách (다음 + 주). Lỗi viết liền rất hay gặp."
+        },
+        {
+          "wrong": "금방 고쳤어요",
+          "right": "당일 조치 완료",
+          "type": "vocabulary",
+          "explanation": "'금방 고쳤어요' mơ hồ và văn nói. Với sự cố dùng '조치 완료' và nói rõ thời điểm (당일 = trong ngày)."
+        },
+        {
+          "wrong": "자세한건 첨부파일 보세요.",
+          "right": "자세한 내용은 첨부 파일을 확인해 주시기 바랍니다.",
+          "type": "politeness",
+          "explanation": "'보세요' là mệnh lệnh với khách. Dùng '확인해 주시기 바랍니다'. '자세한 건' và '첨부 파일' cũng viết cách."
+        }
+      ],
+      "tags": [
+        "월간보고",
+        "운영",
+        "보고"
+      ]
+    },
+    {
+      "id": "sr-receipt-acknowledgement",
+      "title": "Email xác nhận đã tiếp nhận yêu cầu (SR)",
+      "situation": "Khách (박 대리님) gửi yêu cầu sửa màn hình danh sách đơn hàng. Bạn trả lời xác nhận đã nhận, cho biết mã yêu cầu và thời gian dự kiến.",
+      "politeness": "hasipsio",
+      "politenessNote": "Email trả lời yêu cầu của khách là văn bản công việc; dùng 하십시오체, câu ngắn, nêu rõ mã yêu cầu và lịch.",
+      "draft": "박 대리님, 안녕하세요.\n요청하신거 받았어요.\n요청번호는 SR-1024 입니다.\n분석해보고 몇일 안에 알려드릴께요.\n혹시 급하면 말해 주세요.",
+      "corrected": "박 대리님, 안녕하십니까.\n요청하신 주문 목록 화면 수정 건, 정상적으로 접수되었습니다.\n요청 번호는 SR-1024입니다.\n내용을 분석한 후 10월 9일(금)까지 예상 일정을 회신드리겠습니다.\n혹시 급하게 처리해야 하는 사항이라면 말씀해 주시기 바랍니다.\n감사합니다.",
+      "corrections": [
+        {
+          "wrong": "요청하신거 받았어요.",
+          "right": "요청하신 주문 목록 화면 수정 건, 정상적으로 접수되었습니다.",
+          "type": "vocabulary",
+          "explanation": "Nhắc lại tên yêu cầu để tránh nhầm lẫn. '접수되었습니다' (đã được tiếp nhận) là từ chuẩn trong vận hành."
+        },
+        {
+          "wrong": "SR-1024 입니다",
+          "right": "SR-1024입니다",
+          "type": "spelling",
+          "explanation": "'입니다' viết liền với danh từ đứng trước, kể cả khi là mã số."
+        },
+        {
+          "wrong": "몇일",
+          "right": "며칠",
+          "type": "spelling",
+          "explanation": "'몇일' luôn sai, chỉ có '며칠'. Lỗi này người Hàn cũng hay mắc."
+        },
+        {
+          "wrong": "분석해보고 몇일 안에 알려드릴께요.",
+          "right": "내용을 분석한 후 10월 9일(금)까지 예상 일정을 회신드리겠습니다.",
+          "type": "format",
+          "explanation": "Đưa mốc ngày cụ thể thay vì 'vài ngày'. '-겠습니다' thể hiện cam kết; '드릴께요' còn sai chính tả (đúng: 드릴게요)."
+        },
+        {
+          "wrong": "혹시 급하면 말해 주세요.",
+          "right": "혹시 급하게 처리해야 하는 사항이라면 말씀해 주시기 바랍니다.",
+          "type": "politeness",
+          "explanation": "Với khách dùng '말씀해 주시기 바랍니다' (kính ngữ của 말하다). Câu cũng cần kết bằng '감사합니다'."
+        }
+      ],
+      "tags": [
+        "SR",
+        "접수",
+        "운영"
+      ]
+    },
+    {
+      "id": "production-data-fix-approval",
+      "title": "Email xin duyệt sửa dữ liệu production",
+      "situation": "Do lỗi chương trình, 15 đơn hàng bị lưu sai trạng thái. Bạn gửi email cho 최 과장님 xin phê duyệt chạy câu SQL sửa dữ liệu trên DB production.",
+      "politeness": "hasipsio",
+      "politenessNote": "Sửa dữ liệu production là việc nhạy cảm cần phê duyệt chính thức, phải dùng 하십시오체 và ghi rõ phạm vi, thời điểm, cách khôi phục.",
+      "draft": "최 과장님, 안녕하십니까.\n주문 데이터가 15건 잘못 됬어요.\n그래서 운영DB를 고칠려고 합니다.\n오늘 밤에 쿼리 돌릴께요. 괜찮죠?\n문제 생기면 원래대로 돌리면 돼요.",
+      "corrected": "최 과장님, 안녕하십니까.\n프로그램 오류로 인해 주문 데이터 15건의 상태 값이 잘못 저장된 것을 확인하였습니다.\n이에 운영 DB 데이터 수정을 진행하고자 승인을 요청드립니다.\n- 작업 일시: 10월 8일(목) 22:00\n- 대상: 주문 데이터 15건 (목록 첨부)\n- 작업 전 백업을 진행하며, 문제 발생 시 즉시 원복하겠습니다.\n검토 후 승인 부탁드립니다.\n감사합니다.",
+      "corrections": [
+        {
+          "wrong": "잘못 됬어요",
+          "right": "잘못 저장된 것을 확인하였습니다",
+          "type": "spelling",
+          "explanation": "'됬어요' sai, đúng là '됐어요' (되었어요). '잘못되다' viết liền. Trong email nên nêu rõ sai thế nào (저장) và dùng 하십시오체."
+        },
+        {
+          "wrong": "그래서 운영DB를 고칠려고 합니다.",
+          "right": "이에 운영 DB 데이터 수정을 진행하고자 승인을 요청드립니다.",
+          "type": "grammar",
+          "explanation": "'고칠려고' sai, đúng là '고치려고'. Văn bản xin phép dùng '-고자 승인을 요청드립니다' trang trọng hơn."
+        },
+        {
+          "wrong": "오늘 밤에 쿼리 돌릴께요. 괜찮죠?",
+          "right": "- 작업 일시: 10월 8일(목) 22:00",
+          "type": "format",
+          "explanation": "Xin duyệt phải ghi rõ thời gian, đối tượng. '괜찮죠?' là ép khách đồng ý; '돌릴께요' cũng sai (돌릴게요)."
+        },
+        {
+          "wrong": "문제 생기면 원래대로 돌리면 돼요.",
+          "right": "- 작업 전 백업을 진행하며, 문제 발생 시 즉시 원복하겠습니다.",
+          "type": "vocabulary",
+          "explanation": "Nói rõ có backup trước và kế hoạch khôi phục. '원복' (khôi phục nguyên trạng) là từ dân IT Hàn hay dùng."
+        }
+      ],
+      "tags": [
+        "운영DB",
+        "승인",
+        "데이터수정"
+      ]
+    },
+    {
+      "id": "batch-failure-notice",
+      "title": "Email thông báo batch đêm bị lỗi",
+      "situation": "Batch quyết toán chạy lúc 2 giờ sáng bị lỗi, dữ liệu sáng nay chưa được cập nhật. Bạn gửi email báo cho phía khách hàng và người dùng nội bộ.",
+      "politeness": "hasipsio",
+      "politenessNote": "Thông báo sự cố gửi nhiều người là văn bản chính thức; 하십시오체, nêu hiện tượng, ảnh hưởng, tình trạng xử lý.",
+      "draft": "제목: 배치 에러\n\n안녕하세요.\n새벽 2시 정산배치가 에러났어요.\n그래서 정산 데이터가 업데이트 안되 있어요.\n지금 고치고 있으니까 기다려 주세요.\n죄송해요.",
+      "corrected": "제목: [장애 공지] 정산 배치 실패에 따른 데이터 미반영 안내\n\n안녕하십니까.\n금일 새벽 2시에 실행된 정산 배치가 실패하였습니다.\n이로 인해 현재 정산 데이터가 반영되지 않은 상태입니다.\n현재 원인을 분석하고 있으며, 오전 11시까지 재실행을 완료할 예정입니다.\n이용에 불편을 드려 죄송합니다.",
+      "corrections": [
+        {
+          "wrong": "제목: 배치 에러",
+          "right": "제목: [장애 공지] 정산 배치 실패에 따른 데이터 미반영 안내",
+          "type": "format",
+          "explanation": "Thông báo sự cố nên có tag [장애 공지] và mô tả ảnh hưởng ngay trong tiêu đề."
+        },
+        {
+          "wrong": "에러났어요",
+          "right": "실패하였습니다",
+          "type": "vocabulary",
+          "explanation": "Với batch dùng '실패하다'. '에러나다' là văn nói, không hợp thông báo chính thức."
+        },
+        {
+          "wrong": "업데이트 안되 있어요",
+          "right": "반영되지 않은 상태입니다",
+          "type": "spelling",
+          "explanation": "'안되' sai, đúng là '안 돼'. Văn bản chính thức dùng '-지 않은 상태입니다'; '반영되다' là từ chuẩn cho dữ liệu."
+        },
+        {
+          "wrong": "지금 고치고 있으니까 기다려 주세요.",
+          "right": "현재 원인을 분석하고 있으며, 오전 11시까지 재실행을 완료할 예정입니다.",
+          "type": "format",
+          "explanation": "Người nhận cần biết khi nào xong. Đưa mốc giờ cụ thể thay vì bảo họ 'chờ'."
+        },
+        {
+          "wrong": "죄송해요.",
+          "right": "이용에 불편을 드려 죄송합니다.",
+          "type": "politeness",
+          "explanation": "Câu xin lỗi cố định trong thông báo: '이용에 불편을 드려 죄송합니다'."
+        }
+      ],
+      "tags": [
+        "배치",
+        "장애",
+        "공지"
+      ]
+    },
+    {
+      "id": "ie-support-end-notice",
+      "title": "Email thông báo ngừng hỗ trợ Internet Explorer",
+      "situation": "Sau khi chuyển giao diện sang JSP mới, hệ thống sẽ không hỗ trợ Internet Explorer nữa. Bạn gửi email báo cho người phụ trách phía khách để họ thông báo cho người dùng.",
+      "politeness": "hasipsio",
+      "politenessNote": "Thông báo thay đổi môi trường sử dụng là văn bản chính thức; dùng 하십시오체 và đưa ra hướng dẫn thay thế.",
+      "draft": "담당자님, 안녕하십니까.\n11월 1일부터 IE는 안돼요.\n크롬이나 엣지 쓰세요.\nIE에서 들어가면 화면이 깨질수도 있어요.\n사용자들한테 알려주세요.",
+      "corrected": "담당자님, 안녕하십니까.\n화면 개편에 따라 11월 1일부터 인터넷 익스플로러(IE) 지원이 종료됩니다.\n이후에는 크롬 또는 엣지 브라우저를 이용해 주시기 바랍니다.\nIE로 접속하실 경우 화면이 정상적으로 표시되지 않을 수 있습니다.\n번거로우시겠지만 사용자분들께 안내 부탁드립니다.\n감사합니다.",
+      "corrections": [
+        {
+          "wrong": "11월 1일부터 IE는 안돼요.",
+          "right": "화면 개편에 따라 11월 1일부터 인터넷 익스플로러(IE) 지원이 종료됩니다.",
+          "type": "vocabulary",
+          "explanation": "Nêu lý do (화면 개편) và dùng cụm chuẩn '지원이 종료됩니다'. '안돼요' vừa sai cách viết (안 돼요) vừa quá cụt."
+        },
+        {
+          "wrong": "크롬이나 엣지 쓰세요.",
+          "right": "이후에는 크롬 또는 엣지 브라우저를 이용해 주시기 바랍니다.",
+          "type": "politeness",
+          "explanation": "'쓰세요' là ra lệnh. Hướng dẫn khách dùng '이용해 주시기 바랍니다'. Văn viết dùng '또는' thay '-이나'."
+        },
+        {
+          "wrong": "깨질수도",
+          "right": "정상적으로 표시되지 않을 수",
+          "type": "spelling",
+          "explanation": "'-ㄹ 수도' phải viết cách: '깨질 수도'. Trong email chính thức nói '정상적으로 표시되지 않을 수 있습니다' nghe chuyên nghiệp hơn."
+        },
+        {
+          "wrong": "사용자들한테 알려주세요.",
+          "right": "번거로우시겠지만 사용자분들께 안내 부탁드립니다.",
+          "type": "politeness",
+          "explanation": "'-한테' là văn nói; với người cần tôn trọng dùng '-께'. Thêm cushion '번거로우시겠지만' khi nhờ khách làm thêm việc."
+        }
+      ],
+      "tags": [
+        "공지",
+        "브라우저",
+        "JSP전환"
+      ]
+    },
+    {
+      "id": "jsp-migration-progress-report",
+      "title": "Email báo tiến độ chuyển màn hình sang JSP",
+      "situation": "Báo cáo tuần cho 김 책임님 về dự án chuyển các màn hình Polymer cũ sang JSP: đã xong bao nhiêu màn hình, vấn đề phát sinh và lịch tiếp theo.",
+      "politeness": "hasipsio",
+      "politenessNote": "Báo cáo tiến độ cho người quản lý phía khách dùng 하십시오체; nêu số liệu cụ thể và vấn đề cần khách quyết định.",
+      "draft": "김 책임님, 안녕하십니까.\n이번주 화면 전환 진행상황이에요.\n전체 40개 화면중에 25개 했어요.\n근데 공통 팝업이 생각보다 어려워서 좀 늦어질것 같애요.\n다음주 회의때 얘기해요.",
+      "corrected": "김 책임님, 안녕하십니까.\n이번 주 화면 전환 진행 상황을 공유드립니다.\n전체 40개 화면 중 25개 화면의 전환을 완료하였습니다(진척률 62.5%).\n다만 공통 팝업 구조가 예상보다 복잡하여 일정이 2~3일 정도 지연될 것 같습니다.\n관련 내용은 다음 주 정기 회의 때 자세히 말씀드리겠습니다.\n감사합니다.",
+      "corrections": [
+        {
+          "wrong": "이번주 화면 전환 진행상황이에요.",
+          "right": "이번 주 화면 전환 진행 상황을 공유드립니다.",
+          "type": "format",
+          "explanation": "Câu mở báo cáo: '~을/를 공유드립니다'. '이번 주', '진행 상황' viết cách."
+        },
+        {
+          "wrong": "전체 40개 화면중에 25개 했어요.",
+          "right": "전체 40개 화면 중 25개 화면의 전환을 완료하였습니다(진척률 62.5%).",
+          "type": "vocabulary",
+          "explanation": "'했어요' quá chung chung; dùng '완료하였습니다' và thêm 진척률 (% tiến độ). '중' viết cách."
+        },
+        {
+          "wrong": "근데",
+          "right": "다만",
+          "type": "vocabulary",
+          "explanation": "'근데' là văn nói. Trong email dùng '다만' (tuy nhiên) hoặc '그런데'."
+        },
+        {
+          "wrong": "좀 늦어질것 같애요",
+          "right": "일정이 2~3일 정도 지연될 것 같습니다",
+          "type": "spelling",
+          "explanation": "'같애요' sai, đúng là '같아요'; '-ㄹ 것' viết cách. Nói rõ chậm bao lâu thay vì '좀'."
+        },
+        {
+          "wrong": "다음주 회의때 얘기해요.",
+          "right": "관련 내용은 다음 주 정기 회의 때 자세히 말씀드리겠습니다.",
+          "type": "politeness",
+          "explanation": "'얘기해요' (mình nói nhé) thân mật. Dùng khiêm nhường '말씀드리겠습니다'."
+        }
+      ],
+      "tags": [
+        "JSP전환",
+        "진행상황",
+        "보고"
+      ]
+    },
+    {
+      "id": "ask-reproduction-steps-messenger",
+      "title": "Tin nhắn hỏi cách tái hiện lỗi",
+      "situation": "박 주임님 báo qua messenger rằng 'nút lưu không chạy'. Bạn không tái hiện được, cần hỏi màn hình, thao tác, trình duyệt và ảnh chụp.",
+      "politeness": "haeyo",
+      "politenessNote": "Chat với người phụ trách khách hàng dùng 해요체 lịch sự; vẫn cần kính ngữ (-시-) và không được tỏ ra nghi ngờ người báo lỗi.",
+      "draft": "주임님, 저희쪽에서는 잘 되는데요?\n어떻게 했어요?\n브라우저 뭐 써요?\n캡쳐 보내줘요.",
+      "corrected": "주임님, 확인 중인데 저희 쪽 환경에서는 아직 재현이 되지 않아서요.\n혹시 어떤 화면에서 어떤 순서로 저장하셨는지 알려 주실 수 있을까요?\n사용하신 브라우저와 오류 화면 캡처도 같이 보내 주시면 빠르게 확인하겠습니다.",
+      "corrections": [
+        {
+          "wrong": "저희쪽에서는 잘 되는데요?",
+          "right": "확인 중인데 저희 쪽 환경에서는 아직 재현이 되지 않아서요.",
+          "type": "politeness",
+          "explanation": "'잘 되는데요?' nghe như đổ lỗi cho người báo. Nói khách quan: '아직 재현이 되지 않아서요'. '저희 쪽' viết cách."
+        },
+        {
+          "wrong": "어떻게 했어요?",
+          "right": "혹시 어떤 화면에서 어떤 순서로 저장하셨는지 알려 주실 수 있을까요?",
+          "type": "grammar",
+          "explanation": "Hỏi cụ thể màn hình + thứ tự thao tác, dùng kính ngữ '-셨는지' và '-아/어 주실 수 있을까요?'."
+        },
+        {
+          "wrong": "브라우저 뭐 써요?",
+          "right": "사용하신 브라우저",
+          "type": "politeness",
+          "explanation": "'뭐 써요?' quá suồng sã. Gộp vào câu nhờ: '사용하신 브라우저와 ...'."
+        },
+        {
+          "wrong": "캡쳐 보내줘요.",
+          "right": "오류 화면 캡처도 같이 보내 주시면 빠르게 확인하겠습니다.",
+          "type": "spelling",
+          "explanation": "Chính tả chuẩn là '캡처'. '보내줘요' thiếu kính ngữ; dùng '보내 주시면 ... 하겠습니다' kèm lợi ích cho khách."
+        }
+      ],
+      "tags": [
+        "버그",
+        "재현",
+        "메신저"
+      ]
+    },
+    {
+      "id": "hotfix-done-messenger",
+      "title": "Tin nhắn báo đã deploy hotfix",
+      "situation": "Bạn vừa deploy bản sửa lỗi tính sai tiền phí ship. Nhắn tin cho 정 대리님 báo đã xong và nhờ kiểm tra lại.",
+      "politeness": "haeyo",
+      "politenessNote": "Tin nhắn nhanh với người phụ trách dùng 해요체, nhưng vẫn phải có kính ngữ khi nhờ khách kiểm tra.",
+      "draft": "대리님, 배송비 버그 고쳤어요.\n방금 배포했어요.\n확인해봐요.\n또 안되면 말해요.",
+      "corrected": "대리님, 말씀하신 배송비 계산 오류 수정 건 방금 운영 서버에 배포 완료했어요.\n번거로우시겠지만 확인 한번 부탁드려요.\n혹시 같은 문제가 또 발생하면 바로 말씀해 주세요.",
+      "corrections": [
+        {
+          "wrong": "배송비 버그 고쳤어요.",
+          "right": "말씀하신 배송비 계산 오류 수정 건",
+          "type": "vocabulary",
+          "explanation": "Nhắc lại đúng yêu cầu ('말씀하신 ... 건') để khách biết bạn đang nói việc nào."
+        },
+        {
+          "wrong": "방금 배포했어요.",
+          "right": "방금 운영 서버에 배포 완료했어요.",
+          "type": "vocabulary",
+          "explanation": "Nói rõ deploy lên đâu (운영 서버) — khách cần biết đã lên production chưa."
+        },
+        {
+          "wrong": "확인해봐요.",
+          "right": "번거로우시겠지만 확인 한번 부탁드려요.",
+          "type": "politeness",
+          "explanation": "'확인해봐요' giống ra lệnh. Nhờ khách thì dùng '부탁드려요' + cushion."
+        },
+        {
+          "wrong": "또 안되면 말해요.",
+          "right": "혹시 같은 문제가 또 발생하면 바로 말씀해 주세요.",
+          "type": "politeness",
+          "explanation": "'말해요' thiếu kính ngữ → '말씀해 주세요'. '안되면' cũng sai cách viết (안 되면)."
+        }
+      ],
+      "tags": [
+        "핫픽스",
+        "배포",
+        "메신저"
+      ]
+    },
+    {
+      "id": "weekend-work-cooperation-request",
+      "title": "Email nhờ khách hỗ trợ cho công việc cuối tuần",
+      "situation": "Team bạn cần nâng cấp server vào thứ Bảy. Gửi email cho 한 차장님 nhờ mở quyền VPN và có người phía khách trực để xác nhận sau khi làm xong.",
+      "politeness": "hasipsio",
+      "politenessNote": "Nhờ khách làm việc ngoài giờ là yêu cầu lớn; dùng 하십시오체 và cushion rõ ràng.",
+      "draft": "한 차장님, 안녕하십니까.\n이번 토요일에 서버 업그레이드 해야되요.\nVPN 열어주세요.\n그리고 끝나면 확인해 줄 사람 한명 있어야 돼요.\n가능하죠?",
+      "corrected": "한 차장님, 안녕하십니까.\n이번 주 토요일(10월 10일) 오전 9시부터 12시까지 서버 업그레이드 작업을 진행할 예정입니다.\n이와 관련하여 두 가지 협조를 요청드립니다.\n1. 작업 시간 동안 VPN 접속 권한 허용\n2. 작업 완료 후 서비스 확인을 위한 담당자 한 분 지원\n주말에 번거롭게 해 드려 죄송합니다. 가능 여부를 회신해 주시면 감사하겠습니다.",
+      "corrections": [
+        {
+          "wrong": "이번 토요일에 서버 업그레이드 해야되요.",
+          "right": "이번 주 토요일(10월 10일) 오전 9시부터 12시까지 서버 업그레이드 작업을 진행할 예정입니다.",
+          "type": "spelling",
+          "explanation": "'해야되요' sai, đúng là '해야 돼요'. Email chính thức nên ghi ngày, giờ cụ thể và dùng '진행할 예정입니다'."
+        },
+        {
+          "wrong": "VPN 열어주세요.",
+          "right": "1. 작업 시간 동안 VPN 접속 권한 허용",
+          "type": "format",
+          "explanation": "Khi nhờ nhiều việc, mở đầu '협조를 요청드립니다' rồi liệt kê theo số thứ tự."
+        },
+        {
+          "wrong": "확인해 줄 사람 한명",
+          "right": "서비스 확인을 위한 담당자 한 분",
+          "type": "politeness",
+          "explanation": "Người phía khách phải dùng '분' (kính ngữ của 사람/명). '한 명' cũng viết cách."
+        },
+        {
+          "wrong": "가능하죠?",
+          "right": "주말에 번거롭게 해 드려 죄송합니다. 가능 여부를 회신해 주시면 감사하겠습니다.",
+          "type": "politeness",
+          "explanation": "'-죠?' là ép đồng ý. Xin lỗi vì làm phiền cuối tuần và hỏi '가능 여부' (có được hay không)."
+        }
+      ],
+      "tags": [
+        "협조요청",
+        "주말작업",
+        "VPN"
+      ]
+    },
+    {
+      "id": "account-lock-user-reply",
+      "title": "Email trả lời người dùng bị khóa tài khoản",
+      "situation": "Một nhân viên của khách hàng (윤 사원님) gửi email nói không đăng nhập được. Kiểm tra thấy tài khoản bị khóa vì nhập sai mật khẩu 5 lần. Bạn trả lời và hướng dẫn.",
+      "politeness": "hasipsio",
+      "politenessNote": "Trả lời người dùng cuối của khách vẫn là đại diện công ty; dùng 하십시오체, không được trách người dùng.",
+      "draft": "윤 사원님, 안녕하세요.\n비밀번호를 5번 틀려서 계정이 잠겼어요.\n제가 풀어놨으니까 다시 해 보세요.\n다음부터는 조심하세요.",
+      "corrected": "윤 사원님, 안녕하십니까.\n확인해 보니 비밀번호 입력 오류가 5회 발생하여 계정이 잠금 처리된 상태였습니다.\n방금 잠금을 해제해 드렸으니 다시 로그인해 주시기 바랍니다.\n비밀번호가 기억나지 않으실 경우 로그인 화면의 '비밀번호 찾기'를 이용하실 수 있습니다.\n감사합니다.",
+      "corrections": [
+        {
+          "wrong": "비밀번호를 5번 틀려서 계정이 잠겼어요.",
+          "right": "확인해 보니 비밀번호 입력 오류가 5회 발생하여 계정이 잠금 처리된 상태였습니다.",
+          "type": "politeness",
+          "explanation": "'틀려서' nghe như trách người dùng. Dùng cách nói khách quan '입력 오류가 발생하여'. Văn bản viết dùng '5회'."
+        },
+        {
+          "wrong": "제가 풀어놨으니까 다시 해 보세요.",
+          "right": "방금 잠금을 해제해 드렸으니 다시 로그인해 주시기 바랍니다.",
+          "type": "vocabulary",
+          "explanation": "Thuật ngữ chuẩn: '잠금 해제'. '-아/어 드렸으니' thể hiện làm giúp người kia một cách khiêm nhường."
+        },
+        {
+          "wrong": "다음부터는 조심하세요.",
+          "right": "비밀번호가 기억나지 않으실 경우 로그인 화면의 '비밀번호 찾기'를 이용하실 수 있습니다.",
+          "type": "politeness",
+          "explanation": "Nhắc nhở người dùng 'cẩn thận' là bất lịch sự. Thay bằng hướng dẫn hữu ích."
+        }
+      ],
+      "tags": [
+        "계정",
+        "문의답변",
+        "운영"
+      ]
+    },
+    {
+      "id": "meeting-reschedule-request",
+      "title": "Email xin đổi lịch họp",
+      "situation": "Cuộc họp review với 송 부장님 hẹn thứ Năm 2 giờ chiều trùng với lịch deploy khẩn. Bạn gửi email xin dời và đề xuất 2 khung giờ khác.",
+      "politeness": "hasipsio",
+      "politenessNote": "Xin đổi lịch với cấp 부장 phía khách cần 하십시오체, xin lỗi và đưa ra phương án thay thế để khách chọn.",
+      "draft": "송 부장님, 안녕하십니까.\n목요일 회의 못 할것 같아요.\n급한 배포가 있어서요.\n금요일 아무때나 괜찮으시죠?\n답장 주세요.",
+      "corrected": "송 부장님, 안녕하십니까.\n죄송하지만 목요일 오후 2시 회의에 참석하기 어려울 것 같습니다.\n같은 시간에 긴급 배포 작업이 잡혀 있기 때문입니다.\n혹시 아래 시간 중 가능하신 시간이 있으실까요?\n- 10월 9일(금) 오전 10시\n- 10월 9일(금) 오후 3시\n일정을 변경하게 되어 죄송합니다. 회신 부탁드립니다.",
+      "corrections": [
+        {
+          "wrong": "목요일 회의 못 할것 같아요.",
+          "right": "죄송하지만 목요일 오후 2시 회의에 참석하기 어려울 것 같습니다.",
+          "type": "politeness",
+          "explanation": "Từ chối nên bắt đầu bằng '죄송하지만' và dùng '-기 어려울 것 같습니다' thay vì '못 하다'. '할 것' viết cách."
+        },
+        {
+          "wrong": "급한 배포가 있어서요.",
+          "right": "같은 시간에 긴급 배포 작업이 잡혀 있기 때문입니다.",
+          "type": "grammar",
+          "explanation": "Câu bỏ lửng '-어서요' hợp chat, không hợp email gửi 부장. Dùng '-기 때문입니다'."
+        },
+        {
+          "wrong": "금요일 아무때나 괜찮으시죠?",
+          "right": "혹시 아래 시간 중 가능하신 시간이 있으실까요?",
+          "type": "format",
+          "explanation": "Đề xuất 2-3 khung giờ cụ thể để khách chọn; không tự cho rằng khách rảnh. '아무 때나' cũng viết cách."
+        },
+        {
+          "wrong": "답장 주세요.",
+          "right": "일정을 변경하게 되어 죄송합니다. 회신 부탁드립니다.",
+          "type": "vocabulary",
+          "explanation": "Trong công việc dùng '회신' thay '답장', và kết bằng '부탁드립니다'."
+        }
+      ],
+      "tags": [
+        "회의",
+        "일정변경",
+        "요청"
+      ]
+    },
+    {
+      "id": "decline-out-of-scope-request",
+      "title": "Email từ chối khéo yêu cầu ngoài phạm vi bảo trì",
+      "situation": "Khách nhờ làm thêm một màn hình báo cáo hoàn toàn mới trong hợp đồng bảo trì. Bạn trả lời rằng việc này ngoài phạm vi và đề xuất báo giá riêng.",
+      "politeness": "hasipsio",
+      "politenessNote": "Từ chối khách là tình huống nhạy cảm; 하십시오체, cảm ơn trước, nêu căn cứ hợp đồng và đưa phương án thay thế.",
+      "draft": "과장님, 안녕하십니까.\n신규 리포트 화면은 못 만들어요.\n유지보수 계약에 없어서요.\n하고 싶으면 돈을 더 내야 됩니다.",
+      "corrected": "과장님, 안녕하십니까.\n신규 리포트 화면 요청 주셔서 감사합니다.\n검토해 보니 해당 건은 신규 개발에 해당하여 현재 유지보수 계약 범위에 포함되지 않습니다.\n진행을 원하시면 별도로 공수와 견적을 산정하여 전달드리겠습니다.\n양해 부탁드립니다.",
+      "corrections": [
+        {
+          "wrong": "신규 리포트 화면은 못 만들어요.",
+          "right": "신규 리포트 화면 요청 주셔서 감사합니다.",
+          "type": "politeness",
+          "explanation": "Mở đầu bằng cảm ơn, không từ chối ngay câu đầu. Người Hàn rất chú ý trình tự này."
+        },
+        {
+          "wrong": "유지보수 계약에 없어서요.",
+          "right": "검토해 보니 해당 건은 신규 개발에 해당하여 현재 유지보수 계약 범위에 포함되지 않습니다.",
+          "type": "vocabulary",
+          "explanation": "Nêu căn cứ rõ: '신규 개발에 해당' và '계약 범위에 포함되지 않습니다'."
+        },
+        {
+          "wrong": "하고 싶으면 돈을 더 내야 됩니다.",
+          "right": "진행을 원하시면 별도로 공수와 견적을 산정하여 전달드리겠습니다.",
+          "type": "politeness",
+          "explanation": "Nói thẳng 'phải trả thêm tiền' rất thô. Dùng '별도로 견적을 산정하여 전달드리겠습니다' và kính ngữ '원하시면'."
+        }
+      ],
+      "tags": [
+        "범위외",
+        "거절",
+        "견적"
+      ]
+    },
+    {
+      "id": "ssl-certificate-expiry-notice",
+      "title": "Email nhắc chứng chỉ SSL sắp hết hạn",
+      "situation": "Chứng chỉ SSL của trang web khách sẽ hết hạn sau 2 tuần, việc gia hạn do phía khách mua. Bạn gửi email nhắc 오 대리님.",
+      "politeness": "hasipsio",
+      "politenessNote": "Email nhắc việc khách phải làm cần 하십시오체, nêu hạn và hậu quả một cách khách quan, không đe dọa.",
+      "draft": "오 대리님, 안녕하십니까.\nSSL 인증서가 10월 22일에 끝나요.\n빨리 갱신 안하면 사이트가 안 열려요.\n새 인증서 받으면 저한테 주세요.",
+      "corrected": "오 대리님, 안녕하십니까.\n현재 사용 중인 SSL 인증서가 10월 22일(목)에 만료될 예정이라 안내드립니다.\n만료 전에 갱신되지 않으면 사용자 브라우저에 보안 경고가 표시되어 접속에 문제가 생길 수 있습니다.\n갱신된 인증서 파일을 10월 20일(화)까지 전달해 주시면 저희가 서버에 적용하겠습니다.\n감사합니다.",
+      "corrections": [
+        {
+          "wrong": "SSL 인증서가 10월 22일에 끝나요.",
+          "right": "현재 사용 중인 SSL 인증서가 10월 22일(목)에 만료될 예정이라 안내드립니다.",
+          "type": "vocabulary",
+          "explanation": "Hết hạn chứng chỉ/hợp đồng dùng '만료되다'. Kèm thứ trong tuần cho rõ ràng."
+        },
+        {
+          "wrong": "빨리 갱신 안하면 사이트가 안 열려요.",
+          "right": "만료 전에 갱신되지 않으면 사용자 브라우저에 보안 경고가 표시되어 접속에 문제가 생길 수 있습니다.",
+          "type": "politeness",
+          "explanation": "Nêu hậu quả khách quan, không mang giọng đe dọa. '안하면' cũng phải viết cách (안 하면)."
+        },
+        {
+          "wrong": "새 인증서 받으면 저한테 주세요.",
+          "right": "갱신된 인증서 파일을 10월 20일(화)까지 전달해 주시면 저희가 서버에 적용하겠습니다.",
+          "type": "format",
+          "explanation": "Đưa hạn chót cụ thể (trước ngày hết hạn) và nói rõ bước tiếp theo của mình."
+        }
+      ],
+      "tags": [
+        "인증서",
+        "만료",
+        "안내"
+      ]
+    },
+    {
+      "id": "reply-reminder-follow-up",
+      "title": "Email nhắc khách trả lời câu hỏi",
+      "situation": "Một tuần trước bạn gửi 3 câu hỏi về quy tắc tính điểm tích lũy nhưng 장 과장님 chưa trả lời, trong khi tuần sau phải bắt đầu code. Gửi email nhắc nhẹ.",
+      "politeness": "hasipsio",
+      "politenessNote": "Nhắc khách là việc tế nhị; dùng 하십시오체, cushion, nêu lý do cần câu trả lời và hạn mong muốn.",
+      "draft": "장 과장님, 안녕하십니까.\n지난주에 보낸 메일 아직 답이 없네요.\n언제 답주실 거예요?\n빨리 안주시면 일정이 늦어져요.",
+      "corrected": "장 과장님, 안녕하십니까.\n바쁘신 와중에 연락드려 죄송합니다.\n지난주 10월 1일에 메일로 문의드린 포인트 적립 규칙 관련 질문 3건에 대해 다시 한번 확인 부탁드리고자 연락드렸습니다.\n다음 주부터 개발에 착수할 예정이라, 10월 9일(금)까지 회신 주시면 일정에 차질 없이 진행할 수 있을 것 같습니다.\n감사합니다.",
+      "corrections": [
+        {
+          "wrong": "지난주에 보낸 메일 아직 답이 없네요.",
+          "right": "바쁘신 와중에 연락드려 죄송합니다.",
+          "type": "politeness",
+          "explanation": "'아직 답이 없네요' nghe như trách móc. Mở đầu bằng cushion '바쁘신 와중에 연락드려 죄송합니다'."
+        },
+        {
+          "wrong": "언제 답주실 거예요?",
+          "right": "다시 한번 확인 부탁드리고자 연락드렸습니다",
+          "type": "politeness",
+          "explanation": "Hỏi thẳng 'khi nào trả lời' gây áp lực. Nhắc lại nội dung câu hỏi (ngày gửi, chủ đề, số câu) để khách dễ tìm lại."
+        },
+        {
+          "wrong": "빨리 안주시면 일정이 늦어져요.",
+          "right": "10월 9일(금)까지 회신 주시면 일정에 차질 없이 진행할 수 있을 것 같습니다.",
+          "type": "format",
+          "explanation": "Chuyển câu dọa thành điều kiện tích cực '-면 ... 차질 없이 진행할 수 있습니다' kèm hạn cụ thể."
+        }
+      ],
+      "tags": [
+        "회신요청",
+        "독촉",
+        "요구사항"
+      ]
+    },
+    {
+      "id": "vacation-backup-contact-notice",
+      "title": "Email báo nghỉ phép và người thay thế",
+      "situation": "Bạn nghỉ phép từ 12 đến 14/10. Gửi email cho 김 팀장님 báo lịch nghỉ, người phụ trách thay và cách liên lạc khi khẩn cấp.",
+      "politeness": "hasipsio",
+      "politenessNote": "Thông báo vắng mặt gửi khách dùng 하십시오체; quan trọng nhất là khách biết liên hệ ai.",
+      "draft": "김 팀장님, 안녕하십니까.\n저 다음주 월요일부터 수요일까지 휴가에요.\n그동안은 투안씨한테 연락하세요.\n급한 일 있으면 전화해도 되요.",
+      "corrected": "김 팀장님, 안녕하십니까.\n개인 사정으로 10월 12일(월)부터 14일(수)까지 휴가를 사용하게 되어 미리 말씀드립니다.\n휴가 기간 중 업무는 투안 선임이 대신 담당할 예정입니다. (메일: tuan@abc.com)\n긴급한 사항이 있으시면 제 휴대폰으로 연락 주셔도 됩니다.\n불편을 드려 죄송합니다. 감사합니다.",
+      "corrections": [
+        {
+          "wrong": "저 다음주 월요일부터 수요일까지 휴가에요.",
+          "right": "개인 사정으로 10월 12일(월)부터 14일(수)까지 휴가를 사용하게 되어 미리 말씀드립니다.",
+          "type": "spelling",
+          "explanation": "'휴가에요' sai, sau nguyên âm phải là '휴가예요'. Trong email ghi ngày cụ thể và dùng '휴가를 사용하게 되어 미리 말씀드립니다'."
+        },
+        {
+          "wrong": "그동안은 투안씨한테 연락하세요.",
+          "right": "휴가 기간 중 업무는 투안 선임이 대신 담당할 예정입니다. (메일: tuan@abc.com)",
+          "type": "politeness",
+          "explanation": "'연락하세요' là ra lệnh. Nói đồng nghiệp với khách dùng chức danh (투안 선임), kèm thông tin liên lạc."
+        },
+        {
+          "wrong": "전화해도 되요",
+          "right": "연락 주셔도 됩니다",
+          "type": "spelling",
+          "explanation": "'되요' luôn sai, đúng là '돼요' (hoặc '됩니다' trong 하십시오체). Với khách dùng kính ngữ '주셔도'."
+        }
+      ],
+      "tags": [
+        "휴가",
+        "대체담당자",
+        "공지"
+      ]
     }
   ]
 }

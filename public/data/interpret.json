@@ -380,6 +380,201 @@
       "topic": "handover",
       "vi": "Source code đã được đẩy lên repository của khách.",
       "ko": "소스 코드는 고객사 저장소에 푸시했습니다."
+    },
+    {
+      "id": "ip-61",
+      "topic": "meeting",
+      "vi": "Trước khi bắt đầu, tôi xin tóm tắt ngắn nội dung cuộc họp lần trước.",
+      "ko": "시작하기 전에 지난 회의 내용을 간단히 정리하겠습니다."
+    },
+    {
+      "id": "ip-62",
+      "topic": "meeting",
+      "vi": "Phần này team Việt Nam cần thảo luận nội bộ thêm, ngày mai chúng tôi trả lời được không ạ?",
+      "ko": "이 부분은 베트남 팀 내부에서 좀 더 논의가 필요해서, 내일 답변드려도 될까요?",
+      "note": "Hoãn trả lời một cách lịch sự: nêu lý do (-아/어서) rồi xin phép bằng -아/어도 될까요?"
+    },
+    {
+      "id": "ip-63",
+      "topic": "meeting",
+      "vi": "Xin lỗi, tôi chưa nghe rõ con số vừa rồi. Anh/chị nói lại giúp được không?",
+      "ko": "죄송하지만 방금 말씀하신 숫자를 잘 못 들었습니다. 다시 한번 말씀해 주시겠어요?",
+      "note": "잘 못 듣다 (viết cách) = nghe không rõ; khác 잘못 듣다 = nghe nhầm."
+    },
+    {
+      "id": "ip-64",
+      "topic": "meeting",
+      "vi": "Tôi xin chia sẻ màn hình để giải thích luồng xử lý.",
+      "ko": "화면을 공유해서 처리 흐름을 설명드리겠습니다."
+    },
+    {
+      "id": "ip-65",
+      "topic": "meeting",
+      "vi": "Nếu không còn câu hỏi nào, cuộc họp hôm nay xin kết thúc ở đây.",
+      "ko": "더 이상 질문이 없으시면 오늘 회의는 여기서 마치겠습니다."
+    },
+    {
+      "id": "ip-66",
+      "topic": "schedule",
+      "vi": "Batch quyết toán chạy lúc 2 giờ sáng nên giờ bảo trì phải tránh khung giờ đó.",
+      "ko": "정산 배치가 새벽 2시에 실행되기 때문에 점검 시간은 그 시간을 피해야 합니다.",
+      "note": "-기 때문에: vì (lý do khách quan). 새벽 2시 = 2 giờ sáng (rạng sáng)."
+    },
+    {
+      "id": "ip-67",
+      "topic": "schedule",
+      "vi": "Lịch chuyển màn hình sang JSP đang chậm khoảng 3 ngày so với kế hoạch.",
+      "ko": "JSP 화면 전환 일정이 계획보다 3일 정도 늦어지고 있습니다.",
+      "note": "늦어지고 있다: đang chậm dần (vẫn diễn ra), khác 늦었다: đã trễ."
+    },
+    {
+      "id": "ip-68",
+      "topic": "schedule",
+      "vi": "Nếu nhận được dữ liệu test trước thứ Tư thì chúng tôi có thể bắt đầu test từ thứ Năm.",
+      "ko": "수요일까지 테스트 데이터를 받으면 목요일부터 테스트를 시작할 수 있습니다."
+    },
+    {
+      "id": "ip-69",
+      "topic": "schedule",
+      "vi": "Đợt deploy định kỳ tháng này bị dời sang tuần sau vì trùng ngày lễ.",
+      "ko": "이번 달 정기 배포는 공휴일과 겹쳐서 다음 주로 미뤄졌습니다.",
+      "note": "N과/와 겹치다: trùng với N. 미뤄지다: bị hoãn, bị dời lại."
+    },
+    {
+      "id": "ip-70",
+      "topic": "schedule",
+      "vi": "Chúng tôi sẽ xử lý yêu cầu gấp trước, các yêu cầu còn lại sẽ làm từ tuần sau.",
+      "ko": "급한 요청부터 먼저 처리하고, 나머지는 다음 주부터 진행하겠습니다."
+    },
+    {
+      "id": "ip-71",
+      "topic": "bug",
+      "vi": "Lỗi này chỉ xảy ra trên Internet Explorer.",
+      "ko": "이 오류는 인터넷 익스플로러에서만 발생합니다."
+    },
+    {
+      "id": "ip-72",
+      "topic": "bug",
+      "vi": "Đêm qua batch bị lỗi nên dữ liệu thống kê hôm nay chưa được cập nhật.",
+      "ko": "어젯밤 배치가 실패해서 오늘 통계 데이터가 아직 반영되지 않았습니다.",
+      "note": "Dữ liệu 'được cập nhật' thường dịch là 반영되다."
+    },
+    {
+      "id": "ip-73",
+      "topic": "bug",
+      "vi": "Chúng tôi đã quay về phiên bản trước, hiện dịch vụ đã hoạt động bình thường.",
+      "ko": "이전 버전으로 롤백했고, 현재 서비스는 정상입니다.",
+      "note": "롤백 = rollback; trong báo cáo cũng hay dùng 원복 (khôi phục nguyên trạng)."
+    },
+    {
+      "id": "ip-74",
+      "topic": "bug",
+      "vi": "Kiểm tra log thì thấy lỗi xảy ra do thiếu cấu hình sau khi đổi server.",
+      "ko": "로그를 확인해 보니 서버 변경 후 설정이 누락되어서 오류가 발생했습니다.",
+      "note": "-아/어 보니: làm thử thì thấy… Dùng khi báo kết quả điều tra."
+    },
+    {
+      "id": "ip-75",
+      "topic": "bug",
+      "vi": "Lỗi này không phải do bên chúng tôi, có vẻ là vấn đề từ API của bên giao hàng.",
+      "ko": "이 오류는 저희 쪽 문제가 아니라 배송사 API 쪽 문제로 보입니다.",
+      "note": "-(으)로 보입니다: có vẻ là, chưa khẳng định chắc. Nên kèm log làm bằng chứng."
+    },
+    {
+      "id": "ip-76",
+      "topic": "scope",
+      "vi": "Theo hợp đồng bảo trì, phát triển chức năng mới không nằm trong phạm vi.",
+      "ko": "유지보수 계약상 신규 기능 개발은 범위에 포함되지 않습니다.",
+      "note": "N상: xét theo N, về mặt N (계약상, 일정상, 보안상)."
+    },
+    {
+      "id": "ip-77",
+      "topic": "scope",
+      "vi": "Sửa câu chữ thì làm được trong phạm vi bảo trì, nhưng thay đổi cấu trúc màn hình thì cần báo giá riêng.",
+      "ko": "문구 수정은 유지보수 범위 안에서 가능하지만, 화면 구조 변경은 별도 견적이 필요합니다."
+    },
+    {
+      "id": "ip-78",
+      "topic": "scope",
+      "vi": "Khi chuyển sang JSP, chúng tôi giữ nguyên chức năng hiện tại và không thêm chức năng mới.",
+      "ko": "JSP로 전환할 때는 기존 기능을 그대로 유지하고, 새로운 기능은 추가하지 않습니다."
+    },
+    {
+      "id": "ip-79",
+      "topic": "scope",
+      "vi": "Việc này là lỗi hay yêu cầu thay đổi, mình cùng xem spec để xác nhận nhé.",
+      "ko": "이 건이 결함인지 변경 요청인지 사양서를 보면서 같이 확인해 보시죠.",
+      "note": "-(으)시죠: đề nghị lịch sự kiểu 'mình cùng… nhé', dùng được với khách."
+    },
+    {
+      "id": "ip-80",
+      "topic": "scope",
+      "vi": "Nếu bỏ hỗ trợ IE thì công số kiểm thử giảm khoảng 20%.",
+      "ko": "IE 지원을 제외하면 테스트 공수가 20% 정도 줄어듭니다."
+    },
+    {
+      "id": "ip-81",
+      "topic": "cost",
+      "vi": "Chi phí bảo trì tháng này giống tháng trước.",
+      "ko": "이번 달 유지보수 비용은 지난달과 동일합니다."
+    },
+    {
+      "id": "ip-82",
+      "topic": "cost",
+      "vi": "Yêu cầu này cần khoảng 5 ngày công, báo giá tôi sẽ gửi trong hôm nay.",
+      "ko": "이 요청은 약 5MD가 필요하고, 견적은 오늘 중으로 보내 드리겠습니다.",
+      "note": "MD (man-day) = ngày công; MM (man-month) = tháng công. 5MD đọc là 오 엠디."
+    },
+    {
+      "id": "ip-83",
+      "topic": "cost",
+      "vi": "Nếu nâng cấp thêm server thì chi phí cloud mỗi tháng tăng khoảng 500 nghìn won.",
+      "ko": "서버를 증설하면 클라우드 비용이 매달 약 50만 원 늘어납니다.",
+      "note": "50만 원 = 500.000 won (만 = 10.000). 증설 = tăng thêm (server, thiết bị)."
+    },
+    {
+      "id": "ip-84",
+      "topic": "cost",
+      "vi": "Phần làm thêm cuối tuần sẽ được tính phí riêng theo hợp đồng.",
+      "ko": "주말 추가 작업은 계약에 따라 별도로 청구됩니다."
+    },
+    {
+      "id": "ip-85",
+      "topic": "cost",
+      "vi": "Nếu ký hợp đồng bảo trì một năm thì có thể giảm giá 10%.",
+      "ko": "1년 유지보수 계약을 하시면 10% 할인이 가능합니다."
+    },
+    {
+      "id": "ip-86",
+      "topic": "handover",
+      "vi": "Tôi đã ghi lịch chạy batch và cách xử lý khi lỗi vào tài liệu vận hành.",
+      "ko": "배치 실행 일정과 오류 시 대응 방법을 운영 문서에 정리해 두었습니다.",
+      "note": "-아/어 두다: làm sẵn để dùng sau. N 시 = khi N (văn viết)."
+    },
+    {
+      "id": "ip-87",
+      "topic": "handover",
+      "vi": "Từ tháng sau, anh Tuấn sẽ là người phụ trách chính phần bảo trì.",
+      "ko": "다음 달부터는 투안 님이 유지보수 주 담당자가 됩니다."
+    },
+    {
+      "id": "ip-88",
+      "topic": "handover",
+      "vi": "Tuần đầu tiên tôi sẽ làm cùng người phụ trách mới để bàn giao.",
+      "ko": "첫 주에는 제가 새 담당자와 같이 작업하면서 인수인계하겠습니다."
+    },
+    {
+      "id": "ip-89",
+      "topic": "handover",
+      "vi": "Chúng tôi sẽ trả lại tài khoản và quyền truy cập server vào ngày làm việc cuối cùng.",
+      "ko": "서버 계정과 접근 권한은 마지막 근무일에 반납하겠습니다.",
+      "note": "반납하다: trả lại (thứ được cấp). Phía khách thu hồi thì dùng 회수하다."
+    },
+    {
+      "id": "ip-90",
+      "topic": "handover",
+      "vi": "Những việc đang làm dở tôi đã liệt kê và chia sẻ trên Jira.",
+      "ko": "진행 중인 작업은 목록으로 정리해서 지라에 공유해 두었습니다."
     }
   ]
 }

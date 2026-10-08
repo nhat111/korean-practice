@@ -1144,6 +1144,440 @@
       "notes": [
         "번거롭게 → [번거롭께]."
       ]
+    },
+    {
+      "id": "sh-53",
+      "level": 1,
+      "topic": "progress",
+      "ko": "요청하신 건은 처리 완료했습니다.",
+      "pron": "[요청하신 거는 처리 완료핻씀니다]",
+      "vi": "Việc anh/chị yêu cầu đã xử lý xong.",
+      "notes": [
+        "건은 → [거는] (연음).",
+        "했습니다 → [핻씀니다]."
+      ]
+    },
+    {
+      "id": "sh-54",
+      "level": 2,
+      "topic": "progress",
+      "ko": "화면 전환 작업은 계획대로 진행되고 있습니다.",
+      "pron": "[화면 전환 자거븐 계획때로 진행되고 읻씀니다]",
+      "vi": "Việc chuyển đổi màn hình đang tiến hành đúng kế hoạch.",
+      "notes": [
+        "작업은 → [자거븐] (연음).",
+        "계획대로 → [계획때로] (경음화)."
+      ]
+    },
+    {
+      "id": "sh-55",
+      "level": 2,
+      "topic": "progress",
+      "ko": "남은 화면은 다섯 개이고, 이번 주 안에 끝낼 예정입니다.",
+      "pron": "[나믄 화며는 다섣 깨이고 이번 주 아네 끈낼 예정임니다]",
+      "vi": "Còn lại 5 màn hình, dự kiến sẽ xong trong tuần này.",
+      "notes": [
+        "다섯 개 → [다섣 깨] (경음화).",
+        "끝낼 → [끈낼] (비음화)."
+      ]
+    },
+    {
+      "id": "sh-56",
+      "level": 1,
+      "topic": "progress",
+      "ko": "오늘 작업 내용을 정리해서 보내 드리겠습니다.",
+      "pron": "[오늘 자검 내용을 정리해서 보내 드리겓씀니다]",
+      "vi": "Tôi sẽ tổng hợp nội dung công việc hôm nay rồi gửi anh/chị.",
+      "notes": [
+        "작업 내용 → [자검 내용] (비음화: ㅂ + ㄴ → ㅁ)."
+      ]
+    },
+    {
+      "id": "sh-57",
+      "level": 2,
+      "topic": "bug",
+      "ko": "운영 서버 로그부터 확인해 보겠습니다.",
+      "pron": "[운영 서버 로그부터 화긴해 보겓씀니다]",
+      "vi": "Tôi sẽ kiểm tra log server production trước.",
+      "notes": [
+        "확인 → [화긴] (연음)."
+      ]
+    },
+    {
+      "id": "sh-58",
+      "level": 2,
+      "topic": "bug",
+      "ko": "어젯밤 배치가 실패해서 지금 재실행하고 있습니다.",
+      "pron": "[어제빰 배치가 실패해서 지금 재실행하고 읻씀니다]",
+      "vi": "Đêm qua batch bị lỗi nên giờ tôi đang chạy lại.",
+      "notes": [
+        "어젯밤 → [어제빰] (사이시옷: ㅂ đọc căng)."
+      ]
+    },
+    {
+      "id": "sh-59",
+      "level": 2,
+      "topic": "bug",
+      "ko": "특정 브라우저에서만 화면이 깨지는 것 같습니다.",
+      "pron": "[특쩡 브라우저에서만 화며니 깨지는 걷 깓씀니다]",
+      "vi": "Có vẻ chỉ trên một trình duyệt nhất định thì màn hình bị vỡ.",
+      "notes": [
+        "특정 → [특쩡] (경음화).",
+        "것 같습니다 → [걷 깓씀니다]."
+      ]
+    },
+    {
+      "id": "sh-60",
+      "level": 1,
+      "topic": "bug",
+      "ko": "데이터는 손실되지 않았습니다.",
+      "pron": "[데이터는 손실되지 아낟씀니다]",
+      "vi": "Dữ liệu không bị mất.",
+      "notes": [
+        "않았습니다 → [아낟씀니다]: ㅎ không đọc."
+      ]
+    },
+    {
+      "id": "sh-61",
+      "level": 1,
+      "topic": "schedule",
+      "ko": "점검은 토요일 새벽에 진행됩니다.",
+      "pron": "[점거믄 토요일 새벼게 진행됨니다]",
+      "vi": "Bảo trì sẽ tiến hành vào rạng sáng thứ Bảy.",
+      "notes": [
+        "점검은 → [점거믄], 새벽에 → [새벼게] (연음)."
+      ]
+    },
+    {
+      "id": "sh-62",
+      "level": 2,
+      "topic": "schedule",
+      "ko": "정기 배포는 매주 목요일 오후 6시입니다.",
+      "pron": "[정기 배포는 매주 모교일 오후 여섣 씨임니다]",
+      "vi": "Deploy định kỳ là 6 giờ chiều thứ Năm hằng tuần.",
+      "notes": [
+        "목요일 → [모교일] (연음).",
+        "6시 đọc là 여섯 시 → [여섣 씨]."
+      ]
+    },
+    {
+      "id": "sh-63",
+      "level": 2,
+      "topic": "schedule",
+      "ko": "요청이 몰려서 처리가 하루 정도 늦어질 수 있습니다.",
+      "pron": "[요청이 몰려서 처리가 하루 정도 느저질 쑤 읻씀니다]",
+      "vi": "Yêu cầu dồn nhiều nên việc xử lý có thể chậm khoảng một ngày.",
+      "notes": [
+        "늦어질 → [느저질] (연음).",
+        "-ㄹ 수 → [ㄹ 쑤] (경음화)."
+      ]
+    },
+    {
+      "id": "sh-64",
+      "level": 1,
+      "topic": "schedule",
+      "ko": "이번 주는 일정이 꽉 차 있습니다.",
+      "pron": "[이번 주는 일쩡이 꽉 차 읻씀니다]",
+      "vi": "Tuần này lịch đã kín.",
+      "notes": [
+        "일정 → [일쩡] (경음화 trong từ Hán Hàn)."
+      ]
+    },
+    {
+      "id": "sh-65",
+      "level": 1,
+      "topic": "request",
+      "ko": "오류 화면을 캡처해서 보내 주시겠어요?",
+      "pron": "[오류 화며늘 캡처해서 보내 주시겓써요]",
+      "vi": "Anh/chị chụp màn hình lỗi gửi giúp tôi được không?",
+      "notes": [
+        "화면을 → [화며늘] (연음)."
+      ]
+    },
+    {
+      "id": "sh-66",
+      "level": 2,
+      "topic": "request",
+      "ko": "운영 데이터 수정 승인을 부탁드립니다.",
+      "pron": "[운영 데이터 수정 승이늘 부탁뜨림니다]",
+      "vi": "Nhờ anh/chị phê duyệt việc sửa dữ liệu production.",
+      "notes": [
+        "승인을 → [승이늘] (연음).",
+        "부탁드립니다 → [부탁뜨림니다] (경음화)."
+      ]
+    },
+    {
+      "id": "sh-67",
+      "level": 2,
+      "topic": "request",
+      "ko": "언제부터 이 현상이 발생했는지 알려 주실 수 있을까요?",
+      "pron": "[언제부터 이 현상이 발쌩핸는지 알려 주실 쑤 이쓸까요]",
+      "vi": "Anh/chị cho biết hiện tượng này xảy ra từ khi nào được không?",
+      "notes": [
+        "발생 → [발쌩] (경음화).",
+        "했는지 → [핸는지] (비음화)."
+      ]
+    },
+    {
+      "id": "sh-68",
+      "level": 1,
+      "topic": "request",
+      "ko": "사용하시는 브라우저를 알려 주세요.",
+      "pron": "[사용하시는 브라우저를 알려 주세요]",
+      "vi": "Anh/chị cho biết trình duyệt đang dùng nhé."
+    },
+    {
+      "id": "sv-16",
+      "level": 1,
+      "topic": "survival",
+      "ko": "죄송합니다, 마지막 부분을 놓쳤습니다.",
+      "pron": "[죄송함니다 마지막 부부늘 노쳗씀니다]",
+      "vi": "Xin lỗi, tôi bỏ lỡ đoạn cuối.",
+      "notes": [
+        "놓쳤습니다 → [노쳗씀니다]: ㅎ không đọc."
+      ]
+    },
+    {
+      "id": "sv-17",
+      "level": 2,
+      "topic": "survival",
+      "ko": "그 단어는 처음 듣는데, 무슨 뜻인가요?",
+      "pron": "[그 다너는 처음 든는데 무슨 뜨신가요]",
+      "vi": "Từ đó tôi mới nghe lần đầu, nghĩa là gì ạ?",
+      "notes": [
+        "듣는데 → [든는데] (비음화).",
+        "뜻인가요 → [뜨신가요] (연음)."
+      ]
+    },
+    {
+      "id": "sv-18",
+      "level": 1,
+      "topic": "survival",
+      "ko": "회의 내용을 메모해도 될까요?",
+      "pron": "[회이 내용을 메모해도 될까요]",
+      "vi": "Tôi ghi chép nội dung cuộc họp được không ạ?",
+      "notes": [
+        "회의 → [회이]: 의 ở vị trí sau thường đọc [이]."
+      ]
+    },
+    {
+      "id": "sv-19",
+      "level": 2,
+      "topic": "survival",
+      "ko": "제가 한국어가 서툴러서, 틀린 부분이 있으면 말씀해 주세요.",
+      "pron": "[제가 한구거가 서툴러서 틀린 부부니 이쓰면 말쓰매 주세요]",
+      "vi": "Tiếng Hàn của tôi còn vụng, nếu có chỗ sai xin anh/chị cứ nói.",
+      "notes": [
+        "한국어 → [한구거] (연음).",
+        "말씀해 → [말쓰매] (ㅎ yếu đi)."
+      ]
+    },
+    {
+      "id": "sv-20",
+      "level": 2,
+      "topic": "survival",
+      "ko": "통화가 끊긴 것 같은데, 다시 걸어 드리겠습니다.",
+      "pron": "[통화가 끈킨 걷 까튼데 다시 거러 드리겓씀니다]",
+      "vi": "Hình như cuộc gọi bị ngắt, tôi xin gọi lại.",
+      "notes": [
+        "끊긴 → [끈킨] (ㅎ + ㄱ → ㅋ).",
+        "같은데 → [까튼데]."
+      ]
+    },
+    {
+      "id": "sv-21",
+      "level": 1,
+      "topic": "survival",
+      "ko": "숫자를 한 번 더 말씀해 주시겠어요?",
+      "pron": "[숟짜를 한 번 더 말쓰매 주시겓써요]",
+      "vi": "Anh/chị nói lại con số một lần nữa được không ạ?",
+      "notes": [
+        "숫자 → [숟짜] (경음화)."
+      ]
+    },
+    {
+      "id": "cs-13",
+      "level": 2,
+      "topic": "cushion",
+      "ko": "바쁘시겠지만 오늘 중으로 확인 부탁드립니다.",
+      "pron": "[바쁘시겓찌만 오늘 중으로 화긴 부탁뜨림니다]",
+      "vi": "Biết là anh/chị bận, nhưng nhờ kiểm tra giúp trong hôm nay.",
+      "notes": [
+        "겠지만 → [겓찌만]."
+      ]
+    },
+    {
+      "id": "cs-14",
+      "level": 2,
+      "topic": "cushion",
+      "ko": "제가 말씀을 잘못 알아들은 것 같습니다.",
+      "pron": "[제가 말쓰믈 잘모다라드른 걷 깓씀니다]",
+      "vi": "Hình như tôi đã nghe hiểu nhầm lời anh/chị.",
+      "notes": [
+        "잘못 알아들은 → [잘모다라드른]: ㅅ đọc [ㄷ] rồi nối âm."
+      ]
+    },
+    {
+      "id": "cs-15",
+      "level": 2,
+      "topic": "cushion",
+      "ko": "가능하시다면 다음 주 화요일까지 회신 주시면 감사하겠습니다.",
+      "pron": "[가능하시다면 다음 주 화요일까지 회신 주시면 감사하겓씀니다]",
+      "vi": "Nếu được, anh/chị phản hồi giúp trước thứ Ba tuần sau thì tốt quá."
+    },
+    {
+      "id": "cs-16",
+      "level": 1,
+      "topic": "cushion",
+      "ko": "늦게 연락드려서 죄송합니다.",
+      "pron": "[늗께 열락뜨려서 죄송함니다]",
+      "vi": "Xin lỗi vì liên lạc muộn.",
+      "notes": [
+        "연락 → [열락] (유음화).",
+        "늦게 → [늗께] (경음화)."
+      ]
+    },
+    {
+      "id": "cs-17",
+      "level": 3,
+      "topic": "cushion",
+      "ko": "말씀하신 내용은 충분히 이해했습니다. 다만 일정상 조금 어려울 것 같습니다.",
+      "pron": "[말쓰마신 내용은 충부니 이해핻씀니다 다만 일쩡쌍 조금 어려울 껃 깓씀니다]",
+      "vi": "Tôi hiểu rõ điều anh/chị nói. Có điều xét về lịch thì hơi khó.",
+      "notes": [
+        "일정상 → [일쩡쌍] (경음화).",
+        "어려울 것 → [어려울 껃]."
+      ]
+    },
+    {
+      "id": "cs-18",
+      "level": 2,
+      "topic": "cushion",
+      "ko": "혹시 실례가 안 된다면 한 가지 부탁드려도 될까요?",
+      "pron": "[혹씨 실례가 안 된다면 한 가지 부탁뜨려도 될까요]",
+      "vi": "Nếu không phiền, tôi nhờ anh/chị một việc được không?",
+      "notes": [
+        "혹시 → [혹씨] (경음화)."
+      ]
+    },
+    {
+      "id": "mt-13",
+      "level": 2,
+      "topic": "meeting",
+      "ko": "지난 회의에서 나온 액션 아이템부터 확인하겠습니다.",
+      "pron": "[지난 회이에서 나온 액쎤 아이템부터 화긴하겓씀니다]",
+      "vi": "Trước tiên tôi xin kiểm tra các action item từ cuộc họp trước."
+    },
+    {
+      "id": "mt-14",
+      "level": 1,
+      "topic": "meeting",
+      "ko": "이 안건은 다음 회의로 넘기겠습니다.",
+      "pron": "[이 안꺼는 다음 회이로 넘기겓씀니다]",
+      "vi": "Nội dung này xin chuyển sang cuộc họp sau.",
+      "notes": [
+        "안건 → [안껀] (경음화)."
+      ]
+    },
+    {
+      "id": "mt-15",
+      "level": 1,
+      "topic": "meeting",
+      "ko": "이 부분은 화면을 보면서 설명드리겠습니다.",
+      "pron": "[이 부부는 화며늘 보면서 설명드리겓씀니다]",
+      "vi": "Phần này tôi xin vừa xem màn hình vừa giải thích."
+    },
+    {
+      "id": "mt-16",
+      "level": 2,
+      "topic": "meeting",
+      "ko": "다른 의견이 없으시면 이대로 진행하겠습니다.",
+      "pron": "[다른 의겨니 업쓰시면 이대로 진행하겓씀니다]",
+      "vi": "Nếu không có ý kiến khác, chúng ta sẽ tiến hành như thế này.",
+      "notes": [
+        "없으시면 → [업쓰시면]."
+      ]
+    },
+    {
+      "id": "mt-17",
+      "level": 2,
+      "topic": "meeting",
+      "ko": "회의 시간이 다 돼서 오늘은 여기까지 하겠습니다.",
+      "pron": "[회이 시가니 다 돼서 오느른 여기까지 하겓씀니다]",
+      "vi": "Đã hết giờ họp nên hôm nay xin dừng ở đây."
+    },
+    {
+      "id": "mt-18",
+      "level": 3,
+      "topic": "meeting",
+      "ko": "참석하지 못하신 분들께는 회의록으로 공유드리겠습니다.",
+      "pron": "[참서카지 모타신 분들께는 회이로그로 공유드리겓씀니다]",
+      "vi": "Với những người không tham dự được, tôi sẽ chia sẻ qua biên bản họp.",
+      "notes": [
+        "참석하지 → [참서카지], 못하신 → [모타신] (ㅎ + ㄱ/ㄷ → ㅋ/ㅌ)."
+      ]
+    },
+    {
+      "id": "tc-13",
+      "level": 1,
+      "topic": "tech",
+      "ko": "이 화면은 JSP로 다시 구현했습니다.",
+      "pron": "[이 화며는 제이에스피로 다시 구현핻씀니다]",
+      "vi": "Màn hình này đã được làm lại bằng JSP.",
+      "notes": [
+        "JSP đọc là 제이에스피."
+      ]
+    },
+    {
+      "id": "tc-14",
+      "level": 2,
+      "topic": "tech",
+      "ko": "공통 팝업은 하나의 컴포넌트로 만들었습니다.",
+      "pron": "[공통 파버븐 하나에 컴포넌트로 만드럳씀니다]",
+      "vi": "Popup dùng chung được làm thành một component.",
+      "notes": [
+        "팝업은 → [파버븐] (연음).",
+        "하나의 → [하나에]: trợ từ 의 thường đọc [에]."
+      ]
+    },
+    {
+      "id": "tc-15",
+      "level": 2,
+      "topic": "tech",
+      "ko": "배치 작업은 크론으로 매일 새벽에 실행됩니다.",
+      "pron": "[배치 자거븐 크로느로 매일 새벼게 실행됨니다]",
+      "vi": "Tác vụ batch chạy bằng cron vào rạng sáng mỗi ngày."
+    },
+    {
+      "id": "tc-16",
+      "level": 2,
+      "topic": "tech",
+      "ko": "세션이 만료되면 로그인 화면으로 이동합니다.",
+      "pron": "[세셔니 말료되면 로그인 화며느로 이동함니다]",
+      "vi": "Khi session hết hạn sẽ chuyển về màn hình đăng nhập.",
+      "notes": [
+        "만료 → [말료] (유음화)."
+      ]
+    },
+    {
+      "id": "tc-17",
+      "level": 1,
+      "topic": "tech",
+      "ko": "인덱스를 추가해서 조회 시간을 줄였습니다.",
+      "pron": "[인덱쓰를 추가해서 조회 시가늘 주렫씀니다]",
+      "vi": "Tôi đã thêm index để giảm thời gian tra cứu."
+    },
+    {
+      "id": "tc-18",
+      "level": 3,
+      "topic": "tech",
+      "ko": "외부 API 응답이 늦으면 3초 후에 타임아웃 처리합니다.",
+      "pron": "[외부 에이피아이 응다비 느즈면 삼 초 후에 타이마욷 처리함니다]",
+      "vi": "Nếu API bên ngoài phản hồi chậm thì sau 3 giây sẽ xử lý timeout.",
+      "notes": [
+        "응답이 → [응다비], 늦으면 → [느즈면] (연음).",
+        "3초 đọc là 삼 초."
+      ]
     }
   ]
 }
