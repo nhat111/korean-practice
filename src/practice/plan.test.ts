@@ -70,6 +70,13 @@ describe('buildDailyPlan', () => {
     ]);
   });
 
+  it('scales every part for longer sessions', () => {
+    const plan = buildDailyPlan(content, {}, today, Math.random, 2);
+    expect(plan.filter((s) => s.kind === 'shadowing')).toHaveLength(4); // only 4 non-survival lines exist
+    expect(plan.filter((s) => s.kind === 'pattern')).toHaveLength(4);
+    expect(plan.filter((s) => s.kind === 'scenario')).toHaveLength(2);
+  });
+
   it('skips parts with no content', () => {
     expect(buildDailyPlan({ shadowing: [], patterns: [], scenarios: [] }, {}, today)).toEqual([]);
   });

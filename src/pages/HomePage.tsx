@@ -1,11 +1,14 @@
 import { Link } from 'react-router';
 import { Icon, type IconName } from '../components/Icon';
+import { InstallHint } from '../components/InstallHint';
+import { Welcome } from '../components/Welcome';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
 import { streak } from '../practice/plan';
 import { weakKeys } from '../practice/weak';
 import { isDue, todayKey } from '../srs/sm2';
 import { useBackendSettings } from '../storage/backend';
+import { usePrefs, type Role } from '../storage/prefs';
 import { useProgress } from '../storage/progress';
 
 interface Section {
@@ -14,6 +17,20 @@ interface Section {
   title: string;
   desc: string;
 }
+
+/** Optional feedback form (e.g. a Google Form), set at build time; hidden when unset. */
+const FEEDBACK_URL: string | undefined =
+  typeof import.meta.env.VITE_FEEDBACK_URL === 'string' && import.meta.env.VITE_FEEDBACK_URL
+    ? import.meta.env.VITE_FEEDBACK_URL
+    : undefined;
+
+/** "Gợi ý cho bạn" per role from the welcome screen. */
+const SUGGESTIONS: Record<Role, { to: string; icon: IconName }> = {
+  dev: { to: '/shadowing?topic=tech', icon: 'waves' },
+  brse: { to: '/interpret', icon: 'languages' },
+  tester: { to: '/scenarios?cat=qa', icon: 'chat' },
+  interview: { to: '/scenarios?cat=interview', icon: 'chat' },
+};
 
 // Six main entries; the rest (patterns, songs, progress…) live under the tabs.
 const SECTIONS: Section[] = [
@@ -41,6 +58,10 @@ export function HomePage() {
   const todayStats = progress.daily[today];
   const days = streak(progress.daily, today);
   const weak = weakKeys(progress.srs).length;
+  const prefs = usePrefs();
+  if (!prefs.onboarded) return <Welcome />;
+  const minutes = prefs.profile?.minutes ?? 5;
+  const suggestion = prefs.profile ? SUGGESTIONS[prefs.profile.role] : null;
   const stats = [
     { value: days, label: vi.home.statStreak },
     { value: todayStats?.spoken ?? 0, label: vi.home.statSpokenToday },
@@ -74,10 +95,27 @@ export function HomePage() {
           <Icon name="zap" />
         </span>
         <div>
-          <h2>{vi.home.dailyTitle}</h2>
-          <p className="muted">{(todayStats?.spoken ?? 0) > 0 ? vi.home.dailyDone : vi.home.dailyDesc}</p>
+          <h2>{vi.growth.dailyTitle(minutes)}</h2>
+          <p className="muted">
+            {(todayStats?.spoken ?? 0) > 0
+              ? vi.home.dailyDone
+              : minutes > 5
+                ? vi.growth.dailyMinutes(minutes)
+                : vi.home.dailyDesc}
+          </p>
         </div>
       </Link>
+      {suggestion && prefs.profile && (
+        <Link to={suggestion.to} className="card card--link suggest-card">
+          <span className="card-icon">
+            <Icon name={suggestion.icon} />
+          </span>
+          <div>
+            <h2>{vi.growth.suggestTitle}</h2>
+            <p className="muted">{vi.growth.suggest[prefs.profile.role]}</p>
+          </div>
+        </Link>
+      )}
       {weak > 0 && (
         <Link to="/weak" className="card card--link weak-cta">
           <span className="card-icon">
@@ -89,6 +127,7 @@ export function HomePage() {
           </div>
         </Link>
       )}
+      <InstallHint />
       <Link to="/shadowing?topic=survival" className="card card--link survival-card">
         <span className="card-icon">
           <Icon name="lifebuoy" />
@@ -110,6 +149,11 @@ export function HomePage() {
           </Link>
         ))}
       </div>
+      {FEEDBACK_URL && (
+        <a href={FEEDBACK_URL} target="_blank" rel="noreferrer" className="link-btn small center feedback-link">
+          {vi.growth.feedback}
+        </a>
+      )}
     </div>
   );
 }

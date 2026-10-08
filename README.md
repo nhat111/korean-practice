@@ -161,3 +161,13 @@ the app shows a notice and keeps working from local data.
   app's permissions.
 - **Stale version after a deploy**: close every tab and window of the app, then open it
   again. As a last resort, clear the site data. This also deletes local progress.
+
+## Analytics, link previews and feedback
+
+- **Vercel Web Analytics** is built in (`@vercel/analytics`): turn on *Analytics → Web Analytics* in the
+  Vercel project to start receiving page views. It uses no cookies and never sends recordings or
+  learning content; learners can switch it off in Settings.
+- **Link previews** (Facebook, Zalo, KakaoTalk, Slack) use `public/og.jpg` through the Open Graph tags in
+  `index.html`. If the site moves to another domain, update `og:url` and `og:image` there.
+- **Feedback link**: set `VITE_FEEDBACK_URL` (for example a Google Form URL) in the Vercel project's
+  environment variables to show a "Góp ý" link on Home and in Settings.
