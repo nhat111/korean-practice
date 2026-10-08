@@ -3,7 +3,7 @@
 
 import { addDays, type CardState } from '../srs/sm2';
 import type { InterpretItem, NumberItem, PatternItem, Scenario, ShadowingItem } from '../types';
-import { DAILY_SHADOWING_TOPICS, srsKey } from './decks';
+import { DAILY_SHADOWING_TOPICS, srsKey, type DailyFocus } from './decks';
 
 export type DailyStep =
   | { kind: 'shadowing'; id: string }
@@ -61,6 +61,8 @@ export function buildDailyPlan(
   rand: () => number = Math.random,
   /** 1 = the 5-minute session; 2 and 3 for 10 and 15 minutes. */
   scale = 1,
+  /** From the learner's role: one shadowing slot and the scenario turn come from these when they exist. */
+  focus: DailyFocus = {},
 ): DailyStep[] {
   const n = (count: number) => count * scale;
   const idOf = (key: string) => key.slice(key.indexOf(':') + 1);
@@ -68,12 +70,24 @@ export function buildDailyPlan(
   const shadowKeys = content.shadowing
     .filter((s) => DAILY_SHADOWING_TOPICS.includes(s.topic))
     .map((s) => srsKey.shadowing(s.id));
+  const focusShadowKeys = content.shadowing
+    .filter((s) => s.topic === focus.shadowingTopic)
+    .map((s) => srsKey.shadowing(s.id));
+  const focusShadow = pickKeys(focusShadowKeys, srs, today, n(1), rand);
+  const otherShadow = pickKeys(
+    shadowKeys.filter((k) => !focusShadow.includes(k)),
+    srs,
+    today,
+    n(DAILY_COUNTS.shadowing) - focusShadow.length,
+    rand,
+  );
   const survivalKeys = content.shadowing.filter((s) => s.topic === 'survival').map((s) => srsKey.shadowing(s.id));
   const patternKeys = content.patterns.map((p) => srsKey.pattern(p.id));
-  const turnKeys = content.scenarios.flatMap((s) => s.turns.map((_, i) => srsKey.scenario(s.id, i)));
+  const focusScenarios = content.scenarios.filter((s) => s.category === focus.scenarioCategory);
+  const turnKeys = (focusScenarios.length > 0 ? focusScenarios : content.scenarios).flatMap((s) => s.turns.map((_, i) => srsKey.scenario(s.id, i)));
 
   const steps: DailyStep[] = [
-    ...pickKeys(shadowKeys, srs, today, n(DAILY_COUNTS.shadowing), rand).map(
+    ...[...focusShadow, ...otherShadow].map(
       (k): DailyStep => ({ kind: 'shadowing', id: idOf(k) }),
     ),
     ...pickKeys(patternKeys, srs, today, n(DAILY_COUNTS.pattern), rand).map(

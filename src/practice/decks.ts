@@ -5,11 +5,26 @@
 import type { Grade } from '../srs/sm2';
 
 /** Shadowing decks, in display order. Labels live in vi.shadowing.topics. */
-export const SHADOWING_TOPICS = ['survival', 'progress', 'bug', 'schedule', 'request', 'meeting', 'tech', 'cushion'] as const;
+export const SHADOWING_TOPICS = ['survival', 'progress', 'bug', 'schedule', 'request', 'meeting', 'tech', 'cushion', 'qa'] as const;
 export type ShadowingTopic = (typeof SHADOWING_TOPICS)[number];
 
 /** Topics drawn for the "shadowing" part of the daily session (survival has its own slot). */
-export const DAILY_SHADOWING_TOPICS: readonly string[] = ['progress', 'bug', 'schedule', 'request', 'meeting', 'tech', 'cushion'];
+export const DAILY_SHADOWING_TOPICS: readonly string[] = ['progress', 'bug', 'schedule', 'request', 'meeting', 'tech', 'cushion', 'qa'];
+
+/** What the daily plan leans towards for each onboarding role (keys match ROLES in storage/prefs.ts). */
+export interface DailyFocus {
+  /** One of the daily shadowing slots comes from this topic. */
+  shadowingTopic?: string;
+  /** The scenario turn comes from this category. */
+  scenarioCategory?: string;
+}
+
+export const ROLE_FOCUS: Record<string, DailyFocus> = {
+  dev: { shadowingTopic: 'tech' },
+  brse: { shadowingTopic: 'meeting' },
+  tester: { shadowingTopic: 'qa', scenarioCategory: 'qa' },
+  interview: { scenarioCategory: 'interview' },
+};
 
 /** Interpreting topics, in display order. Labels live in vi.interpret.topics. */
 export const INTERPRET_TOPICS = ['meeting', 'schedule', 'bug', 'scope', 'cost', 'handover'] as const;
