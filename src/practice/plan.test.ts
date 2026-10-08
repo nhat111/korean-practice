@@ -95,3 +95,25 @@ describe('streak', () => {
     expect(streak({}, today)).toBe(0);
   });
 });
+
+describe('buildDailyPlan with a role focus', () => {
+  const content = {
+    shadowing: [sh('sh-01', 'progress'), sh('sh-02', 'bug'), sh('sh-03', 'request'), sh('qa-01', 'qa'), sh('sv-01', 'survival')],
+    patterns: [pattern('pt-01')],
+    scenarios: [scenario, { ...scenario, id: 'qa-001', category: 'qa' }],
+  };
+
+  it('takes one shadowing line from the focus topic and the scenario from the focus category', () => {
+    const plan = buildDailyPlan(content, {}, today, () => 0.5, 1, { shadowingTopic: 'qa', scenarioCategory: 'qa' });
+    const shadowing = plan.filter((s) => s.kind === 'shadowing').map((s) => s.id);
+    expect(shadowing).toHaveLength(3);
+    expect(shadowing).toContain('qa-01');
+    expect(new Set(shadowing).size).toBe(3);
+    expect(plan.find((s) => s.kind === 'scenario')).toMatchObject({ id: 'qa-001' });
+  });
+
+  it('falls back to all scenarios when the focus category is empty', () => {
+    const plan = buildDailyPlan(content, {}, today, () => 0.5, 1, { scenarioCategory: 'missing' });
+    expect(plan.find((s) => s.kind === 'scenario')).toBeDefined();
+  });
+});

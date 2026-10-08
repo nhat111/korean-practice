@@ -427,8 +427,8 @@ export const vi = {
     suggest: {
       dev: 'Shadowing câu kỹ thuật: transaction, index, review code…',
       brse: 'Phiên dịch nói Việt ↔ Hàn cho các tình huống họp, lịch, phạm vi',
-      tester: 'Hội thoại QA / Test: báo bug, kết quả test, UAT',
-      interview: 'Hội thoại phỏng vấn: giới thiệu bản thân, Java, Spring…',
+      tester: 'Hội thoại QA / Test: báo bug, retest, kết quả test, môi trường test',
+      interview: 'Hội thoại phỏng vấn: Dev (Java, Spring), BrSE và Tester',
     },
     installTitle: 'Cài KoDevTalk lên màn hình chính',
     installIos: 'Trên Safari: bấm nút Chia sẻ (ô vuông có mũi tên) → "Thêm vào MH chính". App mở toàn màn hình, dùng được khi không có mạng.',
@@ -506,6 +506,7 @@ export const vi = {
       meeting: 'Họp',
       tech: 'Kỹ thuật',
       cushion: 'Từ đệm lịch sự',
+      qa: 'Test & QA',
     } as Record<string, string>,
     dueOnly: (n: number) => `Đến hạn ôn (${n})`,
     level: (n: number) => `Cấp ${n}`,

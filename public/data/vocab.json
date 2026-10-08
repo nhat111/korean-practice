@@ -7790,6 +7790,304 @@
         "verb",
         "schedule"
       ]
+    },
+    {
+      "id": "t-teseuteu-hwangyeong",
+      "ko": "테스트 환경",
+      "vi": "môi trường test",
+      "type": "noun",
+      "collocation": "테스트 환경을 구축하다",
+      "example": {
+        "ko": "테스트 환경에서는 결제가 실제로 처리되지 않습니다.",
+        "vi": "Trên môi trường test, thanh toán không được xử lý thật.",
+        "grammar": [
+          {
+            "pattern": "N에서는",
+            "form": "테스트 환경에서는",
+            "meaningVi": "ở N thì (đối chiếu)"
+          }
+        ]
+      },
+      "tags": [
+        "test",
+        "infra"
+      ]
+    },
+    {
+      "id": "t-gidae-gyeolgwa",
+      "ko": "기대 결과",
+      "vi": "kết quả mong đợi (expected result)",
+      "type": "noun",
+      "collocation": "기대 결과와 다르다",
+      "example": {
+        "ko": "기대 결과와 실제 결과를 나눠서 적어 주세요.",
+        "vi": "Hãy ghi tách riêng kết quả mong đợi và kết quả thực tế.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "나눠서",
+            "meaningVi": "rồi (trình tự hành động)"
+          },
+          {
+            "pattern": "-아/어 주세요",
+            "form": "적어 주세요",
+            "meaningVi": "hãy … giúp"
+          }
+        ]
+      },
+      "tags": [
+        "test",
+        "bug"
+      ]
+    },
+    {
+      "id": "t-simgakdo",
+      "ko": "심각도",
+      "vi": "mức độ nghiêm trọng (severity)",
+      "pron": "[심각또]",
+      "type": "noun",
+      "collocation": "심각도를 높이다",
+      "example": {
+        "ko": "이 결함은 심각도가 높아서 먼저 수정해야 합니다.",
+        "vi": "Lỗi này mức độ nghiêm trọng cao nên phải sửa trước.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "높아서",
+            "meaningVi": "vì … nên"
+          },
+          {
+            "pattern": "-아/어야 하다",
+            "form": "수정해야 합니다",
+            "meaningVi": "phải …"
+          }
+        ]
+      },
+      "tags": [
+        "test",
+        "bug"
+      ]
+    },
+    {
+      "id": "t-uhoe-bangbeop",
+      "ko": "우회 방법",
+      "vi": "cách workaround, cách đi vòng",
+      "type": "noun",
+      "collocation": "우회 방법을 안내하다",
+      "example": {
+        "ko": "수정 전까지는 우회 방법을 사용자에게 안내하겠습니다.",
+        "vi": "Cho đến khi sửa xong, chúng tôi sẽ hướng dẫn người dùng cách workaround.",
+        "grammar": [
+          {
+            "pattern": "N 전까지",
+            "form": "수정 전까지는",
+            "meaningVi": "cho đến trước N"
+          }
+        ]
+      },
+      "tags": [
+        "test",
+        "incident"
+      ]
+    },
+    {
+      "id": "t-jaeteseuteu",
+      "ko": "재테스트",
+      "vi": "test lại (retest)",
+      "type": "noun",
+      "collocation": "재테스트를 진행하다",
+      "example": {
+        "ko": "수정 버전이 배포되면 재테스트를 진행하겠습니다.",
+        "vi": "Khi bản sửa được deploy, chúng tôi sẽ tiến hành test lại.",
+        "grammar": [
+          {
+            "pattern": "-(으)면",
+            "form": "배포되면",
+            "meaningVi": "khi/nếu …"
+          }
+        ]
+      },
+      "tags": [
+        "test"
+      ]
+    },
+    {
+      "id": "t-teseuteu-deiteo",
+      "ko": "테스트 데이터",
+      "vi": "dữ liệu test",
+      "type": "noun",
+      "collocation": "테스트 데이터를 준비하다",
+      "example": {
+        "ko": "개인정보를 마스킹한 테스트 데이터를 받을 수 있을까요?",
+        "vi": "Chúng tôi có thể nhận dữ liệu test đã che thông tin cá nhân không ạ?",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄴ N",
+            "form": "마스킹한",
+            "meaningVi": "N đã … (định ngữ quá khứ)"
+          },
+          {
+            "pattern": "-(으)ㄹ 수 있을까요?",
+            "form": "받을 수 있을까요",
+            "meaningVi": "có thể … được không ạ?"
+          }
+        ]
+      },
+      "tags": [
+        "test",
+        "db",
+        "request"
+      ]
+    },
+    {
+      "id": "t-gyeonggyegap",
+      "ko": "경계값",
+      "vi": "giá trị biên (boundary value)",
+      "pron": "[경계깝]",
+      "type": "noun",
+      "collocation": "경계값 분석",
+      "example": {
+        "ko": "최대 글자 수인 100자와 101자를 경계값으로 테스트했습니다.",
+        "vi": "Chúng tôi đã test giá trị biên với 100 ký tự (tối đa) và 101 ký tự.",
+        "grammar": [
+          {
+            "pattern": "N인 N",
+            "form": "글자 수인",
+            "meaningVi": "N là … (định ngữ với 이다)"
+          },
+          {
+            "pattern": "N(으)로",
+            "form": "경계값으로",
+            "meaningVi": "làm, với tư cách N"
+          }
+        ]
+      },
+      "tags": [
+        "test"
+      ]
+    },
+    {
+      "id": "t-jadonghwa-teseuteu",
+      "ko": "자동화 테스트",
+      "vi": "test tự động",
+      "type": "noun",
+      "collocation": "자동화 테스트를 돌리다",
+      "example": {
+        "ko": "매일 밤 자동화 테스트를 돌려서 결과를 메일로 받고 있습니다.",
+        "vi": "Mỗi đêm chúng tôi chạy test tự động và nhận kết quả qua email.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "돌려서",
+            "meaningVi": "rồi (trình tự)"
+          },
+          {
+            "pattern": "-고 있다",
+            "form": "받고 있습니다",
+            "meaningVi": "đang … (thói quen hiện tại)"
+          }
+        ]
+      },
+      "tags": [
+        "test",
+        "dev"
+      ]
+    },
+    {
+      "id": "t-tonggwahada",
+      "ko": "통과하다",
+      "vi": "pass, vượt qua (test)",
+      "type": "verb",
+      "collocation": "테스트를 통과하다",
+      "example": {
+        "ko": "모든 테스트 케이스를 통과해야 릴리스할 수 있습니다.",
+        "vi": "Phải pass tất cả test case thì mới release được.",
+        "grammar": [
+          {
+            "pattern": "-아/어야",
+            "form": "통과해야",
+            "meaningVi": "phải … thì mới"
+          },
+          {
+            "pattern": "-(으)ㄹ 수 있다",
+            "form": "릴리스할 수 있습니다",
+            "meaningVi": "có thể …"
+          }
+        ]
+      },
+      "tags": [
+        "test",
+        "verb"
+      ]
+    },
+    {
+      "id": "t-kkaejida",
+      "ko": "깨지다",
+      "vi": "(layout, chữ) bị vỡ, bị lỗi hiển thị",
+      "type": "verb",
+      "collocation": "화면이 깨지다",
+      "example": {
+        "ko": "모바일에서 표가 깨져서 보입니다.",
+        "vi": "Trên mobile, bảng bị vỡ layout khi hiển thị.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "깨져서",
+            "meaningVi": "trong trạng thái … (cách thức)"
+          }
+        ]
+      },
+      "tags": [
+        "test",
+        "ui",
+        "verb"
+      ]
+    },
+    {
+      "id": "t-gyeolham-gwalli",
+      "ko": "결함 관리",
+      "vi": "quản lý lỗi (defect management)",
+      "pron": "[결함 괄리]",
+      "type": "noun",
+      "collocation": "결함 관리 도구",
+      "example": {
+        "ko": "결함 관리는 지라에서 하고 있습니다.",
+        "vi": "Việc quản lý lỗi chúng tôi đang làm trên Jira.",
+        "grammar": [
+          {
+            "pattern": "-고 있다",
+            "form": "하고 있습니다",
+            "meaningVi": "đang …"
+          }
+        ]
+      },
+      "tags": [
+        "test",
+        "bug"
+      ]
+    },
+    {
+      "id": "t-teseuteu-gyejeong",
+      "ko": "테스트 계정",
+      "vi": "tài khoản test",
+      "type": "noun",
+      "collocation": "테스트 계정을 발급하다",
+      "example": {
+        "ko": "관리자 권한이 있는 테스트 계정을 발급해 주실 수 있을까요?",
+        "vi": "Anh có thể cấp giúp một tài khoản test có quyền quản trị không ạ?",
+        "grammar": [
+          {
+            "pattern": "-아/어 주실 수 있을까요?",
+            "form": "발급해 주실 수 있을까요",
+            "meaningVi": "anh/chị có thể … giúp được không ạ? (rất lịch sự)"
+          }
+        ]
+      },
+      "tags": [
+        "test",
+        "request",
+        "security"
+      ]
     }
   ]
 }

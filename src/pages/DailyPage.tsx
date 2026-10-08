@@ -11,6 +11,7 @@ import { ShadowingCard } from '../components/ShadowingCard';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
 import { numberQuestion } from '../practice/listening';
+import { ROLE_FOCUS } from '../practice/decks';
 import { buildDailyPlan, type DailyContent, type DailyStep } from '../practice/plan';
 import { todayKey } from '../srs/sm2';
 import { getPrefs } from '../storage/prefs';
@@ -52,10 +53,12 @@ export function DailyPage() {
 }
 
 function DailySession({ content }: { content: DailyContent }) {
-  const scale = (getPrefs().profile?.minutes ?? 5) / 5;
+  const profile = getPrefs().profile;
+  const scale = (profile?.minutes ?? 5) / 5;
+  const focus = profile ? ROLE_FOCUS[profile.role] : undefined;
   const [round, setRound] = useState(0);
   // The plan is fixed for the session; "again" builds a new one.
-  const [plan, setPlan] = useState(() => buildDailyPlan(content, getProgressSnapshot().srs, todayKey(), Math.random, scale));
+  const [plan, setPlan] = useState(() => buildDailyPlan(content, getProgressSnapshot().srs, todayKey(), Math.random, scale, focus));
   const [index, setIndex] = useState(0);
   const [rated, setRated] = useState(false);
 
@@ -65,7 +68,7 @@ function DailySession({ content }: { content: DailyContent }) {
   }
 
   function again() {
-    setPlan(buildDailyPlan(content, getProgressSnapshot().srs, todayKey(), Math.random, scale));
+    setPlan(buildDailyPlan(content, getProgressSnapshot().srs, todayKey(), Math.random, scale, focus));
     setIndex(0);
     setRated(false);
     setRound((r) => r + 1);
