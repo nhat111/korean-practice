@@ -57,6 +57,10 @@ export function ScenariosPage() {
           <h2>{vi.nav.emails}</h2>
           <p className="muted small">{vi.home.sections.emails}</p>
         </Link>
+        <Link to="/messages" className="card card--link stack-xs">
+          <h2>{vi.messages.title}</h2>
+          <p className="muted small">{vi.messages.entry}</p>
+        </Link>
       </div>
       <ContentGate state={state}>
         {(items) => (items.length === 0 ? <p className="muted">{vi.common.empty}</p> : <ScenarioList items={items} />)}

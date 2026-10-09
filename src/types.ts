@@ -226,3 +226,64 @@ export interface InterpretItem {
   /** Usage or grammar note (Vietnamese). */
   note?: string;
 }
+
+// ---------- Chat messages (Slack / KakaoWork) ----------
+
+export interface MessagePhrase {
+  /** Exact substring of the model message. */
+  ko: string;
+  vi: string;
+}
+
+export interface MessageExercise {
+  /** Stable id ("msg-"); SRS progress is keyed by it. Never rename. */
+  id: string;
+  /** One of MESSAGE_TOPICS in practice/decks.ts (labels in vi.messages.topics). */
+  topic: string;
+  /** Who reads it, in Vietnamese (e.g. "김 과장님 – PM phía khách"). */
+  to: string;
+  /** What the learner has to say (Vietnamese). */
+  situation: string;
+  /** A natural message for the situation. */
+  model: string;
+  /** 2-4 phrases from `model` worth reusing. */
+  phrases: MessagePhrase[];
+  /** Politeness or usage note (Vietnamese). */
+  note?: string;
+}
+
+// ---------- Meeting listening (several speakers) ----------
+
+export interface MeetingSpeaker {
+  /** Short id used by lines, e.g. "kim". */
+  id: string;
+  /** Shown after the transcript is revealed (Vietnamese label). */
+  name: string;
+  voice: 'male' | 'female';
+}
+
+export interface MeetingLine {
+  speaker: string;
+  ko: string;
+  vi: string;
+}
+
+export interface MeetingQuestion {
+  /** Question in Vietnamese. */
+  q: string;
+  /** 2-4 Vietnamese choices. */
+  choices: string[];
+  answer: number;
+}
+
+export interface MeetingItem {
+  /** Stable id ("lm-"); SRS progress is keyed by it. Never rename. */
+  id: string;
+  /** Title in Vietnamese. */
+  title: string;
+  /** Short setup in Vietnamese (who meets and why). */
+  context: string;
+  speakers: MeetingSpeaker[];
+  lines: MeetingLine[];
+  questions: MeetingQuestion[];
+}

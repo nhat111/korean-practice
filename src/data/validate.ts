@@ -8,6 +8,8 @@ import type {
   EmailCorrection,
   EmailExercise,
   InterpretItem,
+  MeetingItem,
+  MessageExercise,
   NumberItem,
   NumberKind,
   PatternItem,
@@ -258,6 +260,89 @@ export function validateInterpret(v: unknown): string[] {
   return errors;
 }
 
+export function validateMessage(v: unknown): string[] {
+  const errors: string[] = [];
+  if (!isObj(v)) return ['message: phải là object'];
+  const path = `message(${String(v.id)})`;
+  requireStrings(v, ['id', 'topic', 'to', 'situation', 'model'], path, errors);
+  if (v.note !== undefined && !isNonEmptyString(v.note)) errors.push(`${path}.note: phải là chuỗi không rỗng`);
+  const phrases = v.phrases;
+  if (!Array.isArray(phrases) || phrases.length < 1 || phrases.length > 4) {
+    errors.push(`${path}.phrases: cần 1-4 cụm`);
+  } else {
+    phrases.forEach((p: unknown, i) => {
+      if (!isObj(p)) {
+        errors.push(`${path}.phrases[${i}]: phải là object`);
+        return;
+      }
+      requireStrings(p, ['ko', 'vi'], `${path}.phrases[${i}]`, errors);
+      if (typeof p.ko === 'string' && typeof v.model === 'string' && !v.model.includes(p.ko)) {
+        errors.push(`${path}.phrases[${i}].ko: phải nằm nguyên văn trong model`);
+      }
+    });
+  }
+  return errors;
+}
+
+const VOICES = ['male', 'female'];
+
+export function validateMeeting(v: unknown): string[] {
+  const errors: string[] = [];
+  if (!isObj(v)) return ['meeting: phải là object'];
+  const path = `meeting(${String(v.id)})`;
+  requireStrings(v, ['id', 'title', 'context'], path, errors);
+  const ids = new Set<string>();
+  if (!Array.isArray(v.speakers) || v.speakers.length < 2 || v.speakers.length > 3) {
+    errors.push(`${path}.speakers: cần 2-3 người`);
+  } else {
+    v.speakers.forEach((s: unknown, i) => {
+      if (!isObj(s)) {
+        errors.push(`${path}.speakers[${i}]: phải là object`);
+        return;
+      }
+      requireStrings(s, ['id', 'name'], `${path}.speakers[${i}]`, errors);
+      if (!VOICES.includes(s.voice as string)) errors.push(`${path}.speakers[${i}].voice: male hoặc female`);
+      if (typeof s.id === 'string') ids.add(s.id);
+    });
+  }
+  if (!Array.isArray(v.lines) || v.lines.length < 3) {
+    errors.push(`${path}.lines: cần ít nhất 3 câu`);
+  } else {
+    v.lines.forEach((l: unknown, i) => {
+      if (!isObj(l)) {
+        errors.push(`${path}.lines[${i}]: phải là object`);
+        return;
+      }
+      requireStrings(l, ['speaker', 'ko', 'vi'], `${path}.lines[${i}]`, errors);
+      if (!ids.has(l.speaker as string)) errors.push(`${path}.lines[${i}].speaker: không có trong speakers`);
+    });
+  }
+  if (!Array.isArray(v.questions) || v.questions.length < 1) {
+    errors.push(`${path}.questions: cần ít nhất 1 câu hỏi`);
+  } else {
+    v.questions.forEach((q: unknown, i) => {
+      const qp = `${path}.questions[${i}]`;
+      if (!isObj(q)) {
+        errors.push(`${qp}: phải là object`);
+        return;
+      }
+      requireStrings(q, ['q'], qp, errors);
+      const choices = q.choices;
+      if (!isStringArray(choices) || choices.length < 2 || choices.length > 4 || !choices.every(isNonEmptyString)) {
+        errors.push(`${qp}.choices: cần 2-4 chuỗi không rỗng`);
+      } else if (
+        typeof q.answer !== 'number' ||
+        !Number.isInteger(q.answer) ||
+        q.answer < 0 ||
+        q.answer >= choices.length
+      ) {
+        errors.push(`${qp}.answer: phải là chỉ số trong choices`);
+      }
+    });
+  }
+  return errors;
+}
+
 export function validateSong(v: unknown): string[] {
   const errors: string[] = [];
   if (!isObj(v)) return ['song: phải là object'];
@@ -357,4 +442,12 @@ export function parseNumbers(data: unknown): ParseResult<NumberItem> {
 
 export function parseInterpret(data: unknown): ParseResult<InterpretItem> {
   return parseContentFile<InterpretItem>(data, validateInterpret);
+}
+
+export function parseMessages(data: unknown): ParseResult<MessageExercise> {
+  return parseContentFile<MessageExercise>(data, validateMessage);
+}
+
+export function parseMeetings(data: unknown): ParseResult<MeetingItem> {
+  return parseContentFile<MeetingItem>(data, validateMeeting);
 }

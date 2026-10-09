@@ -11,6 +11,10 @@ export function EmailsPage() {
   return (
     <div className="stack">
       <h1>{vi.emails.title}</h1>
+      <Link to="/messages" className="card card--link stack-xs">
+        <h2>{vi.messages.title}</h2>
+        <p className="muted small">{vi.messages.entry}</p>
+      </Link>
       <ContentGate state={state}>
         {(items) =>
           items.length === 0 ? (

@@ -84,6 +84,17 @@ export function speakKorean(text: string, rate?: number, voiceURI?: string): Pro
   return speakDevice(text, r, voiceURI ?? prefs.voiceURI);
 }
 
+/**
+ * Like speakKorean, but with a fixed natural voice (a meeting with several
+ * speakers). Falls back to the device voice when the file is missing.
+ */
+export function speakKoreanAs(text: string, voice: NaturalVoice, rate?: number): Promise<void> {
+  const prefs = getPrefs();
+  const r = rate ?? prefs.speechRate;
+  if (hasAudio(voice, text)) return playNatural(voice, text, r).catch(() => speakDevice(text, r, prefs.voiceURI));
+  return speakDevice(text, r, prefs.voiceURI);
+}
+
 function speakDevice(text: string, rate: number, voiceURI: string): Promise<void> {
   if (!isSpeechSupported()) return Promise.resolve();
   const synth = window.speechSynthesis;

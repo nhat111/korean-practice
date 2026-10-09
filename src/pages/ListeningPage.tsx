@@ -4,6 +4,7 @@ import { ComparisonView } from '../components/ComparisonView';
 import { ListenChoice, ListenReveal } from '../components/ListenChoice';
 import { saveListenResult } from '../practice/listenResult';
 import { ListenPlayer as Player } from '../components/ListenPlayer';
+import { MeetingListen } from '../components/MeetingListen';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
 import {
@@ -20,8 +21,8 @@ import { stopSpeaking } from '../speech';
 import { compareAnswer, PASS_SCORE, type Comparison } from '../speaking/compare';
 import type { NumberItem } from '../types';
 
-type Mode = 'meaning' | 'dictation' | 'numbers';
-const MODES: Mode[] = ['meaning', 'dictation', 'numbers'];
+type Mode = 'meaning' | 'dictation' | 'numbers' | 'meeting';
+const MODES: Mode[] = ['meaning', 'dictation', 'numbers', 'meeting'];
 const SESSION = 10;
 
 export function ListeningPage() {
@@ -30,6 +31,7 @@ export function ListeningPage() {
   const shadowing = useContent('shadowing');
   const scenarios = useContent('scenarios');
   const numbers = useContent('numbers');
+  const meetings = useContent('meetings');
   const states = [vocab, shadowing, scenarios, numbers];
 
   return (
@@ -50,7 +52,15 @@ export function ListeningPage() {
           </button>
         ))}
       </div>
-      {vocab.status === 'ready' &&
+      {mode === 'meeting' ? (
+        meetings.status === 'ready' ? (
+          <MeetingListen items={meetings.items} />
+        ) : meetings.status === 'error' ? (
+          <p className="error">{vi.common.loadError}</p>
+        ) : (
+          <p className="muted">{vi.common.loading}</p>
+        )
+      ) : vocab.status === 'ready' &&
       shadowing.status === 'ready' &&
       scenarios.status === 'ready' &&
       numbers.status === 'ready' ? (
@@ -71,14 +81,14 @@ export function ListeningPage() {
 
 type Question = { kind: 'choice'; q: ChoiceQuestion } | { kind: 'dictation'; line: ListenLine };
 
-function buildQuestions(mode: Mode, content: ListenContent, numbers: NumberItem[]): Question[] {
+function buildQuestions(mode: Exclude<Mode, 'meeting'>, content: ListenContent, numbers: NumberItem[]): Question[] {
   if (mode === 'numbers') return sample(numbers, SESSION).map((n) => ({ kind: 'choice', q: numberQuestion(n) }));
   if (mode === 'dictation') return sample(dictationPool(content), SESSION).map((line) => ({ kind: 'dictation', line }));
   const pool = meaningPool(content);
   return sample(pool, SESSION).map((line) => ({ kind: 'choice', q: meaningQuestion(pool, line) }));
 }
 
-function Session({ mode, content, numbers }: { mode: Mode; content: ListenContent; numbers: NumberItem[] }) {
+function Session({ mode, content, numbers }: { mode: Exclude<Mode, 'meeting'>; content: ListenContent; numbers: NumberItem[] }) {
   const [questions, setQuestions] = useState(() => buildQuestions(mode, content, numbers));
   const [index, setIndex] = useState(0);
   const [correct, setCorrect] = useState(0);

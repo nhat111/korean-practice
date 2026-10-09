@@ -8,6 +8,8 @@ import { SCENARIO_CATEGORIES } from './scenarioFilter';
 import {
   parseEmails,
   parseInterpret,
+  parseMeetings,
+  parseMessages,
   parseNumbers,
   parsePatterns,
   parseScenarios,
@@ -17,7 +19,7 @@ import {
   type ParseResult,
 } from './validate';
 import { allFills } from '../patterns/fill';
-import { INTERPRET_TOPICS, SHADOWING_TOPICS } from '../practice/decks';
+import { INTERPRET_TOPICS, MESSAGE_TOPICS, SHADOWING_TOPICS } from '../practice/decks';
 
 function load(name: string): unknown {
   return JSON.parse(readFileSync(resolve(process.cwd(), 'public/data', name), 'utf8'));
@@ -32,6 +34,8 @@ const files: [string, (data: unknown) => ParseResult<{ id: string }>][] = [
   ['patterns.json', parsePatterns],
   ['numbers.json', parseNumbers],
   ['interpret.json', parseInterpret],
+  ['messages.json', parseMessages],
+  ['meetings.json', parseMeetings],
 ];
 
 describe.each(files)('%s', (name, parse) => {
@@ -101,5 +105,24 @@ describe('interpret.json', () => {
     const { items } = parseInterpret(load('interpret.json'));
     const unknown = items.filter((s) => !(INTERPRET_TOPICS as readonly string[]).includes(s.topic));
     expect(unknown.map((s) => `${s.id}: ${s.topic}`)).toEqual([]);
+  });
+});
+
+describe('messages.json', () => {
+  it('uses only the known topics (labels live in vi.messages.topics)', () => {
+    const { items } = parseMessages(load('messages.json'));
+    const unknown = items.filter((m) => !(MESSAGE_TOPICS as readonly string[]).includes(m.topic));
+    expect(unknown.map((m) => m.id)).toEqual([]);
+  });
+});
+
+describe('meetings.json', () => {
+  it('lets every speaker talk and varies the answer position', () => {
+    const { items } = parseMeetings(load('meetings.json'));
+    for (const m of items) {
+      for (const s of m.speakers) expect(m.lines.some((l) => l.speaker === s.id), `${m.id}: ${s.id}`).toBe(true);
+    }
+    const answers = new Set(items.flatMap((m) => m.questions.map((q) => q.answer)));
+    expect(answers.size).toBeGreaterThan(1);
   });
 });

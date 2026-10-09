@@ -10,7 +10,7 @@ import { vi } from '../i18n/vi';
 const NAV: { to: string; label: string; icon: IconName; also: string[] }[] = [
   { to: '/', label: vi.nav.home, icon: 'home', also: ['/daily'] },
   { to: '/speaking', label: vi.nav.speaking, icon: 'mic', also: ['/shadowing', '/patterns', '/listening', '/interpret'] },
-  { to: '/scenarios', label: vi.nav.scenarios, icon: 'chat', also: ['/custom', '/emails', '/ai-roleplay'] },
+  { to: '/scenarios', label: vi.nav.scenarios, icon: 'chat', also: ['/custom', '/emails', '/messages', '/ai-roleplay'] },
   { to: '/flashcards', label: vi.nav.flashcards, icon: 'cards', also: ['/songs'] },
   { to: '/progress', label: vi.nav.progress, icon: 'chart', also: ['/weak'] },
 ];

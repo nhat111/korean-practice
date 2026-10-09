@@ -1,0 +1,745 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "lm-standup-delay",
+      "title": "Daily: chức năng bị trễ",
+      "context": "Daily sáng thứ Hai giữa PM khách và BrSE.",
+      "speakers": [
+        {
+          "id": "kim",
+          "name": "김 과장 (PM phía khách)",
+          "voice": "male"
+        },
+        {
+          "id": "huong",
+          "name": "흐엉 (BrSE phía Việt Nam)",
+          "voice": "female"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "kim",
+          "ko": "흐엉 씨, 결제 기능은 어떻게 되고 있어요?",
+          "vi": "Hương, chức năng thanh toán đang thế nào rồi?"
+        },
+        {
+          "speaker": "huong",
+          "ko": "네, 개발은 거의 끝났는데 외부 PG사 테스트 계정이 아직 안 나와서 연동 테스트를 못 하고 있습니다.",
+          "vi": "Dạ, dev gần xong rồi nhưng tài khoản test của bên cổng thanh toán chưa có nên chưa test tích hợp được."
+        },
+        {
+          "speaker": "kim",
+          "ko": "아, 그거 제가 오늘 PG사에 다시 요청할게요.",
+          "vi": "À, cái đó hôm nay tôi sẽ yêu cầu lại bên cổng thanh toán."
+        },
+        {
+          "speaker": "huong",
+          "ko": "감사합니다. 계정을 받으면 이틀 안에 테스트를 끝낼 수 있습니다.",
+          "vi": "Cảm ơn anh. Nhận được tài khoản thì trong 2 ngày chúng tôi test xong."
+        },
+        {
+          "speaker": "kim",
+          "ko": "그럼 목요일 오전에 다시 확인합시다.",
+          "vi": "Vậy sáng thứ Năm kiểm tra lại nhé."
+        }
+      ],
+      "questions": [
+        {
+          "q": "Vì sao chưa test tích hợp được?",
+          "choices": [
+            "Chưa có tài khoản test của cổng thanh toán",
+            "Server dev bị lỗi",
+            "Spec chưa chốt"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Ai sẽ liên hệ bên cổng thanh toán?",
+          "choices": [
+            "Hương (BrSE)",
+            "Kim (PM khách)",
+            "Team dev Việt Nam"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Khi nào kiểm tra lại?",
+          "choices": [
+            "Chiều thứ Tư",
+            "Sáng thứ Năm",
+            "Thứ Sáu"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "lm-spec-change",
+      "title": "Khách đổi yêu cầu màn hình tìm kiếm",
+      "context": "Họp ngắn về thay đổi spec.",
+      "speakers": [
+        {
+          "id": "lee",
+          "name": "이 대리 (phụ trách phía khách)",
+          "voice": "female"
+        },
+        {
+          "id": "huong",
+          "name": "흐엉 (BrSE phía Việt Nam)",
+          "voice": "female"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "lee",
+          "ko": "검색 화면에 날짜 필터를 하나 추가하고 싶은데요, 가능할까요?",
+          "vi": "Tôi muốn thêm một bộ lọc ngày vào màn hình tìm kiếm, được không?"
+        },
+        {
+          "speaker": "huong",
+          "ko": "네, 가능합니다. 시작일과 종료일을 둘 다 선택하는 방식일까요?",
+          "vi": "Dạ được ạ. Là kiểu chọn cả ngày bắt đầu và ngày kết thúc phải không ạ?"
+        },
+        {
+          "speaker": "lee",
+          "ko": "네, 맞아요. 기본값은 최근 한 달로 해 주세요.",
+          "vi": "Đúng rồi. Giá trị mặc định để một tháng gần nhất nhé."
+        },
+        {
+          "speaker": "huong",
+          "ko": "알겠습니다. 공수는 하루 정도 추가될 것 같습니다. 이번 스프린트에 넣을까요?",
+          "vi": "Vâng. Công số chắc tăng khoảng 1 ngày. Có đưa vào sprint này không ạ?"
+        },
+        {
+          "speaker": "lee",
+          "ko": "아니요, 급하지 않으니까 다음 스프린트에 넣어 주세요.",
+          "vi": "Không, không gấp nên đưa vào sprint sau giúp tôi."
+        }
+      ],
+      "questions": [
+        {
+          "q": "Khách muốn thêm gì?",
+          "choices": [
+            "Nút xuất Excel",
+            "Bộ lọc theo ngày",
+            "Phân trang"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Giá trị mặc định là gì?",
+          "choices": [
+            "Một tuần gần nhất",
+            "Hôm nay",
+            "Một tháng gần nhất"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "Thay đổi được đưa vào khi nào?",
+          "choices": [
+            "Sprint sau",
+            "Sprint này",
+            "Bản hotfix tuần này"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "lm-incident-call",
+      "title": "Gọi khẩn: lỗi đăng nhập trên production",
+      "context": "Cuộc gọi khẩn khi người dùng không đăng nhập được.",
+      "speakers": [
+        {
+          "id": "park",
+          "name": "박 팀장 (trưởng nhóm phía khách)",
+          "voice": "male"
+        },
+        {
+          "id": "minh",
+          "name": "민 (Dev lead phía Việt Nam)",
+          "voice": "male"
+        },
+        {
+          "id": "huong",
+          "name": "흐엉 (BrSE phía Việt Nam)",
+          "voice": "female"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "park",
+          "ko": "지금 운영에서 로그인이 안 된다는 문의가 계속 들어오고 있어요.",
+          "vi": "Hiện đang liên tục có phản ánh không đăng nhập được trên production."
+        },
+        {
+          "speaker": "minh",
+          "ko": "확인했습니다. 오늘 오전에 바꾼 인증 서버 설정 때문인 것 같습니다.",
+          "vi": "Tôi đã kiểm tra. Có vẻ do cấu hình server xác thực đổi sáng nay."
+        },
+        {
+          "speaker": "park",
+          "ko": "복구는 얼마나 걸려요?",
+          "vi": "Khôi phục mất bao lâu?"
+        },
+        {
+          "speaker": "minh",
+          "ko": "설정을 이전 상태로 되돌리면 10분 안에 복구됩니다.",
+          "vi": "Nếu trả cấu hình về như cũ thì trong 10 phút sẽ khôi phục được."
+        },
+        {
+          "speaker": "park",
+          "ko": "그럼 바로 되돌려 주세요. 원인 보고서는 내일까지 부탁해요.",
+          "vi": "Vậy trả lại ngay đi. Báo cáo nguyên nhân thì nhờ gửi trước ngày mai."
+        },
+        {
+          "speaker": "huong",
+          "ko": "네, 복구되면 바로 공지하고, 보고서는 내일 오전까지 보내 드리겠습니다.",
+          "vi": "Dạ, khôi phục xong tôi sẽ thông báo ngay, báo cáo sẽ gửi trước sáng mai."
+        }
+      ],
+      "questions": [
+        {
+          "q": "Nguyên nhân có thể là gì?",
+          "choices": [
+            "Database bị đầy",
+            "Cấu hình server xác thực đổi sáng nay",
+            "Deploy code mới tối qua"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Khôi phục mất bao lâu?",
+          "choices": [
+            "Khoảng 1 tiếng",
+            "Trong 10 phút",
+            "Trong hôm nay"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Báo cáo nguyên nhân gửi khi nào?",
+          "choices": [
+            "Trước sáng mai",
+            "Ngay chiều nay",
+            "Cuối tuần"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "lm-release-plan",
+      "title": "Chốt lịch release",
+      "context": "Họp chốt ngày release và giai đoạn UAT.",
+      "speakers": [
+        {
+          "id": "kim",
+          "name": "김 과장 (PM phía khách)",
+          "voice": "male"
+        },
+        {
+          "id": "lee",
+          "name": "이 대리 (phụ trách phía khách)",
+          "voice": "female"
+        },
+        {
+          "id": "huong",
+          "name": "흐엉 (BrSE phía Việt Nam)",
+          "voice": "female"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "kim",
+          "ko": "릴리스는 예정대로 15일로 갈 수 있을까요?",
+          "vi": "Release có giữ được ngày 15 như dự kiến không?"
+        },
+        {
+          "speaker": "huong",
+          "ko": "네, 개발은 10일에 끝나고, 11일부터 14일까지 UAT를 진행하면 가능합니다.",
+          "vi": "Dạ, dev xong ngày 10, nếu UAT từ ngày 11 đến 14 thì được ạ."
+        },
+        {
+          "speaker": "lee",
+          "ko": "UAT는 저희 쪽 현업 담당자 세 명이 참여할 거예요.",
+          "vi": "UAT thì phía chúng tôi có 3 người phụ trách nghiệp vụ tham gia."
+        },
+        {
+          "speaker": "kim",
+          "ko": "UAT에서 큰 문제가 나오면 릴리스를 일주일 미루는 걸로 하죠.",
+          "vi": "Nếu UAT phát hiện vấn đề lớn thì dời release 1 tuần nhé."
+        },
+        {
+          "speaker": "huong",
+          "ko": "알겠습니다. 오늘 회의 내용은 회의록으로 정리해서 공유드리겠습니다.",
+          "vi": "Vâng. Nội dung họp hôm nay tôi sẽ tổng hợp thành biên bản và chia sẻ."
+        }
+      ],
+      "questions": [
+        {
+          "q": "Ngày release dự kiến?",
+          "choices": [
+            "Ngày 10",
+            "Ngày 14",
+            "Ngày 15"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "Bao nhiêu người phía khách tham gia UAT?",
+          "choices": [
+            "2 người",
+            "3 người",
+            "5 người"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Nếu UAT có vấn đề lớn thì sao?",
+          "choices": [
+            "Release vẫn giữ nguyên",
+            "Dời release 1 tuần",
+            "Hủy UAT"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "lm-estimate",
+      "title": "Hỏi công số tính năng mới",
+      "context": "Khách hỏi ước lượng cho chức năng thông báo push.",
+      "speakers": [
+        {
+          "id": "park",
+          "name": "박 팀장 (trưởng nhóm phía khách)",
+          "voice": "male"
+        },
+        {
+          "id": "minh",
+          "name": "민 (Dev lead phía Việt Nam)",
+          "voice": "male"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "park",
+          "ko": "푸시 알림 기능을 추가하면 공수가 어느 정도 필요할까요?",
+          "vi": "Nếu thêm chức năng thông báo push thì cần bao nhiêu công?"
+        },
+        {
+          "speaker": "minh",
+          "ko": "안드로이드와 iOS 둘 다 하면 약 10인일 정도 예상됩니다.",
+          "vi": "Nếu làm cả Android và iOS thì dự kiến khoảng 10 ngày công."
+        },
+        {
+          "speaker": "park",
+          "ko": "생각보다 많네요. 안드로이드만 먼저 하면요?",
+          "vi": "Nhiều hơn tôi nghĩ. Nếu làm Android trước thôi thì sao?"
+        },
+        {
+          "speaker": "minh",
+          "ko": "안드로이드만 하면 6인일 정도입니다. 서버 쪽 작업이 공통이라서 절반보다는 조금 많습니다.",
+          "vi": "Chỉ Android thì khoảng 6 ngày công. Vì phần server dùng chung nên hơi nhiều hơn một nửa."
+        },
+        {
+          "speaker": "park",
+          "ko": "좋아요. 안드로이드 먼저 진행하는 걸로 견적서 보내 주세요.",
+          "vi": "Được. Gửi tôi báo giá theo phương án làm Android trước nhé."
+        }
+      ],
+      "questions": [
+        {
+          "q": "Làm cả hai nền tảng mất bao nhiêu công?",
+          "choices": [
+            "6 ngày công",
+            "8 ngày công",
+            "10 ngày công"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "Vì sao chỉ Android vẫn hơn một nửa?",
+          "choices": [
+            "Phần server dùng chung",
+            "Android khó hơn iOS",
+            "Phải test nhiều thiết bị"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Khách quyết định thế nào?",
+          "choices": [
+            "Làm cả hai cùng lúc",
+            "Làm Android trước, gửi báo giá",
+            "Hoãn chức năng push"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "lm-code-review",
+      "title": "Review code với dev phía khách",
+      "context": "Dev phía khách góp ý PR.",
+      "speakers": [
+        {
+          "id": "lee",
+          "name": "이 대리 (phụ trách phía khách)",
+          "voice": "female"
+        },
+        {
+          "id": "minh",
+          "name": "민 (Dev lead phía Việt Nam)",
+          "voice": "male"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "lee",
+          "ko": "PR 봤는데요, 주문 조회 쿼리에서 인덱스를 안 타는 것 같아요.",
+          "vi": "Tôi xem PR rồi, query tra cứu đơn hàng có vẻ không dùng index."
+        },
+        {
+          "speaker": "minh",
+          "ko": "아, 날짜 컬럼에 함수를 써서 그런 것 같습니다. 조건을 범위 검색으로 바꾸겠습니다.",
+          "vi": "À, chắc do dùng hàm trên cột ngày. Tôi sẽ đổi điều kiện thành tìm theo khoảng."
+        },
+        {
+          "speaker": "lee",
+          "ko": "네, 그리고 예외 처리할 때 로그를 좀 더 자세히 남겨 주세요.",
+          "vi": "Vâng, và khi xử lý exception thì ghi log chi tiết hơn giúp tôi."
+        },
+        {
+          "speaker": "minh",
+          "ko": "알겠습니다. 오늘 오후까지 수정해서 다시 리뷰 요청드리겠습니다.",
+          "vi": "Vâng. Trước chiều nay tôi sửa và gửi yêu cầu review lại."
+        }
+      ],
+      "questions": [
+        {
+          "q": "Vấn đề của query là gì?",
+          "choices": [
+            "Không dùng được index",
+            "Thiếu điều kiện WHERE",
+            "Join sai bảng"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Góp ý thứ hai là gì?",
+          "choices": [
+            "Đổi tên biến",
+            "Ghi log chi tiết hơn khi có exception",
+            "Thêm unit test"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Khi nào dev gửi review lại?",
+          "choices": [
+            "Sáng mai",
+            "Cuối tuần",
+            "Chiều nay"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "lm-handover",
+      "title": "Bàn giao vận hành",
+      "context": "Họp chuẩn bị bàn giao sang team vận hành của khách.",
+      "speakers": [
+        {
+          "id": "kim",
+          "name": "김 과장 (PM phía khách)",
+          "voice": "male"
+        },
+        {
+          "id": "huong",
+          "name": "흐엉 (BrSE phía Việt Nam)",
+          "voice": "female"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "kim",
+          "ko": "다음 달부터 운영은 저희 운영팀이 맡게 됩니다. 인수인계는 어떻게 진행할까요?",
+          "vi": "Từ tháng sau team vận hành của chúng tôi sẽ đảm nhận. Bàn giao tiến hành thế nào?"
+        },
+        {
+          "speaker": "huong",
+          "ko": "운영 매뉴얼과 장애 대응 가이드를 이번 주까지 작성하겠습니다.",
+          "vi": "Chúng tôi sẽ viết sổ tay vận hành và hướng dẫn xử lý sự cố trong tuần này."
+        },
+        {
+          "speaker": "huong",
+          "ko": "그리고 다음 주에 두 번 정도 온라인 교육을 진행하면 어떨까요?",
+          "vi": "Và tuần sau tổ chức khoảng 2 buổi đào tạo online thì sao ạ?"
+        },
+        {
+          "speaker": "kim",
+          "ko": "좋습니다. 교육은 녹화해서 나중에 신입도 볼 수 있게 해 주세요.",
+          "vi": "Tốt. Buổi đào tạo thì ghi hình lại để sau này người mới cũng xem được."
+        },
+        {
+          "speaker": "huong",
+          "ko": "네, 녹화본과 자료는 공유 폴더에 올려 두겠습니다.",
+          "vi": "Dạ, bản ghi hình và tài liệu tôi sẽ đưa lên thư mục chung."
+        }
+      ],
+      "questions": [
+        {
+          "q": "Tài liệu nào sẽ viết trong tuần này?",
+          "choices": [
+            "Sổ tay vận hành và hướng dẫn xử lý sự cố",
+            "Spec chức năng mới",
+            "Báo giá bảo trì"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Đào tạo được tổ chức thế nào?",
+          "choices": [
+            "1 buổi trực tiếp",
+            "Khoảng 2 buổi online tuần sau",
+            "Hàng tuần trong 1 tháng"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Khách yêu cầu thêm gì?",
+          "choices": [
+            "Dịch tài liệu sang tiếng Anh",
+            "Ghi hình buổi đào tạo",
+            "Đào tạo tại văn phòng khách"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "lm-test-result",
+      "title": "Báo cáo kết quả test",
+      "context": "QA lead báo cáo kết quả test trước UAT.",
+      "speakers": [
+        {
+          "id": "park",
+          "name": "박 팀장 (trưởng nhóm phía khách)",
+          "voice": "male"
+        },
+        {
+          "id": "huong",
+          "name": "흐엉 (BrSE phía Việt Nam)",
+          "voice": "female"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "huong",
+          "ko": "통합 테스트 결과 공유드리겠습니다. 전체 케이스 250개 중 241개가 통과했습니다.",
+          "vi": "Tôi xin chia sẻ kết quả test tích hợp. Trong 250 case thì 241 case đã pass."
+        },
+        {
+          "speaker": "park",
+          "ko": "나머지 9개는 어떤 문제예요?",
+          "vi": "9 case còn lại là vấn đề gì?"
+        },
+        {
+          "speaker": "huong",
+          "ko": "대부분 화면 표시 문제이고, 한 건만 데이터 저장 오류입니다. 저장 오류는 내일까지 수정됩니다.",
+          "vi": "Phần lớn là lỗi hiển thị, chỉ có 1 lỗi lưu dữ liệu. Lỗi lưu sẽ được sửa trước ngày mai."
+        },
+        {
+          "speaker": "park",
+          "ko": "저장 오류는 꼭 UAT 전에 고쳐 주세요. 표시 문제는 UAT 기간에 같이 고쳐도 됩니다.",
+          "vi": "Lỗi lưu thì nhất định sửa trước UAT. Lỗi hiển thị thì sửa trong lúc UAT cũng được."
+        }
+      ],
+      "questions": [
+        {
+          "q": "Bao nhiêu case đã pass?",
+          "choices": [
+            "241",
+            "250",
+            "209"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Có bao nhiêu lỗi lưu dữ liệu?",
+          "choices": [
+            "Không có",
+            "1 lỗi",
+            "9 lỗi"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Lỗi hiển thị xử lý khi nào?",
+          "choices": [
+            "Trước UAT",
+            "Sau release",
+            "Có thể sửa trong thời gian UAT"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "lm-cost-overrun",
+      "title": "Phát sinh chi phí",
+      "context": "Bàn về việc phạm vi tăng làm vượt công số.",
+      "speakers": [
+        {
+          "id": "kim",
+          "name": "김 과장 (PM phía khách)",
+          "voice": "male"
+        },
+        {
+          "id": "park",
+          "name": "박 팀장 (trưởng nhóm phía khách)",
+          "voice": "male"
+        },
+        {
+          "id": "huong",
+          "name": "흐엉 (BrSE phía Việt Nam)",
+          "voice": "female"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "huong",
+          "ko": "요구사항이 추가되면서 전체 공수가 처음 견적보다 15인일 정도 늘어났습니다.",
+          "vi": "Do yêu cầu được thêm vào nên tổng công số tăng khoảng 15 ngày công so với báo giá ban đầu."
+        },
+        {
+          "speaker": "kim",
+          "ko": "15인일이면 꽤 크네요. 추가 비용이 발생한다는 뜻이죠?",
+          "vi": "15 ngày công là khá lớn. Nghĩa là phát sinh chi phí thêm phải không?"
+        },
+        {
+          "speaker": "huong",
+          "ko": "네, 다만 우선순위가 낮은 기능 두 개를 다음 단계로 미루면 8인일로 줄일 수 있습니다.",
+          "vi": "Dạ, nhưng nếu dời 2 chức năng ưu tiên thấp sang giai đoạn sau thì giảm được còn 8 ngày công."
+        },
+        {
+          "speaker": "park",
+          "ko": "그 방법이 좋겠네요. 미룰 기능 목록을 정리해서 보내 주세요.",
+          "vi": "Cách đó hay đấy. Tổng hợp danh sách chức năng sẽ dời rồi gửi tôi nhé."
+        }
+      ],
+      "questions": [
+        {
+          "q": "Công số tăng bao nhiêu so với báo giá?",
+          "choices": [
+            "8 ngày công",
+            "15 ngày công",
+            "50 ngày công"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Phương án đề xuất là gì?",
+          "choices": [
+            "Thêm người vào dự án",
+            "Dời 2 chức năng ưu tiên thấp sang giai đoạn sau",
+            "Giảm thời gian test"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Trưởng nhóm khách yêu cầu gửi gì?",
+          "choices": [
+            "Báo giá mới",
+            "Danh sách chức năng sẽ dời",
+            "Lịch release mới"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "lm-weekly-sync",
+      "title": "Họp tuần: rủi ro và việc tuần sau",
+      "context": "Họp định kỳ cuối tuần.",
+      "speakers": [
+        {
+          "id": "lee",
+          "name": "이 대리 (phụ trách phía khách)",
+          "voice": "female"
+        },
+        {
+          "id": "minh",
+          "name": "민 (Dev lead phía Việt Nam)",
+          "voice": "male"
+        },
+        {
+          "id": "huong",
+          "name": "흐엉 (BrSE phía Việt Nam)",
+          "voice": "female"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "lee",
+          "ko": "이번 주에 특별한 이슈 있었나요?",
+          "vi": "Tuần này có vấn đề gì đặc biệt không?"
+        },
+        {
+          "speaker": "minh",
+          "ko": "서버 응답이 느려지는 문제가 있었는데, 캐시를 적용해서 해결했습니다.",
+          "vi": "Có vấn đề server phản hồi chậm, nhưng đã giải quyết bằng cách áp dụng cache."
+        },
+        {
+          "speaker": "huong",
+          "ko": "다음 주 리스크는 담당 개발자 한 명이 휴가라서 일정이 조금 빠듯하다는 점입니다.",
+          "vi": "Rủi ro tuần sau là một dev phụ trách nghỉ phép nên lịch hơi sít."
+        },
+        {
+          "speaker": "lee",
+          "ko": "그럼 금요일 마감인 보고서 기능은 월요일로 미뤄도 괜찮아요.",
+          "vi": "Vậy chức năng báo cáo hạn thứ Sáu dời sang thứ Hai cũng được."
+        },
+        {
+          "speaker": "huong",
+          "ko": "감사합니다. 그렇게 일정 업데이트하겠습니다.",
+          "vi": "Cảm ơn chị. Tôi sẽ cập nhật lịch như vậy."
+        }
+      ],
+      "questions": [
+        {
+          "q": "Vấn đề tuần này được giải quyết bằng cách nào?",
+          "choices": [
+            "Áp dụng cache",
+            "Nâng cấp server",
+            "Tối ưu index"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Rủi ro tuần sau là gì?",
+          "choices": [
+            "Khách đổi spec",
+            "Một dev nghỉ phép",
+            "Server test bảo trì"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Chức năng báo cáo dời đến khi nào?",
+          "choices": [
+            "Thứ Sáu",
+            "Thứ Hai",
+            "Thứ Tư"
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  ]
+}

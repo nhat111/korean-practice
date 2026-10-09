@@ -11,6 +11,7 @@ import { FlashcardsPage } from './pages/FlashcardsPage';
 import { HomePage } from './pages/HomePage';
 import { InterpretPage } from './pages/InterpretPage';
 import { ListeningPage } from './pages/ListeningPage';
+import { MessagesPage } from './pages/MessagesPage';
 import { PatternsPage } from './pages/PatternsPage';
 import { ProgressPage } from './pages/ProgressPage';
 import { ScenarioPlayerPage } from './pages/ScenarioPlayerPage';
@@ -33,6 +34,7 @@ export function App() {
         <Route path="custom/:id" element={<CustomPracticePage />} />
         <Route path="emails" element={<EmailsPage />} />
         <Route path="emails/:id" element={<EmailExercisePage />} />
+        <Route path="messages" element={<MessagesPage />} />
         <Route path="flashcards" element={<FlashcardsPage />} />
         <Route path="speaking" element={<SpeakingPage />} />
         <Route path="shadowing" element={<ShadowingPage />} />

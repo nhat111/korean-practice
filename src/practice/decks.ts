@@ -29,6 +29,9 @@ export const ROLE_FOCUS: Record<string, DailyFocus> = {
 /** Interpreting topics, in display order. Labels live in vi.interpret.topics. */
 export const INTERPRET_TOPICS = ['meeting', 'schedule', 'bug', 'scope', 'cost', 'handover'] as const;
 
+/** Chat message topics, in display order. Labels live in vi.messages.topics. */
+export const MESSAGE_TOPICS = ['progress', 'bug', 'schedule', 'request', 'deploy', 'apology'] as const;
+
 /** Keys in Progress.srs: "<type>:<id>". */
 export const srsKey = {
   shadowing: (id: string) => `shadowing:${id}`,
@@ -39,6 +42,8 @@ export const srsKey = {
   interpret: (id: string) => `interpret:${id}`,
   /** Korean → say it in Vietnamese. */
   interpretKo: (id: string) => `interpret-ko:${id}`,
+  /** Write a Slack / KakaoWork message, compare with the model, self-rate. */
+  message: (id: string) => `message:${id}`,
 };
 
 /** SM-2 grade for a self-rating: not yet → again tomorrow, close → hard, good → good. */
