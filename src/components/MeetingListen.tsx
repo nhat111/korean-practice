@@ -40,7 +40,19 @@ interface ShuffledQuestion extends MeetingQuestion {
   order: number[];
 }
 
-function MeetingCard({ meeting, onNext }: { meeting: MeetingItem; onNext: () => void }) {
+/**
+ * One meeting: play it, answer the questions, then see the transcript. The result
+ * is saved as listen:meeting:<id>; `onDone` fires once every question is answered.
+ */
+export function MeetingCard({
+  meeting,
+  onDone,
+  onNext,
+}: {
+  meeting: MeetingItem;
+  onDone?: () => void;
+  onNext?: () => void;
+}) {
   const [questions] = useState<ShuffledQuestion[]>(() =>
     meeting.questions.map((q) => ({ ...q, order: shuffle(q.choices.map((_, i) => i)) })),
   );
@@ -84,6 +96,7 @@ function MeetingCard({ meeting, onNext }: { meeting: MeetingItem; onNext: () => 
     if (next.every((p) => p !== null)) {
       const allRight = questions.every((q, i) => q.order[next[i] ?? 0] === q.answer);
       saveListenResult(sourceKey(meeting.id), allRight);
+      onDone?.();
     }
   }
 
@@ -168,9 +181,11 @@ function MeetingCard({ meeting, onNext }: { meeting: MeetingItem; onNext: () => 
             ))}
           </ol>
           <ReportButton reportKey={`listen:${sourceKey(meeting.id)}`} ko={meeting.lines.map((l) => l.ko).join(' ')} />
-          <button type="button" className="btn" onClick={onNext}>
-            {vi.listening.meeting.next}
-          </button>
+          {onNext && (
+            <button type="button" className="btn" onClick={onNext}>
+              {vi.listening.meeting.next}
+            </button>
+          )}
         </>
       )}
     </section>

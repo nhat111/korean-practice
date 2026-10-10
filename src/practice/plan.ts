@@ -2,7 +2,15 @@
 // computes the streak shown on the home page. Pure, unit-tested.
 
 import { addDays, type CardState } from '../srs/sm2';
-import type { InterpretItem, NumberItem, PatternItem, Scenario, ShadowingItem } from '../types';
+import type {
+  InterpretItem,
+  MeetingItem,
+  MessageExercise,
+  NumberItem,
+  PatternItem,
+  Scenario,
+  ShadowingItem,
+} from '../types';
 import { DAILY_SHADOWING_TOPICS, srsKey, type DailyFocus } from './decks';
 
 export type DailyStep =
@@ -11,9 +19,22 @@ export type DailyStep =
   | { kind: 'survival'; id: string }
   | { kind: 'scenario'; id: string; turn: number }
   | { kind: 'listen'; id: string }
-  | { kind: 'interpret'; id: string };
+  | { kind: 'interpret'; id: string }
+  | { kind: 'message'; id: string }
+  | { kind: 'meeting'; id: string };
 
-export const DAILY_COUNTS = { shadowing: 3, pattern: 3, survival: 1, scenario: 1, listen: 1, interpret: 1 } as const;
+export const DAILY_COUNTS = {
+  shadowing: 3,
+  pattern: 3,
+  survival: 1,
+  scenario: 1,
+  listen: 1,
+  interpret: 1,
+  message: 1,
+} as const;
+
+/** A meeting takes a few minutes, so only the 10- and 15-minute sessions get one. */
+export const MEETING_MIN_SCALE = 2;
 
 function shuffle<T>(items: T[], rand: () => number): T[] {
   const a = [...items];
@@ -52,6 +73,8 @@ export interface DailyContent {
   /** Listening "Số, ngày giờ" items (optional so older callers/tests still work). */
   numbers?: NumberItem[];
   interpret?: InterpretItem[];
+  messages?: MessageExercise[];
+  meetings?: MeetingItem[];
 }
 
 export function buildDailyPlan(
@@ -109,6 +132,16 @@ export function buildDailyPlan(
   const interpretKeys = (content.interpret ?? []).map((i) => srsKey.interpret(i.id));
   for (const k of pickKeys(interpretKeys, srs, today, n(DAILY_COUNTS.interpret), rand)) {
     steps.push({ kind: 'interpret', id: idOf(k) });
+  }
+  const messageKeys = (content.messages ?? []).map((m) => srsKey.message(m.id));
+  for (const k of pickKeys(messageKeys, srs, today, n(DAILY_COUNTS.message), rand)) {
+    steps.push({ kind: 'message', id: idOf(k) });
+  }
+  if (scale >= MEETING_MIN_SCALE) {
+    const meetingKeys = (content.meetings ?? []).map((m) => `listen:meeting:${m.id}`);
+    for (const k of pickKeys(meetingKeys, srs, today, 1, rand)) {
+      steps.push({ kind: 'meeting', id: k.slice('listen:meeting:'.length) });
+    }
   }
   return steps;
 }

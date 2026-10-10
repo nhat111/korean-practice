@@ -117,3 +117,28 @@ describe('buildDailyPlan with a role focus', () => {
     expect(plan.find((s) => s.kind === 'scenario')).toBeDefined();
   });
 });
+
+describe('buildDailyPlan with messages and meetings', () => {
+  const content = {
+    shadowing: [sh('sh-01', 'progress')],
+    patterns: [pattern('pt-01')],
+    scenarios: [scenario],
+    messages: [
+      { id: 'msg-01', topic: 'bug', to: 'x', situation: 'x', model: '확인 부탁드립니다', phrases: [] },
+      { id: 'msg-02', topic: 'bug', to: 'x', situation: 'x', model: '공유드립니다', phrases: [] },
+    ],
+    meetings: [{ id: 'lm-01', title: 't', context: 'c', speakers: [], lines: [], questions: [] }],
+  };
+
+  it('adds one message, due first, and no meeting in the 5-minute session', () => {
+    const plan = buildDailyPlan(content, { 'message:msg-02': card('2026-10-01') }, today);
+    expect(plan.filter((s) => s.kind === 'message')).toEqual([{ kind: 'message', id: 'msg-02' }]);
+    expect(plan.some((s) => s.kind === 'meeting')).toBe(false);
+  });
+
+  it('adds one meeting from 10 minutes up', () => {
+    const plan = buildDailyPlan(content, {}, today, Math.random, 2);
+    expect(plan.filter((s) => s.kind === 'meeting')).toEqual([{ kind: 'meeting', id: 'lm-01' }]);
+    expect(plan.filter((s) => s.kind === 'message')).toHaveLength(2);
+  });
+});

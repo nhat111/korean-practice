@@ -1,16 +1,27 @@
 import { useState, type ReactNode } from 'react';
 import { Link } from 'react-router';
 import { InterpretCard } from '../components/InterpretCard';
+import { MeetingCard } from '../components/MeetingListen';
+import { MessageCard } from '../components/MessageCard';
 import { PatternDrill } from '../components/PatternDrill';
 import { ScenarioTurnDrill } from '../components/ScenarioTurnDrill';
 import { ShadowingCard } from '../components/ShadowingCard';
 import { SpeakPractice } from '../components/SpeakPractice';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
-import { weakKeys } from '../practice/weak';
+import { WEAK_LIMIT, weakKeys } from '../practice/weak';
 import { splitParts } from '../speaking/segments';
 import { getProgressSnapshot } from '../storage/progress';
-import type { InterpretItem, NumberItem, PatternItem, Scenario, ShadowingItem, VocabItem } from '../types';
+import type {
+  InterpretItem,
+  MeetingItem,
+  MessageExercise,
+  NumberItem,
+  PatternItem,
+  Scenario,
+  ShadowingItem,
+  VocabItem,
+} from '../types';
 
 interface Content {
   shadowing: ShadowingItem[];
@@ -19,9 +30,11 @@ interface Content {
   vocab: VocabItem[];
   numbers: NumberItem[];
   interpret: InterpretItem[];
+  messages: MessageExercise[];
+  meetings: MeetingItem[];
 }
 
-type WeakKind = 'shadowing' | 'pattern' | 'scenario' | 'vocab' | 'listen' | 'interpret';
+type WeakKind = 'shadowing' | 'pattern' | 'scenario' | 'vocab' | 'listen' | 'interpret' | 'message' | 'meeting';
 
 interface WeakItem {
   key: string;
@@ -91,9 +104,19 @@ function resolve(key: string, c: Content): WeakItem | null {
       const v = c.vocab.find((x) => x.id === id);
       return v ? { key, kind: 'vocab', ko: v.ko, render: (r) => lineDrill(key, v.ko, v.vi, r) } : null;
     }
+    case 'message': {
+      const m = c.messages.find((x) => x.id === id);
+      return m ? { key, kind: 'message', ko: m.model, render: (r) => <MessageCard item={m} onRated={r} /> } : null;
+    }
     case 'listen': {
       // listen:<source>:<id>[:turn[:part]] — see practice/listening.ts.
       const [src, sid, a, b] = rest;
+      if (src === 'meeting') {
+        const m = c.meetings.find((x) => x.id === sid);
+        return m
+          ? { key, kind: 'meeting', ko: m.lines[0].ko, render: (r) => <MeetingCard meeting={m} onDone={r} /> }
+          : null;
+      }
       let line: { ko: string; vi: string } | undefined;
       if (src === 'vocab') {
         const v = c.vocab.find((x) => x.id === sid);
@@ -129,7 +152,9 @@ export function WeakPage() {
   const vocab = useContent('vocab');
   const numbers = useContent('numbers');
   const interpret = useContent('interpret');
-  const states = [shadowing, patterns, scenarios, vocab, numbers, interpret];
+  const messages = useContent('messages');
+  const meetings = useContent('meetings');
+  const states = [shadowing, patterns, scenarios, vocab, numbers, interpret, messages, meetings];
 
   return (
     <div className="stack">
@@ -142,7 +167,9 @@ export function WeakPage() {
       scenarios.status === 'ready' &&
       vocab.status === 'ready' &&
       numbers.status === 'ready' &&
-      interpret.status === 'ready' ? (
+      interpret.status === 'ready' &&
+      messages.status === 'ready' &&
+      meetings.status === 'ready' ? (
         <WeakSession
           content={{
             shadowing: shadowing.items,
@@ -151,6 +178,8 @@ export function WeakPage() {
             vocab: vocab.items,
             numbers: numbers.items,
             interpret: interpret.items,
+            messages: messages.items,
+            meetings: meetings.items,
           }}
         />
       ) : states.some((s) => s.status === 'error') ? (
@@ -163,11 +192,13 @@ export function WeakPage() {
 }
 
 function WeakSession({ content }: { content: Content }) {
-  // Frozen at the start so items don't vanish while they're being re-rated.
+  // Frozen at the start so items don't vanish while they're being re-rated. Keys whose
+  // content is gone are dropped before the limit so they don't take a slot.
   const [items] = useState(() =>
-    weakKeys(getProgressSnapshot().srs)
+    weakKeys(getProgressSnapshot().srs, Infinity)
       .map((k) => resolve(k, content))
-      .filter((x): x is WeakItem => x !== null),
+      .filter((x): x is WeakItem => x !== null)
+      .slice(0, WEAK_LIMIT),
   );
   const [index, setIndex] = useState<number | null>(null);
   const [rated, setRated] = useState(false);

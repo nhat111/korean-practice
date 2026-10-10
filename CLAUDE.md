@@ -106,6 +106,7 @@ Korean either.
 ├── sw/sw.js              # Service worker template (built into dist/sw.js by vite.config.ts)
 ├── vercel.json           # Build command, SPA rewrites, cache headers
 ├── README.md             # Setup + deploy steps
+├── TODO.md               # Planned improvements (tick items as they ship)
 └── CLAUDE.md
 ```
 
@@ -216,12 +217,14 @@ Korean either.
 - "Câu cần luyện lại" (`/weak`, from Progress and Home): `weakKeys` picks SRS entries whose last rating
   failed (`reps === 0`) or that stay hard (`ef < 2.0`), last-failed first, max 20. `WeakPage` resolves each
   key back to its content and drill (shadowing, pattern, scenario turn; `listen:*` and `vocab-speak:*` are
-  shadowed again with `SpeakPractice`, rated into the same key). Keys whose content is gone are skipped.
+  shadowed again with `SpeakPractice`, rated into the same key; `message:*` reopens `MessageCard`,
+  `listen:meeting:*` reopens `MeetingCard`). Keys whose content is gone are skipped before the limit.
 - "Báo câu sai": `ReportButton` (key + Korean line + optional note) sits under shadowing lines, pattern answers,
   interpret answers, scenario model answers, listening reveals and flashcard examples. Settings lists the flags
   and exports them as JSON so content can be fixed; nothing is uploaded.
 - The daily 5-minute plan is 3 shadowing, 3 patterns, 1 survival, 1 scenario turn, 1 listening "Số, ngày giờ"
-  (`listen:number:<id>`) and 1 interpreting Việt → Hàn (`interpret:<id>`), due items first.
+  (`listen:number:<id>`), 1 interpreting Việt → Hàn (`interpret:<id>`) and 1 chat message (`message:<id>`),
+  due items first; 10/15-minute sessions scale the counts and add one meeting (`listen:meeting:<id>`).
 - Progress shows a 7-day bar chart of recording minutes (`WeekChart`, one series: no legend, value labels
   only on today and the max, a tooltip per bar and an `sr-only` table).
 - `compareAnswer` in `src/speaking/compare.ts` is pure and unit-tested: score is a

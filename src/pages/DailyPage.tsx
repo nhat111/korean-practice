@@ -4,6 +4,8 @@ import { InterpretCard } from '../components/InterpretCard';
 import { ListenChoice } from '../components/ListenChoice';
 import { saveListenResult } from '../practice/listenResult';
 import { ListenPlayer } from '../components/ListenPlayer';
+import { MeetingCard } from '../components/MeetingListen';
+import { MessageCard } from '../components/MessageCard';
 import { trackEvent } from '../analytics';
 import { PatternDrill } from '../components/PatternDrill';
 import { ScenarioTurnDrill } from '../components/ScenarioTurnDrill';
@@ -24,7 +26,9 @@ export function DailyPage() {
   const scenarios = useContent('scenarios');
   const numbers = useContent('numbers');
   const interpret = useContent('interpret');
-  const states = [shadowing, patterns, scenarios, numbers, interpret];
+  const messages = useContent('messages');
+  const meetings = useContent('meetings');
+  const states = [shadowing, patterns, scenarios, numbers, interpret, messages, meetings];
 
   return (
     <div className="stack">
@@ -33,7 +37,9 @@ export function DailyPage() {
       patterns.status === 'ready' &&
       scenarios.status === 'ready' &&
       numbers.status === 'ready' &&
-      interpret.status === 'ready' ? (
+      interpret.status === 'ready' &&
+      messages.status === 'ready' &&
+      meetings.status === 'ready' ? (
         <DailySession
           content={{
             shadowing: shadowing.items,
@@ -41,6 +47,8 @@ export function DailyPage() {
             scenarios: scenarios.items,
             numbers: numbers.items,
             interpret: interpret.items,
+            messages: messages.items,
+            meetings: meetings.items,
           }}
         />
       ) : states.some((s) => s.status === 'error') ? (
@@ -120,6 +128,14 @@ function Step({ step, content, onRated }: { step: DailyStep; content: DailyConte
     case 'interpret': {
       const item = content.interpret?.find((i) => i.id === step.id);
       return item ? <InterpretCard item={item} direction="vi-ko" onRated={onRated} /> : null;
+    }
+    case 'message': {
+      const item = content.messages?.find((m) => m.id === step.id);
+      return item ? <MessageCard item={item} onRated={onRated} /> : null;
+    }
+    case 'meeting': {
+      const item = content.meetings?.find((m) => m.id === step.id);
+      return item ? <MeetingCard meeting={item} onDone={onRated} /> : null;
     }
     case 'scenario': {
       const scenario = content.scenarios.find((s) => s.id === step.id);
