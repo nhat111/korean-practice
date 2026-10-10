@@ -22,7 +22,10 @@ built for a Vietnamese Java developer at TOPIK 3. UI in Vietnamese, content in K
   **Interpreting** (`/interpret`): BrSE-style, read Vietnamese and say it in Korean, or hear Korean
   and say it in Vietnamese.
   **Listening** (`/listening`): pick the meaning, type what you hear, or catch numbers, dates and
-  amounts (`numbers.json`), at natural speed with replay and slow playback.
+  amounts (`numbers.json`), at natural speed with replay and slow playback, or follow a short
+  meeting with 2-3 voices and answer who decided what (`meetings.json`).
+  **Chat messages** (`/messages`): write a Slack / KakaoWork message for a situation, then compare
+  with a model message and the phrases worth reusing (`messages.json`).
   Speech recognition is an optional extra (syllable-level highlighting); everything works with
   recording alone, including the iPhone Home Screen app.
 - **Progress**: everything is stored in `localStorage` on the device; Settings can export and

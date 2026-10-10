@@ -42,6 +42,8 @@ interface ContentFiles {
   shadowing: { ko: string }[];
   numbers: { ko: string }[];
   interpret: { ko: string }[];
+  messages: { model: string }[];
+  meetings: { lines: { ko: string }[] }[];
   /** Every filled pattern sentence (see allFills in patterns/fill.ts). */
   patternSentences: string[];
 }
@@ -70,6 +72,8 @@ export function spokenTexts(c: ContentFiles): string[] {
   for (const s of c.patternSentences) out.add(s);
   for (const n of c.numbers) out.add(n.ko);
   for (const i of c.interpret) addWithParts(out, i.ko);
+  for (const m of c.messages) addWithParts(out, m.model);
+  for (const m of c.meetings) for (const l of m.lines) out.add(l.ko);
   for (const e of c.emails) out.add(e.corrected);
   for (const s of c.songs) {
     for (const w of s.words) out.add(w.ko);

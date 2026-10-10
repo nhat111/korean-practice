@@ -21,6 +21,8 @@ describe('audioKey', () => {
       shadowing: load('shadowing'),
       numbers: load('numbers'),
       interpret: load('interpret'),
+      messages: load('messages'),
+      meetings: load('meetings'),
       patternSentences: load('patterns').flatMap(allFills).map((f: { ko: string }) => f.ko),
     });
     expect(texts.length).toBeGreaterThan(1000);

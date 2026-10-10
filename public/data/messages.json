@@ -1,0 +1,529 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "msg-progress-01",
+      "topic": "progress",
+      "to": "김 과장님 – PM phía khách",
+      "situation": "Cuối ngày, báo tiến độ: màn hình đăng nhập xong 100%, màn hình danh sách đơn hàng xong 70%, mai làm tiếp.",
+      "model": "김 과장님, 오늘 진행 상황 공유드립니다.\n로그인 화면은 개발 완료했고, 주문 목록 화면은 70% 정도 진행되었습니다.\n내일 이어서 작업하겠습니다.",
+      "phrases": [
+        {
+          "ko": "오늘 진행 상황 공유드립니다",
+          "vi": "Tôi xin chia sẻ tiến độ hôm nay"
+        },
+        {
+          "ko": "개발 완료했고",
+          "vi": "đã dev xong, và…"
+        },
+        {
+          "ko": "70% 정도 진행되었습니다",
+          "vi": "đã làm được khoảng 70%"
+        }
+      ],
+      "note": "Mở đầu bằng gọi tên + 님, rồi đi thẳng vào nội dung. Tin nhắn công việc với khách dùng 하십시오체 (-습니다)."
+    },
+    {
+      "id": "msg-progress-02",
+      "topic": "progress",
+      "to": "이 대리님 – phụ trách phía khách",
+      "situation": "Khách hỏi API thanh toán xong chưa. Bạn trả lời: dev xong rồi, đang test nội bộ, chiều mai deploy lên server dev.",
+      "model": "네, 결제 API는 개발을 마치고 현재 내부 테스트 중입니다.\n내일 오후에 개발 서버에 배포할 예정입니다.",
+      "phrases": [
+        {
+          "ko": "개발을 마치고",
+          "vi": "dev xong rồi thì…"
+        },
+        {
+          "ko": "현재 내부 테스트 중입니다",
+          "vi": "hiện đang test nội bộ"
+        },
+        {
+          "ko": "배포할 예정입니다",
+          "vi": "dự kiến sẽ deploy"
+        }
+      ],
+      "note": "'-(으)ㄹ 예정입니다' dùng cho kế hoạch đã định, nghe chắc chắn hơn '-(으)ㄹ 것 같습니다'."
+    },
+    {
+      "id": "msg-progress-03",
+      "topic": "progress",
+      "to": "Kênh dự án (#project-shop)",
+      "situation": "Báo cáo tuần ngắn: tuần này xong 3 chức năng, tuần sau làm chức năng thống kê; chưa có vấn đề gì.",
+      "model": "이번 주 진행 상황 공유드립니다.\n- 완료: 회원 관리, 주문 조회, 공지사항\n- 다음 주: 통계 기능 개발\n현재 특이 사항은 없습니다.",
+      "phrases": [
+        {
+          "ko": "이번 주 진행 상황 공유드립니다",
+          "vi": "Xin chia sẻ tiến độ tuần này"
+        },
+        {
+          "ko": "다음 주",
+          "vi": "tuần sau"
+        },
+        {
+          "ko": "현재 특이 사항은 없습니다",
+          "vi": "hiện không có vấn đề gì đặc biệt"
+        }
+      ],
+      "note": "Trong kênh chung, dùng gạch đầu dòng cho dễ đọc. '특이 사항 없음' là cách báo 'không có gì bất thường' rất phổ biến."
+    },
+    {
+      "id": "msg-progress-04",
+      "topic": "progress",
+      "to": "박 팀장님 – trưởng nhóm phía khách",
+      "situation": "Khách hỏi tiến độ. Phần lớn đúng lịch, nhưng màn hình thống kê có thể trễ 1 ngày vì truy vấn chậm; bạn sẽ báo lại chiều mai.",
+      "model": "팀장님, 전체적으로는 일정대로 진행되고 있습니다.\n다만 통계 화면은 조회 성능 문제로 하루 정도 늦어질 수 있습니다.\n내일 오후에 다시 말씀드리겠습니다.",
+      "phrases": [
+        {
+          "ko": "일정대로 진행되고 있습니다",
+          "vi": "đang tiến hành đúng lịch"
+        },
+        {
+          "ko": "다만",
+          "vi": "tuy nhiên"
+        },
+        {
+          "ko": "하루 정도 늦어질 수 있습니다",
+          "vi": "có thể trễ khoảng 1 ngày"
+        }
+      ],
+      "note": "Báo tin tốt trước, rồi dùng '다만' để nêu rủi ro. Có mốc báo lại cụ thể giúp khách yên tâm."
+    },
+    {
+      "id": "msg-bug-01",
+      "topic": "bug",
+      "to": "Kênh dự án (#qa)",
+      "situation": "Báo bug: trên Safari iPhone, bấm nút 'Thanh toán' không có phản hồi. Chrome bình thường. Đã đính kèm video.",
+      "model": "[버그 공유] 아이폰 사파리에서 '결제하기' 버튼을 눌러도 반응이 없습니다.\n크롬에서는 정상 동작합니다.\n재현 영상 첨부드립니다.",
+      "phrases": [
+        {
+          "ko": "반응이 없습니다",
+          "vi": "không có phản hồi"
+        },
+        {
+          "ko": "정상 동작합니다",
+          "vi": "hoạt động bình thường"
+        },
+        {
+          "ko": "재현 영상 첨부드립니다",
+          "vi": "xin gửi kèm video tái hiện"
+        }
+      ],
+      "note": "Tag [버그 공유] ở đầu để mọi người lọc nhanh. Nêu môi trường lỗi và môi trường bình thường để khoanh vùng."
+    },
+    {
+      "id": "msg-bug-02",
+      "topic": "bug",
+      "to": "김 과장님 – PM phía khách",
+      "situation": "Khách báo lỗi. Bạn trả lời: đã nhận, đang kiểm tra nguyên nhân, sẽ báo lại trong vòng 1 tiếng.",
+      "model": "공유해 주셔서 감사합니다.\n현재 원인 확인 중이며, 1시간 안에 다시 말씀드리겠습니다.",
+      "phrases": [
+        {
+          "ko": "공유해 주셔서 감사합니다",
+          "vi": "cảm ơn anh đã chia sẻ"
+        },
+        {
+          "ko": "현재 원인 확인 중이며",
+          "vi": "hiện đang kiểm tra nguyên nhân, và…"
+        },
+        {
+          "ko": "1시간 안에",
+          "vi": "trong vòng 1 tiếng"
+        }
+      ],
+      "note": "Phản hồi nhanh dù chưa có kết quả. '-(이)며' là dạng văn viết lịch sự của '-고'."
+    },
+    {
+      "id": "msg-bug-03",
+      "topic": "bug",
+      "to": "김 과장님 – PM phía khách",
+      "situation": "Báo nguyên nhân và cách xử lý: lỗi do thiếu kiểm tra null khi khách không có địa chỉ; đã sửa, deploy lên server test, nhờ khách xác nhận.",
+      "model": "원인 공유드립니다.\n배송지 정보가 없는 경우 null 체크가 누락되어 오류가 발생했습니다.\n수정 후 테스트 서버에 반영했으니 확인 부탁드립니다.",
+      "phrases": [
+        {
+          "ko": "원인 공유드립니다",
+          "vi": "xin chia sẻ nguyên nhân"
+        },
+        {
+          "ko": "누락되어 오류가 발생했습니다",
+          "vi": "bị sót nên đã phát sinh lỗi"
+        },
+        {
+          "ko": "확인 부탁드립니다",
+          "vi": "nhờ anh kiểm tra giúp"
+        }
+      ],
+      "note": "Cấu trúc: nguyên nhân → đã làm gì → nhờ khách làm gì. '-았/었으니' = 'đã… nên (anh hãy)…'."
+    },
+    {
+      "id": "msg-bug-04",
+      "topic": "bug",
+      "to": "정 대리님 – QA phía khách",
+      "situation": "Bạn không tái hiện được lỗi khách báo. Hỏi thêm: thời gian xảy ra, tài khoản dùng, và ảnh chụp màn hình nếu có.",
+      "model": "말씀하신 오류를 확인해 봤는데 저희 쪽에서는 재현되지 않습니다.\n발생 시간과 사용하신 계정, 가능하시면 화면 캡처도 공유해 주실 수 있을까요?",
+      "phrases": [
+        {
+          "ko": "재현되지 않습니다",
+          "vi": "không tái hiện được"
+        },
+        {
+          "ko": "사용하신 계정",
+          "vi": "tài khoản anh đã dùng"
+        },
+        {
+          "ko": "공유해 주실 수 있을까요?",
+          "vi": "anh có thể chia sẻ giúp không ạ?"
+        }
+      ],
+      "note": "Không nói 'không có lỗi'; nói 'phía chúng tôi chưa tái hiện được' và xin thêm thông tin cụ thể."
+    },
+    {
+      "id": "msg-schedule-01",
+      "topic": "schedule",
+      "to": "김 과장님 – PM phía khách",
+      "situation": "Xin dời deadline: chức năng xuất Excel trễ 2 ngày (từ thứ Tư sang thứ Sáu) vì spec thay đổi hôm qua.",
+      "model": "김 과장님, 일정 관련해서 말씀드릴 것이 있습니다.\n어제 사양 변경으로 엑셀 다운로드 기능이 수요일에서 금요일로 이틀 정도 늦어질 것 같습니다.\n양해 부탁드립니다.",
+      "phrases": [
+        {
+          "ko": "일정 관련해서 말씀드릴 것이 있습니다",
+          "vi": "tôi có việc cần báo về lịch"
+        },
+        {
+          "ko": "이틀 정도 늦어질 것 같습니다",
+          "vi": "có lẽ sẽ trễ khoảng 2 ngày"
+        },
+        {
+          "ko": "양해 부탁드립니다",
+          "vi": "mong anh thông cảm"
+        }
+      ],
+      "note": "Câu mở 'có việc cần báo' giúp khách chuẩn bị tinh thần. Nêu lý do khách quan (사양 변경) và ngày mới cụ thể."
+    },
+    {
+      "id": "msg-schedule-02",
+      "topic": "schedule",
+      "to": "이 대리님 – phụ trách phía khách",
+      "situation": "Xin đổi giờ họp: họp 3h chiều nay trùng với deploy khẩn, hỏi dời sang 4h30 được không.",
+      "model": "이 대리님, 오늘 오후 3시 회의 시간을 조정할 수 있을까요?\n긴급 배포 작업과 겹쳐서 4시 반으로 변경 가능하신지 여쭤봅니다.",
+      "phrases": [
+        {
+          "ko": "조정할 수 있을까요?",
+          "vi": "có thể điều chỉnh được không ạ?"
+        },
+        {
+          "ko": "겹쳐서",
+          "vi": "vì bị trùng"
+        },
+        {
+          "ko": "변경 가능하신지 여쭤봅니다",
+          "vi": "xin hỏi anh có thể đổi được không"
+        }
+      ],
+      "note": "'-(으)ㄴ지 여쭤봅니다' là cách hỏi rất lịch sự trong văn viết."
+    },
+    {
+      "id": "msg-schedule-03",
+      "topic": "schedule",
+      "to": "Kênh dự án (#notice)",
+      "situation": "Thông báo: thứ Hai tuần sau (2/9) là Quốc khánh Việt Nam, team nghỉ; câu hỏi gấp liên hệ BrSE.",
+      "model": "[공지] 다음 주 월요일(9/2)은 베트남 국경일로 개발팀이 휴무입니다.\n급한 문의는 BrSE에게 연락 부탁드립니다.",
+      "phrases": [
+        {
+          "ko": "[공지]",
+          "vi": "[Thông báo]"
+        },
+        {
+          "ko": "휴무입니다",
+          "vi": "nghỉ làm"
+        },
+        {
+          "ko": "연락 부탁드립니다",
+          "vi": "xin hãy liên hệ"
+        }
+      ],
+      "note": "Khách Hàn không biết lịch nghỉ lễ Việt Nam, nên báo trước ít nhất một tuần và nêu người liên hệ thay."
+    },
+    {
+      "id": "msg-schedule-04",
+      "topic": "schedule",
+      "to": "박 팀장님 – trưởng nhóm phía khách",
+      "situation": "Khách hỏi có kịp release thứ Sáu không. Trả lời: kịp, nhưng cần khách xác nhận spec màn hình thanh toán trước thứ Tư.",
+      "model": "네, 금요일 릴리스는 가능합니다.\n다만 그 전에 결제 화면 사양을 수요일까지 확정해 주셔야 일정에 맞출 수 있습니다.",
+      "phrases": [
+        {
+          "ko": "릴리스는 가능합니다",
+          "vi": "release được ạ"
+        },
+        {
+          "ko": "확정해 주셔야",
+          "vi": "anh phải chốt giúp thì mới…"
+        },
+        {
+          "ko": "일정에 맞출 수 있습니다",
+          "vi": "mới kịp lịch"
+        }
+      ],
+      "note": "'-아/어 주셔야 -(으)ㄹ 수 있습니다' nêu điều kiện một cách lịch sự, tránh bị đổ lỗi khi khách chậm."
+    },
+    {
+      "id": "msg-request-01",
+      "topic": "request",
+      "to": "이 대리님 – phụ trách phía khách",
+      "situation": "Nhờ khách cấp tài khoản VPN cho 2 thành viên mới (Minh, Lan) trước thứ Năm.",
+      "model": "이 대리님, 부탁드릴 것이 있습니다.\n신규 투입 인원 2명(민, 란)의 VPN 계정 발급을 요청드립니다.\n목요일까지 가능할까요?",
+      "phrases": [
+        {
+          "ko": "부탁드릴 것이 있습니다",
+          "vi": "tôi có việc muốn nhờ"
+        },
+        {
+          "ko": "발급을 요청드립니다",
+          "vi": "xin đề nghị cấp"
+        },
+        {
+          "ko": "목요일까지 가능할까요?",
+          "vi": "đến thứ Năm có được không ạ?"
+        }
+      ],
+      "note": "Nêu số người, tên, và hạn mong muốn để khách xử lý một lần là xong."
+    },
+    {
+      "id": "msg-request-02",
+      "topic": "request",
+      "to": "김 과장님 – PM phía khách",
+      "situation": "Hỏi lại spec: khi người dùng hủy đơn, điểm (point) đã dùng có hoàn lại không?",
+      "model": "사양 확인 부탁드립니다.\n사용자가 주문을 취소하면 사용한 포인트도 환불되는 것이 맞을까요?",
+      "phrases": [
+        {
+          "ko": "사양 확인 부탁드립니다",
+          "vi": "nhờ anh xác nhận spec"
+        },
+        {
+          "ko": "환불되는 것이 맞을까요?",
+          "vi": "có đúng là được hoàn lại không ạ?"
+        }
+      ],
+      "note": "Câu hỏi dạng 'có đúng là… không?' giúp khách chỉ cần trả lời có/không."
+    },
+    {
+      "id": "msg-request-03",
+      "topic": "request",
+      "to": "정 대리님 – dev phía khách",
+      "situation": "Nhờ khách review PR sửa lỗi đăng nhập, link ở ticket #231, nếu được thì trong hôm nay.",
+      "model": "정 대리님, 로그인 오류 수정 PR 리뷰 부탁드립니다.\n링크는 #231 티켓에 있습니다.\n가능하시면 오늘 중으로 봐 주시면 감사하겠습니다.",
+      "phrases": [
+        {
+          "ko": "리뷰 부탁드립니다",
+          "vi": "nhờ anh review"
+        },
+        {
+          "ko": "오늘 중으로",
+          "vi": "trong hôm nay"
+        },
+        {
+          "ko": "봐 주시면 감사하겠습니다",
+          "vi": "nếu anh xem giúp thì tôi rất cảm ơn"
+        }
+      ],
+      "note": "'-아/어 주시면 감사하겠습니다' mềm hơn '-아/어 주세요', hợp khi nhờ việc gấp."
+    },
+    {
+      "id": "msg-request-04",
+      "topic": "request",
+      "to": "박 팀장님 – trưởng nhóm phía khách",
+      "situation": "Xin khách gửi dữ liệu mẫu (khoảng 100 đơn hàng, đã che thông tin cá nhân) để test hiệu năng.",
+      "model": "팀장님, 성능 테스트를 위해 샘플 데이터를 요청드립니다.\n개인정보를 마스킹한 주문 데이터 100건 정도면 충분합니다.",
+      "phrases": [
+        {
+          "ko": "성능 테스트를 위해",
+          "vi": "để test hiệu năng"
+        },
+        {
+          "ko": "요청드립니다",
+          "vi": "xin đề nghị"
+        },
+        {
+          "ko": "100건 정도면 충분합니다",
+          "vi": "khoảng 100 bản ghi là đủ"
+        }
+      ],
+      "note": "Nói rõ mục đích và lượng cần, và chủ động nêu yêu cầu che thông tin cá nhân."
+    },
+    {
+      "id": "msg-deploy-01",
+      "topic": "deploy",
+      "to": "Kênh dự án (#deploy)",
+      "situation": "Thông báo deploy production tối nay 22:00–23:00, dịch vụ có thể gián đoạn khoảng 10 phút.",
+      "model": "[배포 공지] 오늘 22:00~23:00 운영 서버 배포가 진행됩니다.\n배포 중 약 10분간 서비스가 중단될 수 있습니다.",
+      "phrases": [
+        {
+          "ko": "[배포 공지]",
+          "vi": "[Thông báo deploy]"
+        },
+        {
+          "ko": "운영 서버 배포가 진행됩니다",
+          "vi": "sẽ tiến hành deploy server production"
+        },
+        {
+          "ko": "서비스가 중단될 수 있습니다",
+          "vi": "dịch vụ có thể bị gián đoạn"
+        }
+      ],
+      "note": "운영 서버 = production, 개발 서버 = dev, 스테이징 = staging. Nêu khung giờ và ảnh hưởng."
+    },
+    {
+      "id": "msg-deploy-02",
+      "topic": "deploy",
+      "to": "Kênh dự án (#deploy)",
+      "situation": "Báo deploy xong: đã deploy xong lúc 22:40, đã kiểm tra các chức năng chính, không có vấn đề.",
+      "model": "배포 완료되었습니다. (22:40)\n주요 기능 동작 확인했으며, 이상 없습니다.",
+      "phrases": [
+        {
+          "ko": "배포 완료되었습니다",
+          "vi": "đã deploy xong"
+        },
+        {
+          "ko": "동작 확인했으며",
+          "vi": "đã kiểm tra hoạt động, và"
+        },
+        {
+          "ko": "이상 없습니다",
+          "vi": "không có gì bất thường"
+        }
+      ],
+      "note": "Tin nhắn báo xong nên ngắn. '이상 없습니다' là câu chốt chuẩn sau khi kiểm tra."
+    },
+    {
+      "id": "msg-deploy-03",
+      "topic": "deploy",
+      "to": "김 과장님 – PM phía khách",
+      "situation": "Sau deploy phát hiện lỗi hiển thị giá; bạn đã rollback về bản trước, dịch vụ bình thường, đang tìm nguyên nhân.",
+      "model": "배포 후 상품 가격 표시 오류가 확인되어 이전 버전으로 롤백했습니다.\n현재 서비스는 정상이며, 원인 파악 후 다시 공유드리겠습니다.",
+      "phrases": [
+        {
+          "ko": "이전 버전으로 롤백했습니다",
+          "vi": "đã rollback về bản trước"
+        },
+        {
+          "ko": "현재 서비스는 정상이며",
+          "vi": "hiện dịch vụ bình thường, và"
+        },
+        {
+          "ko": "원인 파악 후",
+          "vi": "sau khi nắm được nguyên nhân"
+        }
+      ],
+      "note": "Báo sự cố: hiện tượng → đã xử lý tạm thế nào → trạng thái hiện tại → bước tiếp theo."
+    },
+    {
+      "id": "msg-deploy-04",
+      "topic": "deploy",
+      "to": "이 대리님 – phụ trách phía khách",
+      "situation": "Hỏi khách có đồng ý cho deploy bản sửa lỗi lên production chiều nay lúc 3h không.",
+      "model": "이 대리님, 오류 수정 버전을 오늘 오후 3시에 운영 서버에 배포해도 될까요?\n승인해 주시면 바로 진행하겠습니다.",
+      "phrases": [
+        {
+          "ko": "배포해도 될까요?",
+          "vi": "deploy được không ạ?"
+        },
+        {
+          "ko": "승인해 주시면",
+          "vi": "nếu anh phê duyệt"
+        },
+        {
+          "ko": "바로 진행하겠습니다",
+          "vi": "tôi sẽ tiến hành ngay"
+        }
+      ],
+      "note": "Deploy production luôn xin phép trước. '-아/어도 될까요?' là câu xin phép lịch sự."
+    },
+    {
+      "id": "msg-apology-01",
+      "topic": "apology",
+      "to": "김 과장님 – PM phía khách",
+      "situation": "Xin lỗi vì trả lời tin nhắn muộn (do đang họp), rồi trả lời: chức năng đó sẽ xong thứ Năm.",
+      "model": "답변이 늦어져서 죄송합니다. 회의가 길어졌습니다.\n문의하신 기능은 목요일까지 완료할 예정입니다.",
+      "phrases": [
+        {
+          "ko": "답변이 늦어져서 죄송합니다",
+          "vi": "xin lỗi vì trả lời muộn"
+        },
+        {
+          "ko": "문의하신 기능은",
+          "vi": "chức năng anh hỏi thì"
+        },
+        {
+          "ko": "완료할 예정입니다",
+          "vi": "dự kiến sẽ hoàn thành"
+        }
+      ],
+      "note": "Lý do ngắn gọn một câu là đủ, rồi trả lời ngay câu hỏi."
+    },
+    {
+      "id": "msg-apology-02",
+      "topic": "apology",
+      "to": "박 팀장님 – trưởng nhóm phía khách",
+      "situation": "Xin lỗi vì lỗi trên production hôm qua do team test thiếu; cam kết bổ sung test hồi quy cho phần thanh toán.",
+      "model": "어제 운영 환경에서 발생한 오류로 불편을 드려 죄송합니다.\n저희 테스트가 부족했던 부분이 원인이었습니다.\n앞으로 결제 관련 회귀 테스트를 보완해서 재발을 방지하겠습니다.",
+      "phrases": [
+        {
+          "ko": "불편을 드려 죄송합니다",
+          "vi": "xin lỗi vì đã gây bất tiện"
+        },
+        {
+          "ko": "부족했던 부분이 원인이었습니다",
+          "vi": "nguyên nhân là phần còn thiếu sót"
+        },
+        {
+          "ko": "재발을 방지하겠습니다",
+          "vi": "sẽ ngăn tái phát"
+        }
+      ],
+      "note": "Xin lỗi kiểu Hàn: nhận trách nhiệm rõ ràng + biện pháp phòng tái phát (재발 방지)."
+    },
+    {
+      "id": "msg-apology-03",
+      "topic": "apology",
+      "to": "이 대리님 – phụ trách phía khách",
+      "situation": "Bạn gửi nhầm file (bản cũ). Xin lỗi và gửi lại bản mới nhất.",
+      "model": "죄송합니다. 방금 이전 버전 파일을 잘못 보내드렸습니다.\n최신 버전으로 다시 첨부드립니다.",
+      "phrases": [
+        {
+          "ko": "잘못 보내드렸습니다",
+          "vi": "đã gửi nhầm"
+        },
+        {
+          "ko": "최신 버전으로",
+          "vi": "bằng bản mới nhất"
+        },
+        {
+          "ko": "다시 첨부드립니다",
+          "vi": "xin gửi kèm lại"
+        }
+      ],
+      "note": "Lỗi nhỏ thì xin lỗi ngắn và sửa ngay, không cần giải thích dài."
+    },
+    {
+      "id": "msg-apology-04",
+      "topic": "apology",
+      "to": "김 과장님 – PM phía khách",
+      "situation": "Bạn hiểu nhầm yêu cầu (làm sắp xếp theo ngày tạo thay vì ngày cập nhật). Xin lỗi, sẽ sửa xong trong hôm nay.",
+      "model": "요구사항을 잘못 이해해서 생성일 기준으로 정렬되도록 구현했습니다. 죄송합니다.\n수정일 기준으로 오늘 중에 수정하겠습니다.",
+      "phrases": [
+        {
+          "ko": "잘못 이해해서",
+          "vi": "vì hiểu sai"
+        },
+        {
+          "ko": "기준으로",
+          "vi": "theo tiêu chí"
+        },
+        {
+          "ko": "오늘 중에 수정하겠습니다",
+          "vi": "sẽ sửa trong hôm nay"
+        }
+      ],
+      "note": "Nói rõ đã hiểu sai thế nào để khách thấy bạn đã nắm đúng yêu cầu bây giờ."
+    }
+  ]
+}
