@@ -31,7 +31,8 @@ function text(v: unknown): string {
 }
 
 export function newId(): string {
-  return `custom-${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
+  // 8 random base-36 chars: ids made in the same millisecond (a paste of many questions) must not collide.
+  return `custom-${Date.now().toString(36)}${Math.random().toString(36).slice(2, 10).padEnd(8, '0')}`;
 }
 
 /** Two questions count as the same when they only differ in case or spacing. */
