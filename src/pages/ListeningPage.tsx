@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useSearchParams } from 'react-router';
 import { ComparisonView } from '../components/ComparisonView';
 import { ListenChoice, ListenReveal } from '../components/ListenChoice';
 import { saveListenResult } from '../practice/listenResult';
@@ -26,7 +26,9 @@ const MODES: Mode[] = ['meaning', 'dictation', 'numbers', 'meeting'];
 const SESSION = 10;
 
 export function ListeningPage() {
-  const [mode, setMode] = useState<Mode>('meaning');
+  // `?mode=` comes from the 4-week path (numbers, meeting).
+  const [params] = useSearchParams();
+  const [mode, setMode] = useState<Mode>(() => MODES.find((m) => m === params.get('mode')) ?? 'meaning');
   const vocab = useContent('vocab');
   const shadowing = useContent('shadowing');
   const scenarios = useContent('scenarios');

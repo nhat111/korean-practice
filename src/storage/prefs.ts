@@ -33,6 +33,8 @@ export interface Prefs {
   analytics: boolean;
   /** The "install on Home Screen" hint was closed. */
   installHintDismissed: boolean;
+  /** Local date (YYYY-MM-DD) the 4-week path was started; null = not started. */
+  pathStart: string | null;
 }
 
 export const ROLES = ['dev', 'brse', 'tester', 'interview'] as const;
@@ -73,6 +75,7 @@ const DEFAULTS: Prefs = {
   onboarded: false,
   analytics: true,
   installHintDismissed: false,
+  pathStart: null,
 };
 
 function clampRate(r: number): number {
@@ -83,7 +86,7 @@ function read(): Prefs {
   try {
     const data: unknown = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if (typeof data === 'object' && data !== null) {
-      const { speechRate, voiceSource, voiceURI, deepVoice, showPron, answerTimer, profile, onboarded, analytics, installHintDismissed } =
+      const { speechRate, voiceSource, voiceURI, deepVoice, showPron, answerTimer, profile, onboarded, analytics, installHintDismissed, pathStart } =
         data as Record<string, unknown>;
       return {
         speechRate:
@@ -97,6 +100,7 @@ function read(): Prefs {
         onboarded: onboarded === true,
         analytics: analytics !== false,
         installHintDismissed: installHintDismissed === true,
+        pathStart: typeof pathStart === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(pathStart) ? pathStart : null,
       };
     }
   } catch {
@@ -184,4 +188,9 @@ export function dismissInstallHint(): void {
 
 export function setDailyMinutes(minutes: DailyMinutes): void {
   if (current.profile) save({ ...current, profile: { ...current.profile, minutes } });
+}
+
+/** Start (or restart) the 4-week path on this local date. */
+export function setPathStart(day: string | null): void {
+  save({ ...current, pathStart: day });
 }

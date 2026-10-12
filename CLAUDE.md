@@ -93,7 +93,7 @@ Korean either.
 │   ├── storage/          # progress.ts, prefs.ts, backend.ts, custom.ts: the only modules that touch localStorage
 │   ├── custom/           # Custom questions: parse.ts (Q:/A:/VI: text), items.ts (validate/merge), score.ts (best score, "chưa thuộc")
 │   ├── srs/sm2.ts        # SM-2 spaced repetition
-│   ├── practice/         # decks.ts (topics, SRS keys, rating → grade), plan.ts (daily 5-minute plan, streak), listening.ts (listening questions), weak.ts (weak items, 7-day stats)
+│   ├── practice/         # decks.ts (topics, SRS keys, rating → grade), plan.ts (daily 5-minute plan, streak), path.ts (4-week path), listening.ts (listening questions), weak.ts (weak items, 7-day stats)
 │   ├── patterns/fill.ts  # Fill pattern frames, pick particles (pure, tested)
 │   ├── speech.ts         # SpeechSynthesis (ko-KR): voice, pitch and rate from prefs
 │   ├── speaking/         # compare.ts (answer similarity, syllable diff), josa.ts (은/는 by batchim), recognition.ts, recorder.ts
@@ -231,6 +231,12 @@ Korean either.
   (`itemOfDay(vocab, today)`). The six section cards carry an item count from the content files. Progress starts with
   an overview (`skillProgress`: items practiced at least once per skill, `ProgressRing` + one bar per skill), then one
   compact "Chi tiết" stats card. Helpers are pure in `src/practice/today.ts`.
+- "Lộ trình 4 tuần" (`PathCard` on Home, below the today card): `src/practice/path.ts` is pure and tested.
+  `BASE_PATH` = 4 weeks of steps (`{ id, kind, topics }`: shadowing topics, scenario categories, interpret/message
+  topics, numbers, meetings; labels in `vi.path.steps`, tested); `buildPath(role)` moves `ROLE_FIRST[role]` steps
+  to week 1. A step's progress = items practiced at least once (same keys as `skillProgress`), capped at
+  `STEP_TARGETS[kind]`. Only the start date is stored (`prefs.pathStart`); the week comes from `currentWeek`.
+  Step links use `?topic=` (shadowing, interpret, messages), `?cat=` (scenarios) or `?mode=` (listening).
 - Progress shows a 7-day bar chart of recording minutes (hidden with a short note when there are none) (`WeekChart`, one series: no legend, value labels
   only on today and the max, a tooltip per bar and an `sr-only` table).
 - `compareAnswer` in `src/speaking/compare.ts` is pure and unit-tested: score is a
@@ -270,7 +276,7 @@ Spec: `docs/custom-questions.md` (implemented). The learner pastes their own int
   rate, `showPron`, `answerTimer`), `kp:backend:v1` (optional backend URL + access key), `kp:custom:v1` (the learner's own questions) and `kp:reports:v1` ("Báo câu sai" flags, `src/storage/reports.ts`). When the shape changes, write a migration instead of silently dropping user data;
   purely additive fields may instead default when missing (as `speaking` does).
 - `kp:prefs:v1` also holds `profile` (`{ role, level, minutes }` or null), `onboarded`, `analytics`
-  (default true) and `installHintDismissed`; missing fields default, so old prefs still load. Existing
+  (default true), `installHintDismissed` and `pathStart` (YYYY-MM-DD or null); missing fields default, so old prefs still load. Existing
   learners see the welcome once and can skip it.
 - Wrap reads and writes in try/catch. The app must still work if storage is unavailable or
   contains corrupted data. In that case, fall back to empty progress.
