@@ -225,7 +225,11 @@ Korean either.
 - The daily 5-minute plan is 3 shadowing, 3 patterns, 1 survival, 1 scenario turn, 1 listening "Số, ngày giờ"
   (`listen:number:<id>`), 1 interpreting Việt → Hàn (`interpret:<id>`) and 1 chat message (`message:<id>`),
   due items first; 10/15-minute sessions scale the counts and add one meeting (`listen:meeting:<id>`).
-- Progress shows a 7-day bar chart of recording minutes (`WeekChart`, one series: no legend, value labels
+- Home "Mục tiêu hôm nay": today's practice turns (`daily[today].reviews`) against `dailyTarget(minutes / 5)`
+  (= the daily plan size), Monday-to-Sunday `WeekDots`, one start button to `/daily`; then "Từ của ngày"
+  (`itemOfDay(vocab, today)`). Progress starts with an overview (`skillProgress`: items practiced at least once per
+  skill, `ProgressRing` + one bar per skill). Helpers are pure in `src/practice/today.ts`.
+- Progress shows a 7-day bar chart of recording minutes (hidden with a short note when there are none) (`WeekChart`, one series: no legend, value labels
   only on today and the max, a tooltip per bar and an `sr-only` table).
 - `compareAnswer` in `src/speaking/compare.ts` is pure and unit-tested: score is a
   character-level similarity (ignores spaces/punctuation), highlighting is per 어절.
