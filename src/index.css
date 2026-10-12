@@ -1826,30 +1826,165 @@ ins {
 
 /* ---------- Home / daily ---------- */
 
-.daily-cta,
 .survival-card {
   flex-direction: row;
   align-items: center;
   gap: 14px;
 }
-.daily-cta .card-icon,
 .survival-card .card-icon {
   flex: none;
   margin: 0;
 }
-.daily-cta {
+/* "Mục tiêu hôm nay": goal bar, week dots, start button. */
+.today-card {
   border-color: color-mix(in srgb, var(--primary) 45%, var(--border));
-  background: var(--primary-soft);
+}
+.today-card .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.week-dots {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+}
+.week-dot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.week-dot-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.week-dot-mark {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  color: var(--primary-text);
+}
+.week-dot--on .week-dot-mark {
+  background: var(--primary);
+}
+.week-dot--today .week-dot-label {
+  color: var(--text);
+  font-weight: 700;
+}
+.week-dot--today .week-dot-mark {
+  box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--primary);
+}
+.week-dot--future .week-dot-mark {
+  opacity: 0.5;
+}
+
+/* "Từ của ngày" */
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+.word-ko {
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+.word-card p {
+  margin: 0;
+}
+
+/* Progress overview: ring + one bar per skill. */
+.overview-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.overview-title {
+  font-size: 1.15rem;
+}
+.ring {
+  position: relative;
+  flex: none;
+  width: 108px;
+  height: 108px;
+}
+.ring svg {
+  width: 100%;
+  height: 100%;
+}
+.ring circle {
+  fill: none;
+  stroke-width: 9;
+}
+.ring-track {
+  stroke: var(--surface-2);
+}
+.ring-fill {
+  stroke: var(--primary);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.6s ease;
+}
+.ring-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.1;
+}
+.ring-text strong {
+  font-size: 1.5rem;
+}
+.ring-text span {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+.skill-bars {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.skill-bar {
+  display: grid;
+  grid-template-columns: 7.5em 1fr auto;
+  align-items: center;
+  gap: 10px;
+}
+.skill-bar .bar {
+  display: block;
+  height: 8px;
+}
+.skill-bar .bar-fill {
+  display: block;
+}
+.skill-count {
+  min-width: 3.5em;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ring-fill {
+    transition: none;
+  }
 }
 .survival-card .card-icon {
   background: var(--bad-bg);
   color: var(--accent-red);
-}
-.streak {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 700;
 }
 .daily-nav {
   /* Keep the main action within thumb reach at the end of the step. */

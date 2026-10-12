@@ -29,7 +29,8 @@ looks "wrong".
 
 ## 3. 4-week learning path for TOPIK 2–3 learners (frontend only)
 
-New learners see many sections and don't know where to start.
+New learners see many sections and don't know where to start. Reference: the "Bài học hôm nay" lesson
+cards on bjtlab.me (cover, "N từ · N câu hỏi · N phút", progress bar, "Bắt đầu").
 
 - [ ] A "Lộ trình 4 tuần" card on Home (no new tab), built from existing content:
   - Week 1: greetings, survival lines, cushion words;
@@ -40,15 +41,26 @@ New learners see many sections and don't know where to start.
       reorders it (tester → QA earlier, interview → interview scenarios earlier).
 - [ ] Store only the chosen start date in `kp:prefs:v1` (additive field).
 
+## 4. Visual identity (needs design assets)
+
+Reference: NihongoBiz (bjtlab.me) feels polished thanks to a mascot, illustrations and a warm palette.
+
+- [ ] A Korean-themed mascot (e.g. a tiger developer with headphones) as a light SVG for the welcome,
+      empty states and the "done" screens; keep the Korean-flag palette.
+- [ ] Small illustrations for the six Home entries and for lessons (once the 4-week path exists).
+      Keep them light (SVG or small WebP) so offline caching stays small.
+- [ ] Owner task: provide or approve the artwork (designer or AI-generated, with usage rights).
+
 ## Later / ideas
 
 - [ ] Natural-voice audio for custom questions (needs backend TTS or on-device generation).
 - [ ] More meetings (`meetings.json`) with 3 speakers and faster speech for TOPIK 4.
 - [ ] Listening "Họp" with a "replay one line" step before the questions for TOPIK 2 learners.
-- [ ] Progress page: per-skill summary (speaking, listening, messages, interpreting).
 
 ## Done
 
+- [x] Home "Mục tiêu hôm nay" (practice turns today / daily target, week dots T2–CN, one start button),
+      "Từ của ngày", progress overview (ring + per-skill bars), friendlier empty states.
 - [x] "Câu cần luyện lại" resolves chat messages (`message:<id>`) and meetings (`listen:meeting:<id>`);
       keys whose content is gone no longer use one of the 20 slots.
 - [x] Daily plan: one chat message per 5 minutes; one meeting in the 10- and 15-minute sessions.

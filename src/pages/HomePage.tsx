@@ -1,15 +1,19 @@
 import { Link } from 'react-router';
 import { Icon, type IconName } from '../components/Icon';
 import { InstallHint } from '../components/InstallHint';
+import { KoreanLine, SpeakButton } from '../components/SpeakButton';
+import { WeekDots } from '../components/WeekDots';
 import { Welcome } from '../components/Welcome';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
 import { streak } from '../practice/plan';
+import { dailyTarget, itemOfDay, weekDays } from '../practice/today';
 import { weakKeys } from '../practice/weak';
 import { isDue, todayKey } from '../srs/sm2';
 import { useBackendSettings } from '../storage/backend';
 import { usePrefs, type Role } from '../storage/prefs';
 import { useProgress } from '../storage/progress';
+import type { VocabItem } from '../types';
 
 interface Section {
   to: string;
@@ -62,6 +66,10 @@ export function HomePage() {
   if (!prefs.onboarded) return <Welcome />;
   const minutes = prefs.profile?.minutes ?? 5;
   const suggestion = prefs.profile ? SUGGESTIONS[prefs.profile.role] : null;
+  const target = dailyTarget(minutes / 5);
+  const done = todayStats?.reviews ?? 0;
+  const ctaLabel = done === 0 ? vi.home.today.start : done < target ? vi.home.today.continue : vi.home.today.more;
+  const word = vocab.status === 'ready' ? itemOfDay(vocab.items, today) : undefined;
   const stats = [
     { value: days, label: vi.home.statStreak },
     { value: todayStats?.spoken ?? 0, label: vi.home.statSpokenToday },
@@ -81,30 +89,29 @@ export function HomePage() {
             </div>
           ))}
         </div>
-        <p className="streak">
-          <Icon name="flame" size={18} /> {vi.home.streak(days)}
-        </p>
-        {vocab.status === 'ready' && (
-          <Link to="/flashcards" className="pill">
-            {due > 0 ? vi.home.dueToday(due) : vi.home.noDue}
+      </section>
+      <section className="card stack-sm today-card">
+        <div className="row-between">
+          <h2>{vi.home.today.title}</h2>
+          <span className="muted small">{vi.home.today.perDay(minutes)}</span>
+        </div>
+        <div className="row-between">
+          <strong>{vi.home.today.count(done, target)}</strong>
+          {done >= target && <span className="badge badge--ok">{vi.home.today.reached}</span>}
+        </div>
+        <div className="bar" aria-hidden>
+          <div className="bar-fill" style={{ width: `${Math.min(100, (100 * done) / target)}%` }} />
+        </div>
+        <WeekDots days={weekDays(progress.daily, today)} />
+        <Link to="/daily" className="btn">
+          <Icon name="zap" size={18} /> {ctaLabel}
+        </Link>
+        {due > 0 && (
+          <Link to="/flashcards" className="link-btn small">
+            {vi.home.today.vocabDue(due)}
           </Link>
         )}
       </section>
-      <Link to="/daily" className="card card--link daily-cta">
-        <span className="card-icon">
-          <Icon name="zap" />
-        </span>
-        <div>
-          <h2>{vi.growth.dailyTitle(minutes)}</h2>
-          <p className="muted">
-            {(todayStats?.spoken ?? 0) > 0
-              ? vi.home.dailyDone
-              : minutes > 5
-                ? vi.growth.dailyMinutes(minutes)
-                : vi.home.dailyDesc}
-          </p>
-        </div>
-      </Link>
       {suggestion && prefs.profile && (
         <Link to={suggestion.to} className="card card--link suggest-card">
           <span className="card-icon">
@@ -127,6 +134,7 @@ export function HomePage() {
           </div>
         </Link>
       )}
+      {word && <WordOfDay word={word} />}
       <InstallHint />
       <Link to="/shadowing?topic=survival" className="card card--link survival-card">
         <span className="card-icon">
@@ -155,5 +163,32 @@ export function HomePage() {
         </a>
       )}
     </div>
+  );
+}
+
+function WordOfDay({ word }: { word: VocabItem }) {
+  return (
+    <section className="card stack-sm word-card">
+      <span className="eyebrow">{vi.home.wordTitle}</span>
+      <div className="row-between">
+        <div className="stack-xs">
+          <strong className="word-ko" lang="ko">
+            {word.ko}
+          </strong>
+          {word.pron && (
+            <span className="muted small" lang="ko">
+              {word.pron}
+            </span>
+          )}
+        </div>
+        <SpeakButton text={word.ko} />
+      </div>
+      <p>{word.vi}</p>
+      <KoreanLine text={word.example.ko} />
+      <p className="muted small">{word.example.vi}</p>
+      <Link to="/flashcards" className="link-btn small">
+        {vi.home.wordMore}
+      </Link>
+    </section>
   );
 }
