@@ -32,21 +32,23 @@ looks "wrong".
 New learners see many sections and don't know where to start. Reference: the "Bài học hôm nay" lesson
 cards on bjtlab.me (cover, "N từ · N câu hỏi · N phút", progress bar, "Bắt đầu").
 
-- [ ] A "Lộ trình 4 tuần" card on Home (no new tab), built from existing content:
+- [x] A "Lộ trình 4 tuần" card on Home (no new tab), built from existing content:
   - Week 1: greetings, survival lines, cushion words;
   - Week 2: progress reports, schedule and delays;
   - Week 3: bugs, incidents, deploy notices, chat messages;
   - Week 4: meetings (listening "Họp"), interpreting, interviews.
-- [ ] Each week: a checklist of decks/scenarios with progress from the SRS; the role from the welcome
+- [x] Each week: a checklist of decks/scenarios with progress from the SRS; the role from the welcome
       reorders it (tester → QA earlier, interview → interview scenarios earlier).
-- [ ] Store only the chosen start date in `kp:prefs:v1` (additive field).
+- [x] Store only the chosen start date in `kp:prefs:v1` (additive field).
+- [ ] Later: lesson covers/illustrations on the steps (see 4).
 
 ## 4. Visual identity (needs design assets)
 
 Reference: NihongoBiz (bjtlab.me) feels polished thanks to a mascot, illustrations and a warm palette.
 
-- [ ] A Korean-themed mascot (e.g. a tiger developer with headphones) as a light SVG for the welcome,
-      empty states and the "done" screens; keep the Korean-flag palette.
+- [x] Warm background, per-skill icon tones, item counts on the Home cards (PR #21).
+- [ ] Mascot: a first SVG ("Ko", the chat bubble from the icon) is on the Home hero (PR #21); still to do:
+      the welcome, empty states and the "done" screens, and decide whether to keep it or draw a tiger developer.
 - [ ] Small illustrations for the six Home entries and for lessons (once the 4-week path exists).
       Keep them light (SVG or small WebP) so offline caching stays small.
 - [ ] Owner task: provide or approve the artwork (designer or AI-generated, with usage rights).

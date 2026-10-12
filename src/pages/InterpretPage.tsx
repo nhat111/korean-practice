@@ -1,3 +1,4 @@
+import { useSearchParams } from 'react-router';
 import { useState } from 'react';
 import { ContentGate } from '../components/ContentGate';
 import { InterpretCard, type InterpretDirection } from '../components/InterpretCard';
@@ -21,7 +22,9 @@ export function InterpretPage() {
 
 function InterpretDeck({ items }: { items: InterpretItem[] }) {
   const [direction, setDirection] = useState<InterpretDirection>('vi-ko');
-  const [topic, setTopic] = useState('');
+  // `?topic=` comes from the 4-week path.
+  const [params] = useSearchParams();
+  const [topic, setTopic] = useState(() => INTERPRET_TOPICS.find((t) => t === params.get('topic')) ?? '');
   const [index, setIndex] = useState(0);
   const list = topic ? items.filter((i) => i.topic === topic) : items;
   const current = list[Math.min(index, list.length - 1)];

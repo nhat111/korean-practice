@@ -2,6 +2,7 @@ import { Link } from 'react-router';
 import { Icon, type IconName } from '../components/Icon';
 import { InstallHint } from '../components/InstallHint';
 import { Mascot } from '../components/Mascot';
+import { PathCard } from '../components/PathCard';
 import { KoreanLine, SpeakButton } from '../components/SpeakButton';
 import { WeekDots } from '../components/WeekDots';
 import { Welcome } from '../components/Welcome';
@@ -157,6 +158,7 @@ export function HomePage() {
           </Link>
         )}
       </section>
+      <PathCard />
       {suggestion && prefs.profile && (
         <Link to={suggestion.to} className="card card--link suggest-card">
           <span className="card-icon">

@@ -1,3 +1,4 @@
+import { useSearchParams } from 'react-router';
 import { useState } from 'react';
 import { ContentGate } from '../components/ContentGate';
 import { MessageCard } from '../components/MessageCard';
@@ -27,8 +28,10 @@ function ordered(items: MessageExercise[]): MessageExercise[] {
 }
 
 function MessageDeck({ items }: { items: MessageExercise[] }) {
-  const [topic, setTopic] = useState('');
-  const [list, setList] = useState(() => ordered(items));
+  // `?topic=` comes from the 4-week path.
+  const [params] = useSearchParams();
+  const [topic, setTopic] = useState(() => MESSAGE_TOPICS.find((t) => t === params.get('topic')) ?? '');
+  const [list, setList] = useState(() => ordered(topic ? items.filter((m) => m.topic === topic) : items));
   const [index, setIndex] = useState(0);
 
   function pickTopic(t: string) {

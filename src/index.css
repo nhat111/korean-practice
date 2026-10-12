@@ -2622,3 +2622,90 @@ ins {
     padding-top: 28px;
   }
 }
+
+/* ---------- Home "Lộ trình 4 tuần" ---------- */
+.path-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.path-preview li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.path-week-no {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+.path-tabs button {
+  font-size: 0.85rem;
+}
+.path-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.path-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 6px 4px;
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  text-decoration: none;
+}
+.path-step:active {
+  background: var(--surface-2);
+}
+.path-step .card-icon {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  border-radius: 10px;
+}
+.path-step-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.path-step-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.path-step-body .bar {
+  display: block;
+  height: 6px;
+}
+.path-step-body .bar-fill {
+  display: block;
+}
+.path-step--done .path-step-label {
+  color: var(--muted);
+}
+.path-step-count {
+  flex: none;
+  min-width: 36px;
+  text-align: right;
+}
