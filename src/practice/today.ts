@@ -113,3 +113,14 @@ export function overallPercent(skills: SkillProgress[]): number {
   const total = skills.reduce((n, s) => n + s.total, 0);
   return total === 0 ? 0 : Math.round((100 * skills.reduce((n, s) => n + s.done, 0)) / total);
 }
+
+export type RecipeKind = keyof typeof DAILY_COUNTS | 'meeting';
+
+/** What one daily session contains at this scale, for the home "today" card (sums to dailyTarget). */
+export function planRecipe(scale: number): { kind: RecipeKind; count: number }[] {
+  const steps = (Object.keys(DAILY_COUNTS) as (keyof typeof DAILY_COUNTS)[]).map((kind) => ({
+    kind: kind as RecipeKind,
+    count: DAILY_COUNTS[kind] * scale,
+  }));
+  return scale >= MEETING_MIN_SCALE ? [...steps, { kind: 'meeting', count: 1 }] : steps;
+}

@@ -88,7 +88,7 @@ Korean either.
 ├── src/
 │   ├── types.ts          # Content types (Scenario, EmailExercise, VocabItem)
 │   ├── components/       # Layout, SpeakButton, ContentGate, SpeakPractice (speaking core), ShadowingCard, PatternDrill, ScenarioTurnDrill, VoiceAnswer, ...
-│   ├── pages/            # Home, Daily, Weak, Shadowing, Patterns, Listening, Interpret, Scenarios(+Player), Emails(+Exercise), Flashcards, Speaking, Progress, Custom(+Practice)
+│   ├── pages/            # Home, Daily, Weak, Shadowing, Patterns, Listening, Interpret, Scenarios(+Player), Emails(+Exercise), Flashcards, Speaking (hub; free drill at /speaking/free), Progress, Custom(+Practice)
 │   ├── data/             # validate.ts (runtime checks), content.ts (fetch + useContent)
 │   ├── storage/          # progress.ts, prefs.ts, backend.ts, custom.ts: the only modules that touch localStorage
 │   ├── custom/           # Custom questions: parse.ts (Q:/A:/VI: text), items.ts (validate/merge), score.ts (best score, "chưa thuộc")
@@ -225,10 +225,12 @@ Korean either.
 - The daily 5-minute plan is 3 shadowing, 3 patterns, 1 survival, 1 scenario turn, 1 listening "Số, ngày giờ"
   (`listen:number:<id>`), 1 interpreting Việt → Hàn (`interpret:<id>`) and 1 chat message (`message:<id>`),
   due items first; 10/15-minute sessions scale the counts and add one meeting (`listen:meeting:<id>`).
-- Home "Mục tiêu hôm nay": today's practice turns (`daily[today].reviews`) against `dailyTarget(minutes / 5)`
-  (= the daily plan size), Monday-to-Sunday `WeekDots`, one start button to `/daily`; then "Từ của ngày"
-  (`itemOfDay(vocab, today)`). Progress starts with an overview (`skillProgress`: items practiced at least once per
-  skill, `ProgressRing` + one bar per skill). Helpers are pure in `src/practice/today.ts`.
+- Home: a hero with the `Mascot` (stats only once any is above 0), then "Mục tiêu hôm nay": today's practice turns
+  (`daily[today].reviews`) against `dailyTarget(minutes / 5)` (= the daily plan size), what the session contains
+  (`planRecipe`, chips), Monday-to-Sunday `WeekDots`, one start button to `/daily`; then "Từ của ngày"
+  (`itemOfDay(vocab, today)`). The six section cards carry an item count from the content files. Progress starts with
+  an overview (`skillProgress`: items practiced at least once per skill, `ProgressRing` + one bar per skill), then one
+  compact "Chi tiết" stats card. Helpers are pure in `src/practice/today.ts`.
 - Progress shows a 7-day bar chart of recording minutes (hidden with a short note when there are none) (`WeekChart`, one series: no legend, value labels
   only on today and the max, a tooltip per bar and an `sr-only` table).
 - `compareAnswer` in `src/speaking/compare.ts` is pure and unit-tested: score is a
@@ -291,11 +293,14 @@ Spec: `docs/custom-questions.md` (implemented). The learner pastes their own int
 - Touch targets are at least 44px. No hover-only interactions.
 - Design system (top of `src/index.css`): use the CSS tokens (`--primary`, `--primary-soft`,
   `--accent-gradient`, `--accent-red`, `--surface*`, `--radius-sm/md/lg`, `--shadow-sm`/`--shadow`,
-  `--focus-ring`) instead of hard-coded colors; keep text/background pairs at WCAG AA. The app
+  `--focus-ring`, `--tone-<blue|teal|violet|red|amber|green>(-bg)`) instead of hard-coded colors; keep
+  text/background pairs at WCAG AA. The light background is a warm "hanji" off-white; cards stay white.
+  Each skill has a tone for its icon (`.card-icon--<tone>`): shadowing blue, listening teal, interpret violet,
+  scenarios red, vocab/patterns amber, email green; reuse it wherever that skill is linked. The app
   is branded **KoDevTalk** (name in `vi.appName`, manifest, `index.html`) with a Korean-flag
   palette (flag blue `#0047a0`, navy, red accents). The icon (`public/favicon.svg`, PNGs in
   `public/icons/`) is a navy chat bubble with `</>` over a faded taegeuk; the header shows `favicon.svg`.
-- Bottom nav has 5 tabs (Trang chủ, Luyện nói, Hội thoại, Từ vựng, Tiến độ; `NAV` in `Layout.tsx`).
+- Bottom nav has 5 tabs (a left sidebar from 1024px, CSS only) (Trang chủ, Luyện nói, Hội thoại, Từ vựng, Tiến độ; `NAV` in `Layout.tsx`).
   Each tab also lights up for related pages (`also`: shadowing/patterns, custom/emails, songs).
   Pages without a tab need an entry from Home or a tab page; don't add a sixth tab. Home keeps six entry cards
   (Shadowing, Luyện nghe, Phiên dịch, Hội thoại, Từ vựng, Email); everything else is reached from the tabs.

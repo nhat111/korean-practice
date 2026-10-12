@@ -46,7 +46,6 @@ export function ProgressPage() {
 
   const vocabIds = vocab.status === 'ready' ? vocab.items.map((v) => v.id) : [];
   const cards = vocabIds.map((id) => progress.cards[id]).filter((c) => c !== undefined);
-  const learned = cards.length;
   const mastered = cards.filter(isMastered).length;
   const due = cards.filter((c) => isDue(c, today)).length;
 
@@ -99,56 +98,19 @@ export function ProgressPage() {
         </div>
       </Link>
 
+      {/* One compact card instead of a card per skill: per-skill coverage is in the overview. */}
       <section className="card stack-sm">
-        <h2>{vi.progress.vocab}</h2>
-        <div className="stats">
-          <Stat label={vi.progress.learned} value={`${learned}/${total(vocab)}`} />
-          <Stat label={vi.progress.mastered} value={mastered} />
-          <Stat label={vi.progress.dueToday} value={due} />
-        </div>
-        {vocab.status === 'ready' && vocab.items.length > 0 && (
-          <div className="bar" aria-hidden>
-            <div className="bar-fill" style={{ width: `${(100 * learned) / vocab.items.length}%` }} />
-          </div>
-        )}
-      </section>
-
-      <section className="card stack-sm">
-        <h2>{vi.progress.scenarios}</h2>
-        <div className="stats">
-          <Stat label={vi.progress.completed} value={`${scenarioResults.length}/${total(scenarios)}`} />
-          <Stat label={vi.progress.avgScore} value={`${avg}%`} />
-        </div>
-      </section>
-
-      <section className="card stack-sm">
-        <h2>{vi.progress.emails}</h2>
-        <div className="stats">
-          <Stat
-            label={vi.progress.completed}
-            value={`${Object.keys(progress.emails).length}/${total(emails)}`}
-          />
-        </div>
-      </section>
-
-      <section className="card stack-sm">
-        <h2>{vi.progress.speaking}</h2>
-        <div className="stats">
-          <Stat label={vi.progress.attempts} value={progress.speaking.length} />
-          <Stat label={vi.progress.last7Days} value={speakingWeek} />
-          <Stat label={vi.progress.avgSpeakingScore} value={avgSpeaking} />
-        </div>
-        <div className="stats">
+        <h2>{vi.progress.details}</h2>
+        <div className="stats stats--3">
           <Stat label={vi.progress.streak} value={streak(progress.daily, today)} />
           <Stat label={vi.progress.minutesTotal} value={recordMinutes} />
-        </div>
-      </section>
-
-      <section className="card stack-sm">
-        <h2>{vi.progress.drills}</h2>
-        <div className="stats">
-          <Stat label={vi.progress.drillsPracticed} value={drills.length} />
-          <Stat label={vi.progress.drillsDue} value={drillsDue} />
+          <Stat label={vi.progress.speakingWeek} value={speakingWeek} />
+          <Stat label={vi.progress.avgSpeakingScore} value={avgSpeaking} />
+          <Stat label={vi.progress.vocabDue} value={due} />
+          <Stat label={vi.progress.masteredShort} value={mastered} />
+          <Stat label={vi.progress.drillsDueShort} value={drillsDue} />
+          <Stat label={vi.progress.scenarioAvg} value={scenarioResults.length > 0 ? `${avg}%` : '–'} />
+          <Stat label={vi.progress.emailsDone} value={`${Object.keys(progress.emails).length}/${total(emails)}`} />
         </div>
       </section>
 
