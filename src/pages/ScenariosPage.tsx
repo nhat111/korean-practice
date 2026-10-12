@@ -48,20 +48,29 @@ export function ScenariosPage() {
   return (
     <div className="stack">
       <h1>{vi.scenarios.title}</h1>
-      <div className="grid">
-        <Link to="/custom" className="card card--link stack-xs">
-          <h2>{vi.custom.title}</h2>
-          <p className="muted small">{vi.custom.entryHint(custom.length)}</p>
+      <nav className="quick-links" aria-label={vi.scenarios.moreLabel}>
+        <Link to="/custom" className="quick-link">
+          <span className="card-icon card-icon--violet">
+            <Icon name="user" size={20} />
+          </span>
+          <span>
+            {vi.custom.title}
+            {custom.length > 0 && <span className="muted"> ({custom.length})</span>}
+          </span>
         </Link>
-        <Link to="/emails" className="card card--link stack-xs">
-          <h2>{vi.nav.emails}</h2>
-          <p className="muted small">{vi.home.sections.emails}</p>
+        <Link to="/emails" className="quick-link">
+          <span className="card-icon card-icon--green">
+            <Icon name="mail" size={20} />
+          </span>
+          <span>{vi.nav.emails}</span>
         </Link>
-        <Link to="/messages" className="card card--link stack-xs">
-          <h2>{vi.messages.title}</h2>
-          <p className="muted small">{vi.messages.entry}</p>
+        <Link to="/messages" className="quick-link">
+          <span className="card-icon card-icon--amber">
+            <Icon name="chat" size={20} />
+          </span>
+          <span>{vi.messages.shortTitle}</span>
         </Link>
-      </div>
+      </nav>
       <ContentGate state={state}>
         {(items) => (items.length === 0 ? <p className="muted">{vi.common.empty}</p> : <ScenarioList items={items} />)}
       </ContentGate>
@@ -96,7 +105,7 @@ function ScenarioList({ items }: { items: Scenario[] }) {
         )}
       </div>
 
-      <div className="chips" role="tablist">
+      <div className="chips chips--scroll" role="tablist">
         <button
           type="button"
           role="tab"

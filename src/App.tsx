@@ -21,7 +21,7 @@ import { ShadowingPage } from './pages/ShadowingPage';
 import { WeakPage } from './pages/WeakPage';
 import { SongDetailPage } from './pages/SongDetailPage';
 import { SongsPage } from './pages/SongsPage';
-import { SpeakingPage } from './pages/SpeakingPage';
+import { SpeakingFreePage, SpeakingPage } from './pages/SpeakingPage';
 
 export function App() {
   return (
@@ -37,6 +37,7 @@ export function App() {
         <Route path="messages" element={<MessagesPage />} />
         <Route path="flashcards" element={<FlashcardsPage />} />
         <Route path="speaking" element={<SpeakingPage />} />
+        <Route path="speaking/free" element={<SpeakingFreePage />} />
         <Route path="shadowing" element={<ShadowingPage />} />
         <Route path="patterns" element={<PatternsPage />} />
         <Route path="listening" element={<ListeningPage />} />

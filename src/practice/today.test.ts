@@ -1,11 +1,21 @@
 import { describe, expect, it } from 'vitest';
-import { dailyTarget, itemOfDay, overallPercent, skillProgress, weekDays } from './today';
+import { dailyTarget, itemOfDay, overallPercent, planRecipe, skillProgress, weekDays } from './today';
 
 describe('dailyTarget', () => {
   it('counts the 5-minute steps and adds a meeting from 10 minutes', () => {
     expect(dailyTarget(1)).toBe(11);
     expect(dailyTarget(2)).toBe(23);
     expect(dailyTarget(3)).toBe(34);
+  });
+});
+
+describe('planRecipe', () => {
+  it('lists the session steps and adds up to dailyTarget', () => {
+    for (const scale of [1, 2, 3]) {
+      expect(planRecipe(scale).reduce((n, r) => n + r.count, 0)).toBe(dailyTarget(scale));
+    }
+    expect(planRecipe(1).some((r) => r.kind === 'meeting')).toBe(false);
+    expect(planRecipe(2).at(-1)).toEqual({ kind: 'meeting', count: 1 });
   });
 });
 

@@ -1,13 +1,14 @@
 import { Link } from 'react-router';
 import { Icon, type IconName } from '../components/Icon';
 import { InstallHint } from '../components/InstallHint';
+import { Mascot } from '../components/Mascot';
 import { KoreanLine, SpeakButton } from '../components/SpeakButton';
 import { WeekDots } from '../components/WeekDots';
 import { Welcome } from '../components/Welcome';
-import { useContent } from '../data/content';
+import { useContent, type ContentKind } from '../data/content';
 import { vi } from '../i18n/vi';
 import { streak } from '../practice/plan';
-import { dailyTarget, itemOfDay, weekDays } from '../practice/today';
+import { dailyTarget, itemOfDay, planRecipe, weekDays, type RecipeKind } from '../practice/today';
 import { weakKeys } from '../practice/weak';
 import { isDue, todayKey } from '../srs/sm2';
 import { useBackendSettings } from '../storage/backend';
@@ -15,12 +16,29 @@ import { usePrefs, type Role } from '../storage/prefs';
 import { useProgress } from '../storage/progress';
 import type { VocabItem } from '../types';
 
+/** Icon colour per skill (`.card-icon--<tone>` in index.css). */
+type Tone = 'blue' | 'teal' | 'violet' | 'red' | 'amber' | 'green';
+
 interface Section {
   to: string;
   icon: IconName;
   title: string;
   desc: string;
+  tone: Tone;
+  /** Content files whose item counts show as a badge. */
+  count?: { kinds: ContentKind[]; label: (n: number) => string };
 }
+
+const RECIPE_ICONS: Record<RecipeKind, IconName> = {
+  shadowing: 'waves',
+  pattern: 'puzzle',
+  survival: 'lifebuoy',
+  scenario: 'chat',
+  listen: 'headphones',
+  interpret: 'languages',
+  message: 'mail',
+  meeting: 'headphones',
+};
 
 /** Optional feedback form (e.g. a Google Form), set at build time; hidden when unset. */
 const FEEDBACK_URL: string | undefined =
@@ -38,16 +56,22 @@ const SUGGESTIONS: Record<Role, { to: string; icon: IconName }> = {
 
 // Six main entries; the rest (patterns, songs, progress…) live under the tabs.
 const SECTIONS: Section[] = [
-  { to: '/shadowing', icon: 'waves', title: vi.shadowing.title, desc: vi.home.sections.shadowing },
-  { to: '/listening', icon: 'headphones', title: vi.listening.title, desc: vi.listening.homeDesc },
-  { to: '/interpret', icon: 'languages', title: vi.interpret.title, desc: vi.interpret.homeDesc },
-  { to: '/scenarios', icon: 'chat', title: vi.nav.scenarios, desc: vi.home.sections.scenarios },
-  { to: '/flashcards', icon: 'cards', title: vi.nav.flashcards, desc: vi.home.sections.flashcards },
-  { to: '/emails', icon: 'mail', title: vi.nav.emails, desc: vi.home.sections.emails },
-]
+  { to: '/shadowing', icon: 'waves', title: vi.shadowing.title, desc: vi.home.cards.shadowing, tone: 'blue',
+    count: { kinds: ['shadowing'], label: vi.home.counts.sentences } },
+  { to: '/listening', icon: 'headphones', title: vi.listening.title, desc: vi.home.cards.listening, tone: 'teal',
+    count: { kinds: ['numbers', 'meetings'], label: vi.home.counts.lessons } },
+  { to: '/interpret', icon: 'languages', title: vi.interpret.title, desc: vi.home.cards.interpret, tone: 'violet',
+    count: { kinds: ['interpret'], label: vi.home.counts.sentences } },
+  { to: '/scenarios', icon: 'chat', title: vi.nav.scenarios, desc: vi.home.cards.scenarios, tone: 'red',
+    count: { kinds: ['scenarios'], label: vi.home.counts.lessons } },
+  { to: '/flashcards', icon: 'cards', title: vi.nav.flashcards, desc: vi.home.cards.flashcards, tone: 'amber',
+    count: { kinds: ['vocab'], label: vi.home.counts.words } },
+  { to: '/emails', icon: 'mail', title: vi.nav.emails, desc: vi.home.cards.emails, tone: 'green',
+    count: { kinds: ['emails'], label: vi.home.counts.lessons } },
+];
 
 // Shown only when an optional backend is configured.
-const AI_SECTION: Section = { to: '/ai-roleplay', icon: 'bot', title: vi.aiRoleplay.title, desc: vi.aiRoleplay.homeDesc };
+const AI_SECTION: Section = { to: '/ai-roleplay', icon: 'bot', title: vi.aiRoleplay.title, desc: vi.home.cards.ai, tone: 'blue' };
 
 export function HomePage() {
   const backend = useBackendSettings();
@@ -79,16 +103,26 @@ export function HomePage() {
   return (
     <div className="stack">
       <section className="hero">
-        <h1>{vi.home.greeting}</h1>
-        <p>{vi.home.intro}</p>
-        <div className="hero-stats">
-          {stats.map((s) => (
-            <div key={s.label} className="hero-stat">
-              <strong>{s.value}</strong>
-              <span>{s.label}</span>
-            </div>
-          ))}
+        <div className="hero-top">
+          <div className="stack-xs">
+            <span className="hero-hello" lang="ko">
+              {vi.home.heroHello}
+            </span>
+            <h1>{vi.home.heroTitle}</h1>
+            <p>{vi.home.heroText}</p>
+          </div>
+          <Mascot className="hero-mascot" size={104} />
         </div>
+        {stats.some((s) => s.value > 0) && (
+          <div className="hero-stats">
+            {stats.map((s) => (
+              <div key={s.label} className="hero-stat">
+                <strong>{s.value}</strong>
+                <span>{s.label}</span>
+              </div>
+            ))}
+          </div>
+        )}
       </section>
       <section className="card stack-sm today-card">
         <div className="row-between">
@@ -101,6 +135,17 @@ export function HomePage() {
         </div>
         <div className="bar" aria-hidden>
           <div className="bar-fill" style={{ width: `${Math.min(100, (100 * done) / target)}%` }} />
+        </div>
+        <div className="stack-xs">
+          <span className="muted small">{vi.home.today.recipeLabel}</span>
+          <ul className="recipe">
+            {planRecipe(minutes / 5).map((r) => (
+              <li key={r.kind}>
+                <Icon name={RECIPE_ICONS[r.kind]} size={15} />
+                {vi.home.today.recipe[r.kind](r.count)}
+              </li>
+            ))}
+          </ul>
         </div>
         <WeekDots days={weekDays(progress.daily, today)} />
         <Link to="/daily" className="btn">
@@ -146,15 +191,9 @@ export function HomePage() {
         </div>
       </Link>
       <h2 className="section-title">{vi.home.practice}</h2>
-      <div className="grid">
+      <div className="grid grid--wide-3">
         {sections.map((s) => (
-          <Link key={s.to} to={s.to} className="card card--link">
-            <span className="card-icon">
-              <Icon name={s.icon} />
-            </span>
-            <h2>{s.title}</h2>
-            <p className="muted">{s.desc}</p>
-          </Link>
+          <SectionCard key={s.to} section={s} />
         ))}
       </div>
       {FEEDBACK_URL && (
@@ -164,6 +203,30 @@ export function HomePage() {
       )}
     </div>
   );
+}
+
+function SectionCard({ section: s }: { section: Section }) {
+  return (
+    <Link to={s.to} className="card card--link section-card">
+      <div className="row-between">
+        <span className={`card-icon card-icon--${s.tone}`}>
+          <Icon name={s.icon} />
+        </span>
+        {s.count && <ItemCount kinds={s.count.kinds} label={s.count.label} />}
+      </div>
+      <h2>{s.title}</h2>
+      <p className="muted">{s.desc}</p>
+    </Link>
+  );
+}
+
+/** Total items in one or two content files; nothing until loaded. */
+function ItemCount({ kinds, label }: { kinds: ContentKind[]; label: (n: number) => string }) {
+  const a = useContent(kinds[0]);
+  const b = useContent(kinds[1] ?? kinds[0]);
+  if (a.status !== 'ready' || b.status !== 'ready') return null;
+  const n = a.items.length + (kinds[1] ? b.items.length : 0);
+  return <span className="count-badge">{label(n)}</span>;
 }
 
 function WordOfDay({ word }: { word: VocabItem }) {

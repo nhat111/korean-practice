@@ -23,46 +23,56 @@ function vocabLines(items: VocabItem[]): SpeakingLine[] {
   return items.map((v) => ({ source: `vocab:${v.id}`, ko: v.example.ko, vi: v.example.vi }));
 }
 
+/** Hub cards, coloured like the matching home sections. */
+const DRILLS = [
+  { to: '/shadowing', icon: 'waves', tone: 'blue', title: vi.shadowing.title, desc: vi.home.cards.shadowing },
+  { to: '/patterns', icon: 'puzzle', tone: 'amber', title: vi.patterns.title, desc: vi.speaking.patternsDesc },
+  { to: '/listening', icon: 'headphones', tone: 'teal', title: vi.listening.title, desc: vi.home.cards.listening },
+  { to: '/interpret', icon: 'languages', tone: 'violet', title: vi.interpret.title, desc: vi.home.cards.interpret },
+] as const;
+
 export function SpeakingPage() {
+  return (
+    <div className="stack">
+      <h1>{vi.speaking.title}</h1>
+      <SupportInfo />
+      <div className="grid">
+        {DRILLS.map((d) => (
+          <Link key={d.to} to={d.to} className="card card--link">
+            <span className={`card-icon card-icon--${d.tone}`}>
+              <Icon name={d.icon} />
+            </span>
+            <h2>{d.title}</h2>
+            <p className="muted">{d.desc}</p>
+          </Link>
+        ))}
+      </div>
+      <Link to="/speaking/free" className="card card--link suggest-card">
+        <span className="card-icon card-icon--red">
+          <Icon name="mic" />
+        </span>
+        <div>
+          <h2>{vi.speaking.freeTitle}</h2>
+          <p className="muted">{vi.speaking.freeDesc}</p>
+        </div>
+      </Link>
+      <History />
+    </div>
+  );
+}
+
+/** "/speaking/free": walk any model answer or vocab example and check it by voice. */
+export function SpeakingFreePage() {
   const [source, setSource] = useState<Source>('scenarios');
   const scenarios = useContent('scenarios');
   const vocab = useContent('vocab');
 
   return (
     <div className="stack">
-      <h1>{vi.speaking.title}</h1>
-      <SupportInfo />
-      <div className="grid">
-        <Link to="/shadowing" className="card card--link">
-          <span className="card-icon">
-            <Icon name="waves" />
-          </span>
-          <h2>{vi.shadowing.title}</h2>
-          <p className="muted">{vi.home.sections.shadowing}</p>
-        </Link>
-        <Link to="/patterns" className="card card--link">
-          <span className="card-icon">
-            <Icon name="puzzle" />
-          </span>
-          <h2>{vi.patterns.title}</h2>
-          <p className="muted">{vi.home.sections.patterns}</p>
-        </Link>
-        <Link to="/listening" className="card card--link">
-          <span className="card-icon">
-            <Icon name="headphones" />
-          </span>
-          <h2>{vi.listening.title}</h2>
-          <p className="muted">{vi.listening.homeDesc}</p>
-        </Link>
-        <Link to="/interpret" className="card card--link">
-          <span className="card-icon">
-            <Icon name="languages" />
-          </span>
-          <h2>{vi.interpret.title}</h2>
-          <p className="muted">{vi.interpret.homeDesc}</p>
-        </Link>
-      </div>
-
+      <Link to="/speaking" className="back-link">
+        {vi.speaking.backToHub}
+      </Link>
+      <h1>{vi.speaking.freeTitle}</h1>
       <div className="segmented" role="tablist">
         {(['scenarios', 'vocab'] as const).map((s) => (
           <button
@@ -87,8 +97,6 @@ export function SpeakingPage() {
           {(items) => <LinePicker key="vocab" lines={vocabLines(items)} />}
         </ContentGate>
       )}
-
-      <History />
     </div>
   );
 }
@@ -99,11 +107,14 @@ function SupportInfo() {
     { label: vi.speaking.supportRecording, ok: isRecordingSupported() },
     { label: vi.speaking.supportRecognition, ok: isRecognitionSupported() },
   ];
+  // Only worth a line when something is missing (e.g. no recognition in Firefox).
+  const missing = features.filter((f) => !f.ok);
+  if (missing.length === 0) return null;
   return (
-    <p className="meta" aria-label={vi.speaking.support}>
-      {features.map((f) => (
-        <span key={f.label} className={f.ok ? 'badge badge--ok' : 'badge badge--bad'}>
-          {f.ok ? '✓' : '✗'} {f.label}
+    <p className="meta" aria-label={vi.speaking.supportMissing}>
+      {missing.map((f) => (
+        <span key={f.label} className="badge badge--bad">
+          {vi.speaking.unsupported(f.label)}
         </span>
       ))}
     </p>
