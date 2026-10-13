@@ -56,11 +56,10 @@ const PATHS = {
       <path d="M19.364 18.364a9 9 0 0 0 0-12.728" />
     </>
   ),
-  music: (
+  book: (
     <>
-      <path d="M9 18V5l12-2v13" />
-      <circle cx="6" cy="18" r="3" />
-      <circle cx="18" cy="16" r="3" />
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
     </>
   ),
   external: (

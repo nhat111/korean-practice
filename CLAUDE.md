@@ -229,14 +229,14 @@ Korean either.
   interpret answers, scenario model answers, listening reveals, flashcard examples and grammar lessons. Settings lists the flags
   and exports them as JSON so content can be fixed; nothing is uploaded.
 - The daily 5-minute plan is 3 shadowing, 3 patterns, 1 survival, 1 scenario turn, 1 listening "Số, ngày giờ"
-  (`listen:number:<id>`), 1 interpreting Việt → Hàn (`interpret:<id>`) and 1 chat message (`message:<id>`),
-  due items first; 10/15-minute sessions scale the counts and add one meeting (`listen:meeting:<id>`).
+  (`listen:number:<id>`), 1 interpreting Việt → Hàn (`interpret:<id>`), 1 chat message (`message:<id>`) and 1 grammar quiz
+  (`grammar:<id>`, due lessons first), due items first; 10/15-minute sessions scale the counts and add one meeting (`listen:meeting:<id>`).
 - Home: a typographic hero (a workplace greeting by time of day, `greetingSlot` + `vi.home.greetings`, with a speak
   button; stats only once any is above 0), then "Mục tiêu hôm nay": today's practice turns
   (`daily[today].reviews`) against `dailyTarget(minutes / 5)` (= the daily plan size), what the session contains
   (`planRecipe`, chips), Monday-to-Sunday `WeekDots`, one start button to `/daily`; then "Từ của ngày"
   (`itemOfDay(vocab, today)`). The six section cards carry an item count from the content files. Progress starts with
-  an overview (`skillProgress`: items practiced at least once per skill, `ProgressRing` + one bar per skill), then one
+  an overview (`skillProgress`: items practiced at least once per skill, grammar included, `ProgressRing` + one bar per skill), then one
   compact "Chi tiết" stats card. Helpers are pure in `src/practice/today.ts`.
 - "Lộ trình 4 tuần" (`PathCard` on Home, below the today card): `src/practice/path.ts` is pure and tested.
   `BASE_PATH` = 4 weeks of steps (`{ id, kind, topics }`: shadowing topics, scenario categories, interpret/message

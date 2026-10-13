@@ -60,8 +60,9 @@ Reference: NihongoBiz (bjtlab.me) feels polished thanks to a mascot, illustratio
 - [ ] Natural-voice audio for custom questions (needs backend TTS or on-device generation).
 - [ ] More meetings (`meetings.json`) with 3 speakers and faster speech for TOPIK 4.
 - [ ] Listening "Họp" with a "replay one line" step before the questions for TOPIK 2 learners.
-- [ ] Grammar: one grammar question in the daily plan; more lessons (-(으)ㄴ/는데요 cushion, -거든요, -다 보니,
-      -(으)ㄹ 테니까); show the lesson's grammar progress on the Progress page.
+- [x] Grammar: one grammar quiz in the daily plan, grammar bar on the Progress page.
+- [ ] Grammar: more lessons (-(으)ㄴ/는데요 cushion, -거든요, -다 보니,
+      -(으)ㄹ 테니까).
 
 ## Done
 

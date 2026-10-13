@@ -22,10 +22,11 @@ export function ProgressPage() {
   const meetings = useContent('meetings');
   const interpret = useContent('interpret');
   const messages = useContent('messages');
+  const grammar = useContent('grammar');
   const today = todayKey();
   const ids = (st: { status: string; items?: { id: string }[] }) =>
     st.status === 'ready' && st.items ? st.items.map((x) => x.id) : null;
-  const all = [shadowing, patterns, scenarios, numbers, meetings, interpret, messages, vocab].map(ids);
+  const all = [shadowing, patterns, scenarios, numbers, meetings, interpret, messages, vocab, grammar].map(ids);
   const skills: SkillProgress[] | null = all.every((x) => x !== null)
     ? skillProgress(
         {
@@ -37,6 +38,7 @@ export function ProgressPage() {
           interpret: all[5] ?? [],
           messages: all[6] ?? [],
           vocab: all[7] ?? [],
+          grammar: all[8] ?? [],
         },
         { srs: progress.srs, cards: progress.cards, scenarios: progress.scenarios },
       )

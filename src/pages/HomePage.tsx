@@ -38,6 +38,7 @@ const RECIPE_ICONS: Record<RecipeKind, IconName> = {
   listen: 'headphones',
   interpret: 'languages',
   message: 'mail',
+  grammar: 'book',
   meeting: 'headphones',
 };
 
