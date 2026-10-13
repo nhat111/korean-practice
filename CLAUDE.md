@@ -306,7 +306,8 @@ Spec: `docs/custom-questions.md` (implemented). The learner pastes their own int
   scenarios red, vocab/patterns amber, email green; reuse it wherever that skill is linked. The app
   is branded **KoDevTalk** (name in `vi.appName`, manifest, `index.html`) with a Korean-flag
   palette (flag blue `#0047a0`, navy, red accents). The icon (`public/favicon.svg`, PNGs in
-  `public/icons/`) is a navy chat bubble with `</>` over a faded taegeuk. In the app the logo is the name in
+  `public/icons/`, `public/og.jpg`) is 톡 in flag blue (Pretendard Black, converted to a path so it never depends on
+  device fonts) + the red cursor on hanji off-white; `theme-color` matches the header. In the app the logo is the name in
   Hangul, no icon: `vi.appNameKo` (코데톡) with 톡 in `--primary`, a red `.type-cursor` and `kodevtalk` in `.mono`
   under it. The Home hero speaks the same voice (mono date, big Hangul line + cursor, no gradient or mascot);
   reuse these three ingredients (Hangul, mono, red cursor) rather than gradients or illustrations. Across the app:
