@@ -305,7 +305,7 @@ Spec: `docs/custom-questions.md` (implemented). The learner pastes their own int
   scenarios red, vocab/patterns amber, email green; reuse it wherever that skill is linked. The app
   is branded **KoDevTalk** (name in `vi.appName`, manifest, `index.html`) with a Korean-flag
   palette (flag blue `#0047a0`, navy, red accents). The icon (`public/favicon.svg`, PNGs in
-  `public/icons/`) is a navy chat bubble with `</>` over a faded taegeuk; the header shows `favicon.svg`.
+  `public/icons/`) is a navy chat bubble with `</>` over a faded taegeuk; the header shows a simplified solid version (`BrandMark` in `Layout.tsx`) with the "Ko" in `--primary` and `vi.appTagline` under the name.
 - Bottom nav has 5 tabs (a left sidebar from 1024px, CSS only) (Trang chủ, Luyện nói, Hội thoại, Từ vựng, Tiến độ; `NAV` in `Layout.tsx`).
   Each tab also lights up for related pages (`also`: shadowing/patterns, custom/emails, songs).
   Pages without a tab need an entry from Home or a tab page; don't add a sixth tab. Home keeps six entry cards
