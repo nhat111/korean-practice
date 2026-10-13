@@ -5,6 +5,7 @@ import { GrammarNotes, GrammarSentence } from '../components/GrammarNotes';
 import { ReportButton } from '../components/ReportButton';
 import { SpeakButton } from '../components/SpeakButton';
 import { ComparePlayback, MicHelp, RecordControl } from '../components/SpeakPractice';
+import { StatusPanel } from '../components/StatusPanel';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
 import { srsKey } from '../practice/decks';
@@ -140,15 +141,14 @@ function FlashcardSession({ items, mode }: { items: VocabItem[]; mode: CardMode 
       </div>
 
       {!current ? (
-        <section className="card center stack-sm">
-          <h2>{vi.flashcards.sessionDone}</h2>
+        <StatusPanel kind="done" title={vi.flashcards.sessionDone}>
           <p className="muted">{vi.flashcards.sessionDoneHint}</p>
           {newCount > 0 && (
             <button type="button" className="btn" onClick={learnMore}>
               {vi.flashcards.learnMore}
             </button>
           )}
-        </section>
+        </StatusPanel>
       ) : (
         <>
           <Flashcard item={current} flipped={flipped} mode={mode} onFlip={() => setFlipped(true)} />

@@ -90,6 +90,10 @@ export function compareAnswer(model: string, spoken: string): Comparison {
     spokenTokens[j].status = 'match';
   }
 
+  // Recognition often spaces differently (한 가지 vs 한가지): that is a match, not an error.
+  joinSpacing(mw, sw, modelTokens, spokenTokens);
+  joinSpacing(sw, mw, spokenTokens, modelTokens);
+
   // Pair up remaining words that look alike (same stem, different ending).
   const freeSpoken = new Set(spokenTokens.flatMap((t, j) => (t.status === 'extra' ? [j] : [])));
   modelTokens.forEach((t, i) => {
@@ -116,6 +120,21 @@ export function compareAnswer(model: string, spoken: string): Comparison {
     spoken: spokenTokens,
     syllables: syllableDiff(model, spoken),
   };
+}
+
+/** Marks runs of 2-3 unmatched words in `a` that equal one unmatched word in `b` once joined. */
+function joinSpacing(a: string[], b: string[], at: Token[], bt: Token[]) {
+  for (let i = 0; i < a.length; i++) {
+    for (let len = 3; len >= 2; len--) {
+      if (i + len > a.length || at.slice(i, i + len).some((t) => t.status === 'match')) continue;
+      const joined = a.slice(i, i + len).join('');
+      const j = b.findIndex((w, k) => bt[k].status !== 'match' && sameWord(w, joined));
+      if (j < 0) continue;
+      for (let k = i; k < i + len; k++) at[k].status = 'match';
+      bt[j].status = 'match';
+      break;
+    }
+  }
 }
 
 /** Score at or above which a spoken answer counts as correct. */

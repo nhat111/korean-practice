@@ -2752,3 +2752,24 @@ ins {
   min-width: 36px;
   text-align: right;
 }
+
+/* Done / empty screens (StatusPanel): Korean line + red cursor, left-aligned like the hero. */
+.status-panel {
+  border-left: 4px solid var(--primary);
+}
+.status-panel--empty {
+  border-left-color: var(--border);
+}
+.status-ko {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+}
+.status-panel--empty .status-ko {
+  font-size: 1.2rem;
+  color: var(--muted);
+}
+.status-panel .row > .btn {
+  flex: 1 1 auto;
+}

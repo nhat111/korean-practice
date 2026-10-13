@@ -18,6 +18,15 @@ describe('similarity', () => {
 });
 
 describe('compareAnswer', () => {
+  it('treats spacing differences as matches, both ways', () => {
+    const r = compareAnswer('한 가지 여쭤봐도 될까요?', '한가지 여쭤봐도 될까요');
+    expect(r.model.map((t) => t.status)).toEqual(['match', 'match', 'match', 'match']);
+    expect(r.spoken.map((t) => t.status)).toEqual(['match', 'match', 'match']);
+    const back = compareAnswer('배포했습니다', '배포 했습니다');
+    expect(back.model[0].status).toBe('match');
+    expect(back.spoken.map((t) => t.status)).toEqual(['match', 'match']);
+  });
+
   it('scores an exact answer 100 with all words matched', () => {
     const r = compareAnswer('오늘 배포할 예정입니다.', '오늘 배포할 예정입니다');
     expect(r.score).toBe(100);

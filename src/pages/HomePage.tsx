@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router';
 import { Icon, type IconName } from '../components/Icon';
 import { InstallHint } from '../components/InstallHint';
@@ -75,6 +76,8 @@ const AI_SECTION: Section = { to: '/ai-roleplay', icon: 'bot', title: vi.aiRolep
 
 export function HomePage() {
   const backend = useBackendSettings();
+  // Read once per visit: the greeting and date line don't need to tick.
+  const [now] = useState(() => new Date());
   const sections = backend.url ? [...SECTIONS, AI_SECTION] : SECTIONS;
   const vocab = useContent('vocab');
   const progress = useProgress();
@@ -94,7 +97,6 @@ export function HomePage() {
   const done = todayStats?.reviews ?? 0;
   const ctaLabel = done === 0 ? vi.home.today.start : done < target ? vi.home.today.continue : vi.home.today.more;
   const word = vocab.status === 'ready' ? itemOfDay(vocab.items, today) : undefined;
-  const now = new Date();
   const greeting = vi.home.greetings[greetingSlot(now.getHours())];
   const stats = [
     { value: days, label: vi.home.statStreak },

@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { Icon } from '../components/Icon';
 import { ContentGate } from '../components/ContentGate';
 import { SpeakingDrill, type SpeakingLine } from '../components/SpeakingDrill';
+import { StatusPanel } from '../components/StatusPanel';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
 import { isSpeechSupported } from '../speech';
@@ -123,7 +124,11 @@ function SupportInfo() {
 
 function LinePicker({ lines }: { lines: SpeakingLine[] }) {
   const [index, setIndex] = useState(0);
-  if (lines.length === 0) return <p className="muted">{vi.common.empty}</p>;
+  if (lines.length === 0) return (
+      <StatusPanel kind="empty">
+        <p className="muted">{vi.common.empty}</p>
+      </StatusPanel>
+    );
   const line = lines[index];
 
   function random() {

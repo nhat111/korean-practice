@@ -9,6 +9,7 @@ import { getProgressSnapshot } from '../storage/progress';
 import type { MeetingItem, MeetingQuestion } from '../types';
 import { Icon } from './Icon';
 import { ReportButton } from './ReportButton';
+import { StatusPanel } from './StatusPanel';
 
 const SLOW_RATE = 0.75;
 const GAP_MS = 350;
@@ -25,7 +26,11 @@ function ordered(items: MeetingItem[]): MeetingItem[] {
 export function MeetingListen({ items }: { items: MeetingItem[] }) {
   const [list] = useState(() => ordered(items));
   const [index, setIndex] = useState(0);
-  if (list.length === 0) return <p className="muted">{vi.common.empty}</p>;
+  if (list.length === 0) return (
+      <StatusPanel kind="empty">
+        <p className="muted">{vi.common.empty}</p>
+      </StatusPanel>
+    );
   const meeting = list[index % list.length];
   return (
     <>

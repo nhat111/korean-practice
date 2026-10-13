@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type PointerEvent } from 'react';
 import { vi } from '../i18n/vi';
 import { gradeFor } from '../practice/decks';
 import { isSpeechSupported, speakKorean, stopSpeaking } from '../speech';
-import { compareAnswer, type Comparison } from '../speaking/compare';
+import { compareAnswer, PASS_SCORE, type Comparison } from '../speaking/compare';
 import { splitParts } from '../speaking/segments';
 import { isRecognitionSupported, useSpeechRecognition } from '../speaking/recognition';
 import { isRecordingSupported, playAudio, unlockAudioInput, useRecorder } from '../speaking/recorder';
@@ -188,6 +188,36 @@ const RATINGS: { value: SelfRating; icon: IconName }[] = [
   { value: 'good', icon: 'check' },
 ];
 
+interface Rated {
+  rating: SelfRating;
+  /** Days until the next review (0 without an SRS key). */
+  days: number;
+}
+
+/** Saves a rating to the speaking history and, with `srsKey`, schedules the next review. */
+function saveRating({
+  ko,
+  source,
+  mode,
+  srsKey,
+  rating,
+}: {
+  ko: string;
+  source: string;
+  mode: SpeakingMode;
+  srsKey?: string;
+  rating: SelfRating;
+}): Rated {
+  let days = 0;
+  if (srsKey) {
+    const next = review(getProgressSnapshot().srs[srsKey], gradeFor(rating), todayKey());
+    saveReview(srsKey, next);
+    days = next.interval;
+  }
+  saveSpeakingAttempt({ mode, source, target: ko, selfRating: rating });
+  return { rating, days };
+}
+
 /** "Chưa được / Gần đúng / Tốt". Saves to history and, with `srsKey`, schedules the next review. */
 export function SelfRate({
   ko,
@@ -195,24 +225,21 @@ export function SelfRate({
   mode,
   srsKey,
   onRated,
+  preset,
 }: {
   ko: string;
   source: string;
   mode: SpeakingMode;
   srsKey?: string;
   onRated?: (rating: SelfRating) => void;
+  /** Already rated elsewhere (from the recognition score): shown, not saved again. */
+  preset?: Rated | null;
 }) {
-  const [rated, setRated] = useState<{ rating: SelfRating; days: number } | null>(null);
+  const [own, setOwn] = useState<Rated | null>(null);
+  const rated = own ?? preset ?? null;
 
   function rate(rating: SelfRating) {
-    let days = 0;
-    if (srsKey) {
-      const next = review(getProgressSnapshot().srs[srsKey], gradeFor(rating), todayKey());
-      saveReview(srsKey, next);
-      days = next.interval;
-    }
-    saveSpeakingAttempt({ mode, source, target: ko, selfRating: rating });
-    setRated({ rating, days });
+    setOwn(saveRating({ ko, source, mode, srsKey, rating }));
     onRated?.(rating);
   }
 
@@ -391,7 +418,18 @@ function PracticeCore({
   const canRecord = isRecordingSupported();
   const hasRecording = recorder.url !== null && recorder.status === 'idle';
   const [phase, setPhase] = useState<Phase>('idle');
+  // Set when a recognition score rated the line, so a manual tap can't rate it twice.
+  const [autoRated, setAutoRated] = useState<Rated | null>(null);
+  const ratedRef = useRef(false);
   const alive = useRef(true);
+
+  function rateFromScore(score: number) {
+    if (noRating || isPart || ratedRef.current) return;
+    const rating = ratingForScore(score);
+    ratedRef.current = true;
+    setAutoRated(saveRating({ ko, source, mode, srsKey, rating }));
+    onRated?.(rating);
+  }
 
   useEffect(() => {
     alive.current = true;
@@ -502,19 +540,37 @@ function PracticeCore({
           )}
         </div>
       )}
-      {revealed && !noRating && (hasRecording || !canRecord) && !busy &&
+      {revealed && !noRating && (hasRecording || !canRecord || autoRated) && !busy &&
         (isPart ? (
           <p className="muted small">{vi.practice.partRateHint}</p>
         ) : (
-          <SelfRate key={recorder.url ?? 'none'} ko={ko} source={source} mode={mode} srsKey={srsKey} onRated={onRated} />
+          <SelfRate
+            key={recorder.url ?? 'none'}
+            ko={ko}
+            source={source}
+            mode={mode}
+            srsKey={srsKey}
+            onRated={(rating) => {
+              ratedRef.current = true;
+              onRated?.(rating);
+            }}
+            preset={autoRated}
+          />
         ))}
-      {revealed && autoCheck && isRecognitionSupported() && <AutoCheck ko={ko} source={source} />}
+      {revealed && autoCheck && isRecognitionSupported() && (
+        <AutoCheck ko={ko} source={source} onScore={rateFromScore} />
+      )}
     </>
   );
 }
 
+/** Recognition score → rating, so a machine-checked line counts without a manual tap. */
+function ratingForScore(score: number): SelfRating {
+  return score >= 85 ? 'good' : score >= PASS_SCORE ? 'ok' : 'bad';
+}
+
 /** Optional: speech recognition compared syllable by syllable with the model. */
-function AutoCheck({ ko, source }: { ko: string; source: string }) {
+function AutoCheck({ ko, source, onScore }: { ko: string; source: string; onScore: (score: number) => void }) {
   const recognition = useSpeechRecognition();
   const [open, setOpen] = useState(false);
   const [result, setResult] = useState<Comparison | null>(null);
@@ -533,6 +589,7 @@ function AutoCheck({ ko, source }: { ko: string; source: string }) {
       const r = compareAnswer(ko, transcript);
       setResult(r);
       saveSpeakingAttempt({ mode: 'check', source, target: ko, transcript, score: r.score });
+      onScore(r.score);
     });
   }
 

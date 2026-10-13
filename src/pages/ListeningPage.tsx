@@ -5,6 +5,7 @@ import { ListenChoice, ListenReveal } from '../components/ListenChoice';
 import { saveListenResult } from '../practice/listenResult';
 import { ListenPlayer as Player } from '../components/ListenPlayer';
 import { MeetingListen } from '../components/MeetingListen';
+import { StatusPanel } from '../components/StatusPanel';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
 import {
@@ -105,14 +106,17 @@ function Session({ mode, content, numbers }: { mode: Exclude<Mode, 'meeting'>; c
     setAnswered(false);
   }
 
-  if (questions.length === 0) return <p className="muted">{vi.common.empty}</p>;
+  if (questions.length === 0) return (
+      <StatusPanel kind="empty">
+        <p className="muted">{vi.common.empty}</p>
+      </StatusPanel>
+    );
 
   if (index >= questions.length) {
     return (
-      <section className="card center stack-sm">
-        <h2>{vi.listening.doneTitle}</h2>
+      <StatusPanel kind="done" title={vi.listening.doneTitle}>
         <p className="score">{vi.listening.result(correct, questions.length)}</p>
-        <div className="row row--center">
+        <div className="row">
           <button type="button" className="btn" onClick={again}>
             {vi.listening.again}
           </button>
@@ -120,7 +124,7 @@ function Session({ mode, content, numbers }: { mode: Exclude<Mode, 'meeting'>; c
             {vi.listening.back}
           </Link>
         </div>
-      </section>
+      </StatusPanel>
     );
   }
 

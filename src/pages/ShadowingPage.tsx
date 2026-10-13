@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useSearchParams } from 'react-router';
 import { ContentGate } from '../components/ContentGate';
 import { ShadowingCard } from '../components/ShadowingCard';
+import { StatusPanel } from '../components/StatusPanel';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
 import { SHADOWING_TOPICS, srsKey } from '../practice/decks';
@@ -75,7 +76,9 @@ function ShadowingDeck({ items }: { items: ShadowingItem[] }) {
       </div>
 
       {!current ? (
-        <p className="muted">{vi.shadowing.empty}</p>
+        <StatusPanel kind="empty">
+          <p className="muted">{vi.shadowing.empty}</p>
+        </StatusPanel>
       ) : (
         <>
           <div className="row-between">
