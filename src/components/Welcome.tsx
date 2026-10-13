@@ -42,7 +42,11 @@ export function Welcome() {
     return (
       <div className="stack welcome">
         <section className="hero stack-sm">
-          <img className="welcome-logo" src="/favicon.svg" alt="" width="56" height="56" />
+          <p className="welcome-logo" lang="ko" aria-hidden="true">
+            {vi.appNameKo.slice(0, -1)}
+            <span className="brand-accent">{vi.appNameKo.slice(-1)}</span>
+            <span className="type-cursor" />
+          </p>
           <h1>{vi.welcome.title}</h1>
           <p>{vi.welcome.subtitle}</p>
         </section>

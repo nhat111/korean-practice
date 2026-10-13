@@ -5,6 +5,26 @@ import type { CorrectionType, Politeness } from '../types';
 export const vi = {
   appName: 'KoDevTalk',
   appNameKo: '코데톡',
+  // Korean section names shown as "// 쉐도잉" above each top-level page title (Layout).
+  kickers: {
+    '/daily': '오늘의 연습',
+    '/speaking': '말하기',
+    '/speaking/free': '자유 말하기',
+    '/shadowing': '쉐도잉',
+    '/patterns': '패턴 연습',
+    '/listening': '듣기',
+    '/interpret': '통역',
+    '/scenarios': '상황 회화',
+    '/custom': '내 질문',
+    '/emails': '이메일',
+    '/messages': '메신저',
+    '/flashcards': '단어',
+    '/songs': 'K-pop',
+    '/progress': '진도',
+    '/weak': '복습',
+    '/settings': '설정',
+    '/ai-roleplay': 'AI 롤플레이',
+  } as Record<string, string>,
   nav: {
     home: 'Trang chủ',
     scenarios: 'Hội thoại',

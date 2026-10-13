@@ -48,6 +48,11 @@ export function Layout() {
       <BackendBanner />
       <main className="main" ref={mainRef}>
         <div className="main-inner">
+          {vi.kickers[pathname] && (
+            <p className="page-kicker" lang="ko">
+              {vi.kickers[pathname]}
+            </p>
+          )}
           <Outlet />
         </div>
       </main>

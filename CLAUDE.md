@@ -299,7 +299,7 @@ Spec: `docs/custom-questions.md` (implemented). The learner pastes their own int
   never scroll; only `.main` does. Don't reintroduce document scrolling or fixed/sticky bars.
 - Touch targets are at least 44px. No hover-only interactions.
 - Design system (top of `src/index.css`): use the CSS tokens (`--primary`, `--primary-soft`,
-  `--accent-gradient`, `--accent-red`, `--surface*`, `--radius-sm/md/lg`, `--shadow-sm`/`--shadow`,
+  `--accent-red`, `--font-mono`, `--surface*`, `--radius-sm/md/lg`, `--shadow-sm`/`--shadow`,
   `--focus-ring`, `--tone-<blue|teal|violet|red|amber|green>(-bg)`) instead of hard-coded colors; keep
   text/background pairs at WCAG AA. The light background is a warm "hanji" off-white; cards stay white.
   Each skill has a tone for its icon (`.card-icon--<tone>`): shadowing blue, listening teal, interpret violet,
@@ -309,7 +309,11 @@ Spec: `docs/custom-questions.md` (implemented). The learner pastes their own int
   `public/icons/`) is a navy chat bubble with `</>` over a faded taegeuk. In the app the logo is the name in
   Hangul, no icon: `vi.appNameKo` (코데톡) with 톡 in `--primary`, a red `.type-cursor` and `kodevtalk` in `.mono`
   under it. The Home hero speaks the same voice (mono date, big Hangul line + cursor, no gradient or mascot);
-  reuse these three ingredients (Hangul, mono, red cursor) rather than gradients or illustrations.
+  reuse these three ingredients (Hangul, mono, red cursor) rather than gradients or illustrations. Across the app:
+  flat white cards with hairline borders (`--shadow-sm: none`, radii 8/10/14), a `// 쉐도잉`-style kicker above each
+  top-level page title (`vi.kickers`, rendered by `Layout` for exact paths), `.section-title` as a `// ` mono comment,
+  progress bars as a solid fill ending in a red cursor (hidden at 0%), the active nav tab marked by a red bar, counts
+  in mono (`.count-badge`, `.chip span`, `.skill-count`, `.path-step-count`, `.score`). No gradients.
 - Bottom nav has 5 tabs (a left sidebar from 1024px, CSS only) (Trang chủ, Luyện nói, Hội thoại, Từ vựng, Tiến độ; `NAV` in `Layout.tsx`).
   Each tab also lights up for related pages (`also`: shadowing/patterns, custom/emails, songs).
   Pages without a tab need an entry from Home or a tab page; don't add a sixth tab. Home keeps six entry cards
