@@ -1,4 +1,4 @@
-import { Link, Route, Routes } from 'react-router';
+import { Link, Navigate, Route, Routes } from 'react-router';
 import { Layout } from './components/Layout';
 import { vi } from './i18n/vi';
 import { AiRoleplayPage } from './pages/AiRoleplayPage';
@@ -8,6 +8,7 @@ import { DailyPage } from './pages/DailyPage';
 import { EmailExercisePage } from './pages/EmailExercisePage';
 import { EmailsPage } from './pages/EmailsPage';
 import { FlashcardsPage } from './pages/FlashcardsPage';
+import { GrammarLessonPage, GrammarPage } from './pages/GrammarPage';
 import { HomePage } from './pages/HomePage';
 import { InterpretPage } from './pages/InterpretPage';
 import { ListeningPage } from './pages/ListeningPage';
@@ -19,8 +20,6 @@ import { ScenariosPage } from './pages/ScenariosPage';
 import { SettingsPage } from './pages/SettingsPage';
 import { ShadowingPage } from './pages/ShadowingPage';
 import { WeakPage } from './pages/WeakPage';
-import { SongDetailPage } from './pages/SongDetailPage';
-import { SongsPage } from './pages/SongsPage';
 import { SpeakingFreePage, SpeakingPage } from './pages/SpeakingPage';
 
 export function App() {
@@ -44,8 +43,10 @@ export function App() {
         <Route path="interpret" element={<InterpretPage />} />
         <Route path="daily" element={<DailyPage />} />
         <Route path="weak" element={<WeakPage />} />
-        <Route path="songs" element={<SongsPage />} />
-        <Route path="songs/:id" element={<SongDetailPage />} />
+        <Route path="grammar" element={<GrammarPage />} />
+        <Route path="grammar/:id" element={<GrammarLessonPage />} />
+        {/* The K-pop songs section was replaced by grammar; keep old links working. */}
+        <Route path="songs/*" element={<Navigate to="/grammar" replace />} />
         <Route path="progress" element={<ProgressPage />} />
         <Route path="settings" element={<SettingsPage />} />
         <Route path="ai-roleplay" element={<AiRoleplayPage />} />

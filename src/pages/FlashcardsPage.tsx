@@ -41,8 +41,8 @@ export function FlashcardsPage() {
     <div className="stack">
       <div className="row-between">
         <h1>{vi.flashcards.title}</h1>
-        <Link to="/songs" className="link-btn small">
-          {vi.flashcards.toSongs}
+        <Link to="/grammar" className="link-btn small">
+          {vi.flashcards.toGrammar}
         </Link>
       </div>
       <ContentGate state={state}>

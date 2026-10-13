@@ -119,40 +119,43 @@ export interface VocabItem {
   tags: string[];
 }
 
-// ---------- Songs ----------
-// Lyrics are copyrighted: never store lyric lines. Only the title, short
-// words/phrases, and original example sentences written for this app.
+// ---------- Grammar (Ngữ pháp công sở) ----------
 
-export interface SongWord {
-  ko: string;
-  vi: string;
-  noteVi?: string;
+/** Same politeness idea said to a colleague (해요체), a lead and a client (하십시오체). */
+export interface PolitenessLevels {
+  peer: string;
+  lead: string;
+  client: string;
 }
 
-export interface SongGrammar {
-  /** TOPIK-style notation, e.g. "-(으)ㄹ 때마다". */
+export interface GrammarQuizItem {
+  /** The situation, in Vietnamese. */
+  q: string;
+  /** Korean options (2-4); the UI shuffles them. */
+  choices: string[];
+  /** Index of the right option. */
+  answer: number;
+  /** Why the others are wrong, in Vietnamese. */
+  explainVi: string;
+}
+
+export interface GrammarLesson {
+  /** Stable id ("gr-…"); never rename. */
+  id: string;
+  /** One of GRAMMAR_GROUPS in src/practice/decks.ts. */
+  group: string;
+  /** TOPIK notation, e.g. "-느라고"; also matched against vocab example grammar. */
   pattern: string;
   meaningVi: string;
-  /** How the pattern relates to the song title/theme (Vietnamese). */
-  linkVi: string;
-  /** Original workplace example sentence (not a lyric). */
-  example: { ko: string; vi: string };
-  noteVi?: string;
-}
-
-export interface SongLesson {
-  /** Stable id; never rename. */
-  id: string;
-  /** Korean title as released. */
-  title: string;
-  artist: string;
-  year: number;
-  /** Short intro to the song (Vietnamese). */
-  aboutVi: string;
-  /** YouTube search query for the official MV. */
-  youtubeQuery: string;
-  words: SongWord[];
-  grammar: SongGrammar[];
+  /** When to use it, politeness notes (Vietnamese). */
+  usageVi: string;
+  levels?: PolitenessLevels;
+  /** 2-4 workplace examples. */
+  examples: { ko: string; vi: string }[];
+  /** A typical mistake: wrong → right, with why. */
+  mistake?: { wrong: string; right: string; noteVi: string };
+  /** 1-3 questions; saved in the SRS as grammar:<id>. */
+  quiz: GrammarQuizItem[];
 }
 
 // ---------- Shadowing ----------

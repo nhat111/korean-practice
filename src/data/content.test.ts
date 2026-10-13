@@ -7,6 +7,7 @@ import { describe, expect, it } from 'vitest';
 import { SCENARIO_CATEGORIES } from './scenarioFilter';
 import {
   parseEmails,
+  parseGrammar,
   parseInterpret,
   parseMeetings,
   parseMessages,
@@ -14,12 +15,11 @@ import {
   parsePatterns,
   parseScenarios,
   parseShadowing,
-  parseSongs,
   parseVocab,
   type ParseResult,
 } from './validate';
 import { allFills } from '../patterns/fill';
-import { INTERPRET_TOPICS, MESSAGE_TOPICS, SHADOWING_TOPICS } from '../practice/decks';
+import { GRAMMAR_GROUPS, INTERPRET_TOPICS, MESSAGE_TOPICS, SHADOWING_TOPICS } from '../practice/decks';
 
 function load(name: string): unknown {
   return JSON.parse(readFileSync(resolve(process.cwd(), 'public/data', name), 'utf8'));
@@ -29,7 +29,7 @@ const files: [string, (data: unknown) => ParseResult<{ id: string }>][] = [
   ['scenarios.json', parseScenarios],
   ['emails.json', parseEmails],
   ['vocab.json', parseVocab],
-  ['songs.json', parseSongs],
+  ['grammar.json', parseGrammar],
   ['shadowing.json', parseShadowing],
   ['patterns.json', parsePatterns],
   ['numbers.json', parseNumbers],
@@ -73,6 +73,24 @@ describe('vocab.json grammar notation', () => {
         .filter((p) => /[A-Za-zÀ-ỹ]{2,}/.test(p.replace(/\b[NAV]\b/g, ''))),
     );
     expect(bad).toEqual([]);
+  });
+});
+
+describe('grammar.json', () => {
+  const { items } = parseGrammar(load('grammar.json'));
+  it('uses only the known groups (labels live in vi.grammar.groups)', () => {
+    const unknown = items.filter((g) => !(GRAMMAR_GROUPS as readonly string[]).includes(g.group));
+    expect(unknown.map((g) => `${g.id}: ${g.group}`)).toEqual([]);
+  });
+  it('uses Korean notation only in patterns', () => {
+    const bad = items.map((g) => g.pattern).filter((p) => /[A-Za-zÀ-ỹ]{2,}/.test(p.replace(/\b[NAV]\b/g, '')));
+    expect(bad).toEqual([]);
+  });
+  it('has ids starting with gr- in plain ASCII', () => {
+    expect(items.filter((g) => !/^gr-[a-z0-9-]+$/.test(g.id)).map((g) => g.id)).toEqual([]);
+  });
+  it('keeps the mistake different from its fix', () => {
+    expect(items.filter((g) => g.mistake && g.mistake.wrong === g.mistake.right).map((g) => g.id)).toEqual([]);
   });
 });
 

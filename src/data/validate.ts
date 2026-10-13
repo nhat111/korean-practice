@@ -7,6 +7,7 @@ import type {
   CorrectionType,
   EmailCorrection,
   EmailExercise,
+  GrammarLesson,
   InterpretItem,
   MeetingItem,
   MessageExercise,
@@ -15,7 +16,6 @@ import type {
   PatternItem,
   Politeness,
   Scenario,
-  SongLesson,
   ScenarioChoice,
   ScenarioTurn,
   ShadowingItem,
@@ -343,32 +343,46 @@ export function validateMeeting(v: unknown): string[] {
   return errors;
 }
 
-export function validateSong(v: unknown): string[] {
+export function validateGrammar(v: unknown): string[] {
   const errors: string[] = [];
-  if (!isObj(v)) return ['song: phải là object'];
-  const path = `song(${String(v.id)})`;
-  requireStrings(v, ['id', 'title', 'artist', 'aboutVi', 'youtubeQuery'], path, errors);
-  if (typeof v.year !== 'number' || !Number.isInteger(v.year)) errors.push(`${path}.year: phải là số nguyên`);
-  if (!Array.isArray(v.words) || v.words.length === 0) {
-    errors.push(`${path}.words: cần ít nhất 1 từ`);
+  if (!isObj(v)) return ['grammar: phải là object'];
+  const path = `grammar(${String(v.id)})`;
+  requireStrings(v, ['id', 'group', 'pattern', 'meaningVi', 'usageVi'], path, errors);
+  if (v.levels !== undefined) {
+    if (!isObj(v.levels)) errors.push(`${path}.levels: phải là object`);
+    else requireStrings(v.levels, ['peer', 'lead', 'client'], `${path}.levels`, errors);
+  }
+  if (!Array.isArray(v.examples) || v.examples.length < 2 || v.examples.length > 4) {
+    errors.push(`${path}.examples: cần 2-4 câu ví dụ`);
   } else {
-    v.words.forEach((w, i) => {
-      if (!isObj(w)) errors.push(`${path}.words[${i}]: phải là object`);
-      else requireStrings(w, ['ko', 'vi'], `${path}.words[${i}]`, errors);
+    v.examples.forEach((e, i) => {
+      if (!isObj(e)) errors.push(`${path}.examples[${i}]: phải là object`);
+      else requireStrings(e, ['ko', 'vi'], `${path}.examples[${i}]`, errors);
     });
   }
-  if (!Array.isArray(v.grammar) || v.grammar.length === 0) {
-    errors.push(`${path}.grammar: cần ít nhất 1 mẫu ngữ pháp`);
+  if (v.mistake !== undefined) {
+    if (!isObj(v.mistake)) errors.push(`${path}.mistake: phải là object`);
+    else requireStrings(v.mistake, ['wrong', 'right', 'noteVi'], `${path}.mistake`, errors);
+  }
+  if (!Array.isArray(v.quiz) || v.quiz.length < 1 || v.quiz.length > 3) {
+    errors.push(`${path}.quiz: cần 1-3 câu hỏi`);
   } else {
-    v.grammar.forEach((g, i) => {
-      const p = `${path}.grammar[${i}]`;
-      if (!isObj(g)) {
-        errors.push(`${p}: phải là object`);
+    v.quiz.forEach((q, i) => {
+      const qp = `${path}.quiz[${i}]`;
+      if (!isObj(q)) {
+        errors.push(`${qp}: phải là object`);
         return;
       }
-      requireStrings(g, ['pattern', 'meaningVi', 'linkVi'], p, errors);
-      if (!isObj(g.example)) errors.push(`${p}.example: phải là object`);
-      else requireStrings(g.example, ['ko', 'vi'], `${p}.example`, errors);
+      requireStrings(q, ['q', 'explainVi'], qp, errors);
+      if (!isStringArray(q.choices) || q.choices.length < 2 || q.choices.length > 4) {
+        errors.push(`${qp}.choices: cần 2-4 lựa chọn`);
+      } else if (new Set(q.choices).size !== q.choices.length) {
+        errors.push(`${qp}.choices: có lựa chọn trùng`);
+      }
+      const n = isStringArray(q.choices) ? q.choices.length : 0;
+      if (typeof q.answer !== 'number' || !Number.isInteger(q.answer) || q.answer < 0 || q.answer >= n) {
+        errors.push(`${qp}.answer: phải là chỉ số của một lựa chọn`);
+      }
     });
   }
   return errors;
@@ -420,8 +434,8 @@ export function parseEmails(data: unknown): ParseResult<EmailExercise> {
   return parseContentFile<EmailExercise>(data, validateEmail);
 }
 
-export function parseSongs(data: unknown): ParseResult<SongLesson> {
-  return parseContentFile<SongLesson>(data, validateSong);
+export function parseGrammar(data: unknown): ParseResult<GrammarLesson> {
+  return parseContentFile<GrammarLesson>(data, validateGrammar);
 }
 
 export function parseVocab(data: unknown): ParseResult<VocabItem> {

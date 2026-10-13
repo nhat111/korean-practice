@@ -17,7 +17,7 @@ describe('audioKey', () => {
       scenarios: load('scenarios'),
       vocab: load('vocab'),
       emails: load('emails'),
-      songs: load('songs'),
+      grammar: load('grammar'),
       shadowing: load('shadowing'),
       numbers: load('numbers'),
       interpret: load('interpret'),
