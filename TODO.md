@@ -65,7 +65,7 @@ Reference: NihongoBiz (bjtlab.me) feels polished thanks to a mascot, illustratio
 
 ## Done
 
-- [x] "Ngữ pháp công sở" (`grammar.json`, 24 lessons in 4 groups with politeness ladder, examples, a typical
+- [x] "Ngữ pháp công sở" (`grammar.json`, 30 lessons in 4 groups with politeness ladder, examples, a typical
       mistake and a quiz in the SRS) replaces the K-pop songs section.
 - [x] Home "Mục tiêu hôm nay" (practice turns today / daily target, week dots T2–CN, one start button),
       "Từ của ngày", progress overview (ring + per-skill bars), friendlier empty states.
