@@ -55,7 +55,7 @@ const SUGGESTIONS: Record<Role, { to: string; icon: IconName }> = {
   interview: { to: '/scenarios?cat=interview', icon: 'chat' },
 };
 
-// Six main entries; the rest (patterns, songs, progress…) live under the tabs.
+// Six main entries; the rest (patterns, grammar, progress…) live under the tabs.
 const SECTIONS: Section[] = [
   { to: '/shadowing', icon: 'waves', title: vi.shadowing.title, desc: vi.home.cards.shadowing, tone: 'blue',
     count: { kinds: ['shadowing'], label: vi.home.counts.sentences } },

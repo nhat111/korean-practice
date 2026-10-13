@@ -6,12 +6,12 @@ import { UpdateBanner } from './UpdateBanner';
 import { vi } from '../i18n/vi';
 
 // Five tabs; each also covers related pages (`also`) so the right tab stays
-// highlighted. Pages without a tab (songs, emails…) are reached from Home or a tab page.
+// highlighted. Pages without a tab (grammar, emails…) are reached from Home or a tab page.
 const NAV: { to: string; label: string; icon: IconName; also: string[] }[] = [
   { to: '/', label: vi.nav.home, icon: 'home', also: ['/daily'] },
   { to: '/speaking', label: vi.nav.speaking, icon: 'mic', also: ['/shadowing', '/patterns', '/listening', '/interpret'] },
   { to: '/scenarios', label: vi.nav.scenarios, icon: 'chat', also: ['/custom', '/emails', '/messages', '/ai-roleplay'] },
-  { to: '/flashcards', label: vi.nav.flashcards, icon: 'cards', also: ['/songs'] },
+  { to: '/flashcards', label: vi.nav.flashcards, icon: 'cards', also: ['/grammar'] },
   { to: '/progress', label: vi.nav.progress, icon: 'chart', also: ['/weak'] },
 ];
 

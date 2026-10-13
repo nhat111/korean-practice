@@ -4,6 +4,7 @@
 import { useEffect, useState } from 'react';
 import type {
   EmailExercise,
+  GrammarLesson,
   InterpretItem,
   MeetingItem,
   MessageExercise,
@@ -11,11 +12,11 @@ import type {
   PatternItem,
   Scenario,
   ShadowingItem,
-  SongLesson,
   VocabItem,
 } from '../types';
 import {
   parseEmails,
+  parseGrammar,
   parseInterpret,
   parseMeetings,
   parseMessages,
@@ -23,7 +24,6 @@ import {
   parsePatterns,
   parseScenarios,
   parseShadowing,
-  parseSongs,
   parseVocab,
   type ParseResult,
 } from './validate';
@@ -32,7 +32,7 @@ interface ContentMap {
   scenarios: Scenario;
   emails: EmailExercise;
   vocab: VocabItem;
-  songs: SongLesson;
+  grammar: GrammarLesson;
   shadowing: ShadowingItem;
   patterns: PatternItem;
   numbers: NumberItem;
@@ -47,7 +47,7 @@ const parsers: { [K in ContentKind]: (data: unknown) => ParseResult<ContentMap[K
   scenarios: parseScenarios,
   emails: parseEmails,
   vocab: parseVocab,
-  songs: parseSongs,
+  grammar: parseGrammar,
   shadowing: parseShadowing,
   patterns: parsePatterns,
   numbers: parseNumbers,

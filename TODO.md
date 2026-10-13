@@ -60,9 +60,13 @@ Reference: NihongoBiz (bjtlab.me) feels polished thanks to a mascot, illustratio
 - [ ] Natural-voice audio for custom questions (needs backend TTS or on-device generation).
 - [ ] More meetings (`meetings.json`) with 3 speakers and faster speech for TOPIK 4.
 - [ ] Listening "Họp" with a "replay one line" step before the questions for TOPIK 2 learners.
+- [ ] Grammar: one grammar question in the daily plan; more lessons (-(으)ㄴ/는데요 cushion, -거든요, -다 보니,
+      -(으)ㄹ 테니까); show the lesson's grammar progress on the Progress page.
 
 ## Done
 
+- [x] "Ngữ pháp công sở" (`grammar.json`, 24 lessons in 4 groups with politeness ladder, examples, a typical
+      mistake and a quiz in the SRS) replaces the K-pop songs section.
 - [x] Home "Mục tiêu hôm nay" (practice turns today / daily target, week dots T2–CN, one start button),
       "Từ của ngày", progress overview (ring + per-skill bars), friendlier empty states.
 - [x] "Câu cần luyện lại" resolves chat messages (`message:<id>`) and meetings (`listen:meeting:<id>`);

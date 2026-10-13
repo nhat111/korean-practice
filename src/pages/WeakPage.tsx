@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from 'react';
 import { Link } from 'react-router';
+import { GrammarQuiz } from '../components/GrammarQuiz';
 import { InterpretCard } from '../components/InterpretCard';
 import { MeetingCard } from '../components/MeetingListen';
 import { MessageCard } from '../components/MessageCard';
@@ -14,6 +15,7 @@ import { WEAK_LIMIT, weakKeys } from '../practice/weak';
 import { splitParts } from '../speaking/segments';
 import { getProgressSnapshot } from '../storage/progress';
 import type {
+  GrammarLesson,
   InterpretItem,
   MeetingItem,
   MessageExercise,
@@ -33,9 +35,10 @@ interface Content {
   interpret: InterpretItem[];
   messages: MessageExercise[];
   meetings: MeetingItem[];
+  grammar: GrammarLesson[];
 }
 
-type WeakKind = 'shadowing' | 'pattern' | 'scenario' | 'vocab' | 'listen' | 'interpret' | 'message' | 'meeting';
+type WeakKind = 'shadowing' | 'pattern' | 'scenario' | 'vocab' | 'listen' | 'interpret' | 'message' | 'meeting' | 'grammar';
 
 interface WeakItem {
   key: string;
@@ -141,6 +144,25 @@ function resolve(key: string, c: Content): WeakItem | null {
       }
       return line ? { key, kind: 'listen', ko: line.ko, render: (r) => lineDrill(key, line.ko, line.vi, r) } : null;
     }
+    case 'grammar': {
+      const g = c.grammar.find((l) => l.id === id);
+      return g
+        ? {
+            key,
+            kind: 'grammar',
+            ko: g.pattern,
+            render: (r) => (
+              <section className="card stack-sm">
+                <p lang="ko" className="grammar-title grammar-title--big">
+                  {g.pattern}
+                </p>
+                <p className="muted">{g.meaningVi}</p>
+                <GrammarQuiz lesson={g} onDone={r} />
+              </section>
+            ),
+          }
+        : null;
+    }
     default:
       return null;
   }
@@ -155,7 +177,8 @@ export function WeakPage() {
   const interpret = useContent('interpret');
   const messages = useContent('messages');
   const meetings = useContent('meetings');
-  const states = [shadowing, patterns, scenarios, vocab, numbers, interpret, messages, meetings];
+  const grammar = useContent('grammar');
+  const states = [shadowing, patterns, scenarios, vocab, numbers, interpret, messages, meetings, grammar];
 
   return (
     <div className="stack">
@@ -170,7 +193,8 @@ export function WeakPage() {
       numbers.status === 'ready' &&
       interpret.status === 'ready' &&
       messages.status === 'ready' &&
-      meetings.status === 'ready' ? (
+      meetings.status === 'ready' &&
+      grammar.status === 'ready' ? (
         <WeakSession
           content={{
             shadowing: shadowing.items,
@@ -181,6 +205,7 @@ export function WeakPage() {
             interpret: interpret.items,
             messages: messages.items,
             meetings: meetings.items,
+            grammar: grammar.items,
           }}
         />
       ) : states.some((s) => s.status === 'error') ? (

@@ -32,6 +32,9 @@ export const INTERPRET_TOPICS = ['meeting', 'schedule', 'bug', 'scope', 'cost', 
 /** Chat message topics, in display order. Labels live in vi.messages.topics. */
 export const MESSAGE_TOPICS = ['progress', 'bug', 'schedule', 'request', 'deploy', 'apology'] as const;
 
+/** Grammar lesson groups, in display order. Labels live in vi.grammar.groups. */
+export const GRAMMAR_GROUPS = ['report', 'explain', 'request', 'honorific'] as const;
+
 /** Keys in Progress.srs: "<type>:<id>". */
 export const srsKey = {
   shadowing: (id: string) => `shadowing:${id}`,
@@ -44,6 +47,8 @@ export const srsKey = {
   interpretKo: (id: string) => `interpret-ko:${id}`,
   /** Write a Slack / KakaoWork message, compare with the model, self-rate. */
   message: (id: string) => `message:${id}`,
+  /** Grammar lesson quiz: grade 4 when every question is right, else 1. */
+  grammar: (id: string) => `grammar:${id}`,
 };
 
 /** SM-2 grade for a self-rating: not yet → again tomorrow, close → hard, good → good. */

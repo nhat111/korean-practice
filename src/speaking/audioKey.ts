@@ -38,7 +38,7 @@ interface ContentFiles {
   scenarios: { turns: { client: string; modelAnswer: string; choices: { ko: string }[] }[] }[];
   vocab: { ko: string; collocation?: string; example: { ko: string } }[];
   emails: { corrected: string }[];
-  songs: { words: { ko: string }[]; grammar: { example: { ko: string } }[] }[];
+  grammar: { levels?: { peer: string; lead: string; client: string }; examples: { ko: string }[]; mistake?: { right: string } }[];
   shadowing: { ko: string }[];
   numbers: { ko: string }[];
   interpret: { ko: string }[];
@@ -75,9 +75,11 @@ export function spokenTexts(c: ContentFiles): string[] {
   for (const m of c.messages) addWithParts(out, m.model);
   for (const m of c.meetings) for (const l of m.lines) out.add(l.ko);
   for (const e of c.emails) out.add(e.corrected);
-  for (const s of c.songs) {
-    for (const w of s.words) out.add(w.ko);
-    for (const g of s.grammar) out.add(g.example.ko);
+  // Grammar: examples, the politeness ladder and the corrected line (never the wrong one).
+  for (const g of c.grammar) {
+    for (const e of g.examples) addWithParts(out, e.ko);
+    if (g.levels) for (const l of [g.levels.peer, g.levels.lead, g.levels.client]) out.add(l);
+    if (g.mistake) out.add(g.mistake.right);
   }
   return [...out].map((t) => t.trim()).filter(Boolean);
 }
