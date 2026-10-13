@@ -225,7 +225,8 @@ Korean either.
 - The daily 5-minute plan is 3 shadowing, 3 patterns, 1 survival, 1 scenario turn, 1 listening "Số, ngày giờ"
   (`listen:number:<id>`), 1 interpreting Việt → Hàn (`interpret:<id>`) and 1 chat message (`message:<id>`),
   due items first; 10/15-minute sessions scale the counts and add one meeting (`listen:meeting:<id>`).
-- Home: a hero with the `Mascot` (stats only once any is above 0), then "Mục tiêu hôm nay": today's practice turns
+- Home: a typographic hero (a workplace greeting by time of day, `greetingSlot` + `vi.home.greetings`, with a speak
+  button; stats only once any is above 0), then "Mục tiêu hôm nay": today's practice turns
   (`daily[today].reviews`) against `dailyTarget(minutes / 5)` (= the daily plan size), what the session contains
   (`planRecipe`, chips), Monday-to-Sunday `WeekDots`, one start button to `/daily`; then "Từ của ngày"
   (`itemOfDay(vocab, today)`). The six section cards carry an item count from the content files. Progress starts with
@@ -305,7 +306,10 @@ Spec: `docs/custom-questions.md` (implemented). The learner pastes their own int
   scenarios red, vocab/patterns amber, email green; reuse it wherever that skill is linked. The app
   is branded **KoDevTalk** (name in `vi.appName`, manifest, `index.html`) with a Korean-flag
   palette (flag blue `#0047a0`, navy, red accents). The icon (`public/favicon.svg`, PNGs in
-  `public/icons/`) is a navy chat bubble with `</>` over a faded taegeuk; the header shows a simplified solid version (`BrandMark` in `Layout.tsx`) with the "Ko" in `--primary` and `vi.appTagline` under the name.
+  `public/icons/`) is a navy chat bubble with `</>` over a faded taegeuk. In the app the logo is the name in
+  Hangul, no icon: `vi.appNameKo` (코데톡) with 톡 in `--primary`, a red `.type-cursor` and `kodevtalk` in `.mono`
+  under it. The Home hero speaks the same voice (mono date, big Hangul line + cursor, no gradient or mascot);
+  reuse these three ingredients (Hangul, mono, red cursor) rather than gradients or illustrations.
 - Bottom nav has 5 tabs (a left sidebar from 1024px, CSS only) (Trang chủ, Luyện nói, Hội thoại, Từ vựng, Tiến độ; `NAV` in `Layout.tsx`).
   Each tab also lights up for related pages (`also`: shadowing/patterns, custom/emails, songs).
   Pages without a tab need an entry from Home or a tab page; don't add a sixth tab. Home keeps six entry cards

@@ -124,3 +124,13 @@ export function planRecipe(scale: number): { kind: RecipeKind; count: number }[]
   }));
   return scale >= MEETING_MIN_SCALE ? [...steps, { kind: 'meeting', count: 1 }] : steps;
 }
+
+export type GreetingSlot = 'morning' | 'lunch' | 'afternoon' | 'evening';
+
+/** Which workplace greeting fits the local hour (0-23). */
+export function greetingSlot(hour: number): GreetingSlot {
+  if (hour >= 5 && hour < 11) return 'morning';
+  if (hour >= 11 && hour < 14) return 'lunch';
+  if (hour >= 14 && hour < 18) return 'afternoon';
+  return 'evening';
+}

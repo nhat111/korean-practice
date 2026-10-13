@@ -19,34 +19,6 @@ function isUnder(pathname: string, base: string): boolean {
   return pathname === base || pathname.startsWith(`${base}/`);
 }
 
-// Header logo: a simplified, solid version of the app icon that stays crisp at 34px.
-function BrandMark() {
-  return (
-    <svg className="brand-mark" viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
-      <defs>
-        <linearGradient id="brand-bg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#1360c9" />
-          <stop offset="1" stopColor="#0a2a66" />
-        </linearGradient>
-      </defs>
-      <rect width="64" height="64" rx="16" fill="url(#brand-bg)" />
-      <path
-        fill="#fff"
-        d="M20 14h24a10 10 0 0 1 10 10v12a10 10 0 0 1-10 10H31l-9.5 6.8A1.2 1.2 0 0 1 19.6 51.6L20.6 46A10 10 0 0 1 10 36V24a10 10 0 0 1 10-10z"
-      />
-      <path
-        fill="none"
-        stroke="#0a2a66"
-        strokeWidth="4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M25.5 24.5 20 30l5.5 5.5M38.5 24.5 44 30l-5.5 5.5"
-      />
-      <path fill="none" stroke="#cd2e3a" strokeWidth="4" strokeLinecap="round" d="M34.5 23.5 29.5 36.5" />
-    </svg>
-  );
-}
-
 export function Layout() {
   // .main is the scroll container, so reset it when the route changes.
   const mainRef = useRef<HTMLElement>(null);
@@ -59,13 +31,13 @@ export function Layout() {
     <div className="app">
       <header className="topbar">
         <Link to="/" className="brand" aria-label={vi.appName}>
-          <BrandMark />
           <span className="brand-text" aria-hidden="true">
-            <span className="brand-name">
-              <span className="brand-ko">{vi.appName.slice(0, 2)}</span>
-              {vi.appName.slice(2)}
+            <span className="brand-name" lang="ko">
+              {vi.appNameKo.slice(0, -1)}
+              <span className="brand-accent">{vi.appNameKo.slice(-1)}</span>
+              <span className="type-cursor" />
             </span>
-            <span className="brand-tagline">{vi.appTagline}</span>
+            <span className="brand-latin mono">{vi.appName.toLowerCase()}</span>
           </span>
         </Link>
         <Link to="/settings" className="icon-btn topbar-settings" aria-label={vi.backend.settingsLink} title={vi.backend.settingsLink}>
