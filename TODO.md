@@ -47,8 +47,8 @@ cards on bjtlab.me (cover, "N từ · N câu hỏi · N phút", progress bar, "B
 Reference: NihongoBiz (bjtlab.me) feels polished thanks to a mascot, illustrations and a warm palette.
 
 - [x] Warm background, per-skill icon tones, item counts on the Home cards (PR #21).
-- [ ] Mascot: a first SVG ("Ko", the chat bubble from the icon) is on the Home hero (PR #21); still to do:
-      the welcome, empty states and the "done" screens, and decide whether to keep it or draw a tiger developer.
+- [x] Mascot dropped: the identity is now typographic (코데톡 wordmark + red cursor, Hangul greeting hero).
+- [ ] Carry the wordmark style into the welcome screen, empty states, "done" screens and the app icon / OG image.
 - [ ] Small illustrations for the six Home entries and for lessons (once the 4-week path exists).
       Keep them light (SVG or small WebP) so offline caching stays small.
 - [ ] Owner task: provide or approve the artwork (designer or AI-generated, with usage rights).

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { dailyTarget, itemOfDay, overallPercent, planRecipe, skillProgress, weekDays } from './today';
+import { dailyTarget, greetingSlot, itemOfDay, overallPercent, planRecipe, skillProgress, weekDays } from './today';
 
 describe('dailyTarget', () => {
   it('counts the 5-minute steps and adds a meeting from 10 minutes', () => {
@@ -82,5 +82,13 @@ describe('skillProgress', () => {
     });
     expect(overallPercent(skills)).toBe(Math.round((100 * 6) / 13));
     expect(overallPercent([])).toBe(0);
+  });
+});
+
+describe('greetingSlot', () => {
+  it('maps the hour to a workplace greeting', () => {
+    expect([4, 5, 10, 11, 13, 14, 17, 18, 23].map(greetingSlot)).toEqual([
+      'evening', 'morning', 'morning', 'lunch', 'lunch', 'afternoon', 'afternoon', 'evening', 'evening',
+    ]);
   });
 });

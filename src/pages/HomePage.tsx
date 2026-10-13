@@ -1,7 +1,6 @@
 import { Link } from 'react-router';
 import { Icon, type IconName } from '../components/Icon';
 import { InstallHint } from '../components/InstallHint';
-import { Mascot } from '../components/Mascot';
 import { PathCard } from '../components/PathCard';
 import { KoreanLine, SpeakButton } from '../components/SpeakButton';
 import { WeekDots } from '../components/WeekDots';
@@ -9,7 +8,7 @@ import { Welcome } from '../components/Welcome';
 import { useContent, type ContentKind } from '../data/content';
 import { vi } from '../i18n/vi';
 import { streak } from '../practice/plan';
-import { dailyTarget, itemOfDay, planRecipe, weekDays, type RecipeKind } from '../practice/today';
+import { dailyTarget, greetingSlot, itemOfDay, planRecipe, weekDays, type RecipeKind } from '../practice/today';
 import { weakKeys } from '../practice/weak';
 import { isDue, todayKey } from '../srs/sm2';
 import { useBackendSettings } from '../storage/backend';
@@ -95,6 +94,8 @@ export function HomePage() {
   const done = todayStats?.reviews ?? 0;
   const ctaLabel = done === 0 ? vi.home.today.start : done < target ? vi.home.today.continue : vi.home.today.more;
   const word = vocab.status === 'ready' ? itemOfDay(vocab.items, today) : undefined;
+  const now = new Date();
+  const greeting = vi.home.greetings[greetingSlot(now.getHours())];
   const stats = [
     { value: days, label: vi.home.statStreak },
     { value: todayStats?.spoken ?? 0, label: vi.home.statSpokenToday },
@@ -104,25 +105,25 @@ export function HomePage() {
   return (
     <div className="stack">
       <section className="hero">
-        <div className="hero-top">
-          <div className="stack-xs">
-            <span className="hero-hello" lang="ko">
-              {vi.home.heroHello}
-            </span>
-            <h1>{vi.home.heroTitle}</h1>
-            <p>{vi.home.heroText}</p>
-          </div>
-          <Mascot className="hero-mascot" size={104} />
+        <p className="hero-date mono">{vi.home.heroDate(vi.home.weekdays[(now.getDay() + 6) % 7], `${now.getDate()}/${now.getMonth() + 1}`)}</p>
+        <div className="hero-greet">
+          <h1 lang="ko">
+            {greeting.ko}
+            <span className="type-cursor" aria-hidden="true" />
+          </h1>
+          <SpeakButton text={greeting.ko} small />
         </div>
+        <p className="hero-gloss">
+          <strong>{greeting.vi}.</strong> {vi.home.heroText}
+        </p>
         {stats.some((s) => s.value > 0) && (
-          <div className="hero-stats">
+          <ul className="hero-stats">
             {stats.map((s) => (
-              <div key={s.label} className="hero-stat">
-                <strong>{s.value}</strong>
-                <span>{s.label}</span>
-              </div>
+              <li key={s.label}>
+                <strong className="mono">{s.value}</strong> {s.label}
+              </li>
             ))}
-          </div>
+          </ul>
         )}
       </section>
       <section className="card stack-sm today-card">

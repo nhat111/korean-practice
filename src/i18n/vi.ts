@@ -4,7 +4,7 @@ import type { CorrectionType, Politeness } from '../types';
 
 export const vi = {
   appName: 'KoDevTalk',
-  appTagline: 'Tiếng Hàn cho dân IT',
+  appNameKo: '코데톡',
   nav: {
     home: 'Trang chủ',
     scenarios: 'Hội thoại',
@@ -28,9 +28,15 @@ export const vi = {
   },
   home: {
         intro: 'Luyện giao tiếp tiếng Hàn với khách hàng trong môi trường IT outsourcing.',
-    heroHello: '안녕하세요!',
-    heroTitle: 'Mỗi ngày một chút, tự tin hơn với khách hàng Hàn.',
-    heroText: 'Báo cáo, họp, chat và email bằng tiếng Hàn công sở.',
+    // Workplace greetings by time of day (greetingSlot in practice/today.ts).
+    greetings: {
+      morning: { ko: '좋은 아침입니다', vi: 'Chào buổi sáng' },
+      lunch: { ko: '점심 맛있게 드세요', vi: 'Chúc ăn trưa ngon miệng' },
+      afternoon: { ko: '오늘도 수고 많으십니다', vi: 'Hôm nay anh/chị vất vả rồi' },
+      evening: { ko: '오늘도 수고하셨습니다', vi: 'Cảm ơn, hôm nay vất vả rồi' },
+    },
+    heroText: 'Câu chào này dùng được với khách ngay hôm nay.',
+    heroDate: (weekday: string, date: string) => `// ${weekday} · ${date}`,
     cards: {
       shadowing: 'Nghe rồi nói theo câu mẫu',
       listening: 'Nghe ý, chép, số và họp',
@@ -50,9 +56,9 @@ export const vi = {
     statScenarios: 'Hội thoại',
     practice: 'Luyện tập',
     dailyTitle: 'Luyện 5 phút hôm nay',
-    statSpokenToday: 'Câu đã nói hôm nay',
-    statMinutes: 'Phút ghi âm',
-    statStreak: 'Ngày liên tiếp',
+    statSpokenToday: 'câu hôm nay',
+    statMinutes: 'phút ghi âm',
+    statStreak: 'ngày liên tiếp',
     today: {
       title: 'Mục tiêu hôm nay',
       count: (done: number, target: number) => `${Math.min(done, target)}/${target} lượt luyện`,
