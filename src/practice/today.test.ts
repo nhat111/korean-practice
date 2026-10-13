@@ -3,9 +3,9 @@ import { dailyTarget, greetingSlot, itemOfDay, overallPercent, planRecipe, skill
 
 describe('dailyTarget', () => {
   it('counts the 5-minute steps and adds a meeting from 10 minutes', () => {
-    expect(dailyTarget(1)).toBe(11);
-    expect(dailyTarget(2)).toBe(23);
-    expect(dailyTarget(3)).toBe(34);
+    expect(dailyTarget(1)).toBe(12);
+    expect(dailyTarget(2)).toBe(25);
+    expect(dailyTarget(3)).toBe(37);
   });
 });
 
@@ -57,6 +57,7 @@ describe('skillProgress', () => {
         meetings: ['m1'],
         interpret: ['ip-1', 'ip-2'],
         messages: ['msg-1'],
+        grammar: ['gr-1', 'gr-2'],
         vocab: ['v1', 'v2'],
       },
       {
@@ -66,6 +67,7 @@ describe('skillProgress', () => {
           'scenario:s2:0': {},
           'listen:meeting:m1': {},
           'interpret-ko:ip-2': {},
+          'grammar:gr-2': {},
         },
         cards: { v1: {} },
         scenarios: { s1: {} },
@@ -78,9 +80,10 @@ describe('skillProgress', () => {
       listening: '1/2',
       interpret: '1/2',
       messages: '0/1',
+      grammar: '1/2',
       vocab: '1/2',
     });
-    expect(overallPercent(skills)).toBe(Math.round((100 * 6) / 13));
+    expect(overallPercent(skills)).toBe(Math.round((100 * 7) / 15));
     expect(overallPercent([])).toBe(0);
   });
 });

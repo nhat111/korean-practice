@@ -3,6 +3,7 @@
 
 import { addDays, type CardState } from '../srs/sm2';
 import type {
+  GrammarLesson,
   InterpretItem,
   MeetingItem,
   MessageExercise,
@@ -21,7 +22,8 @@ export type DailyStep =
   | { kind: 'listen'; id: string }
   | { kind: 'interpret'; id: string }
   | { kind: 'message'; id: string }
-  | { kind: 'meeting'; id: string };
+  | { kind: 'meeting'; id: string }
+  | { kind: 'grammar'; id: string };
 
 export const DAILY_COUNTS = {
   shadowing: 3,
@@ -31,6 +33,7 @@ export const DAILY_COUNTS = {
   listen: 1,
   interpret: 1,
   message: 1,
+  grammar: 1,
 } as const;
 
 /** A meeting takes a few minutes, so only the 10- and 15-minute sessions get one. */
@@ -75,6 +78,7 @@ export interface DailyContent {
   interpret?: InterpretItem[];
   messages?: MessageExercise[];
   meetings?: MeetingItem[];
+  grammar?: GrammarLesson[];
 }
 
 export function buildDailyPlan(
@@ -136,6 +140,11 @@ export function buildDailyPlan(
   const messageKeys = (content.messages ?? []).map((m) => srsKey.message(m.id));
   for (const k of pickKeys(messageKeys, srs, today, n(DAILY_COUNTS.message), rand)) {
     steps.push({ kind: 'message', id: idOf(k) });
+  }
+  // Grammar quiz: lessons due again (often the ones answered wrong) first, then new ones.
+  const grammarKeys = (content.grammar ?? []).map((g) => srsKey.grammar(g.id));
+  for (const k of pickKeys(grammarKeys, srs, today, n(DAILY_COUNTS.grammar), rand)) {
+    steps.push({ kind: 'grammar', id: idOf(k) });
   }
   if (scale >= MEETING_MIN_SCALE) {
     const meetingKeys = (content.meetings ?? []).map((m) => `listen:meeting:${m.id}`);

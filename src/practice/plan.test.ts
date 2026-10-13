@@ -70,6 +70,24 @@ describe('buildDailyPlan', () => {
     ]);
   });
 
+  it('adds one grammar quiz, due lessons first', () => {
+    const lesson = (id: string) => ({
+      id,
+      group: 'report',
+      pattern: '-고 있다',
+      meaningVi: 'm',
+      usageVi: 'u',
+      examples: [],
+      quiz: [],
+    });
+    const plan = buildDailyPlan(
+      { ...content, grammar: [lesson('gr-a'), lesson('gr-b')] },
+      { 'grammar:gr-b': card('2026-10-01') },
+      today,
+    );
+    expect(plan.filter((s) => s.kind === 'grammar')).toEqual([{ kind: 'grammar', id: 'gr-b' }]);
+  });
+
   it('scales every part for longer sessions', () => {
     const plan = buildDailyPlan(content, {}, today, Math.random, 2);
     expect(plan.filter((s) => s.kind === 'shadowing')).toHaveLength(4); // only 4 non-survival lines exist

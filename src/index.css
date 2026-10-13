@@ -2756,3 +2756,7 @@ ins {
 .grammar-right {
   color: var(--ok);
 }
+a.grammar-title {
+  align-self: flex-start;
+  text-decoration: none;
+}

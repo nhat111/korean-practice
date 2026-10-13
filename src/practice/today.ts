@@ -56,7 +56,7 @@ export function itemOfDay<T>(items: readonly T[], today: string): T | undefined 
   return items[h % items.length];
 }
 
-export type SkillKey = 'shadowing' | 'patterns' | 'scenarios' | 'listening' | 'interpret' | 'messages' | 'vocab';
+export type SkillKey = 'shadowing' | 'patterns' | 'scenarios' | 'listening' | 'interpret' | 'messages' | 'grammar' | 'vocab';
 
 export interface SkillProgress {
   key: SkillKey;
@@ -73,6 +73,8 @@ export interface SkillContent {
   meetings: string[];
   interpret: string[];
   messages: string[];
+  /** Optional so older callers still work. */
+  grammar?: string[];
   vocab: string[];
 }
 
@@ -104,6 +106,7 @@ export function skillProgress(
       total: c.interpret.length,
     },
     { key: 'messages', done: count(c.messages, (id) => has(`message:${id}`)), total: c.messages.length },
+    { key: 'grammar', done: count(c.grammar ?? [], (id) => has(`grammar:${id}`)), total: (c.grammar ?? []).length },
     { key: 'vocab', done: count(c.vocab, (id) => id in state.cards), total: c.vocab.length },
   ];
 }

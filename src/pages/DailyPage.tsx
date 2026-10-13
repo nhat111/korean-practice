@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
+import { GrammarQuiz } from '../components/GrammarQuiz';
 import { InterpretCard } from '../components/InterpretCard';
 import { ListenChoice } from '../components/ListenChoice';
 import { saveListenResult } from '../practice/listenResult';
@@ -29,7 +30,8 @@ export function DailyPage() {
   const interpret = useContent('interpret');
   const messages = useContent('messages');
   const meetings = useContent('meetings');
-  const states = [shadowing, patterns, scenarios, numbers, interpret, messages, meetings];
+  const grammar = useContent('grammar');
+  const states = [shadowing, patterns, scenarios, numbers, interpret, messages, meetings, grammar];
 
   return (
     <div className="stack">
@@ -40,7 +42,8 @@ export function DailyPage() {
       numbers.status === 'ready' &&
       interpret.status === 'ready' &&
       messages.status === 'ready' &&
-      meetings.status === 'ready' ? (
+      meetings.status === 'ready' &&
+      grammar.status === 'ready' ? (
         <DailySession
           content={{
             shadowing: shadowing.items,
@@ -50,6 +53,7 @@ export function DailyPage() {
             interpret: interpret.items,
             messages: messages.items,
             meetings: meetings.items,
+            grammar: grammar.items,
           }}
         />
       ) : states.some((s) => s.status === 'error') ? (
@@ -137,6 +141,18 @@ function Step({ step, content, onRated }: { step: DailyStep; content: DailyConte
     case 'meeting': {
       const item = content.meetings?.find((m) => m.id === step.id);
       return item ? <MeetingCard meeting={item} onDone={onRated} /> : null;
+    }
+    case 'grammar': {
+      const lesson = content.grammar?.find((g) => g.id === step.id);
+      return lesson ? (
+        <section className="card stack-sm">
+          <Link to={`/grammar/${lesson.id}`} lang="ko" className="grammar-title grammar-title--big">
+            {lesson.pattern}
+          </Link>
+          <p className="muted">{lesson.meaningVi}</p>
+          <GrammarQuiz lesson={lesson} onDone={onRated} />
+        </section>
+      ) : null;
     }
     case 'scenario': {
       const scenario = content.scenarios.find((s) => s.id === step.id);
