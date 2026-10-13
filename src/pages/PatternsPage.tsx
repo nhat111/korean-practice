@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ContentGate } from '../components/ContentGate';
 import { PatternDrill } from '../components/PatternDrill';
+import { StatusPanel } from '../components/StatusPanel';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
 import type { PatternItem } from '../types';
@@ -19,7 +20,11 @@ export function PatternsPage() {
 function PatternList({ items }: { items: PatternItem[] }) {
   const [index, setIndex] = useState(0);
   const current = items[index];
-  if (!current) return <p className="muted">{vi.common.empty}</p>;
+  if (!current) return (
+      <StatusPanel kind="empty">
+        <p className="muted">{vi.common.empty}</p>
+      </StatusPanel>
+    );
   return (
     <>
       <div className="row-between">

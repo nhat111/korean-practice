@@ -10,6 +10,7 @@ import { trackEvent } from '../analytics';
 import { PatternDrill } from '../components/PatternDrill';
 import { ScenarioTurnDrill } from '../components/ScenarioTurnDrill';
 import { ShadowingCard } from '../components/ShadowingCard';
+import { StatusPanel } from '../components/StatusPanel';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
 import { numberQuestion } from '../practice/listening';
@@ -82,7 +83,7 @@ function DailySession({ content }: { content: DailyContent }) {
     setRound((r) => r + 1);
   }
 
-  if (plan.length === 0) return <p className="muted">{vi.daily.empty}</p>;
+  if (plan.length === 0) return <StatusPanel kind="empty"><p className="muted">{vi.daily.empty}</p></StatusPanel>;
   if (index >= plan.length) return <DailyDone onAgain={again} />;
 
   const step = plan[index];
@@ -170,10 +171,9 @@ function DailyDone({ onAgain }: { onAgain: () => void }) {
   const today = daily[todayKey()];
   const minutes = ((today?.recordMs ?? 0) / 60000).toFixed(1);
   return (
-    <section className="card center stack-sm">
-      <h2>{vi.daily.doneTitle}</h2>
-      <p>{vi.daily.doneStats(today?.spoken ?? 0, minutes)}</p>
-      <div className="row row--center">
+    <StatusPanel kind="done" title={vi.daily.doneTitle}>
+      <p className="muted">{vi.daily.doneStats(today?.spoken ?? 0, minutes)}</p>
+      <div className="row">
         <button type="button" className="btn" onClick={onAgain}>
           {vi.daily.again}
         </button>
@@ -181,6 +181,6 @@ function DailyDone({ onAgain }: { onAgain: () => void }) {
           {vi.daily.home}
         </Link>
       </div>
-    </section>
+    </StatusPanel>
   );
 }

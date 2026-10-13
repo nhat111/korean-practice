@@ -7,6 +7,7 @@ import { PatternDrill } from '../components/PatternDrill';
 import { ScenarioTurnDrill } from '../components/ScenarioTurnDrill';
 import { ShadowingCard } from '../components/ShadowingCard';
 import { SpeakPractice } from '../components/SpeakPractice';
+import { StatusPanel } from '../components/StatusPanel';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
 import { WEAK_LIMIT, weakKeys } from '../practice/weak';
@@ -205,13 +206,12 @@ function WeakSession({ content }: { content: Content }) {
 
   if (items.length === 0) {
     return (
-      <section className="card center stack-sm">
-        <h2>{vi.weak.emptyTitle}</h2>
+      <StatusPanel kind="empty" title={vi.weak.emptyTitle}>
         <p className="muted">{vi.weak.empty}</p>
         <Link to="/daily" className="btn">
           {vi.home.dailyTitle}
         </Link>
-      </section>
+      </StatusPanel>
     );
   }
 
@@ -240,13 +240,12 @@ function WeakSession({ content }: { content: Content }) {
 
   if (index >= items.length) {
     return (
-      <section className="card center stack-sm">
-        <h2>{vi.weak.doneTitle}</h2>
+      <StatusPanel kind="done" title={vi.weak.doneTitle}>
         <p className="muted">{vi.weak.done}</p>
         <Link to="/progress" className="btn btn--ghost">
           {vi.weak.toProgress}
         </Link>
-      </section>
+      </StatusPanel>
     );
   }
 

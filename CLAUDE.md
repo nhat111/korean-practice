@@ -197,7 +197,9 @@ Korean either.
   self-rating). Keep it compact: no extra help paragraphs. With `srsKey` the rating schedules the item in `Progress.srs` (keys from `srsKey` in
   `practice/decks.ts`: `shadowing:<id>`, `pattern:<id>`, `scenario:<id>:<turn>`, `vocab-speak:<id>`;
   rating → SM-2 grade 1/3/4). `revealed={false}` hides the model until the learner asked for the answer.
-  Recognition is an optional `AutoCheck` inside it. Denied microphone shows `MicHelp`.
+  Recognition is an optional `AutoCheck` inside it; a recognition score also rates the line once (≥85 good, ≥`PASS_SCORE`
+  ok, else bad) if the learner hasn't, so a machine-checked line unlocks "Tiếp" in the daily plan without recording.
+  Denied microphone shows `MicHelp`.
 - Long lines are split by `splitParts` (`src/speaking/segments.ts`: sentences, plus commas inside
   sentences over 22 characters) so `SpeakPractice` can drill one part at a time; parts get their own
   MP3s (`spokenTexts` adds them for scenario model answers, vocab examples and shadowing). Only the
@@ -241,7 +243,8 @@ Korean either.
 - Progress shows a 7-day bar chart of recording minutes (hidden with a short note when there are none) (`WeekChart`, one series: no legend, value labels
   only on today and the max, a tooltip per bar and an `sr-only` table).
 - `compareAnswer` in `src/speaking/compare.ts` is pure and unit-tested: score is a
-  character-level similarity (ignores spaces/punctuation), highlighting is per 어절.
+  character-level similarity (ignores spaces/punctuation), highlighting is per 어절; 2-3 words that equal one word once
+  joined (한 가지 / 한가지) count as a match on both sides.
 - Chromium headless has no mic or recognition: browser tests use
   `--use-fake-device-for-media-stream` and mock `webkitSpeechRecognition`/`speechSynthesis`.
 
@@ -314,7 +317,8 @@ Spec: `docs/custom-questions.md` (implemented). The learner pastes their own int
   flat white cards with hairline borders (`--shadow-sm: none`, radii 8/10/14), a `// 쉐도잉`-style kicker above each
   top-level page title (`vi.kickers`, rendered by `Layout` for exact paths), `.section-title` as a `// ` mono comment,
   progress bars as a solid fill ending in a red cursor (hidden at 0%), the active nav tab marked by a red bar, counts
-  in mono (`.count-badge`, `.chip span`, `.skill-count`, `.path-step-count`, `.score`). No gradients.
+  in mono (`.count-badge`, `.chip span`, `.skill-count`, `.path-step-count`, `.score`). No gradients. Done and empty
+  screens use `StatusPanel` (수고하셨습니다 / 아직 없습니다 + red cursor, then the Vietnamese title/text/actions). No emoji in UI strings.
 - Bottom nav has 5 tabs (a left sidebar from 1024px, CSS only) (Trang chủ, Luyện nói, Hội thoại, Từ vựng, Tiến độ; `NAV` in `Layout.tsx`).
   Each tab also lights up for related pages (`also`: shadowing/patterns, custom/emails, songs).
   Pages without a tab need an entry from Home or a tab page; don't add a sixth tab. Home keeps six entry cards

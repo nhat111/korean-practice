@@ -2,6 +2,7 @@ import { useSearchParams } from 'react-router';
 import { useState } from 'react';
 import { ContentGate } from '../components/ContentGate';
 import { MessageCard } from '../components/MessageCard';
+import { StatusPanel } from '../components/StatusPanel';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
 import { MESSAGE_TOPICS, srsKey } from '../practice/decks';
@@ -57,12 +58,11 @@ function MessageDeck({ items }: { items: MessageExercise[] }) {
           <MessageCard key={current.id} item={current} onNext={() => setIndex((i) => i + 1)} />
         </>
       ) : (
-        <section className="card center stack-sm">
-          <p>{vi.messages.done}</p>
+        <StatusPanel kind="done" title={vi.messages.done}>
           <button type="button" className="btn" onClick={() => pickTopic(topic)}>
             {vi.messages.restart}
           </button>
-        </section>
+        </StatusPanel>
       )}
     </>
   );

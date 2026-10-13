@@ -5,6 +5,8 @@ import type { CorrectionType, Politeness } from '../types';
 export const vi = {
   appName: 'KoDevTalk',
   appNameKo: '코데톡',
+  // Done / empty screens (StatusPanel): a short Korean line before the Vietnamese text.
+  status: { doneKo: '수고하셨습니다', emptyKo: '아직 없습니다' },
   // Korean section names shown as "// 쉐도잉" above each top-level page title (Layout).
   kickers: {
     '/daily': '오늘의 연습',
@@ -324,7 +326,7 @@ export const vi = {
     gradeGood: 'Nhớ',
     gradeEasy: 'Dễ',
     nextReview: (days: number) => (days <= 1 ? '1 ngày' : `${days} ngày`),
-    sessionDone: 'Hết thẻ cần ôn! 🎉',
+    sessionDone: 'Hết thẻ cần ôn hôm nay',
     sessionDoneHint: 'Quay lại vào ngày mai để ôn tiếp.',
     learnMore: 'Học thêm thẻ mới',
     remaining: (n: number) => `Còn ${n} thẻ`,
@@ -637,7 +639,7 @@ export const vi = {
       message: 'Tin nhắn',
       meeting: 'Nghe họp',
     },
-    emptyTitle: 'Không có câu yếu 🎉',
+    emptyTitle: 'Không có câu yếu',
     empty: 'Bạn chưa có câu nào bị chấm "Chưa được". Cứ luyện tiếp, câu khó sẽ được gom vào đây.',
     doneTitle: 'Xong lượt luyện lại',
     done: 'Câu bạn chấm "Tốt" sẽ ra khỏi danh sách; câu vẫn khó sẽ quay lại lần sau.',
@@ -663,7 +665,7 @@ export const vi = {
     dueOnly: (n: number) => `Đến hạn ôn (${n})`,
     level: (n: number) => `Cấp ${n}`,
     empty: 'Không có câu nào trong mục này.',
-    done: 'Đã hết câu trong mục này 🎉',
+    done: 'Đã hết câu trong mục này',
     restart: 'Luyện lại từ đầu',
   },
   patterns: {
@@ -702,7 +704,7 @@ export const vi = {
     skip: 'Bỏ qua',
     next: 'Tiếp →',
     rateFirst: 'Tự chấm để sang bước tiếp theo, hoặc bấm Bỏ qua.',
-    doneTitle: 'Xong buổi hôm nay! 🎉',
+    doneTitle: 'Xong buổi hôm nay',
     doneStats: (spoken: number, minutes: string) => `Hôm nay bạn đã nói ${spoken} câu, ghi âm ${minutes} phút.`,
     again: 'Luyện thêm một buổi',
     home: 'Về trang chủ',
