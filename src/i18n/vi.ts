@@ -4,6 +4,7 @@ import type { CorrectionType, Politeness } from '../types';
 
 export const vi = {
   appName: 'KoDevTalk',
+  appTagline: 'Tiếng Hàn cho dân IT',
   nav: {
     home: 'Trang chủ',
     scenarios: 'Hội thoại',

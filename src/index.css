@@ -211,17 +211,47 @@ textarea {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.05rem;
-  font-weight: 800;
-  letter-spacing: -0.01em;
+  min-height: 44px;
+  color: var(--text);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+}
+
+.brand:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
 }
 
 .brand-mark {
   display: block;
-  width: 32px;
-  height: 32px;
-  border-radius: 9px;
-  box-shadow: 0 0 0 1px var(--border), 0 4px 12px -4px rgb(10 58 140 / 45%);
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px -4px rgb(10 42 102 / 55%);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.brand-ko {
+  color: var(--primary);
+}
+
+.brand-tagline {
+  margin-top: 2px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--muted);
 }
 
 .icon-btn.topbar-settings {
