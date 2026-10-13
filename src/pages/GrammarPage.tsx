@@ -129,7 +129,8 @@ function GrammarLessonView({ lesson, next, vocab }: { lesson: GrammarLesson; nex
             {LEVELS.map((k) => (
               <li key={k}>
                 <span className="grammar-level-label">{vi.grammar.levels[k]}</span>
-                <KoreanLine text={levels[k]} />
+                <KoreanLine text={levels[k].ko} />
+                <p className="muted small">{levels[k].vi}</p>
               </li>
             ))}
           </ol>
@@ -169,6 +170,7 @@ function GrammarLessonView({ lesson, next, vocab }: { lesson: GrammarLesson; nex
             {lesson.mistake.wrong}
           </p>
           <KoreanLine text={lesson.mistake.right} className="ko grammar-right" />
+          <p className="small">{lesson.mistake.vi}</p>
           <p className="muted small">{lesson.mistake.noteVi}</p>
         </section>
       )}

@@ -57,7 +57,9 @@ function QuizRound({ lesson, onDone, onRetry }: { lesson: GrammarLesson; onDone?
       {picked !== null && (
         <div className={picked === q.answer ? 'feedback feedback--ok' : 'feedback feedback--bad'}>
           <strong>{picked === q.answer ? `✓ ${vi.grammar.right}` : `✗ ${vi.grammar.wrong}`}</strong>
-          <p>{q.explainVi}</p>
+          <p lang="ko">{q.choices[q.answer]}</p>
+          <p>{q.answerVi}</p>
+          <p className="muted small">{q.explainVi}</p>
         </div>
       )}
       {picked !== null && !last && (

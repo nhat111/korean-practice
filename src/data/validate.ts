@@ -350,7 +350,12 @@ export function validateGrammar(v: unknown): string[] {
   requireStrings(v, ['id', 'group', 'pattern', 'meaningVi', 'usageVi'], path, errors);
   if (v.levels !== undefined) {
     if (!isObj(v.levels)) errors.push(`${path}.levels: phải là object`);
-    else requireStrings(v.levels, ['peer', 'lead', 'client'], `${path}.levels`, errors);
+    else
+      for (const k of ['peer', 'lead', 'client']) {
+        const lv = v.levels[k];
+        if (!isObj(lv)) errors.push(`${path}.levels.${k}: phải là { ko, vi }`);
+        else requireStrings(lv, ['ko', 'vi'], `${path}.levels.${k}`, errors);
+      }
   }
   if (!Array.isArray(v.examples) || v.examples.length < 2 || v.examples.length > 4) {
     errors.push(`${path}.examples: cần 2-4 câu ví dụ`);
@@ -362,7 +367,7 @@ export function validateGrammar(v: unknown): string[] {
   }
   if (v.mistake !== undefined) {
     if (!isObj(v.mistake)) errors.push(`${path}.mistake: phải là object`);
-    else requireStrings(v.mistake, ['wrong', 'right', 'noteVi'], `${path}.mistake`, errors);
+    else requireStrings(v.mistake, ['wrong', 'right', 'vi', 'noteVi'], `${path}.mistake`, errors);
   }
   if (!Array.isArray(v.quiz) || v.quiz.length < 1 || v.quiz.length > 3) {
     errors.push(`${path}.quiz: cần 1-3 câu hỏi`);
@@ -373,7 +378,7 @@ export function validateGrammar(v: unknown): string[] {
         errors.push(`${qp}: phải là object`);
         return;
       }
-      requireStrings(q, ['q', 'explainVi'], qp, errors);
+      requireStrings(q, ['q', 'answerVi', 'explainVi'], qp, errors);
       if (!isStringArray(q.choices) || q.choices.length < 2 || q.choices.length > 4) {
         errors.push(`${qp}.choices: cần 2-4 lựa chọn`);
       } else if (new Set(q.choices).size !== q.choices.length) {

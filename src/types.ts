@@ -123,9 +123,15 @@ export interface VocabItem {
 
 /** Same politeness idea said to a colleague (해요체), a lead and a client (하십시오체). */
 export interface PolitenessLevels {
-  peer: string;
-  lead: string;
-  client: string;
+  peer: KoVi;
+  lead: KoVi;
+  client: KoVi;
+}
+
+/** A Korean line with its Vietnamese meaning. */
+export interface KoVi {
+  ko: string;
+  vi: string;
 }
 
 export interface GrammarQuizItem {
@@ -135,6 +141,8 @@ export interface GrammarQuizItem {
   choices: string[];
   /** Index of the right option. */
   answer: number;
+  /** Vietnamese meaning of the right option, shown after answering. */
+  answerVi: string;
   /** Why the others are wrong, in Vietnamese. */
   explainVi: string;
 }
@@ -151,9 +159,9 @@ export interface GrammarLesson {
   usageVi: string;
   levels?: PolitenessLevels;
   /** 2-4 workplace examples. */
-  examples: { ko: string; vi: string }[];
-  /** A typical mistake: wrong → right, with why. */
-  mistake?: { wrong: string; right: string; noteVi: string };
+  examples: KoVi[];
+  /** A typical mistake: wrong → right (`vi` = what the learner meant), with why. */
+  mistake?: { wrong: string; right: string; vi: string; noteVi: string };
   /** 1-3 questions; saved in the SRS as grammar:<id>. */
   quiz: GrammarQuizItem[];
 }

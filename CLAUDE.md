@@ -159,9 +159,10 @@ Korean either.
   replaced the K-pop songs section, `/songs/*` redirects here): `id` (`gr-`, ASCII), `group` (one of `GRAMMAR_GROUPS` in
   `src/practice/decks.ts`, labels in `vi.grammar.groups`; tested), `pattern` (TOPIK notation, tested like vocab; vocab
   examples whose `grammar[].pattern` is identical are shown as extra examples), `meaningVi`, `usageVi`, optional `levels`
-  (`peer` / `lead` / `client`: the same idea at three politeness levels), 2-4 `examples`, optional `mistake`
-  (`wrong`, `right`, `noteVi`; only `right` is read aloud), 1-3 `quiz` items (Vietnamese `q`, 2-4 Korean `choices`,
-  `answer`, `explainVi`; the UI shuffles). `GrammarQuiz` saves `grammar:<id>` (grade 4 all right, else 1), so failed
+  (`peer` / `lead` / `client`, each `{ ko, vi }`: the same idea at three politeness levels), 2-4 `examples`, optional
+  `mistake` (`wrong`, `right`, `vi` = what was meant, `noteVi`; only `right` is read aloud), 1-3 `quiz` items (Vietnamese
+  `q`, 2-4 Korean `choices`, `answer`, `answerVi` shown after answering, `explainVi`; the UI shuffles). Every Korean line
+  on the lesson page has a Vietnamese meaning next to it. `GrammarQuiz` saves `grammar:<id>` (grade 4 all right, else 1), so failed
   lessons show up in "Câu cần luyện lại".
 - Each item has a stable string `id` (e.g. `"standup-001"`). Progress is keyed by these ids,
   so **never rename or reuse an id** once it ships.
