@@ -179,7 +179,9 @@ Korean either.
   `public/data/audio-index.json`. iOS only exposes one built-in voice (Yuna) to web pages, so
   this is the only way to get a male voice there. **After adding or editing content, run
   `npm run tts`** (needs `pip install edge-tts` and ffmpeg; skips existing files, `--prune`
-  removes orphans). Missing files fall back to the device voice, so content still works without it.
+  removes orphans; exits non-zero when nothing could be generated). On every push of content to `master`,
+  `.github/workflows/tts.yml` runs the same steps on GitHub and opens a PR (`auto/tts`) with only the audio files and
+  `audio-index.json`. Missing files fall back to the device voice, so content still works without it.
   `audioKey` (cyrb53 of the trimmed text) is pinned by a test: never change it. Playback is
   fetch → blob → one shared `<audio>` element (unlocked with a silent clip on first tap for iOS);
   the service worker caches `/audio/` on first use in `kp-audio-v1` (not precached).

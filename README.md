@@ -71,6 +71,12 @@ missing files and updates `public/data/audio-index.json`; commit `public/audio/`
 Sentences without a file are read by the device voice instead. Edge TTS is an unofficial
 endpoint; behind a TLS-inspecting proxy set `TTS_CA_FILE` to the proxy's CA bundle.
 
+**Without a local machine:** pushing content to `master` runs `.github/workflows/tts.yml`, which
+generates the missing MP3s on GitHub and opens a pull request ("Add natural-voice audio for new
+content") with only `public/audio/` and `audio-index.json`; review and merge it. It can also be run by
+hand (Actions → Generate audio → Run workflow). One-time setting: Settings → Actions → General →
+Workflow permissions → tick "Allow GitHub Actions to create and approve pull requests".
+
 ## Deploy to Vercel
 
 The repo is ready to deploy as-is. `vercel.json` sets:
