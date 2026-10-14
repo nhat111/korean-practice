@@ -20,6 +20,9 @@ const AUDIO_CACHE = 'kp-audio-v1';
 // Where production MP3s live ('' = this origin). Files cached when they were
 // served from this origin are still found: see handleAudio.
 const AUDIO_BASE = '__AUDIO_BASE__';
+// Second host the app falls back to (jsDelivr); '' = none.
+const AUDIO_FALLBACK = '__AUDIO_FALLBACK__';
+const AUDIO_HOSTS = [AUDIO_BASE, AUDIO_FALLBACK].filter((b) => b !== '');
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -65,15 +68,17 @@ async function handleAsset(request) {
 /** The `/audio/...` path of an MP3 URL, wherever it is hosted; null when it is not one. */
 function audioPath(url) {
   if (url.origin === self.location.origin) return url.pathname.startsWith('/audio/') ? url.pathname : null;
-  if (AUDIO_BASE === '' || !url.href.startsWith(`${AUDIO_BASE}/audio/`)) return null;
-  return url.href.slice(AUDIO_BASE.length);
+  const host = AUDIO_HOSTS.find((b) => url.href.startsWith(`${b}/audio/`));
+  return host === undefined ? null : url.href.slice(host.length);
 }
 
 async function handleAudio(request, path) {
   const cache = await caches.open(AUDIO_CACHE);
   // Before the move to GitHub Pages the same file was cached under this
   // origin; its name is a hash of the text, so that copy is still right.
-  const cached = (await cache.match(request)) ?? (await cache.match(path));
+  // The same file may also be cached from the other host (names are text hashes).
+  let cached = (await cache.match(request)) ?? (await cache.match(path));
+  for (const host of AUDIO_HOSTS) cached ??= await cache.match(host + path);
   if (cached) return cached;
   const response = await fetch(request);
   if (response.ok) await cache.put(request, response.clone());

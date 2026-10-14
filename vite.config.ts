@@ -21,6 +21,12 @@ function listFiles(dir: string): string[] {
 const PAGES_AUDIO_BASE = 'https://nhat111.github.io/korean-practice'
 
 /**
+ * The same files through jsDelivr (straight from the repo), tried when Pages
+ * fails: some company networks block *.github.io but not this CDN.
+ */
+const CDN_AUDIO_BASE = 'https://cdn.jsdelivr.net/gh/nhat111/korean-practice@master/public'
+
+/**
  * VITE_AUDIO_BASE_URL overrides it; set it to an empty value to serve the
  * MP3s from this origin again (dist/audio is then kept). Dev always uses
  * this origin, where public/audio is served as is.
@@ -37,12 +43,17 @@ function audioBase(command: string, env: Record<string, string>): string {
  * with changed files installs a fresh service worker. With the MP3s hosted
  * elsewhere it also drops the copy of public/audio Vite put in dist.
  */
-function pwaPlugin(audio: string): Plugin {
+function pwaPlugin(audio: string, fallback: string): Plugin {
   let root = process.cwd()
   let outDir = 'dist'
   return {
     name: 'kp-service-worker',
     apply: 'build',
+    // Open the connection to the audio host early: the first MP3 then starts sooner after a tap.
+    transformIndexHtml() {
+      if (!audio.startsWith('http')) return []
+      return [{ tag: 'link', attrs: { rel: 'preconnect', href: new URL(audio).origin, crossorigin: '' }, injectTo: 'head' }]
+    },
     configResolved(config) {
       root = config.root
       outDir = resolve(config.root, config.build.outDir)
@@ -61,6 +72,7 @@ function pwaPlugin(audio: string): Plugin {
         .replace('__VERSION__', version)
         .replace('__PRECACHE__', JSON.stringify(precache))
         .replace('__AUDIO_BASE__', audio)
+        .replace('__AUDIO_FALLBACK__', fallback)
       writeFileSync(join(outDir, 'sw.js'), sw)
       console.log(`sw.js: ${precache.length} files precached, version ${version}, audio from ${audio || 'this origin'}`)
     },
@@ -86,8 +98,9 @@ function appVersion(): string {
 export default defineConfig(({ command, mode }) => {
   // loadEnv reads .env files and the process env (Vercel's project variables).
   const audio = audioBase(command, loadEnv(mode, process.cwd(), 'VITE_'))
+  const fallback = audio === PAGES_AUDIO_BASE ? CDN_AUDIO_BASE : ''
   return {
-    plugins: [react(), pwaPlugin(audio)],
-    define: { __APP_VERSION__: JSON.stringify(appVersion()), __AUDIO_BASE__: JSON.stringify(audio) },
+    plugins: [react(), pwaPlugin(audio, fallback)],
+    define: { __APP_VERSION__: JSON.stringify(appVersion()), __AUDIO_BASE__: JSON.stringify(audio), __AUDIO_FALLBACK__: JSON.stringify(fallback) },
   }
 })

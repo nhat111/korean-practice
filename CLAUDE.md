@@ -183,13 +183,17 @@ Korean either.
   `.github/workflows/tts.yml` runs the same steps on GitHub and opens a PR (`auto/tts`) with only the audio files and
   `audio-index.json`. Missing files fall back to the device voice, so content still works without it.
   `audioKey` (cyrb53 of the trimmed text) is pinned by a test: never change it. Playback is
-  fetch → blob → one shared `<audio>` element (unlocked with a silent clip on first tap for iOS);
+  fetch → blob → one shared `<audio>` element (unlocked with a silent clip inside the tap, before the fetch, for iOS: a play() started after a slow fetch is no longer
+  user-initiated and WebKit blocks it; production adds a `preconnect` to the audio host);
   the service worker caches `/audio/` on first use in `kp-audio-v1` (not precached).
 - Audio hosting: the MP3s (~140 MB) are **not** in the Vercel deployment (each deployment stored a copy and
   filled the free 10 GB Deployment Storage). `.github/workflows/audio-pages.yml` publishes `public/audio` to
   GitHub Pages (`https://nhat111.github.io/korean-practice/audio/...`, CORS `*`) on every push to `master` that
   touches it. Production builds load from there (`PAGES_AUDIO_BASE` / `__AUDIO_BASE__` in `vite.config.ts`,
   override with `VITE_AUDIO_BASE_URL`; empty = this origin) and drop `dist/audio`; dev serves `public/audio`.
+  If Pages fails (blocked `*.github.io` on company networks, a 404, a non-audio block page, 6 s timeout) `fetchAudio` in
+  `speech.ts` falls back to jsDelivr (`CDN_AUDIO_BASE` / `__AUDIO_FALLBACK__`, the same files from the repo) and keeps
+  using the host that answered for the session; the service worker caches both hosts.
   The service worker caches Pages URLs in the same `kp-audio-v1` and still answers from copies cached under
   the old same-origin `/audio/` path. Keep `audioUrl(voice, text, base)` free of Vite globals:
   `scripts/tts-jobs.ts` imports `audioKey.ts` in plain Node.
