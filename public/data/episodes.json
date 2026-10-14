@@ -1,1 +1,623 @@
-{ "version": 1, "items": [] }
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "ep-survival",
+      "hash": "0bff3696c73d7757",
+      "duration": 398.6,
+      "lines": [
+        {
+          "ko": "죄송하지만 다시 한 번 말씀해 주시겠어요?",
+          "vi": "Xin lỗi, anh/chị nói lại giúp tôi được không ạ?",
+          "start": 0.0
+        },
+        {
+          "ko": "조금만 천천히 말씀해 주시면 감사하겠습니다.",
+          "vi": "Nếu anh/chị nói chậm lại một chút thì tốt quá ạ.",
+          "start": 19.09
+        },
+        {
+          "ko": "제가 이해한 게 맞는지 확인드려도 될까요?",
+          "vi": "Cho tôi xác nhận lại xem mình hiểu có đúng không ạ?",
+          "start": 38.83
+        },
+        {
+          "ko": "정리하면, 금요일까지 배포가 필요하다는 말씀이시죠?",
+          "vi": "Tóm lại, ý anh/chị là cần deploy trước thứ Sáu phải không ạ?",
+          "start": 56.99
+        },
+        {
+          "ko": "잠시만요, 확인해 보겠습니다.",
+          "vi": "Chờ tôi một chút, để tôi kiểm tra.",
+          "start": 80.06
+        },
+        {
+          "ko": "그 부분은 확인 후 다시 말씀드리겠습니다.",
+          "vi": "Phần đó tôi kiểm tra rồi sẽ báo lại ạ.",
+          "start": 97.16
+        },
+        {
+          "ko": "혹시 화면 공유해 주실 수 있을까요?",
+          "vi": "Anh/chị chia sẻ màn hình giúp tôi được không ạ?",
+          "start": 116.23
+        },
+        {
+          "ko": "채팅으로 남겨 주시면 감사하겠습니다.",
+          "vi": "Anh/chị để lại qua chat giúp tôi ạ.",
+          "start": 133.5
+        },
+        {
+          "ko": "이건 한국어로 뭐라고 하나요?",
+          "vi": "Cái này tiếng Hàn gọi là gì ạ?",
+          "start": 150.46
+        },
+        {
+          "ko": "죄송합니다, 소리가 잘 안 들립니다.",
+          "vi": "Xin lỗi, tôi nghe không rõ ạ.",
+          "start": 165.25
+        },
+        {
+          "ko": "방금 말씀하신 단어를 채팅으로 적어 주실 수 있을까요?",
+          "vi": "Anh/chị gõ giúp từ vừa nói vào chat được không ạ?",
+          "start": 183.34
+        },
+        {
+          "ko": "죄송하지만 그 부분은 제가 잘 이해하지 못했습니다.",
+          "vi": "Xin lỗi, phần đó tôi chưa hiểu rõ.",
+          "start": 203.87
+        },
+        {
+          "ko": "혹시 예를 들어서 설명해 주실 수 있을까요?",
+          "vi": "Anh/chị giải thích bằng ví dụ giúp được không ạ?",
+          "start": 224.45
+        },
+        {
+          "ko": "지금 바로는 답변드리기 어렵습니다.",
+          "vi": "Bây giờ tôi chưa trả lời ngay được.",
+          "start": 242.7
+        },
+        {
+          "ko": "제가 확인한 내용과 조금 다른데, 다시 확인해 봐도 될까요?",
+          "vi": "Hơi khác với nội dung tôi đã kiểm tra, tôi kiểm tra lại được không ạ?",
+          "start": 259.06
+        },
+        {
+          "ko": "죄송합니다, 마지막 부분을 놓쳤습니다.",
+          "vi": "Xin lỗi, tôi bỏ lỡ đoạn cuối.",
+          "start": 283.02
+        },
+        {
+          "ko": "그 단어는 처음 듣는데, 무슨 뜻인가요?",
+          "vi": "Từ đó tôi mới nghe lần đầu, nghĩa là gì ạ?",
+          "start": 301.66
+        },
+        {
+          "ko": "회의 내용을 메모해도 될까요?",
+          "vi": "Tôi ghi chép nội dung cuộc họp được không ạ?",
+          "start": 321.44
+        },
+        {
+          "ko": "제가 한국어가 서툴러서, 틀린 부분이 있으면 말씀해 주세요.",
+          "vi": "Tiếng Hàn của tôi còn vụng, nếu có chỗ sai xin anh/chị cứ nói.",
+          "start": 337.01
+        },
+        {
+          "ko": "통화가 끊긴 것 같은데, 다시 걸어 드리겠습니다.",
+          "vi": "Hình như cuộc gọi bị ngắt, tôi xin gọi lại.",
+          "start": 360.61
+        },
+        {
+          "ko": "숫자를 한 번 더 말씀해 주시겠어요?",
+          "vi": "Anh/chị nói lại con số một lần nữa được không ạ?",
+          "start": 381.1
+        }
+      ]
+    },
+    {
+      "id": "ep-report",
+      "hash": "fb1da131019d1ae4",
+      "duration": 589.1,
+      "lines": [
+        {
+          "ko": "로그인 기능은 개발 완료했습니다.",
+          "vi": "Chức năng đăng nhập đã phát triển xong.",
+          "start": 0.0
+        },
+        {
+          "ko": "현재 테스트 진행 중입니다.",
+          "vi": "Hiện đang test ạ.",
+          "start": 15.83
+        },
+        {
+          "ko": "수정 사항을 반영했습니다.",
+          "vi": "Đã áp dụng phần chỉnh sửa.",
+          "start": 29.69
+        },
+        {
+          "ko": "개발 서버에 배포했습니다.",
+          "vi": "Đã deploy lên server dev.",
+          "start": 43.98
+        },
+        {
+          "ko": "내일까지 공유드리겠습니다.",
+          "vi": "Đến mai tôi sẽ chia sẻ ạ.",
+          "start": 58.42
+        },
+        {
+          "ko": "코드 리뷰 요청드렸습니다.",
+          "vi": "Tôi đã gửi yêu cầu review code.",
+          "start": 73.07
+        },
+        {
+          "ko": "입력값 검증 로직을 추가했습니다.",
+          "vi": "Đã thêm logic kiểm tra giá trị nhập.",
+          "start": 87.46
+        },
+        {
+          "ko": "어제 말씀하신 부분은 모두 반영했습니다.",
+          "vi": "Những phần anh/chị nói hôm qua tôi đã áp dụng hết.",
+          "start": 103.26
+        },
+        {
+          "ko": "오늘은 결제 화면 작업을 진행하고 있습니다.",
+          "vi": "Hôm nay tôi đang làm màn hình thanh toán.",
+          "start": 122.23
+        },
+        {
+          "ko": "백엔드 API는 완료했고, 지금은 화면 연동 중입니다.",
+          "vi": "API backend đã xong, giờ đang nối với màn hình.",
+          "start": 140.15
+        },
+        {
+          "ko": "단위 테스트까지 마쳤습니다.",
+          "vi": "Tôi đã làm xong đến unit test.",
+          "start": 163.32
+        },
+        {
+          "ko": "남은 작업은 내일 오전 중으로 마무리하겠습니다.",
+          "vi": "Phần việc còn lại tôi sẽ hoàn tất trong sáng mai.",
+          "start": 178.26
+        },
+        {
+          "ko": "진행 상황을 공유드립니다.",
+          "vi": "Tôi xin chia sẻ tình hình tiến độ.",
+          "start": 197.57
+        },
+        {
+          "ko": "계획 대비 약 80% 정도 진행되었습니다.",
+          "vi": "So với kế hoạch đã xong khoảng 80%.",
+          "start": 211.96
+        },
+        {
+          "ko": "리뷰 의견은 모두 수정했습니다.",
+          "vi": "Tôi đã sửa hết theo góp ý review.",
+          "start": 231.65
+        },
+        {
+          "ko": "이번 주 목표였던 기능은 모두 완료했습니다.",
+          "vi": "Các chức năng mục tiêu của tuần này đã hoàn thành hết.",
+          "start": 248.08
+        },
+        {
+          "ko": "요청하신 건은 처리 완료했습니다.",
+          "vi": "Việc anh/chị yêu cầu đã xử lý xong.",
+          "start": 266.88
+        },
+        {
+          "ko": "화면 전환 작업은 계획대로 진행되고 있습니다.",
+          "vi": "Việc chuyển đổi màn hình đang tiến hành đúng kế hoạch.",
+          "start": 283.45
+        },
+        {
+          "ko": "남은 화면은 다섯 개이고, 이번 주 안에 끝낼 예정입니다.",
+          "vi": "Còn lại 5 màn hình, dự kiến sẽ xong trong tuần này.",
+          "start": 302.42
+        },
+        {
+          "ko": "오늘 작업 내용을 정리해서 보내 드리겠습니다.",
+          "vi": "Tôi sẽ tổng hợp nội dung công việc hôm nay rồi gửi anh/chị.",
+          "start": 324.68
+        },
+        {
+          "ko": "일정이 조금 지연될 것 같습니다.",
+          "vi": "Có vẻ lịch sẽ chậm một chút.",
+          "start": 344.11
+        },
+        {
+          "ko": "배포 일정은 다음 주 화요일입니다.",
+          "vi": "Lịch deploy là thứ Ba tuần sau.",
+          "start": 359.41
+        },
+        {
+          "ko": "이틀 정도 여유를 주시면 감사하겠습니다.",
+          "vi": "Nếu anh/chị cho thêm khoảng hai ngày thì tốt quá.",
+          "start": 375.58
+        },
+        {
+          "ko": "일정이 늦어지게 되어 정말 죄송합니다.",
+          "vi": "Thật xin lỗi vì lịch bị chậm.",
+          "start": 394.19
+        },
+        {
+          "ko": "금요일까지는 맞출 수 있을 것 같습니다.",
+          "vi": "Có lẽ kịp trước thứ Sáu.",
+          "start": 411.07
+        },
+        {
+          "ko": "테스트 기간을 하루 더 확보하고 싶습니다.",
+          "vi": "Tôi muốn có thêm một ngày cho giai đoạn test.",
+          "start": 427.6
+        },
+        {
+          "ko": "오늘 오후 6시 이후에 배포하겠습니다.",
+          "vi": "Tôi sẽ deploy sau 6 giờ chiều nay.",
+          "start": 444.48
+        },
+        {
+          "ko": "일정을 조정할 수 있는지 내부적으로 검토해 보겠습니다.",
+          "vi": "Tôi sẽ xem xét nội bộ xem có điều chỉnh lịch được không.",
+          "start": 462.16
+        },
+        {
+          "ko": "릴리스는 예정대로 진행됩니다.",
+          "vi": "Release vẫn tiến hành theo đúng dự kiến.",
+          "start": 483.48
+        },
+        {
+          "ko": "마감 전에 한 번 더 점검하겠습니다.",
+          "vi": "Trước hạn chót tôi sẽ kiểm tra lại một lần nữa.",
+          "start": 499.45
+        },
+        {
+          "ko": "점검은 토요일 새벽에 진행됩니다.",
+          "vi": "Bảo trì sẽ tiến hành vào rạng sáng thứ Bảy.",
+          "start": 516.74
+        },
+        {
+          "ko": "정기 배포는 매주 목요일 오후 6시입니다.",
+          "vi": "Deploy định kỳ là 6 giờ chiều thứ Năm hằng tuần.",
+          "start": 533.22
+        },
+        {
+          "ko": "요청이 몰려서 처리가 하루 정도 늦어질 수 있습니다.",
+          "vi": "Yêu cầu dồn nhiều nên việc xử lý có thể chậm khoảng một ngày.",
+          "start": 553.08
+        },
+        {
+          "ko": "이번 주는 일정이 꽉 차 있습니다.",
+          "vi": "Tuần này lịch đã kín.",
+          "start": 573.49
+        }
+      ]
+    },
+    {
+      "id": "ep-bug",
+      "hash": "009f923761fe6df1",
+      "duration": 312.8,
+      "lines": [
+        {
+          "ko": "오늘 중으로 수정하겠습니다.",
+          "vi": "Trong hôm nay tôi sẽ sửa.",
+          "start": 0.0
+        },
+        {
+          "ko": "해당 오류는 재현되지 않습니다.",
+          "vi": "Lỗi đó không tái hiện được.",
+          "start": 14.24
+        },
+        {
+          "ko": "원인을 파악하고 있습니다.",
+          "vi": "Tôi đang tìm nguyên nhân.",
+          "start": 29.21
+        },
+        {
+          "ko": "로그를 확인해 보니 타임아웃이 발생했습니다.",
+          "vi": "Xem log thì thấy bị timeout.",
+          "start": 43.02
+        },
+        {
+          "ko": "해당 버그는 수정해서 개발 서버에 반영했습니다.",
+          "vi": "Bug đó tôi đã sửa và áp dụng lên server dev.",
+          "start": 60.31
+        },
+        {
+          "ko": "특정 조건에서만 오류가 발생하는 것 같습니다.",
+          "vi": "Có vẻ lỗi chỉ xảy ra trong điều kiện nhất định.",
+          "start": 79.86
+        },
+        {
+          "ko": "재현 경로를 알려 주실 수 있을까요?",
+          "vi": "Anh/chị cho tôi biết các bước tái hiện được không ạ?",
+          "start": 98.4
+        },
+        {
+          "ko": "원인은 널 체크가 누락된 부분이었습니다.",
+          "vi": "Nguyên nhân là chỗ bị sót kiểm tra null.",
+          "start": 115.64
+        },
+        {
+          "ko": "같은 문제가 다시 발생하지 않도록 하겠습니다.",
+          "vi": "Tôi sẽ để vấn đề tương tự không xảy ra lần nữa.",
+          "start": 133.49
+        },
+        {
+          "ko": "로그를 보니 데이터베이스 연결이 끊겼습니다.",
+          "vi": "Xem log thì thấy kết nối database bị ngắt.",
+          "start": 152.89
+        },
+        {
+          "ko": "임시 조치는 완료했습니다.",
+          "vi": "Đã xử lý tạm thời xong.",
+          "start": 171.58
+        },
+        {
+          "ko": "영향 범위를 확인한 후에 다시 보고드리겠습니다.",
+          "vi": "Sau khi kiểm tra phạm vi ảnh hưởng, tôi sẽ báo cáo lại.",
+          "start": 186.04
+        },
+        {
+          "ko": "운영 환경에서는 재현되지 않습니다.",
+          "vi": "Ở môi trường production thì không tái hiện được.",
+          "start": 205.8
+        },
+        {
+          "ko": "수정 후에 회귀 테스트를 진행하겠습니다.",
+          "vi": "Sau khi sửa, tôi sẽ chạy regression test.",
+          "start": 222.92
+        },
+        {
+          "ko": "운영 서버 로그부터 확인해 보겠습니다.",
+          "vi": "Tôi sẽ kiểm tra log server production trước.",
+          "start": 241.06
+        },
+        {
+          "ko": "어젯밤 배치가 실패해서 지금 재실행하고 있습니다.",
+          "vi": "Đêm qua batch bị lỗi nên giờ tôi đang chạy lại.",
+          "start": 258.11
+        },
+        {
+          "ko": "특정 브라우저에서만 화면이 깨지는 것 같습니다.",
+          "vi": "Có vẻ chỉ trên một trình duyệt nhất định thì màn hình bị vỡ.",
+          "start": 278.54
+        },
+        {
+          "ko": "데이터는 손실되지 않았습니다.",
+          "vi": "Dữ liệu không bị mất.",
+          "start": 297.92
+        }
+      ]
+    },
+    {
+      "id": "ep-grammar",
+      "hash": "9e42f19f068c6dfd",
+      "duration": 846.5,
+      "lines": [
+        {
+          "ko": "현재 결제 모듈을 개발하고 있습니다.",
+          "vi": "Hiện chúng tôi đang phát triển module thanh toán.",
+          "start": 0.0
+        },
+        {
+          "ko": "2차 개발은 다음 달 초에 시작할 예정입니다.",
+          "vi": "Giai đoạn 2 dự kiến bắt đầu vào đầu tháng sau.",
+          "start": 17.03
+        },
+        {
+          "ko": "오늘 중으로 수정해서 공유드리겠습니다.",
+          "vi": "Trong hôm nay tôi sẽ sửa rồi gửi lại.",
+          "start": 36.12
+        },
+        {
+          "ko": "회의에서 로그인 기능은 2차로 미루기로 했습니다.",
+          "vi": "Trong họp đã thống nhất dời chức năng đăng nhập sang giai đoạn 2.",
+          "start": 52.96
+        },
+        {
+          "ko": "배포가 완료되는 대로 메일 드리겠습니다.",
+          "vi": "Deploy xong là tôi gửi mail ngay.",
+          "start": 72.65
+        },
+        {
+          "ko": "내일까지 수정하도록 하겠습니다.",
+          "vi": "Tôi sẽ sửa xong trước ngày mai.",
+          "start": 89.96
+        },
+        {
+          "ko": "회의 자료는 공유 폴더에 올려 두었습니다.",
+          "vi": "Tài liệu họp tôi đã để sẵn trong thư mục chung.",
+          "start": 105.41
+        },
+        {
+          "ko": "이 일정이 가능한지 내부적으로 검토해 보겠습니다.",
+          "vi": "Chúng tôi sẽ xem xét nội bộ xem lịch này có khả thi không.",
+          "start": 123.83
+        },
+        {
+          "ko": "로그 레벨을 조금 낮출까 합니다.",
+          "vi": "Tôi định hạ log level xuống một chút.",
+          "start": 144.7
+        },
+        {
+          "ko": "Spring Boot로 REST API를 개발한 적이 있습니다.",
+          "vi": "Tôi đã từng phát triển REST API bằng Spring Boot.",
+          "start": 160.31
+        },
+        {
+          "ko": "코드 리뷰를 받고 나서 머지해 주세요.",
+          "vi": "Nhận review code xong rồi hãy merge.",
+          "start": 179.59
+        },
+        {
+          "ko": "머지하기 전에 충돌이 없는지 확인해 주세요.",
+          "vi": "Trước khi merge, kiểm tra giúp xem có conflict không.",
+          "start": 195.73
+        },
+        {
+          "ko": "지금 서버를 재시작하려고 하는데 괜찮을까요?",
+          "vi": "Bây giờ tôi định restart server, có được không ạ?",
+          "start": 214.18
+        },
+        {
+          "ko": "테스트 환경에 문제가 있어서 일정이 하루 늦어졌습니다.",
+          "vi": "Môi trường test có vấn đề nên lịch trễ một ngày.",
+          "start": 233.17
+        },
+        {
+          "ko": "트래픽 증가 때문에 서버 응답이 느려졌습니다.",
+          "vi": "Do traffic tăng nên server phản hồi chậm.",
+          "start": 254.14
+        },
+        {
+          "ko": "장애 대응하느라 보고가 늦어졌습니다.",
+          "vi": "Vì mải xử lý sự cố nên báo cáo muộn.",
+          "start": 272.99
+        },
+        {
+          "ko": "라이브러리 버전이 바뀌는 바람에 빌드가 실패했습니다.",
+          "vi": "Version thư viện bị đổi bất ngờ nên build bị fail.",
+          "start": 290.18
+        },
+        {
+          "ko": "캐시 설정이 원인인 것 같습니다.",
+          "vi": "Có lẽ nguyên nhân là cấu hình cache.",
+          "start": 311.51
+        },
+        {
+          "ko": "불편을 드려 죄송합니다.",
+          "vi": "Xin lỗi vì đã gây bất tiện.",
+          "start": 327.22
+        },
+        {
+          "ko": "김 팀장님께서 오늘 회의는 취소한다고 하셨습니다.",
+          "vi": "Trưởng nhóm Kim nói là hủy cuộc họp hôm nay.",
+          "start": 341.22
+        },
+        {
+          "ko": "배포 건으로 연락드렸는데요.",
+          "vi": "Tôi liên lạc về việc deploy ạ.",
+          "start": 361.01
+        },
+        {
+          "ko": "그 API는 아직 못 써요. 인증 서버가 준비가 안 됐거든요.",
+          "vi": "API đó chưa dùng được đâu. Vì server xác thực chưa xong.",
+          "start": 376.09
+        },
+        {
+          "ko": "코드를 분석하다 보니 같은 로직이 여러 곳에 있었습니다.",
+          "vi": "Phân tích code thì thấy cùng một logic nằm ở nhiều chỗ.",
+          "start": 403.99
+        },
+        {
+          "ko": "그 라이브러리 써 보니까 생각보다 가볍더라고요.",
+          "vi": "Dùng thử thư viện đó thì thấy nhẹ hơn mình nghĩ.",
+          "start": 424.16
+        },
+        {
+          "ko": "설정 파일을 잘못 올릴 뻔했는데 리뷰에서 잡았습니다.",
+          "vi": "Suýt nữa thì đẩy nhầm file cấu hình, may mà review bắt được.",
+          "start": 443.66
+        },
+        {
+          "ko": "데이터 정합성 문제로 배포를 연기할 수밖에 없었습니다.",
+          "vi": "Vì vấn đề toàn vẹn dữ liệu nên đành phải hoãn deploy.",
+          "start": 466.12
+        },
+        {
+          "ko": "캐시를 지웠더니 화면이 정상적으로 나왔습니다.",
+          "vi": "Tôi xoá cache xong thì màn hình hiện bình thường.",
+          "start": 487.99
+        },
+        {
+          "ko": "로그인한 채로 비밀번호를 바꾸면 세션이 만료됩니다.",
+          "vi": "Nếu đổi mật khẩu khi vẫn đang đăng nhập thì phiên sẽ hết hạn.",
+          "start": 507.11
+        },
+        {
+          "ko": "에러가 발생한 화면을 캡처해서 보내 주시겠어요?",
+          "vi": "Anh/chị chụp màn hình lỗi gửi giúp được không?",
+          "start": 528.24
+        },
+        {
+          "ko": "마감을 하루만 연장할 수 있을까요?",
+          "vi": "Có thể gia hạn deadline thêm một ngày được không?",
+          "start": 547.07
+        },
+        {
+          "ko": "회의 내용을 녹화해도 될까요?",
+          "vi": "Tôi ghi hình buổi họp có được không?",
+          "start": 563.74
+        },
+        {
+          "ko": "운영 서버에 바로 적용하기보다 테스트 서버에서 먼저 확인하는 게 좋겠습니다.",
+          "vi": "Nên kiểm tra trên server test trước thay vì áp dụng thẳng lên production.",
+          "start": 578.75
+        },
+        {
+          "ko": "검토 후 의견 주시면 감사하겠습니다.",
+          "vi": "Anh/chị xem xong cho ý kiến thì chúng tôi rất cảm ơn.",
+          "start": 604.01
+        },
+        {
+          "ko": "제가 회의록을 정리할 테니 액션 아이템만 확인해 주세요.",
+          "vi": "Tôi sẽ tổng hợp biên bản, anh/chị chỉ cần kiểm tra các action item.",
+          "start": 622.64
+        },
+        {
+          "ko": "변경된 비밀번호 정책을 확인하시기 바랍니다.",
+          "vi": "Mong mọi người kiểm tra chính sách mật khẩu đã thay đổi.",
+          "start": 645.29
+        },
+        {
+          "ko": "요구사항은 이해하기는 하지만 이번 범위에서는 어렵습니다.",
+          "vi": "Chúng tôi hiểu yêu cầu, nhưng trong phạm vi lần này thì khó.",
+          "start": 664.43
+        },
+        {
+          "ko": "DB 마이그레이션 때문에 서비스를 잠시 중단해야 할 것 같습니다.",
+          "vi": "Vì migration DB nên có lẽ phải tạm dừng dịch vụ một lúc.",
+          "start": 686.57
+        },
+        {
+          "ko": "리팩토링하는 김에 테스트 코드도 추가했습니다.",
+          "vi": "Nhân tiện refactor, tôi thêm luôn test code.",
+          "start": 709.79
+        },
+        {
+          "ko": "새로고침만 하시면 변경 사항이 반영됩니다.",
+          "vi": "Anh/chị chỉ cần tải lại trang là thay đổi được áp dụng.",
+          "start": 728.64
+        },
+        {
+          "ko": "말씀하신 내용 반영했습니다.",
+          "vi": "Đã đưa nội dung anh/chị nói vào.",
+          "start": 748.84
+        },
+        {
+          "ko": "수정된 화면을 캡처해서 공유해 드리겠습니다.",
+          "vi": "Tôi sẽ chụp màn hình đã sửa và gửi anh/chị.",
+          "start": 764.47
+        },
+        {
+          "ko": "다음 주에 직접 찾아뵙겠습니다.",
+          "vi": "Tuần sau tôi sẽ đến gặp trực tiếp.",
+          "start": 783.18
+        },
+        {
+          "ko": "고객님께서 요청하신 기능을 추가했습니다.",
+          "vi": "Đã thêm chức năng quý khách yêu cầu.",
+          "start": 798.58
+        },
+        {
+          "ko": "저희 팀에서 오늘 중으로 수정하겠습니다.",
+          "vi": "Team chúng tôi sẽ sửa trong hôm nay.",
+          "start": 816.08
+        },
+        {
+          "ko": "잠시만 기다려 주십시오.",
+          "vi": "Xin vui lòng chờ một chút.",
+          "start": 832.99
+        }
+      ]
+    }
+  ]
+}
