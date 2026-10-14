@@ -89,6 +89,9 @@ async def main() -> None:
     index = {"version": 1, "voices": {name: sorted(f.stem for f in (OUT / name).glob("*.mp3")) for name in VOICES}}
     INDEX.write_text(json.dumps(index, separators=(",", ":")) + "\n", encoding="utf-8")
     print(f"wrote {INDEX}")
+    if tasks and not done:
+        # Everything failed (e.g. the endpoint refused us): fail loudly so CI shows red.
+        sys.exit("no audio generated")
 
 
 asyncio.run(main())
