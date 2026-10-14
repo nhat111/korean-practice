@@ -77,6 +77,14 @@ content") with only `public/audio/` and `audio-index.json`; review and merge it.
 hand (Actions → Generate audio → Run workflow). One-time setting: Settings → Actions → General →
 Workflow permissions → tick "Allow GitHub Actions to create and approve pull requests".
 
+**Where the audio is served from:** not from Vercel. The MP3s are ~140 MB, and Vercel stores the whole
+build output of every deployment, so they filled the free plan's 10 GB of Deployment Storage. Merging
+anything under `public/audio/` into `master` runs `.github/workflows/audio-pages.yml`, which publishes the
+folder to GitHub Pages (`https://nhat111.github.io/korean-practice/audio/…`); production builds load the
+MP3s from there and leave `dist/audio` out. One-time setting: Settings → Pages → Build and deployment →
+Source: **GitHub Actions**. To serve them from the app's own origin again, set `VITE_AUDIO_BASE_URL` to an
+empty value in the Vercel project.
+
 ## Deploy to Vercel
 
 The repo is ready to deploy as-is. `vercel.json` sets:

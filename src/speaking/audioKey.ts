@@ -1,5 +1,6 @@
 // Pre-generated natural voices (Edge TTS, see scripts/tts.py). Each spoken
-// sentence is stored at /audio/<voice>/<audioKey(text)>.mp3. Imports use
+// sentence is stored at /audio/<voice>/<audioKey(text)>.mp3 under the audio
+// base (GitHub Pages in production, this origin in dev). Imports use
 // explicit .ts extensions so scripts/tts-jobs.ts can load it directly with Node.
 
 import { splitParts } from './segments.ts';
@@ -26,8 +27,9 @@ export function audioKey(text: string): string {
   return (4294967296 * (2097151 & h2) + (h1 >>> 0)).toString(16).padStart(14, '0');
 }
 
-export function audioUrl(voice: NaturalVoice, text: string): string {
-  return `/audio/${voice}/${audioKey(text)}.mp3`;
+/** `base` is the audio host without a trailing slash; '' means this origin. */
+export function audioUrl(voice: NaturalVoice, text: string, base = ''): string {
+  return `${base}/audio/${voice}/${audioKey(text)}.mp3`;
 }
 
 /** Fixed sentences used by the "test voice" buttons. */

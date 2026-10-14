@@ -162,7 +162,7 @@ async function playNatural(voice: NaturalVoice, text: string, rate: number): Pro
   const id = playId;
   // fetch + blob (not audio.src = url) so the service worker can cache the
   // file for offline use without having to answer media range requests.
-  const res = await fetch(audioUrl(voice, text));
+  const res = await fetch(audioUrl(voice, text, __AUDIO_BASE__));
   if (!res.ok) throw new Error(`audio ${res.status}`);
   const blob = await res.blob();
   if (id !== playId) return; // superseded or stopped meanwhile

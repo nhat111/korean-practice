@@ -10,6 +10,9 @@ describe('audioKey', () => {
     expect(audioKey('안녕하세요. 오늘 배포 일정 공유드리겠습니다.')).toBe('1a3c85df63d262');
     expect(audioKey('  배포  ')).toBe(audioKey('배포'));
     expect(audioUrl('male', '배포')).toBe(`/audio/male/${audioKey('배포')}.mp3`);
+    expect(audioUrl('female', '배포', 'https://nhat111.github.io/korean-practice')).toBe(
+      `https://nhat111.github.io/korean-practice/audio/female/${audioKey('배포')}.mp3`,
+    );
   });
 
   it('has no collisions across all spoken content', () => {

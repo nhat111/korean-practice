@@ -6,7 +6,8 @@
 //   cache named after the build version, so the whole app works offline.
 // - Navigations: network first (fresh deploys show up), cached index.html offline.
 // - Everything else that was precached: cache first.
-// - /audio/*.mp3: cache on first use (AUDIO_CACHE survives new versions).
+// - /audio/*.mp3: cache on first use (AUDIO_CACHE survives new versions),
+//   from this origin or from AUDIO_BASE (GitHub Pages in production).
 // - Activate: delete caches from older builds.
 
 const VERSION = '__VERSION__';
@@ -16,6 +17,9 @@ const NAV_TIMEOUT_MS = 3000;
 // Natural-voice MP3s (public/audio) are too many to precache; they are cached
 // on first play and kept across versions (file names are text hashes).
 const AUDIO_CACHE = 'kp-audio-v1';
+// Where production MP3s live ('' = this origin). Files cached when they were
+// served from this origin are still found: see handleAudio.
+const AUDIO_BASE = '__AUDIO_BASE__';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -58,9 +62,18 @@ async function handleAsset(request) {
   return cached ?? fetch(request);
 }
 
-async function handleAudio(request) {
+/** The `/audio/...` path of an MP3 URL, wherever it is hosted; null when it is not one. */
+function audioPath(url) {
+  if (url.origin === self.location.origin) return url.pathname.startsWith('/audio/') ? url.pathname : null;
+  if (AUDIO_BASE === '' || !url.href.startsWith(`${AUDIO_BASE}/audio/`)) return null;
+  return url.href.slice(AUDIO_BASE.length);
+}
+
+async function handleAudio(request, path) {
   const cache = await caches.open(AUDIO_CACHE);
-  const cached = await cache.match(request);
+  // Before the move to GitHub Pages the same file was cached under this
+  // origin; its name is a hash of the text, so that copy is still right.
+  const cached = (await cache.match(request)) ?? (await cache.match(path));
   if (cached) return cached;
   const response = await fetch(request);
   if (response.ok) await cache.put(request, response.clone());
@@ -71,12 +84,15 @@ self.addEventListener('fetch', (event) => {
   const { request } = event;
   if (request.method !== 'GET') return;
   const url = new URL(request.url);
+  const audio = request.mode === 'navigate' ? null : audioPath(url);
+  if (audio !== null) {
+    event.respondWith(handleAudio(request, audio));
+    return;
+  }
   if (url.origin !== self.location.origin) return;
 
   if (request.mode === 'navigate') {
     event.respondWith(handleNavigation(request));
-  } else if (url.pathname.startsWith('/audio/')) {
-    event.respondWith(handleAudio(request));
   } else if (PRECACHE.includes(url.pathname)) {
     event.respondWith(handleAsset(request));
   }

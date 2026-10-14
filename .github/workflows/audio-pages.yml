@@ -1,0 +1,50 @@
+# Publishes public/audio to GitHub Pages, where production builds load the
+# natural-voice MP3s from (PAGES_AUDIO_BASE in vite.config.ts). They are
+# ~140 MB: inside the Vercel build, every deployment stored its own copy.
+# Needs, once: Settings → Pages → Build and deployment → Source: "GitHub Actions".
+name: Publish audio
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'public/audio/**'
+      - '.github/workflows/audio-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Stage the audio site
+        run: |
+          mkdir -p site
+          cp -r public/audio site/audio
+          # Served as-is: no Jekyll pass over ~7,700 files.
+          touch site/.nojekyll
+          echo '<!doctype html><title>KoDevTalk audio</title><p>Natural-voice MP3s for <a href="https://kodevtalk.vercel.app">KoDevTalk</a>.</p>' > site/index.html
+          du -sh site
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
