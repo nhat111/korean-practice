@@ -298,3 +298,17 @@ export interface MeetingItem {
   lines: MeetingLine[];
   questions: MeetingQuestion[];
 }
+
+// ---------- Passive listening episodes (generated) ----------
+
+/** One long MP3 built by scripts/episodes.py from existing lines; see src/practice/episodes.ts. */
+export interface Episode {
+  /** One of EPISODES in src/practice/episodes.ts; the file is audio/episodes/<id>.mp3. */
+  id: string;
+  /** Of the episode's lines and layout; the episode is rebuilt when it changes. */
+  hash: string;
+  /** Seconds. */
+  duration: number;
+  /** In playback order; `start` is the second the line begins. */
+  lines: { ko: string; vi: string; start: number }[];
+}

@@ -13,6 +13,7 @@ import { HomePage } from './pages/HomePage';
 import { InterpretPage } from './pages/InterpretPage';
 import { ListeningPage } from './pages/ListeningPage';
 import { MessagesPage } from './pages/MessagesPage';
+import { PassivePage } from './pages/PassivePage';
 import { PatternsPage } from './pages/PatternsPage';
 import { ProgressPage } from './pages/ProgressPage';
 import { ScenarioPlayerPage } from './pages/ScenarioPlayerPage';
@@ -41,6 +42,7 @@ export function App() {
         <Route path="patterns" element={<PatternsPage />} />
         <Route path="listening" element={<ListeningPage />} />
         <Route path="interpret" element={<InterpretPage />} />
+        <Route path="passive" element={<PassivePage />} />
         <Route path="daily" element={<DailyPage />} />
         <Route path="weak" element={<WeakPage />} />
         <Route path="grammar" element={<GrammarPage />} />

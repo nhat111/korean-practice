@@ -30,6 +30,7 @@ const DRILLS = [
   { to: '/patterns', icon: 'puzzle', tone: 'amber', title: vi.patterns.title, desc: vi.speaking.patternsDesc },
   { to: '/listening', icon: 'headphones', tone: 'teal', title: vi.listening.title, desc: vi.home.cards.listening },
   { to: '/interpret', icon: 'languages', tone: 'violet', title: vi.interpret.title, desc: vi.home.cards.interpret },
+  { to: '/passive', icon: 'radio', tone: 'teal', title: vi.passive.title, desc: vi.passive.card },
 ] as const;
 
 export function SpeakingPage() {

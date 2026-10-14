@@ -164,6 +164,14 @@ Korean either.
   `q`, 2-4 Korean `choices`, `answer`, `answerVi` shown after answering, `explainVi`; the UI shuffles). Every Korean line
   on the lesson page has a Vietnamese meaning next to it. `GrammarQuiz` saves `grammar:<id>` (grade 4 all right, else 1), so failed
   lessons show up in "Câu cần luyện lại".
+- `episodes.json` (`Episode`, page `/passive` "Nghe thụ động", card on the Luyện nói hub) is **generated**, never
+  edited: `npm run episodes` (also run by `tts.yml` after `tts.py`) builds one long MP3 per `EPISODES` entry in
+  `src/practice/episodes.ts` (shadowing topics, or one example per grammar lesson) into `public/audio/episodes/<id>.mp3`:
+  per line Korean, a pause as long as the line, Korean again, the Vietnamese meaning (`public/audio/vi/`), a pause.
+  It is assembled as PCM so `lines[].start` are exact. One file (not a JS playlist) is what keeps playing with the
+  screen locked; Media Session gives lock-screen controls (prev/next = line). Episodes stream from the audio hosts
+  (Pages, then jsDelivr); the service worker skips `/audio/episodes/` (Range requests), and "Tải về" stores a copy in
+  the `kp-episodes-v1` cache (`src/storage/episodes.ts`), used the next time the episode is opened.
 - Each item has a stable string `id` (e.g. `"standup-001"`). Progress is keyed by these ids,
   so **never rename or reuse an id** once it ships.
 - Typical item fields: `id`, `ko` (Korean), `vi` (Vietnamese meaning), optional `romanization`,
