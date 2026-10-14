@@ -43,6 +43,11 @@ function pwaPlugin(audio: string): Plugin {
   return {
     name: 'kp-service-worker',
     apply: 'build',
+    // Open the connection to the audio host early: the first MP3 then starts sooner after a tap.
+    transformIndexHtml() {
+      if (!audio.startsWith('http')) return []
+      return [{ tag: 'link', attrs: { rel: 'preconnect', href: new URL(audio).origin, crossorigin: '' }, injectTo: 'head' }]
+    },
     configResolved(config) {
       root = config.root
       outDir = resolve(config.root, config.build.outDir)

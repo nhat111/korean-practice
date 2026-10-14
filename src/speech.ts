@@ -159,6 +159,10 @@ function getPlayer(): HTMLAudioElement {
 
 async function playNatural(voice: NaturalVoice, text: string, rate: number): Promise<void> {
   stopSpeaking();
+  // Unlock the shared element now, inside the tap: after the fetch below iOS no
+  // longer treats play() as user-initiated (the MP3s come from GitHub Pages and
+  // can take a while), so a first play started there would be blocked.
+  getPlayer();
   const id = playId;
   // fetch + blob (not audio.src = url) so the service worker can cache the
   // file for offline use without having to answer media range requests.

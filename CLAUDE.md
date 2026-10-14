@@ -183,7 +183,8 @@ Korean either.
   `.github/workflows/tts.yml` runs the same steps on GitHub and opens a PR (`auto/tts`) with only the audio files and
   `audio-index.json`. Missing files fall back to the device voice, so content still works without it.
   `audioKey` (cyrb53 of the trimmed text) is pinned by a test: never change it. Playback is
-  fetch → blob → one shared `<audio>` element (unlocked with a silent clip on first tap for iOS);
+  fetch → blob → one shared `<audio>` element (unlocked with a silent clip inside the tap, before the fetch, for iOS: a play() started after a slow fetch is no longer
+  user-initiated and WebKit blocks it; production adds a `preconnect` to the audio host);
   the service worker caches `/audio/` on first use in `kp-audio-v1` (not precached).
 - Audio hosting: the MP3s (~140 MB) are **not** in the Vercel deployment (each deployment stored a copy and
   filled the free 10 GB Deployment Storage). `.github/workflows/audio-pages.yml` publishes `public/audio` to
