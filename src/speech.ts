@@ -157,6 +157,40 @@ function getPlayer(): HTMLAudioElement {
   return player;
 }
 
+// GitHub Pages first, then jsDelivr (the same files from the repo) when Pages
+// fails, e.g. on a company network that blocks *.github.io.
+const AUDIO_BASES = __AUDIO_FALLBACK__ ? [__AUDIO_BASE__, __AUDIO_FALLBACK__] : [__AUDIO_BASE__];
+// The host that answered last; tried first next time (for this session).
+let audioHost = 0;
+const AUDIO_TIMEOUT_MS = 6000;
+
+/**
+ * fetch + blob (not audio.src = url) so the service worker can cache the file
+ * for offline use without having to answer media range requests.
+ */
+async function fetchAudio(voice: NaturalVoice, text: string): Promise<Blob> {
+  let lastError: unknown = new Error('no audio host');
+  for (let i = 0; i < AUDIO_BASES.length; i++) {
+    const host = (audioHost + i) % AUDIO_BASES.length;
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), AUDIO_TIMEOUT_MS);
+    try {
+      const res = await fetch(audioUrl(voice, text, AUDIO_BASES[host]), { signal: controller.signal });
+      if (!res.ok) throw new Error(`audio ${res.status}`);
+      // A firewall's block page can answer 200 with HTML.
+      if (!(res.headers.get('content-type') ?? '').startsWith('audio/')) throw new Error('not audio');
+      const blob = await res.blob();
+      audioHost = host;
+      return blob;
+    } catch (e) {
+      lastError = e;
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+  throw lastError;
+}
+
 async function playNatural(voice: NaturalVoice, text: string, rate: number): Promise<void> {
   stopSpeaking();
   // Unlock the shared element now, inside the tap: after the fetch below iOS no
@@ -164,11 +198,7 @@ async function playNatural(voice: NaturalVoice, text: string, rate: number): Pro
   // can take a while), so a first play started there would be blocked.
   getPlayer();
   const id = playId;
-  // fetch + blob (not audio.src = url) so the service worker can cache the
-  // file for offline use without having to answer media range requests.
-  const res = await fetch(audioUrl(voice, text, __AUDIO_BASE__));
-  if (!res.ok) throw new Error(`audio ${res.status}`);
-  const blob = await res.blob();
+  const blob = await fetchAudio(voice, text);
   if (id !== playId) return; // superseded or stopped meanwhile
   const url = URL.createObjectURL(blob);
   return playOnPlayer(url, rate).finally(() => URL.revokeObjectURL(url));

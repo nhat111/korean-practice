@@ -6,3 +6,5 @@ declare const __APP_VERSION__: string;
  * Injected by vite.config.ts; see VITE_AUDIO_BASE_URL there.
  */
 declare const __AUDIO_BASE__: string;
+/** Second audio host tried when the first fails (jsDelivr in production); '' = none. */
+declare const __AUDIO_FALLBACK__: string;
