@@ -557,6 +557,13 @@ textarea {
   font-weight: 600;
 }
 
+/* Home: one column on phones; two columns from 1180px (see below). */
+.home-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 /* Home hero: typographic, in the logo's voice (Hangul + mono + red cursor). */
 .hero {
   display: flex;
@@ -2598,6 +2605,42 @@ ins {
   .main-inner {
     max-width: 800px;
     padding-top: 28px;
+  }
+  .main-inner--wide {
+    max-width: 1080px;
+  }
+  /* Card lists (grammar, scenarios, emails) in two columns. */
+  .list--cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .list--cards > li {
+    display: flex;
+  }
+  .list--cards > li > * {
+    flex: 1;
+  }
+}
+
+/* Home on wide screens: today, the week and the path on the left; entries on the right. */
+@media (min-width: 1180px) {
+  .home-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 20px;
+  }
+  .home-layout .grid.grid--wide-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Chip rows scroll sideways on phones; with room to spare they wrap, so nothing is cut off. */
+@media (min-width: 768px) {
+  .chips.chips--scroll {
+    flex-wrap: wrap;
+    overflow-x: visible;
   }
 }
 

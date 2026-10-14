@@ -56,7 +56,7 @@ function GrammarList({ items }: { items: GrammarLesson[] }) {
           </button>
         ))}
       </div>
-      <ul className="list">
+      <ul className="list list--cards">
         {shown.map((l) => (
           <li key={l.id}>
             <Link to={`/grammar/${l.id}`} className="card card--link grammar-card">

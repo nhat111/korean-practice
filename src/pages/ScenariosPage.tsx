@@ -164,7 +164,7 @@ function ScenarioList({ items }: { items: Scenario[] }) {
       {shown.length === 0 ? (
         <p className="muted center">{vi.scenarios.noResults}</p>
       ) : (
-        <ul className="list">
+        <ul className="list list--cards">
           {shown.map((s) => {
             const result = progress.scenarios[s.id];
             return (
