@@ -434,6 +434,114 @@
       ]
     },
     {
+      "id": "gr-l-kka-hada",
+      "group": "report",
+      "pattern": "-(으)ㄹ까 하다",
+      "meaningVi": "đang định ... (chưa chắc chắn)",
+      "usageVi": "Nói kế hoạch còn đang cân nhắc, nghe mềm hơn -(으)ㄹ 예정입니다. Hay dùng để thăm dò ý kiến leader hoặc khách trước khi chốt: -(으)ㄹ까 하는데 괜찮으실까요?",
+      "levels": {
+        "peer": {
+          "ko": "오늘은 리팩토링 좀 할까 해요.",
+          "vi": "Hôm nay mình định refactor một chút."
+        },
+        "lead": {
+          "ko": "이번 주에는 테스트 코드를 보강할까 합니다.",
+          "vi": "Tuần này tôi định bổ sung test code."
+        },
+        "client": {
+          "ko": "배포는 다음 주 화요일에 진행할까 하는데, 괜찮으실까요?",
+          "vi": "Chúng tôi đang định deploy vào thứ Ba tuần sau, anh/chị thấy có được không ạ?"
+        }
+      },
+      "examples": [
+        {
+          "ko": "로그 레벨을 조금 낮출까 합니다.",
+          "vi": "Tôi định hạ log level xuống một chút."
+        },
+        {
+          "ko": "회의 전에 자료를 먼저 공유할까 하는데 어떠세요?",
+          "vi": "Tôi định chia sẻ tài liệu trước buổi họp, anh/chị thấy sao ạ?"
+        },
+        {
+          "ko": "이 기능은 다음 스프린트로 넘길까 합니다.",
+          "vi": "Chức năng này tôi định chuyển sang sprint sau."
+        }
+      ],
+      "mistake": {
+        "wrong": "내일 배포할까 했습니다.",
+        "right": "내일 배포할까 합니다.",
+        "vi": "Tôi đang định deploy vào ngày mai.",
+        "noteVi": "-(으)ㄹ까 했습니다 nghĩa là \"đã định ... (nhưng rồi không làm)\"; kế hoạch hiện tại thì dùng -(으)ㄹ까 합니다."
+      },
+      "quiz": [
+        {
+          "q": "Thăm dò ý khách: chúng tôi đang định deploy thứ Ba tuần sau, có được không.",
+          "choices": [
+            "다음 주 화요일에 배포할까 하는데, 괜찮으실까요?",
+            "다음 주 화요일에 배포할까 했는데, 괜찮으실까요?",
+            "다음 주 화요일에 배포하기로 했으니까 하세요."
+          ],
+          "answer": 0,
+          "answerVi": "Chúng tôi đang định deploy vào thứ Ba tuần sau, anh/chị thấy có được không ạ?",
+          "explainVi": "-(으)ㄹ까 했는데 là \"đã từng định\"; câu 3 là đã chốt và còn ra lệnh."
+        }
+      ]
+    },
+    {
+      "id": "gr-n-jeogi-itda",
+      "group": "report",
+      "pattern": "-(으)ㄴ 적이 있다",
+      "meaningVi": "đã từng ...",
+      "usageVi": "Kể kinh nghiệm: rất hay dùng khi phỏng vấn và khi giải thích \"lỗi này từng gặp rồi\". Phủ định: -(으)ㄴ 적이 없다.",
+      "levels": {
+        "peer": {
+          "ko": "이런 에러 본 적 있어요?",
+          "vi": "Bạn từng gặp lỗi kiểu này chưa?"
+        },
+        "lead": {
+          "ko": "비슷한 장애를 처리한 적이 있습니다.",
+          "vi": "Tôi từng xử lý sự cố tương tự."
+        },
+        "client": {
+          "ko": "저희 팀은 금융권 프로젝트를 진행한 적이 있습니다.",
+          "vi": "Team chúng tôi đã từng làm dự án trong lĩnh vực tài chính."
+        }
+      },
+      "examples": [
+        {
+          "ko": "Spring Boot로 REST API를 개발한 적이 있습니다.",
+          "vi": "Tôi đã từng phát triển REST API bằng Spring Boot."
+        },
+        {
+          "ko": "이 문제는 예전에도 발생한 적이 있습니다.",
+          "vi": "Vấn đề này trước đây cũng từng xảy ra."
+        },
+        {
+          "ko": "한국 고객사와 직접 회의한 적은 아직 없습니다.",
+          "vi": "Tôi chưa từng họp trực tiếp với khách Hàn."
+        }
+      ],
+      "mistake": {
+        "wrong": "Spring Boot를 사용한 적이 있었습니다.",
+        "right": "Spring Boot를 사용한 적이 있습니다.",
+        "vi": "Tôi đã từng dùng Spring Boot.",
+        "noteVi": "-(으)ㄴ 적이 있다 đã mang nghĩa quá khứ, đuôi câu để 있습니다 là đủ."
+      },
+      "quiz": [
+        {
+          "q": "Phỏng vấn: \"Tôi đã từng làm dự án với khách Hàn.\"",
+          "choices": [
+            "한국 고객사와 프로젝트를 한 적이 있습니다.",
+            "한국 고객사와 프로젝트를 하는 적이 있습니다.",
+            "한국 고객사와 프로젝트를 할 적이 있습니다."
+          ],
+          "answer": 0,
+          "answerVi": "Tôi đã từng làm dự án với khách hàng Hàn Quốc.",
+          "explainVi": "Kinh nghiệm đã qua dùng -(으)ㄴ 적이 (한 적이), không dùng -는 hay -(으)ㄹ."
+        }
+      ]
+    },
+    {
       "id": "gr-a-seo",
       "group": "explain",
       "pattern": "-아/어서",
@@ -974,6 +1082,114 @@
       ]
     },
     {
+      "id": "gr-deoragoyo",
+      "group": "explain",
+      "pattern": "-더라고요",
+      "meaningVi": "(tôi thấy) ... đấy (kể lại điều mình trực tiếp quan sát)",
+      "usageVi": "Kể lại điều mình đã tự thấy, tự trải nghiệm: \"kiểm tra thì thấy ...\". Dùng trong hội thoại 해요체; trong báo cáo trang trọng dùng -(으)ㄴ 것으로 확인되었습니다.",
+      "levels": {
+        "peer": {
+          "ko": "어제 보니까 서버가 좀 느리더라고요.",
+          "vi": "Hôm qua mình thấy server hơi chậm đấy."
+        },
+        "lead": {
+          "ko": "확인해 보니 캐시가 안 지워져 있더라고요.",
+          "vi": "Kiểm tra thì thấy cache chưa được xoá ạ."
+        },
+        "client": {
+          "ko": "점검 결과 캐시가 삭제되지 않은 것으로 확인되었습니다.",
+          "vi": "Kết quả kiểm tra cho thấy cache chưa được xoá."
+        }
+      },
+      "examples": [
+        {
+          "ko": "그 라이브러리 써 보니까 생각보다 가볍더라고요.",
+          "vi": "Dùng thử thư viện đó thì thấy nhẹ hơn mình nghĩ."
+        },
+        {
+          "ko": "로그를 보니 새벽 3시쯤부터 에러가 나더라고요.",
+          "vi": "Xem log thì thấy lỗi bắt đầu từ khoảng 3 giờ sáng."
+        },
+        {
+          "ko": "고객사 담당자분이 이 기능을 많이 쓰시더라고요.",
+          "vi": "Tôi thấy người phụ trách bên khách dùng chức năng này nhiều lắm."
+        }
+      ],
+      "mistake": {
+        "wrong": "제가 어제 배포했더라고요.",
+        "right": "제가 어제 배포했습니다.",
+        "vi": "Hôm qua tôi đã deploy.",
+        "noteVi": "-더라고요 dùng cho điều mình quan sát thấy, không dùng cho hành động chính mình làm."
+      },
+      "quiz": [
+        {
+          "q": "Kể với leader trong lúc họp: xem log thì thấy lỗi bắt đầu từ 3 giờ sáng.",
+          "choices": [
+            "로그를 보니 새벽 3시쯤부터 에러가 나더라고요.",
+            "로그를 보니 새벽 3시쯤부터 제가 에러를 냈더라고요.",
+            "로그를 보니 새벽 3시쯤부터 에러가 나겠더라고요."
+          ],
+          "answer": 0,
+          "answerVi": "Xem log thì thấy lỗi bắt đầu từ khoảng 3 giờ sáng.",
+          "explainVi": "Kể điều quan sát được, không phải việc mình làm hay phỏng đoán."
+        }
+      ]
+    },
+    {
+      "id": "gr-l-ppeonhada",
+      "group": "explain",
+      "pattern": "-(으)ㄹ 뻔하다",
+      "meaningVi": "suýt nữa thì ...",
+      "usageVi": "Kể chuyện suýt xảy ra (thường là chuyện xấu) nhưng may là không: hay đi với 하마터면. Luôn chia quá khứ: -(으)ㄹ 뻔했습니다.",
+      "levels": {
+        "peer": {
+          "ko": "하마터면 운영 DB를 지울 뻔했어요.",
+          "vi": "Suýt nữa thì mình xoá DB production."
+        },
+        "lead": {
+          "ko": "하마터면 배포 시간을 놓칠 뻔했습니다.",
+          "vi": "Suýt nữa thì lỡ giờ deploy."
+        },
+        "client": {
+          "ko": "테스트에서 발견하지 못했다면 장애로 이어질 뻔했습니다.",
+          "vi": "Nếu không phát hiện khi test thì suýt nữa đã thành sự cố."
+        }
+      },
+      "examples": [
+        {
+          "ko": "설정 파일을 잘못 올릴 뻔했는데 리뷰에서 잡았습니다.",
+          "vi": "Suýt nữa thì đẩy nhầm file cấu hình, may mà review bắt được."
+        },
+        {
+          "ko": "마감을 넘길 뻔했지만 팀원들 덕분에 맞췄습니다.",
+          "vi": "Suýt nữa thì trễ deadline, nhưng nhờ các thành viên nên kịp."
+        },
+        {
+          "ko": "메일을 다른 고객사에 보낼 뻔했습니다.",
+          "vi": "Suýt nữa thì gửi mail cho nhầm khách hàng khác."
+        }
+      ],
+      "mistake": {
+        "wrong": "하마터면 DB를 지울 뻔합니다.",
+        "right": "하마터면 DB를 지울 뻔했습니다.",
+        "vi": "Suýt nữa thì tôi xoá DB.",
+        "noteVi": "Chuyện \"suýt\" đã qua nên luôn chia quá khứ -(으)ㄹ 뻔했습니다."
+      },
+      "quiz": [
+        {
+          "q": "Kể với leader: suýt nữa thì đẩy nhầm file cấu hình, may review bắt được.",
+          "choices": [
+            "설정 파일을 잘못 올릴 뻔했는데 리뷰에서 잡았습니다.",
+            "설정 파일을 잘못 올릴 뻔하는데 리뷰에서 잡았습니다.",
+            "설정 파일을 잘못 올리는 바람에 리뷰에서 잡았습니다."
+          ],
+          "answer": 0,
+          "answerVi": "Suýt nữa thì đẩy nhầm file cấu hình, may mà review bắt được.",
+          "explainVi": "Phải chia quá khứ 뻔했는데; -는 바람에 nghĩa là việc xấu đã thật sự xảy ra."
+        }
+      ]
+    },
+    {
       "id": "gr-a-jusigesseoyo",
       "group": "request",
       "pattern": "-아/어 주시겠어요?",
@@ -1348,6 +1564,114 @@
           "answer": 0,
           "answerVi": "Trong thời gian bảo trì dịch vụ bị hạn chế, mong mọi người lưu ý.",
           "explainVi": "참고하겠습니다 là chính mình sẽ tham khảo; 참고해 là 반말."
+        }
+      ]
+    },
+    {
+      "id": "gr-gineun-hajiman",
+      "group": "request",
+      "pattern": "-기는 하지만",
+      "meaningVi": "đúng là ... nhưng ...",
+      "usageVi": "Công nhận ý của người kia trước rồi mới nêu ý khác: cách phản biện lịch sự với khách hoặc leader. Văn nói hay rút thành -기는 한데요.",
+      "levels": {
+        "peer": {
+          "ko": "좋긴 한데 좀 느려요.",
+          "vi": "Hay thì hay nhưng hơi chậm."
+        },
+        "lead": {
+          "ko": "가능하기는 하지만 일정이 조금 더 필요합니다.",
+          "vi": "Làm được thì làm được, nhưng cần thêm chút thời gian."
+        },
+        "client": {
+          "ko": "말씀하신 방법도 가능하기는 하지만, 성능 면에서는 다른 방법을 추천드립니다.",
+          "vi": "Cách anh/chị nói cũng làm được, nhưng về hiệu năng thì chúng tôi đề xuất cách khác."
+        }
+      },
+      "examples": [
+        {
+          "ko": "요구사항은 이해하기는 하지만 이번 범위에서는 어렵습니다.",
+          "vi": "Chúng tôi hiểu yêu cầu, nhưng trong phạm vi lần này thì khó."
+        },
+        {
+          "ko": "테스트는 통과하기는 했지만 경계값 케이스가 부족합니다.",
+          "vi": "Test thì có pass, nhưng còn thiếu case giá trị biên."
+        },
+        {
+          "ko": "비용이 들기는 하지만 장기적으로는 유지보수가 쉬워집니다.",
+          "vi": "Đúng là tốn chi phí, nhưng về lâu dài sẽ dễ bảo trì hơn."
+        }
+      ],
+      "mistake": {
+        "wrong": "그 방법은 안 됩니다.",
+        "right": "그 방법도 가능하기는 하지만, 다른 방법이 더 안전할 것 같습니다.",
+        "vi": "Cách đó cũng được, nhưng có lẽ cách khác an toàn hơn.",
+        "noteVi": "Bác thẳng ý của khách nghe cứng; công nhận trước bằng -기는 하지만 rồi mới đề xuất."
+      },
+      "quiz": [
+        {
+          "q": "Khách đề xuất một cách làm. Bạn muốn nói: cách đó cũng được, nhưng về hiệu năng nên dùng cách khác.",
+          "choices": [
+            "말씀하신 방법도 가능하기는 하지만, 성능 면에서는 다른 방법을 추천드립니다.",
+            "말씀하신 방법은 안 됩니다. 다른 방법으로 하세요.",
+            "말씀하신 방법도 가능하느라고 다른 방법을 추천드립니다."
+          ],
+          "answer": 0,
+          "answerVi": "Cách anh/chị nói cũng làm được, nhưng về hiệu năng thì chúng tôi đề xuất cách khác.",
+          "explainVi": "Câu 2 bác bỏ và ra lệnh, nghe thô với khách; câu 3 sai ngữ pháp."
+        }
+      ]
+    },
+    {
+      "id": "gr-a-ya-hal-geot-gatda",
+      "group": "request",
+      "pattern": "-아/어야 할 것 같다",
+      "meaningVi": "có lẽ phải ... (nói mềm điều bắt buộc)",
+      "usageVi": "Báo một việc buộc phải làm (thêm thời gian, thêm chi phí, dời lịch) mà không nghe như ép người nghe. Mềm hơn -아/어야 합니다.",
+      "levels": {
+        "peer": {
+          "ko": "오늘은 좀 늦게 가야 할 것 같아요.",
+          "vi": "Hôm nay chắc mình phải về muộn."
+        },
+        "lead": {
+          "ko": "이 부분은 다시 설계해야 할 것 같습니다.",
+          "vi": "Phần này có lẽ phải thiết kế lại."
+        },
+        "client": {
+          "ko": "추가 요구사항을 반영하려면 일정을 일주일 정도 조정해야 할 것 같습니다.",
+          "vi": "Để đưa yêu cầu bổ sung vào, có lẽ phải điều chỉnh lịch khoảng một tuần."
+        }
+      },
+      "examples": [
+        {
+          "ko": "DB 마이그레이션 때문에 서비스를 잠시 중단해야 할 것 같습니다.",
+          "vi": "Vì migration DB nên có lẽ phải tạm dừng dịch vụ một lúc."
+        },
+        {
+          "ko": "원인 파악을 위해 로그를 조금 더 받아 봐야 할 것 같습니다.",
+          "vi": "Để tìm nguyên nhân, có lẽ cần lấy thêm log."
+        },
+        {
+          "ko": "이번 주 회의는 금요일로 옮겨야 할 것 같습니다.",
+          "vi": "Họp tuần này có lẽ phải dời sang thứ Sáu."
+        }
+      ],
+      "mistake": {
+        "wrong": "일정을 조정하세요.",
+        "right": "일정을 조정해야 할 것 같습니다.",
+        "vi": "Có lẽ phải điều chỉnh lịch.",
+        "noteVi": "Với khách, việc bắt buộc nên nói mềm bằng -아/어야 할 것 같습니다 thay vì mệnh lệnh."
+      },
+      "quiz": [
+        {
+          "q": "Báo khách mềm mỏng: để đưa yêu cầu mới vào, có lẽ phải dời lịch một tuần.",
+          "choices": [
+            "추가 요구사항을 반영하려면 일정을 일주일 정도 조정해야 할 것 같습니다.",
+            "추가 요구사항 때문에 일정을 일주일 조정하세요.",
+            "추가 요구사항을 반영하느라고 일정을 조정할 뻔했습니다."
+          ],
+          "answer": 0,
+          "answerVi": "Để đưa yêu cầu bổ sung vào, có lẽ phải điều chỉnh lịch khoảng một tuần.",
+          "explainVi": "Câu 2 là ra lệnh cho khách; câu 3 sai nghĩa (\"suýt điều chỉnh\")."
         }
       ]
     },

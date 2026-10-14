@@ -61,12 +61,11 @@ Reference: NihongoBiz (bjtlab.me) feels polished thanks to a mascot, illustratio
 - [ ] More meetings (`meetings.json`) with 3 speakers and faster speech for TOPIK 4.
 - [ ] Listening "Họp" with a "replay one line" step before the questions for TOPIK 2 learners.
 - [x] Grammar: one grammar quiz in the daily plan, grammar bar on the Progress page.
-- [ ] Grammar: more lessons (-(으)ㄴ/는데요 cushion, -거든요, -다 보니,
-      -(으)ㄹ 테니까).
+- [ ] Grammar: more lessons (next: -(으)ㄹ 수밖에 없다, -는 김에, -(으)ㄴ 채로, -고 나서, -더니).
 
 ## Done
 
-- [x] "Ngữ pháp công sở" (`grammar.json`, 30 lessons in 4 groups with politeness ladder, examples, a typical
+- [x] "Ngữ pháp công sở" (`grammar.json`, 36 lessons in 4 groups with politeness ladder, examples, a typical
       mistake and a quiz in the SRS) replaces the K-pop songs section.
 - [x] Home "Mục tiêu hôm nay" (practice turns today / daily target, week dots T2–CN, one start button),
       "Từ của ngày", progress overview (ring + per-skill bars), friendlier empty states.
