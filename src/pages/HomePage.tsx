@@ -106,107 +106,112 @@ export function HomePage() {
   ];
 
   return (
-    <div className="stack">
-      <section className="hero">
-        <p className="hero-date mono">{vi.home.heroDate(vi.home.weekdays[(now.getDay() + 6) % 7], `${now.getDate()}/${now.getMonth() + 1}`)}</p>
-        <div className="hero-greet">
-          <h1 lang="ko">
-            {greeting.ko}
-            <span className="type-cursor" aria-hidden="true" />
-          </h1>
-          <SpeakButton text={greeting.ko} small />
-        </div>
-        <p className="hero-gloss">
-          <strong>{greeting.vi}.</strong> {vi.home.heroText}
-        </p>
-        {stats.some((s) => s.value > 0) && (
-          <ul className="hero-stats">
-            {stats.map((s) => (
-              <li key={s.label}>
-                <strong className="mono">{s.value}</strong> {s.label}
-              </li>
-            ))}
-          </ul>
-        )}
-      </section>
-      <section className="card stack-sm today-card">
-        <div className="row-between">
-          <h2>{vi.home.today.title}</h2>
-          <span className="muted small">{vi.home.today.perDay(minutes)}</span>
-        </div>
-        <div className="row-between">
-          <strong>{vi.home.today.count(done, target)}</strong>
-          {done >= target && <span className="badge badge--ok">{vi.home.today.reached}</span>}
-        </div>
-        <div className="bar" aria-hidden>
-          <div className="bar-fill" style={{ width: `${Math.min(100, (100 * done) / target)}%` }} />
-        </div>
-        <div className="stack-xs">
-          <span className="muted small">{vi.home.today.recipeLabel}</span>
-          <ul className="recipe">
-            {planRecipe(minutes / 5).map((r) => (
-              <li key={r.kind}>
-                <Icon name={RECIPE_ICONS[r.kind]} size={15} />
-                {vi.home.today.recipe[r.kind](r.count)}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <WeekDots days={weekDays(progress.daily, today)} />
-        <Link to="/daily" className="btn">
-          <Icon name="zap" size={18} /> {ctaLabel}
-        </Link>
-        {due > 0 && (
-          <Link to="/flashcards" className="link-btn small">
-            {vi.home.today.vocabDue(due)}
+    // Two columns on wide screens (.home-layout): today on the left, everything else on the right.
+    <div className="home-layout">
+      <div className="stack home-col">
+        <section className="hero">
+          <p className="hero-date mono">{vi.home.heroDate(vi.home.weekdays[(now.getDay() + 6) % 7], `${now.getDate()}/${now.getMonth() + 1}`)}</p>
+          <div className="hero-greet">
+            <h1 lang="ko">
+              {greeting.ko}
+              <span className="type-cursor" aria-hidden="true" />
+            </h1>
+            <SpeakButton text={greeting.ko} small />
+          </div>
+          <p className="hero-gloss">
+            <strong>{greeting.vi}.</strong> {vi.home.heroText}
+          </p>
+          {stats.some((s) => s.value > 0) && (
+            <ul className="hero-stats">
+              {stats.map((s) => (
+                <li key={s.label}>
+                  <strong className="mono">{s.value}</strong> {s.label}
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+        <section className="card stack-sm today-card">
+          <div className="row-between">
+            <h2>{vi.home.today.title}</h2>
+            <span className="muted small">{vi.home.today.perDay(minutes)}</span>
+          </div>
+          <div className="row-between">
+            <strong>{vi.home.today.count(done, target)}</strong>
+            {done >= target && <span className="badge badge--ok">{vi.home.today.reached}</span>}
+          </div>
+          <div className="bar" aria-hidden>
+            <div className="bar-fill" style={{ width: `${Math.min(100, (100 * done) / target)}%` }} />
+          </div>
+          <div className="stack-xs">
+            <span className="muted small">{vi.home.today.recipeLabel}</span>
+            <ul className="recipe">
+              {planRecipe(minutes / 5).map((r) => (
+                <li key={r.kind}>
+                  <Icon name={RECIPE_ICONS[r.kind]} size={15} />
+                  {vi.home.today.recipe[r.kind](r.count)}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <WeekDots days={weekDays(progress.daily, today)} />
+          <Link to="/daily" className="btn">
+            <Icon name="zap" size={18} /> {ctaLabel}
+          </Link>
+          {due > 0 && (
+            <Link to="/flashcards" className="link-btn small">
+              {vi.home.today.vocabDue(due)}
+            </Link>
+          )}
+        </section>
+        <PathCard />
+      </div>
+      <div className="stack home-col">
+        {suggestion && prefs.profile && (
+          <Link to={suggestion.to} className="card card--link suggest-card">
+            <span className="card-icon">
+              <Icon name={suggestion.icon} />
+            </span>
+            <div>
+              <h2>{vi.growth.suggestTitle}</h2>
+              <p className="muted">{vi.growth.suggest[prefs.profile.role]}</p>
+            </div>
           </Link>
         )}
-      </section>
-      <PathCard />
-      {suggestion && prefs.profile && (
-        <Link to={suggestion.to} className="card card--link suggest-card">
+        {weak > 0 && (
+          <Link to="/weak" className="card card--link weak-cta">
+            <span className="card-icon">
+              <Icon name="target" />
+            </span>
+            <div>
+              <h2>{vi.weak.title}</h2>
+              <p className="muted">{vi.weak.count(weak)}</p>
+            </div>
+          </Link>
+        )}
+        {word && <WordOfDay word={word} />}
+        <InstallHint />
+        <Link to="/shadowing?topic=survival" className="card card--link survival-card">
           <span className="card-icon">
-            <Icon name={suggestion.icon} />
+            <Icon name="lifebuoy" />
           </span>
           <div>
-            <h2>{vi.growth.suggestTitle}</h2>
-            <p className="muted">{vi.growth.suggest[prefs.profile.role]}</p>
+            <h2>{vi.home.survivalTitle}</h2>
+            <p className="muted">{vi.home.survivalDesc}</p>
           </div>
         </Link>
-      )}
-      {weak > 0 && (
-        <Link to="/weak" className="card card--link weak-cta">
-          <span className="card-icon">
-            <Icon name="target" />
-          </span>
-          <div>
-            <h2>{vi.weak.title}</h2>
-            <p className="muted">{vi.weak.count(weak)}</p>
-          </div>
-        </Link>
-      )}
-      {word && <WordOfDay word={word} />}
-      <InstallHint />
-      <Link to="/shadowing?topic=survival" className="card card--link survival-card">
-        <span className="card-icon">
-          <Icon name="lifebuoy" />
-        </span>
-        <div>
-          <h2>{vi.home.survivalTitle}</h2>
-          <p className="muted">{vi.home.survivalDesc}</p>
+        <h2 className="section-title">{vi.home.practice}</h2>
+        <div className="grid grid--wide-3">
+          {sections.map((s) => (
+            <SectionCard key={s.to} section={s} />
+          ))}
         </div>
-      </Link>
-      <h2 className="section-title">{vi.home.practice}</h2>
-      <div className="grid grid--wide-3">
-        {sections.map((s) => (
-          <SectionCard key={s.to} section={s} />
-        ))}
+        {FEEDBACK_URL && (
+          <a href={FEEDBACK_URL} target="_blank" rel="noreferrer" className="link-btn small center feedback-link">
+            {vi.growth.feedback}
+          </a>
+        )}
       </div>
-      {FEEDBACK_URL && (
-        <a href={FEEDBACK_URL} target="_blank" rel="noreferrer" className="link-btn small center feedback-link">
-          {vi.growth.feedback}
-        </a>
-      )}
     </div>
   );
 }

@@ -20,7 +20,7 @@ export function EmailsPage() {
           items.length === 0 ? (
             <p className="muted">{vi.common.empty}</p>
           ) : (
-            <ul className="list">
+            <ul className="list list--cards">
               {items.map((e) => {
                 const result = progress.emails[e.id];
                 return (

@@ -19,6 +19,9 @@ function isUnder(pathname: string, base: string): boolean {
   return pathname === base || pathname.startsWith(`${base}/`);
 }
 
+// Hub and list pages use the full width on desktop; practice pages keep a readable column.
+const WIDE_PAGES = ['/', '/speaking', '/scenarios', '/grammar', '/emails', '/custom', '/progress'];
+
 export function Layout() {
   // .main is the scroll container, so reset it when the route changes.
   const mainRef = useRef<HTMLElement>(null);
@@ -47,7 +50,7 @@ export function Layout() {
       <UpdateBanner />
       <BackendBanner />
       <main className="main" ref={mainRef}>
-        <div className="main-inner">
+        <div className={WIDE_PAGES.includes(pathname) ? 'main-inner main-inner--wide' : 'main-inner'}>
           {vi.kickers[pathname] && (
             <p className="page-kicker" lang="ko">
               {vi.kickers[pathname]}

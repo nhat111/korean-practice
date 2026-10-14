@@ -334,6 +334,10 @@ Spec: `docs/custom-questions.md` (implemented). The learner pastes their own int
   progress bars as a solid fill ending in a red cursor (hidden at 0%), the active nav tab marked by a red bar, counts
   in mono (`.count-badge`, `.chip span`, `.skill-count`, `.path-step-count`, `.score`). No gradients. Done and empty
   screens use `StatusPanel` (수고하셨습니다 / 아직 없습니다 + red cursor, then the Vietnamese title/text/actions). No emoji in UI strings.
+- Desktop: hub and list pages (`WIDE_PAGES` in `Layout.tsx`: Home, Speaking, Scenarios, Grammar, Emails, Custom,
+  Progress) widen to 1080px from 1024px (`.main-inner--wide`); practice pages keep an 800px reading column. Card lists
+  (`.list--cards`) go two columns, `.chips--scroll` rows wrap from 768px, and Home splits into two columns from 1180px
+  (`.home-layout`: hero, today and path left; everything else right).
 - Bottom nav has 5 tabs (a left sidebar from 1024px, CSS only) (Trang chủ, Luyện nói, Hội thoại, Từ vựng, Tiến độ; `NAV` in `Layout.tsx`).
   Each tab also lights up for related pages (`also`: shadowing/patterns, custom/emails, grammar).
   Pages without a tab need an entry from Home or a tab page; don't add a sixth tab. Home keeps six entry cards
