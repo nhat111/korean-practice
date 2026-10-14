@@ -10,7 +10,8 @@
     "test": "vitest run",
     "check": "npm run lint && npm test && npm run build",
     "preview": "vite preview",
-    "tts": "node scripts/tts-jobs.ts > tts-jobs.json && python3 scripts/tts.py tts-jobs.json"
+    "tts": "node scripts/tts-jobs.ts > tts-jobs.json && python3 scripts/tts.py tts-jobs.json",
+    "episodes": "node scripts/episodes-jobs.ts > episodes-jobs.json && python3 scripts/episodes.py episodes-jobs.json"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

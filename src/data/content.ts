@@ -4,6 +4,7 @@
 import { useEffect, useState } from 'react';
 import type {
   EmailExercise,
+  Episode,
   GrammarLesson,
   InterpretItem,
   MeetingItem,
@@ -16,6 +17,7 @@ import type {
 } from '../types';
 import {
   parseEmails,
+  parseEpisodes,
   parseGrammar,
   parseInterpret,
   parseMeetings,
@@ -39,6 +41,7 @@ interface ContentMap {
   interpret: InterpretItem;
   messages: MessageExercise;
   meetings: MeetingItem;
+  episodes: Episode;
 }
 
 export type ContentKind = keyof ContentMap;
@@ -54,6 +57,7 @@ const parsers: { [K in ContentKind]: (data: unknown) => ParseResult<ContentMap[K
   interpret: parseInterpret,
   messages: parseMessages,
   meetings: parseMeetings,
+  episodes: parseEpisodes,
 };
 
 const cache = new Map<ContentKind, Promise<unknown[]>>();

@@ -17,6 +17,8 @@ const NAV_TIMEOUT_MS = 3000;
 // Natural-voice MP3s (public/audio) are too many to precache; they are cached
 // on first play and kept across versions (file names are text hashes).
 const AUDIO_CACHE = 'kp-audio-v1';
+// Passive-listening episodes saved by the page ("Tải về"); played from there, never fetched here.
+const EPISODE_CACHE = 'kp-episodes-v1';
 // Where production MP3s live ('' = this origin). Files cached when they were
 // served from this origin are still found: see handleAudio.
 const AUDIO_BASE = '__AUDIO_BASE__';
@@ -38,7 +40,7 @@ self.addEventListener('activate', (event) => {
     caches
       .keys()
       .then((keys) =>
-        Promise.all(keys.filter((k) => k.startsWith('kp-') && k !== CACHE && k !== AUDIO_CACHE).map((k) => caches.delete(k))),
+        Promise.all(keys.filter((k) => k.startsWith('kp-') && k !== CACHE && k !== AUDIO_CACHE && k !== EPISODE_CACHE).map((k) => caches.delete(k))),
       )
       .then(() => self.clients.claim()),
   );
@@ -90,6 +92,8 @@ self.addEventListener('fetch', (event) => {
   if (request.method !== 'GET') return;
   const url = new URL(request.url);
   const audio = request.mode === 'navigate' ? null : audioPath(url);
+  // Long episodes stream with Range requests (206), which the audio cache cannot store.
+  if (audio !== null && audio.startsWith('/audio/episodes/')) return;
   if (audio !== null) {
     event.respondWith(handleAudio(request, audio));
     return;

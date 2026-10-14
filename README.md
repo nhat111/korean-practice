@@ -77,6 +77,12 @@ content") with only `public/audio/` and `audio-index.json`; review and merge it.
 hand (Actions → Generate audio → Run workflow). One-time setting: Settings → Actions → General →
 Workflow permissions → tick "Allow GitHub Actions to create and approve pull requests".
 
+**Passive listening episodes** ("Nghe thụ động", `/passive`): the same workflow then runs
+`npm run episodes` (`scripts/episodes-jobs.ts` + `scripts/episodes.py`), which joins the Korean MP3s
+with Vietnamese meanings (Edge TTS `vi-VN-HoaiMyNeural`, cached in `public/audio/vi/`) into one long MP3
+per episode in `public/audio/episodes/`, and writes `public/data/episodes.json` (duration + start time of
+every line). Episodes are defined in `src/practice/episodes.ts`; unchanged ones are not rebuilt.
+
 **Where the audio is served from:** not from Vercel. The MP3s are ~140 MB, and Vercel stores the whole
 build output of every deployment, so they filled the free plan's 10 GB of Deployment Storage. Merging
 anything under `public/audio/` into `master` runs `.github/workflows/audio-pages.yml`, which publishes the

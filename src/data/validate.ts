@@ -7,6 +7,7 @@ import type {
   CorrectionType,
   EmailCorrection,
   EmailExercise,
+  Episode,
   GrammarLesson,
   InterpretItem,
   MeetingItem,
@@ -469,4 +470,29 @@ export function parseMessages(data: unknown): ParseResult<MessageExercise> {
 
 export function parseMeetings(data: unknown): ParseResult<MeetingItem> {
   return parseContentFile<MeetingItem>(data, validateMeeting);
+}
+
+export function validateEpisode(v: unknown): string[] {
+  const errors: string[] = [];
+  if (!isObj(v)) return ['episode: phải là object'];
+  const path = `episode(${String(v.id)})`;
+  requireStrings(v, ['id', 'hash'], path, errors);
+  if (typeof v.duration !== 'number' || !(v.duration > 0)) errors.push(`${path}.duration: phải là số dương`);
+  if (!Array.isArray(v.lines) || v.lines.length === 0) {
+    errors.push(`${path}.lines: cần ít nhất 1 câu`);
+  } else {
+    v.lines.forEach((l, i) => {
+      if (!isObj(l)) {
+        errors.push(`${path}.lines[${i}]: phải là object`);
+        return;
+      }
+      requireStrings(l, ['ko', 'vi'], `${path}.lines[${i}]`, errors);
+      if (typeof l.start !== 'number' || l.start < 0) errors.push(`${path}.lines[${i}].start: phải là số ≥ 0`);
+    });
+  }
+  return errors;
+}
+
+export function parseEpisodes(data: unknown): ParseResult<Episode> {
+  return parseContentFile<Episode>(data, validateEpisode);
 }
