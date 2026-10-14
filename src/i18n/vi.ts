@@ -58,7 +58,7 @@ export const vi = {
       evening: { ko: '오늘도 수고하셨습니다', vi: 'Cảm ơn, hôm nay vất vả rồi' },
     },
     heroText: 'Câu chào này dùng được với khách ngay hôm nay.',
-    heroDate: (weekday: string, date: string) => `// ${weekday} · ${date}`,
+    heroDate: (weekday: string, date: string) => `${weekday} · ${date}`,
     cards: {
       shadowing: 'Nghe rồi nói theo câu mẫu',
       listening: 'Nghe ý, chép, số và họp',

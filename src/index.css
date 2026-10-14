@@ -568,6 +568,11 @@ textarea {
   font-size: 0.78rem;
   color: var(--muted);
 }
+/* Same red "//" as the page kickers and section titles. */
+.hero-date::before {
+  content: '// ';
+  color: var(--accent-red);
+}
 .hero-greet {
   display: flex;
   align-items: center;
