@@ -8,9 +8,18 @@
       "meaningVi": "đang (làm)",
       "usageVi": "Báo việc đang tiến hành. Với khách nói -고 있습니다; trang trọng hơn nữa là N 중입니다 (확인 중입니다).",
       "levels": {
-        "peer": "지금 로그 보고 있어요.",
-        "lead": "지금 로그를 확인하고 있습니다.",
-        "client": "현재 로그를 확인 중입니다."
+        "peer": {
+          "ko": "지금 로그 보고 있어요.",
+          "vi": "Mình đang xem log nè."
+        },
+        "lead": {
+          "ko": "지금 로그를 확인하고 있습니다.",
+          "vi": "Tôi đang kiểm tra log."
+        },
+        "client": {
+          "ko": "현재 로그를 확인 중입니다.",
+          "vi": "Hiện chúng tôi đang kiểm tra log."
+        }
       },
       "examples": [
         {
@@ -29,6 +38,7 @@
       "mistake": {
         "wrong": "지금 확인하고 있겠습니다.",
         "right": "지금 확인하고 있습니다.",
+        "vi": "Tôi đang kiểm tra.",
         "noteVi": "Việc đang làm thì dùng -고 있습니다; -겠습니다 là việc sắp làm (확인하겠습니다)."
       },
       "quiz": [
@@ -40,7 +50,8 @@
             "현재 해당 버그를 수정하겠습니다."
           ],
           "answer": 1,
-          "explainVi": "Câu 1 là 반말 (nói trống không). Câu 3 nghĩa là \"sẽ sửa\", tức là chưa bắt đầu."
+          "explainVi": "Câu 1 là 반말 (nói trống không). Câu 3 nghĩa là \"sẽ sửa\", tức là chưa bắt đầu.",
+          "answerVi": "Hiện chúng tôi đang sửa lỗi đó."
         }
       ]
     },
@@ -51,9 +62,18 @@
       "meaningVi": "dự kiến sẽ ...",
       "usageVi": "Báo lịch, kế hoạch đã chốt (deploy, họp, release). Trang trọng hơn -(으)ㄹ 거예요. Với danh từ: N 예정입니다 (배포 예정입니다).",
       "levels": {
-        "peer": "금요일에 배포할 거예요.",
-        "lead": "금요일에 배포할 예정입니다.",
-        "client": "금요일 오후 6시에 운영 서버에 배포할 예정입니다."
+        "peer": {
+          "ko": "금요일에 배포할 거예요.",
+          "vi": "Thứ Sáu mình deploy nhé."
+        },
+        "lead": {
+          "ko": "금요일에 배포할 예정입니다.",
+          "vi": "Dự kiến thứ Sáu sẽ deploy."
+        },
+        "client": {
+          "ko": "금요일 오후 6시에 운영 서버에 배포할 예정입니다.",
+          "vi": "Dự kiến 6 giờ chiều thứ Sáu sẽ deploy lên server production."
+        }
       },
       "examples": [
         {
@@ -72,6 +92,7 @@
       "mistake": {
         "wrong": "내일 배포할 예정이겠습니다.",
         "right": "내일 배포할 예정입니다.",
+        "vi": "Dự kiến ngày mai sẽ deploy.",
         "noteVi": "예정 đã mang nghĩa kế hoạch, không thêm -겠-."
       },
       "quiz": [
@@ -83,7 +104,8 @@
             "오후 10시부터 점검했습니다."
           ],
           "answer": 0,
-          "explainVi": "-(으)ㄹ래요 là ý muốn cá nhân, thân mật. -았/었습니다 là việc đã làm xong."
+          "explainVi": "-(으)ㄹ래요 là ý muốn cá nhân, thân mật. -았/었습니다 là việc đã làm xong.",
+          "answerVi": "Dự kiến bảo trì từ 10 giờ tối."
         }
       ]
     },
@@ -94,9 +116,18 @@
       "meaningVi": "sẽ (làm), xin phép được (làm)",
       "usageVi": "Nhận việc, hứa với khách hoặc sếp: 확인하겠습니다, 공유드리겠습니다. Chủ ngữ là chính mình. Nói về lịch của người khác thì dùng -(으)ㄹ 예정입니다.",
       "levels": {
-        "peer": "제가 확인할게요.",
-        "lead": "제가 확인하겠습니다.",
-        "client": "확인 후 바로 회신드리겠습니다."
+        "peer": {
+          "ko": "제가 확인할게요.",
+          "vi": "Để mình kiểm tra cho."
+        },
+        "lead": {
+          "ko": "제가 확인하겠습니다.",
+          "vi": "Tôi sẽ kiểm tra."
+        },
+        "client": {
+          "ko": "확인 후 바로 회신드리겠습니다.",
+          "vi": "Kiểm tra xong tôi sẽ phản hồi ngay."
+        }
       },
       "examples": [
         {
@@ -115,6 +146,7 @@
       "mistake": {
         "wrong": "고객님께서 내일 확인하겠습니다.",
         "right": "고객님께서 내일 확인하실 예정입니다.",
+        "vi": "Dự kiến ngày mai quý khách sẽ kiểm tra.",
         "noteVi": "-겠습니다 nói ý định của người nói. Lịch của khách thì dùng -(으)실 예정입니다."
       },
       "quiz": [
@@ -126,7 +158,8 @@
             "네, 확인하실게요."
           ],
           "answer": 0,
-          "explainVi": "확인하실게요 sai vì dùng kính ngữ -시- cho hành động của chính mình."
+          "explainVi": "확인하실게요 sai vì dùng kính ngữ -시- cho hành động của chính mình.",
+          "answerVi": "Vâng, tôi sẽ kiểm tra."
         }
       ]
     },
@@ -137,9 +170,18 @@
       "meaningVi": "quyết định, thống nhất (sẽ) ...",
       "usageVi": "Báo lại điều đã chốt trong họp hoặc giữa hai bên: -기로 했습니다.",
       "levels": {
-        "peer": "다음 주에 배포하기로 했어요.",
-        "lead": "다음 주 화요일에 배포하기로 했습니다.",
-        "client": "협의한 대로 다음 주 화요일에 배포하기로 했습니다."
+        "peer": {
+          "ko": "다음 주에 배포하기로 했어요.",
+          "vi": "Tuần sau deploy nhé, đã chốt rồi."
+        },
+        "lead": {
+          "ko": "다음 주 화요일에 배포하기로 했습니다.",
+          "vi": "Đã quyết định deploy vào thứ Ba tuần sau."
+        },
+        "client": {
+          "ko": "협의한 대로 다음 주 화요일에 배포하기로 했습니다.",
+          "vi": "Như đã thống nhất, chúng tôi sẽ deploy vào thứ Ba tuần sau."
+        }
       },
       "examples": [
         {
@@ -158,6 +200,7 @@
       "mistake": {
         "wrong": "배포하기로 하겠습니다.",
         "right": "배포하기로 했습니다.",
+        "vi": "Đã quyết định deploy.",
         "noteVi": "Báo một quyết định đã có thì dùng quá khứ -기로 했습니다."
       },
       "quiz": [
@@ -169,7 +212,8 @@
             "DB 설계는 그대로 유지하고 있습니다."
           ],
           "answer": 0,
-          "explainVi": "-(으)ㄹ 것 같다 là phỏng đoán. -고 있다 là đang làm, không phải quyết định."
+          "explainVi": "-(으)ㄹ 것 같다 là phỏng đoán. -고 있다 là đang làm, không phải quyết định.",
+          "answerVi": "Đã thống nhất giữ nguyên thiết kế DB."
         }
       ]
     },
@@ -180,9 +224,18 @@
       "meaningVi": "ngay khi ... (thì)",
       "usageVi": "Hứa làm ngay sau một việc khác: 확인되는 대로, 끝나는 대로. Vế sau thường là -겠습니다 hoặc lời nhờ.",
       "levels": {
-        "peer": "끝나면 바로 말해 줄게요.",
-        "lead": "작업 끝나는 대로 말씀드리겠습니다.",
-        "client": "원인이 확인되는 대로 바로 공유드리겠습니다."
+        "peer": {
+          "ko": "끝나면 바로 말해 줄게요.",
+          "vi": "Xong là mình báo liền."
+        },
+        "lead": {
+          "ko": "작업 끝나는 대로 말씀드리겠습니다.",
+          "vi": "Làm xong là tôi báo ngay."
+        },
+        "client": {
+          "ko": "원인이 확인되는 대로 바로 공유드리겠습니다.",
+          "vi": "Xác định được nguyên nhân là chúng tôi chia sẻ ngay."
+        }
       },
       "examples": [
         {
@@ -201,6 +254,7 @@
       "mistake": {
         "wrong": "확인되는 대로 공유했습니다.",
         "right": "확인되는 대로 공유드리겠습니다.",
+        "vi": "Xác nhận xong là tôi chia sẻ ngay.",
         "noteVi": "-는 대로 hướng tới việc sắp làm, vế sau không chia quá khứ."
       },
       "quiz": [
@@ -212,7 +266,8 @@
             "원인이 확인되는 바람에 말씀드리겠습니다."
           ],
           "answer": 0,
-          "explainVi": "-느라고 và -는 바람에 đều chỉ lý do của một kết quả, không dùng để hứa."
+          "explainVi": "-느라고 và -는 바람에 đều chỉ lý do của một kết quả, không dùng để hứa.",
+          "answerVi": "Xác định được nguyên nhân là chúng tôi báo ngay."
         }
       ]
     },
@@ -223,9 +278,18 @@
       "meaningVi": "sẽ (cố gắng) ..., để cho ...",
       "usageVi": "-도록 하겠습니다: cam kết mềm và lịch sự hơn -겠습니다. -지 않도록: để không ... (재발하지 않도록).",
       "levels": {
-        "peer": "다음엔 조심할게요.",
-        "lead": "다음부터 주의하도록 하겠습니다.",
-        "client": "같은 문제가 재발하지 않도록 하겠습니다."
+        "peer": {
+          "ko": "다음엔 조심할게요.",
+          "vi": "Lần sau mình sẽ cẩn thận."
+        },
+        "lead": {
+          "ko": "다음부터 주의하도록 하겠습니다.",
+          "vi": "Từ lần sau tôi sẽ chú ý."
+        },
+        "client": {
+          "ko": "같은 문제가 재발하지 않도록 하겠습니다.",
+          "vi": "Chúng tôi sẽ đảm bảo vấn đề này không tái diễn."
+        }
       },
       "examples": [
         {
@@ -244,6 +308,7 @@
       "mistake": {
         "wrong": "재발 안 하도록 하겠습니다.",
         "right": "재발하지 않도록 하겠습니다.",
+        "vi": "Chúng tôi sẽ đảm bảo không tái diễn.",
         "noteVi": "Văn trang trọng dùng -지 않도록, không dùng 안 + động từ."
       },
       "quiz": [
@@ -255,7 +320,8 @@
             "앞으로 이런 일이 없어서 하겠습니다."
           ],
           "answer": 0,
-          "explainVi": "Chỉ -도록 mang nghĩa \"để cho\"; hai câu kia sai ngữ pháp."
+          "explainVi": "Chỉ -도록 mang nghĩa \"để cho\"; hai câu kia sai ngữ pháp.",
+          "answerVi": "Từ nay chúng tôi sẽ không để chuyện như vậy xảy ra."
         }
       ]
     },
@@ -266,9 +332,18 @@
       "meaningVi": "làm sẵn, để sẵn (cho sau này)",
       "usageVi": "Báo đã chuẩn bị trước: 백업해 두었습니다, 정리해 두겠습니다. -아/어 놓다 (놨어요) nghĩa giống nhưng khẩu ngữ hơn.",
       "levels": {
-        "peer": "미리 백업해 놨어요.",
-        "lead": "미리 백업해 두었습니다.",
-        "client": "작업 전에 데이터를 미리 백업해 두었습니다."
+        "peer": {
+          "ko": "미리 백업해 놨어요.",
+          "vi": "Mình backup sẵn rồi."
+        },
+        "lead": {
+          "ko": "미리 백업해 두었습니다.",
+          "vi": "Tôi đã backup sẵn."
+        },
+        "client": {
+          "ko": "작업 전에 데이터를 미리 백업해 두었습니다.",
+          "vi": "Trước khi làm, chúng tôi đã backup sẵn dữ liệu."
+        }
       },
       "examples": [
         {
@@ -287,6 +362,7 @@
       "mistake": {
         "wrong": "미리 백업해 놨습니다.",
         "right": "미리 백업해 두었습니다.",
+        "vi": "Tôi đã backup sẵn.",
         "noteVi": "놨습니다 (놓다) nghe khẩu ngữ; nói với khách nên dùng 두었습니다."
       },
       "quiz": [
@@ -298,7 +374,62 @@
             "자료는 공유 폴더에 올리느라고 했습니다."
           ],
           "answer": 0,
-          "explainVi": "Câu 2 là 반말; câu 3 sai nghĩa (-느라고 là \"vì mải\")."
+          "explainVi": "Câu 2 là 반말; câu 3 sai nghĩa (-느라고 là \"vì mải\").",
+          "answerVi": "Tài liệu đã được để sẵn trong thư mục chung."
+        }
+      ]
+    },
+    {
+      "id": "gr-neunji",
+      "group": "report",
+      "pattern": "-는지",
+      "meaningVi": "(kiểm tra, hỏi) xem ... hay không",
+      "usageVi": "Rất hay dùng trong IT: 동작하는지 확인하다, 가능한지 여쭤보다. Động từ dùng -는지, tính từ (가능하다, 괜찮다) dùng -(으)ㄴ지, việc đã xảy ra dùng -았/었는지.",
+      "levels": {
+        "peer": {
+          "ko": "잘 되는지 한번 봐 줄래요?",
+          "vi": "Bạn xem thử chạy ổn không giúp mình?"
+        },
+        "lead": {
+          "ko": "정상적으로 동작하는지 확인해 보겠습니다.",
+          "vi": "Tôi sẽ kiểm tra xem có chạy bình thường không."
+        },
+        "client": {
+          "ko": "수정 사항이 운영 환경에 정상적으로 반영되었는지 확인 부탁드립니다.",
+          "vi": "Nhờ anh/chị kiểm tra giúp các thay đổi đã được áp dụng đúng trên môi trường production chưa ạ."
+        }
+      },
+      "examples": [
+        {
+          "ko": "이 일정이 가능한지 내부적으로 검토해 보겠습니다.",
+          "vi": "Chúng tôi sẽ xem xét nội bộ xem lịch này có khả thi không."
+        },
+        {
+          "ko": "다른 브라우저에서도 같은 오류가 나는지 확인해 주시겠어요?",
+          "vi": "Anh/chị kiểm tra giúp xem trình duyệt khác có bị lỗi tương tự không?"
+        },
+        {
+          "ko": "어떤 버전을 사용하고 계신지 여쭤봐도 될까요?",
+          "vi": "Tôi hỏi anh/chị đang dùng phiên bản nào được không ạ?"
+        }
+      ],
+      "mistake": {
+        "wrong": "가능하는지 확인하겠습니다.",
+        "right": "가능한지 확인하겠습니다.",
+        "vi": "Tôi sẽ kiểm tra xem có được không.",
+        "noteVi": "가능하다 là tính từ nên dùng -(으)ㄴ지 (가능한지), không dùng -는지."
+      },
+      "quiz": [
+        {
+          "q": "Nhờ khách kiểm tra xem trình duyệt khác có bị lỗi không.",
+          "choices": [
+            "다른 브라우저에서도 오류가 나는지 확인해 주시겠어요?",
+            "다른 브라우저에서도 오류가 나는데 확인해 주시겠어요?",
+            "다른 브라우저에서도 오류가 나서 확인해 주시겠어요?"
+          ],
+          "answer": 0,
+          "answerVi": "Anh/chị kiểm tra giúp xem trình duyệt khác có bị lỗi không?",
+          "explainVi": "\"Xem ... hay không\" là -는지; -는데 và -아서 đổi nghĩa thành \"đang lỗi\" và \"vì lỗi\"."
         }
       ]
     },
@@ -309,9 +440,18 @@
       "meaningVi": "vì ... nên; ... rồi",
       "usageVi": "Nêu lý do khi báo cáo, xin lỗi. Không chia quá khứ trước -아/어서 (늦어서, không nói 늦었어서). Vế sau là rủ rê hoặc đề nghị thì dùng -(으)니(까).",
       "levels": {
-        "peer": "서버가 느려서 좀 늦었어요.",
-        "lead": "서버가 느려서 조금 늦어졌습니다.",
-        "client": "서버 응답이 지연되어서 처리가 늦어졌습니다."
+        "peer": {
+          "ko": "서버가 느려서 좀 늦었어요.",
+          "vi": "Server chậm nên mình trễ chút."
+        },
+        "lead": {
+          "ko": "서버가 느려서 조금 늦어졌습니다.",
+          "vi": "Server chậm nên hơi trễ."
+        },
+        "client": {
+          "ko": "서버 응답이 지연되어서 처리가 늦어졌습니다.",
+          "vi": "Server phản hồi chậm nên việc xử lý bị trễ."
+        }
       },
       "examples": [
         {
@@ -330,6 +470,7 @@
       "mistake": {
         "wrong": "시간이 부족해서 내일 회의합시다.",
         "right": "시간이 부족하니 내일 회의하는 게 어떨까요?",
+        "vi": "Thời gian không đủ, ngày mai mình họp được không ạ?",
         "noteVi": "Vế sau là rủ rê hoặc đề nghị thì dùng -(으)니(까), không dùng -아/어서."
       },
       "quiz": [
@@ -341,7 +482,8 @@
             "답변이 늦으니까 죄송합니다."
           ],
           "answer": 0,
-          "explainVi": "Không chia quá khứ trước -아/어서; -(으)니까 không đi với lời xin lỗi."
+          "explainVi": "Không chia quá khứ trước -아/어서; -(으)니까 không đi với lời xin lỗi.",
+          "answerVi": "Xin lỗi vì trả lời muộn."
         }
       ]
     },
@@ -352,9 +494,18 @@
       "meaningVi": "vì, do (danh từ)",
       "usageVi": "Nêu nguyên nhân là một sự việc. Văn trang trọng (thông báo, email): N(으)로 인해. Tránh dùng với người, nhất là khách: nghe như đổ lỗi.",
       "levels": {
-        "peer": "네트워크 때문에 늦었어요.",
-        "lead": "네트워크 문제 때문에 지연되었습니다.",
-        "client": "네트워크 장애로 인해 서비스 접속이 지연되었습니다."
+        "peer": {
+          "ko": "네트워크 때문에 늦었어요.",
+          "vi": "Tại mạng nên trễ."
+        },
+        "lead": {
+          "ko": "네트워크 문제 때문에 지연되었습니다.",
+          "vi": "Do sự cố mạng nên bị chậm."
+        },
+        "client": {
+          "ko": "네트워크 장애로 인해 서비스 접속이 지연되었습니다.",
+          "vi": "Do sự cố mạng, việc truy cập dịch vụ bị chậm."
+        }
       },
       "examples": [
         {
@@ -373,6 +524,7 @@
       "mistake": {
         "wrong": "고객님 때문에 일정이 늦어졌습니다.",
         "right": "요구사항이 변경되어서 일정이 조정되었습니다.",
+        "vi": "Do yêu cầu thay đổi nên lịch đã được điều chỉnh.",
         "noteVi": "Đừng dùng 때문에 với người: nói về sự việc thay vì con người."
       },
       "quiz": [
@@ -384,7 +536,8 @@
             "서버 장애라서 접속이 늦었어."
           ],
           "answer": 0,
-          "explainVi": "Thông báo chính thức dùng N(으)로 인해 + -되었습니다."
+          "explainVi": "Thông báo chính thức dùng N(으)로 인해 + -되었습니다.",
+          "answerVi": "Do sự cố server, việc truy cập bị chậm."
         }
       ]
     },
@@ -395,9 +548,18 @@
       "meaningVi": "vì mải (làm A) nên (chưa B được)",
       "usageVi": "Giải thích vì sao chưa làm được việc khác. Hai vế cùng chủ ngữ (là người), vế sau thường là kết quả không tốt. Không dùng cho sự cố của máy móc.",
       "levels": {
-        "peer": "회의하느라 못 봤어요.",
-        "lead": "회의하느라 메시지를 늦게 확인했습니다.",
-        "client": "긴급 대응을 하느라 회신이 늦어졌습니다."
+        "peer": {
+          "ko": "회의하느라 못 봤어요.",
+          "vi": "Mải họp nên mình không thấy."
+        },
+        "lead": {
+          "ko": "회의하느라 메시지를 늦게 확인했습니다.",
+          "vi": "Vì đang họp nên tôi xem tin nhắn muộn."
+        },
+        "client": {
+          "ko": "긴급 대응을 하느라 회신이 늦어졌습니다.",
+          "vi": "Vì đang xử lý khẩn cấp nên chúng tôi phản hồi muộn."
+        }
       },
       "examples": [
         {
@@ -416,6 +578,7 @@
       "mistake": {
         "wrong": "서버가 다운되느라고 늦어졌습니다.",
         "right": "서버가 다운되는 바람에 늦어졌습니다.",
+        "vi": "Server bị sập bất ngờ nên bị trễ.",
         "noteVi": "-느라고 cần một người đang làm gì đó; sự cố bất ngờ thì dùng -는 바람에."
       },
       "quiz": [
@@ -427,7 +590,8 @@
             "장애 대응하느라고 리뷰합시다."
           ],
           "answer": 0,
-          "explainVi": "Sau -느라고 là kết quả (chưa làm được), không phải lời hứa hay lời rủ."
+          "explainVi": "Sau -느라고 là kết quả (chưa làm được), không phải lời hứa hay lời rủ.",
+          "answerVi": "Vì đang xử lý sự cố nên tôi chưa review được."
         }
       ]
     },
@@ -438,9 +602,18 @@
       "meaningVi": "vì (chuyện bất ngờ) nên ...",
       "usageVi": "Giải thích sự cố ngoài ý muốn. Vế sau là kết quả không mong muốn, chia quá khứ.",
       "levels": {
-        "peer": "갑자기 서버가 죽는 바람에 늦었어요.",
-        "lead": "서버가 갑자기 다운되는 바람에 작업이 지연되었습니다.",
-        "client": "예기치 못한 장애가 발생하는 바람에 배포가 지연되었습니다."
+        "peer": {
+          "ko": "갑자기 서버가 죽는 바람에 늦었어요.",
+          "vi": "Server tự nhiên chết nên mình trễ."
+        },
+        "lead": {
+          "ko": "서버가 갑자기 다운되는 바람에 작업이 지연되었습니다.",
+          "vi": "Server đột ngột sập nên công việc bị chậm."
+        },
+        "client": {
+          "ko": "예기치 못한 장애가 발생하는 바람에 배포가 지연되었습니다.",
+          "vi": "Do sự cố ngoài dự kiến nên việc deploy bị chậm."
+        }
       },
       "examples": [
         {
@@ -459,6 +632,7 @@
       "mistake": {
         "wrong": "장애가 발생하는 바람에 확인하겠습니다.",
         "right": "장애가 발생하는 바람에 배포가 지연되었습니다.",
+        "vi": "Do xảy ra sự cố nên việc deploy bị chậm.",
         "noteVi": "Vế sau của -는 바람에 là kết quả đã xảy ra, không phải kế hoạch."
       },
       "quiz": [
@@ -470,7 +644,8 @@
             "라이브러리 버전이 바뀌는 바람에 빌드하겠습니다."
           ],
           "answer": 0,
-          "explainVi": "Thư viện không \"mải làm\" gì nên không dùng -느라고; vế sau phải là kết quả."
+          "explainVi": "Thư viện không \"mải làm\" gì nên không dùng -느라고; vế sau phải là kết quả.",
+          "answerVi": "Version thư viện bị đổi nên build bị fail."
         }
       ]
     },
@@ -481,9 +656,18 @@
       "meaningVi": "có lẽ, chắc là ...",
       "usageVi": "Phỏng đoán, hoặc nói giảm nhẹ khi báo tin xấu (일정이 늦어질 것 같습니다). Với danh từ: N인 것 같다. Đã chắc chắn thì nói thẳng, dùng nhiều quá nghe thiếu tự tin.",
       "levels": {
-        "peer": "좀 늦을 것 같아요.",
-        "lead": "일정이 하루 정도 늦어질 것 같습니다.",
-        "client": "죄송하지만 일정이 하루 정도 늦어질 것 같습니다."
+        "peer": {
+          "ko": "좀 늦을 것 같아요.",
+          "vi": "Chắc mình trễ chút."
+        },
+        "lead": {
+          "ko": "일정이 하루 정도 늦어질 것 같습니다.",
+          "vi": "Có lẽ lịch sẽ trễ khoảng một ngày."
+        },
+        "client": {
+          "ko": "죄송하지만 일정이 하루 정도 늦어질 것 같습니다.",
+          "vi": "Rất tiếc, có lẽ lịch sẽ trễ khoảng một ngày."
+        }
       },
       "examples": [
         {
@@ -502,6 +686,7 @@
       "mistake": {
         "wrong": "로그를 보니 배포가 완료된 것 같습니다.",
         "right": "로그로 확인한 결과 배포가 완료되었습니다.",
+        "vi": "Kiểm tra log thì thấy deploy đã hoàn tất.",
         "noteVi": "Đã kiểm tra chắc chắn thì báo thẳng kết quả."
       },
       "quiz": [
@@ -513,7 +698,8 @@
             "오늘 안에는 어렵느라고 했습니다."
           ],
           "answer": 0,
-          "explainVi": "못 해요 nghe cụt và thẳng quá với khách."
+          "explainVi": "못 해요 nghe cụt và thẳng quá với khách.",
+          "answerVi": "Có lẽ trong hôm nay thì khó."
         }
       ]
     },
@@ -524,9 +710,18 @@
       "meaningVi": "xin lỗi vì ...",
       "usageVi": "Xin lỗi kèm lý do. Với khách và cấp trên dùng 죄송합니다 (không dùng 미안합니다). Trang trọng hơn: 불편을 드려 죄송합니다, 대단히 죄송합니다.",
       "levels": {
-        "peer": "늦어서 미안해요.",
-        "lead": "늦어서 죄송합니다.",
-        "client": "답변이 늦어져서 대단히 죄송합니다."
+        "peer": {
+          "ko": "늦어서 미안해요.",
+          "vi": "Xin lỗi nha, mình trễ."
+        },
+        "lead": {
+          "ko": "늦어서 죄송합니다.",
+          "vi": "Xin lỗi vì đến muộn."
+        },
+        "client": {
+          "ko": "답변이 늦어져서 대단히 죄송합니다.",
+          "vi": "Thành thật xin lỗi vì phản hồi muộn."
+        }
       },
       "examples": [
         {
@@ -545,6 +740,7 @@
       "mistake": {
         "wrong": "늦어서 미안합니다.",
         "right": "늦어서 죄송합니다.",
+        "vi": "Xin lỗi vì đến muộn.",
         "noteVi": "미안합니다 dùng với người ngang hàng; với khách, cấp trên dùng 죄송합니다."
       },
       "quiz": [
@@ -556,7 +752,8 @@
             "불편을 드려서 감사합니다."
           ],
           "answer": 0,
-          "explainVi": "불편을 드리다 = gây bất tiện cho người khác; đi với 죄송합니다."
+          "explainVi": "불편을 드리다 = gây bất tiện cho người khác; đi với 죄송합니다.",
+          "answerVi": "Xin lỗi vì đã gây bất tiện."
         }
       ]
     },
@@ -567,9 +764,18 @@
       "meaningVi": "(ai đó) nói là ...",
       "usageVi": "Truyền đạt lại lời khách hoặc leader cho team. Lời của người trên thì kính ngữ: -(으)신다고 하셨습니다. Câu hỏi: -냐고, rủ: -자고, nhờ: -아/어 달라고.",
       "levels": {
-        "peer": "고객이 내일 확인한대요.",
-        "lead": "고객사에서 내일 확인한다고 합니다.",
-        "client": "고객님께서 내일 확인하신다고 하셨습니다."
+        "peer": {
+          "ko": "고객이 내일 확인한대요.",
+          "vi": "Khách bảo mai họ kiểm tra."
+        },
+        "lead": {
+          "ko": "고객사에서 내일 확인한다고 합니다.",
+          "vi": "Phía khách nói là ngày mai sẽ kiểm tra."
+        },
+        "client": {
+          "ko": "고객님께서 내일 확인하신다고 하셨습니다.",
+          "vi": "Quý khách nói là ngày mai sẽ kiểm tra."
+        }
       },
       "examples": [
         {
@@ -588,6 +794,7 @@
       "mistake": {
         "wrong": "고객님이 내일 확인한다고 했습니다.",
         "right": "고객님께서 내일 확인하신다고 하셨습니다.",
+        "vi": "Quý khách nói là ngày mai sẽ kiểm tra.",
         "noteVi": "Truyền lời người trên thì kính ngữ cả hành động (-(으)신다고) lẫn động từ nói (하셨습니다)."
       },
       "quiz": [
@@ -599,7 +806,170 @@
             "고객사에서 로그 파일을 보내자고 했어."
           ],
           "answer": 0,
-          "explainVi": "Lời nhờ thì dùng -아/어 달라고; -(으)ㄴ다고 là kể lại; -자고 là rủ."
+          "explainVi": "Lời nhờ thì dùng -아/어 달라고; -(으)ㄴ다고 là kể lại; -자고 là rủ.",
+          "answerVi": "Phía khách nhờ gửi file log."
+        }
+      ]
+    },
+    {
+      "id": "gr-neunde-yo",
+      "group": "explain",
+      "pattern": "-(으)ㄴ/는데요",
+      "meaningVi": "... ạ (nói mềm, mở lời hoặc để người nghe phản hồi)",
+      "usageVi": "Nêu bối cảnh rồi dừng lại để người nghe phản hồi; làm lời từ chối hay báo vấn đề nghe mềm hơn. Hay dùng khi gọi điện, họp. Trong email thì viết hết câu, không bỏ lửng.",
+      "levels": {
+        "peer": {
+          "ko": "이거 좀 이상한데요?",
+          "vi": "Cái này hơi lạ nhỉ?"
+        },
+        "lead": {
+          "ko": "테스트 서버에서 에러가 나는데요, 한번 확인해 주시겠어요?",
+          "vi": "Server test đang báo lỗi, anh/chị xem thử giúp được không?"
+        },
+        "client": {
+          "ko": "말씀하신 기능은 현재 범위에 포함되어 있지 않은데요, 추가 일정으로 진행해도 될까요?",
+          "vi": "Chức năng anh/chị nói hiện không nằm trong phạm vi, mình làm thành lịch bổ sung có được không ạ?"
+        }
+      },
+      "examples": [
+        {
+          "ko": "배포 건으로 연락드렸는데요.",
+          "vi": "Tôi liên lạc về việc deploy ạ."
+        },
+        {
+          "ko": "로그를 확인해 봤는데요, 특별한 에러는 없었습니다.",
+          "vi": "Tôi đã xem log rồi, không có lỗi gì đặc biệt."
+        },
+        {
+          "ko": "죄송한데요, 다시 한번 말씀해 주시겠어요?",
+          "vi": "Xin lỗi, anh/chị nói lại một lần nữa được không ạ?"
+        }
+      ],
+      "mistake": {
+        "wrong": "로그를 확인해 봤는데요.",
+        "right": "로그를 확인해 보았으나 특별한 오류는 없었습니다.",
+        "vi": "Tôi đã kiểm tra log nhưng không có lỗi gì đặc biệt.",
+        "noteVi": "Kết câu bằng -는데요 hợp khi nói; trong email nên viết hết câu thay vì bỏ lửng."
+      },
+      "quiz": [
+        {
+          "q": "Gọi điện cho khách, mở lời mềm: \"Tôi gọi về việc deploy ạ.\"",
+          "choices": [
+            "배포 건으로 연락드렸는데요.",
+            "배포 건으로 연락드렸는데.",
+            "배포 건으로 연락드렸거든."
+          ],
+          "answer": 0,
+          "answerVi": "Tôi liên lạc về việc deploy ạ.",
+          "explainVi": "Bỏ 요 thì thành 반말, không dùng với khách."
+        }
+      ]
+    },
+    {
+      "id": "gr-geodeunyo",
+      "group": "explain",
+      "pattern": "-거든요",
+      "meaningVi": "là vì ... (giải thích điều người nghe chưa biết)",
+      "usageVi": "Thêm lý do hoặc bối cảnh trong hội thoại 해요체, nghe thân thiện. Nói với khách thì dùng ít thôi, nhiều quá nghe như phân trần; trong báo cáo, email dùng -기 때문입니다 hoặc -아/어서.",
+      "levels": {
+        "peer": {
+          "ko": "오늘 좀 늦어요. 배포가 있거든요.",
+          "vi": "Hôm nay mình về trễ. Có deploy ấy mà."
+        },
+        "lead": {
+          "ko": "오늘 야근해야 할 것 같아요. 밤에 배포가 있거든요.",
+          "vi": "Có lẽ tối nay phải làm thêm ạ. Vì tối có deploy."
+        },
+        "client": {
+          "ko": "오늘 밤 서비스 점검이 있습니다. 보안 패치를 적용해야 하기 때문입니다.",
+          "vi": "Tối nay có bảo trì dịch vụ. Vì phải áp dụng bản vá bảo mật."
+        }
+      },
+      "examples": [
+        {
+          "ko": "그 API는 아직 못 써요. 인증 서버가 준비가 안 됐거든요.",
+          "vi": "API đó chưa dùng được đâu. Vì server xác thực chưa xong."
+        },
+        {
+          "ko": "내일 회의는 오후로 바꿨어요. 고객사 담당자가 오전에 외근이거든요.",
+          "vi": "Họp mai dời sang chiều rồi. Vì buổi sáng người phụ trách bên khách đi công tác ngoài."
+        },
+        {
+          "ko": "이 부분은 수정하면 안 돼요. 다른 모듈에서도 쓰거든요.",
+          "vi": "Chỗ này không được sửa đâu. Vì module khác cũng dùng."
+        }
+      ],
+      "mistake": {
+        "wrong": "일정이 늦어졌습니다. 테스트에서 버그가 나왔거든요.",
+        "right": "테스트 중 버그가 발견되어 일정이 늦어졌습니다.",
+        "vi": "Do phát hiện bug trong lúc test nên lịch bị trễ.",
+        "noteVi": "Trong báo cáo, email cho khách, nêu lý do bằng -아/어서 hoặc -기 때문입니다; -거든요 nghe như đang phân trần."
+      },
+      "quiz": [
+        {
+          "q": "Đồng nghiệp hỏi sao chưa merge. Bạn giải thích: vì review chưa xong.",
+          "choices": [
+            "아직 머지 안 했어요. 리뷰가 안 끝났거든요.",
+            "아직 머지 안 했어요. 리뷰가 안 끝나거든요.",
+            "리뷰가 안 끝났거든요. 머지하세요."
+          ],
+          "answer": 0,
+          "answerVi": "Mình chưa merge. Vì review chưa xong mà.",
+          "explainVi": "Việc đã (chưa) xảy ra thì chia quá khứ trước -거든요; câu 3 lại ra lệnh merge."
+        }
+      ]
+    },
+    {
+      "id": "gr-da-boni",
+      "group": "explain",
+      "pattern": "-다 보니",
+      "meaningVi": "làm ... mãi (nhiều) nên ...",
+      "usageVi": "Giải thích kết quả hoặc điều nhận ra sau một việc kéo dài, lặp lại. Hay dùng khi xin lỗi tế nhị hoặc chia sẻ nhận xét. Vế sau là kết quả hoặc phát hiện, không phải kế hoạch.",
+      "levels": {
+        "peer": {
+          "ko": "일하다 보니 점심을 놓쳤어요.",
+          "vi": "Làm mải nên lỡ bữa trưa luôn."
+        },
+        "lead": {
+          "ko": "여러 이슈를 동시에 처리하다 보니 보고가 늦어졌습니다.",
+          "vi": "Xử lý nhiều issue cùng lúc nên báo cáo bị muộn."
+        },
+        "client": {
+          "ko": "요구사항이 계속 추가되다 보니 일정 조정이 필요한 상황입니다.",
+          "vi": "Yêu cầu liên tục được thêm vào nên hiện cần điều chỉnh lịch."
+        }
+      },
+      "examples": [
+        {
+          "ko": "코드를 분석하다 보니 같은 로직이 여러 곳에 있었습니다.",
+          "vi": "Phân tích code thì thấy cùng một logic nằm ở nhiều chỗ."
+        },
+        {
+          "ko": "테스트를 반복하다 보니 특정 조건에서만 오류가 난다는 것을 알게 되었습니다.",
+          "vi": "Test lặp lại nhiều lần thì phát hiện chỉ lỗi ở một điều kiện nhất định."
+        },
+        {
+          "ko": "이 프로젝트를 하다 보니 결제 도메인에 익숙해졌습니다.",
+          "vi": "Làm dự án này lâu nên đã quen với domain thanh toán."
+        }
+      ],
+      "mistake": {
+        "wrong": "코드를 분석하다 보니 수정하겠습니다.",
+        "right": "코드를 분석하다 보니 수정할 부분이 더 있었습니다.",
+        "vi": "Phân tích code thì thấy còn thêm chỗ cần sửa.",
+        "noteVi": "Vế sau của -다 보니 là kết quả hoặc điều phát hiện ra, không phải lời hứa."
+      },
+      "quiz": [
+        {
+          "q": "Giải thích với leader: vì xử lý nhiều issue cùng lúc nên báo cáo muộn.",
+          "choices": [
+            "여러 이슈를 동시에 처리하다 보니 보고가 늦어졌습니다.",
+            "여러 이슈를 동시에 처리하다 보니 보고하겠습니다.",
+            "여러 이슈를 동시에 처리하다 보니 보고하세요."
+          ],
+          "answer": 0,
+          "answerVi": "Xử lý nhiều issue cùng lúc nên báo cáo bị muộn.",
+          "explainVi": "Sau -다 보니 là kết quả đã xảy ra, không phải lời hứa hay mệnh lệnh."
         }
       ]
     },
@@ -610,9 +980,18 @@
       "meaningVi": "anh/chị ... giúp được không?",
       "usageVi": "Nhờ lịch sự. Độ lịch sự tăng dần: -아/어 주세요 < -아/어 주시겠어요? < -아/어 주시겠습니까? Với khách dùng hai mức sau; email hay dùng -아/어 주시기 바랍니다.",
       "levels": {
-        "peer": "이거 확인해 주세요.",
-        "lead": "이 부분 확인해 주시겠어요?",
-        "client": "해당 화면을 다시 한번 확인해 주시겠습니까?"
+        "peer": {
+          "ko": "이거 확인해 주세요.",
+          "vi": "Kiểm tra cái này giúp mình."
+        },
+        "lead": {
+          "ko": "이 부분 확인해 주시겠어요?",
+          "vi": "Anh/chị kiểm tra giúp phần này được không?"
+        },
+        "client": {
+          "ko": "해당 화면을 다시 한번 확인해 주시겠습니까?",
+          "vi": "Anh/chị vui lòng kiểm tra lại màn hình đó giúp được không ạ?"
+        }
       },
       "examples": [
         {
@@ -631,6 +1010,7 @@
       "mistake": {
         "wrong": "확인해 주시겠습니까요?",
         "right": "확인해 주시겠습니까?",
+        "vi": "Anh/chị kiểm tra giúp được không ạ?",
         "noteVi": "Không thêm 요 sau -습니까; chọn một trong -겠어요? hoặc -겠습니까?"
       },
       "quiz": [
@@ -642,7 +1022,8 @@
             "로그 파일을 다시 보내 줄래요?"
           ],
           "answer": 0,
-          "explainVi": "-아/어 줄래요? thân mật, chỉ dùng với đồng nghiệp ngang hàng."
+          "explainVi": "-아/어 줄래요? thân mật, chỉ dùng với đồng nghiệp ngang hàng.",
+          "answerVi": "Anh/chị gửi lại file log giúp được không ạ?"
         }
       ]
     },
@@ -653,9 +1034,18 @@
       "meaningVi": "có thể ... được không ạ?",
       "usageVi": "Nhờ vả hoặc xin gia hạn một cách mềm, gián tiếp. Khi nhờ khách làm gì: -아/어 주실 수 있을까요?",
       "levels": {
-        "peer": "내일까지 줄 수 있어요?",
-        "lead": "내일까지 주실 수 있을까요?",
-        "client": "혹시 금요일까지 일정을 조정해 주실 수 있을까요?"
+        "peer": {
+          "ko": "내일까지 줄 수 있어요?",
+          "vi": "Mai đưa mình được không?"
+        },
+        "lead": {
+          "ko": "내일까지 주실 수 있을까요?",
+          "vi": "Đến mai anh/chị gửi được không ạ?"
+        },
+        "client": {
+          "ko": "혹시 금요일까지 일정을 조정해 주실 수 있을까요?",
+          "vi": "Liệu anh/chị có thể điều chỉnh lịch đến thứ Sáu được không ạ?"
+        }
       },
       "examples": [
         {
@@ -674,6 +1064,7 @@
       "mistake": {
         "wrong": "마감을 연장할 수 있어요?",
         "right": "마감을 연장해 주실 수 있을까요?",
+        "vi": "Anh/chị gia hạn deadline giúp được không ạ?",
         "noteVi": "-(으)ㄹ 수 있어요? nghe như hỏi năng lực; nhờ khách thì dùng -아/어 주실 수 있을까요?"
       },
       "quiz": [
@@ -685,7 +1076,8 @@
             "마감을 하루만 연장하느라고요."
           ],
           "answer": 0,
-          "explainVi": "Câu 2 là mệnh lệnh 반말; câu 3 sai nghĩa."
+          "explainVi": "Câu 2 là mệnh lệnh 반말; câu 3 sai nghĩa.",
+          "answerVi": "Anh/chị gia hạn deadline thêm một ngày được không ạ?"
         }
       ]
     },
@@ -696,9 +1088,18 @@
       "meaningVi": "tôi ... có được không?",
       "usageVi": "Xin phép trước khi làm: 재시작해도 될까요? Lịch sự hơn: -아/어도 괜찮을까요? Người trên trả lời: 네, -(으)셔도 됩니다.",
       "levels": {
-        "peer": "먼저 퇴근해도 돼요?",
-        "lead": "먼저 들어가 봐도 될까요?",
-        "client": "지금 서버를 재시작해도 괜찮을까요?"
+        "peer": {
+          "ko": "먼저 퇴근해도 돼요?",
+          "vi": "Mình về trước được không?"
+        },
+        "lead": {
+          "ko": "먼저 들어가 봐도 될까요?",
+          "vi": "Tôi xin phép về trước được không ạ?"
+        },
+        "client": {
+          "ko": "지금 서버를 재시작해도 괜찮을까요?",
+          "vi": "Bây giờ tôi restart server có được không ạ?"
+        }
       },
       "examples": [
         {
@@ -717,6 +1118,7 @@
       "mistake": {
         "wrong": "지금 재시작하면 될까요?",
         "right": "지금 재시작해도 될까요?",
+        "vi": "Bây giờ tôi restart có được không ạ?",
         "noteVi": "-(으)면 될까요? là hỏi \"làm vậy là đúng chưa\"; xin phép thì dùng -아/어도 될까요?"
       },
       "quiz": [
@@ -728,7 +1130,8 @@
             "지금 서버를 재시작하는 바람에요."
           ],
           "answer": 0,
-          "explainVi": "-아/어야 돼요 là \"phải\", không phải xin phép."
+          "explainVi": "-아/어야 돼요 là \"phải\", không phải xin phép.",
+          "answerVi": "Bây giờ tôi restart server có được không ạ?"
         }
       ]
     },
@@ -739,9 +1142,18 @@
       "meaningVi": "nên ... thì hơn",
       "usageVi": "Đề xuất phương án mà không áp đặt: -는 게 좋겠습니다, mềm hơn nữa là -는 게 어떨까요?",
       "levels": {
-        "peer": "이렇게 하는 게 좋겠어요.",
-        "lead": "이 방법으로 하는 게 좋겠습니다.",
-        "client": "안정성을 위해 배포를 주말로 미루는 게 어떨까요?"
+        "peer": {
+          "ko": "이렇게 하는 게 좋겠어요.",
+          "vi": "Làm thế này chắc ổn hơn."
+        },
+        "lead": {
+          "ko": "이 방법으로 하는 게 좋겠습니다.",
+          "vi": "Nên làm theo cách này thì hơn."
+        },
+        "client": {
+          "ko": "안정성을 위해 배포를 주말로 미루는 게 어떨까요?",
+          "vi": "Để ổn định, mình dời deploy sang cuối tuần được không ạ?"
+        }
       },
       "examples": [
         {
@@ -760,6 +1172,7 @@
       "mistake": {
         "wrong": "이렇게 하세요.",
         "right": "이렇게 하는 게 어떨까요?",
+        "vi": "Mình làm thế này được không ạ?",
         "noteVi": "Với khách, đề xuất bằng -는 게 어떨까요? hoặc -는 게 좋겠습니다 thay vì mệnh lệnh -(으)세요."
       },
       "quiz": [
@@ -771,7 +1184,8 @@
             "스테이징에서 먼저 테스트하느라고요."
           ],
           "answer": 0,
-          "explainVi": "-(으)세요 là yêu cầu, nghe như ra lệnh cho khách."
+          "explainVi": "-(으)세요 là yêu cầu, nghe như ra lệnh cho khách.",
+          "answerVi": "Nên test trên staging trước thì hơn."
         }
       ]
     },
@@ -782,9 +1196,18 @@
       "meaningVi": "nếu anh/chị ... thì chúng tôi rất cảm ơn",
       "usageVi": "Nhờ rất lịch sự, hay dùng ở cuối email; thường đi với 혹시, 가능하시면.",
       "levels": {
-        "peer": "보내 주면 고마워요.",
-        "lead": "보내 주시면 감사하겠습니다.",
-        "client": "가능하시면 이번 주 금요일까지 회신해 주시면 감사하겠습니다."
+        "peer": {
+          "ko": "보내 주면 고마워요.",
+          "vi": "Gửi giúp mình thì tốt quá."
+        },
+        "lead": {
+          "ko": "보내 주시면 감사하겠습니다.",
+          "vi": "Anh/chị gửi giúp thì tôi rất cảm ơn."
+        },
+        "client": {
+          "ko": "가능하시면 이번 주 금요일까지 회신해 주시면 감사하겠습니다.",
+          "vi": "Nếu được, anh/chị phản hồi trước thứ Sáu tuần này thì chúng tôi rất cảm ơn."
+        }
       },
       "examples": [
         {
@@ -803,6 +1226,7 @@
       "mistake": {
         "wrong": "회신해 주시면 감사했습니다.",
         "right": "회신해 주시면 감사하겠습니다.",
+        "vi": "Anh/chị phản hồi giúp thì chúng tôi rất cảm ơn.",
         "noteVi": "Việc chưa xảy ra nên dùng 감사하겠습니다, không dùng quá khứ."
       },
       "quiz": [
@@ -814,7 +1238,116 @@
             "금요일까지 회신해서 감사했습니다."
           ],
           "answer": 0,
-          "explainVi": "감사했습니다 là cảm ơn việc đã xảy ra."
+          "explainVi": "감사했습니다 là cảm ơn việc đã xảy ra.",
+          "answerVi": "Anh/chị phản hồi trước thứ Sáu thì chúng tôi rất cảm ơn."
+        }
+      ]
+    },
+    {
+      "id": "gr-l-tenikka",
+      "group": "request",
+      "pattern": "-(으)ㄹ 테니까",
+      "meaningVi": "(tôi) sẽ ... nên (anh/chị cứ) ...",
+      "usageVi": "Nhận phần việc của mình rồi nhờ hoặc đề nghị người kia phần còn lại. Vế sau thường là lời nhờ, đề nghị. Văn trang trọng hay rút gọn thành -(으)ㄹ 테니.",
+      "levels": {
+        "peer": {
+          "ko": "제가 서버 볼 테니까 프론트 봐 줘요.",
+          "vi": "Mình xem server, bạn xem frontend giúp nhé."
+        },
+        "lead": {
+          "ko": "제가 로그를 확인할 테니 팀장님께서는 고객사에 먼저 공유해 주시겠어요?",
+          "vi": "Tôi sẽ kiểm tra log, trưởng nhóm báo trước cho phía khách giúp được không ạ?"
+        },
+        "client": {
+          "ko": "저희가 오늘 중으로 수정할 테니 내일 오전에 확인 부탁드립니다.",
+          "vi": "Chúng tôi sẽ sửa trong hôm nay, sáng mai anh/chị kiểm tra giúp ạ."
+        }
+      },
+      "examples": [
+        {
+          "ko": "제가 회의록을 정리할 테니 액션 아이템만 확인해 주세요.",
+          "vi": "Tôi sẽ tổng hợp biên bản, anh/chị chỉ cần kiểm tra các action item."
+        },
+        {
+          "ko": "테스트 데이터는 제가 준비할 테니 시나리오를 공유해 주시겠어요?",
+          "vi": "Dữ liệu test tôi sẽ chuẩn bị, anh/chị chia sẻ kịch bản giúp được không?"
+        },
+        {
+          "ko": "배포 후 모니터링은 저희가 할 테니 걱정하지 않으셔도 됩니다.",
+          "vi": "Việc monitoring sau deploy chúng tôi sẽ lo, anh/chị không cần lo."
+        }
+      ],
+      "mistake": {
+        "wrong": "제가 확인할 테니까 확인했습니다.",
+        "right": "제가 확인할 테니 잠시만 기다려 주십시오.",
+        "vi": "Tôi sẽ kiểm tra, xin anh/chị chờ một chút.",
+        "noteVi": "Vế sau của -(으)ㄹ 테니(까) thường là lời nhờ hoặc đề nghị người kia, không phải việc mình đã làm."
+      },
+      "quiz": [
+        {
+          "q": "Nói với khách: chúng tôi sẽ sửa trong hôm nay, sáng mai anh/chị kiểm tra giúp.",
+          "choices": [
+            "오늘 중으로 수정할 테니 내일 오전에 확인 부탁드립니다.",
+            "오늘 중으로 수정하느라 내일 오전에 확인 부탁드립니다.",
+            "오늘 중으로 수정하는 바람에 내일 오전에 확인 부탁드립니다."
+          ],
+          "answer": 0,
+          "answerVi": "Chúng tôi sẽ sửa trong hôm nay, sáng mai anh/chị kiểm tra giúp ạ.",
+          "explainVi": "-느라 và -는 바람에 nêu lý do của một kết quả xấu, không dùng để chia việc."
+        }
+      ]
+    },
+    {
+      "id": "gr-sigi-baramnida",
+      "group": "request",
+      "pattern": "-(으)시기 바랍니다",
+      "meaningVi": "mong anh/chị (quý vị) ...",
+      "usageVi": "Dùng trong thông báo, email gửi nhiều người: 참고하시기 바랍니다, 확인하시기 바랍니다. Trang trọng nhưng một chiều; nhờ riêng một khách thì dùng -아/어 주시면 감사하겠습니다 cho mềm.",
+      "levels": {
+        "peer": {
+          "ko": "이거 참고해 주세요.",
+          "vi": "Tham khảo cái này nhé."
+        },
+        "lead": {
+          "ko": "첨부 파일 참고하시기 바랍니다.",
+          "vi": "Mong anh/chị tham khảo file đính kèm."
+        },
+        "client": {
+          "ko": "점검 시간에는 서비스 이용이 제한되므로 참고하시기 바랍니다.",
+          "vi": "Trong thời gian bảo trì, dịch vụ sẽ bị hạn chế, kính mong quý khách lưu ý."
+        }
+      },
+      "examples": [
+        {
+          "ko": "변경된 비밀번호 정책을 확인하시기 바랍니다.",
+          "vi": "Mong mọi người kiểm tra chính sách mật khẩu đã thay đổi."
+        },
+        {
+          "ko": "문의 사항은 담당자에게 연락하시기 바랍니다.",
+          "vi": "Có thắc mắc, xin liên hệ người phụ trách."
+        },
+        {
+          "ko": "배포 중에는 운영 서버에 접속하지 마시기 바랍니다.",
+          "vi": "Trong lúc deploy, đề nghị không truy cập server production."
+        }
+      ],
+      "mistake": {
+        "wrong": "고객님, 내일까지 회신하시기 바랍니다.",
+        "right": "고객님, 내일까지 회신해 주시면 감사하겠습니다.",
+        "vi": "Thưa anh/chị, nếu anh/chị phản hồi trước ngày mai thì chúng tôi rất cảm ơn.",
+        "noteVi": "-(으)시기 바랍니다 hợp với thông báo chung; nhờ riêng một khách thì nghe như ra yêu cầu."
+      },
+      "quiz": [
+        {
+          "q": "Viết thông báo bảo trì gửi tất cả người dùng: mong mọi người lưu ý.",
+          "choices": [
+            "점검 시간에는 서비스 이용이 제한되므로 참고하시기 바랍니다.",
+            "점검 시간에는 서비스 이용이 제한되므로 참고해.",
+            "점검 시간에는 서비스 이용이 제한되므로 참고하겠습니다."
+          ],
+          "answer": 0,
+          "answerVi": "Trong thời gian bảo trì dịch vụ bị hạn chế, mong mọi người lưu ý.",
+          "explainVi": "참고하겠습니다 là chính mình sẽ tham khảo; 참고해 là 반말."
         }
       ]
     },
@@ -825,9 +1358,18 @@
       "meaningVi": "kính ngữ cho hành động của người khác",
       "usageVi": "Gắn vào động từ khi chủ ngữ là khách hoặc cấp trên: 확인하셨어요?, 말씀하신. Không dùng cho hành động của chính mình hay team mình.",
       "levels": {
-        "peer": "확인했어요?",
-        "lead": "팀장님, 메일 확인하셨어요?",
-        "client": "보내 드린 자료는 확인하셨습니까?"
+        "peer": {
+          "ko": "확인했어요?",
+          "vi": "Kiểm tra chưa?"
+        },
+        "lead": {
+          "ko": "팀장님, 메일 확인하셨어요?",
+          "vi": "Trưởng nhóm đã xem mail chưa ạ?"
+        },
+        "client": {
+          "ko": "보내 드린 자료는 확인하셨습니까?",
+          "vi": "Anh/chị đã xem tài liệu chúng tôi gửi chưa ạ?"
+        }
       },
       "examples": [
         {
@@ -846,6 +1388,7 @@
       "mistake": {
         "wrong": "제가 확인하셨습니다.",
         "right": "제가 확인했습니다.",
+        "vi": "Tôi đã kiểm tra.",
         "noteVi": "Không dùng -(으)시- cho chính mình (lỗi rất hay gặp)."
       },
       "quiz": [
@@ -857,7 +1400,8 @@
             "보내 주신 자료는 확인하겠습니까?"
           ],
           "answer": 0,
-          "explainVi": "Người xem là khách nên cần -시-. 보내 주신 lại là tài liệu khách gửi."
+          "explainVi": "Người xem là khách nên cần -시-. 보내 주신 lại là tài liệu khách gửi.",
+          "answerVi": "Anh/chị đã xem tài liệu chúng tôi gửi chưa ạ?"
         }
       ]
     },
@@ -868,9 +1412,18 @@
       "meaningVi": "làm (gì đó) cho người trên",
       "usageVi": "Khiêm nhường khi mình làm gì cho khách hoặc sếp: 보내 드리겠습니다, 설명해 드릴게요. Với danh từ: 공유드리다, 연락드리다.",
       "levels": {
-        "peer": "파일 보내 줄게요.",
-        "lead": "파일 보내 드릴게요.",
-        "client": "요청하신 파일은 메일로 보내 드리겠습니다."
+        "peer": {
+          "ko": "파일 보내 줄게요.",
+          "vi": "Mình gửi file cho nhé."
+        },
+        "lead": {
+          "ko": "파일 보내 드릴게요.",
+          "vi": "Tôi gửi file cho anh/chị nhé."
+        },
+        "client": {
+          "ko": "요청하신 파일은 메일로 보내 드리겠습니다.",
+          "vi": "File anh/chị yêu cầu, tôi sẽ gửi qua mail."
+        }
       },
       "examples": [
         {
@@ -889,6 +1442,7 @@
       "mistake": {
         "wrong": "자료를 보내 주겠습니다.",
         "right": "자료를 보내 드리겠습니다.",
+        "vi": "Tôi sẽ gửi tài liệu cho anh/chị.",
         "noteVi": "Việc mình làm cho khách dùng -아/어 드리다, không dùng -아/어 주다."
       },
       "quiz": [
@@ -900,7 +1454,8 @@
             "파일을 다시 보내 주시겠습니다."
           ],
           "answer": 0,
-          "explainVi": "주시겠습니다 là kính ngữ cho chính mình, sai."
+          "explainVi": "주시겠습니다 là kính ngữ cho chính mình, sai.",
+          "answerVi": "Tôi sẽ gửi lại file cho anh/chị."
         }
       ]
     },
@@ -911,9 +1466,18 @@
       "meaningVi": "từ kính ngữ, khiêm nhường đặc biệt",
       "usageVi": "Một số động từ có từ riêng: 말하다 → 말씀드리다 (mình nói với người trên), 말씀하시다 (người trên nói); 묻다 → 여쭤보다; 있다 → 계시다; 만나다 → 뵙다; 주다 → 드리다.",
       "levels": {
-        "peer": "하나 물어봐도 돼요?",
-        "lead": "하나 여쭤봐도 될까요?",
-        "client": "한 가지 여쭤보고 싶은 것이 있습니다."
+        "peer": {
+          "ko": "하나 물어봐도 돼요?",
+          "vi": "Hỏi cái này được không?"
+        },
+        "lead": {
+          "ko": "하나 여쭤봐도 될까요?",
+          "vi": "Tôi hỏi một chút được không ạ?"
+        },
+        "client": {
+          "ko": "한 가지 여쭤보고 싶은 것이 있습니다.",
+          "vi": "Tôi có một điều muốn hỏi anh/chị."
+        }
       },
       "examples": [
         {
@@ -932,6 +1496,7 @@
       "mistake": {
         "wrong": "제가 말씀하겠습니다.",
         "right": "제가 말씀드리겠습니다.",
+        "vi": "Tôi xin phép trình bày.",
         "noteVi": "말씀하시다 là người trên nói; mình nói với người trên là 말씀드리다."
       },
       "quiz": [
@@ -943,7 +1508,8 @@
             "진행 상황을 말해 주겠습니다."
           ],
           "answer": 0,
-          "explainVi": "말씀하시겠습니다 tôn kính chính mình; 말해 주겠습니다 không đủ lịch sự."
+          "explainVi": "말씀하시겠습니다 tôn kính chính mình; 말해 주겠습니다 không đủ lịch sự.",
+          "answerVi": "Tôi xin báo cáo tiến độ."
         }
       ]
     },
@@ -954,9 +1520,18 @@
       "meaningVi": "tiểu từ chủ ngữ kính ngữ (thay 이/가)",
       "usageVi": "Dùng cho chủ ngữ là khách hoặc cấp trên, động từ đi kèm -(으)시-: 고객님께서 요청하셨습니다. Kính ngữ của 에게 là 께 (팀장님께 보고드렸습니다).",
       "levels": {
-        "peer": "민수 씨가 했어요.",
-        "lead": "팀장님이 확인하셨어요.",
-        "client": "담당자님께서 승인해 주셨습니다."
+        "peer": {
+          "ko": "민수 씨가 했어요.",
+          "vi": "Minsu làm đó."
+        },
+        "lead": {
+          "ko": "팀장님이 확인하셨어요.",
+          "vi": "Trưởng nhóm đã kiểm tra rồi."
+        },
+        "client": {
+          "ko": "담당자님께서 승인해 주셨습니다.",
+          "vi": "Người phụ trách đã phê duyệt giúp chúng tôi."
+        }
       },
       "examples": [
         {
@@ -975,6 +1550,7 @@
       "mistake": {
         "wrong": "부장님께서 내일 참석합니다.",
         "right": "부장님께서 내일 참석하십니다.",
+        "vi": "Trưởng phòng sẽ tham dự vào ngày mai.",
         "noteVi": "Đã dùng 께서 thì động từ cũng phải có -(으)시-."
       },
       "quiz": [
@@ -986,7 +1562,8 @@
             "고객님이께서 설계를 승인했습니다."
           ],
           "answer": 0,
-          "explainVi": "께서 thay hẳn cho 이/가, và động từ cần -시-."
+          "explainVi": "께서 thay hẳn cho 이/가, và động từ cần -시-.",
+          "answerVi": "Quý khách đã phê duyệt thiết kế."
         }
       ]
     },
@@ -997,9 +1574,18 @@
       "meaningVi": "chúng tôi (khiêm nhường)",
       "usageVi": "Nói về team hoặc công ty mình với khách: 저희 팀, 저희 회사, 저희 쪽. 우리 nghe ngang hàng; chỉ dùng khi tính cả người nghe (우리 프로젝트).",
       "levels": {
-        "peer": "우리 팀에서 할게요.",
-        "lead": "저희 팀에서 처리하겠습니다.",
-        "client": "해당 건은 저희 쪽에서 원인을 확인하고 있습니다."
+        "peer": {
+          "ko": "우리 팀에서 할게요.",
+          "vi": "Team mình làm cho."
+        },
+        "lead": {
+          "ko": "저희 팀에서 처리하겠습니다.",
+          "vi": "Team chúng tôi sẽ xử lý."
+        },
+        "client": {
+          "ko": "해당 건은 저희 쪽에서 원인을 확인하고 있습니다.",
+          "vi": "Việc đó phía chúng tôi đang kiểm tra nguyên nhân."
+        }
       },
       "examples": [
         {
@@ -1018,6 +1604,7 @@
       "mistake": {
         "wrong": "우리 회사에서 수정하겠습니다.",
         "right": "저희 회사에서 수정하겠습니다.",
+        "vi": "Công ty chúng tôi sẽ sửa.",
         "noteVi": "Với khách, nói về phía mình dùng 저희."
       },
       "quiz": [
@@ -1029,7 +1616,8 @@
             "저희께서 실수했습니다."
           ],
           "answer": 0,
-          "explainVi": "께서 chỉ dùng cho người khác, không dùng cho 저희."
+          "explainVi": "께서 chỉ dùng cho người khác, không dùng cho 저희.",
+          "answerVi": "Đây là vấn đề do lỗi phía chúng tôi."
         }
       ]
     }
