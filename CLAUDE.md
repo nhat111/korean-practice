@@ -242,7 +242,8 @@ Korean either.
   you hear, lines ≤ 28 characters incl. client lines and answer parts, scored with `compareAnswer`) and
   "Số, giờ" (`numbers.json`), "Ngữ pháp" (hear a `grammar.json` example, pick its pattern; key `listen:grammar:<id>:<i>`;
   a wrong option is never a pattern whose literal Hangul (`patternMarkers`) is in the sentence, and patterns whose form
-  can't be spotted, like `-아/어서` or `-(으)시-`, are never wrong options) and "Họp" (`meetings.json`, multi-speaker). Lines play at 1x on show, with replay and 0.75x. Each answer is
+  can't be spotted, like `-아/어서` or `-(으)시-`, are never wrong options) and "Họp" (`meetings.json`, multi-speaker). Lines play on show at the listening speed (`prefs.listenRate`, `ListenSpeedButton` cycles 0.75/0.85/1/1.15x, default 1x,
+  separate from the model `speechRate`); in "Họp" a speed change restarts from the current line. Each answer is
   saved in the SRS as `listen:<source key>` (grade 4 right / 1 wrong). Question building is pure in
   `src/practice/listening.ts`.
 - "Câu cần luyện lại" (`/weak`, from Progress and Home): `weakKeys` picks SRS entries whose last rating
@@ -309,7 +310,7 @@ Spec: `docs/custom-questions.md` (implemented). The learner pastes their own int
   rate, `showPron`, `answerTimer`), `kp:backend:v1` (optional backend URL + access key), `kp:custom:v1` (the learner's own questions) and `kp:reports:v1` ("Báo câu sai" flags, `src/storage/reports.ts`). When the shape changes, write a migration instead of silently dropping user data;
   purely additive fields may instead default when missing (as `speaking` does).
 - `kp:prefs:v1` also holds `profile` (`{ role, level, minutes }` or null), `onboarded`, `analytics`
-  (default true), `installHintDismissed` and `pathStart` (YYYY-MM-DD or null); missing fields default, so old prefs still load. Existing
+  (default true), `installHintDismissed`, `pathStart` (YYYY-MM-DD or null) and `listenRate`; missing fields default, so old prefs still load. Existing
   learners see the welcome once and can skip it.
 - Wrap reads and writes in try/catch. The app must still work if storage is unavailable or
   contains corrupted data. In that case, fall back to empty progress.

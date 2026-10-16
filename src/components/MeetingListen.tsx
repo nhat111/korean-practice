@@ -5,13 +5,14 @@ import { shuffle } from '../practice/listening';
 import { pickKeys } from '../practice/plan';
 import { speakKoreanAs, stopSpeaking } from '../speech';
 import { todayKey } from '../srs/sm2';
+import { getPrefs } from '../storage/prefs';
 import { getProgressSnapshot } from '../storage/progress';
 import type { MeetingItem, MeetingQuestion } from '../types';
 import { Icon } from './Icon';
+import { ListenSpeedButton } from './ListenPlayer';
 import { ReportButton } from './ReportButton';
 import { StatusPanel } from './StatusPanel';
 
-const SLOW_RATE = 0.75;
 const GAP_MS = 350;
 
 /** Source key under "listen:" in the SRS (answered right when every question is right). */
@@ -76,6 +77,7 @@ export function MeetingCard({
 
   async function play(rate: number, from = 0, only = false) {
     const id = ++run.current;
+    if (current >= 0) stopSpeaking(); // restarting mid-meeting (new speed)
     for (let i = from; i < (only ? from + 1 : meeting.lines.length); i++) {
       if (run.current !== id) return;
       setCurrent(i);
@@ -118,15 +120,14 @@ export function MeetingCard({
         <button
           type="button"
           className="listen-play"
-          onClick={() => (playing ? stop() : void play(1))}
+          onClick={() => (playing ? stop() : void play(getPrefs().listenRate))}
           aria-label={playing ? vi.listening.meeting.stop : vi.listening.meeting.playAll}
         >
           <Icon name={playing ? 'stop' : 'headphones'} size={30} />
         </button>
         <div className="stack-xs">
-          <button type="button" className="chip" onClick={() => void play(SLOW_RATE)}>
-            {vi.listening.meeting.slow}
-          </button>
+          {/* While playing, the new speed takes over from the current line. */}
+          <ListenSpeedButton onChange={(rate) => playing && void play(rate, current)} />
           <span className="muted small" aria-live="polite">
             {now
               ? vi.listening.meeting.speaking(speaker(now.speaker)?.name ?? '', current + 1, meeting.lines.length)
@@ -174,7 +175,7 @@ export function MeetingCard({
                   <button
                     type="button"
                     className="icon-btn icon-btn--small"
-                    onClick={() => void play(1, i, true)}
+                    onClick={() => void play(getPrefs().listenRate, i, true)}
                     aria-label={vi.common.speak}
                   >
                     <Icon name="volume" size={18} />
