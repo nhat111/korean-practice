@@ -389,8 +389,8 @@
     },
     {
       "id": "ep-grammar",
-      "hash": "9e42f19f068c6dfd",
-      "duration": 846.5,
+      "hash": "031b66274c20dabc",
+      "duration": 953.5,
       "lines": [
         {
           "ko": "현재 결제 모듈을 개발하고 있습니다.",
@@ -616,6 +616,31 @@
           "ko": "잠시만 기다려 주십시오.",
           "vi": "Xin vui lòng chờ một chút.",
           "start": 832.99
+        },
+        {
+          "ko": "캐시를 삭제해도 문제가 해결되지 않습니다.",
+          "vi": "Dù đã xóa cache thì vấn đề vẫn không được giải quyết.",
+          "start": 846.52
+        },
+        {
+          "ko": "이 정도 응답 속도면 실제 서비스에서 쓸 만합니다.",
+          "vi": "Với tốc độ phản hồi cỡ này thì dùng được cho dịch vụ thực tế.",
+          "start": 865.06
+        },
+        {
+          "ko": "코드를 직접 수정하는 대신 설정 값으로 바꿀 수 있게 하겠습니다.",
+          "vi": "Thay vì sửa thẳng vào code, chúng tôi sẽ cho phép đổi bằng giá trị cấu hình.",
+          "start": 886.31
+        },
+        {
+          "ko": "에러 로그에 따르면 DB 커넥션이 부족했던 것으로 보입니다.",
+          "vi": "Theo log lỗi, có vẻ là do thiếu kết nối DB.",
+          "start": 909.89
+        },
+        {
+          "ko": "데이터 이관 중에는 일부 화면이 열리지 않을지도 모릅니다.",
+          "vi": "Trong lúc chuyển dữ liệu, một số màn hình có thể không mở được.",
+          "start": 931.38
         }
       ]
     }
