@@ -64,6 +64,8 @@ export function MeetingCard({
   );
   const [picked, setPicked] = useState<(number | null)[]>(() => meeting.questions.map(() => null));
   const [current, setCurrent] = useState(-1);
+  // Line by line before the questions; open by default for TOPIK 2 learners.
+  const [stepsOpen, setStepsOpen] = useState(() => getPrefs().profile?.level === 2);
   const run = useRef(0);
   const speaker = (id: string) => meeting.speakers.find((s) => s.id === id);
 
@@ -135,6 +137,31 @@ export function MeetingCard({
           </span>
         </div>
       </div>
+
+      <button
+        type="button"
+        className="link-btn small notes-toggle"
+        aria-expanded={stepsOpen}
+        onClick={() => setStepsOpen((o) => !o)}
+      >
+        <Icon name={stepsOpen ? 'chevron-up' : 'chevron-down'} size={16} /> {vi.listening.meeting.byLine}
+      </button>
+      {stepsOpen && (
+        <div className="meeting-steps" role="group" aria-label={vi.listening.meeting.byLine}>
+          {meeting.lines.map((l, i) => (
+            <button
+              key={i}
+              type="button"
+              className={i === current ? 'chip chip--on' : 'chip'}
+              aria-pressed={i === current}
+              onClick={() => void play(getPrefs().listenRate, i, true)}
+            >
+              {/* Just the name: "박 팀장 (trưởng nhóm…)" → "박 팀장"; the status line has the role. */}
+              <span className="mono">{i + 1}</span> {speaker(l.speaker)?.name.replace(/\s*\(.*\)$/, '')}
+            </button>
+          ))}
+        </div>
+      )}
 
       <h3>{vi.listening.meeting.questions}</h3>
       {questions.map((q, qi) => (

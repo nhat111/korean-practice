@@ -154,7 +154,8 @@ Korean either.
 - `meetings.json` (`MeetingItem`, listening mode "Họp"): `id` (`lm-`), 2-3 `speakers` (`id`, `name`, `voice`
   male/female), `lines` (`speaker`, `ko`, `vi`), `questions` (Vietnamese `q`, 2-4 `choices`, `answer`; the UI
   shuffles). Lines play in sequence, each with its speaker's natural voice (`speakKoreanAs`), transcript only after
-  answering. Saved as `listen:meeting:<id>` (right only when every answer is right).
+  answering. "Nghe từng câu" (numbered chips with the speaker's Korean name, no text) replays one line at a time before
+  the questions; open by default for TOPIK 2 profiles. Saved as `listen:meeting:<id>` (right only when every answer is right).
 - `grammar.json` (`GrammarLesson`, pages `/grammar` and `/grammar/:id` "Ngữ pháp công sở", link on the Flashcards page;
   replaced the K-pop songs section, `/songs/*` redirects here): `id` (`gr-`, ASCII), `group` (one of `GRAMMAR_GROUPS` in
   `src/practice/decks.ts`, labels in `vi.grammar.groups`; tested), `pattern` (TOPIK notation, tested like vocab; vocab

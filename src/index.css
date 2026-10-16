@@ -1731,6 +1731,21 @@ ins {
   font-weight: 600;
   cursor: pointer;
 }
+.meeting-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 8px;
+}
+.meeting-steps .chip {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+}
+.meeting-steps .chip .mono {
+  margin-right: 4px;
+  color: var(--muted);
+}
 .chip--on {
   border-color: var(--primary);
   background: var(--primary-soft);

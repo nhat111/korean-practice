@@ -492,6 +492,7 @@ export const vi = {
     meeting: {
       intro: 'Nghe cả đoạn họp nhiều người nói (không xem chữ), rồi trả lời: ai chốt gì, khi nào, làm gì.',
       playAll: 'Nghe cả đoạn',
+      byLine: 'Nghe từng câu',
       stop: 'Dừng',
       speaking: (name: string, i: number, n: number) => `${name} · câu ${i}/${n}`,
       questions: 'Câu hỏi',
