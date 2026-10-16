@@ -128,6 +128,9 @@ function resolve(key: string, c: Content): WeakItem | null {
       } else if (src === 'shadowing') {
         const s = c.shadowing.find((x) => x.id === sid);
         line = s && { ko: s.ko, vi: s.vi };
+      } else if (src === 'grammar') {
+        const ex = c.grammar.find((g) => g.id === sid)?.examples[Number(a)];
+        line = ex && { ko: ex.ko, vi: ex.vi };
       } else if (src === 'number') {
         const n = c.numbers.find((x) => x.id === sid);
         line = n && { ko: n.ko, vi: n.vi };

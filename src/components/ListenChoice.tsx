@@ -38,7 +38,7 @@ export function ListenChoice({
           );
         })}
       </div>
-      {picked !== null && <ListenReveal reportKey={q.key} ko={q.ko} vi={q.vi} ok={picked === q.answer} />}
+      {picked !== null && <ListenReveal reportKey={q.key} ko={q.ko} vi={q.vi} note={q.note} ok={picked === q.answer} />}
     </div>
   );
 }
@@ -47,11 +47,13 @@ export function ListenReveal({
   reportKey,
   ko,
   vi: meaning,
+  note,
   ok,
 }: {
   reportKey: string;
   ko: string;
   vi: string;
+  note?: string;
   ok: boolean;
 }) {
   return (
@@ -59,6 +61,7 @@ export function ListenReveal({
       <strong>{ok ? `✓ ${vi.listening.right}` : `✗ ${vi.listening.wrong}`}</strong>
       <KoreanLine text={ko} />
       {meaning && <p>{meaning}</p>}
+      {note && <p className="small">{note}</p>}
       <ReportButton reportKey={reportKey} ko={ko} />
     </div>
   );

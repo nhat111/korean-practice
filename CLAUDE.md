@@ -164,7 +164,7 @@ Korean either.
   `q`, 2-4 Korean `choices`, `answer`, `answerVi` shown after answering, `explainVi`; the UI shuffles). Every Korean line
   on the lesson page has a Vietnamese meaning next to it. `GrammarQuiz` saves `grammar:<id>` (grade 4 all right, else 1), so failed
   lessons show up in "Câu cần luyện lại".
-- `episodes.json` (`Episode`, page `/passive` "Nghe thụ động", card on the Luyện nói hub) is **generated**, never
+- `episodes.json` (`Episode`, page `/passive` "Nghe thụ động", card on the Nói & nghe hub) is **generated**, never
   edited: `npm run episodes` (also run by `tts.yml` after `tts.py`) builds one long MP3 per `EPISODES` entry in
   `src/practice/episodes.ts` (shadowing topics, or one example per grammar lesson) into `public/audio/episodes/<id>.mp3`:
   per line Korean, a pause as long as the line, Korean again, the Vietnamese meaning (`public/audio/vi/`), a pause.
@@ -237,10 +237,12 @@ Korean either.
   suspended and the level reads 0.
 - Recognition runs `continuous` (ended by our silence timer) so long answers aren't cut at the first
   pause, except on Android where Chrome repeats results; transcripts are rebuilt from `e.results`.
-- Listening (`/listening`, under the Luyện nói tab): "Chọn ý" (meaning of shadowing/vocab/model-answer
-  lines ≤ 40 characters, distractors from the same group and of similar length), "Chép lại" (type what
+- Listening (`/listening`, under the Nói & nghe tab): "Chọn ý" (meaning of shadowing/vocab/model-answer
+  lines ≤ 40 characters, distractors from the same group and of similar length), "Chép" (type what
   you hear, lines ≤ 28 characters incl. client lines and answer parts, scored with `compareAnswer`) and
-  "Số, giờ" (`numbers.json`) and "Họp" (`meetings.json`, multi-speaker). Lines play at 1x on show, with replay and 0.75x. Each answer is
+  "Số, giờ" (`numbers.json`), "Ngữ pháp" (hear a `grammar.json` example, pick its pattern; key `listen:grammar:<id>:<i>`;
+  a wrong option is never a pattern whose literal Hangul (`patternMarkers`) is in the sentence, and patterns whose form
+  can't be spotted, like `-아/어서` or `-(으)시-`, are never wrong options) and "Họp" (`meetings.json`, multi-speaker). Lines play at 1x on show, with replay and 0.75x. Each answer is
   saved in the SRS as `listen:<source key>` (grade 4 right / 1 wrong). Question building is pure in
   `src/practice/listening.ts`.
 - "Câu cần luyện lại" (`/weak`, from Progress and Home): `weakKeys` picks SRS entries whose last rating
@@ -350,7 +352,7 @@ Spec: `docs/custom-questions.md` (implemented). The learner pastes their own int
   Progress) widen to 1080px from 1024px (`.main-inner--wide`); practice pages keep an 800px reading column. Card lists
   (`.list--cards`) go two columns, `.chips--scroll` rows wrap from 768px, and Home splits into two columns from 1180px
   (`.home-layout`: hero, today and path left; everything else right).
-- Bottom nav has 5 tabs (a left sidebar from 1024px, CSS only) (Trang chủ, Luyện nói, Hội thoại, Từ vựng, Tiến độ; `NAV` in `Layout.tsx`).
+- Bottom nav has 5 tabs (a left sidebar from 1024px, CSS only) (Trang chủ, Nói & nghe, Hội thoại, Từ vựng, Tiến độ; `NAV` in `Layout.tsx`).
   Each tab also lights up for related pages (`also`: shadowing/patterns, custom/emails, grammar).
   Pages without a tab need an entry from Home or a tab page; don't add a sixth tab. Home keeps six entry cards
   (Shadowing, Luyện nghe, Phiên dịch, Hội thoại, Từ vựng, Email); everything else is reached from the tabs.
