@@ -99,6 +99,8 @@ describe('grammar listening', () => {
     expect(patternMarkers('-(으)ㄹ 예정이다')).toEqual(['예정']);
     expect(patternMarkers('-(으)ㄴ/는데요')).toEqual(['데요', '는데요']);
     expect(patternMarkers('말씀드리다 / 여쭤보다')).toEqual(['말씀드', '여쭤보']);
+    expect(patternMarkers('-(으)ㄹ지도 모르다')).toEqual(['지도모']);
+    expect(patternMarkers('N에 따르면')).toEqual(['에따르면']);
     expect(patternMarkers('-아/어서')).toBeNull();
     expect(patternMarkers('-(으)시-')).toBeNull();
   });

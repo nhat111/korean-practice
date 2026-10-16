@@ -150,10 +150,10 @@ export function patternMarkers(pattern: string): string[] | null {
     // A leading jamo (ㄴ, ㄹ) merges into the stem's last syllable: drop it.
     t = t.replace(/^[\u3131-\u318E]+/, '');
     // Dictionary-form 다 changes when conjugated (있다 → 있습니다), and so do
-    // stems ending in 하/되/이/리 (했습니다, 됩니다, 입니다, 드려요).
+    // stems ending in 하/되/이/리/르 (했습니다, 됩니다, 입니다, 드려요, 모릅니다).
     if (t.endsWith('다') && t.length > 2) {
       t = t.slice(0, -1);
-      if (/[하되이리]$/.test(t)) t = t.slice(0, -1);
+      if (/[하되이리르]$/.test(t)) t = t.slice(0, -1);
     }
     // 아/어 at the start is often contracted (해 두다, 봐 주시겠어요).
     if (/^[아어]/.test(t)) t = t.slice(1);
