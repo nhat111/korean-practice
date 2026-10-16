@@ -61,7 +61,7 @@ Reference: NihongoBiz (bjtlab.me) feels polished thanks to a mascot, illustratio
 - [ ] More meetings (`meetings.json`) with 3 speakers and faster speech for TOPIK 4.
 - [x] Listening "Họp" with a "replay one line" step before the questions for TOPIK 2 learners.
 - [x] Grammar: one grammar quiz in the daily plan, grammar bar on the Progress page.
-- [ ] Grammar: more lessons (next: -아/어도, -(으)ㄹ 만하다, -는 대신(에), -에 따르면, -(으)ㄹ지도 모르다).
+- [x] Grammar: more lessons (next: -아/어도, -(으)ㄹ 만하다, -는 대신(에), -에 따르면, -(으)ㄹ지도 모르다).
 
 ## Done
 
