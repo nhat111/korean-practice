@@ -31,6 +31,7 @@ const DRILLS = [
   { to: '/listening', icon: 'headphones', tone: 'teal', title: vi.listening.title, desc: vi.home.cards.listening },
   { to: '/interpret', icon: 'languages', tone: 'violet', title: vi.interpret.title, desc: vi.home.cards.interpret },
   { to: '/passive', icon: 'radio', tone: 'teal', title: vi.passive.title, desc: vi.passive.card },
+  { to: '/speaking/free', icon: 'mic', tone: 'red', title: vi.speaking.freeTitle, desc: vi.speaking.freeDesc },
 ] as const;
 
 export function SpeakingPage() {
@@ -38,7 +39,7 @@ export function SpeakingPage() {
     <div className="stack">
       <h1>{vi.speaking.title}</h1>
       <SupportInfo />
-      <div className="grid">
+      <div className="grid grid--rows">
         {DRILLS.map((d) => (
           <Link key={d.to} to={d.to} className="card card--link">
             <span className={`card-icon card-icon--${d.tone}`}>
@@ -49,15 +50,6 @@ export function SpeakingPage() {
           </Link>
         ))}
       </div>
-      <Link to="/speaking/free" className="card card--link suggest-card">
-        <span className="card-icon card-icon--red">
-          <Icon name="mic" />
-        </span>
-        <div>
-          <h2>{vi.speaking.freeTitle}</h2>
-          <p className="muted">{vi.speaking.freeDesc}</p>
-        </div>
-      </Link>
       <History />
     </div>
   );
