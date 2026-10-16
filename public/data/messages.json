@@ -90,6 +90,72 @@
       "note": "Báo tin tốt trước, rồi dùng '다만' để nêu rủi ro. Có mốc báo lại cụ thể giúp khách yên tâm."
     },
     {
+      "id": "msg-progress-05",
+      "topic": "progress",
+      "to": "김 과장님 – PM phía khách",
+      "situation": "Báo giữa ngày: đã tích hợp xong API giao hàng, đang test; nếu không có vấn đề gì thì chiều nay đưa lên staging.",
+      "model": "김 과장님, 배송 API 연동 작업은 완료했고 지금 테스트 중입니다.\n특별한 문제가 없으면 오늘 오후에 스테이징에 반영하겠습니다.",
+      "phrases": [
+        {
+          "ko": "연동 작업은 완료했고",
+          "vi": "việc tích hợp đã xong, và…"
+        },
+        {
+          "ko": "지금 테스트 중입니다",
+          "vi": "hiện đang test"
+        },
+        {
+          "ko": "특별한 문제가 없으면",
+          "vi": "nếu không có vấn đề gì đặc biệt"
+        }
+      ],
+      "note": "N 중입니다 = đang trong quá trình N, gọn hơn -고 있습니다 trong tin nhắn."
+    },
+    {
+      "id": "msg-progress-06",
+      "topic": "progress",
+      "to": "Kênh dự án (#project-shop)",
+      "situation": "Báo tiến độ sprint: xong 8/10 ticket, 2 ticket còn lại (#45, #47) đang được review, dự kiến xong vào thứ Năm.",
+      "model": "이번 스프린트 진행 상황 공유드립니다.\n티켓 10건 중 8건 완료했고, 남은 2건(#45, #47)은 코드 리뷰 중입니다.\n목요일까지 마무리할 예정입니다.",
+      "phrases": [
+        {
+          "ko": "10건 중 8건 완료했고",
+          "vi": "xong 8 trên 10 ticket, và…"
+        },
+        {
+          "ko": "코드 리뷰 중입니다",
+          "vi": "đang review code"
+        },
+        {
+          "ko": "마무리할 예정입니다",
+          "vi": "dự kiến hoàn tất"
+        }
+      ],
+      "note": "Đếm ticket / đầu việc dùng 건. 마무리하다 = làm nốt, hoàn tất."
+    },
+    {
+      "id": "msg-progress-07",
+      "topic": "progress",
+      "to": "박 팀장님 – trưởng nhóm phía khách",
+      "situation": "Báo một rủi ro: thư viện PDF đang dùng không hỗ trợ tốt tiếng Hàn, team đang xem thư viện khác, mai báo kết quả.",
+      "model": "박 팀장님, 한 가지 리스크 공유드립니다.\n현재 사용 중인 PDF 라이브러리가 한글을 제대로 지원하지 않아서 다른 라이브러리를 검토하고 있습니다.\n검토 결과는 내일 말씀드리겠습니다.",
+      "phrases": [
+        {
+          "ko": "한 가지 리스크 공유드립니다",
+          "vi": "xin chia sẻ một rủi ro"
+        },
+        {
+          "ko": "제대로 지원하지 않아서",
+          "vi": "không hỗ trợ tốt nên…"
+        },
+        {
+          "ko": "검토 결과는 내일 말씀드리겠습니다",
+          "vi": "kết quả xem xét tôi sẽ báo vào ngày mai"
+        }
+      ],
+      "note": "Báo rủi ro sớm, kèm việc đang làm và lúc sẽ báo lại: khách Hàn rất coi trọng điều này. 한글 = chữ Hàn."
+    },
+    {
       "id": "msg-bug-01",
       "topic": "bug",
       "to": "Kênh dự án (#qa)",
@@ -176,6 +242,72 @@
         }
       ],
       "note": "Không nói 'không có lỗi'; nói 'phía chúng tôi chưa tái hiện được' và xin thêm thông tin cụ thể."
+    },
+    {
+      "id": "msg-bug-05",
+      "topic": "bug",
+      "to": "Kênh dự án (#qa)",
+      "situation": "Báo bug: trên Android, upload ảnh trên 10MB thì app bị tắt đột ngột. Đính kèm log, độ ưu tiên cao.",
+      "model": "[버그 보고] 안드로이드에서 10MB 이상 이미지를 업로드하면 앱이 강제 종료됩니다.\n로그 첨부합니다.\n우선순위: 높음",
+      "phrases": [
+        {
+          "ko": "업로드하면 앱이 강제 종료됩니다",
+          "vi": "upload thì app bị tắt đột ngột"
+        },
+        {
+          "ko": "로그 첨부합니다",
+          "vi": "xin đính kèm log"
+        },
+        {
+          "ko": "우선순위: 높음",
+          "vi": "độ ưu tiên: cao"
+        }
+      ],
+      "note": "Báo bug trong kênh: tiêu đề trong [ ], điều kiện → hiện tượng, rồi đính kèm và độ ưu tiên. 강제 종료 = crash, tắt đột ngột."
+    },
+    {
+      "id": "msg-bug-06",
+      "topic": "bug",
+      "to": "김 과장님 – PM phía khách",
+      "situation": "Đã sửa bug khách báo hôm qua (sai tổng tiền khi dùng coupon) và đã đưa lên staging. Nhờ khách kiểm tra lại.",
+      "model": "김 과장님, 어제 말씀하신 쿠폰 적용 시 합계 금액 오류는 수정 완료했습니다.\n스테이징에 반영했으니 확인 부탁드립니다.",
+      "phrases": [
+        {
+          "ko": "어제 말씀하신",
+          "vi": "(lỗi) anh đã nói hôm qua"
+        },
+        {
+          "ko": "수정 완료했습니다",
+          "vi": "đã sửa xong"
+        },
+        {
+          "ko": "확인 부탁드립니다",
+          "vi": "nhờ anh kiểm tra giúp"
+        }
+      ],
+      "note": "말씀하신 là kính ngữ của 말한. -(으)니 nối lý do với lời nhờ: 반영했으니 확인 부탁드립니다."
+    },
+    {
+      "id": "msg-bug-07",
+      "topic": "bug",
+      "to": "정 대리님 – QA phía khách",
+      "situation": "\"Bug\" khách báo thật ra đúng spec (tự đăng xuất sau 30 phút là theo thiết kế). Giải thích nhẹ nhàng, chỉ trang tài liệu.",
+      "model": "정 대리님, 확인해 보니 30분 후 자동 로그아웃되는 것은 설계서에 정의된 동작입니다.\n관련 내용은 설계서 12페이지에 있습니다.\n변경이 필요하시면 말씀해 주세요.",
+      "phrases": [
+        {
+          "ko": "확인해 보니",
+          "vi": "tôi kiểm tra thì thấy"
+        },
+        {
+          "ko": "설계서에 정의된 동작입니다",
+          "vi": "là hoạt động đã được định nghĩa trong tài liệu thiết kế"
+        },
+        {
+          "ko": "변경이 필요하시면 말씀해 주세요",
+          "vi": "nếu cần thay đổi thì xin cứ nói"
+        }
+      ],
+      "note": "Khi \"bug\" là đúng spec, đừng nói cụt 버그가 아닙니다: dẫn tài liệu rồi mở đường cho việc thay đổi."
     },
     {
       "id": "msg-schedule-01",
@@ -266,6 +398,72 @@
       "note": "'-아/어 주셔야 -(으)ㄹ 수 있습니다' nêu điều kiện một cách lịch sự, tránh bị đổ lỗi khi khách chậm."
     },
     {
+      "id": "msg-schedule-05",
+      "topic": "schedule",
+      "to": "김 과장님 – PM phía khách",
+      "situation": "Sáng nay bạn bị ốm, xin nghỉ hôm nay. Việc gấp đã nhờ Minh xử lý thay; mai bạn sẽ liên lạc lại.",
+      "model": "김 과장님, 죄송하지만 몸이 안 좋아서 오늘 하루 쉬겠습니다.\n급한 건은 민 씨가 대신 대응할 예정입니다.\n내일 다시 연락드리겠습니다.",
+      "phrases": [
+        {
+          "ko": "몸이 안 좋아서",
+          "vi": "vì không khỏe"
+        },
+        {
+          "ko": "오늘 하루 쉬겠습니다",
+          "vi": "hôm nay tôi xin nghỉ một ngày"
+        },
+        {
+          "ko": "대신 대응할 예정입니다",
+          "vi": "sẽ xử lý thay"
+        }
+      ],
+      "note": "Không cần kể chi tiết bệnh, nói 몸이 안 좋아서 là đủ. Luôn ghi người làm thay."
+    },
+    {
+      "id": "msg-schedule-06",
+      "topic": "schedule",
+      "to": "이 대리님 – phụ trách phía khách",
+      "situation": "Hỏi khách có thể dời buổi review thiết kế từ thứ Ba sang thứ Tư cùng giờ không, vì designer bên bạn có lịch công tác.",
+      "model": "이 대리님, 화요일 디자인 리뷰 일정 관련해서 문의드립니다.\n저희 디자이너가 출장 일정이 생겨서 수요일 같은 시간으로 변경이 가능할까요?",
+      "phrases": [
+        {
+          "ko": "관련해서 문의드립니다",
+          "vi": "xin hỏi về việc…"
+        },
+        {
+          "ko": "출장 일정이 생겨서",
+          "vi": "vì có lịch công tác"
+        },
+        {
+          "ko": "변경이 가능할까요",
+          "vi": "có thể đổi được không ạ"
+        }
+      ],
+      "note": "Xin đổi lịch thì hỏi bằng -(으)ㄹ까요?, nhẹ hơn -아/어 주세요."
+    },
+    {
+      "id": "msg-schedule-07",
+      "topic": "schedule",
+      "to": "Kênh dự án (#notice)",
+      "situation": "Thông báo: từ thứ Hai tuần sau, họp daily đổi từ 10:00 sang 9:30 (giờ Hàn Quốc).",
+      "model": "[공지] 다음 주 월요일부터 데일리 미팅 시간이 오전 10시에서 9시 30분으로 변경됩니다.\n한국 시간 기준입니다.\n참고 부탁드립니다.",
+      "phrases": [
+        {
+          "ko": "9시 30분으로 변경됩니다",
+          "vi": "được đổi sang 9 giờ 30"
+        },
+        {
+          "ko": "한국 시간 기준입니다",
+          "vi": "tính theo giờ Hàn Quốc"
+        },
+        {
+          "ko": "참고 부탁드립니다",
+          "vi": "mong mọi người lưu ý"
+        }
+      ],
+      "note": "Làm việc lệch múi giờ (Hàn Quốc nhanh hơn Việt Nam 2 tiếng): luôn ghi rõ 한국 시간 기준."
+    },
+    {
       "id": "msg-request-01",
       "topic": "request",
       "to": "이 대리님 – phụ trách phía khách",
@@ -348,6 +546,72 @@
         }
       ],
       "note": "Nói rõ mục đích và lượng cần, và chủ động nêu yêu cầu che thông tin cá nhân."
+    },
+    {
+      "id": "msg-request-05",
+      "topic": "request",
+      "to": "정 대리님 – dev phía khách",
+      "situation": "Khách review PR và góp ý đổi tên biến. Bạn cảm ơn, báo đã sửa theo góp ý và push lại, nhờ xem lại.",
+      "model": "정 대리님, 리뷰 감사합니다.\n말씀하신 대로 변수명을 수정해서 다시 푸시했습니다.\n한 번 더 확인 부탁드립니다.",
+      "phrases": [
+        {
+          "ko": "리뷰 감사합니다",
+          "vi": "cảm ơn anh đã review"
+        },
+        {
+          "ko": "말씀하신 대로",
+          "vi": "đúng như anh đã góp ý"
+        },
+        {
+          "ko": "한 번 더 확인 부탁드립니다",
+          "vi": "nhờ anh xem lại một lần nữa"
+        }
+      ],
+      "note": "Trả lời review: cảm ơn → đã sửa gì → nhờ xem lại. 푸시하다 = push code."
+    },
+    {
+      "id": "msg-request-06",
+      "topic": "request",
+      "to": "이 대리님 – phụ trách phía khách",
+      "situation": "Xin quyền đọc (read-only) DB production để điều tra nguyên nhân sự cố, chỉ dùng đến hết tuần này.",
+      "model": "이 대리님, 장애 원인 조사를 위해 운영 DB 조회 권한을 요청드립니다.\n읽기 권한만 필요하고, 이번 주까지만 사용하겠습니다.\n승인 가능하실지 확인 부탁드립니다.",
+      "phrases": [
+        {
+          "ko": "조회 권한을 요청드립니다",
+          "vi": "xin cấp quyền tra cứu"
+        },
+        {
+          "ko": "읽기 권한만 필요하고",
+          "vi": "chỉ cần quyền đọc, và…"
+        },
+        {
+          "ko": "이번 주까지만 사용하겠습니다",
+          "vi": "chỉ dùng đến hết tuần này"
+        }
+      ],
+      "note": "Xin quyền vào production: nói rõ mục đích, phạm vi tối thiểu và thời hạn để khách dễ duyệt."
+    },
+    {
+      "id": "msg-request-07",
+      "topic": "request",
+      "to": "박 팀장님 – trưởng nhóm phía khách",
+      "situation": "Hỏi ý kiến khách về 2 cách xử lý: A sửa nhanh trong 1 ngày, B mất 3 ngày nhưng dễ bảo trì hơn. Bên bạn đề xuất B.",
+      "model": "박 팀장님, 처리 방법에 대해 의견을 여쭙고 싶습니다.\nA안은 하루면 수정할 수 있고, B안은 3일이 걸리지만 유지보수에 더 유리합니다.\n저희는 B안을 추천드립니다.",
+      "phrases": [
+        {
+          "ko": "의견을 여쭙고 싶습니다",
+          "vi": "tôi muốn hỏi ý kiến anh"
+        },
+        {
+          "ko": "3일이 걸리지만",
+          "vi": "mất 3 ngày nhưng"
+        },
+        {
+          "ko": "B안을 추천드립니다",
+          "vi": "xin đề xuất phương án B"
+        }
+      ],
+      "note": "A안 / B안 = phương án A / B, rất hay dùng khi đưa lựa chọn cho khách. 여쭙다 là kính ngữ của 묻다."
     },
     {
       "id": "msg-deploy-01",
@@ -438,6 +702,72 @@
       "note": "Deploy production luôn xin phép trước. '-아/어도 될까요?' là câu xin phép lịch sự."
     },
     {
+      "id": "msg-deploy-05",
+      "topic": "deploy",
+      "to": "Kênh dự án (#deploy)",
+      "situation": "Thông báo hoãn deploy tối nay vì regression test còn 2 case lỗi; lịch mới sẽ báo ngay khi chốt.",
+      "model": "[배포 연기 안내] 오늘 밤 예정된 배포는 연기하겠습니다.\n회귀 테스트에서 실패한 케이스가 2건 남아 있습니다.\n새 일정은 확정되는 대로 공유드리겠습니다.",
+      "phrases": [
+        {
+          "ko": "배포는 연기하겠습니다",
+          "vi": "việc deploy sẽ được hoãn"
+        },
+        {
+          "ko": "실패한 케이스가 2건 남아 있습니다",
+          "vi": "còn 2 case bị lỗi"
+        },
+        {
+          "ko": "확정되는 대로",
+          "vi": "ngay khi được chốt"
+        }
+      ],
+      "note": "-는 대로 = ngay khi. Hoãn deploy thì nêu lý do cụ thể bằng con số."
+    },
+    {
+      "id": "msg-deploy-06",
+      "topic": "deploy",
+      "to": "김 과장님 – PM phía khách",
+      "situation": "Gửi checklist trước deploy: đã backup DB, đã test trên staging; nhờ khách duyệt deploy trước 18:00.",
+      "model": "김 과장님, 오늘 배포 전 체크리스트 공유드립니다.\nDB 백업과 스테이징 테스트는 완료했습니다.\n18시 전까지 배포 승인 부탁드립니다.",
+      "phrases": [
+        {
+          "ko": "배포 전 체크리스트",
+          "vi": "checklist trước khi deploy"
+        },
+        {
+          "ko": "스테이징 테스트는 완료했습니다",
+          "vi": "đã test xong trên staging"
+        },
+        {
+          "ko": "배포 승인 부탁드립니다",
+          "vi": "xin anh duyệt deploy"
+        }
+      ],
+      "note": "N 전까지 = trước (mốc) N. Ghi rõ giờ hạn chót để khách không quên duyệt."
+    },
+    {
+      "id": "msg-deploy-07",
+      "topic": "deploy",
+      "to": "Kênh dự án (#deploy)",
+      "situation": "Sau deploy 30 phút: chưa thấy gì bất thường, sẽ tiếp tục theo dõi đến sáng mai.",
+      "model": "배포 후 30분 동안 모니터링한 결과, 현재까지 특이 사항은 없습니다.\n내일 오전까지 계속 모니터링하겠습니다.",
+      "phrases": [
+        {
+          "ko": "모니터링한 결과",
+          "vi": "kết quả theo dõi"
+        },
+        {
+          "ko": "특이 사항은 없습니다",
+          "vi": "không có gì bất thường"
+        },
+        {
+          "ko": "계속 모니터링하겠습니다",
+          "vi": "sẽ tiếp tục theo dõi"
+        }
+      ],
+      "note": "특이 사항은 없습니다 là cách báo \"mọi thứ bình thường\" rất phổ biến."
+    },
+    {
       "id": "msg-apology-01",
       "topic": "apology",
       "to": "김 과장님 – PM phía khách",
@@ -524,6 +854,72 @@
         }
       ],
       "note": "Nói rõ đã hiểu sai thế nào để khách thấy bạn đã nắm đúng yêu cầu bây giờ."
+    },
+    {
+      "id": "msg-apology-05",
+      "topic": "apology",
+      "to": "김 과장님 – PM phía khách",
+      "situation": "Bạn quên nên gửi báo cáo tuần muộn một ngày. Xin lỗi, gửi kèm báo cáo, lần sau sẽ đặt nhắc lịch.",
+      "model": "김 과장님, 주간 보고서를 하루 늦게 보내 드려 죄송합니다.\n보고서 첨부합니다.\n앞으로는 일정 알림을 설정해서 늦지 않도록 하겠습니다.",
+      "phrases": [
+        {
+          "ko": "늦게 보내 드려 죄송합니다",
+          "vi": "xin lỗi vì gửi muộn"
+        },
+        {
+          "ko": "보고서 첨부합니다",
+          "vi": "xin đính kèm báo cáo"
+        },
+        {
+          "ko": "늦지 않도록 하겠습니다",
+          "vi": "sẽ cố gắng không để trễ"
+        }
+      ],
+      "note": "Xin lỗi chuẩn: lỗi gì → khắc phục ngay → cách phòng tránh. -도록 하겠습니다 = sẽ cố gắng để…"
+    },
+    {
+      "id": "msg-apology-06",
+      "topic": "apology",
+      "to": "이 대리님 – phụ trách phía khách",
+      "situation": "Bạn lỡ cuộc gọi của khách vì đang họp. Xin lỗi và hỏi khi nào tiện để gọi lại.",
+      "model": "이 대리님, 회의 중이라 전화를 받지 못했습니다. 죄송합니다.\n편하신 시간을 알려 주시면 다시 연락드리겠습니다.",
+      "phrases": [
+        {
+          "ko": "회의 중이라",
+          "vi": "vì đang họp"
+        },
+        {
+          "ko": "전화를 받지 못했습니다",
+          "vi": "tôi đã không nghe máy được"
+        },
+        {
+          "ko": "편하신 시간을 알려 주시면",
+          "vi": "nếu chị cho biết giờ thuận tiện"
+        }
+      ],
+      "note": "N 중이라 = vì đang N. 편하신 시간 là cách hỏi giờ rảnh lịch sự."
+    },
+    {
+      "id": "msg-apology-07",
+      "topic": "apology",
+      "to": "박 팀장님 – trưởng nhóm phía khách",
+      "situation": "Ước tính công số bị thiếu: thực tế cần thêm khoảng 5 ngày vì API bên ngoài phức tạp hơn dự kiến. Xin lỗi và xin một buổi họp ngắn ngày mai.",
+      "model": "박 팀장님, 견적 관련해서 사과 말씀드립니다.\n외부 API 연동이 예상보다 복잡해서 5일 정도 추가 공수가 필요합니다.\n내일 잠시 미팅을 요청드려도 될까요?",
+      "phrases": [
+        {
+          "ko": "사과 말씀드립니다",
+          "vi": "xin gửi lời xin lỗi"
+        },
+        {
+          "ko": "예상보다 복잡해서",
+          "vi": "phức tạp hơn dự kiến nên…"
+        },
+        {
+          "ko": "미팅을 요청드려도 될까요",
+          "vi": "tôi xin một buổi họp được không ạ"
+        }
+      ],
+      "note": "공수 = công số (man-day). Chuyện lớn như vượt công số thì nên xin họp, đừng chỉ giải quyết qua tin nhắn."
     }
   ]
 }
