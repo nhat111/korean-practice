@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { vi } from '../i18n/vi';
 import { srsKey } from '../practice/decks';
-import { isSpeechSupported, speakKorean } from '../speech';
+import { isSpeechSupported } from '../speech';
 import { usePrefs } from '../storage/prefs';
 import type { SelfRating } from '../storage/progress';
 import type { ShadowingItem } from '../types';
+import { Icon } from './Icon';
 import { ReportButton } from './ReportButton';
-import { SpeakPractice } from './SpeakPractice';
+import { SpeakPractice, SpeedButton } from './SpeakPractice';
 
 /** One shadowing sentence: listen (repeat), read the real pronunciation, record, compare, rate. */
 export function ShadowingCard({
@@ -21,18 +22,17 @@ export function ShadowingCard({
 }) {
   const { showPron } = usePrefs();
   const [shown, setShown] = useState(!hideText);
+  const [notesOpen, setNotesOpen] = useState(false);
 
   return (
     <section className="card stack-sm">
-      <div className="meta">
-        <span className="badge">{vi.shadowing.topics[item.topic] ?? item.topic}</span>
-        <span className="badge">{vi.shadowing.level(item.level)}</span>
+      <div className="card-head">
+        <div className="meta">
+          <span className="badge">{vi.shadowing.topics[item.topic] ?? item.topic}</span>
+          <span className="badge">{vi.shadowing.level(item.level)}</span>
+        </div>
+        {isSpeechSupported() && <SpeedButton />}
       </div>
-      {isSpeechSupported() && (
-        <button type="button" className="btn listen-btn" onClick={() => void speakKorean(item.ko)}>
-          {vi.speaking.listen}
-        </button>
-      )}
       {shown ? (
         <div className="stack-xs">
           <p lang="ko" className="drill-line">
@@ -44,18 +44,29 @@ export function ShadowingCard({
             </p>
           )}
           <p className="muted">{item.vi}</p>
-          <ReportButton reportKey={srsKey.shadowing(item.id)} ko={item.ko} />
-          {item.notes && item.notes.length > 0 && (
-            <details className="notes">
-              <summary>{vi.practice.notes}</summary>
-              <ul>
-                {item.notes.map((n) => (
-                  <li key={n} className="small">
-                    {n}
-                  </li>
-                ))}
-              </ul>
-            </details>
+          <div className="card-tools">
+            {item.notes && item.notes.length > 0 ? (
+              <button
+                type="button"
+                className="link-btn small notes-toggle"
+                aria-expanded={notesOpen}
+                onClick={() => setNotesOpen((o) => !o)}
+              >
+                <Icon name={notesOpen ? 'chevron-up' : 'chevron-down'} size={16} /> {vi.practice.notes}
+              </button>
+            ) : (
+              <span />
+            )}
+            <ReportButton reportKey={srsKey.shadowing(item.id)} ko={item.ko} />
+          </div>
+          {notesOpen && item.notes && (
+            <ul className="notes-list">
+              {item.notes.map((n) => (
+                <li key={n} className="small">
+                  {n}
+                </li>
+              ))}
+            </ul>
           )}
         </div>
       ) : (
@@ -66,7 +77,7 @@ export function ShadowingCard({
           </button>
         </div>
       )}
-      <SpeakPractice ko={item.ko} source={srsKey.shadowing(item.id)} srsKey={srsKey.shadowing(item.id)} onRated={onRated} />
+      <SpeakPractice ko={item.ko} source={srsKey.shadowing(item.id)} srsKey={srsKey.shadowing(item.id)} onRated={onRated} noSpeed />
     </section>
   );
 }

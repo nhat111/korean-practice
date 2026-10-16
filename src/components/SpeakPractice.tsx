@@ -58,7 +58,14 @@ export function RecordButton({
   }
 
   function up() {
-    if (pressedAt.current && Date.now() - pressedAt.current > HOLD_MS) recorder.stop();
+    // Count the hold from when recording really started: on iOS the
+    // microphone prompt can delay this release (or turn it into a cancel)
+    // until the learner answers it, which used to read as "released" and
+    // threw the new recording away. A release before recording is a tap.
+    const started = recorder.startedAt;
+    if (pressedAt.current && started && Date.now() - Math.max(pressedAt.current, started) > HOLD_MS) {
+      recorder.stop();
+    }
     pressedAt.current = 0;
   }
 
@@ -166,7 +173,7 @@ function LevelMeter({ analyser }: { analyser: AnalyserNode | null }) {
 const RATES = [0.7, 0.85, 1] as const;
 
 /** Model audio speed; each tap moves to the next of 0.7x / 0.85x / 1x (the global speech rate). */
-function SpeedButton() {
+export function SpeedButton() {
   const rate = useSpeechRate();
   const i = RATES.findIndex((r) => Math.abs(rate - r) < 0.01);
   const next = RATES[(i + 1) % RATES.length];
@@ -350,6 +357,8 @@ interface Props {
    * turns): the model audio, speed and rating stay hidden until revealed.
    */
   revealed?: boolean;
+  /** The parent shows its own `SpeedButton` (saves a toolbar row on phones). */
+  noSpeed?: boolean;
 }
 
 /**
@@ -359,7 +368,7 @@ interface Props {
  * and without a microphone the learner can still listen, repeat and rate.
  */
 export function SpeakPractice(props: Props) {
-  const { ko, revealed = true } = props;
+  const { ko, revealed = true, noSpeed } = props;
   // Long lines can be shadowed part by part (each part has its own MP3).
   const parts = revealed ? splitParts(ko) : [];
   const [part, setPart] = useState<number | null>(null);
@@ -368,7 +377,7 @@ export function SpeakPractice(props: Props) {
 
   return (
     <div className="speak-practice stack-sm">
-      {revealed && (
+      {revealed && (parts.length > 0 || (!noSpeed && isSpeechSupported())) && (
         <div className="sp-toolbar">
           {parts.length > 0 ? (
             <div className="segmented segmented--small" role="group" aria-label={vi.practice.parts}>
@@ -387,7 +396,7 @@ export function SpeakPractice(props: Props) {
           ) : (
             <span />
           )}
-          {isSpeechSupported() && <SpeedButton />}
+          {!noSpeed && isSpeechSupported() && <SpeedButton />}
         </div>
       )}
       {isPart && (

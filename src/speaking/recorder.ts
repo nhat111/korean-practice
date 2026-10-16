@@ -148,7 +148,16 @@ export function useRecorder() {
       return null;
     }
 
-    const recorder = new MediaRecorder(stream);
+    let recorder: MediaRecorder;
+    try {
+      recorder = new MediaRecorder(stream);
+    } catch {
+      stream.getTracks().forEach((t) => t.stop());
+      setError(vi.speaking.errNoMic);
+      setErrorKind('no-mic');
+      setStatus('error');
+      return null;
+    }
     const meter = createAnalyser(stream);
     const chunks: Blob[] = [];
     let startedAt = 0;
@@ -177,7 +186,17 @@ export function useRecorder() {
     };
 
     recorderRef.current = recorder;
-    recorder.start();
+    try {
+      recorder.start();
+    } catch {
+      recorderRef.current = null;
+      stream.getTracks().forEach((t) => t.stop());
+      meter?.close();
+      setError(vi.speaking.errNoMic);
+      setErrorKind('no-mic');
+      setStatus('error');
+      return null;
+    }
     startedAt = Date.now();
     setStartedAt(startedAt);
     setAnalyser(meter?.analyser ?? null);
