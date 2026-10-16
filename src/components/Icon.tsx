@@ -155,6 +155,8 @@ const PATHS = {
     </>
   ),
   minus: <path d="M5 12h14" />,
+  'chevron-down': <path d="m6 9 6 6 6-6" />,
+  'chevron-up': <path d="m18 15-6-6-6 6" />,
   play: <polygon points="6 3 20 12 6 21 6 3" />,
   stop: <rect width="14" height="14" x="5" y="5" rx="2" />,
   pause: (
