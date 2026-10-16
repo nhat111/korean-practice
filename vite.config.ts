@@ -43,7 +43,7 @@ function audioBase(command: string, env: Record<string, string>): string {
  * with changed files installs a fresh service worker. With the MP3s hosted
  * elsewhere it also drops the copy of public/audio Vite put in dist.
  */
-function pwaPlugin(audio: string, fallback: string): Plugin {
+function pwaPlugin(audio: string, fallback: string, build: string): Plugin {
   let root = process.cwd()
   let outDir = 'dist'
   return {
@@ -62,7 +62,7 @@ function pwaPlugin(audio: string, fallback: string): Plugin {
       if (audio !== '') rmSync(join(outDir, 'audio'), { recursive: true, force: true })
       const files = listFiles(outDir)
         .map((f) => relative(outDir, f).split(sep).join('/'))
-        .filter((f) => f !== 'sw.js' && !f.endsWith('.map') && !f.startsWith('audio/'))
+        .filter((f) => f !== 'sw.js' && f !== 'version.json' && !f.endsWith('.map') && !f.startsWith('audio/'))
         .sort()
       const hash = createHash('sha256')
       for (const f of files) hash.update(f).update(readFileSync(join(outDir, f)))
@@ -74,6 +74,8 @@ function pwaPlugin(audio: string, fallback: string): Plugin {
         .replace('__AUDIO_BASE__', audio)
         .replace('__AUDIO_FALLBACK__', fallback)
       writeFileSync(join(outDir, 'sw.js'), sw)
+      // Read (never cached) by the running app to tell that a newer deploy is live: src/registerSW.ts.
+      writeFileSync(join(outDir, 'version.json'), JSON.stringify({ version: build }))
       console.log(`sw.js: ${precache.length} files precached, version ${version}, audio from ${audio || 'this origin'}`)
     },
   }
@@ -99,8 +101,10 @@ export default defineConfig(({ command, mode }) => {
   // loadEnv reads .env files and the process env (Vercel's project variables).
   const audio = audioBase(command, loadEnv(mode, process.cwd(), 'VITE_'))
   const fallback = audio === PAGES_AUDIO_BASE ? CDN_AUDIO_BASE : ''
+  // One value for the bundle and dist/version.json, so they compare equal.
+  const build = appVersion()
   return {
-    plugins: [react(), pwaPlugin(audio, fallback)],
-    define: { __APP_VERSION__: JSON.stringify(appVersion()), __AUDIO_BASE__: JSON.stringify(audio), __AUDIO_FALLBACK__: JSON.stringify(fallback) },
+    plugins: [react(), pwaPlugin(audio, fallback, build)],
+    define: { __APP_VERSION__: JSON.stringify(build), __AUDIO_BASE__: JSON.stringify(audio), __AUDIO_FALLBACK__: JSON.stringify(fallback) },
   }
 })

@@ -5,7 +5,7 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/((?!data/|audio/|assets/|icons/|sw\\.js|manifest\\.webmanifest|favicon\\.svg|og\\.jpg).*)",
+      "source": "/((?!data/|audio/|assets/|icons/|sw\\.js|version\\.json|manifest\\.webmanifest|favicon\\.svg|og\\.jpg).*)",
       "destination": "/index.html"
     }
   ],
@@ -38,6 +38,15 @@
         {
           "key": "Service-Worker-Allowed",
           "value": "/"
+        }
+      ]
+    },
+    {
+      "source": "/version.json",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
         }
       ]
     },
