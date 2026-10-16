@@ -1,6 +1,7 @@
 import { Link, Navigate, Route, Routes } from 'react-router';
 import { Layout } from './components/Layout';
 import { vi } from './i18n/vi';
+import { AboutPage } from './pages/AboutPage';
 import { AiRoleplayPage } from './pages/AiRoleplayPage';
 import { CustomPage } from './pages/CustomPage';
 import { CustomPracticePage } from './pages/CustomPracticePage';
@@ -51,6 +52,7 @@ export function App() {
         <Route path="songs/*" element={<Navigate to="/grammar" replace />} />
         <Route path="progress" element={<ProgressPage />} />
         <Route path="settings" element={<SettingsPage />} />
+        <Route path="about" element={<AboutPage />} />
         <Route path="ai-roleplay" element={<AiRoleplayPage />} />
         <Route
           path="*"

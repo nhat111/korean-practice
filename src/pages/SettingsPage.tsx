@@ -1,5 +1,5 @@
 import { useRef, useState, type ChangeEvent, type FormEvent } from 'react';
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { checkBackend, getRemoteProgress, putRemoteProgress, useBackendStatus } from '../api/client';
 import { apiErrorMessage } from '../api/messages';
 import { AppVersion } from '../components/AppVersion';
@@ -389,6 +389,9 @@ function ProfileSettings() {
         <span>{vi.profile.analytics}</span>
       </label>
       <p className="muted small">{vi.profile.analyticsNote}</p>
+      <Link to="/about" className="link-btn small">
+        {vi.about.link} →
+      </Link>
       {FEEDBACK_URL && (
         <a href={FEEDBACK_URL} target="_blank" rel="noreferrer" className="btn btn--ghost">
           {vi.growth.feedback}
