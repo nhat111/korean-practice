@@ -35,7 +35,13 @@ export interface Prefs {
   installHintDismissed: boolean;
   /** Local date (YYYY-MM-DD) the 4-week path was started; null = not started. */
   pathStart: string | null;
+  /** Playback speed in the listening exercises (separate from the model speed). */
+  listenRate: ListenRate;
 }
+
+/** Speeds the listening speed button cycles through. */
+export const LISTEN_RATES = [0.75, 0.85, 1, 1.15] as const;
+export type ListenRate = (typeof LISTEN_RATES)[number];
 
 export const ROLES = ['dev', 'brse', 'tester', 'interview'] as const;
 export type Role = (typeof ROLES)[number];
@@ -76,6 +82,7 @@ const DEFAULTS: Prefs = {
   analytics: true,
   installHintDismissed: false,
   pathStart: null,
+  listenRate: 1,
 };
 
 function clampRate(r: number): number {
@@ -86,7 +93,7 @@ function read(): Prefs {
   try {
     const data: unknown = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if (typeof data === 'object' && data !== null) {
-      const { speechRate, voiceSource, voiceURI, deepVoice, showPron, answerTimer, profile, onboarded, analytics, installHintDismissed, pathStart } =
+      const { speechRate, voiceSource, voiceURI, deepVoice, showPron, answerTimer, profile, onboarded, analytics, installHintDismissed, pathStart, listenRate } =
         data as Record<string, unknown>;
       return {
         speechRate:
@@ -101,6 +108,7 @@ function read(): Prefs {
         analytics: analytics !== false,
         installHintDismissed: installHintDismissed === true,
         pathStart: typeof pathStart === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(pathStart) ? pathStart : null,
+        listenRate: LISTEN_RATES.find((r) => r === listenRate) ?? DEFAULTS.listenRate,
       };
     }
   } catch {
@@ -145,6 +153,14 @@ export function setSpeechRate(rate: number): void {
 
 export function useSpeechRate(): number {
   return useSyncExternalStore(subscribe, () => current.speechRate);
+}
+
+export function useListenRate(): ListenRate {
+  return useSyncExternalStore(subscribe, () => current.listenRate);
+}
+
+export function setListenRate(listenRate: ListenRate): void {
+  save({ ...current, listenRate });
 }
 
 export function setVoiceSource(voiceSource: VoiceSource): void {

@@ -2215,6 +2215,9 @@ ins {
   min-height: 36px;
   padding: 0 12px;
 }
+.listen-player .speed-chip {
+  align-self: flex-start;
+}
 .speed-chip {
   display: inline-flex;
   align-items: center;
