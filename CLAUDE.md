@@ -154,7 +154,8 @@ Korean either.
 - `meetings.json` (`MeetingItem`, listening mode "Họp"): `id` (`lm-`), 2-3 `speakers` (`id`, `name`, `voice`
   male/female), `lines` (`speaker`, `ko`, `vi`), `questions` (Vietnamese `q`, 2-4 `choices`, `answer`; the UI
   shuffles). Lines play in sequence, each with its speaker's natural voice (`speakKoreanAs`), transcript only after
-  answering. Saved as `listen:meeting:<id>` (right only when every answer is right).
+  answering. "Nghe từng câu" (numbered chips with the speaker's Korean name, no text) replays one line at a time before
+  the questions; open by default for TOPIK 2 profiles. Saved as `listen:meeting:<id>` (right only when every answer is right).
 - `grammar.json` (`GrammarLesson`, pages `/grammar` and `/grammar/:id` "Ngữ pháp công sở", link on the Flashcards page;
   replaced the K-pop songs section, `/songs/*` redirects here): `id` (`gr-`, ASCII), `group` (one of `GRAMMAR_GROUPS` in
   `src/practice/decks.ts`, labels in `vi.grammar.groups`; tested), `pattern` (TOPIK notation, tested like vocab; vocab
@@ -395,7 +396,10 @@ Test files (`src/**/*.test.ts`) are type-checked by `tsconfig.node.json`, not
   cache-first. The service worker is registered only in production builds
   (`src/registerSW.ts`). When a new worker takes over a page that already had one
   (`controllerchange`), `UpdateBanner` asks the user to reload; the app also calls
-  `registration.update()` whenever it returns to the foreground. Settings shows the build
+  `registration.update()` whenever it returns to the foreground. The service worker alone can miss a deploy (hard
+  reload = no controller, or a worker that updated in the background), so the build also writes `dist/version.json`
+  (`{ version }` = the same string as `__APP_VERSION__`; not precached, `no-store` in `vercel.json`). The app fetches it
+  on load, on return to the foreground and in "check for updates", and shows the banner when it names another build. Settings shows the build
   (`__APP_VERSION__`, commit + build time from `vite.config.ts`) and a manual "check for updates"
   button (`checkForUpdate`). When adding new static file types or top-level public folders,
   update the rewrite exclusions in `vercel.json`.

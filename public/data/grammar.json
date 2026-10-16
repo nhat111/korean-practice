@@ -2430,6 +2430,281 @@
           "explainVi": "-(으)시죠 là rủ lịch sự (cùng làm); -(으)십시오 nghe như ra lệnh cho khách tự bắt đầu."
         }
       ]
+    },
+    {
+      "id": "gr-a-do",
+      "group": "explain",
+      "pattern": "-아/어도",
+      "meaningVi": "dù (có) ... thì vẫn / cũng ...",
+      "usageVi": "Nhượng bộ: vế sau vẫn xảy ra bất kể vế trước. Hay dùng khi báo lỗi vẫn còn sau khi đã thử cách sửa, hoặc trấn an khách. Thêm 아무리 / 언제 / 누가 để nhấn mạnh \"bao nhiêu / lúc nào / ai cũng\". Khác -지만 (chỉ đối lập hai sự thật).",
+      "levels": {
+        "peer": {
+          "ko": "로그를 다시 봐도 원인을 모르겠어요.",
+          "vi": "Xem lại log mà vẫn không biết nguyên nhân."
+        },
+        "lead": {
+          "ko": "서버를 재시작해도 같은 에러가 발생합니다.",
+          "vi": "Dù khởi động lại server thì vẫn xảy ra cùng lỗi."
+        },
+        "client": {
+          "ko": "일정이 조금 늦어져도 품질을 우선하겠습니다.",
+          "vi": "Dù lịch có trễ một chút, chúng tôi sẽ ưu tiên chất lượng."
+        }
+      },
+      "examples": [
+        {
+          "ko": "캐시를 삭제해도 문제가 해결되지 않습니다.",
+          "vi": "Dù đã xóa cache thì vấn đề vẫn không được giải quyết."
+        },
+        {
+          "ko": "아무리 테스트해도 재현되지 않습니다.",
+          "vi": "Test bao nhiêu lần cũng không tái hiện được."
+        },
+        {
+          "ko": "주말에 배포해도 서비스에는 영향이 없습니다.",
+          "vi": "Dù deploy vào cuối tuần thì cũng không ảnh hưởng đến dịch vụ."
+        }
+      ],
+      "mistake": {
+        "wrong": "버전을 올려도 에러가 해결됐습니다.",
+        "right": "버전을 올려서 에러가 해결됐습니다.",
+        "vi": "Nâng version nên lỗi đã được giải quyết.",
+        "noteVi": "-아/어도 là \"dù… vẫn\": vế sau trái với điều mong đợi. Khi vế trước là nguyên nhân dẫn đến kết quả thì dùng -아/어서."
+      },
+      "quiz": [
+        {
+          "q": "Bạn đã khởi động lại server nhưng lỗi vẫn còn. Báo cho leader.",
+          "choices": [
+            "재시작해서 같은 에러가 해결됐습니다.",
+            "재시작해도 같은 에러가 발생합니다.",
+            "재시작하면 같은 에러가 발생할까요?"
+          ],
+          "answer": 1,
+          "answerVi": "Dù khởi động lại thì vẫn xảy ra cùng lỗi.",
+          "explainVi": "-아/어도: đã làm A mà kết quả B vẫn không đổi."
+        },
+        {
+          "q": "Khách lo deploy sẽ ảnh hưởng người dùng. Bạn trấn an: deploy lúc nào cũng không ảnh hưởng.",
+          "choices": [
+            "언제 배포해도 서비스에는 영향이 없습니다.",
+            "언제 배포하느라 서비스에는 영향이 없습니다.",
+            "언제 배포하니까 서비스에는 영향이 없습니다."
+          ],
+          "answer": 0,
+          "answerVi": "Deploy lúc nào cũng không ảnh hưởng đến dịch vụ.",
+          "explainVi": "언제 / 아무리 / 누가 + -아/어도 = bất kể lúc nào / bao nhiêu / ai."
+        }
+      ]
+    },
+    {
+      "id": "gr-l-manhada",
+      "group": "explain",
+      "pattern": "-(으)ㄹ 만하다",
+      "meaningVi": "đáng (làm), đủ tốt để (làm)",
+      "usageVi": "Đánh giá một thứ đáng để làm hoặc ở mức chấp nhận được: thư viện đáng dùng thử, độ trễ chấp nhận được. Trong công việc hay gặp 검토할 만하다 (đáng cân nhắc), 쓸 만하다 (dùng được). Đây là nhận xét, nên với khách hay thêm -다고 생각합니다 / -(으)ㄴ 것 같습니다 cho mềm.",
+      "levels": {
+        "peer": {
+          "ko": "이 라이브러리 써 볼 만해요.",
+          "vi": "Thư viện này đáng dùng thử đấy."
+        },
+        "lead": {
+          "ko": "이 방법은 성능 면에서 검토할 만합니다.",
+          "vi": "Cách này đáng cân nhắc về mặt hiệu năng."
+        },
+        "client": {
+          "ko": "제안해 주신 방식도 충분히 적용할 만하다고 생각합니다.",
+          "vi": "Chúng tôi nghĩ cách anh/chị đề xuất cũng hoàn toàn đáng áp dụng."
+        }
+      },
+      "examples": [
+        {
+          "ko": "이 정도 응답 속도면 실제 서비스에서 쓸 만합니다.",
+          "vi": "Với tốc độ phản hồi cỡ này thì dùng được cho dịch vụ thực tế."
+        },
+        {
+          "ko": "이번 버전에 추가된 기능은 도입해 볼 만합니다.",
+          "vi": "Tính năng mới thêm trong bản này đáng để thử đưa vào."
+        },
+        {
+          "ko": "그 정도 지연은 사용자가 충분히 참을 만한 수준입니다.",
+          "vi": "Độ trễ cỡ đó là mức người dùng hoàn toàn chấp nhận được."
+        }
+      ],
+      "mistake": {
+        "wrong": "보안 패치는 꼭 적용할 만합니다.",
+        "right": "보안 패치는 꼭 적용해야 합니다.",
+        "vi": "Bản vá bảo mật nhất định phải áp dụng.",
+        "noteVi": "-(으)ㄹ 만하다 là \"đáng / đủ tốt để\", không phải \"phải\". Việc bắt buộc thì dùng -아/어야 하다."
+      },
+      "quiz": [
+        {
+          "q": "Leader hỏi ý kiến về một thư viện mới. Bạn thấy nó đáng dùng thử.",
+          "choices": [
+            "꼭 써야 합니다.",
+            "써 본 적이 있습니다.",
+            "써 볼 만한 것 같습니다."
+          ],
+          "answer": 2,
+          "answerVi": "Tôi nghĩ nó đáng để dùng thử.",
+          "explainVi": "-(으)ㄹ 만하다 đưa ra đánh giá \"đáng để\"; thêm -(으)ㄴ 것 같다 cho mềm. 꼭 -아/어야 하다 là bắt buộc."
+        }
+      ]
+    },
+    {
+      "id": "gr-neun-daesine",
+      "group": "request",
+      "pattern": "-는 대신(에)",
+      "meaningVi": "thay vì ...; đổi lại / bù lại ...",
+      "usageVi": "Hai nghĩa: (1) thay vì làm A thì làm B; (2) làm A, đổi lại B. Rất hay dùng khi thương lượng phạm vi và lịch với khách: bỏ bớt một tính năng, đổi lại kịp deadline. Với danh từ: N 대신(에); với việc đã làm: -(으)ㄴ 대신(에).",
+      "levels": {
+        "peer": {
+          "ko": "오늘 야근하는 대신 내일 일찍 퇴근할게요.",
+          "vi": "Hôm nay mình làm thêm, bù lại mai về sớm."
+        },
+        "lead": {
+          "ko": "이 기능을 빼는 대신 일정은 맞출 수 있습니다.",
+          "vi": "Bỏ tính năng này thì đổi lại có thể kịp lịch."
+        },
+        "client": {
+          "ko": "이번 배포에서 제외하는 대신 다음 주에 별도로 반영하겠습니다.",
+          "vi": "Thay vì đưa vào lần deploy này, chúng tôi sẽ phản ánh riêng vào tuần sau."
+        }
+      },
+      "examples": [
+        {
+          "ko": "코드를 직접 수정하는 대신 설정 값으로 바꿀 수 있게 하겠습니다.",
+          "vi": "Thay vì sửa thẳng vào code, chúng tôi sẽ cho phép đổi bằng giá trị cấu hình."
+        },
+        {
+          "ko": "회의를 하는 대신 메일로 정리해서 공유드리겠습니다.",
+          "vi": "Thay vì họp, tôi sẽ tổng hợp lại và gửi qua email."
+        },
+        {
+          "ko": "범위를 줄이는 대신 테스트 기간을 충분히 확보하겠습니다.",
+          "vi": "Giảm phạm vi, đổi lại chúng tôi sẽ đảm bảo đủ thời gian test."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Khách muốn thêm tính năng nhưng không kịp. Bạn đề xuất: bỏ phần báo cáo PDF, đổi lại kịp deadline.",
+          "choices": [
+            "PDF 리포트를 제외해도 일정에 못 맞춥니다.",
+            "PDF 리포트를 제외하는 대신 일정에 맞추겠습니다.",
+            "PDF 리포트를 제외하느라 일정에 맞추겠습니다."
+          ],
+          "answer": 1,
+          "answerVi": "Bỏ phần báo cáo PDF, đổi lại chúng tôi sẽ kịp lịch.",
+          "explainVi": "-는 대신(에): nhường A để đổi lấy B, kiểu câu thương lượng rất quen thuộc."
+        }
+      ]
+    },
+    {
+      "id": "gr-e-ttareumyeon",
+      "group": "report",
+      "pattern": "N에 따르면",
+      "meaningVi": "theo (nguồn nào đó) thì ...",
+      "usageVi": "Dẫn nguồn thông tin: log, kết quả test, báo cáo, lời của khách. Vế sau thường là -다고 합니다 (nghe nói), -(으)ㄴ 것으로 보입니다 (có vẻ) hoặc một sự việc đã xác nhận. Hợp khi báo cáo nguyên nhân mà chưa chắc chắn 100%.",
+      "levels": {
+        "peer": {
+          "ko": "로그에 따르면 어젯밤에 배치가 실패했대요.",
+          "vi": "Theo log thì đêm qua batch bị lỗi đấy."
+        },
+        "lead": {
+          "ko": "QA팀 보고에 따르면 결제 화면에서 오류가 재현된다고 합니다.",
+          "vi": "Theo báo cáo của team QA, lỗi tái hiện được ở màn hình thanh toán."
+        },
+        "client": {
+          "ko": "모니터링 결과에 따르면 현재는 정상적으로 동작하고 있습니다.",
+          "vi": "Theo kết quả giám sát, hiện tại hệ thống đang hoạt động bình thường."
+        }
+      },
+      "examples": [
+        {
+          "ko": "에러 로그에 따르면 DB 커넥션이 부족했던 것으로 보입니다.",
+          "vi": "Theo log lỗi, có vẻ là do thiếu kết nối DB."
+        },
+        {
+          "ko": "고객사 설명에 따르면 다음 달부터 사용자가 두 배로 늘어난다고 합니다.",
+          "vi": "Theo phía khách giải thích, từ tháng sau số người dùng sẽ tăng gấp đôi."
+        },
+        {
+          "ko": "성능 테스트 결과에 따르면 응답 시간이 30% 개선되었습니다.",
+          "vi": "Theo kết quả test hiệu năng, thời gian phản hồi đã cải thiện 30%."
+        }
+      ],
+      "mistake": {
+        "wrong": "제 생각에 따르면 이 방법이 더 좋습니다.",
+        "right": "제 생각에는 이 방법이 더 좋습니다.",
+        "vi": "Theo tôi thì cách này tốt hơn.",
+        "noteVi": "N에 따르면 dùng để dẫn nguồn bên ngoài (log, báo cáo, lời người khác). Ý kiến của chính mình thì nói 제 생각에는."
+      },
+      "quiz": [
+        {
+          "q": "Bạn báo leader: theo log, lỗi bắt đầu xảy ra từ 2 giờ sáng.",
+          "choices": [
+            "로그를 따라서 새벽 2시부터 에러가 발생하겠습니다.",
+            "로그에 따르면 새벽 2시부터 에러가 발생했습니다.",
+            "로그에 대해서 새벽 2시부터 에러가 발생할 겁니다."
+          ],
+          "answer": 1,
+          "answerVi": "Theo log, lỗi xảy ra từ 2 giờ sáng.",
+          "explainVi": "N에 따르면 + sự việc lấy từ nguồn đó; chuyện đã xảy ra thì dùng thì quá khứ, không dùng -겠- hay -(으)ㄹ 겁니다."
+        }
+      ]
+    },
+    {
+      "id": "gr-l-jido-moreuda",
+      "group": "explain",
+      "pattern": "-(으)ㄹ지도 모르다",
+      "meaningVi": "có thể / không chừng (sẽ) ...",
+      "usageVi": "Báo trước một khả năng chưa chắc chắn, thường là rủi ro: trễ lịch, lỗi phát sinh, ảnh hưởng phụ. Mức chắc chắn thấp hơn -(으)ㄹ 것 같다. Với khách nên kèm cách xử lý hoặc lời xin thông cảm. Đoán chuyện đã xảy ra: -았/었을지도 모르다.",
+      "levels": {
+        "peer": {
+          "ko": "오늘 회의 좀 길어질지도 몰라요.",
+          "vi": "Họp hôm nay có khi sẽ kéo dài đấy."
+        },
+        "lead": {
+          "ko": "외부 API 상황에 따라 일정이 하루 정도 늦어질지도 모릅니다.",
+          "vi": "Tùy tình hình API bên ngoài, lịch có thể trễ khoảng một ngày."
+        },
+        "client": {
+          "ko": "접속이 몰리면 일시적으로 속도가 느려질지도 모릅니다. 미리 양해 부탁드립니다.",
+          "vi": "Nếu truy cập dồn vào, tốc độ có thể chậm tạm thời. Mong anh/chị thông cảm trước."
+        }
+      },
+      "examples": [
+        {
+          "ko": "데이터 이관 중에는 일부 화면이 열리지 않을지도 모릅니다.",
+          "vi": "Trong lúc chuyển dữ liệu, một số màn hình có thể không mở được."
+        },
+        {
+          "ko": "이 수정이 다른 모듈에 영향을 줄지도 모르니 회귀 테스트를 하겠습니다.",
+          "vi": "Bản sửa này có thể ảnh hưởng module khác nên chúng tôi sẽ làm regression test."
+        },
+        {
+          "ko": "다음 주에 요구사항이 바뀔지도 모른다고 들었습니다.",
+          "vi": "Tôi nghe nói tuần sau yêu cầu có thể sẽ thay đổi."
+        }
+      ],
+      "mistake": {
+        "wrong": "어제 서버가 다운될지도 모릅니다.",
+        "right": "어제 서버가 다운됐을지도 모릅니다.",
+        "vi": "Có thể hôm qua server đã bị sập.",
+        "noteVi": "Đoán về chuyện đã xảy ra thì dùng -았/었을지도 모르다; -(으)ㄹ지도 모르다 là khả năng sắp tới."
+      },
+      "quiz": [
+        {
+          "q": "Bạn báo khách: nếu API của đối tác chậm, lịch có thể bị trễ (chưa chắc chắn).",
+          "choices": [
+            "파트너사 API가 늦어지면 일정이 지연됐습니다.",
+            "파트너사 API가 늦어져도 일정이 지연될 뻔했습니다.",
+            "파트너사 API가 늦어지면 일정이 지연될지도 모릅니다."
+          ],
+          "answer": 2,
+          "answerVi": "Nếu API của đối tác chậm, lịch có thể bị trễ.",
+          "explainVi": "-(으)ㄹ지도 모르다 nói một khả năng chưa chắc; -았/었습니다 là chuyện đã xảy ra, -(으)ㄹ 뻔하다 là \"suýt nữa\"."
+        }
+      ]
     }
   ]
 }
