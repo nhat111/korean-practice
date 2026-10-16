@@ -1,6 +1,17 @@
 import { describe, expect, it } from 'vitest';
-import type { NumberItem, Scenario, ShadowingItem, VocabItem } from '../types';
-import { MAX_DICTATION, dictationPool, meaningPool, meaningQuestion, numberQuestion, sample } from './listening';
+import { readFileSync } from 'node:fs';
+import type { GrammarLesson, NumberItem, Scenario, ShadowingItem, VocabItem } from '../types';
+import {
+  MAX_DICTATION,
+  dictationPool,
+  grammarPool,
+  grammarQuestion,
+  meaningPool,
+  meaningQuestion,
+  numberQuestion,
+  patternMarkers,
+  sample,
+} from './listening';
 
 const sh = (id: string, topic: string, ko: string, vi: string): ShadowingItem => ({ id, level: 1, topic, ko, pron: '[x]', vi });
 const voc = (id: string, tag: string, ko: string, vi: string): VocabItem => ({
@@ -78,5 +89,44 @@ describe('sample', () => {
   it('returns at most n distinct items', () => {
     expect(sample([1, 2, 3, 4], 2)).toHaveLength(2);
     expect(sample([1, 2], 5).sort()).toEqual([1, 2]);
+  });
+});
+
+describe('grammar listening', () => {
+  it('finds the literal Hangul a pattern leaves, or null when it is unreliable', () => {
+    expect(patternMarkers('-고 있다')).toEqual(['고있']);
+    expect(patternMarkers('-기로 하다')).toEqual(['기로']);
+    expect(patternMarkers('-(으)ㄹ 예정이다')).toEqual(['예정']);
+    expect(patternMarkers('-(으)ㄴ/는데요')).toEqual(['데요', '는데요']);
+    expect(patternMarkers('말씀드리다 / 여쭤보다')).toEqual(['말씀드', '여쭤보']);
+    expect(patternMarkers('-아/어서')).toBeNull();
+    expect(patternMarkers('-(으)시-')).toBeNull();
+  });
+
+  const lessons = (JSON.parse(readFileSync('public/data/grammar.json', 'utf8')) as { items: GrammarLesson[] }).items;
+
+  it('asks every example with 3 options, the right pattern among them', () => {
+    for (const line of grammarPool(lessons)) {
+      const q = grammarQuestion(lessons, line);
+      const lesson = lessons.find((l) => l.id === line.lessonId)!;
+      expect(q.options).toHaveLength(3);
+      expect(new Set(q.options).size).toBe(3);
+      expect(q.options[q.answer]).toBe(lesson.pattern);
+      expect(q.key).toMatch(/^grammar:gr-[\w-]+:\d+$/);
+    }
+  });
+
+  it('never offers a wrong pattern that might also be in the sentence', () => {
+    for (const line of grammarPool(lessons)) {
+      const q = grammarQuestion(lessons, line);
+      const flat = line.ko.replace(/\s/g, '');
+      q.options
+        .filter((_, i) => i !== q.answer)
+        .forEach((p) => {
+          const markers = patternMarkers(p);
+          expect(markers).not.toBeNull();
+          for (const m of markers!) expect(flat).not.toContain(m);
+        });
+    }
   });
 });

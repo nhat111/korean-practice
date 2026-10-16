@@ -10,6 +10,8 @@ import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
 import {
   dictationPool,
+  grammarPool,
+  grammarQuestion,
   meaningPool,
   meaningQuestion,
   numberQuestion,
@@ -20,10 +22,10 @@ import {
 } from '../practice/listening';
 import { stopSpeaking } from '../speech';
 import { compareAnswer, PASS_SCORE, type Comparison } from '../speaking/compare';
-import type { NumberItem } from '../types';
+import type { GrammarLesson, NumberItem } from '../types';
 
-type Mode = 'meaning' | 'dictation' | 'numbers' | 'meeting';
-const MODES: Mode[] = ['meaning', 'dictation', 'numbers', 'meeting'];
+type Mode = 'meaning' | 'dictation' | 'numbers' | 'grammar' | 'meeting';
+const MODES: Mode[] = ['meaning', 'dictation', 'numbers', 'grammar', 'meeting'];
 const SESSION = 10;
 
 export function ListeningPage() {
@@ -35,7 +37,8 @@ export function ListeningPage() {
   const scenarios = useContent('scenarios');
   const numbers = useContent('numbers');
   const meetings = useContent('meetings');
-  const states = [vocab, shadowing, scenarios, numbers];
+  const grammar = useContent('grammar');
+  const states = [vocab, shadowing, scenarios, numbers, grammar];
 
   return (
     <div className="stack">
@@ -66,12 +69,14 @@ export function ListeningPage() {
       ) : vocab.status === 'ready' &&
       shadowing.status === 'ready' &&
       scenarios.status === 'ready' &&
-      numbers.status === 'ready' ? (
+      numbers.status === 'ready' &&
+      grammar.status === 'ready' ? (
         <Session
           key={mode}
           mode={mode}
           content={{ vocab: vocab.items, shadowing: shadowing.items, scenarios: scenarios.items }}
           numbers={numbers.items}
+          grammar={grammar.items}
         />
       ) : states.some((s) => s.status === 'error') ? (
         <p className="error">{vi.common.loadError}</p>
@@ -84,15 +89,24 @@ export function ListeningPage() {
 
 type Question = { kind: 'choice'; q: ChoiceQuestion } | { kind: 'dictation'; line: ListenLine };
 
-function buildQuestions(mode: Exclude<Mode, 'meeting'>, content: ListenContent, numbers: NumberItem[]): Question[] {
+interface Sources {
+  content: ListenContent;
+  numbers: NumberItem[];
+  grammar: GrammarLesson[];
+}
+
+function buildQuestions(mode: Exclude<Mode, 'meeting'>, { content, numbers, grammar }: Sources): Question[] {
+  if (mode === 'grammar') {
+    return sample(grammarPool(grammar), SESSION).map((line) => ({ kind: 'choice', q: grammarQuestion(grammar, line) }));
+  }
   if (mode === 'numbers') return sample(numbers, SESSION).map((n) => ({ kind: 'choice', q: numberQuestion(n) }));
   if (mode === 'dictation') return sample(dictationPool(content), SESSION).map((line) => ({ kind: 'dictation', line }));
   const pool = meaningPool(content);
   return sample(pool, SESSION).map((line) => ({ kind: 'choice', q: meaningQuestion(pool, line) }));
 }
 
-function Session({ mode, content, numbers }: { mode: Exclude<Mode, 'meeting'>; content: ListenContent; numbers: NumberItem[] }) {
-  const [questions, setQuestions] = useState(() => buildQuestions(mode, content, numbers));
+function Session({ mode, ...sources }: { mode: Exclude<Mode, 'meeting'> } & Sources) {
+  const [questions, setQuestions] = useState(() => buildQuestions(mode, sources));
   const [index, setIndex] = useState(0);
   const [correct, setCorrect] = useState(0);
   const [answered, setAnswered] = useState(false);
@@ -100,7 +114,7 @@ function Session({ mode, content, numbers }: { mode: Exclude<Mode, 'meeting'>; c
   useEffect(() => stopSpeaking, []);
 
   function again() {
-    setQuestions(buildQuestions(mode, content, numbers));
+    setQuestions(buildQuestions(mode, sources));
     setIndex(0);
     setCorrect(0);
     setAnswered(false);
@@ -158,11 +172,18 @@ function Session({ mode, content, numbers }: { mode: Exclude<Mode, 'meeting'>; c
         {current.kind === 'choice' ? (
           <ListenChoice
             q={current.q}
-            prompt={mode === 'numbers' ? vi.listening.pickNumber : vi.listening.pick}
+            prompt={
+              mode === 'numbers' ? vi.listening.pickNumber : mode === 'grammar' ? vi.listening.pickGrammar : vi.listening.pick
+            }
             onAnswer={onAnswer}
           />
         ) : (
           <DictationAnswer line={current.line} onAnswer={onAnswer} />
+        )}
+        {answered && mode === 'grammar' && (
+          <Link to={`/grammar/${key.split(':')[1]}`} className="link-btn small">
+            {vi.listening.openLesson}
+          </Link>
         )}
         {answered && (
           <button type="button" className="btn" onClick={next}>

@@ -2,7 +2,7 @@
 // MP3s). Pure, unit-tested; the page only renders what these return.
 
 import { splitParts } from '../speaking/segments';
-import type { NumberItem, Scenario, ShadowingItem, VocabItem } from '../types';
+import type { GrammarLesson, NumberItem, Scenario, ShadowingItem, VocabItem } from '../types';
 
 export interface ListenLine {
   /** Stable source key, e.g. "vocab:t-gaebal"; SRS key is `listen:<key>`. */
@@ -80,6 +80,8 @@ export interface ChoiceQuestion {
   options: string[];
   /** Index of the correct option. */
   answer: number;
+  /** Shown with the answer, e.g. the grammar pattern and its meaning. */
+  note?: string;
 }
 
 /**
@@ -122,4 +124,105 @@ export function numberQuestion(item: NumberItem, rand: () => number = Math.rando
 /** `n` random items (all of them, shuffled, when there are fewer). */
 export function sample<T>(items: readonly T[], n: number, rand: () => number = Math.random): T[] {
   return shuffle(items, rand).slice(0, n);
+}
+
+// ---------- "Ngữ pháp": hear an example, pick the grammar pattern it uses ----------
+
+/** `listen:grammar:<lesson id>:<example index>`. */
+export function grammarKey(lessonId: string, example: number): string {
+  return `grammar:${lessonId}:${example}`;
+}
+
+const HANGUL_SYLLABLE = /[\uAC00-\uD7A3]/g;
+
+/**
+ * Literal Hangul a pattern must leave in a sentence, one string per variant
+ * ("-(으)ㄴ/는데요" → ["데요", "는데요"]), or null when some variant is too short
+ * or too changeable to spot (contractions like 해서 for -아/어서, -(으)시-).
+ * Used only to keep a pattern out of the wrong options when it might also be in
+ * the sentence, so a null (unknown) just means "never a distractor".
+ */
+export function patternMarkers(pattern: string): string[] | null {
+  const variants = pattern.split(' / ').flatMap(expandSlashes);
+  const markers: string[] = [];
+  for (const v of variants) {
+    let t = v.replace(/\(으\)|[-?N\s]/g, '');
+    // A leading jamo (ㄴ, ㄹ) merges into the stem's last syllable: drop it.
+    t = t.replace(/^[\u3131-\u318E]+/, '');
+    // Dictionary-form 다 changes when conjugated (있다 → 있습니다), and so do
+    // stems ending in 하/되/이/리 (했습니다, 됩니다, 입니다, 드려요).
+    if (t.endsWith('다') && t.length > 2) {
+      t = t.slice(0, -1);
+      if (/[하되이리]$/.test(t)) t = t.slice(0, -1);
+    }
+    // 아/어 at the start is often contracted (해 두다, 봐 주시겠어요).
+    if (/^[아어]/.test(t)) t = t.slice(1);
+    if ((t.match(HANGUL_SYLLABLE) ?? []).length < 2 || /[^\uAC00-\uD7A3]/.test(t)) return null;
+    markers.push(t);
+  }
+  return markers;
+}
+
+/** "아/어 두다" → ["아 두다", "어 두다"]; "ㄴ/는데요" → ["ㄴ데요", "는데요"]. */
+function expandSlashes(text: string): string[] {
+  const m = /([^\s/()-]+)\/([^\s/()-]+?)(?=[\uAC00-\uD7A3\s?]|$)/.exec(text);
+  if (!m) return [text];
+  // The alternatives are the shortest units around the slash: one syllable or jamo each.
+  const left = m[1].slice(-1);
+  const right = m[2].slice(0, 1);
+  const before = text.slice(0, m.index + m[1].length - 1);
+  const after = text.slice(m.index + m[1].length + 2);
+  return [...expandSlashes(before + left + after), ...expandSlashes(before + right + after)];
+}
+
+export interface GrammarListenLine {
+  key: string;
+  ko: string;
+  vi: string;
+  lessonId: string;
+}
+
+/** Every grammar example (lesson examples have natural-voice MP3s). */
+export function grammarPool(lessons: GrammarLesson[]): GrammarListenLine[] {
+  return lessons.flatMap((l) =>
+    l.examples.map((e, i) => ({ key: grammarKey(l.id, i), ko: e.ko, vi: e.vi, lessonId: l.id })),
+  );
+}
+
+/**
+ * The lesson's pattern + 2 other patterns, from the same group when possible.
+ * A pattern that might also occur in the sentence is never a wrong option.
+ */
+export function grammarQuestion(
+  lessons: GrammarLesson[],
+  line: GrammarListenLine,
+  rand: () => number = Math.random,
+): ChoiceQuestion {
+  const lesson = lessons.find((l) => l.id === line.lessonId);
+  if (!lesson) throw new Error(`Unknown grammar lesson ${line.lessonId}`);
+  const flat = line.ko.replace(/\s/g, '');
+  const safe = lessons.filter((l) => {
+    if (l.id === lesson.id || l.pattern === lesson.pattern) return false;
+    const markers = patternMarkers(l.pattern);
+    return markers !== null && markers.every((m) => !flat.includes(m));
+  });
+  const ordered = [
+    ...shuffle(
+      safe.filter((l) => l.group === lesson.group),
+      rand,
+    ),
+    ...shuffle(
+      safe.filter((l) => l.group !== lesson.group),
+      rand,
+    ),
+  ];
+  const options = shuffle([lesson.pattern, ...ordered.slice(0, 2).map((l) => l.pattern)], rand);
+  return {
+    key: line.key,
+    ko: line.ko,
+    vi: line.vi,
+    options,
+    answer: options.indexOf(lesson.pattern),
+    note: `${lesson.pattern}: ${lesson.meaningVi}`,
+  };
 }

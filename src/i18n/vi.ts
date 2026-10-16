@@ -10,7 +10,7 @@ export const vi = {
   // Korean section names shown as "// 쉐도잉" above each top-level page title (Layout).
   kickers: {
     '/daily': '오늘의 연습',
-    '/speaking': '말하기',
+    '/speaking': '말하기 · 듣기',
     '/speaking/free': '자유 말하기',
     '/shadowing': '쉐도잉',
     '/patterns': '패턴 연습',
@@ -33,7 +33,7 @@ export const vi = {
     scenarios: 'Hội thoại',
     emails: 'Email',
     flashcards: 'Từ vựng',
-    speaking: 'Luyện nói',
+    speaking: 'Nói & nghe',
     progress: 'Tiến độ',
     settings: 'Cài đặt',
   },
@@ -62,7 +62,7 @@ export const vi = {
     heroDate: (weekday: string, date: string) => `${weekday} · ${date}`,
     cards: {
       shadowing: 'Nghe rồi nói theo câu mẫu',
-      listening: 'Nghe ý, chép, số và họp',
+      listening: 'Nghe ý, chép, số, ngữ pháp, họp',
       interpret: 'Ý tiếng Việt → nói tiếng Hàn',
       scenarios: 'Báo tiến độ, hỏi spec, bug',
       flashcards: 'Từ IT, ôn ngắt quãng',
@@ -228,7 +228,7 @@ export const vi = {
     entryHint: (n: number) =>
       n === 0 ? 'Tự thêm câu hỏi phỏng vấn để luyện nói hoặc gõ' : `${n} câu · luyện nói hoặc gõ`,
     intro:
-      'Dán câu hỏi và câu trả lời mẫu của bạn, rồi luyện nói hoặc gõ. Điểm tính giống trang Luyện nói.',
+      'Dán câu hỏi và câu trả lời mẫu của bạn, rồi luyện nói hoặc gõ. Điểm tính giống trang Nói & nghe.',
     formatTitle: 'Cách nhập',
     formatHelp:
       'Mỗi câu là một khối, các khối cách nhau một dòng trống. Q: (câu hỏi) và A: (câu trả lời mẫu) là bắt buộc, VI: (nghĩa tiếng Việt) có thể bỏ qua.',
@@ -344,14 +344,14 @@ export const vi = {
     showExample: 'Ví dụ & ngữ pháp',
   },
   speaking: {
-    title: 'Luyện nói',
+    title: 'Nói & nghe',
     support: 'Trình duyệt này hỗ trợ',
     supportMissing: 'Trình duyệt này chưa hỗ trợ',
     unsupported: (feature: string) => `Chưa hỗ trợ: ${feature}`,
     patternsDesc: 'Một khung câu, thay từ để nói nhanh',
     freeTitle: 'Luyện câu tự do',
     freeDesc: 'Chọn bất kỳ câu mẫu hội thoại hay câu ví dụ, nói và chấm độ giống.',
-    backToHub: '← Luyện nói',
+    backToHub: '← Nói & nghe',
     supportTts: 'Đọc mẫu (ko-KR)',
     supportRecording: 'Ghi âm',
     supportRecognition: 'Nhận dạng giọng nói',
@@ -466,14 +466,16 @@ export const vi = {
   listening: {
     title: 'Luyện nghe',
     intro: 'Nghe câu ở tốc độ thật, không nhìn chữ. Nghe lại hoặc nghe chậm thoải mái, rồi mới trả lời.',
-    homeDesc: 'Nghe hiểu ý, chép chính tả, nghe số và ngày giờ, nghe cả đoạn họp',
-    modes: { meaning: 'Chọn ý', dictation: 'Chép lại', numbers: 'Số, giờ', meeting: 'Họp' },
+    homeDesc: 'Nghe hiểu ý, chép chính tả, số và ngày giờ, ngữ pháp, cả đoạn họp',
+    modes: { meaning: 'Chọn ý', dictation: 'Chép', numbers: 'Số, giờ', grammar: 'Ngữ pháp', meeting: 'Họp' },
     play: 'Nghe lại',
     slow: 'Nghe chậm',
     playHint: 'Chạm tai nghe để nghe lại',
     replays: (n: number) => `Đã nghe lại ${n} lần`,
     pick: 'Câu bạn vừa nghe có nghĩa là gì?',
     pickNumber: 'Bạn nghe được con số / thời gian nào?',
+    pickGrammar: 'Câu bạn vừa nghe dùng mẫu ngữ pháp nào?',
+    openLesson: 'Xem bài ngữ pháp này →',
     typeLabel: 'Gõ lại câu bạn nghe được',
     typePlaceholder: '한국어로 입력…',
     keyboardHint: 'Cần bàn phím tiếng Hàn. Không cần đúng dấu cách và dấu câu.',
@@ -486,7 +488,7 @@ export const vi = {
     doneTitle: 'Xong lượt nghe',
     result: (ok: number, n: number) => `${ok}/${n} câu đúng`,
     again: 'Nghe lượt mới',
-    back: 'Về Luyện nói',
+    back: 'Về Nói & nghe',
     meeting: {
       intro: 'Nghe cả đoạn họp nhiều người nói (không xem chữ), rồi trả lời: ai chốt gì, khi nào, làm gì.',
       playAll: 'Nghe cả đoạn',
