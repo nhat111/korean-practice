@@ -475,6 +475,31 @@ textarea {
     grid-template-columns: 1fr;
   }
 }
+/* Phones: one column of compact rows (icon left), so an odd count leaves no gap. */
+@media (max-width: 767px) {
+  .grid--rows {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .grid--rows .card--link {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 14px;
+    row-gap: 2px;
+    align-items: center;
+    padding: 12px 16px;
+  }
+  .grid--rows .card--link .card-icon {
+    grid-row: span 2;
+    margin: 0;
+  }
+  .grid--rows .card--link h2 {
+    font-size: 1.05rem;
+  }
+  .grid--rows .card--link .muted {
+    -webkit-line-clamp: 1;
+  }
+}
 
 .list {
   list-style: none;
