@@ -426,4 +426,8 @@ Test files (`src/**/*.test.ts`) are type-checked by `tsconfig.node.json`, not
     emitted by `reminderPlugin` in `vite.config.ts`, also served in dev): iOS Safari only offers "Add to Calendar" for
     a real `text/calendar` response, not a blob. Not precached; the service worker leaves `/reminder/` alone.
     `prefs.reminderTime` only remembers the last time the learner opened (the calendar can't be read back).
-  - `VITE_FEEDBACK_URL` (optional, e.g. a Google Form) shows a "Góp ý" link on Home and in Settings.
+  - `VITE_FEEDBACK_URL` (optional, e.g. a Google Form) shows a "Góp ý" link on Home, in Settings and on `/about`.
+  - `/about` (`AboutPage`, "Giới thiệu & quyền riêng tư", linked from the bottom of Home and from Settings): what the
+    app is, who makes it, what happens to the learner's data (`vi.about.data`), credits; optional `VITE_CONTACT_EMAIL`.
+    It is a personal, non-commercial project: no "Bộ Công Thương" badge (that needs a registered business and a
+    notified sales website). **Keep `vi.about.data` true**: update it whenever the app sends data somewhere new.

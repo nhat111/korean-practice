@@ -211,11 +211,16 @@ export function HomePage() {
             <SectionCard key={s.to} section={s} />
           ))}
         </div>
-        {FEEDBACK_URL && (
-          <a href={FEEDBACK_URL} target="_blank" rel="noreferrer" className="link-btn small center feedback-link">
-            {vi.growth.feedback}
-          </a>
-        )}
+        <div className="home-footer">
+          {FEEDBACK_URL && (
+            <a href={FEEDBACK_URL} target="_blank" rel="noreferrer" className="link-btn small">
+              {vi.growth.feedback}
+            </a>
+          )}
+          <Link to="/about" className="link-btn small">
+            {vi.about.link}
+          </Link>
+        </div>
       </div>
     </div>
   );

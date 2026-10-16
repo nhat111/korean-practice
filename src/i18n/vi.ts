@@ -26,6 +26,7 @@ export const vi = {
     '/progress': '진도',
     '/weak': '복습',
     '/settings': '설정',
+    '/about': '소개',
     '/ai-roleplay': 'AI 롤플레이',
   } as Record<string, string>,
   nav: {
@@ -848,6 +849,43 @@ export const vi = {
     homeLink: 'Đặt giờ nhắc học mỗi ngày →',
     eventTitle: 'KoDevTalk: luyện nói tiếng Hàn',
     eventDetails: 'Đến giờ luyện rồi! Mở buổi luyện hôm nay:',
+  },
+  about: {
+    title: 'Giới thiệu & quyền riêng tư',
+    link: 'Giới thiệu & quyền riêng tư',
+    updated: 'Cập nhật: 16/10/2026',
+    whatTitle: 'KoDevTalk là gì',
+    what:
+      'App luyện tiếng Hàn công sở cho người Việt làm IT (developer, BrSE/comtor, tester, người đi phỏng vấn) ở trình độ TOPIK 2–4: báo cáo tiến độ, hỏi spec, báo bug, họp, email và tin nhắn với khách hàng Hàn Quốc.',
+    project:
+      'Đây là dự án cá nhân, phi thương mại: miễn phí, không quảng cáo, không cần tài khoản. App không thuộc và không đại diện cho công ty hay tổ chức nào.',
+    whoTitle: 'Ai làm app',
+    who:
+      'Một developer Java người Việt làm dự án outsource cho khách Hàn. App bắt đầu là công cụ tự luyện ở TOPIK 3, sau đó được mở cho mọi người cùng dùng.',
+    dataTitle: 'Dữ liệu của bạn',
+    data: [
+      'Tiến độ, cài đặt, câu hỏi tự thêm và các câu đã báo sai chỉ lưu trong trình duyệt trên máy này (localStorage). App không có tài khoản và không có máy chủ lưu dữ liệu của bạn.',
+      'Bản ghi âm chỉ nằm trong bộ nhớ khi đang luyện, không được lưu lại hay gửi đi. App chỉ lưu lịch sử luyện (câu, điểm, tự đánh giá).',
+      'Khi bạn dùng "chấm điểm tự động", trình duyệt (Chrome, Safari…) nhận dạng giọng nói bằng dịch vụ của chính nó và có thể gửi âm thanh tới máy chủ của nhà cung cấp (Google, Apple). App không nhận được âm thanh đó, chỉ nhận chữ đã nhận dạng.',
+      'Thống kê ẩn danh (Vercel Web Analytics): số lượt xem trang và vài sự kiện như hoàn thành buổi luyện. Không dùng cookie, không gửi bản ghi âm hay nội dung bạn luyện. Bạn có thể tắt trong Cài đặt.',
+      'File âm thanh giọng đọc được tải từ GitHub Pages hoặc jsDelivr; như mọi trang web, các dịch vụ này thấy địa chỉ IP khi tải file.',
+      'Máy chủ (tùy chọn): chỉ khi bạn tự nhập địa chỉ máy chủ trong Cài đặt, tiến độ khi đồng bộ và câu bạn gửi cho AI mới được gửi tới máy chủ đó.',
+      'Xoá dữ liệu trình duyệt sẽ xoá tiến độ. Hãy xuất file sao lưu trong Cài đặt nếu cần.',
+    ],
+    noSell: 'App không bán, không chia sẻ dữ liệu của bạn với ai, và không hiện quảng cáo.',
+    contentTitle: 'Nội dung',
+    content:
+      'Câu tiếng Hàn được soạn theo tình huống công việc thật nhưng vẫn có thể có câu chưa tự nhiên. Thấy câu nào sai, hãy bấm "Báo câu sai" ngay dưới câu đó, rồi gửi danh sách trong Cài đặt cho người làm app.',
+    creditsTitle: 'Ghi công',
+    credits: [
+      'Giọng đọc: Microsoft Edge TTS (InJoon, SunHi)',
+      'Biểu tượng: Lucide (giấy phép ISC)',
+      'Phông chữ: Pretendard (giấy phép SIL OFL)',
+      'Lưu trữ: Vercel, GitHub Pages, jsDelivr',
+    ],
+    contactTitle: 'Liên hệ',
+    contactEmail: 'Email:',
+    contactNone: 'Góp ý hoặc báo lỗi: dùng nút "Báo câu sai" trong app.',
   },
   settings: {
     title: 'Cài đặt',

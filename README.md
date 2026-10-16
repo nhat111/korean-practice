@@ -193,4 +193,7 @@ the app shows a notice and keeps working from local data.
 - **Link previews** (Facebook, Zalo, KakaoTalk, Slack) use `public/og.jpg` through the Open Graph tags in
   `index.html`. If the site moves to another domain, update `og:url` and `og:image` there.
 - **Feedback link**: set `VITE_FEEDBACK_URL` (for example a Google Form URL) in the Vercel project's
-  environment variables to show a "Góp ý" link on Home and in Settings.
+  environment variables to show a "Góp ý" link on Home, in Settings and on the About page.
+- **About & privacy page** (`/about`, linked from the bottom of Home and from Settings): who makes the app and
+  what happens to the learner's data. Set `VITE_CONTACT_EMAIL` to show a contact address there (it is public).
+  If what the app sends anywhere changes (analytics, a new host, a backend feature), update `vi.about.data`.
