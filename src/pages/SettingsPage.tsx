@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router';
 import { checkBackend, getRemoteProgress, putRemoteProgress, useBackendStatus } from '../api/client';
 import { apiErrorMessage } from '../api/messages';
 import { AppVersion } from '../components/AppVersion';
+import { ReminderCard } from '../components/ReminderCard';
 import { SpeedControl } from '../components/SpeedControl';
 import { VoiceControl } from '../components/VoiceControl';
 import { VoiceSourceSwitch } from '../components/VoiceSourceSwitch';
@@ -124,6 +125,7 @@ export function SettingsPage() {
       )}
 
       <ProfileSettings />
+      <ReminderCard />
       <PracticeSettings />
       <BackupSettings />
       <ReportSettings />

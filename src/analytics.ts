@@ -7,7 +7,7 @@ import { getPrefs } from './storage/prefs';
 
 type EventProps = Record<string, string | number | boolean>;
 
-export function trackEvent(name: 'onboarding' | 'daily_done' | 'install_hint', props?: EventProps): void {
+export function trackEvent(name: 'onboarding' | 'daily_done' | 'install_hint' | 'reminder', props?: EventProps): void {
   if (!getPrefs().analytics) return;
   try {
     track(name, props);

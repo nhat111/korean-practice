@@ -4,6 +4,8 @@ import { readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { join, relative, resolve, sep } from 'node:path'
 import { execSync } from 'node:child_process'
 import { defineConfig, loadEnv, type Plugin } from 'vite'
+import { vi } from './src/i18n/vi.ts'
+import { buildReminderIcs, REMINDER_MINUTES, reminderIcsPath, REMINDER_TIMES } from './src/practice/reminder.ts'
 
 /** Recursively lists files under `dir`. */
 function listFiles(dir: string): string[] {
@@ -62,7 +64,7 @@ function pwaPlugin(audio: string, fallback: string, build: string): Plugin {
       if (audio !== '') rmSync(join(outDir, 'audio'), { recursive: true, force: true })
       const files = listFiles(outDir)
         .map((f) => relative(outDir, f).split(sep).join('/'))
-        .filter((f) => f !== 'sw.js' && f !== 'version.json' && !f.endsWith('.map') && !f.startsWith('audio/'))
+        .filter((f) => f !== 'sw.js' && f !== 'version.json' && !f.endsWith('.map') && !f.startsWith('audio/') && !f.startsWith('reminder/'))
         .sort()
       const hash = createHash('sha256')
       for (const f of files) hash.update(f).update(readFileSync(join(outDir, f)))
@@ -77,6 +79,30 @@ function pwaPlugin(audio: string, fallback: string, build: string): Plugin {
       // Read (never cached) by the running app to tell that a newer deploy is live: src/registerSW.ts.
       writeFileSync(join(outDir, 'version.json'), JSON.stringify({ version: build }))
       console.log(`sw.js: ${precache.length} files precached, version ${version}, audio from ${audio || 'this origin'}`)
+    },
+  }
+}
+
+/**
+ * Daily reminder calendar files (src/practice/reminder.ts), one per time at
+ * /reminder/HHMM.ics. Static files, not blobs: iOS Safari only offers "Add to
+ * Calendar" for a real text/calendar response. Served in dev too.
+ */
+function reminderPlugin(): Plugin {
+  const text = { title: vi.reminder.eventTitle, details: vi.reminder.eventDetails }
+  const files = new Map(REMINDER_TIMES.map((t) => [reminderIcsPath(t), buildReminderIcs(t, REMINDER_MINUTES, text)]))
+  return {
+    name: 'kp-reminder',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        const body = files.get((req.url ?? '').split('?')[0])
+        if (body === undefined) return next()
+        res.setHeader('Content-Type', 'text/calendar; charset=utf-8')
+        res.end(body)
+      })
+    },
+    generateBundle() {
+      for (const [path, source] of files) this.emitFile({ type: 'asset', fileName: path.slice(1), source })
     },
   }
 }
@@ -104,7 +130,7 @@ export default defineConfig(({ command, mode }) => {
   // One value for the bundle and dist/version.json, so they compare equal.
   const build = appVersion()
   return {
-    plugins: [react(), pwaPlugin(audio, fallback, build)],
+    plugins: [react(), reminderPlugin(), pwaPlugin(audio, fallback, build)],
     define: { __APP_VERSION__: JSON.stringify(build), __AUDIO_BASE__: JSON.stringify(audio), __AUDIO_FALLBACK__: JSON.stringify(fallback) },
   }
 })

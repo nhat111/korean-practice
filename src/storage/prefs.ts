@@ -3,6 +3,7 @@
 // saved prefs keep working.
 
 import { useSyncExternalStore } from 'react';
+import { REMINDER_TIMES, type ReminderTime } from '../practice/reminder';
 
 const STORAGE_KEY = 'kp:prefs:v1';
 
@@ -37,6 +38,8 @@ export interface Prefs {
   pathStart: string | null;
   /** Playback speed in the listening exercises (separate from the model speed). */
   listenRate: ListenRate;
+  /** Time of the daily calendar reminder the learner last added; null = none yet. */
+  reminderTime: ReminderTime | null;
 }
 
 /** Speeds the listening speed button cycles through. */
@@ -83,6 +86,7 @@ const DEFAULTS: Prefs = {
   installHintDismissed: false,
   pathStart: null,
   listenRate: 1,
+  reminderTime: null,
 };
 
 function clampRate(r: number): number {
@@ -93,7 +97,7 @@ function read(): Prefs {
   try {
     const data: unknown = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if (typeof data === 'object' && data !== null) {
-      const { speechRate, voiceSource, voiceURI, deepVoice, showPron, answerTimer, profile, onboarded, analytics, installHintDismissed, pathStart, listenRate } =
+      const { speechRate, voiceSource, voiceURI, deepVoice, showPron, answerTimer, profile, onboarded, analytics, installHintDismissed, pathStart, listenRate, reminderTime } =
         data as Record<string, unknown>;
       return {
         speechRate:
@@ -109,6 +113,7 @@ function read(): Prefs {
         installHintDismissed: installHintDismissed === true,
         pathStart: typeof pathStart === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(pathStart) ? pathStart : null,
         listenRate: LISTEN_RATES.find((r) => r === listenRate) ?? DEFAULTS.listenRate,
+        reminderTime: REMINDER_TIMES.find((t) => t === reminderTime) ?? null,
       };
     }
   } catch {
@@ -209,4 +214,9 @@ export function setDailyMinutes(minutes: DailyMinutes): void {
 /** Start (or restart) the 4-week path on this local date. */
 export function setPathStart(day: string | null): void {
   save({ ...current, pathStart: day });
+}
+
+/** Remember that a calendar reminder was added at this time (the calendar itself is not readable). */
+export function setReminderTime(reminderTime: ReminderTime | null): void {
+  save({ ...current, reminderTime });
 }

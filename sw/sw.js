@@ -99,6 +99,8 @@ self.addEventListener('fetch', (event) => {
     return;
   }
   if (url.origin !== self.location.origin) return;
+  // Calendar files for the daily reminder: always from the network, never index.html.
+  if (url.pathname.startsWith('/reminder/')) return;
 
   if (request.mode === 'navigate') {
     event.respondWith(handleNavigation(request));
