@@ -163,6 +163,11 @@ export function HomePage() {
               {vi.home.today.vocabDue(due)}
             </Link>
           )}
+          {prefs.reminderTime === null && (
+            <Link to="/settings#reminder" className="link-btn small">
+              <Icon name="bell" size={15} /> {vi.reminder.homeLink}
+            </Link>
+          )}
         </section>
         <PathCard />
       </div>

@@ -5,7 +5,7 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/((?!data/|audio/|assets/|icons/|sw\\.js|version\\.json|manifest\\.webmanifest|favicon\\.svg|og\\.jpg).*)",
+      "source": "/((?!data/|audio/|assets/|icons/|reminder/|sw\\.js|version\\.json|manifest\\.webmanifest|favicon\\.svg|og\\.jpg).*)",
       "destination": "/index.html"
     }
   ],
@@ -25,6 +25,19 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=604800"
+        }
+      ]
+    },
+    {
+      "source": "/reminder/(.*)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/calendar; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
         }
       ]
     },

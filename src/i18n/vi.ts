@@ -836,6 +836,19 @@ export const vi = {
       server: 'Máy chủ gặp lỗi',
     },
   },
+  reminder: {
+    title: 'Nhắc học mỗi ngày',
+    help: 'Thêm một lịch hẹn lặp lại mỗi ngày vào lịch của điện thoại. Đến giờ, lịch sẽ báo; chạm vào thông báo rồi mở link để vào buổi luyện.',
+    time: 'Giờ nhắc',
+    addIcs: 'Thêm vào Lịch của máy',
+    addGoogle: 'Thêm vào Google Calendar',
+    added: (time: string) =>
+      `Lần trước bạn đã mở lịch hẹn ${time}. Nhớ bấm Thêm/Lưu trong app Lịch. Muốn đổi giờ: chọn giờ mới, thêm lại rồi xoá lịch hẹn cũ.`,
+    why: 'App chạy không cần máy chủ nên không tự gửi thông báo; lịch của máy sẽ nhắc bạn, kể cả khi app đang đóng.',
+    homeLink: 'Đặt giờ nhắc học mỗi ngày →',
+    eventTitle: 'KoDevTalk: luyện nói tiếng Hàn',
+    eventDetails: 'Đến giờ luyện rồi! Mở buổi luyện hôm nay:',
+  },
   settings: {
     title: 'Cài đặt',
     backendTitle: 'Máy chủ (tùy chọn)',

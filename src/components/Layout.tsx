@@ -23,12 +23,14 @@ function isUnder(pathname: string, base: string): boolean {
 const WIDE_PAGES = ['/', '/speaking', '/scenarios', '/grammar', '/emails', '/custom', '/progress'];
 
 export function Layout() {
-  // .main is the scroll container, so reset it when the route changes.
+  // .main is the scroll container, so reset it when the route changes (or show the #id the link points at).
   const mainRef = useRef<HTMLElement>(null);
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
-    mainRef.current?.scrollTo(0, 0);
-  }, [pathname]);
+    const target = hash ? document.getElementById(hash.slice(1)) : null;
+    if (target) target.scrollIntoView({ block: 'start' });
+    else mainRef.current?.scrollTo(0, 0);
+  }, [pathname, hash]);
 
   return (
     <div className="app">

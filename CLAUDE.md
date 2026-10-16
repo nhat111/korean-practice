@@ -311,7 +311,7 @@ Spec: `docs/custom-questions.md` (implemented). The learner pastes their own int
   rate, `showPron`, `answerTimer`), `kp:backend:v1` (optional backend URL + access key), `kp:custom:v1` (the learner's own questions) and `kp:reports:v1` ("Báo câu sai" flags, `src/storage/reports.ts`). When the shape changes, write a migration instead of silently dropping user data;
   purely additive fields may instead default when missing (as `speaking` does).
 - `kp:prefs:v1` also holds `profile` (`{ role, level, minutes }` or null), `onboarded`, `analytics`
-  (default true), `installHintDismissed`, `pathStart` (YYYY-MM-DD or null) and `listenRate`; missing fields default, so old prefs still load. Existing
+  (default true), `installHintDismissed`, `pathStart` (YYYY-MM-DD or null), `listenRate` and `reminderTime`; missing fields default, so old prefs still load. Existing
   learners see the welcome once and can skip it.
 - Wrap reads and writes in try/catch. The app must still work if storage is unavailable or
   contains corrupted data. In that case, fall back to empty progress.
@@ -412,11 +412,18 @@ Test files (`src/**/*.test.ts`) are type-checked by `tsconfig.node.json`, not
     The level sets the model speed (0.8/0.9/1x); minutes scale the daily plan (`buildDailyPlan` `scale`
     = minutes / 5); the role picks the "Gợi ý cho bạn" card on Home.
   - Vercel Web Analytics (`@vercel/analytics`, `AppAnalytics` + `src/analytics.ts`): page views and a few
-    named events (`onboarding`, `daily_done`, `install_hint`), no cookies, never recordings or learning
+    named events (`onboarding`, `daily_done`, `install_hint`, `reminder`), no cookies, never recordings or learning
     content. Every send checks `prefs.analytics` (toggle + note in Settings). Enable "Web Analytics" in
     the Vercel project to receive data.
   - `InstallHint` on Home: native prompt where `beforeinstallprompt` exists (captured in `src/install.ts`),
     Share → Add to Home Screen steps on iOS; hidden when installed or closed.
   - Link previews: Open Graph tags in `index.html` with the absolute `https://kodevtalk.vercel.app/og.jpg`
     (1200×630). Update both if the domain changes.
+  - Daily reminder (`ReminderCard` in Settings, link from the Home today card until one is added): no push (a static
+    site has no server, iOS allows Web Push only for Home Screen apps), the phone's calendar reminds instead.
+    `src/practice/reminder.ts` (pure, tested) builds a daily repeating `.ics` (floating local time, `VALARM`) and a
+    Google Calendar template link. The `.ics` files are static (`/reminder/HHMM.ics`, one per `REMINDER_TIMES`,
+    emitted by `reminderPlugin` in `vite.config.ts`, also served in dev): iOS Safari only offers "Add to Calendar" for
+    a real `text/calendar` response, not a blob. Not precached; the service worker leaves `/reminder/` alone.
+    `prefs.reminderTime` only remembers the last time the learner opened (the calendar can't be read back).
   - `VITE_FEEDBACK_URL` (optional, e.g. a Google Form) shows a "Góp ý" link on Home and in Settings.

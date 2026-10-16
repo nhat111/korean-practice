@@ -14,6 +14,9 @@ Next improvements for KoDevTalk, in suggested order. Tick an item and link its P
 
 If few people come back after day 1, do **3** before **2**.
 
+- [x] Daily study reminder through the phone's calendar (`.ics` / Google Calendar), no server needed.
+- [ ] Later, if the backend runs: real Web Push (VAPID) for installed apps, with "skip if already practiced today".
+
 ## 2. AI correction of the learner's own Korean (needs the backend)
 
 Today free answers are only compared with a model, so a correct answer worded differently
