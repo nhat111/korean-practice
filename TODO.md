@@ -54,7 +54,8 @@ Reference: NihongoBiz (bjtlab.me) feels polished thanks to a mascot, illustratio
 - [x] Wordmark style across the app: page kickers, flat cards, mono counts, cursor progress bars, welcome logo.
 - [x] App icon, favicon and OG image: 톡 + red cursor, 코데톡 link preview.
 - [x] Empty states and "done" screens (`StatusPanel`).
-- [ ] Small illustrations for the six Home entries and for lessons (once the 4-week path exists).
+- [x] Line-art covers for the six Home entries (`Illustration.tsx`, inline SVG).
+- [ ] Small illustrations for lessons / 4-week path steps.
       Keep them light (SVG or small WebP) so offline caching stays small.
 - [ ] Owner task: provide or approve the artwork (designer or AI-generated, with usage rights).
 

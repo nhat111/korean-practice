@@ -551,6 +551,32 @@ textarea {
 .section-card .row-between {
   align-items: flex-start;
 }
+/* Line-art cover on the Home section cards (components/Illustration.tsx), tinted by the skill tone. */
+.section-art {
+  display: grid;
+  place-items: center;
+  height: 76px;
+  margin: -4px -4px 4px;
+  border-radius: var(--radius-md);
+}
+.art {
+  width: 100%;
+  height: 100%;
+  max-width: 180px;
+}
+.art-paper { fill: var(--surface); }
+.art-soft { opacity: 0.5; }
+.art-fill { fill: currentColor; }
+.art-on-fill { stroke: var(--surface); }
+.art-cursor { fill: var(--accent-red); stroke: none; }
+@media (min-width: 768px) {
+  .section-art {
+    height: 104px;
+  }
+  .art {
+    max-width: 220px;
+  }
+}
 .count-badge {
   padding: 2px 9px;
   border-radius: 999px;
