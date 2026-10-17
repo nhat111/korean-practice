@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
 import { Icon, type IconName } from '../components/Icon';
+import { Illustration, type ArtName } from '../components/Illustration';
 import { InstallHint } from '../components/InstallHint';
 import { PathCard } from '../components/PathCard';
 import { KoreanLine, SpeakButton } from '../components/SpeakButton';
@@ -26,6 +27,8 @@ interface Section {
   title: string;
   desc: string;
   tone: Tone;
+  /** Line-art cover; sections without one show the icon. */
+  art?: ArtName;
   /** Content files whose item counts show as a badge. */
   count?: { kinds: ContentKind[]; label: (n: number) => string };
 }
@@ -58,17 +61,17 @@ const SUGGESTIONS: Record<Role, { to: string; icon: IconName }> = {
 
 // Six main entries; the rest (patterns, grammar, progress…) live under the tabs.
 const SECTIONS: Section[] = [
-  { to: '/shadowing', icon: 'waves', title: vi.shadowing.title, desc: vi.home.cards.shadowing, tone: 'blue',
+  { to: '/shadowing', art: 'shadowing', icon: 'waves', title: vi.shadowing.title, desc: vi.home.cards.shadowing, tone: 'blue',
     count: { kinds: ['shadowing'], label: vi.home.counts.sentences } },
-  { to: '/listening', icon: 'headphones', title: vi.listening.title, desc: vi.home.cards.listening, tone: 'teal',
+  { to: '/listening', art: 'listening', icon: 'headphones', title: vi.listening.title, desc: vi.home.cards.listening, tone: 'teal',
     count: { kinds: ['numbers', 'meetings'], label: vi.home.counts.lessons } },
-  { to: '/interpret', icon: 'languages', title: vi.interpret.title, desc: vi.home.cards.interpret, tone: 'violet',
+  { to: '/interpret', art: 'interpret', icon: 'languages', title: vi.interpret.title, desc: vi.home.cards.interpret, tone: 'violet',
     count: { kinds: ['interpret'], label: vi.home.counts.sentences } },
-  { to: '/scenarios', icon: 'chat', title: vi.nav.scenarios, desc: vi.home.cards.scenarios, tone: 'red',
+  { to: '/scenarios', art: 'scenarios', icon: 'chat', title: vi.nav.scenarios, desc: vi.home.cards.scenarios, tone: 'red',
     count: { kinds: ['scenarios'], label: vi.home.counts.lessons } },
-  { to: '/flashcards', icon: 'cards', title: vi.nav.flashcards, desc: vi.home.cards.flashcards, tone: 'amber',
+  { to: '/flashcards', art: 'flashcards', icon: 'cards', title: vi.nav.flashcards, desc: vi.home.cards.flashcards, tone: 'amber',
     count: { kinds: ['vocab'], label: vi.home.counts.words } },
-  { to: '/emails', icon: 'mail', title: vi.nav.emails, desc: vi.home.cards.emails, tone: 'green',
+  { to: '/emails', art: 'emails', icon: 'mail', title: vi.nav.emails, desc: vi.home.cards.emails, tone: 'green',
     count: { kinds: ['emails'], label: vi.home.counts.lessons } },
 ];
 
@@ -229,12 +232,25 @@ export function HomePage() {
 function SectionCard({ section: s }: { section: Section }) {
   return (
     <Link to={s.to} className="card card--link section-card">
-      <div className="row-between">
-        <span className={`card-icon card-icon--${s.tone}`}>
-          <Icon name={s.icon} />
-        </span>
-        {s.count && <ItemCount kinds={s.count.kinds} label={s.count.label} />}
-      </div>
+      {s.art ? (
+        <>
+          <div className={`section-art card-icon--${s.tone}`}>
+            <Illustration name={s.art} />
+          </div>
+          {s.count && (
+            <div>
+              <ItemCount kinds={s.count.kinds} label={s.count.label} />
+            </div>
+          )}
+        </>
+      ) : (
+        <div className="row-between">
+          <span className={`card-icon card-icon--${s.tone}`}>
+            <Icon name={s.icon} />
+          </span>
+          {s.count && <ItemCount kinds={s.count.kinds} label={s.count.label} />}
+        </div>
+      )}
       <h2>{s.title}</h2>
       <p className="muted">{s.desc}</p>
     </Link>

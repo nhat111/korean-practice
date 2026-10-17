@@ -344,7 +344,9 @@ Spec: `docs/custom-questions.md` (implemented). The learner pastes their own int
   device fonts) + the red cursor on hanji off-white; `theme-color` matches the header. In the app the logo is the name in
   Hangul, no icon: `vi.appNameKo` (코데톡) with 톡 in `--primary`, a red `.type-cursor` and `kodevtalk` in `.mono`
   under it. The Home hero speaks the same voice (mono date, big Hangul line + cursor, no gradient or mascot);
-  reuse these three ingredients (Hangul, mono, red cursor) rather than gradients or illustrations. Across the app:
+  reuse these three ingredients (Hangul, mono, red cursor) rather than gradients or illustrations. The only artwork is the
+  line-art covers on the six Home cards (`Illustration.tsx`: inline SVG, `currentColor` strokes in the skill tone, `.art-*`
+  token fills, a red cursor in each, no text). Across the app:
   flat white cards with hairline borders (`--shadow-sm: none`, radii 8/10/14), a `// 쉐도잉`-style kicker above each
   top-level page title (`vi.kickers`, rendered by `Layout` for exact paths), `.section-title` as a `// ` mono comment,
   progress bars as a solid fill ending in a red cursor (hidden at 0%), the active nav tab marked by a red bar, counts
