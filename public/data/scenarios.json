@@ -7928,6 +7928,587 @@
           "modelAnswerVi": "Tôi nghĩ khách Hàn có tiêu chuẩn chất lượng cao và phản hồi nhanh nên tôi có thể phát triển nhiều với vai trò QA. Hơn nữa tôi vẫn đang học tiếng Hàn, nên muốn góp phần giảm hiểu lầm bằng cách giao tiếp trực tiếp với khách."
         }
       ]
+    },
+    {
+      "id": "retail-pos-card-payment-outage",
+      "title": "POS cửa hàng không thanh toán thẻ được",
+      "titleKo": "매장 POS 카드 결제 장애",
+      "description": "Sáng thứ Bảy, 박 대리님 bên đội vận hành cửa hàng (trụ sở) gọi gấp: POS ở một số cửa hàng không thanh toán thẻ được, khách đang xếp hàng.",
+      "category": "incident",
+      "tags": [
+        "장애",
+        "POS",
+        "결제"
+      ],
+      "turns": [
+        {
+          "client": "지금 매장 여러 곳에서 카드 결제가 안 된다고 연락이 오고 있어요. 확인되셨나요?",
+          "hint": "Khách báo nhiều cửa hàng không quẹt thẻ được. Xác nhận đã nắm tình hình, nói phạm vi ảnh hưởng và việc đang làm.",
+          "choices": [
+            {
+              "ko": "네, 확인했습니다. 현재 수도권 매장 12곳에서 카드 승인 오류가 발생하고 있고, 원인을 파악하고 있습니다.",
+              "correct": true,
+              "feedback": "Tốt: xác nhận ngay, nêu phạm vi cụ thể (12 cửa hàng) và việc đang làm. Khi có sự cố, khách cần con số trước."
+            },
+            {
+              "ko": "아, 그래요? 저희 쪽 문제는 아닐 거예요.",
+              "correct": false,
+              "feedback": "Đổ lỗi khi chưa kiểm tra là điều tối kỵ. Hãy nói '확인해 보겠습니다' rồi báo lại."
+            },
+            {
+              "ko": "잠깐만요, 나중에 연락드릴게요.",
+              "correct": false,
+              "feedback": "Quá mơ hồ trong lúc khẩn cấp. Hãy hẹn thời gian cụ thể: '10분 안에 다시 연락드리겠습니다.'"
+            }
+          ],
+          "modelAnswer": "네, 확인했습니다. 현재 수도권 매장 12곳에서 카드 승인 오류가 발생하고 있으며, 원인을 파악하고 있습니다.",
+          "modelAnswerVi": "Vâng, tôi đã nắm được. Hiện lỗi duyệt thẻ đang xảy ra ở 12 cửa hàng khu vực thủ đô, chúng tôi đang tìm nguyên nhân."
+        },
+        {
+          "client": "손님들이 계속 기다리고 있어요. 임시로 할 수 있는 방법은 없나요?",
+          "hint": "Khách hỏi có cách tạm thời không. Đưa ra phương án tạm (임시 조치) cụ thể cho cửa hàng.",
+          "choices": [
+            {
+              "ko": "임시로 현금 결제만 받으시면 될 것 같아요.",
+              "correct": false,
+              "feedback": "Có phương án nhưng bỏ mất các cách khác và nghe như đẩy việc cho cửa hàng. Nên đưa phương án do hệ thống hỗ trợ."
+            },
+            {
+              "ko": "우선 간편결제와 현금 결제는 정상이라서, 매장에 그쪽으로 안내해 주시면 됩니다. 카드 결제는 백업 회선으로 전환하는 중입니다.",
+              "correct": true,
+              "feedback": "Rất tốt: đưa ra cách tạm thời mà cửa hàng làm được ngay, đồng thời báo việc team đang xử lý (chuyển sang đường truyền dự phòng)."
+            },
+            {
+              "ko": "방법이 없습니다. 기다려 주세요.",
+              "correct": false,
+              "feedback": "Nghe cứng và thiếu hợp tác. Dù chưa có cách, hãy nói khi nào có thông tin tiếp theo."
+            }
+          ],
+          "modelAnswer": "우선 간편결제와 현금 결제는 정상이라서, 매장에 그쪽으로 안내 부탁드립니다. 카드 결제는 백업 회선으로 전환하고 있습니다.",
+          "modelAnswerVi": "Trước mắt thanh toán ví điện tử và tiền mặt vẫn bình thường, nhờ anh/chị hướng dẫn cửa hàng dùng các cách đó. Thanh toán thẻ thì chúng tôi đang chuyển sang đường truyền dự phòng."
+        },
+        {
+          "client": "언제쯤 정상화될까요? 위에 보고를 드려야 해서요.",
+          "hint": "Khách cần báo cáo lên cấp trên. Đưa ra mốc thời gian và hẹn báo cáo tiếp.",
+          "choices": [
+            {
+              "ko": "30분 안에 복구하는 것을 목표로 하고 있습니다. 진행 상황은 15분마다 공유드리겠습니다.",
+              "correct": true,
+              "feedback": "Tốt: có mục tiêu thời gian rõ và cam kết cập nhật định kỳ, giúp khách báo cáo lên trên."
+            },
+            {
+              "ko": "최대한 빨리 하겠습니다.",
+              "correct": false,
+              "feedback": "Không có mốc thời gian, khách không biết báo cáo gì. Hãy đưa con số kèm điều kiện nếu cần."
+            },
+            {
+              "ko": "PG사 문제라서 저희도 몰라요.",
+              "correct": false,
+              "feedback": "Kể cả khi lỗi bên PG, vẫn phải nói việc team đang làm và khi nào báo lại. '몰라요' nghe thiếu trách nhiệm."
+            }
+          ],
+          "modelAnswer": "30분 안에 복구하는 것을 목표로 하고 있습니다. 진행 상황은 15분마다 공유드리고, 복구 후에 원인 분석 보고서도 드리겠습니다.",
+          "modelAnswerVi": "Chúng tôi đặt mục tiêu khôi phục trong vòng 30 phút. Cứ 15 phút tôi sẽ cập nhật tình hình, và sau khi khôi phục sẽ gửi báo cáo phân tích nguyên nhân."
+        }
+      ]
+    },
+    {
+      "id": "retail-settlement-amount-mismatch",
+      "title": "Số tiền quyết toán không khớp",
+      "titleKo": "정산 금액 불일치 문의",
+      "description": "최 과장님 bên đội kế toán báo: số tiền quyết toán tháng này giữa hệ thống và ERP lệch nhau khoảng 3 triệu won.",
+      "category": "incident",
+      "tags": [
+        "정산",
+        "ERP",
+        "데이터"
+      ],
+      "turns": [
+        {
+          "client": "이번 달 정산 금액이 ERP랑 300만 원 정도 차이가 나요. 어떻게 된 건가요?",
+          "hint": "Khách hỏi vì sao số liệu lệch. Chưa rõ nguyên nhân thì đừng đoán bừa; nói sẽ kiểm tra và khi nào báo.",
+          "choices": [
+            {
+              "ko": "시스템은 문제없어요. ERP 쪽을 확인해 보세요.",
+              "correct": false,
+              "feedback": "Đẩy trách nhiệm khi chưa kiểm tra. Hãy kiểm tra phía mình trước."
+            },
+            {
+              "ko": "아마 반품 때문일 거예요.",
+              "correct": false,
+              "feedback": "Đoán khi chưa có dữ liệu dễ gây hiểu lầm. Nếu có giả thuyết, hãy nói là 'có khả năng' và sẽ xác nhận."
+            },
+            {
+              "ko": "불편을 드려 죄송합니다. 정산 데이터와 ERP 전송 내역을 비교해서 오늘 오후 3시까지 원인을 말씀드리겠습니다.",
+              "correct": true,
+              "feedback": "Tốt: xin lỗi, nói rõ cách kiểm tra và hẹn giờ cụ thể."
+            }
+          ],
+          "modelAnswer": "불편을 드려 죄송합니다. 정산 데이터와 ERP 전송 내역을 비교해서 오늘 오후 3시까지 원인을 말씀드리겠습니다.",
+          "modelAnswerVi": "Xin lỗi vì đã gây bất tiện. Tôi sẽ so sánh dữ liệu quyết toán với lịch sử gửi sang ERP và báo nguyên nhân trước 3 giờ chiều nay."
+        },
+        {
+          "client": "원인은 찾으셨나요?",
+          "hint": "Báo nguyên nhân: các đơn trả hàng cuối tháng (31) bị tính vào tháng sau do batch chạy sau nửa đêm.",
+          "choices": [
+            {
+              "ko": "네, 확인해 보니 31일 밤에 들어온 반품 건이 배치 실행 시간 때문에 다음 달로 집계되었습니다.",
+              "correct": true,
+              "feedback": "Rõ ràng: '확인해 보니' (kiểm tra thì thấy) + nguyên nhân cụ thể + cơ chế gây lỗi."
+            },
+            {
+              "ko": "배치가 이상했어요.",
+              "correct": false,
+              "feedback": "Quá chung chung. Khách kế toán cần biết đơn nào, vì sao, bao nhiêu."
+            },
+            {
+              "ko": "네, 찾았습니다.",
+              "correct": false,
+              "feedback": "Trả lời cụt, không nói nguyên nhân. Hãy giải thích luôn."
+            }
+          ],
+          "modelAnswer": "네, 확인해 보니 31일 밤에 들어온 반품 건이 배치 실행 시간 때문에 다음 달 매출로 집계되었습니다. 총 42건, 약 300만 원입니다.",
+          "modelAnswerVi": "Vâng, kiểm tra thì thấy các đơn trả hàng vào tối ngày 31 do giờ chạy batch nên đã bị tổng hợp vào doanh thu tháng sau. Tổng 42 đơn, khoảng 3 triệu won."
+        },
+        {
+          "client": "그럼 이번 달 마감 전에 수정이 가능할까요?",
+          "hint": "Khách hỏi có sửa kịp trước khi chốt sổ tháng không. Đưa ra cách sửa và cách phòng tái phát.",
+          "choices": [
+            {
+              "ko": "다음 달에 같이 처리하면 되지 않을까요?",
+              "correct": false,
+              "feedback": "Kế toán không thể dời số liệu tùy tiện. Hãy đề xuất cách sửa trong tháng này."
+            },
+            {
+              "ko": "네, 해당 42건을 이번 달로 재집계하는 작업을 내일 오전까지 완료하겠습니다. 그리고 재발 방지를 위해 집계 기준을 주문 일자로 변경하겠습니다.",
+              "correct": true,
+              "feedback": "Rất tốt: có deadline, nói rõ phạm vi sửa và đề xuất phòng tái phát (재발 방지)."
+            },
+            {
+              "ko": "가능합니다. 바로 DB를 직접 수정하겠습니다.",
+              "correct": false,
+              "feedback": "Sửa thẳng DB dữ liệu kế toán mà không qua thủ tục là rủi ro lớn. Nên đề xuất cách có kiểm soát và xin phê duyệt."
+            }
+          ],
+          "modelAnswer": "네, 해당 42건을 이번 달로 재집계하는 작업을 내일 오전까지 완료하겠습니다. 재발 방지를 위해 집계 기준도 주문 일자로 변경하겠습니다.",
+          "modelAnswerVi": "Vâng, tôi sẽ hoàn thành việc tổng hợp lại 42 đơn đó vào tháng này trước sáng mai. Để không tái diễn, tôi cũng sẽ đổi tiêu chí tổng hợp sang ngày đặt hàng."
+        }
+      ]
+    },
+    {
+      "id": "retail-sale-event-traffic-prep",
+      "title": "Chuẩn bị hạ tầng cho đợt khuyến mãi lớn",
+      "titleKo": "대형 행사 대비 트래픽 준비",
+      "description": "Còn 2 tuần nữa là đợt sale lớn cuối năm của trang mua sắm online. 정 팀장님 bên khách hỏi kế hoạch chuẩn bị server.",
+      "category": "release",
+      "tags": [
+        "행사",
+        "트래픽",
+        "성능"
+      ],
+      "turns": [
+        {
+          "client": "작년 행사 때 사이트가 느려져서 문제가 많았어요. 이번에는 어떻게 대비하실 건가요?",
+          "hint": "Khách lo lặp lại sự cố năm ngoái. Trình bày kế hoạch: tăng server, test tải.",
+          "choices": [
+            {
+              "ko": "이번에는 서버를 평소의 3배로 증설하고, 다음 주에 부하 테스트를 진행할 계획입니다.",
+              "correct": true,
+              "feedback": "Tốt: có con số (gấp 3), có việc cụ thể và mốc thời gian."
+            },
+            {
+              "ko": "이번에는 괜찮을 거예요.",
+              "correct": false,
+              "feedback": "Lời hứa không có căn cứ. Khách cần kế hoạch cụ thể."
+            },
+            {
+              "ko": "작년에는 저희 담당이 아니었어요.",
+              "correct": false,
+              "feedback": "Dù đúng, câu này không giúp gì và nghe như né trách nhiệm."
+            }
+          ],
+          "modelAnswer": "이번에는 서버를 평소의 3배로 증설하고, 다음 주에 부하 테스트를 진행할 계획입니다. 결과는 테스트 후에 바로 공유드리겠습니다.",
+          "modelAnswerVi": "Lần này chúng tôi dự kiến tăng server lên gấp 3 bình thường và test tải vào tuần sau. Kết quả sẽ chia sẻ ngay sau khi test."
+        },
+        {
+          "client": "행사 기간에 배포는 어떻게 하실 예정이에요?",
+          "hint": "Khách hỏi về deploy trong thời gian sale. Đề xuất đóng băng thay đổi (변경 동결), chỉ hotfix khẩn cấp.",
+          "choices": [
+            {
+              "ko": "행사 중에도 필요하면 배포하겠습니다.",
+              "correct": false,
+              "feedback": "Deploy trong lúc traffic cao là rủi ro. Nên đề xuất đóng băng thay đổi."
+            },
+            {
+              "ko": "배포 일정은 아직 생각해 보지 않았습니다.",
+              "correct": false,
+              "feedback": "Thiếu chuẩn bị. Trong kế hoạch sale, lịch deploy là mục quan trọng."
+            },
+            {
+              "ko": "행사 3일 전부터는 변경 동결 기간으로 정하고, 긴급 핫픽스만 승인을 받아서 배포하는 게 좋을 것 같습니다.",
+              "correct": true,
+              "feedback": "Rất tốt: đề xuất chính sách rõ ràng và dùng '-는 게 좋을 것 같습니다' để đề xuất mềm mỏng."
+            }
+          ],
+          "modelAnswer": "행사 3일 전부터는 변경 동결 기간으로 정하고, 긴급 핫픽스만 승인을 받아서 배포하는 게 좋을 것 같습니다.",
+          "modelAnswerVi": "Tôi nghĩ nên đặt từ 3 ngày trước đợt sale là giai đoạn đóng băng thay đổi, chỉ deploy hotfix khẩn cấp sau khi được phê duyệt."
+        },
+        {
+          "client": "행사 당일에는 누가 대응하나요?",
+          "hint": "Khách hỏi ai túc trực ngày sale. Nói rõ người, giờ và kênh liên lạc.",
+          "choices": [
+            {
+              "ko": "문제 생기면 연락 주세요.",
+              "correct": false,
+              "feedback": "Không nói ai, lúc nào. Ngày sale cần kế hoạch túc trực rõ ràng."
+            },
+            {
+              "ko": "당일에는 개발자 2명과 인프라 담당 1명이 오전 9시부터 자정까지 대기하고, 모니터링 결과는 1시간마다 공유드리겠습니다.",
+              "correct": true,
+              "feedback": "Cụ thể về người, thời gian và cách báo cáo, khách rất yên tâm."
+            },
+            {
+              "ko": "저희 팀이 다 대기할게요.",
+              "correct": false,
+              "feedback": "Thiếu chi tiết (mấy người, đến mấy giờ) và hơi thân mật ('-ㄹ게요'). Nên dùng '-겠습니다'."
+            }
+          ],
+          "modelAnswer": "당일에는 개발자 2명과 인프라 담당 1명이 오전 9시부터 자정까지 대기하겠습니다. 모니터링 결과는 1시간마다 공유드리겠습니다.",
+          "modelAnswerVi": "Ngày hôm đó 2 lập trình viên và 1 người phụ trách hạ tầng sẽ túc trực từ 9 giờ sáng đến nửa đêm. Kết quả giám sát sẽ chia sẻ mỗi tiếng một lần."
+        }
+      ]
+    },
+    {
+      "id": "retail-coupon-duplicate-uat",
+      "title": "Coupon bị áp trùng khi UAT",
+      "titleKo": "UAT 중 쿠폰 중복 적용 결함",
+      "description": "Trong UAT, 한 대리님 (người dùng nghiệp vụ, 현업) phát hiện có thể áp 2 coupon cùng lúc cho một đơn hàng. Bạn là tester/dev phụ trách.",
+      "category": "qa",
+      "tags": [
+        "UAT",
+        "쿠폰",
+        "결함"
+      ],
+      "turns": [
+        {
+          "client": "쿠폰 두 장이 한 주문에 같이 적용돼요. 원래 한 장만 되는 거 아닌가요?",
+          "hint": "현업 báo coupon áp trùng. Xác nhận lại quy tắc (spec) trước khi kết luận là bug.",
+          "choices": [
+            {
+              "ko": "말씀하신 대로 기획서상으로는 주문당 쿠폰 1장만 적용 가능합니다. 결함으로 등록하고 재현 경로를 확인하겠습니다.",
+              "correct": true,
+              "feedback": "Tốt: đối chiếu spec, xác nhận là lỗi và nói bước tiếp theo."
+            },
+            {
+              "ko": "두 장 쓰면 고객한테 좋은 거 아닌가요?",
+              "correct": false,
+              "feedback": "Không phải việc của dev quyết định chính sách giảm giá. Hãy theo spec."
+            },
+            {
+              "ko": "제 PC에서는 안 그런데요.",
+              "correct": false,
+              "feedback": "Phủ nhận ngay làm khách khó chịu. Hãy hỏi bước tái hiện: '어떤 순서로 하셨는지 알려 주시겠어요?'"
+            }
+          ],
+          "modelAnswer": "말씀하신 대로 기획서상으로는 주문당 쿠폰 1장만 적용 가능합니다. 결함으로 등록하고 재현 경로를 확인하겠습니다.",
+          "modelAnswerVi": "Đúng như anh/chị nói, theo tài liệu thiết kế thì mỗi đơn chỉ áp được 1 coupon. Tôi sẽ đăng ký thành lỗi và kiểm tra các bước tái hiện."
+        },
+        {
+          "client": "어떤 경우에 이런 문제가 생기는 거예요?",
+          "hint": "Giải thích nguyên nhân dễ hiểu cho người nghiệp vụ: bấm áp coupon ở giỏ hàng rồi ở màn thanh toán.",
+          "choices": [
+            {
+              "ko": "동시성 문제입니다.",
+              "correct": false,
+              "feedback": "Thuật ngữ kỹ thuật cụt lủn, người nghiệp vụ không hiểu. Hãy giải thích bằng thao tác người dùng."
+            },
+            {
+              "ko": "장바구니에서 쿠폰을 적용한 다음에 결제 화면에서 다른 쿠폰을 다시 선택하면 기존 쿠폰이 해제되지 않아서 생기는 문제입니다.",
+              "correct": true,
+              "feedback": "Rất tốt: giải thích theo thao tác màn hình, người nghiệp vụ hiểu ngay."
+            },
+            {
+              "ko": "코드가 잘못됐어요.",
+              "correct": false,
+              "feedback": "Không giải thích được gì. Nên mô tả điều kiện xảy ra."
+            }
+          ],
+          "modelAnswer": "장바구니에서 쿠폰을 적용한 다음에 결제 화면에서 다른 쿠폰을 다시 선택하면, 기존 쿠폰이 해제되지 않아서 생기는 문제입니다.",
+          "modelAnswerVi": "Lỗi xảy ra khi áp coupon ở giỏ hàng rồi chọn lại coupon khác ở màn hình thanh toán, coupon cũ không được gỡ ra."
+        },
+        {
+          "client": "오픈 전까지 수정될 수 있을까요?",
+          "hint": "Khách hỏi có kịp sửa trước go-live không. Đưa ra lịch sửa và test lại.",
+          "choices": [
+            {
+              "ko": "오픈 전에는 어려울 것 같습니다.",
+              "correct": false,
+              "feedback": "Nói khó mà không có lý do hay phương án khác. Nếu thật sự khó, hãy đề xuất cách tạm thời."
+            },
+            {
+              "ko": "네, 금방 고칠 수 있어요.",
+              "correct": false,
+              "feedback": "Hứa chung chung và hơi thân mật. Hãy nói ngày sửa và ngày test lại."
+            },
+            {
+              "ko": "네, 내일까지 수정하고 모레 재테스트를 요청드리겠습니다. 결제 금액과 관련된 결함이라서 회귀 테스트도 같이 진행하겠습니다.",
+              "correct": true,
+              "feedback": "Có lịch cụ thể và chủ động đề xuất regression test vì lỗi liên quan đến tiền."
+            }
+          ],
+          "modelAnswer": "네, 내일까지 수정하고 모레 재테스트를 요청드리겠습니다. 결제 금액과 관련된 결함이라서 회귀 테스트도 같이 진행하겠습니다.",
+          "modelAnswerVi": "Vâng, tôi sẽ sửa xong trước ngày mai và ngày kia sẽ nhờ anh/chị test lại. Vì lỗi liên quan đến số tiền thanh toán nên chúng tôi sẽ chạy cả regression test."
+        }
+      ]
+    },
+    {
+      "id": "retail-inventory-sync-requirement",
+      "title": "Làm rõ yêu cầu đồng bộ tồn kho online / cửa hàng",
+      "titleKo": "온·오프라인 재고 연동 요구사항 확인",
+      "description": "현업 담당자 오 과장님 muốn trang online hiển thị tồn kho của cửa hàng 'theo thời gian thực'. Bạn cần làm rõ yêu cầu trước khi ước lượng.",
+      "category": "pm",
+      "tags": [
+        "요구사항",
+        "재고",
+        "연동"
+      ],
+      "turns": [
+        {
+          "client": "온라인몰에서 매장 재고를 실시간으로 보여 주면 좋겠어요.",
+          "hint": "Yêu cầu còn mơ hồ: 'thời gian thực' là mấy giây/phút? Hỏi lại tiêu chí cụ thể.",
+          "choices": [
+            {
+              "ko": "네, 알겠습니다. 바로 개발하겠습니다.",
+              "correct": false,
+              "feedback": "Nhận việc khi yêu cầu chưa rõ dễ dẫn đến làm sai và tranh cãi phạm vi sau này."
+            },
+            {
+              "ko": "확인차 여쭤보겠습니다. 실시간이라고 하시면 몇 분 정도의 차이까지 괜찮으신지 기준을 정해 주실 수 있을까요?",
+              "correct": true,
+              "feedback": "Rất tốt: '확인차 여쭤보겠습니다' mở đầu lịch sự, rồi hỏi tiêu chí đo được."
+            },
+            {
+              "ko": "실시간은 불가능합니다.",
+              "correct": false,
+              "feedback": "Từ chối ngay mà không tìm hiểu nhu cầu thật. Hỏi lại tiêu chí trước."
+            }
+          ],
+          "modelAnswer": "확인차 여쭤보겠습니다. 실시간이라고 하시면 몇 분 정도의 차이까지 괜찮으신지 기준을 정해 주실 수 있을까요?",
+          "modelAnswerVi": "Cho tôi hỏi lại để xác nhận. Khi nói 'thời gian thực', anh/chị có thể cho tiêu chí là chênh lệch tối đa khoảng mấy phút thì chấp nhận được không ạ?"
+        },
+        {
+          "client": "음, 5분 정도면 괜찮을 것 같아요. 전 매장이 다 대상이에요.",
+          "hint": "Khách chốt 5 phút, toàn bộ cửa hàng. Tóm tắt lại để xác nhận và nói ảnh hưởng (tải lên POS/server).",
+          "choices": [
+            {
+              "ko": "네, 정리하면 전 매장의 재고를 5분 간격으로 온라인몰에 반영하는 것으로 이해했습니다. 매장 수가 많아서 서버 부하도 함께 검토하겠습니다.",
+              "correct": true,
+              "feedback": "Tốt: tóm tắt lại yêu cầu (정리하면 … 이해했습니다) và nêu điểm kỹ thuật cần xem xét."
+            },
+            {
+              "ko": "5분이요? 너무 짧은데요.",
+              "correct": false,
+              "feedback": "Phản ứng cảm tính. Nếu có lo ngại, hãy nói lý do kỹ thuật và đề xuất."
+            },
+            {
+              "ko": "네.",
+              "correct": false,
+              "feedback": "Không tóm tắt lại, dễ hiểu nhầm. Nên xác nhận lại nội dung đã thống nhất."
+            }
+          ],
+          "modelAnswer": "네, 정리하면 전 매장의 재고를 5분 간격으로 온라인몰에 반영하는 것으로 이해했습니다. 매장 수가 많아서 서버 부하도 함께 검토하겠습니다.",
+          "modelAnswerVi": "Vâng, tóm lại tôi hiểu là phản ánh tồn kho của toàn bộ cửa hàng lên trang online mỗi 5 phút. Vì số cửa hàng nhiều nên tôi sẽ xem xét cả tải server."
+        },
+        {
+          "client": "공수는 언제쯤 알 수 있을까요?",
+          "hint": "Khách hỏi khi nào có ước lượng công số. Hẹn ngày và nói sẽ gửi kèm gì.",
+          "choices": [
+            {
+              "ko": "잘 모르겠지만 한 달 정도 걸릴 것 같아요.",
+              "correct": false,
+              "feedback": "Đưa con số khi chưa phân tích, sau này khó điều chỉnh. Hãy hẹn ngày gửi ước lượng."
+            },
+            {
+              "ko": "나중에 알려 드릴게요.",
+              "correct": false,
+              "feedback": "Không có mốc thời gian, nghe thiếu chuyên nghiệp."
+            },
+            {
+              "ko": "POS 쪽 연동 방식을 확인한 후에, 이번 주 금요일까지 공수와 일정을 정리해서 메일로 드리겠습니다.",
+              "correct": true,
+              "feedback": "Có điều kiện (kiểm tra cách liên kết POS), có hạn và hình thức gửi."
+            }
+          ],
+          "modelAnswer": "POS 쪽 연동 방식을 확인한 후에, 이번 주 금요일까지 공수와 일정을 정리해서 메일로 보내 드리겠습니다.",
+          "modelAnswerVi": "Sau khi kiểm tra cách liên kết với phía POS, tôi sẽ tổng hợp công số và lịch trình rồi gửi mail trước thứ Sáu tuần này."
+        }
+      ]
+    },
+    {
+      "id": "retail-go-live-stabilization-meeting",
+      "title": "Họp ổn định hệ thống sau go-live",
+      "titleKo": "차세대 오픈 후 안정화 회의",
+      "description": "Tuần đầu sau khi hệ thống thế hệ mới (차세대) của chuỗi bán lẻ go-live. 윤 부장님 chủ trì họp ổn định hóa với các bộ phận nghiệp vụ.",
+      "category": "meeting",
+      "tags": [
+        "오픈",
+        "안정화",
+        "회의"
+      ],
+      "turns": [
+        {
+          "client": "오픈하고 일주일이 지났는데, 지금까지 접수된 이슈 현황부터 말씀해 주세요.",
+          "hint": "Báo cáo số liệu issue: tổng, đã xử lý, còn lại, mức độ nghiêm trọng.",
+          "choices": [
+            {
+              "ko": "이슈는 좀 많았는데 거의 다 해결했습니다.",
+              "correct": false,
+              "feedback": "Không có số liệu. Trong họp ổn định hóa, cấp trên cần con số."
+            },
+            {
+              "ko": "지금까지 총 58건이 접수되었고, 그중 51건은 조치 완료, 7건은 처리 중입니다. 처리 중인 건 중에 긴급 건은 없습니다.",
+              "correct": true,
+              "feedback": "Rất tốt: tổng số, đã xong, đang xử lý, và mức độ khẩn cấp, đúng cấu trúc báo cáo."
+            },
+            {
+              "ko": "자세한 건 이슈 관리표를 보시면 됩니다.",
+              "correct": false,
+              "feedback": "Đẩy người nghe tự đọc tài liệu. Hãy tóm tắt các con số chính trước."
+            }
+          ],
+          "modelAnswer": "지금까지 총 58건이 접수되었고, 그중 51건은 조치 완료, 7건은 처리 중입니다. 처리 중인 건 중에 긴급 건은 없습니다.",
+          "modelAnswerVi": "Đến nay đã tiếp nhận tổng cộng 58 issue, trong đó 51 đã xử lý xong, 7 đang xử lý. Trong số đang xử lý không có issue khẩn cấp."
+        },
+        {
+          "client": "매장에서 조회 화면이 느리다는 불만이 계속 나오던데요.",
+          "hint": "Cấp trên nhắc màn hình tra cứu chậm. Thừa nhận, nói nguyên nhân và kế hoạch.",
+          "choices": [
+            {
+              "ko": "네, 원인은 재고 조회 쿼리로 파악했고, 인덱스를 추가해서 이번 주 목요일 야간에 반영할 예정입니다.",
+              "correct": true,
+              "feedback": "Tốt: đã xác định nguyên nhân, có giải pháp và lịch phản ánh (vào đêm, tránh giờ bán hàng)."
+            },
+            {
+              "ko": "매장 PC 사양이 낮아서 그런 것 같습니다.",
+              "correct": false,
+              "feedback": "Đổ cho thiết bị cửa hàng khi chưa chứng minh. Nếu có khả năng, hãy kèm dữ liệu."
+            },
+            {
+              "ko": "그건 처음 듣는 이야기인데요.",
+              "correct": false,
+              "feedback": "Nghe như phản bác cấp trên. Nếu chưa biết, hãy nói '확인해서 오늘 중으로 보고드리겠습니다.'"
+            }
+          ],
+          "modelAnswer": "네, 원인은 재고 조회 쿼리로 파악했고, 인덱스를 추가해서 이번 주 목요일 야간에 반영할 예정입니다.",
+          "modelAnswerVi": "Vâng, chúng tôi đã xác định nguyên nhân là câu query tra cứu tồn kho, sẽ thêm index và phản ánh vào đêm thứ Năm tuần này."
+        },
+        {
+          "client": "안정화 기간이 끝나면 운영 체계는 어떻게 되나요?",
+          "hint": "Giải thích chuyển sang vận hành (SM): ai phụ trách, cách tiếp nhận yêu cầu.",
+          "choices": [
+            {
+              "ko": "그건 아직 정해지지 않았어요.",
+              "correct": false,
+              "feedback": "Câu hỏi quan trọng mà trả lời chưa định. Nếu chưa chốt, hãy nói khi nào sẽ đề xuất."
+            },
+            {
+              "ko": "저희가 계속 다 해 드리겠습니다.",
+              "correct": false,
+              "feedback": "Hứa quá rộng, không có quy trình. Nên nói rõ phạm vi và kênh tiếp nhận."
+            },
+            {
+              "ko": "다음 달부터 SM 체계로 전환되고, 요청 사항은 SR 시스템으로 접수해 주시면 담당자가 배정됩니다. 인수인계 계획은 다음 주에 공유드리겠습니다.",
+              "correct": true,
+              "feedback": "Rõ quy trình chuyển giao, kênh tiếp nhận và lịch chia sẻ kế hoạch bàn giao."
+            }
+          ],
+          "modelAnswer": "다음 달부터 SM 체계로 전환되고, 요청 사항은 SR 시스템으로 접수해 주시면 담당자가 배정됩니다. 인수인계 계획은 다음 주에 공유드리겠습니다.",
+          "modelAnswerVi": "Từ tháng sau sẽ chuyển sang mô hình SM, các yêu cầu anh/chị gửi qua hệ thống SR thì sẽ được phân người phụ trách. Kế hoạch bàn giao chúng tôi sẽ chia sẻ vào tuần sau."
+        }
+      ]
+    },
+    {
+      "id": "interview-retail-domain",
+      "title": "Phỏng vấn: kinh nghiệm domain bán lẻ",
+      "titleKo": "면접: 유통 도메인 경험",
+      "description": "Phỏng vấn vị trí developer cho dự án hệ thống bán lẻ của một công ty SI Hàn Quốc. Người phỏng vấn hỏi về kinh nghiệm domain.",
+      "category": "interview",
+      "tags": [
+        "면접",
+        "유통",
+        "경험"
+      ],
+      "turns": [
+        {
+          "client": "유통 쪽 프로젝트 경험이 있으신가요?",
+          "hint": "Trả lời có kinh nghiệm, nêu dự án cụ thể, vai trò và phạm vi.",
+          "choices": [
+            {
+              "ko": "네, 대형마트 POS와 본사 정산 시스템을 연동하는 프로젝트에서 2년 동안 백엔드 개발을 담당했습니다.",
+              "correct": true,
+              "feedback": "Tốt: có loại dự án, vai trò, thời gian cụ thể."
+            },
+            {
+              "ko": "네, 조금 해 봤어요.",
+              "correct": false,
+              "feedback": "Quá mơ hồ và hơi thân mật. Trong phỏng vấn hãy nêu cụ thể và dùng -습니다."
+            },
+            {
+              "ko": "유통은 잘 모르지만 금방 배울 수 있습니다.",
+              "correct": false,
+              "feedback": "Nếu có kinh nghiệm thì nên nói ra. Câu này chỉ hợp khi thật sự chưa có kinh nghiệm, và nên kèm ví dụ học nhanh."
+            }
+          ],
+          "modelAnswer": "네, 대형마트 POS와 본사 정산 시스템을 연동하는 프로젝트에서 2년 동안 백엔드 개발을 담당했습니다.",
+          "modelAnswerVi": "Vâng, tôi đã phụ trách phát triển backend trong 2 năm ở dự án liên kết POS của đại siêu thị với hệ thống quyết toán ở trụ sở."
+        },
+        {
+          "client": "유통 시스템에서 가장 어려웠던 점은 뭐였어요?",
+          "hint": "Nêu khó khăn đặc thù ngành bán lẻ (dữ liệu lớn, batch đêm, cửa hàng mở cửa) và cách giải quyết.",
+          "choices": [
+            {
+              "ko": "특별히 어려운 건 없었습니다.",
+              "correct": false,
+              "feedback": "Người phỏng vấn muốn nghe cách bạn giải quyết vấn đề. Hãy chọn một khó khăn thật."
+            },
+            {
+              "ko": "영업시간에는 배포나 장애가 바로 매출에 영향을 줘서 부담이 컸습니다. 그래서 야간 배포 절차와 롤백 계획을 꼼꼼하게 준비했습니다.",
+              "correct": true,
+              "feedback": "Rất tốt: nêu khó khăn đặc thù (ảnh hưởng doanh thu) và hành động cụ thể của mình."
+            },
+            {
+              "ko": "야근이 많아서 힘들었습니다.",
+              "correct": false,
+              "feedback": "Than phiền về làm thêm giờ dễ để lại ấn tượng không tốt. Hãy nói về khó khăn kỹ thuật/nghiệp vụ."
+            }
+          ],
+          "modelAnswer": "영업시간에는 배포나 장애가 바로 매출에 영향을 줘서 부담이 컸습니다. 그래서 야간 배포 절차와 롤백 계획을 꼼꼼하게 준비했습니다.",
+          "modelAnswerVi": "Trong giờ mở cửa, deploy hay sự cố đều ảnh hưởng ngay đến doanh thu nên áp lực rất lớn. Vì vậy tôi đã chuẩn bị kỹ quy trình deploy ban đêm và kế hoạch rollback."
+        },
+        {
+          "client": "저희 프로젝트는 현업과 소통할 일이 많은데 괜찮으시겠어요?",
+          "hint": "Thể hiện sẵn sàng giao tiếp với người nghiệp vụ, có ví dụ.",
+          "choices": [
+            {
+              "ko": "한국어가 아직 부족해서 걱정됩니다.",
+              "correct": false,
+              "feedback": "Thành thật nhưng chỉ nói điểm yếu. Nên kèm cách bạn khắc phục."
+            },
+            {
+              "ko": "네, 괜찮아요. 문제없어요.",
+              "correct": false,
+              "feedback": "Không có căn cứ và hơi thân mật. Hãy đưa ví dụ cụ thể."
+            },
+            {
+              "ko": "네, 이전 프로젝트에서도 현업 담당자와 요구사항 회의를 매주 진행했습니다. 용어가 헷갈릴 때는 회의 후에 메일로 다시 정리해서 확인했습니다.",
+              "correct": true,
+              "feedback": "Tốt: có kinh nghiệm thật và cách làm cụ thể để tránh hiểu lầm."
+            }
+          ],
+          "modelAnswer": "네, 이전 프로젝트에서도 현업 담당자와 요구사항 회의를 매주 진행했습니다. 용어가 헷갈릴 때는 회의 후에 메일로 다시 정리해서 확인했습니다.",
+          "modelAnswerVi": "Vâng, ở dự án trước tôi cũng họp yêu cầu với người phụ trách nghiệp vụ hằng tuần. Khi thuật ngữ dễ nhầm, sau buổi họp tôi tổng hợp lại qua mail để xác nhận."
+        }
+      ]
     }
   ]
 }
