@@ -98,7 +98,8 @@ export function HomePage() {
   const minutes = prefs.profile?.minutes ?? 5;
   const suggestion = prefs.profile ? SUGGESTIONS[prefs.profile.role] : null;
   const target = dailyTarget(minutes / 5);
-  const done = todayStats?.reviews ?? 0;
+  // Only steps of the daily plan count, so the goal matches the recipe shown under it.
+  const done = todayStats?.planSteps ?? 0;
   const ctaLabel = done === 0 ? vi.home.today.start : done < target ? vi.home.today.continue : vi.home.today.more;
   const word = vocab.status === 'ready' ? itemOfDay(vocab.items, today) : undefined;
   const greeting = vi.home.greetings[greetingSlot(now.getHours())];

@@ -47,8 +47,10 @@ const MAX_SPEAKING_HISTORY = 300;
 export interface DayStats {
   /** Lines spoken (speaking attempts saved). */
   spoken: number;
-  /** Flashcard reviews. */
+  /** SRS ratings anywhere: flashcards and every rated drill. */
   reviews: number;
+  /** Steps of the daily plan (/daily) finished with a rating; the Home goal counts these. Absent in older entries. */
+  planSteps?: number;
   /** Total recording time in milliseconds. */
   recordMs: number;
 }
@@ -146,6 +148,7 @@ function bumpDay(p: Progress, add: Partial<DayStats>): Progress['daily'] {
     spoken: (prev?.spoken ?? 0) + (add.spoken ?? 0),
     reviews: (prev?.reviews ?? 0) + (add.reviews ?? 0),
     recordMs: (prev?.recordMs ?? 0) + (add.recordMs ?? 0),
+    planSteps: (prev?.planSteps ?? 0) + (add.planSteps ?? 0),
   };
   const daily = { ...p.daily, [day]: next };
   const days = Object.keys(daily).sort();
@@ -160,6 +163,11 @@ export function saveCard(id: string, state: CardState): void {
 /** Saves the SM-2 state of a speaking drill item (key from `srsKey`). */
 export function saveReview(key: string, state: CardState): void {
   update((p) => ({ ...p, srs: { ...p.srs, [key]: state }, daily: bumpDay(p, { reviews: 1 }) }));
+}
+
+/** Counts one rated step of the daily plan towards today's goal. */
+export function savePlanStep(): void {
+  update((p) => ({ ...p, daily: bumpDay(p, { planSteps: 1 }) }));
 }
 
 /** Adds a finished recording's length to today's stats. */

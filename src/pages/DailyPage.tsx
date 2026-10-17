@@ -19,7 +19,7 @@ import { ROLE_FOCUS } from '../practice/decks';
 import { buildDailyPlan, type DailyContent, type DailyStep } from '../practice/plan';
 import { todayKey } from '../srs/sm2';
 import { getPrefs } from '../storage/prefs';
-import { getProgressSnapshot, useProgress } from '../storage/progress';
+import { getProgressSnapshot, savePlanStep, useProgress } from '../storage/progress';
 import type { NumberItem } from '../types';
 
 export function DailyPage() {
@@ -80,6 +80,11 @@ function DailySession({ content }: { content: DailyContent }) {
     setRated(false);
   }
 
+  function finishStep() {
+    savePlanStep();
+    next();
+  }
+
   function again() {
     setPlan(buildDailyPlan(content, getProgressSnapshot().srs, todayKey(), Math.random, scale, focus));
     setIndex(0);
@@ -106,7 +111,7 @@ function DailySession({ content }: { content: DailyContent }) {
         <button type="button" className="btn btn--ghost" onClick={next}>
           {vi.daily.skip}
         </button>
-        <button type="button" className="btn" disabled={!rated} onClick={next}>
+        <button type="button" className="btn" disabled={!rated} onClick={finishStep}>
           {index + 1 === plan.length ? vi.common.finish : vi.daily.next}
         </button>
       </div>
