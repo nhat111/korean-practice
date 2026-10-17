@@ -556,14 +556,15 @@ textarea {
 .section-art {
   display: grid;
   place-items: center;
-  height: 76px;
-  margin: -4px -4px 4px;
+  height: 64px;
+  padding: 4px 0;
+  margin-bottom: 4px;
   border-radius: var(--radius-md);
 }
 .art {
   width: 100%;
   height: 100%;
-  max-width: 180px;
+  max-width: 150px;
 }
 .art-paper { fill: var(--surface); }
 .art-soft { opacity: 0.5; }
@@ -572,10 +573,10 @@ textarea {
 .art-cursor { fill: var(--accent-red); stroke: none; }
 @media (min-width: 768px) {
   .section-art {
-    height: 104px;
+    height: 88px;
   }
   .art {
-    max-width: 220px;
+    max-width: 190px;
   }
 }
 .count-badge {
