@@ -1791,6 +1791,205 @@
       "notes": [
         "끝내고 → [끈내고] (비음화 ㄷ → ㄴ)."
       ]
+    },
+    {
+      "id": "ld-01",
+      "level": 1,
+      "topic": "lead",
+      "ko": "제가 직접 설명드리겠습니다.",
+      "pron": "[제가 직쩝 설명드리겓씀니다]",
+      "vi": "Tôi xin trực tiếp giải thích.",
+      "notes": [
+        "직접 → [직쩝] (경음화 sau patchim ㄱ).",
+        "Câu mở đầu để tự nói thay vì chờ comtor dịch."
+      ]
+    },
+    {
+      "id": "ld-02",
+      "level": 1,
+      "topic": "lead",
+      "ko": "그 부분은 제가 담당하고 있습니다.",
+      "pron": "[그 부부는 제가 담당하고 읻씀니다]",
+      "vi": "Phần đó do tôi phụ trách.",
+      "notes": [
+        "부분은 → [부부는] (연음)."
+      ]
+    },
+    {
+      "id": "ld-03",
+      "level": 1,
+      "topic": "lead",
+      "ko": "이 건은 제가 맡겠습니다.",
+      "pron": "[이 거는 제가 맏껟씀니다]",
+      "vi": "Việc này tôi xin nhận.",
+      "notes": [
+        "맡겠습니다 → [맏껟씀니다]: ㅌ đọc như ㄷ, kéo ㄱ phía sau thành ㄲ."
+      ]
+    },
+    {
+      "id": "ld-04",
+      "level": 1,
+      "topic": "lead",
+      "ko": "결론부터 말씀드리겠습니다.",
+      "pron": "[결론부터 말씀드리겓씀니다]",
+      "vi": "Tôi xin nói kết luận trước.",
+      "notes": [
+        "Người Hàn thích nghe kết luận trước (두괄식). Nói câu này rồi mới giải thích lý do."
+      ]
+    },
+    {
+      "id": "ld-05",
+      "level": 1,
+      "topic": "lead",
+      "ko": "한 가지 리스크가 있습니다.",
+      "pron": "[한 가지 리스크가 읻씀니다]",
+      "vi": "Có một rủi ro.",
+      "notes": [
+        "Báo rủi ro sớm là việc của người làm Lead, đừng đợi khách hỏi."
+      ]
+    },
+    {
+      "id": "ld-06",
+      "level": 1,
+      "topic": "lead",
+      "ko": "지금까지 진행된 내용을 공유드리겠습니다.",
+      "pron": "[지금까지 진행된 내용을 공유드리겓씀니다]",
+      "vi": "Tôi xin chia sẻ những gì đã làm đến giờ."
+    },
+    {
+      "id": "ld-07",
+      "level": 2,
+      "topic": "lead",
+      "ko": "이 방식으로 하면 일정이 이틀 정도 늘어날 것 같습니다.",
+      "pron": "[이 방시그로 하면 일쩡이 이틀 정도 느러날 껃 갇씀니다]",
+      "vi": "Nếu làm theo cách này thì lịch có lẽ kéo dài thêm khoảng hai ngày.",
+      "notes": [
+        "일정 → [일쩡]; -(으)ㄹ 것 → [ㄹ 껃]."
+      ]
+    },
+    {
+      "id": "ld-08",
+      "level": 2,
+      "topic": "lead",
+      "ko": "대안으로 두 가지 방법을 생각해 봤습니다.",
+      "pron": "[대아느로 두 가지 방버블 생가캐 봗씀니다]",
+      "vi": "Tôi đã nghĩ ra hai cách làm phương án thay thế.",
+      "notes": [
+        "생각해 → [생가캐] (격음화 ㄱ + ㅎ → ㅋ).",
+        "Khi nói \"khó\", hãy kèm phương án: khách tin người đưa giải pháp."
+      ]
+    },
+    {
+      "id": "ld-09",
+      "level": 2,
+      "topic": "lead",
+      "ko": "공수는 약 5일로 산정했습니다.",
+      "pron": "[공수는 약 오일로 산정핻씀니다]",
+      "vi": "Công số tôi ước tính khoảng 5 ngày.",
+      "notes": [
+        "공수 = effort (người·ngày); 산정하다 = ước tính, tính toán."
+      ]
+    },
+    {
+      "id": "ld-10",
+      "level": 2,
+      "topic": "lead",
+      "ko": "이 부분은 고객사 확인이 필요합니다.",
+      "pron": "[이 부부는 고객싸 화기니 피료함니다]",
+      "vi": "Phần này cần phía khách hàng xác nhận.",
+      "notes": [
+        "고객사 → [고객싸]; 확인이 → [화기니]; 필요 → [피료] (ㅎ yếu đi)."
+      ]
+    },
+    {
+      "id": "ld-11",
+      "level": 2,
+      "topic": "lead",
+      "ko": "일정에 영향이 있을 수 있어서 미리 말씀드립니다.",
+      "pron": "[일쩡에 영향이 이쓸 쑤 이써서 미리 말씀드림니다]",
+      "vi": "Vì có thể ảnh hưởng đến lịch nên tôi báo trước.",
+      "notes": [
+        "-(으)ㄹ 수 → [ㄹ 쑤] (경음화)."
+      ]
+    },
+    {
+      "id": "ld-12",
+      "level": 2,
+      "topic": "lead",
+      "ko": "제 생각에는 첫 번째 방법이 더 안전할 것 같습니다.",
+      "pron": "[제 생가게는 첟 뻔째 방버비 더 안전할 껃 갇씀니다]",
+      "vi": "Theo tôi, cách thứ nhất an toàn hơn.",
+      "notes": [
+        "제 생각에는 + -(으)ㄹ 것 같습니다: nêu ý kiến riêng mà vẫn mềm mỏng."
+      ]
+    },
+    {
+      "id": "ld-13",
+      "level": 3,
+      "topic": "lead",
+      "ko": "현재 진척률은 80%로, 계획보다 일주일 정도 늦어지고 있습니다.",
+      "pron": "[현재 진청뉴른 팔씹 퍼센트로 계획뽀다 일쭈일 정도 느저지고 읻씀니다]",
+      "vi": "Tiến độ hiện tại là 80%, chậm khoảng một tuần so với kế hoạch.",
+      "notes": [
+        "진척률 → [진청뉼] (비음화: ㄱ + ㄹ → ㅇ + ㄴ).",
+        "Báo số cụ thể rồi mới nói lý do."
+      ]
+    },
+    {
+      "id": "ld-14",
+      "level": 3,
+      "topic": "lead",
+      "ko": "원인은 외부 API 응답 지연이고, 내일까지 우회 방안을 마련하겠습니다.",
+      "pron": "[워니는 외부 에이피아이 응답 지여니고 내일까지 우회 방아늘 마련하겓씀니다]",
+      "vi": "Nguyên nhân là API bên ngoài phản hồi chậm; đến mai tôi sẽ chuẩn bị cách xử lý tạm.",
+      "notes": [
+        "우회 방안 = cách đi vòng, workaround."
+      ]
+    },
+    {
+      "id": "ld-15",
+      "level": 3,
+      "topic": "lead",
+      "ko": "요구사항이 추가되면 공수와 일정을 다시 산정해야 합니다.",
+      "pron": "[요구사항이 추가되면 공수와 일쩡을 다시 산정해야 함니다]",
+      "vi": "Nếu thêm yêu cầu thì phải ước tính lại công số và lịch.",
+      "notes": [
+        "Câu giữ phạm vi (scope): lịch sự nhưng rõ ràng."
+      ]
+    },
+    {
+      "id": "ld-16",
+      "level": 3,
+      "topic": "lead",
+      "ko": "결정이 필요한 사항은 두 가지이고, 이번 주 금요일까지 회신 부탁드립니다.",
+      "pron": "[결쩡이 피료한 사항은 두 가지이고 이번 주 그묘일까지 회신 부탁뜨림니다]",
+      "vi": "Có hai điểm cần quyết định, mong anh/chị phản hồi trước thứ Sáu tuần này.",
+      "notes": [
+        "결정 → [결쩡]; 부탁드립니다 → [부탁뜨림니다]."
+      ]
+    },
+    {
+      "id": "ld-17",
+      "level": 3,
+      "topic": "lead",
+      "ko": "저희 쪽 실수였습니다. 재발 방지 대책까지 정리해서 보고드리겠습니다.",
+      "pron": "[저희 쪽 실쑤엳씀니다 재발 방지 대책까지 정니해서 보고드리겓씀니다]",
+      "vi": "Đó là lỗi bên chúng tôi. Tôi sẽ tổng hợp cả biện pháp phòng tái phát rồi báo cáo.",
+      "notes": [
+        "실수 → [실쑤]; 정리 → [정니] (ㅇ + ㄹ → ㄴ).",
+        "Nhận lỗi ngắn gọn, rồi nói ngay bước tiếp theo."
+      ]
+    },
+    {
+      "id": "ld-18",
+      "level": 3,
+      "topic": "lead",
+      "ko": "부족한 부분이 있으면 편하게 말씀해 주십시오. 바로 반영하겠습니다.",
+      "pron": "[부조칸 부부니 이쓰면 편하게 말씀해 주십씨오 바로 바녕하겓씀니다]",
+      "vi": "Nếu còn thiếu sót gì, anh/chị cứ thoải mái góp ý. Tôi sẽ sửa ngay.",
+      "notes": [
+        "부족한 → [부조칸] (격음화); 반영 → [바녕] (연음)."
+      ]
     }
   ]
 }

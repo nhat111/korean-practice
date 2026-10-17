@@ -9253,6 +9253,94 @@
         "incident",
         "performance"
       ]
+    },
+    {
+      "id": "w-interface-jeonguiseo",
+      "ko": "인터페이스 정의서",
+      "vi": "tài liệu định nghĩa interface (giữa các hệ thống)",
+      "type": "noun",
+      "collocation": "인터페이스 정의서를 작성하다",
+      "example": {
+        "ko": "POS와 ERP 사이의 인터페이스 정의서를 먼저 확인해야 합니다.",
+        "vi": "Phải kiểm tra tài liệu định nghĩa interface giữa POS và ERP trước.",
+        "grammar": [
+          {
+            "pattern": "-아/어야 하다",
+            "form": "확인해야 합니다",
+            "meaningVi": "phải…"
+          }
+        ]
+      },
+      "tags": [
+        "pm",
+        "document"
+      ]
+    },
+    {
+      "id": "w-danwi-test-gyeolgwaseo",
+      "ko": "단위 테스트 결과서",
+      "vi": "báo cáo kết quả unit test (산출물)",
+      "type": "noun",
+      "collocation": "단위 테스트 결과서를 제출하다",
+      "example": {
+        "ko": "단위 테스트 결과서는 금요일까지 제출하겠습니다.",
+        "vi": "Báo cáo kết quả unit test tôi sẽ nộp trước thứ Sáu.",
+        "grammar": [
+          {
+            "pattern": "N까지",
+            "form": "금요일까지",
+            "meaningVi": "trước, đến (hạn)"
+          }
+        ]
+      },
+      "tags": [
+        "test",
+        "document"
+      ]
+    },
+    {
+      "id": "w-ihaeng",
+      "ko": "이행",
+      "vi": "chuyển đổi dữ liệu / chuyển hệ thống (migration, cutover)",
+      "type": "noun",
+      "collocation": "데이터 이행을 진행하다",
+      "example": {
+        "ko": "오픈 전날 밤에 데이터 이행을 진행할 예정입니다.",
+        "vi": "Dự kiến tối hôm trước ngày go-live sẽ chạy chuyển đổi dữ liệu.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄹ 예정이다",
+            "form": "진행할 예정입니다",
+            "meaningVi": "dự định sẽ…"
+          }
+        ]
+      },
+      "tags": [
+        "si",
+        "db"
+      ]
+    },
+    {
+      "id": "w-daean",
+      "ko": "대안",
+      "vi": "phương án thay thế",
+      "type": "noun",
+      "collocation": "대안을 제시하다",
+      "example": {
+        "ko": "그 방법이 어렵다면 다른 대안을 제시해 드리겠습니다.",
+        "vi": "Nếu cách đó khó thì tôi sẽ đưa ra phương án khác.",
+        "grammar": [
+          {
+            "pattern": "-다면",
+            "form": "어렵다면",
+            "meaningVi": "nếu (giả định)"
+          }
+        ]
+      },
+      "tags": [
+        "pm",
+        "meeting"
+      ]
     }
   ]
 }
