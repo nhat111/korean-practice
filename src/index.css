@@ -82,17 +82,18 @@
     --warn-bg: #2b2210;
     --mark: #6b5a12;
     --focus-ring: 0 0 0 3px rgb(124 176 255 / 40%);
-    --tone-blue-bg: #15284a;
+    /* Dark tone backgrounds share one OKLCH lightness (0.27) and chroma (0.045), so no tile stands out. */
+    --tone-blue-bg: #1a263c;
     --tone-blue: #9cc3ff;
-    --tone-teal-bg: #0f2e2a;
+    --tone-teal-bg: #042d29;
     --tone-teal: #6ee0cd;
-    --tone-violet-bg: #251d42;
+    --tone-violet-bg: #26223b;
     --tone-violet: #c4b2ff;
-    --tone-red-bg: #3a1a1e;
+    --tone-red-bg: #391d20;
     --tone-red: #ff9aa2;
-    --tone-amber-bg: #33260f;
+    --tone-amber-bg: #32240a;
     --tone-amber: #fcc96b;
-    --tone-green-bg: #10291a;
+    --tone-green-bg: #122d1d;
     --tone-green: #7ee2a3;
     --shadow-sm: none;
     --shadow: 0 6px 24px -10px rgb(0 0 0 / 60%);
