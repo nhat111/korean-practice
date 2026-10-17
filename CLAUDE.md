@@ -259,8 +259,9 @@ Korean either.
   (`listen:number:<id>`), 1 interpreting Việt → Hàn (`interpret:<id>`), 1 chat message (`message:<id>`) and 1 grammar quiz
   (`grammar:<id>`, due lessons first), due items first; 10/15-minute sessions scale the counts and add one meeting (`listen:meeting:<id>`).
 - Home: a typographic hero (a workplace greeting by time of day, `greetingSlot` + `vi.home.greetings`, with a speak
-  button; stats only once any is above 0), then "Mục tiêu hôm nay": today's practice turns
-  (`daily[today].reviews`) against `dailyTarget(minutes / 5)` (= the daily plan size), what the session contains
+  button; stats only once any is above 0), then "Mục tiêu hôm nay": today's rated daily-plan steps
+  (`daily[today].planSteps`, bumped by `savePlanStep` when "Tiếp" is pressed on `/daily`; skips and practice elsewhere
+  don't count, so the goal matches the recipe chips) against `dailyTarget(minutes / 5)` (= the daily plan size), what the session contains
   (`planRecipe`, chips), Monday-to-Sunday `WeekDots`, one start button to `/daily`; then "Từ của ngày"
   (`itemOfDay(vocab, today)`). The six section cards carry an item count from the content files. Progress starts with
   an overview (`skillProgress`: items practiced at least once per skill, grammar included, `ProgressRing` + one bar per skill), then one
@@ -307,7 +308,7 @@ Spec: `docs/custom-questions.md` (implemented). The learner pastes their own int
 - All access goes through `src/storage/`. Components never call `localStorage` directly.
 - Use a single namespaced key prefix (`kp:`) and a **schema version**. Keys:
   `kp:progress:v1` (learning progress; `srs` and `daily` (per-day lines spoken, reviews, recording ms,
-  ~400 days) were added later and default to `{}`), `kp:prefs:v1` (device preferences such as speech
+  daily-plan steps (`planSteps`, optional), ~400 days) were added later and default to `{}`), `kp:prefs:v1` (device preferences such as speech
   rate, `showPron`, `answerTimer`), `kp:backend:v1` (optional backend URL + access key), `kp:custom:v1` (the learner's own questions) and `kp:reports:v1` ("Báo câu sai" flags, `src/storage/reports.ts`). When the shape changes, write a migration instead of silently dropping user data;
   purely additive fields may instead default when missing (as `speaking` does).
 - `kp:prefs:v1` also holds `profile` (`{ role, level, minutes }` or null), `onboarded`, `analytics`

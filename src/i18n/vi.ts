@@ -85,7 +85,7 @@ export const vi = {
     statStreak: 'ngày liên tiếp',
     today: {
       title: 'Mục tiêu hôm nay',
-      count: (done: number, target: number) => `${Math.min(done, target)}/${target} lượt luyện`,
+      count: (done: number, target: number) => `${Math.min(done, target)}/${target} bước`,
       start: 'Bắt đầu luyện hôm nay',
       continue: 'Luyện tiếp',
       more: 'Luyện thêm một buổi',
