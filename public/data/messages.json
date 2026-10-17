@@ -920,6 +920,138 @@
         }
       ],
       "note": "공수 = công số (man-day). Chuyện lớn như vượt công số thì nên xin họp, đừng chỉ giải quyết qua tin nhắn."
+    },
+    {
+      "id": "msg-progress-08",
+      "topic": "progress",
+      "to": "오 과장님 – người phụ trách nghiệp vụ (현업)",
+      "situation": "Báo tiến độ chức năng nhận hàng tại cửa hàng (매장 픽업): API xong, màn hình 60%, thứ Năm đưa lên server test.",
+      "model": "오 과장님, 매장 픽업 기능 진행 상황 공유드립니다.\nAPI 개발은 완료했고, 화면은 60% 정도 진행되었습니다.\n목요일에 테스트 서버에 반영하겠습니다.",
+      "phrases": [
+        {
+          "ko": "진행 상황 공유드립니다",
+          "vi": "xin chia sẻ tiến độ"
+        },
+        {
+          "ko": "60% 정도 진행되었습니다",
+          "vi": "đã làm được khoảng 60%"
+        },
+        {
+          "ko": "테스트 서버에 반영하겠습니다",
+          "vi": "sẽ đưa lên server test"
+        }
+      ],
+      "note": "Với 현업 (người dùng nghiệp vụ) vẫn dùng 하십시오체. Nói tên chức năng theo cách họ gọi (매장 픽업), không dùng tên class hay API."
+    },
+    {
+      "id": "msg-bug-08",
+      "topic": "bug",
+      "to": "한 대리님 – người phụ trách UAT",
+      "situation": "Báo đã xác nhận lỗi coupon bị áp trùng ở màn thanh toán, đang sửa, mai báo lại.",
+      "model": "한 대리님, 말씀하신 쿠폰 중복 적용 건 확인했습니다.\n결제 화면에서 쿠폰을 다시 선택할 때 발생하는 결함이며, 현재 수정 중입니다.\n내일 오전에 다시 말씀드리겠습니다.",
+      "phrases": [
+        {
+          "ko": "말씀하신",
+          "vi": "(việc) anh/chị đã nói"
+        },
+        {
+          "ko": "확인했습니다",
+          "vi": "tôi đã kiểm tra / xác nhận"
+        },
+        {
+          "ko": "현재 수정 중입니다",
+          "vi": "hiện đang sửa"
+        }
+      ],
+      "note": "'말씀하신 ~ 건' giúp người đọc biết ngay đang nói về việc nào. Nói điều kiện xảy ra lỗi bằng thao tác màn hình."
+    },
+    {
+      "id": "msg-schedule-08",
+      "topic": "schedule",
+      "to": "정 팀장님 – PM phía khách",
+      "situation": "Đề xuất dời deploy định kỳ tuần sau vì trùng đợt khuyến mãi lớn, chuyển sang thứ Ba tuần kế tiếp.",
+      "model": "정 팀장님, 다음 주 정기 배포 일정 관련하여 말씀드립니다.\n행사 기간과 겹쳐서 장애 위험이 있어, 그다음 주 화요일로 변경하는 것은 어떨까요?\n검토 부탁드립니다.",
+      "phrases": [
+        {
+          "ko": "관련하여 말씀드립니다",
+          "vi": "xin trao đổi về việc…"
+        },
+        {
+          "ko": "행사 기간과 겹쳐서",
+          "vi": "vì trùng thời gian khuyến mãi"
+        },
+        {
+          "ko": "변경하는 것은 어떨까요?",
+          "vi": "đổi sang… thì thế nào ạ?"
+        }
+      ],
+      "note": "Đề xuất đổi lịch thì nêu lý do trước, rồi hỏi bằng '-는 것은 어떨까요?' thay vì tự quyết."
+    },
+    {
+      "id": "msg-request-08",
+      "topic": "request",
+      "to": "박 대리님 – đội vận hành cửa hàng",
+      "situation": "Nhờ cho mượn 1 máy POS và thẻ test để kiểm thử thanh toán, cần trước thứ Tư.",
+      "model": "박 대리님, 결제 테스트를 위해 POS 단말기 1대와 테스트용 카드가 필요합니다.\n수요일 전까지 준비해 주시면 감사하겠습니다.\n어려우시면 편하게 말씀해 주세요.",
+      "phrases": [
+        {
+          "ko": "테스트를 위해",
+          "vi": "để test"
+        },
+        {
+          "ko": "준비해 주시면 감사하겠습니다",
+          "vi": "nếu anh/chị chuẩn bị giúp thì tôi rất cảm ơn"
+        },
+        {
+          "ko": "어려우시면 편하게 말씀해 주세요",
+          "vi": "nếu khó thì cứ nói thoải mái ạ"
+        }
+      ],
+      "note": "Câu cuối '어려우시면 편하게 말씀해 주세요' làm lời nhờ nhẹ nhàng hơn, người Hàn hay dùng khi nhờ việc phòng ban khác."
+    },
+    {
+      "id": "msg-deploy-08",
+      "topic": "deploy",
+      "to": "Kênh chung các cửa hàng – 매장 담당자",
+      "situation": "Thông báo cập nhật chương trình POS tối nay sau giờ đóng cửa (23:00–01:00), không cần thao tác gì, sáng mai khởi động lại POS.",
+      "model": "매장 담당자님들께 안내드립니다.\n오늘 영업 종료 후 23시부터 01시까지 POS 프로그램 업데이트가 진행됩니다.\n별도 작업은 필요 없으며, 내일 아침 POS를 재시작해 주시기 바랍니다.",
+      "phrases": [
+        {
+          "ko": "안내드립니다",
+          "vi": "xin thông báo"
+        },
+        {
+          "ko": "영업 종료 후",
+          "vi": "sau khi hết giờ bán hàng"
+        },
+        {
+          "ko": "재시작해 주시기 바랍니다",
+          "vi": "mong anh/chị khởi động lại"
+        }
+      ],
+      "note": "Thông báo cho nhiều người dùng '-님들께 안내드립니다' và '-아/어 주시기 바랍니다' (trang trọng hơn '-아/어 주세요')."
+    },
+    {
+      "id": "msg-apology-08",
+      "topic": "apology",
+      "to": "최 과장님 – đội kế toán",
+      "situation": "Xin lỗi vì batch quyết toán chạy trễ nên báo cáo doanh thu sáng nay bị chậm; đã chạy lại, 10 giờ sẽ xong.",
+      "model": "최 과장님, 정산 배치 지연으로 매출 보고서가 늦어져 죄송합니다.\n배치는 재실행했고, 10시까지 완료될 예정입니다.\n완료되면 바로 연락드리겠습니다.",
+      "phrases": [
+        {
+          "ko": "늦어져 죄송합니다",
+          "vi": "xin lỗi vì đã bị chậm"
+        },
+        {
+          "ko": "완료될 예정입니다",
+          "vi": "dự kiến sẽ xong"
+        },
+        {
+          "ko": "완료되면 바로 연락드리겠습니다",
+          "vi": "xong là tôi liên lạc ngay"
+        }
+      ],
+      "note": "Xin lỗi kèm nguyên nhân ngắn gọn, rồi nói ngay tình trạng xử lý và giờ hoàn thành. Đừng xin lỗi dài dòng mà thiếu thông tin."
     }
   ]
 }
