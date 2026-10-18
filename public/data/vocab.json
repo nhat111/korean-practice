@@ -9341,6 +9341,178 @@
         "pm",
         "meeting"
       ]
+    },
+    {
+      "id": "w-hoesik",
+      "ko": "회식",
+      "vi": "liên hoan công ty (sau giờ làm)",
+      "type": "noun",
+      "collocation": "회식에 참석하다",
+      "example": {
+        "ko": "이번 주 금요일에 팀 회식이 있습니다.",
+        "vi": "Thứ Sáu tuần này team có buổi liên hoan."
+      },
+      "tags": [
+        "communication"
+      ]
+    },
+    {
+      "id": "w-yeoncha",
+      "ko": "연차",
+      "vi": "ngày phép năm",
+      "type": "noun",
+      "collocation": "연차를 쓰다",
+      "example": {
+        "ko": "다음 주 월요일에 연차를 쓰려고 합니다.",
+        "vi": "Thứ Hai tuần sau tôi định nghỉ phép năm.",
+        "grammar": [
+          {
+            "pattern": "-(으)려고 하다",
+            "form": "쓰려고 합니다",
+            "meaningVi": "định làm"
+          }
+        ]
+      },
+      "tags": [
+        "communication",
+        "time"
+      ]
+    },
+    {
+      "id": "w-bancha",
+      "ko": "반차",
+      "vi": "nghỉ nửa ngày",
+      "type": "noun",
+      "collocation": "오후 반차를 내다",
+      "example": {
+        "ko": "병원에 가야 해서 오후 반차를 냈습니다.",
+        "vi": "Tôi phải đi bệnh viện nên đã xin nghỉ buổi chiều."
+      },
+      "tags": [
+        "communication",
+        "time"
+      ]
+    },
+    {
+      "id": "w-yageun",
+      "ko": "야근",
+      "vi": "làm thêm buổi tối",
+      "type": "noun",
+      "collocation": "야근하다",
+      "example": {
+        "ko": "배포 때문에 오늘은 야근할 것 같습니다.",
+        "vi": "Vì deploy nên hôm nay chắc tôi phải làm thêm buổi tối.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄹ 것 같다",
+            "form": "야근할 것 같습니다",
+            "meaningVi": "chắc là sẽ"
+          }
+        ]
+      },
+      "tags": [
+        "schedule"
+      ]
+    },
+    {
+      "id": "w-chuljang",
+      "ko": "출장",
+      "vi": "công tác",
+      "type": "noun",
+      "collocation": "출장을 가다",
+      "example": {
+        "ko": "다음 주에 서울로 출장을 갑니다.",
+        "vi": "Tuần sau tôi đi công tác Seoul."
+      },
+      "tags": [
+        "business"
+      ]
+    },
+    {
+      "id": "w-bujaejung",
+      "ko": "부재중",
+      "vi": "vắng mặt; cuộc gọi nhỡ",
+      "type": "noun",
+      "collocation": "부재중 전화",
+      "example": {
+        "ko": "부재중 전화가 있어서 다시 연락드립니다.",
+        "vi": "Có cuộc gọi nhỡ nên tôi gọi lại ạ."
+      },
+      "tags": [
+        "communication"
+      ]
+    },
+    {
+      "id": "w-tonghwa",
+      "ko": "통화",
+      "vi": "cuộc gọi; nói chuyện điện thoại",
+      "type": "noun",
+      "collocation": "통화가 가능하다",
+      "example": {
+        "ko": "지금 잠깐 통화 가능하십니까?",
+        "vi": "Bây giờ anh/chị nghe máy một chút được không ạ?"
+      },
+      "tags": [
+        "communication"
+      ]
+    },
+    {
+      "id": "w-eumsogeo",
+      "ko": "음소거",
+      "vi": "tắt tiếng (mute)",
+      "type": "noun",
+      "collocation": "음소거를 해제하다",
+      "example": {
+        "ko": "말씀하실 때 음소거를 해제해 주세요.",
+        "vi": "Khi nói, anh/chị bật tiếng lên giúp ạ."
+      },
+      "tags": [
+        "meeting"
+      ]
+    },
+    {
+      "id": "w-hwamyeon-gongyu",
+      "ko": "화면 공유",
+      "vi": "chia sẻ màn hình",
+      "type": "phrase",
+      "collocation": "화면을 공유하다",
+      "example": {
+        "ko": "지금 제 화면 공유하겠습니다.",
+        "vi": "Bây giờ tôi chia sẻ màn hình của tôi."
+      },
+      "tags": [
+        "meeting"
+      ]
+    },
+    {
+      "id": "w-jikgeup",
+      "ko": "직급",
+      "vi": "cấp bậc, chức vụ",
+      "pron": "[직끕]",
+      "type": "noun",
+      "collocation": "직급이 높다",
+      "example": {
+        "ko": "한국 회사에서는 직급에 맞는 호칭을 사용합니다.",
+        "vi": "Ở công ty Hàn Quốc, người ta dùng cách gọi theo đúng cấp bậc."
+      },
+      "tags": [
+        "title"
+      ]
+    },
+    {
+      "id": "w-sangsa",
+      "ko": "상사",
+      "vi": "cấp trên",
+      "type": "noun",
+      "collocation": "상사에게 보고하다",
+      "example": {
+        "ko": "상사에게 먼저 보고하고 답변드리겠습니다.",
+        "vi": "Tôi sẽ báo cáo cấp trên trước rồi trả lời anh/chị."
+      },
+      "tags": [
+        "title",
+        "communication"
+      ]
     }
   ]
 }

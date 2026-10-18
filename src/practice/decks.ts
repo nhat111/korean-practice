@@ -5,11 +5,11 @@
 import type { Grade } from '../srs/sm2';
 
 /** Shadowing decks, in display order. Labels live in vi.shadowing.topics. */
-export const SHADOWING_TOPICS = ['survival', 'progress', 'bug', 'schedule', 'request', 'meeting', 'tech', 'cushion', 'qa', 'lead'] as const;
+export const SHADOWING_TOPICS = ['survival', 'progress', 'bug', 'schedule', 'request', 'meeting', 'online', 'phone', 'tech', 'cushion', 'culture', 'qa', 'lead'] as const;
 export type ShadowingTopic = (typeof SHADOWING_TOPICS)[number];
 
 /** Topics drawn for the "shadowing" part of the daily session (survival has its own slot). */
-export const DAILY_SHADOWING_TOPICS: readonly string[] = ['progress', 'bug', 'schedule', 'request', 'meeting', 'tech', 'cushion', 'qa', 'lead'];
+export const DAILY_SHADOWING_TOPICS: readonly string[] = ['progress', 'bug', 'schedule', 'request', 'meeting', 'online', 'phone', 'tech', 'cushion', 'culture', 'qa', 'lead'];
 
 /** What the daily plan leans towards for each onboarding role (keys match ROLES in storage/prefs.ts). */
 export interface DailyFocus {

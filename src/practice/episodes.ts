@@ -15,6 +15,7 @@ export const EPISODES: readonly EpisodeSpec[] = [
   { id: 'ep-survival', shadowing: ['survival'] },
   { id: 'ep-report', shadowing: ['progress', 'schedule'] },
   { id: 'ep-bug', shadowing: ['bug'] },
+  { id: 'ep-online', shadowing: ['online', 'phone', 'culture'] },
   { id: 'ep-grammar', grammar: true },
 ];
 
