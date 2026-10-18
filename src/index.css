@@ -2758,6 +2758,12 @@ ins {
   color: inherit;
   opacity: 0.85;
 }
+.share-preview {
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
 .typing-setup summary {
   display: flex;
   align-items: center;

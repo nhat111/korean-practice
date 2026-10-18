@@ -23,7 +23,7 @@ If few people come back after day 1, do **3** before **2**.
 - [ ] Content: workplace culture and forms of address (직급 호칭, 회식, refusing politely), more honorific grammar,
       online meetings (screen share, lag, recap), phone calls; more incident/release/security scenarios and emails.
 - [ ] "Cần nói gấp": search all content by Vietnamese meaning, with audio.
-- [ ] Shareable progress card (image with streak and counts) for Facebook/Zalo.
+- [x] Shareable progress card ("Chia sẻ tiến độ" on Progress): PNG with streak and counts, Web Share or download.
 
 ## 2. AI correction of the learner's own Korean (needs the backend)
 
