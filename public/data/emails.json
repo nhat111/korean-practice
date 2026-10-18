@@ -1520,6 +1520,126 @@
         "대체담당자",
         "공지"
       ]
+    },
+    {
+      "id": "incident-first-report-search",
+      "title": "Email báo cáo sự cố lần đầu (1차 보고)",
+      "situation": "Chiều nay chức năng tìm kiếm bị lỗi khoảng 35 phút, đã khôi phục bằng cách khởi động lại server nhưng chưa rõ nguyên nhân. Gửi báo cáo lần đầu cho 박 부장님 phía khách.",
+      "politeness": "hasipsio",
+      "politenessNote": "Báo cáo sự cố gửi trưởng phòng khách luôn dùng 하십시오체: thời gian chính xác, tình trạng hiện tại, khi nào báo cáo tiếp.",
+      "draft": "박 부장님, 안녕하세요.\n오늘 오후에 검색이 안 됐어요.\n지금은 고쳤으니까 걱정하지 마세요.\n원인은 아직 모르겠고 나중에 알려 줄게요.",
+      "corrected": "박 부장님, 안녕하십니까.\n금일 14시 20분부터 14시 55분까지 약 35분간 검색 기능 장애가 발생하여 1차 보고드립니다.\n현재는 서버 재시작 후 정상적으로 서비스되고 있습니다.\n정확한 원인은 분석 중이며, 내일 오전 중으로 2차 보고드리겠습니다.\n불편을 드려 대단히 죄송합니다.",
+      "corrections": [
+        {
+          "wrong": "안녕하세요.",
+          "right": "안녕하십니까.",
+          "type": "politeness",
+          "explanation": "Email báo cáo sự cố gửi trưởng phòng phía khách dùng 하십시오체 ngay từ câu chào."
+        },
+        {
+          "wrong": "오늘 오후에 검색이 안 됐어요.",
+          "right": "금일 14시 20분부터 14시 55분까지 약 35분간 검색 기능 장애가 발생하여 1차 보고드립니다.",
+          "type": "format",
+          "explanation": "Báo cáo sự cố cần giờ bắt đầu, giờ kết thúc và thời lượng. '1차 보고' = báo cáo lần đầu, cho khách biết sẽ còn báo cáo tiếp."
+        },
+        {
+          "wrong": "지금은 고쳤으니까 걱정하지 마세요.",
+          "right": "현재는 서버 재시작 후 정상적으로 서비스되고 있습니다.",
+          "type": "politeness",
+          "explanation": "'걱정하지 마세요' là câu mệnh lệnh, không hợp khi báo sự cố. Nói tình trạng hiện tại và đã làm gì để khôi phục."
+        },
+        {
+          "wrong": "나중에 알려 줄게요.",
+          "right": "내일 오전 중으로 2차 보고드리겠습니다.",
+          "type": "politeness",
+          "explanation": "'줄게요' quá thân mật. Hẹn mốc thời gian cụ thể cho báo cáo lần hai."
+        }
+      ],
+      "tags": [
+        "장애",
+        "1차 보고",
+        "보고"
+      ]
+    },
+    {
+      "id": "release-notice-version-2-3",
+      "title": "Email thông báo phát hành phiên bản mới",
+      "situation": "Gửi email cho các người phụ trách phía khách: phiên bản 2.3 có màn hình đăng nhập mới và chức năng tải Excel danh sách đơn hàng; deploy tối thứ Năm 23/10 từ 22:00 đến 23:00, trong lúc đó không truy cập được.",
+      "politeness": "hasipsio",
+      "politenessNote": "Thông báo gửi nhiều người phía khách dùng 하십시오체, liệt kê thay đổi bằng gạch đầu dòng và ghi rõ giờ gián đoạn.",
+      "draft": "고객사 담당자님들께\n이번에 2.3 버전이 나왔어요.\n로그인 화면이 바꼈고 엑셀 다운로드 기능이 생겼습니다.\n배포는 목요일 밤에 할거고 그때 접속 안 돼요.\n궁금한 거 있으면 물어보세요.",
+      "corrected": "담당자님들께,\n안녕하십니까. 베트남 개발팀 흐엉입니다.\n2.3 버전 릴리스 내용을 아래와 같이 안내드립니다.\n- 로그인 화면 디자인 변경\n- 주문 목록 엑셀 다운로드 기능 추가\n배포 일시: 10월 23일(목) 22:00~23:00 (작업 중 서비스 접속 불가)\n문의 사항이 있으시면 언제든지 연락 주십시오.\n감사합니다.",
+      "corrections": [
+        {
+          "wrong": "이번에 2.3 버전이 나왔어요.",
+          "right": "2.3 버전 릴리스 내용을 아래와 같이 안내드립니다.",
+          "type": "politeness",
+          "explanation": "Thông báo chính thức dùng '아래와 같이 안내드립니다' (xin thông báo như dưới đây) rồi liệt kê."
+        },
+        {
+          "wrong": "바꼈고",
+          "right": "바뀌었고",
+          "type": "spelling",
+          "explanation": "'바꼈' là viết rút gọn sai; đúng là '바뀌었'. Trong thông báo có thể dùng '변경되었고' trang trọng hơn."
+        },
+        {
+          "wrong": "배포는 목요일 밤에 할거고 그때 접속 안 돼요.",
+          "right": "배포 일시: 10월 23일(목) 22:00~23:00 (작업 중 서비스 접속 불가)",
+          "type": "format",
+          "explanation": "Ghi ngày giờ cụ thể và thời gian gián đoạn. Lưu ý '할거고' phải viết cách thành '할 거고'."
+        },
+        {
+          "wrong": "궁금한 거 있으면 물어보세요.",
+          "right": "문의 사항이 있으시면 언제든지 연락 주십시오.",
+          "type": "politeness",
+          "explanation": "'물어보세요' là mệnh lệnh thân mật. Dùng '문의 사항이 있으시면 … 연락 주십시오'."
+        }
+      ],
+      "tags": [
+        "릴리스",
+        "공지",
+        "배포"
+      ]
+    },
+    {
+      "id": "security-patch-urgent-notice",
+      "title": "Email xin duyệt vá bảo mật khẩn",
+      "situation": "Một thư viện Java đang dùng vừa công bố lỗ hổng. Bạn muốn vá khẩn lúc 23:00 tối nay, gián đoạn khoảng 5 phút, đã test trên staging. Gửi email cho 김 과장님 xin đồng ý.",
+      "politeness": "hasipsio",
+      "politenessNote": "Việc khẩn liên quan bảo mật: viết chính xác, không gây hoảng, nêu rõ việc cần khách duyệt.",
+      "draft": "김 과장님\n보안 문제가 생겨서 오늘 밤에 급하게 패치해야 될것 같아요.\n5분정도 서비스가 멈출 수 있어요.\n괜찮으면 답장 주세요.",
+      "corrected": "김 과장님, 안녕하십니까.\n사용 중인 Java 라이브러리에서 보안 취약점이 발표되어, 금일 23:00에 긴급 보안 패치를 진행하고자 합니다.\n작업 중 약 5분간 서비스가 중단될 수 있습니다.\n스테이징 환경에서 테스트는 완료했습니다.\n진행에 동의하시면 회신 부탁드립니다. 감사합니다.",
+      "corrections": [
+        {
+          "wrong": "보안 문제가 생겨서",
+          "right": "사용 중인 Java 라이브러리에서 보안 취약점이 발표되어",
+          "type": "vocabulary",
+          "explanation": "'보안 문제가 생겨서' nghe như hệ thống đã bị tấn công, dễ gây hoảng. Nói chính xác: lỗ hổng (취약점) của thư viện vừa được công bố."
+        },
+        {
+          "wrong": "급하게 패치해야 될것 같아요",
+          "right": "긴급 보안 패치를 진행하고자 합니다",
+          "type": "politeness",
+          "explanation": "Email gửi khách dùng '-고자 합니다' (xin được tiến hành). Ngoài ra '될것' phải viết cách thành '될 것'."
+        },
+        {
+          "wrong": "5분정도",
+          "right": "약 5분간",
+          "type": "spelling",
+          "explanation": "'5분 정도' phải viết cách; trong email trang trọng dùng '약 5분간'."
+        },
+        {
+          "wrong": "괜찮으면 답장 주세요.",
+          "right": "진행에 동의하시면 회신 부탁드립니다.",
+          "type": "politeness",
+          "explanation": "'답장 주세요' thân mật. Với khách dùng '회신 부탁드립니다' và kính ngữ '동의하시면'."
+        }
+      ],
+      "tags": [
+        "보안",
+        "패치",
+        "긴급"
+      ]
     }
   ]
 }

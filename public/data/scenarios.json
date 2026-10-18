@@ -8509,6 +8509,753 @@
           "modelAnswerVi": "Vâng, ở dự án trước tôi cũng họp yêu cầu với người phụ trách nghiệp vụ hằng tuần. Khi thuật ngữ dễ nhầm, sau buổi họp tôi tổng hợp lại qua mail để xác nhận."
         }
       ]
+    },
+    {
+      "id": "incident-stale-price-cache",
+      "title": "Giá hiển thị sai do cache sau khi đổi giá",
+      "titleKo": "가격 변경 후 캐시로 인한 가격 오표시 대응",
+      "description": "Khách vừa đổi giá sản phẩm trên trang quản trị nhưng trang bán hàng vẫn hiện giá cũ. Nguyên nhân là cache (Redis) chưa được làm mới. Bạn cần báo nguyên nhân, xử lý ngay và đề xuất cách phòng tránh.",
+      "category": "incident",
+      "tags": [
+        "캐시",
+        "가격",
+        "장애"
+      ],
+      "turns": [
+        {
+          "client": "관리자 화면에서 가격을 바꿨는데 쇼핑몰에는 아직 예전 가격이 나와요. 고객 문의가 계속 들어오고 있어요.",
+          "hint": "Khách báo giá trên trang bán vẫn là giá cũ và đang bị khách hàng hỏi. Xác nhận đã nắm tình hình, nói nguyên nhân dự đoán và việc làm ngay.",
+          "choices": [
+            {
+              "ko": "확인해 보겠습니다. 상품 정보가 캐시에 남아 있어서 생긴 문제로 보입니다. 지금 바로 캐시를 갱신하고 10분 안에 다시 말씀드리겠습니다.",
+              "correct": true,
+              "feedback": "Tốt: xác nhận, nêu nguyên nhân dự đoán bằng '-(으)로 보입니다' (chưa khẳng định chắc), hành động ngay và hẹn giờ báo lại."
+            },
+            {
+              "ko": "저희 쪽 문제는 아닌 것 같은데요. 브라우저 캐시를 지워 보세요.",
+              "correct": false,
+              "feedback": "Đổ lỗi cho người dùng khi chưa kiểm tra. Khách đang bị khách hàng hỏi, câu này làm họ khó chịu hơn."
+            },
+            {
+              "ko": "캐시 때문이에요. 좀 기다리면 바뀔 거예요.",
+              "correct": false,
+              "feedback": "Khẳng định khi chưa kiểm tra và bảo khách chờ mà không nói bao lâu. Văn phong '-이에요/거예요' cũng hơi nhẹ khi đang có sự cố."
+            }
+          ],
+          "modelAnswer": "확인해 보겠습니다. 상품 정보 캐시가 갱신되지 않아 생긴 문제로 보입니다. 지금 바로 캐시를 갱신하고, 10분 안에 결과를 말씀드리겠습니다.",
+          "modelAnswerVi": "Để tôi kiểm tra. Có vẻ lỗi do cache thông tin sản phẩm chưa được làm mới. Tôi sẽ làm mới cache ngay và báo kết quả trong vòng 10 phút."
+        },
+        {
+          "client": "지금은 제대로 나오네요. 그런데 왜 이런 일이 생긴 거죠?",
+          "hint": "Khách hỏi nguyên nhân. Giải thích ngắn, dễ hiểu: cache giữ giá cũ bao lâu, vì sao lần này không tự làm mới.",
+          "choices": [
+            {
+              "ko": "개발자가 설정을 잘못한 것 같아요.",
+              "correct": false,
+              "feedback": "Mơ hồ và đổ cho cá nhân. Khách cần biết cơ chế lỗi, không cần biết ai làm."
+            },
+            {
+              "ko": "가격 정보는 1시간 동안 캐시에 저장되는데, 관리자 화면에서 가격을 바꿀 때 캐시를 삭제하는 처리가 빠져 있었습니다.",
+              "correct": true,
+              "feedback": "Giải thích đúng cơ chế: thời gian lưu cache và bước bị thiếu. Ngắn và cụ thể."
+            },
+            {
+              "ko": "캐시는 원래 그런 거라서 어쩔 수 없습니다.",
+              "correct": false,
+              "feedback": "Né tránh trách nhiệm. Lỗi thiếu bước xóa cache là lỗi của hệ thống, cần thừa nhận."
+            }
+          ],
+          "modelAnswer": "가격 정보는 성능을 위해 1시간 동안 캐시에 저장되는데, 관리자 화면에서 가격을 수정할 때 해당 캐시를 삭제하는 처리가 빠져 있었습니다.",
+          "modelAnswerVi": "Thông tin giá được lưu trong cache 1 tiếng để tăng hiệu năng, nhưng khi sửa giá trên trang quản trị thì thiếu bước xóa cache tương ứng."
+        },
+        {
+          "client": "다음에 또 이러면 곤란해요. 재발 방지는 어떻게 할 건가요?",
+          "hint": "Khách hỏi biện pháp phòng tái phát. Đưa ra cách sửa cụ thể và thời điểm deploy.",
+          "choices": [
+            {
+              "ko": "가격을 수정하면 바로 캐시가 삭제되도록 수정하고, 이번 주 목요일 정기 배포 때 반영하겠습니다. 그 전까지는 저희가 가격 변경 후 수동으로 캐시를 갱신하겠습니다.",
+              "correct": true,
+              "feedback": "Rất tốt: sửa tận gốc, có ngày deploy, và có biện pháp tạm thời cho tới lúc đó."
+            },
+            {
+              "ko": "앞으로는 조심하겠습니다.",
+              "correct": false,
+              "feedback": "Không có biện pháp cụ thể. Khách Hàn rất coi trọng 재발 방지 대책 rõ ràng."
+            },
+            {
+              "ko": "캐시를 아예 안 쓰면 됩니다.",
+              "correct": false,
+              "feedback": "Bỏ cache sẽ làm hệ thống chậm, là giải pháp cực đoan và không nói gì về lịch triển khai."
+            }
+          ],
+          "modelAnswer": "가격 수정 시 해당 캐시가 즉시 삭제되도록 수정하여, 이번 주 목요일 정기 배포 때 반영하겠습니다. 그 전까지는 가격이 변경되면 저희가 수동으로 캐시를 갱신하겠습니다.",
+          "modelAnswerVi": "Chúng tôi sẽ sửa để cache bị xóa ngay khi sửa giá và đưa vào đợt deploy định kỳ thứ Năm tuần này. Trước đó, mỗi khi giá thay đổi chúng tôi sẽ làm mới cache bằng tay."
+        }
+      ]
+    },
+    {
+      "id": "incident-external-sms-api-down",
+      "title": "Dịch vụ SMS bên ngoài ngừng: thông báo không gửi được",
+      "titleKo": "외부 문자 발송 API 장애 대응",
+      "description": "Hệ thống gửi mã xác thực qua dịch vụ SMS của một công ty bên ngoài. Từ sáng nay dịch vụ đó lỗi nên người dùng không nhận được mã đăng nhập. Lỗi không nằm ở hệ thống của bạn nhưng bạn vẫn phải báo khách và đề xuất cách đối phó.",
+      "category": "incident",
+      "tags": [
+        "외부연동",
+        "문자",
+        "장애"
+      ],
+      "turns": [
+        {
+          "client": "사용자들이 인증번호 문자가 안 온다고 하는데, 무슨 일이에요?",
+          "hint": "Khách hỏi vì sao người dùng không nhận được mã. Nói rõ nguyên nhân đã xác nhận (dịch vụ ngoài lỗi), từ khi nào, và đã liên hệ bên đó.",
+          "choices": [
+            {
+              "ko": "문자 업체 문제라서 저희는 할 수 있는 게 없습니다.",
+              "correct": false,
+              "feedback": "Đúng là lỗi bên ngoài, nhưng nói 'không làm được gì' khiến khách thấy bị bỏ mặc. Cần nói việc mình đang làm."
+            },
+            {
+              "ko": "오늘 오전 9시부터 문자 발송 업체 쪽에 장애가 발생한 것으로 확인됐습니다. 업체에 문의해 두었고, 복구 예정 시간을 받는 대로 공유드리겠습니다.",
+              "correct": true,
+              "feedback": "Tốt: nguyên nhân đã xác nhận, thời điểm bắt đầu, việc đã làm và hẹn cập nhật."
+            },
+            {
+              "ko": "잘 모르겠어요. 한번 볼게요.",
+              "correct": false,
+              "feedback": "Thiếu thông tin và văn phong quá thân mật khi đang có sự cố ảnh hưởng người dùng."
+            }
+          ],
+          "modelAnswer": "오늘 오전 9시부터 문자 발송 업체 쪽에 장애가 발생한 것으로 확인되었습니다. 업체에 문의해 두었으며, 복구 예정 시간을 받는 대로 바로 공유드리겠습니다.",
+          "modelAnswerVi": "Chúng tôi đã xác nhận dịch vụ gửi SMS bên ngoài gặp sự cố từ 9 giờ sáng nay. Chúng tôi đã liên hệ bên đó và sẽ chia sẻ ngay khi có thời gian dự kiến khôi phục."
+        },
+        {
+          "client": "복구될 때까지 사용자들은 로그인을 못 하는 거예요?",
+          "hint": "Khách lo người dùng không đăng nhập được. Đề xuất phương án tạm thời (gửi mã qua email, chuyển sang nhà cung cấp dự phòng) và hỏi khách duyệt.",
+          "choices": [
+            {
+              "ko": "네, 기다리는 수밖에 없습니다.",
+              "correct": false,
+              "feedback": "Bỏ qua phương án tạm thời. Khách cần nghe có cách giảm ảnh hưởng."
+            },
+            {
+              "ko": "임시로 이메일 인증으로 바꾸면 됩니다. 지금 바꾸겠습니다.",
+              "correct": false,
+              "feedback": "Ý hay nhưng tự quyết thay khách. Thay đổi cách xác thực cần khách duyệt trước."
+            },
+            {
+              "ko": "임시 방안으로 인증번호를 이메일로도 받을 수 있게 전환하는 방법이 있습니다. 30분 정도면 적용할 수 있는데, 진행해도 괜찮으시겠습니까?",
+              "correct": true,
+              "feedback": "Rất tốt: đề xuất phương án tạm thời, thời gian thực hiện, và xin khách duyệt."
+            }
+          ],
+          "modelAnswer": "임시 방안으로 인증번호를 이메일로도 받을 수 있도록 전환하는 방법이 있습니다. 30분 정도면 적용 가능한데, 진행해도 괜찮으시겠습니까?",
+          "modelAnswerVi": "Có phương án tạm thời là chuyển sang cho phép nhận mã xác thực qua email. Khoảng 30 phút là áp dụng được, anh/chị cho phép tiến hành không ạ?"
+        },
+        {
+          "client": "좋아요, 진행해 주세요. 그리고 이런 일이 또 생기면 어떻게 해요?",
+          "hint": "Khách đồng ý và hỏi phòng tái phát. Đề xuất có nhà cung cấp SMS dự phòng tự động chuyển, kèm báo giá/lịch.",
+          "choices": [
+            {
+              "ko": "바로 진행하겠습니다. 재발 방지를 위해 문자 업체를 하나 더 계약해서, 장애 시 자동으로 전환되도록 하는 방안을 다음 주까지 비용과 일정을 포함해 제안드리겠습니다.",
+              "correct": true,
+              "feedback": "Hoàn hảo: làm ngay việc đã duyệt, và đề xuất giải pháp lâu dài có hạn gửi đề xuất, có chi phí và lịch."
+            },
+            {
+              "ko": "그건 업체가 알아서 하겠죠.",
+              "correct": false,
+              "feedback": "Phó mặc cho bên ngoài. Khách thuê bạn để đảm bảo dịch vụ chạy ổn định."
+            },
+            {
+              "ko": "업체를 바꾸는 게 좋겠습니다.",
+              "correct": false,
+              "feedback": "Đổi nhà cung cấp không ngăn được sự cố lần sau; thiếu phương án dự phòng và kế hoạch cụ thể."
+            }
+          ],
+          "modelAnswer": "바로 진행하겠습니다. 재발 방지를 위해 보조 문자 업체를 추가로 계약하여 장애 시 자동으로 전환되도록 하는 방안을, 다음 주까지 비용과 일정을 포함해 제안드리겠습니다.",
+          "modelAnswerVi": "Chúng tôi tiến hành ngay. Để phòng tái phát, tuần sau chúng tôi sẽ đề xuất phương án ký thêm một nhà cung cấp SMS dự phòng, tự động chuyển khi có sự cố, kèm chi phí và lịch trình."
+        }
+      ]
+    },
+    {
+      "id": "incident-disk-full-weekend",
+      "title": "Server đầy ổ đĩa vì log vào cuối tuần",
+      "titleKo": "주말 로그 누적으로 인한 디스크 용량 부족 장애",
+      "description": "Chủ nhật, server production dừng ghi dữ liệu vì ổ đĩa đầy do file log. Team trực đã dọn log và khôi phục. Sáng thứ Hai bạn báo cáo với trưởng phòng phía khách.",
+      "category": "incident",
+      "tags": [
+        "디스크",
+        "로그",
+        "장애 보고"
+      ],
+      "turns": [
+        {
+          "client": "주말에 서비스가 멈췄다고 들었어요. 정확히 어떻게 된 거예요?",
+          "hint": "Báo cáo tóm tắt theo thứ tự: thời gian, hiện tượng, nguyên nhân, xử lý, thời gian bị ảnh hưởng.",
+          "choices": [
+            {
+              "ko": "어제 오후 3시 10분부터 3시 50분까지 약 40분간 주문 저장이 실패했습니다. 원인은 로그 파일 누적으로 인한 디스크 용량 부족이었고, 당직자가 오래된 로그를 정리해서 복구했습니다.",
+              "correct": true,
+              "feedback": "Chuẩn cấu trúc báo cáo sự cố: thời gian, ảnh hưởng, nguyên nhân, cách xử lý."
+            },
+            {
+              "ko": "디스크가 꽉 차서 그랬어요. 지금은 괜찮아요.",
+              "correct": false,
+              "feedback": "Thiếu thời gian và phạm vi ảnh hưởng; văn phong quá nhẹ cho báo cáo sự cố."
+            },
+            {
+              "ko": "주말이라 저희도 늦게 알았습니다. 죄송합니다.",
+              "correct": false,
+              "feedback": "Xin lỗi mà không có thông tin. Báo cáo cần sự kiện trước, rồi mới đến xin lỗi."
+            }
+          ],
+          "modelAnswer": "어제 오후 3시 10분부터 3시 50분까지 약 40분간 주문 저장이 실패했습니다. 원인은 로그 파일 누적으로 인한 디스크 용량 부족이었으며, 당직자가 오래된 로그를 정리하여 복구했습니다.",
+          "modelAnswerVi": "Từ 3 giờ 10 đến 3 giờ 50 chiều qua, khoảng 40 phút, việc lưu đơn hàng bị thất bại. Nguyên nhân là ổ đĩa đầy do file log tích tụ; người trực đã dọn log cũ và khôi phục."
+        },
+        {
+          "client": "실패한 주문은 어떻게 되는 거죠? 고객들한테 연락해야 하나요?",
+          "hint": "Khách hỏi về đơn hàng bị lỗi. Nói số lượng đã xác định, tình trạng thanh toán, và đề xuất cách xử lý.",
+          "choices": [
+            {
+              "ko": "실패한 주문은 다시 하시면 됩니다.",
+              "correct": false,
+              "feedback": "Bỏ qua việc kiểm tra thanh toán và số lượng. Khách cần dữ liệu để quyết định có liên hệ người mua hay không."
+            },
+            {
+              "ko": "해당 시간에 실패한 주문은 총 27건이고, 그중 결제까지 된 건은 없습니다. 고객 연락 여부는 판단해 주시면, 대상자 목록을 바로 드리겠습니다.",
+              "correct": true,
+              "feedback": "Tốt: số liệu cụ thể, điểm quan trọng nhất (không bị trừ tiền), và để khách quyết định việc liên hệ người dùng."
+            },
+            {
+              "ko": "몇 건인지는 아직 모릅니다.",
+              "correct": false,
+              "feedback": "Sáng hôm sau mà chưa tổng hợp được số liệu sẽ làm khách mất lòng tin."
+            }
+          ],
+          "modelAnswer": "해당 시간에 실패한 주문은 총 27건이며, 그중 결제가 완료된 건은 없습니다. 고객 연락 여부를 결정해 주시면 대상자 목록을 바로 전달드리겠습니다.",
+          "modelAnswerVi": "Trong khoảng thời gian đó có tổng cộng 27 đơn hàng thất bại, không đơn nào đã thanh toán. Nếu anh/chị quyết định có liên hệ khách hàng không, tôi sẽ gửi ngay danh sách."
+        },
+        {
+          "client": "디스크가 찰 때까지 왜 아무도 몰랐어요?",
+          "hint": "Khách hỏi vì sao không ai phát hiện. Thừa nhận thiếu giám sát, đưa biện pháp: cảnh báo dung lượng, tự xóa log cũ.",
+          "choices": [
+            {
+              "ko": "모니터링은 원래 고객사 담당입니다.",
+              "correct": false,
+              "feedback": "Đẩy trách nhiệm trong khi khách đang hỏi về hệ thống bạn vận hành. Dù phân chia trách nhiệm thế nào cũng nên đề xuất cải thiện."
+            },
+            {
+              "ko": "디스크 용량 모니터링이 설정되어 있지 않았던 것이 원인입니다. 사용률이 80%를 넘으면 알림이 오도록 설정하고, 30일이 지난 로그는 자동으로 삭제되도록 오늘 중으로 조치하겠습니다.",
+              "correct": true,
+              "feedback": "Rất tốt: thừa nhận thẳng, đưa hai biện pháp cụ thể (cảnh báo 80%, tự xóa log 30 ngày) và thời hạn."
+            },
+            {
+              "ko": "다음부터는 주말에도 서버를 자주 확인하겠습니다.",
+              "correct": false,
+              "feedback": "Kiểm tra bằng tay không phải giải pháp bền vững; thiếu cảnh báo tự động."
+            }
+          ],
+          "modelAnswer": "디스크 용량 모니터링이 설정되어 있지 않았던 것이 원인입니다. 사용률이 80%를 넘으면 알림이 오도록 설정하고, 30일이 지난 로그는 자동으로 삭제되도록 오늘 중으로 조치하겠습니다.",
+          "modelAnswerVi": "Nguyên nhân là chưa cài giám sát dung lượng ổ đĩa. Trong hôm nay chúng tôi sẽ cài cảnh báo khi dung lượng vượt 80% và cho log quá 30 ngày tự động bị xóa."
+        }
+      ]
+    },
+    {
+      "id": "release-rollback-decision",
+      "title": "Deploy xong phát sinh lỗi: đề xuất rollback",
+      "titleKo": "배포 후 오류 발생 시 롤백 결정",
+      "description": "Sau khi deploy bản mới tối nay, chức năng tìm kiếm báo lỗi 500. Chưa tìm ra nguyên nhân ngay. Bạn gọi cho PM phía khách để đề xuất rollback về bản cũ.",
+      "category": "release",
+      "tags": [
+        "롤백",
+        "배포",
+        "장애"
+      ],
+      "turns": [
+        {
+          "client": "배포 끝났다고 하지 않았어요? 검색이 안 된다는데요.",
+          "hint": "Khách phát hiện tìm kiếm bị lỗi. Xác nhận ngay, nói phạm vi ảnh hưởng.",
+          "choices": [
+            {
+              "ko": "네, 확인했습니다. 배포 후 검색 기능에서 500 에러가 발생하고 있습니다. 다른 기능은 정상적으로 동작하고 있습니다.",
+              "correct": true,
+              "feedback": "Tốt: xác nhận ngay, nói chính xác lỗi và khoanh vùng ảnh hưởng."
+            },
+            {
+              "ko": "어? 테스트할 때는 잘 됐는데요.",
+              "correct": false,
+              "feedback": "Phản ứng bất ngờ và bào chữa không giúp gì. Khách cần biết tình hình hiện tại."
+            },
+            {
+              "ko": "잠깐만요, 알아볼게요.",
+              "correct": false,
+              "feedback": "Quá mơ hồ; nghe như chưa nắm tình hình hệ thống mình vừa deploy."
+            }
+          ],
+          "modelAnswer": "네, 확인했습니다. 배포 후 검색 기능에서 500 에러가 발생하고 있으며, 그 외 기능은 정상적으로 동작하고 있습니다.",
+          "modelAnswerVi": "Vâng, tôi đã xác nhận. Sau khi deploy, chức năng tìm kiếm đang lỗi 500, các chức năng khác vẫn hoạt động bình thường."
+        },
+        {
+          "client": "금방 고칠 수 있어요?",
+          "hint": "Chưa rõ nguyên nhân. Đề xuất rollback trước để dịch vụ chạy lại, rồi điều tra sau. Nói thời gian rollback và xin duyệt.",
+          "choices": [
+            {
+              "ko": "금방 고칠 수 있을 것 같습니다. 조금만 기다려 주세요.",
+              "correct": false,
+              "feedback": "Hứa khi chưa biết nguyên nhân rất rủi ro; người dùng vẫn bị lỗi trong lúc chờ."
+            },
+            {
+              "ko": "원인 파악에 시간이 걸릴 수 있어서, 먼저 이전 버전으로 롤백하는 것을 제안드립니다. 롤백은 10분 정도 걸리고, 원인은 롤백 후에 확인하겠습니다. 진행해도 될까요?",
+              "correct": true,
+              "feedback": "Chuẩn: ưu tiên khôi phục dịch vụ, nói thời gian rollback, kế hoạch điều tra và xin duyệt."
+            },
+            {
+              "ko": "롤백하겠습니다.",
+              "correct": false,
+              "feedback": "Quyết định đúng hướng nhưng không giải thích và không xin ý kiến khách."
+            }
+          ],
+          "modelAnswer": "원인 파악에 시간이 걸릴 수 있어서, 우선 이전 버전으로 롤백하는 것을 제안드립니다. 롤백은 10분 정도 소요되며, 원인은 롤백 후에 분석하겠습니다. 진행해도 괜찮으시겠습니까?",
+          "modelAnswerVi": "Vì có thể mất thời gian tìm nguyên nhân, tôi đề xuất trước hết rollback về phiên bản cũ. Rollback mất khoảng 10 phút, nguyên nhân sẽ được phân tích sau khi rollback. Anh/chị cho phép tiến hành không ạ?"
+        },
+        {
+          "client": "알겠어요, 롤백해 주세요. 그럼 이번 기능은 언제 다시 배포하나요?",
+          "hint": "Khách đồng ý rollback và hỏi lịch deploy lại. Hẹn báo nguyên nhân + lịch mới, không hứa ngày cụ thể khi chưa biết lỗi.",
+          "choices": [
+            {
+              "ko": "내일 다시 배포하겠습니다.",
+              "correct": false,
+              "feedback": "Hứa ngày khi chưa biết nguyên nhân; nếu ngày mai lại lỗi sẽ mất uy tín."
+            },
+            {
+              "ko": "원인을 찾으면 그때 말씀드릴게요.",
+              "correct": false,
+              "feedback": "Không có mốc thời gian nào để khách theo dõi."
+            },
+            {
+              "ko": "롤백 완료되면 바로 알려 드리겠습니다. 원인 분석 결과와 재배포 일정은 내일 오전 11시까지 메일로 정리해서 보내 드리겠습니다.",
+              "correct": true,
+              "feedback": "Tốt: hẹn báo khi rollback xong và hẹn mốc gửi phân tích + lịch deploy lại, không hứa vội ngày deploy."
+            }
+          ],
+          "modelAnswer": "롤백이 완료되면 바로 알려 드리겠습니다. 원인 분석 결과와 재배포 일정은 내일 오전 11시까지 메일로 정리하여 보내 드리겠습니다.",
+          "modelAnswerVi": "Rollback xong tôi sẽ báo ngay. Kết quả phân tích nguyên nhân và lịch deploy lại, tôi sẽ tổng hợp gửi qua email trước 11 giờ sáng mai."
+        }
+      ]
+    },
+    {
+      "id": "release-uat-signoff-request",
+      "title": "Xin khách UAT và xác nhận trước khi release",
+      "titleKo": "릴리스 전 UAT 및 승인 요청",
+      "description": "Bản mới đã deploy lên server staging. Theo quy trình, khách phải kiểm thử nghiệm thu (UAT) và xác nhận bằng văn bản trước khi release lên production vào thứ Ba tuần sau.",
+      "category": "release",
+      "tags": [
+        "UAT",
+        "승인",
+        "릴리스"
+      ],
+      "turns": [
+        {
+          "client": "스테이징 배포 끝났다면서요? 이제 저희가 뭘 하면 되나요?",
+          "hint": "Giải thích việc khách cần làm: kiểm thử theo kịch bản, thời hạn, và cách báo lỗi.",
+          "choices": [
+            {
+              "ko": "이제 테스트해 주시면 됩니다.",
+              "correct": false,
+              "feedback": "Quá chung chung: không nói test gì, đến khi nào, báo lỗi ở đâu."
+            },
+            {
+              "ko": "스테이징 환경에서 첨부드린 테스트 시나리오대로 확인 부탁드립니다. 금요일까지 확인해 주시면 다음 주 화요일 운영 배포 일정을 지킬 수 있습니다. 문제가 있으면 Jira에 등록해 주시면 됩니다.",
+              "correct": true,
+              "feedback": "Đầy đủ: test ở đâu, theo kịch bản nào, hạn chót và lý do, kênh báo lỗi."
+            },
+            {
+              "ko": "아무거나 눌러 보시고 이상하면 연락 주세요.",
+              "correct": false,
+              "feedback": "Không có kịch bản UAT thì khó nghiệm thu, và nghe thiếu chuyên nghiệp."
+            }
+          ],
+          "modelAnswer": "스테이징 환경에서 첨부드린 테스트 시나리오대로 확인 부탁드립니다. 금요일까지 확인해 주시면 다음 주 화요일 운영 배포 일정을 맞출 수 있습니다. 문제가 있으면 Jira에 등록해 주시면 됩니다.",
+          "modelAnswerVi": "Phiền anh/chị kiểm tra trên môi trường staging theo kịch bản test đã đính kèm. Nếu anh/chị kiểm tra xong trước thứ Sáu thì có thể giữ lịch deploy production vào thứ Ba tuần sau. Nếu có vấn đề, anh/chị tạo ticket trên Jira là được ạ."
+        },
+        {
+          "client": "이번 주는 일이 많아서 금요일까지는 힘들 것 같아요.",
+          "hint": "Khách khó kịp hạn. Đưa ra lựa chọn: ưu tiên các kịch bản quan trọng, hoặc lùi ngày release, để khách chọn.",
+          "choices": [
+            {
+              "ko": "그럼 테스트 없이 배포하겠습니다.",
+              "correct": false,
+              "feedback": "Bỏ qua UAT là rủi ro lớn và trái quy trình nghiệm thu."
+            },
+            {
+              "ko": "화요일 배포는 꼭 해야 합니다.",
+              "correct": false,
+              "feedback": "Ép khách mà không đưa phương án, dễ gây căng thẳng."
+            },
+            {
+              "ko": "그러시면 핵심 시나리오 10개만 금요일까지 먼저 확인해 주시고 나머지는 다음 주 월요일까지 보시는 방법이 있습니다. 아니면 운영 배포를 목요일로 미룰 수도 있는데, 어느 쪽이 좋으실까요?",
+              "correct": true,
+              "feedback": "Rất tốt: đưa hai phương án rõ ràng và để khách quyết định."
+            }
+          ],
+          "modelAnswer": "그러시면 핵심 시나리오 10개만 금요일까지 먼저 확인해 주시고, 나머지는 다음 주 월요일까지 확인하시는 방법이 있습니다. 또는 운영 배포를 목요일로 미룰 수도 있는데, 어느 쪽이 좋으실까요?",
+          "modelAnswerVi": "Vậy có cách là anh/chị kiểm tra trước 10 kịch bản chính trước thứ Sáu, phần còn lại đến thứ Hai tuần sau. Hoặc có thể lùi deploy production sang thứ Năm. Anh/chị thấy phương án nào tốt hơn ạ?"
+        },
+        {
+          "client": "핵심 시나리오부터 할게요. 확인이 끝나면 어떻게 하면 돼요?",
+          "hint": "Khách chọn phương án 1. Hướng dẫn bước xác nhận cuối: email phê duyệt để làm bằng chứng.",
+          "choices": [
+            {
+              "ko": "확인이 끝나시면 메일로 승인 의견을 한 줄만 보내 주시면 됩니다. 그 메일을 기준으로 화요일 배포를 확정하겠습니다.",
+              "correct": true,
+              "feedback": "Tốt: yêu cầu xác nhận bằng văn bản (email) làm bằng chứng và nói rõ bước tiếp theo."
+            },
+            {
+              "ko": "말로만 알려 주셔도 됩니다.",
+              "correct": false,
+              "feedback": "Xác nhận bằng miệng không để lại bằng chứng; khi có lỗi sau release sẽ khó xử."
+            },
+            {
+              "ko": "끝나면 그냥 배포할게요.",
+              "correct": false,
+              "feedback": "Không có bước xác nhận nghiệm thu rõ ràng."
+            }
+          ],
+          "modelAnswer": "확인이 끝나시면 메일로 승인 의견을 간단히 보내 주시면 됩니다. 해당 메일을 기준으로 화요일 운영 배포를 확정하겠습니다.",
+          "modelAnswerVi": "Kiểm tra xong, anh/chị chỉ cần gửi email xác nhận ngắn gọn. Chúng tôi sẽ chốt lịch deploy production thứ Ba dựa trên email đó."
+        }
+      ]
+    },
+    {
+      "id": "release-feature-flag-partial-rollout",
+      "title": "Giải thích phát hành dần bằng feature flag",
+      "titleKo": "기능 플래그를 활용한 단계적 오픈 설명",
+      "description": "Khách muốn mở chức năng thanh toán mới cho tất cả người dùng ngay. Bạn đề xuất mở dần qua feature flag (10% → 50% → 100%) để giảm rủi ro.",
+      "category": "release",
+      "tags": [
+        "기능플래그",
+        "단계적 오픈",
+        "릴리스"
+      ],
+      "turns": [
+        {
+          "client": "새 결제 기능, 다음 주 월요일에 전체 사용자한테 한 번에 오픈하면 되죠?",
+          "hint": "Khách muốn mở cho tất cả. Đề xuất mở dần, nói lý do bằng lợi ích cho khách.",
+          "choices": [
+            {
+              "ko": "네, 그렇게 하겠습니다.",
+              "correct": false,
+              "feedback": "Đồng ý luôn bỏ qua rủi ro của chức năng thanh toán. Chuyên gia nên đưa ra khuyến nghị."
+            },
+            {
+              "ko": "결제는 영향이 큰 기능이라서, 처음에는 사용자의 10%에게만 열고 문제가 없으면 단계적으로 늘리는 방식을 추천드립니다. 문제가 생겨도 영향을 최소화할 수 있습니다.",
+              "correct": true,
+              "feedback": "Tốt: đề xuất rõ ràng, giải thích lý do bằng lợi ích (giảm ảnh hưởng)."
+            },
+            {
+              "ko": "한 번에 오픈하면 위험해요. 안 됩니다.",
+              "correct": false,
+              "feedback": "Từ chối thẳng và không đưa phương án thay thế."
+            }
+          ],
+          "modelAnswer": "결제는 영향 범위가 큰 기능이라서, 처음에는 사용자의 10%에게만 오픈하고 문제가 없으면 단계적으로 확대하는 방식을 추천드립니다. 문제가 생기더라도 영향을 최소화할 수 있습니다.",
+          "modelAnswerVi": "Thanh toán là chức năng có phạm vi ảnh hưởng lớn, nên tôi khuyên trước tiên chỉ mở cho 10% người dùng, nếu không có vấn đề thì mở rộng dần. Dù có sự cố cũng giảm thiểu được ảnh hưởng."
+        },
+        {
+          "client": "단계적으로 하면 전체 오픈까지 얼마나 걸려요?",
+          "hint": "Nói lịch cụ thể từng bước và tiêu chí để mở bước tiếp theo.",
+          "choices": [
+            {
+              "ko": "월요일에 10%, 수요일에 50%, 금요일에 100%로 확대하는 일정입니다. 단계마다 결제 실패율이 1% 미만인지 확인하고 다음 단계로 넘어가겠습니다.",
+              "correct": true,
+              "feedback": "Rất tốt: lịch rõ ràng và tiêu chí đo được để chuyển bước."
+            },
+            {
+              "ko": "상황 봐서 하겠습니다.",
+              "correct": false,
+              "feedback": "Không có lịch và tiêu chí; khách không lên kế hoạch marketing được."
+            },
+            {
+              "ko": "한 달 정도 걸립니다.",
+              "correct": false,
+              "feedback": "Quá dài và không giải thích các bước."
+            }
+          ],
+          "modelAnswer": "월요일에 10%, 수요일에 50%, 금요일에 100%로 확대할 예정입니다. 단계마다 결제 실패율이 1% 미만인지 확인한 후 다음 단계로 넘어가겠습니다.",
+          "modelAnswerVi": "Dự kiến thứ Hai 10%, thứ Tư 50%, thứ Sáu 100%. Ở mỗi bước chúng tôi kiểm tra tỷ lệ thanh toán thất bại dưới 1% rồi mới sang bước tiếp theo."
+        },
+        {
+          "client": "중간에 문제가 생기면요?",
+          "hint": "Giải thích có thể tắt chức năng ngay bằng flag, không cần deploy lại, và báo khách.",
+          "choices": [
+            {
+              "ko": "그때 다시 배포해서 고치겠습니다.",
+              "correct": false,
+              "feedback": "Bỏ lỡ lợi ích chính của feature flag: tắt ngay mà không cần deploy."
+            },
+            {
+              "ko": "문제가 생기면 기능 플래그를 꺼서 바로 기존 결제 화면으로 되돌릴 수 있습니다. 재배포 없이 1분 안에 가능하고, 바로 보고드리겠습니다.",
+              "correct": true,
+              "feedback": "Hoàn hảo: nói rõ cách quay lại tức thì, thời gian và cam kết báo cáo."
+            },
+            {
+              "ko": "문제는 안 생길 겁니다.",
+              "correct": false,
+              "feedback": "Hứa không có lỗi là thiếu chuyên nghiệp."
+            }
+          ],
+          "modelAnswer": "문제가 생기면 기능 플래그를 꺼서 즉시 기존 결제 화면으로 되돌릴 수 있습니다. 재배포 없이 1분 안에 가능하며, 바로 보고드리겠습니다.",
+          "modelAnswerVi": "Nếu có vấn đề, chỉ cần tắt feature flag là quay về màn hình thanh toán cũ ngay lập tức. Không cần deploy lại, trong vòng 1 phút, và tôi sẽ báo cáo ngay."
+        }
+      ]
+    },
+    {
+      "id": "security-vulnerable-library-patch",
+      "title": "Lỗ hổng nghiêm trọng trong thư viện: xin vá khẩn",
+      "titleKo": "라이브러리 보안 취약점 긴급 패치 요청",
+      "description": "Một thư viện Java mà hệ thống đang dùng vừa được công bố lỗ hổng nghiêm trọng (CVE). Bạn liên hệ khách để báo mức độ ảnh hưởng và xin deploy bản vá ngoài lịch.",
+      "category": "security",
+      "tags": [
+        "취약점",
+        "패치",
+        "CVE"
+      ],
+      "turns": [
+        {
+          "client": "뉴스에서 자바 라이브러리 취약점 얘기가 나오던데, 저희 시스템도 해당돼요?",
+          "hint": "Khách hỏi hệ thống có bị ảnh hưởng không. Trả lời dựa trên kiểm tra thực tế: phiên bản, có bị ảnh hưởng hay không.",
+          "choices": [
+            {
+              "ko": "아마 괜찮을 거예요.",
+              "correct": false,
+              "feedback": "Đoán mò về bảo mật là rất nguy hiểm. Phải kiểm tra rồi mới trả lời."
+            },
+            {
+              "ko": "네, 확인해 보니 저희 시스템도 해당 라이브러리의 취약한 버전을 사용하고 있습니다. 다만 현재까지 공격 흔적은 발견되지 않았습니다.",
+              "correct": true,
+              "feedback": "Tốt: trả lời trung thực dựa trên kiểm tra, kèm thông tin quan trọng là chưa thấy dấu hiệu tấn công."
+            },
+            {
+              "ko": "저희는 자바를 써서 모든 라이브러리가 다 안전합니다.",
+              "correct": false,
+              "feedback": "Sai về kỹ thuật và tạo cảm giác an toàn giả."
+            }
+          ],
+          "modelAnswer": "네, 확인해 보니 저희 시스템도 해당 라이브러리의 취약한 버전을 사용하고 있습니다. 다만 현재까지 공격 흔적은 발견되지 않았습니다.",
+          "modelAnswerVi": "Vâng, sau khi kiểm tra thì hệ thống của chúng ta cũng đang dùng phiên bản có lỗ hổng của thư viện đó. Tuy nhiên đến giờ chưa phát hiện dấu vết tấn công nào."
+        },
+        {
+          "client": "그럼 어떻게 해야 돼요?",
+          "hint": "Đề xuất vá khẩn: cập nhật phiên bản, đã test ở đâu, thời gian downtime, xin duyệt deploy tối nay.",
+          "choices": [
+            {
+              "ko": "패치된 버전으로 업데이트해서 스테이징 테스트까지 마쳤습니다. 오늘 밤 11시에 긴급 배포를 하고 싶은데, 서비스 중단은 5분 정도입니다. 승인해 주실 수 있을까요?",
+              "correct": true,
+              "feedback": "Rất tốt: đã chuẩn bị bản vá và test, có thời gian deploy, thời gian gián đoạn và xin duyệt."
+            },
+            {
+              "ko": "다음 정기 배포 때 같이 반영하겠습니다.",
+              "correct": false,
+              "feedback": "Lỗ hổng nghiêm trọng mà chờ đợt deploy định kỳ là quá rủi ro."
+            },
+            {
+              "ko": "지금 바로 운영에 적용하겠습니다.",
+              "correct": false,
+              "feedback": "Deploy giờ cao điểm không xin phép, không test, có thể gây sự cố khác."
+            }
+          ],
+          "modelAnswer": "패치된 버전으로 업데이트하여 스테이징 테스트까지 완료했습니다. 오늘 밤 11시에 긴급 배포를 진행하고자 하는데, 서비스 중단 시간은 5분 정도입니다. 승인해 주실 수 있을까요?",
+          "modelAnswerVi": "Chúng tôi đã cập nhật lên phiên bản đã vá và test xong trên staging. Chúng tôi muốn deploy khẩn lúc 11 giờ tối nay, thời gian gián đoạn dịch vụ khoảng 5 phút. Anh/chị có thể duyệt không ạ?"
+        },
+        {
+          "client": "승인할게요. 보안팀에도 보고해야 하는데, 정리해서 줄 수 있어요?",
+          "hint": "Khách cần tài liệu cho đội bảo mật. Hứa gửi báo cáo với nội dung cụ thể và thời hạn.",
+          "choices": [
+            {
+              "ko": "네, 나중에 보내 드릴게요.",
+              "correct": false,
+              "feedback": "Không có thời hạn và nội dung, khách không biết khi nào báo được đội bảo mật."
+            },
+            {
+              "ko": "보고서는 필요 없을 것 같습니다.",
+              "correct": false,
+              "feedback": "Từ chối yêu cầu chính đáng của khách về quy trình bảo mật."
+            },
+            {
+              "ko": "네, 취약점 내용, 영향 범위, 조치 내역과 배포 결과를 정리해서 내일 오전 10시까지 메일로 보내 드리겠습니다.",
+              "correct": true,
+              "feedback": "Hoàn hảo: liệt kê nội dung báo cáo và thời hạn cụ thể."
+            }
+          ],
+          "modelAnswer": "네, 취약점 내용과 영향 범위, 조치 내역 및 배포 결과를 정리하여 내일 오전 10시까지 메일로 보내 드리겠습니다.",
+          "modelAnswerVi": "Vâng, tôi sẽ tổng hợp nội dung lỗ hổng, phạm vi ảnh hưởng, các biện pháp đã làm và kết quả deploy, gửi email trước 10 giờ sáng mai."
+        }
+      ]
+    },
+    {
+      "id": "security-leaked-api-key-report",
+      "title": "Lỡ đưa API key lên Git: báo cáo và xử lý",
+      "titleKo": "API 키 Git 노출 사고 보고",
+      "description": "Một thành viên team lỡ commit API key của dịch vụ thanh toán lên repository Git dùng chung. Team đã phát hiện sau 2 tiếng. Bạn phải báo ngay cho khách một cách trung thực.",
+      "category": "security",
+      "tags": [
+        "API 키",
+        "보안 사고",
+        "보고"
+      ],
+      "turns": [
+        {
+          "client": "갑자기 긴급 회의를 요청하셨네요. 무슨 일이에요?",
+          "hint": "Báo thẳng sự việc, thời gian, phạm vi (repo có public không), không vòng vo.",
+          "choices": [
+            {
+              "ko": "별일 아닌데요, 혹시 몰라서 말씀드려요.",
+              "correct": false,
+              "feedback": "Giảm nhẹ sự cố bảo mật là sai; khách sẽ mất lòng tin nếu sau này biết mức độ thật."
+            },
+            {
+              "ko": "죄송합니다. 오늘 오후 2시쯤 저희 팀원이 결제 API 키를 사내 Git 저장소에 실수로 커밋했고, 2시간 뒤에 발견했습니다. 저장소는 외부에 공개되지 않은 비공개 저장소입니다.",
+              "correct": true,
+              "feedback": "Tốt: nhận lỗi, nói rõ sự việc, thời gian phát hiện và phạm vi lộ (repo private)."
+            },
+            {
+              "ko": "팀원이 실수를 해서요. 제 잘못은 아닙니다.",
+              "correct": false,
+              "feedback": "Đổ lỗi cho cá nhân; với khách, team bạn chịu trách nhiệm chung."
+            }
+          ],
+          "modelAnswer": "죄송합니다. 오늘 오후 2시경 저희 팀원이 결제 API 키를 사내 Git 저장소에 실수로 커밋했고, 2시간 후에 발견했습니다. 해당 저장소는 외부에 공개되지 않은 비공개 저장소입니다.",
+          "modelAnswerVi": "Xin lỗi anh/chị. Khoảng 2 giờ chiều nay một thành viên team chúng tôi lỡ commit API key thanh toán lên repository Git nội bộ, 2 tiếng sau thì phát hiện. Repository đó là private, không công khai ra ngoài."
+        },
+        {
+          "client": "키가 악용됐을 가능성은요? 지금은 어떻게 조치했어요?",
+          "hint": "Nói các bước đã làm: vô hiệu hóa key, cấp key mới, kiểm tra log gọi API, xóa khỏi lịch sử Git.",
+          "choices": [
+            {
+              "ko": "기존 키는 즉시 폐기하고 새 키로 교체했습니다. 노출된 동안의 API 호출 기록을 확인했는데, 저희 서버 외의 호출은 없었습니다. Git 이력에서도 키를 삭제했습니다.",
+              "correct": true,
+              "feedback": "Rất tốt: các bước xử lý chuẩn và bằng chứng (log) cho thấy key chưa bị lạm dụng."
+            },
+            {
+              "ko": "아마 아무도 못 봤을 거예요.",
+              "correct": false,
+              "feedback": "Phỏng đoán thay vì bằng chứng. Cần kiểm tra log và đổi key ngay."
+            },
+            {
+              "ko": "키는 그대로 두고 저장소만 삭제했습니다.",
+              "correct": false,
+              "feedback": "Chưa thu hồi key thì vẫn còn rủi ro; xóa repo không phải biện pháp đúng."
+            }
+          ],
+          "modelAnswer": "기존 키는 즉시 폐기하고 새 키로 교체했습니다. 노출된 기간의 API 호출 기록을 확인한 결과 저희 서버 외의 호출은 없었으며, Git 이력에서도 해당 키를 삭제했습니다.",
+          "modelAnswerVi": "Key cũ đã bị hủy ngay và thay bằng key mới. Chúng tôi đã kiểm tra lịch sử gọi API trong thời gian bị lộ, không có lệnh gọi nào ngoài server của chúng tôi, và đã xóa key khỏi lịch sử Git."
+        },
+        {
+          "client": "앞으로 이런 일이 없으려면 어떻게 할 거예요?",
+          "hint": "Đề xuất biện pháp kỹ thuật (quét secret trước khi commit, dùng secret manager) và đào tạo, có thời hạn.",
+          "choices": [
+            {
+              "ko": "팀원에게 주의를 주겠습니다.",
+              "correct": false,
+              "feedback": "Chỉ nhắc nhở cá nhân không đủ; cần biện pháp kỹ thuật ngăn từ gốc."
+            },
+            {
+              "ko": "키는 앞으로 메일로 공유하겠습니다.",
+              "correct": false,
+              "feedback": "Gửi key qua email còn kém an toàn hơn."
+            },
+            {
+              "ko": "커밋할 때 키나 비밀번호가 포함되면 자동으로 막는 검사 도구를 이번 주 안에 도입하고, 키는 소스 코드가 아니라 별도의 비밀 관리 서비스에 보관하도록 바꾸겠습니다. 팀 보안 교육도 진행하겠습니다.",
+              "correct": true,
+              "feedback": "Hoàn hảo: biện pháp kỹ thuật ngăn từ gốc, thay đổi cách quản lý key và đào tạo, có thời hạn."
+            }
+          ],
+          "modelAnswer": "커밋 시 키나 비밀번호가 포함되면 자동으로 차단하는 검사 도구를 이번 주 안에 도입하고, 키는 소스 코드가 아닌 별도의 비밀 관리 서비스에 보관하도록 변경하겠습니다. 아울러 팀 보안 교육도 진행하겠습니다.",
+          "modelAnswerVi": "Trong tuần này chúng tôi sẽ đưa vào công cụ tự động chặn commit có chứa key hay mật khẩu, và chuyển sang lưu key trong dịch vụ quản lý bí mật riêng thay vì trong mã nguồn. Đồng thời sẽ đào tạo bảo mật cho team."
+        }
+      ]
+    },
+    {
+      "id": "security-retired-account-review",
+      "title": "Rà soát tài khoản của nhân viên đã nghỉ việc",
+      "titleKo": "퇴사자 계정 및 권한 점검 요청 대응",
+      "description": "Đội bảo mật phía khách phát hiện tài khoản quản trị của một developer đã nghỉ việc ở team bạn vẫn còn hoạt động. Khách yêu cầu giải thích và rà soát toàn bộ quyền truy cập.",
+      "category": "security",
+      "tags": [
+        "계정 관리",
+        "권한",
+        "퇴사자"
+      ],
+      "turns": [
+        {
+          "client": "퇴사한 개발자 계정이 아직 살아 있다고 보안팀에서 연락이 왔어요. 어떻게 된 거죠?",
+          "hint": "Thừa nhận lỗi trong quy trình, nói đã xử lý tài khoản đó ngay và có kiểm tra log đăng nhập.",
+          "choices": [
+            {
+              "ko": "그분은 퇴사해서 저희도 연락이 안 됩니다.",
+              "correct": false,
+              "feedback": "Không trả lời câu hỏi và nghe như né tránh trách nhiệm quản lý tài khoản."
+            },
+            {
+              "ko": "확인했습니다. 퇴사 처리 때 계정 삭제가 누락되었습니다. 해당 계정은 방금 비활성화했고, 퇴사 이후 로그인 기록은 없었습니다.",
+              "correct": true,
+              "feedback": "Tốt: thừa nhận lỗi quy trình, đã xử lý ngay và có kiểm tra log."
+            },
+            {
+              "ko": "계정만 있고 쓰지는 않았을 거예요.",
+              "correct": false,
+              "feedback": "Phỏng đoán thay vì kiểm tra log đăng nhập."
+            }
+          ],
+          "modelAnswer": "확인했습니다. 퇴사 처리 시 계정 삭제가 누락되었습니다. 해당 계정은 방금 비활성화했으며, 퇴사 이후 로그인 기록은 없었습니다.",
+          "modelAnswerVi": "Tôi đã xác nhận. Khi làm thủ tục nghỉ việc, bước xóa tài khoản đã bị bỏ sót. Tài khoản đó vừa được vô hiệu hóa và không có lịch sử đăng nhập nào sau khi người đó nghỉ."
+        },
+        {
+          "client": "다른 계정은 문제없는지 전체적으로 확인해 줄 수 있어요?",
+          "hint": "Đồng ý rà soát toàn bộ, nói phạm vi (tài khoản, quyền admin, VPN) và thời hạn gửi kết quả.",
+          "choices": [
+            {
+              "ko": "다른 계정은 괜찮습니다.",
+              "correct": false,
+              "feedback": "Khẳng định khi chưa rà soát; vừa có một lỗi thì khách càng cần kiểm tra."
+            },
+            {
+              "ko": "네, 서버, DB, 관리자 화면, VPN까지 저희 팀 전체 계정과 권한을 점검해서, 이번 주 금요일까지 결과를 목록으로 보내 드리겠습니다.",
+              "correct": true,
+              "feedback": "Rất tốt: phạm vi rà soát rõ ràng và thời hạn gửi kết quả."
+            },
+            {
+              "ko": "시간이 있을 때 한번 볼게요.",
+              "correct": false,
+              "feedback": "Không có thời hạn, không ưu tiên vấn đề bảo mật."
+            }
+          ],
+          "modelAnswer": "네, 서버와 DB, 관리자 화면, VPN까지 저희 팀의 모든 계정과 권한을 점검하여, 이번 주 금요일까지 결과를 목록으로 정리해 보내 드리겠습니다.",
+          "modelAnswerVi": "Vâng, chúng tôi sẽ rà soát toàn bộ tài khoản và quyền của team, gồm server, DB, trang quản trị và VPN, rồi gửi danh sách kết quả trước thứ Sáu tuần này."
+        },
+        {
+          "client": "이런 누락이 다시 안 생기게 하려면요?",
+          "hint": "Đề xuất quy trình: checklist khi nghỉ việc, rà soát định kỳ hàng tháng/quý, chia sẻ với khách.",
+          "choices": [
+            {
+              "ko": "퇴사자가 생기면 당일에 모든 계정을 회수하는 체크리스트를 만들고, 매월 첫째 주에 전체 계정을 정기 점검해서 결과를 공유드리겠습니다.",
+              "correct": true,
+              "feedback": "Hoàn hảo: quy trình cụ thể ngay khi nghỉ việc và rà soát định kỳ có chia sẻ kết quả."
+            },
+            {
+              "ko": "앞으로는 퇴사자가 없도록 하겠습니다.",
+              "correct": false,
+              "feedback": "Không thực tế và không giải quyết vấn đề quy trình."
+            },
+            {
+              "ko": "퇴사자가 직접 계정을 지우라고 하겠습니다.",
+              "correct": false,
+              "feedback": "Giao cho người đã nghỉ tự xóa là không đáng tin cậy; trách nhiệm thuộc về quản lý."
+            }
+          ],
+          "modelAnswer": "퇴사자가 발생하면 당일에 모든 계정을 회수하는 체크리스트를 만들고, 매월 첫째 주에 전체 계정을 정기 점검하여 결과를 공유드리겠습니다.",
+          "modelAnswerVi": "Chúng tôi sẽ lập checklist thu hồi mọi tài khoản ngay trong ngày khi có người nghỉ việc, và rà soát định kỳ toàn bộ tài khoản vào tuần đầu mỗi tháng rồi chia sẻ kết quả."
+        }
+      ]
     }
   ]
 }

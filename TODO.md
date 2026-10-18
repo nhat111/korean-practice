@@ -22,7 +22,8 @@ If few people come back after day 1, do **3** before **2**.
 - [x] Korean typing drill (`/typing`): 두벌식 key lessons, words, chat lines, 타수 + accuracy.
 - [x] Content: workplace culture and forms of address, online meetings, phone calls (shadowing `cu-`/`on-`/`ph-`,
       2 meetings, 4 honorific grammar lessons, 11 vocab, episode `ep-online`).
-- [ ] Content: more incident/release/security scenarios and emails; phone and online-meeting chat messages.
+- [x] Content: incident/release/security scenarios (+9), emails (+3) and chat messages (+6).
+- [ ] Content: phone and online-meeting chat messages; a native speaker review of the `cu-`/`on-`/`ph-` decks.
 - [x] "Cần nói gấp" (`/find`): search all content by Vietnamese meaning, with audio and copy.
 - [x] Shareable progress card ("Chia sẻ tiến độ" on Progress): PNG with streak and counts, Web Share or download.
 

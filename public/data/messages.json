@@ -1052,6 +1052,138 @@
         }
       ],
       "note": "Xin lỗi kèm nguyên nhân ngắn gọn, rồi nói ngay tình trạng xử lý và giờ hoàn thành. Đừng xin lỗi dài dòng mà thiếu thông tin."
+    },
+    {
+      "id": "msg-bug-09",
+      "topic": "bug",
+      "to": "박 책임님 – PM phía khách",
+      "situation": "Báo nhanh trên Slack: từ 14:20 chức năng tìm kiếm bị lỗi, team đang điều tra, 30 phút nữa sẽ cập nhật.",
+      "model": "박 책임님, 14시 20분부터 검색 기능에 장애가 발생하고 있습니다.\n현재 원인을 조사 중이며, 30분 후에 진행 상황을 다시 공유드리겠습니다.",
+      "phrases": [
+        {
+          "ko": "장애가 발생하고 있습니다",
+          "vi": "đang xảy ra sự cố"
+        },
+        {
+          "ko": "원인을 조사 중이며",
+          "vi": "đang điều tra nguyên nhân"
+        },
+        {
+          "ko": "진행 상황을 다시 공유드리겠습니다",
+          "vi": "sẽ cập nhật lại tình hình"
+        }
+      ],
+      "note": "Tin nhắn sự cố đầu tiên cần ngắn: giờ bắt đầu, việc đang làm, mốc cập nhật tiếp theo. Chưa có nguyên nhân thì không đoán."
+    },
+    {
+      "id": "msg-deploy-09",
+      "topic": "deploy",
+      "to": "김 과장님 – PM phía khách",
+      "situation": "Báo đã rollback xong bản deploy tối nay, dịch vụ đã chạy bình thường, sáng mai sẽ gửi phân tích nguyên nhân.",
+      "model": "김 과장님, 오늘 배포한 버전은 이전 버전으로 롤백을 완료했습니다.\n현재 서비스는 정상적으로 동작하고 있습니다.\n원인 분석 결과는 내일 오전 중으로 공유드리겠습니다.",
+      "phrases": [
+        {
+          "ko": "롤백을 완료했습니다",
+          "vi": "đã rollback xong"
+        },
+        {
+          "ko": "정상적으로 동작하고 있습니다",
+          "vi": "đang hoạt động bình thường"
+        },
+        {
+          "ko": "내일 오전 중으로 공유드리겠습니다",
+          "vi": "sẽ chia sẻ trong sáng mai"
+        }
+      ],
+      "note": "Sau rollback, khách cần ba điều: đã quay lại bản cũ, dịch vụ ổn chưa, khi nào có phân tích."
+    },
+    {
+      "id": "msg-deploy-10",
+      "topic": "deploy",
+      "to": "최 팀장님 – trưởng nhóm phía khách",
+      "situation": "Báo phiên bản 2.3 đã lên production xong, kèm link release note, nhờ khách kiểm tra các màn hình chính.",
+      "model": "최 팀장님, 2.3 버전 운영 배포가 완료되었습니다.\n변경 내용은 아래 릴리스 노트에서 확인하실 수 있습니다.\n주요 화면 확인 부탁드립니다.",
+      "phrases": [
+        {
+          "ko": "운영 배포가 완료되었습니다",
+          "vi": "đã deploy production xong"
+        },
+        {
+          "ko": "확인하실 수 있습니다",
+          "vi": "anh/chị có thể xem"
+        },
+        {
+          "ko": "확인 부탁드립니다",
+          "vi": "phiền anh/chị kiểm tra"
+        }
+      ],
+      "note": "운영 배포 = deploy lên production. Kèm link release note thay vì liệt kê dài trong chat."
+    },
+    {
+      "id": "msg-request-09",
+      "topic": "request",
+      "to": "박 책임님 – PM phía khách",
+      "situation": "Báo đã deploy chức năng mới lên staging, nhờ khách kiểm tra theo kịch bản trước thứ Sáu và gửi email phê duyệt khi xong.",
+      "model": "박 책임님, 스테이징 환경에 이번 기능 배포를 완료했습니다.\n금요일까지 테스트 시나리오대로 확인해 주실 수 있을까요?\n확인이 끝나시면 메일로 승인 부탁드립니다.",
+      "phrases": [
+        {
+          "ko": "확인해 주실 수 있을까요",
+          "vi": "anh/chị kiểm tra giúp được không"
+        },
+        {
+          "ko": "확인이 끝나시면",
+          "vi": "khi anh/chị kiểm tra xong"
+        },
+        {
+          "ko": "승인 부탁드립니다",
+          "vi": "xin anh/chị phê duyệt"
+        }
+      ],
+      "note": "Xin phê duyệt bằng email để có bằng chứng nghiệm thu trước khi release."
+    },
+    {
+      "id": "msg-bug-10",
+      "topic": "bug",
+      "to": "보안팀 담당자님 – đội bảo mật phía khách",
+      "situation": "Báo đội bảo mật: thư viện đang dùng vừa công bố lỗ hổng, hệ thống cũng bị ảnh hưởng, chưa thấy dấu hiệu tấn công, đề xuất vá khẩn tối nay.",
+      "model": "보안팀 담당자님, 사용 중인 라이브러리에 보안 취약점이 발표되어 확인해 보니 저희 시스템도 해당됩니다.\n현재까지 공격 흔적은 없으며, 오늘 밤 긴급 패치를 제안드립니다.",
+      "phrases": [
+        {
+          "ko": "보안 취약점",
+          "vi": "lỗ hổng bảo mật"
+        },
+        {
+          "ko": "공격 흔적은 없으며",
+          "vi": "không có dấu vết tấn công"
+        },
+        {
+          "ko": "긴급 패치를 제안드립니다",
+          "vi": "đề xuất vá khẩn"
+        }
+      ],
+      "note": "Với đội bảo mật: nói thẳng có bị ảnh hưởng không, có dấu hiệu tấn công không, rồi đề xuất bước tiếp theo."
+    },
+    {
+      "id": "msg-apology-09",
+      "topic": "apology",
+      "to": "김 과장님 – PM phía khách",
+      "situation": "Xin lỗi vì bỏ sót xóa tài khoản của developer đã nghỉ việc; đã vô hiệu hóa, không có đăng nhập nào sau khi nghỉ, thứ Sáu gửi kết quả rà soát toàn bộ.",
+      "model": "김 과장님, 퇴사자 계정 삭제가 누락된 점 진심으로 사과드립니다.\n해당 계정은 즉시 비활성화했으며, 퇴사 이후 로그인 기록은 없었습니다.\n전체 계정 점검 결과는 금요일까지 보내 드리겠습니다.",
+      "phrases": [
+        {
+          "ko": "누락된 점 진심으로 사과드립니다",
+          "vi": "thành thật xin lỗi vì đã bỏ sót"
+        },
+        {
+          "ko": "즉시 비활성화했으며",
+          "vi": "đã vô hiệu hóa ngay"
+        },
+        {
+          "ko": "점검 결과",
+          "vi": "kết quả rà soát"
+        }
+      ],
+      "note": "Xin lỗi kèm ba thông tin: đã xử lý gì, có ảnh hưởng không (log đăng nhập), và kế hoạch rà soát có hạn."
     }
   ]
 }
