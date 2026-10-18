@@ -14,7 +14,7 @@ const RED = '#cd2e3a';
 const SANS = "'Pretendard Variable', Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', system-ui, sans-serif";
 const MONO = "ui-monospace, 'SF Mono', Menlo, Consolas, 'Roboto Mono', monospace";
 const SIZE = 1080;
-const SITE = 'kodevtalk.vercel.app';
+const SITE = new URL(__SITE_URL__).host;
 
 /** Square progress image for Facebook / Zalo / Instagram, drawn on a canvas. */
 function drawCard(stats: ShareStats, date: string): HTMLCanvasElement {

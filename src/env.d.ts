@@ -1,5 +1,7 @@
 /** Commit + build time, injected by vite.config.ts. */
 declare const __APP_VERSION__: string;
+/** Production origin without a trailing slash (VITE_SITE_URL), injected by vite.config.ts. */
+declare const __SITE_URL__: string;
 /**
  * Where the natural-voice MP3s are served from, without a trailing slash: the
  * GitHub Pages site in production builds, '' (this origin, public/audio) in dev.
