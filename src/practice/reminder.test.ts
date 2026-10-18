@@ -14,12 +14,12 @@ describe('buildReminderIcs', () => {
     expect(lines).toContain('DTEND:20260101T200500');
     expect(lines).toContain('RRULE:FREQ=DAILY');
     expect(lines).toContain('TRIGGER:PT0M');
-    expect(lines).toContain('URL:https://kodevtalk.vercel.app/daily');
+    expect(lines).toContain('URL:https://kodevtalk.nhatlab.com/daily');
   });
 
   it('escapes text and folds long lines within 75 bytes', () => {
     const unfolded = ics.replace(/\r\n /g, '');
-    expect(unfolded).toContain('DESCRIPTION:Mở buổi luyện\\, hôm nay\\; nhé\\nhttps://kodevtalk.vercel.app/daily');
+    expect(unfolded).toContain('DESCRIPTION:Mở buổi luyện\\, hôm nay\\; nhé\\nhttps://kodevtalk.nhatlab.com/daily');
     for (const l of lines) expect(new TextEncoder().encode(l).length).toBeLessThanOrEqual(75);
   });
 

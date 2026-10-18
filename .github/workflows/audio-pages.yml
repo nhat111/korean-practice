@@ -37,7 +37,7 @@ jobs:
           cp -r public/audio site/audio
           # Served as-is: no Jekyll pass over ~7,700 files.
           touch site/.nojekyll
-          echo '<!doctype html><title>KoDevTalk audio</title><p>Natural-voice MP3s for <a href="https://kodevtalk.vercel.app">KoDevTalk</a>.</p>' > site/index.html
+          echo '<!doctype html><title>KoDevTalk audio</title><p>Natural-voice MP3s for <a href="https://kodevtalk.nhatlab.com">KoDevTalk</a>.</p>' > site/index.html
           du -sh site
 
       - uses: actions/configure-pages@v5
