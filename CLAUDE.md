@@ -448,6 +448,10 @@ Test files (`src/**/*.test.ts`) are type-checked by `tsconfig.node.json`, not
     emitted by `reminderPlugin` in `vite.config.ts`, also served in dev): iOS Safari only offers "Add to Calendar" for
     a real `text/calendar` response, not a blob. Not precached; the service worker leaves `/reminder/` alone.
     `prefs.reminderTime` only remembers the last time the learner opened (the calendar can't be read back).
+  - Share card ("Chia sẻ tiến độ" on Progress, shown once there is any practice): `ShareCard` draws a 1080×1080 PNG on a
+    canvas in the light brand palette (wordmark, streak, lines spoken, minutes, typing best or % practiced, site URL);
+    numbers from `shareStats` (`src/practice/share.ts`, pure, tested). Web Share with the file where `navigator.canShare`
+    allows it, otherwise a download link. Drawn on the device; nothing is uploaded.
   - `VITE_FEEDBACK_URL` (optional, e.g. a Google Form) shows a "Góp ý" link on Home, in Settings and on `/about`.
   - `/about` (`AboutPage`, "Giới thiệu & quyền riêng tư", linked from the bottom of Home and from Settings): what the
     app is, who makes it, what happens to the learner's data (`vi.about.data`), credits; optional `VITE_CONTACT_EMAIL`.

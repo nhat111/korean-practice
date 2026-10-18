@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Link } from 'react-router';
 import { Icon } from '../components/Icon';
 import { ProgressRing } from '../components/ProgressRing';
+import { ShareCard } from '../components/ShareCard';
 import { WeekChart } from '../components/WeekChart';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
 import { streak } from '../practice/plan';
+import { hasShareableProgress, shareStats } from '../practice/share';
 import { overallPercent, skillProgress, type SkillProgress } from '../practice/today';
 import { lastDays, weakKeys } from '../practice/weak';
 import { isDue, isMastered, todayKey } from '../srs/sm2';
@@ -72,6 +74,8 @@ export function ProgressPage() {
   const drillsDue = drills.filter(([, c]) => isDue(c, today)).length;
   const recordMinutes = Math.round(Object.values(progress.daily).reduce((n, d) => n + (d.recordMs || 0), 0) / 60000);
 
+  const percent = skills ? overallPercent(skills) : 0;
+  const stats = shareStats(progress.daily, progress.typing.best, percent, today);
   const total = (s: { status: string; items?: unknown[] }) =>
     s.status === 'ready' && s.items ? s.items.length : '…';
 
@@ -116,6 +120,8 @@ export function ProgressPage() {
         </div>
       </section>
 
+      {hasShareableProgress(stats) && <ShareSection {...stats} />}
+
       <p className="muted small">{vi.progress.storageNote}</p>
       <button
         type="button"
@@ -127,6 +133,26 @@ export function ProgressPage() {
         {vi.progress.reset}
       </button>
     </div>
+  );
+}
+
+function ShareSection(props: ReturnType<typeof shareStats>) {
+  const [open, setOpen] = useState(false);
+  const { streak: days, lines, minutes, percent, typingBest } = props;
+  // A stable object, so the image is drawn once rather than on every render.
+  const stats = useMemo(() => ({ streak: days, lines, minutes, percent, typingBest }), [days, lines, minutes, percent, typingBest]);
+  return (
+    <section className="card stack-sm">
+      <h2>{vi.share.title}</h2>
+      <p className="muted small">{vi.share.text}</p>
+      {open ? (
+        <ShareCard stats={stats} />
+      ) : (
+        <button type="button" className="btn btn--ghost" onClick={() => setOpen(true)}>
+          {vi.share.create}
+        </button>
+      )}
+    </section>
   );
 }
 
