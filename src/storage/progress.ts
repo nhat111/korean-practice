@@ -55,6 +55,26 @@ export interface DayStats {
   recordMs: number;
 }
 
+/** One finished typing round (/typing). */
+export interface TypingRun {
+  /** ISO time the round ended. */
+  at: string;
+  mode: string;
+  /** Keystrokes per minute (타수). */
+  kpm: number;
+  /** Characters typed exactly, 0-100. */
+  accuracy: number;
+}
+
+export interface TypingStats {
+  /** Best kpm of a round with at least 90% accuracy. */
+  best: number;
+  /** Newest first, capped at MAX_TYPING_RUNS. */
+  recent: TypingRun[];
+}
+
+const MAX_TYPING_RUNS = 50;
+
 /** About a year of daily stats is kept. */
 const MAX_DAYS = 400;
 
@@ -75,10 +95,12 @@ export interface Progress {
   srs: Record<string, CardState>;
   /** Keyed by local date YYYY-MM-DD. Added later; older data reads as {}. */
   daily: Record<string, DayStats>;
+  /** Typing drill results. Added later; older data reads as empty. */
+  typing: TypingStats;
 }
 
 function emptyProgress(): Progress {
-  return { version: 1, cards: {}, scenarios: {}, emails: {}, speaking: [], srs: {}, daily: {} };
+  return { version: 1, cards: {}, scenarios: {}, emails: {}, speaking: [], srs: {}, daily: {}, typing: { best: 0, recent: [] } };
 }
 
 function isRecord(v: unknown): v is Record<string, unknown> {
@@ -96,6 +118,15 @@ function parse(data: unknown): Progress | null {
     speaking: Array.isArray(data.speaking) ? (data.speaking as Progress['speaking']) : [],
     srs: isRecord(data.srs) ? (data.srs as Progress['srs']) : {},
     daily: isRecord(data.daily) ? (data.daily as Progress['daily']) : {},
+    typing: parseTyping(data.typing),
+  };
+}
+
+function parseTyping(v: unknown): TypingStats {
+  if (!isRecord(v)) return { best: 0, recent: [] };
+  return {
+    best: typeof v.best === 'number' && v.best > 0 ? v.best : 0,
+    recent: Array.isArray(v.recent) ? (v.recent as TypingRun[]).slice(0, MAX_TYPING_RUNS) : [],
   };
 }
 
@@ -168,6 +199,17 @@ export function saveReview(key: string, state: CardState): void {
 /** Counts one rated step of the daily plan towards today's goal. */
 export function savePlanStep(): void {
   update((p) => ({ ...p, daily: bumpDay(p, { planSteps: 1 }) }));
+}
+
+/** Records a finished typing round; only rounds with ≥ 90% accuracy can set the best speed. */
+export function saveTypingRun(run: TypingRun): void {
+  update((p) => ({
+    ...p,
+    typing: {
+      best: run.accuracy >= 90 ? Math.max(p.typing.best, run.kpm) : p.typing.best,
+      recent: [run, ...p.typing.recent].slice(0, MAX_TYPING_RUNS),
+    },
+  }));
 }
 
 /** Adds a finished recording's length to today's stats. */

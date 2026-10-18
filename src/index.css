@@ -2616,8 +2616,13 @@ ins {
 /* Compact entry row at the top of a hub page (Scenarios: custom, emails, messages). */
 .quick-links {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 8px;
+}
+@media (min-width: 480px) {
+  .quick-links {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 /* Centred icon + label: left-aligned, the icon's inner padding made the label look offset. */
 .quick-link {
@@ -2646,6 +2651,128 @@ ins {
 }
 .quick-link:active {
   transform: scale(0.98);
+}
+
+/* Typing drill (/typing): target line coloured per character, input, 두벌식 key map. */
+.typing-target {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+.tc--todo { color: var(--muted); }
+.tc--ok { color: var(--text); }
+.tc--bad {
+  border-radius: 4px;
+  background: var(--bad-bg);
+  color: var(--bad);
+}
+.tc--current {
+  color: var(--primary);
+  box-shadow: inset 0 -3px 0 var(--accent-red);
+}
+.typing-input {
+  width: 100%;
+  min-height: 52px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 1.15rem;
+}
+.typing-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: var(--focus-ring);
+}
+.typing-input--done {
+  border-color: var(--ok);
+}
+.typing-card .link-btn {
+  white-space: nowrap;
+}
+.kbd {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  user-select: none;
+}
+.kbd-row {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+.kbd-key {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 1 9.4%;
+  max-width: 52px;
+  aspect-ratio: 1 / 1.1;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  font-size: 1rem;
+}
+.kbd-key--wide {
+  flex-basis: 14%;
+  max-width: 76px;
+  aspect-ratio: auto;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.kbd-jamo {
+  font-weight: 700;
+}
+.kbd-latin,
+.kbd-shift {
+  position: absolute;
+  color: var(--muted);
+  font-size: 0.6rem;
+  line-height: 1;
+}
+.kbd-latin {
+  right: 4px;
+  bottom: 3px;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+}
+.kbd-shift {
+  top: 3px;
+  left: 4px;
+}
+.kbd-key--teach {
+  border-color: color-mix(in srgb, var(--tone-amber) 45%, var(--border));
+  background: var(--tone-amber-bg);
+}
+.kbd-key--next {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--primary-text);
+}
+.kbd-key--next .kbd-latin,
+.kbd-key--next .kbd-shift {
+  color: inherit;
+  opacity: 0.85;
+}
+.typing-setup summary {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.typing-setup ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 8px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .stats.stats--3 {

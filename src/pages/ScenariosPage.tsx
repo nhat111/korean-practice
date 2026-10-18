@@ -70,6 +70,12 @@ export function ScenariosPage() {
           </span>
           <span>{vi.messages.shortTitle}</span>
         </Link>
+        <Link to="/typing" className="quick-link">
+          <span className="card-icon card-icon--blue">
+            <Icon name="keyboard" size={20} />
+          </span>
+          <span>{vi.typing.shortTitle}</span>
+        </Link>
       </nav>
       <ContentGate state={state}>
         {(items) => (items.length === 0 ? <p className="muted">{vi.common.empty}</p> : <ScenarioList items={items} />)}

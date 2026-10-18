@@ -21,6 +21,7 @@ import { ScenarioPlayerPage } from './pages/ScenarioPlayerPage';
 import { ScenariosPage } from './pages/ScenariosPage';
 import { SettingsPage } from './pages/SettingsPage';
 import { ShadowingPage } from './pages/ShadowingPage';
+import { TypingPage } from './pages/TypingPage';
 import { WeakPage } from './pages/WeakPage';
 import { SpeakingFreePage, SpeakingPage } from './pages/SpeakingPage';
 
@@ -36,6 +37,7 @@ export function App() {
         <Route path="emails" element={<EmailsPage />} />
         <Route path="emails/:id" element={<EmailExercisePage />} />
         <Route path="messages" element={<MessagesPage />} />
+        <Route path="typing" element={<TypingPage />} />
         <Route path="flashcards" element={<FlashcardsPage />} />
         <Route path="speaking" element={<SpeakingPage />} />
         <Route path="speaking/free" element={<SpeakingFreePage />} />
