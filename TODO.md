@@ -23,7 +23,7 @@ If few people come back after day 1, do **3** before **2**.
 - [x] Content: workplace culture and forms of address, online meetings, phone calls (shadowing `cu-`/`on-`/`ph-`,
       2 meetings, 4 honorific grammar lessons, 11 vocab, episode `ep-online`).
 - [ ] Content: more incident/release/security scenarios and emails; phone and online-meeting chat messages.
-- [ ] "Cần nói gấp": search all content by Vietnamese meaning, with audio.
+- [x] "Cần nói gấp" (`/find`): search all content by Vietnamese meaning, with audio and copy.
 - [x] Shareable progress card ("Chia sẻ tiến độ" on Progress): PNG with streak and counts, Web Share or download.
 
 ## 2. AI correction of the learner's own Korean (needs the backend)

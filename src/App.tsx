@@ -8,6 +8,7 @@ import { CustomPracticePage } from './pages/CustomPracticePage';
 import { DailyPage } from './pages/DailyPage';
 import { EmailExercisePage } from './pages/EmailExercisePage';
 import { EmailsPage } from './pages/EmailsPage';
+import { FindPage } from './pages/FindPage';
 import { FlashcardsPage } from './pages/FlashcardsPage';
 import { GrammarLessonPage, GrammarPage } from './pages/GrammarPage';
 import { HomePage } from './pages/HomePage';
@@ -47,6 +48,7 @@ export function App() {
         <Route path="interpret" element={<InterpretPage />} />
         <Route path="passive" element={<PassivePage />} />
         <Route path="daily" element={<DailyPage />} />
+        <Route path="find" element={<FindPage />} />
         <Route path="weak" element={<WeakPage />} />
         <Route path="grammar" element={<GrammarPage />} />
         <Route path="grammar/:id" element={<GrammarLessonPage />} />

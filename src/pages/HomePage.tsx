@@ -139,6 +139,10 @@ export function HomePage() {
             </ul>
           )}
         </section>
+        <Link to="/find" className="search find-entry">
+          <Icon name="search" size={20} />
+          <span>{vi.find.entry}</span>
+        </Link>
         <section className="card stack-sm today-card">
           <div className="row-between">
             <h2>{vi.home.today.title}</h2>

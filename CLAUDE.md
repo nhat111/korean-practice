@@ -283,6 +283,15 @@ Korean either.
 - Chromium headless has no mic or recognition: browser tests use
   `--use-fake-device-for-media-stream` and mock `webkitSpeechRecognition`/`speechSynthesis`.
 
+## Quick find ("Cần nói gấp")
+
+- Page `/find` (search-styled link under the Home hero, Home tab), `?q=` holds the query. `src/practice/search.ts` is
+  pure and tested: `buildPhrases` collects every Korean line with a Vietnamese meaning (shadowing, interpret, scenario
+  model answers, chat messages, grammar examples and levels, vocab words and examples; deduplicated by Korean),
+  `searchPhrases` matches whole Vietnamese words without accents, weighted by rarity (IDF), ignoring common words
+  (`STOPWORDS`) and with a few `SYNONYMS` (dời/lùi/hoãn…); a phrase needs 60% of the query weight. Hangul queries
+  match the Korean text ignoring spaces. Results have a speak button and "Chép" (clipboard).
+
 ## Typing drill ("Luyện gõ tiếng Hàn")
 
 - Page `/typing` (quick link on the Scenarios page, under the Hội thoại tab), modes via `?mode=`: `keys` (4 두벌식

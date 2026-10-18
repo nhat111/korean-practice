@@ -1559,8 +1559,26 @@ ins {
   color: var(--text);
   font-size: 1rem;
 }
+.search input:focus {
+  /* The wrapper shows the focus ring (.search:focus-within). */
+  box-shadow: none;
+}
 .search input::-webkit-search-cancel-button {
   display: none;
+}
+.find-entry {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.find-entry span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.find-ko {
+  font-size: 1.1rem;
+  white-space: pre-line;
 }
 .search-clear {
   width: 36px;
