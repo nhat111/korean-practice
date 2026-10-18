@@ -4,19 +4,19 @@ import { Icon, type IconName } from '../components/Icon';
 import { Illustration, type ArtName } from '../components/Illustration';
 import { InstallHint } from '../components/InstallHint';
 import { PathCard } from '../components/PathCard';
-import { KoreanLine, SpeakButton } from '../components/SpeakButton';
+import { SpeakButton } from '../components/SpeakButton';
 import { WeekDots } from '../components/WeekDots';
 import { Welcome } from '../components/Welcome';
+import { WordRotator } from '../components/WordRotator';
 import { useContent, type ContentKind } from '../data/content';
 import { vi } from '../i18n/vi';
 import { streak } from '../practice/plan';
-import { dailyTarget, greetingSlot, itemOfDay, planRecipe, weekDays, type RecipeKind } from '../practice/today';
+import { dailyTarget, greetingSlot, itemsOfDay, planRecipe, weekDays, type RecipeKind } from '../practice/today';
 import { weakKeys } from '../practice/weak';
 import { isDue, todayKey } from '../srs/sm2';
 import { useBackendSettings } from '../storage/backend';
 import { usePrefs, type Role } from '../storage/prefs';
 import { useProgress } from '../storage/progress';
-import type { VocabItem } from '../types';
 
 /** Icon colour per skill (`.card-icon--<tone>` in index.css). */
 type Tone = 'blue' | 'teal' | 'violet' | 'red' | 'amber' | 'green';
@@ -44,6 +44,9 @@ const RECIPE_ICONS: Record<RecipeKind, IconName> = {
   grammar: 'book',
   meeting: 'headphones',
 };
+
+/** Words the Home vocab card rotates through each day. */
+const WORDS_PER_DAY = 20;
 
 /** Optional feedback form (e.g. a Google Form), set at build time; hidden when unset. */
 const FEEDBACK_URL: string | undefined =
@@ -101,7 +104,8 @@ export function HomePage() {
   // Only steps of the daily plan count, so the goal matches the recipe shown under it.
   const done = todayStats?.planSteps ?? 0;
   const ctaLabel = done === 0 ? vi.home.today.start : done < target ? vi.home.today.continue : vi.home.today.more;
-  const word = vocab.status === 'ready' ? itemOfDay(vocab.items, today) : undefined;
+  // The day's word first, then a fixed-for-today set that the card rotates through.
+  const words = vocab.status === 'ready' ? itemsOfDay(vocab.items, today, WORDS_PER_DAY) : [];
   const greeting = vi.home.greetings[greetingSlot(now.getHours())];
   const stats = [
     { value: days, label: vi.home.statStreak },
@@ -198,7 +202,7 @@ export function HomePage() {
             </div>
           </Link>
         )}
-        {word && <WordOfDay word={word} />}
+        {words.length > 0 && <WordRotator words={words} />}
         <InstallHint />
         <Link to="/shadowing?topic=survival" className="card card--link survival-card">
           <span className="card-icon">
@@ -267,29 +271,3 @@ function ItemCount({ kinds, label }: { kinds: ContentKind[]; label: (n: number) 
   return <span className="count-badge">{label(n)}</span>;
 }
 
-function WordOfDay({ word }: { word: VocabItem }) {
-  return (
-    <section className="card stack-sm word-card">
-      <span className="eyebrow">{vi.home.wordTitle}</span>
-      <div className="row-between">
-        <div className="stack-xs">
-          <strong className="word-ko" lang="ko">
-            {word.ko}
-          </strong>
-          {word.pron && (
-            <span className="muted small" lang="ko">
-              {word.pron}
-            </span>
-          )}
-        </div>
-        <SpeakButton text={word.ko} />
-      </div>
-      <p>{word.vi}</p>
-      <KoreanLine text={word.example.ko} />
-      <p className="muted small">{word.example.vi}</p>
-      <Link to="/flashcards" className="link-btn small">
-        {vi.home.wordMore}
-      </Link>
-    </section>
-  );
-}

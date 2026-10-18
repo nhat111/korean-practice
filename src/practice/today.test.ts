@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { dailyTarget, greetingSlot, itemOfDay, overallPercent, planRecipe, skillProgress, weekDays } from './today';
+import { dailyTarget, greetingSlot, itemOfDay, itemsOfDay, overallPercent, planRecipe, skillProgress, weekDays } from './today';
 
 describe('dailyTarget', () => {
   it('counts the 5-minute steps and adds a meeting from 10 minutes', () => {
@@ -93,5 +93,26 @@ describe('greetingSlot', () => {
     expect([4, 5, 10, 11, 13, 14, 17, 18, 23].map(greetingSlot)).toEqual([
       'evening', 'morning', 'morning', 'lunch', 'lunch', 'afternoon', 'afternoon', 'evening', 'evening',
     ]);
+  });
+});
+
+describe('itemsOfDay', () => {
+  const items = Array.from({ length: 50 }, (_, i) => i);
+
+  it('starts with the item of the day and has no repeats', () => {
+    const list = itemsOfDay(items, '2026-10-18', 20);
+    expect(list[0]).toBe(itemOfDay(items, '2026-10-18'));
+    expect(list).toHaveLength(20);
+    expect(new Set(list).size).toBe(20);
+  });
+
+  it('is the same all day and changes the next day', () => {
+    expect(itemsOfDay(items, '2026-10-18', 10)).toEqual(itemsOfDay(items, '2026-10-18', 10));
+    expect(itemsOfDay(items, '2026-10-19', 10)).not.toEqual(itemsOfDay(items, '2026-10-18', 10));
+  });
+
+  it('copes with fewer items than asked and with none', () => {
+    expect(itemsOfDay([1, 2], '2026-10-18', 5)).toHaveLength(2);
+    expect(itemsOfDay([], '2026-10-18', 5)).toEqual([]);
   });
 });
