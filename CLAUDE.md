@@ -96,6 +96,7 @@ Korean either.
 │   ├── practice/         # decks.ts (topics, SRS keys, rating → grade), plan.ts (daily 5-minute plan, streak), path.ts (4-week path), listening.ts (listening questions), weak.ts (weak items, 7-day stats)
 │   ├── patterns/fill.ts  # Fill pattern frames, pick particles (pure, tested)
 │   ├── speech.ts         # SpeechSynthesis (ko-KR): voice, pitch and rate from prefs
+│   ├── typing/           # hangul.ts (두벌식 keystrokes, typing progress), drills.ts (key lessons, content lines)
 │   ├── speaking/         # compare.ts (answer similarity, syllable diff), josa.ts (은/는 by batchim), recognition.ts, recorder.ts
 │   ├── api/              # client.ts: the ONLY module that calls the backend; messages.ts
 │   ├── i18n/vi.ts        # Vietnamese UI strings
@@ -279,6 +280,22 @@ Korean either.
   joined (한 가지 / 한가지) count as a match on both sides.
 - Chromium headless has no mic or recognition: browser tests use
   `--use-fake-device-for-media-stream` and mock `webkitSpeechRecognition`/`speechSynthesis`.
+
+## Typing drill ("Luyện gõ tiếng Hàn")
+
+- Page `/typing` (quick link on the Scenarios page, under the Hội thoại tab), modes via `?mode=`: `keys` (4 두벌식
+  lessons in `KEY_LESSONS`, `src/typing/drills.ts`: home row, top row, bottom row, Shift; each lesson's words use only
+  keys taught so far and every new key appears once, both tested), `words` (short Hangul vocab) and `chat` (shadowing
+  lines and model chat lines ≤ 40 characters). Rounds of `ROUND_SIZE` (10) random lines.
+- `src/typing/hangul.ts` is pure and tested: `keystrokes` (syllable → 두벌식 key presses; compound vowels/finals are
+  two keys, ㄲㅆㅒㅖ one Shift key), `typingProgress` (per-character state; the last typed character may still be
+  composing in the IME, so it is on track while its keystrokes prefix the rest of the target), `accuracy`,
+  `keysPerMinute` (타수). `KoreanKeyboard` shows the key map with the next key (and Shift) highlighted; shown by
+  default from 768px (phones already show their own keyboard).
+- A finished line moves on with Space/Enter or "Câu tiếp"; Enter during composition waits for `compositionend`, and
+  the field is cleared on a timeout so the IME can't commit a syllable into the next line.
+- Results: `Progress.typing` (`{ best, recent }`, additive, older data reads empty) via `saveTypingRun`; `best` only
+  counts rounds with ≥ 90% accuracy. Typing is not part of the daily plan or `planSteps`.
 
 ## Custom questions ("Bộ câu hỏi của tôi")
 
