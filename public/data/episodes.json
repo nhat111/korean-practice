@@ -388,9 +388,201 @@
       ]
     },
     {
+      "id": "ep-online",
+      "hash": "0c134a704bd776cb",
+      "duration": 758.7,
+      "lines": [
+        {
+          "ko": "제 목소리 잘 들리십니까?",
+          "vi": "Anh/chị nghe rõ tiếng tôi không ạ?",
+          "start": 0.0
+        },
+        {
+          "ko": "화면 공유하겠습니다. 지금 화면 보이십니까?",
+          "vi": "Tôi sẽ chia sẻ màn hình. Bây giờ anh/chị thấy màn hình chưa ạ?",
+          "start": 14.84
+        },
+        {
+          "ko": "죄송합니다, 소리가 끊겨서 잘 못 들었습니다.",
+          "vi": "Xin lỗi, tiếng bị ngắt nên tôi nghe không rõ.",
+          "start": 39.55
+        },
+        {
+          "ko": "마지막 부분을 한 번만 다시 말씀해 주시겠습니까?",
+          "vi": "Anh/chị nói lại phần cuối giúp tôi một lần được không ạ?",
+          "start": 60.06
+        },
+        {
+          "ko": "인터넷이 불안정해서 카메라를 잠시 끄겠습니다.",
+          "vi": "Mạng không ổn định nên tôi xin tắt camera một lát.",
+          "start": 79.61
+        },
+        {
+          "ko": "제 화면이 멈춘 것 같은데, 다시 들어오겠습니다.",
+          "vi": "Hình như màn hình của tôi bị đứng, tôi sẽ vào lại.",
+          "start": 99.73
+        },
+        {
+          "ko": "채팅창에 링크 공유드렸습니다.",
+          "vi": "Tôi đã gửi link vào khung chat ạ.",
+          "start": 120.94
+        },
+        {
+          "ko": "마이크가 켜져 있는 것 같습니다. 음소거 부탁드립니다.",
+          "vi": "Hình như micro đang bật. Phiền anh/chị tắt tiếng giúp ạ.",
+          "start": 136.45
+        },
+        {
+          "ko": "회의 녹화를 시작해도 괜찮으시겠습니까?",
+          "vi": "Tôi bắt đầu ghi hình cuộc họp được không ạ?",
+          "start": 162.48
+        },
+        {
+          "ko": "오늘 논의한 내용을 정리해서 회의록으로 공유드리겠습니다.",
+          "vi": "Tôi sẽ tổng hợp nội dung thảo luận hôm nay thành biên bản và chia sẻ ạ.",
+          "start": 179.63
+        },
+        {
+          "ko": "시간 관계상 나머지는 다음 회의에서 이어서 하겠습니다.",
+          "vi": "Vì thời gian có hạn, phần còn lại chúng ta tiếp tục ở cuộc họp sau ạ.",
+          "start": 202.01
+        },
+        {
+          "ko": "잠시 연결이 끊겼었습니다. 어디까지 말씀하셨는지 여쭤봐도 될까요?",
+          "vi": "Kết nối vừa bị ngắt. Cho tôi hỏi anh/chị đã nói tới đâu rồi ạ?",
+          "start": 224.29
+        },
+        {
+          "ko": "여보세요, 베트남 개발팀 흐엉입니다.",
+          "vi": "A lô, Hương của team phát triển Việt Nam xin nghe.",
+          "start": 254.3
+        },
+        {
+          "ko": "실례지만 누구신지 여쭤봐도 될까요?",
+          "vi": "Xin lỗi, cho tôi hỏi ai đang gọi ạ?",
+          "start": 273.59
+        },
+        {
+          "ko": "김 과장님 계십니까?",
+          "vi": "Trưởng phòng Kim có ở đó không ạ?",
+          "start": 290.76
+        },
+        {
+          "ko": "지금 자리에 안 계신데, 메모 남겨 드릴까요?",
+          "vi": "Hiện anh ấy không có ở chỗ, tôi để lại lời nhắn giúp nhé?",
+          "start": 304.28
+        },
+        {
+          "ko": "돌아오시면 전화 부탁드린다고 전해 주시겠습니까?",
+          "vi": "Khi anh ấy về, nhờ anh/chị nhắn gọi lại cho tôi được không ạ?",
+          "start": 325.27
+        },
+        {
+          "ko": "전화번호 다시 한번 불러 주시겠습니까?",
+          "vi": "Anh/chị đọc lại số điện thoại giúp tôi được không ạ?",
+          "start": 345.73
+        },
+        {
+          "ko": "공일공, 일이삼사, 오육칠팔 맞으시죠?",
+          "vi": "010-1234-5678 đúng không ạ?",
+          "start": 363.36
+        },
+        {
+          "ko": "지금 통화 괜찮으세요? 급한 건이라서 연락드렸습니다.",
+          "vi": "Bây giờ anh/chị nghe máy được không ạ? Tôi gọi vì có việc gấp.",
+          "start": 385.96
+        },
+        {
+          "ko": "운영 서버에 장애가 발생해서 전화드렸습니다.",
+          "vi": "Tôi gọi vì server production đang gặp sự cố ạ.",
+          "start": 413.18
+        },
+        {
+          "ko": "통화 내용은 정리해서 메일로 다시 보내 드리겠습니다.",
+          "vi": "Tôi sẽ tổng hợp nội dung cuộc gọi và gửi lại qua email ạ.",
+          "start": 432.32
+        },
+        {
+          "ko": "전화가 잘 안 들려서 그러는데, 다시 걸어 드려도 될까요?",
+          "vi": "Điện thoại nghe không rõ, tôi gọi lại cho anh/chị được không ạ?",
+          "start": 453.43
+        },
+        {
+          "ko": "네, 알겠습니다. 그럼 들어가세요.",
+          "vi": "Vâng, tôi hiểu rồi. Vậy chào anh/chị ạ.",
+          "start": 476.39
+        },
+        {
+          "ko": "김 과장님, 잠깐 시간 괜찮으십니까?",
+          "vi": "Trưởng phòng Kim, anh có chút thời gian không ạ?",
+          "start": 500.62
+        },
+        {
+          "ko": "처음 뵙겠습니다. 베트남 개발팀의 흐엉이라고 합니다.",
+          "vi": "Rất hân hạnh được gặp. Tôi là Hương của team phát triển Việt Nam.",
+          "start": 519.3
+        },
+        {
+          "ko": "혹시 직함을 어떻게 불러 드리면 될까요?",
+          "vi": "Xin hỏi tôi nên gọi chức danh của anh/chị thế nào ạ?",
+          "start": 544.99
+        },
+        {
+          "ko": "팀장님께 먼저 보고드리고 다시 연락드리겠습니다.",
+          "vi": "Tôi sẽ báo cáo trưởng nhóm trước rồi liên lạc lại ạ.",
+          "start": 563.77
+        },
+        {
+          "ko": "말씀하신 내용은 제가 결정할 수 있는 부분이 아니라서요.",
+          "vi": "Nội dung anh/chị nói không phải phần tôi có thể quyết định ạ.",
+          "start": 584.26
+        },
+        {
+          "ko": "죄송하지만 그 일정은 조금 어려울 것 같습니다.",
+          "vi": "Xin lỗi nhưng lịch đó có lẽ hơi khó ạ.",
+          "start": 606.13
+        },
+        {
+          "ko": "오늘 회식 자리에 불러 주셔서 감사합니다.",
+          "vi": "Cảm ơn anh/chị đã mời tôi buổi liên hoan hôm nay.",
+          "start": 625.92
+        },
+        {
+          "ko": "제가 한 잔 따라 드리겠습니다.",
+          "vi": "Để tôi rót cho anh/chị một ly.",
+          "start": 644.12
+        },
+        {
+          "ko": "내일 일찍 출근해야 해서 먼저 일어나 보겠습니다.",
+          "vi": "Mai tôi phải đi làm sớm nên xin phép về trước ạ.",
+          "start": 659.69
+        },
+        {
+          "ko": "이번 주 금요일에 연차를 써도 될까요?",
+          "vi": "Thứ Sáu tuần này tôi xin nghỉ phép được không ạ?",
+          "start": 679.93
+        },
+        {
+          "ko": "제가 없는 동안에는 민 선임이 대신 대응할 예정입니다.",
+          "vi": "Trong lúc tôi vắng, anh Minh (senior) sẽ xử lý thay ạ.",
+          "start": 697.37
+        },
+        {
+          "ko": "바쁘신데 시간 내 주셔서 감사합니다.",
+          "vi": "Cảm ơn anh/chị đã dành thời gian dù đang bận.",
+          "start": 720.2
+        },
+        {
+          "ko": "오해가 있으셨다면 제 설명이 부족했던 것 같습니다.",
+          "vi": "Nếu có hiểu lầm thì có lẽ do tôi giải thích chưa đủ ạ.",
+          "start": 737.66
+        }
+      ]
+    },
+    {
       "id": "ep-grammar",
-      "hash": "031b66274c20dabc",
-      "duration": 953.5,
+      "hash": "3809398b655fc87e",
+      "duration": 1028.9,
       "lines": [
         {
           "ko": "현재 결제 모듈을 개발하고 있습니다.",
@@ -641,6 +833,26 @@
           "ko": "데이터 이관 중에는 일부 화면이 열리지 않을지도 모릅니다.",
           "vi": "Trong lúc chuyển dữ liệu, một số màn hình có thể không mở được.",
           "start": 931.38
+        },
+        {
+          "ko": "김 과장님은 지금 회의 중이셔서 자리에 안 계십니다.",
+          "vi": "Trưởng phòng Kim đang họp nên không có ở chỗ ạ.",
+          "start": 953.47
+        },
+        {
+          "ko": "회의 결과는 부장님께 직접 보고드렸습니다.",
+          "vi": "Kết quả họp tôi đã báo cáo trực tiếp với trưởng phòng.",
+          "start": 973.91
+        },
+        {
+          "ko": "박 책임님, 오늘 회의 자료 공유드립니다.",
+          "vi": "Anh Park, tôi gửi tài liệu họp hôm nay ạ.",
+          "start": 993.22
+        },
+        {
+          "ko": "다음 주 월요일에 다시 논의하시죠.",
+          "vi": "Thứ Hai tuần sau mình bàn lại ạ.",
+          "start": 1012.81
         }
       ]
     }
