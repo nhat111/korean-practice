@@ -128,7 +128,7 @@ Korean either.
   `meaningVi`, optional `noteVi`). `pattern` uses TOPIK notation only (`-아/어서`, `-(으)ㄴ 후에`,
   `N와/과`; no Vietnamese inside, tested). `form` must be an exact substring of `example.ko` (validated);
   it is highlighted with numbers on the flipped flashcard, overlapping forms share one highlight.
-- `shadowing.json` (`ShadowingItem`): `id` (`sh-`, `sv-` survival, `cs-` cushion, `mt-` meeting, `tc-` tech, `ld-` lead), `level` 1-3,
+- `shadowing.json` (`ShadowingItem`): `id` (`sh-`, `sv-` survival, `cs-` cushion, `mt-` meeting, `tc-` tech, `ld-` lead, `cu-` culture/forms of address, `on-` online meetings, `ph-` phone calls), `level` 1-3,
   `topic` (one of `SHADOWING_TOPICS` in `src/practice/decks.ts`, labels in `vi.shadowing.topics`; tested),
   `ko`, `pron` (whole sentence in `[...]`, standard sound-change rules: 연음, 비음화, 유음화, 경음화),
   `vi`, optional `notes` (Vietnamese). The `survival` deck is pinned on the home page.
@@ -263,8 +263,10 @@ Korean either.
   button; stats only once any is above 0), then "Mục tiêu hôm nay": today's rated daily-plan steps
   (`daily[today].planSteps`, bumped by `savePlanStep` when "Tiếp" is pressed on `/daily`; skips and practice elsewhere
   don't count, so the goal matches the recipe chips) against `dailyTarget(minutes / 5)` (= the daily plan size), what the session contains
-  (`planRecipe`, chips), Monday-to-Sunday `WeekDots`, one start button to `/daily`; then "Từ của ngày"
-  (`itemOfDay(vocab, today)`). The six section cards carry an item count from the content files. Progress starts with
+  (`planRecipe`, chips), Monday-to-Sunday `WeekDots`, one start button to `/daily`; then "Từ vựng hôm nay"
+  (`WordRotator`: `itemsOfDay(vocab, today, 20)` = the word of the day first, then a set fixed for the day; a new word
+  every 3 s, paused while the mouse is over it, the tab is hidden, after any tap on the word, and from the start under
+  `prefers-reduced-motion`; prev / pause-play / next buttons; the slide has a fixed min-height so the card never jumps). The six section cards carry an item count from the content files. Progress starts with
   an overview (`skillProgress`: items practiced at least once per skill, grammar included, `ProgressRing` + one bar per skill), then one
   compact "Chi tiết" stats card. Helpers are pure in `src/practice/today.ts`.
 - "Lộ trình 4 tuần" (`PathCard` on Home, below the today card): `src/practice/path.ts` is pure and tested.
@@ -455,6 +457,10 @@ Test files (`src/**/*.test.ts`) are type-checked by `tsconfig.node.json`, not
     emitted by `reminderPlugin` in `vite.config.ts`, also served in dev): iOS Safari only offers "Add to Calendar" for
     a real `text/calendar` response, not a blob. Not precached; the service worker leaves `/reminder/` alone.
     `prefs.reminderTime` only remembers the last time the learner opened (the calendar can't be read back).
+  - Share card ("Chia sẻ tiến độ" on Progress, shown once there is any practice): `ShareCard` draws a 1080×1080 PNG on a
+    canvas in the light brand palette (wordmark, streak, lines spoken, minutes, typing best or % practiced, site URL);
+    numbers from `shareStats` (`src/practice/share.ts`, pure, tested). Web Share with the file where `navigator.canShare`
+    allows it, otherwise a download link. Drawn on the device; nothing is uploaded.
   - `VITE_FEEDBACK_URL` (optional, e.g. a Google Form) shows a "Góp ý" link on Home, in Settings and on `/about`.
   - `/about` (`AboutPage`, "Giới thiệu & quyền riêng tư", linked from the bottom of Home and from Settings): what the
     app is, who makes it, what happens to the learner's data (`vi.about.data`), credits; optional `VITE_CONTACT_EMAIL`.

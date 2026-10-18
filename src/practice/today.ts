@@ -56,6 +56,25 @@ export function itemOfDay<T>(items: readonly T[], today: string): T | undefined 
   return items[h % items.length];
 }
 
+/**
+ * The item of the day first, then `count - 1` more in an order fixed for the day (seeded by the
+ * date), for the rotating "Từ của ngày" card. No repeats.
+ */
+export function itemsOfDay<T>(items: readonly T[], today: string, count: number): T[] {
+  const first = itemOfDay(items, today);
+  if (first === undefined) return [];
+  let seed = 0;
+  for (const ch of today) seed = (seed * 31 + ch.charCodeAt(0)) >>> 0;
+  // Small LCG: the same day gives the same order on every device.
+  const next = () => (seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0) / 2 ** 32;
+  const rest = items.filter((x) => x !== first);
+  for (let i = rest.length - 1; i > 0; i--) {
+    const j = Math.floor(next() * (i + 1));
+    [rest[i], rest[j]] = [rest[j], rest[i]];
+  }
+  return [first, ...rest.slice(0, Math.max(0, count - 1))];
+}
+
 export type SkillKey = 'shadowing' | 'patterns' | 'scenarios' | 'listening' | 'interpret' | 'messages' | 'grammar' | 'vocab';
 
 export interface SkillProgress {

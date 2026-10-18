@@ -2087,6 +2087,26 @@ ins {
 .word-card p {
   margin: 0;
 }
+/* Fixed height so the card doesn't jump as words rotate; long examples are clamped. */
+.word-slide {
+  min-height: 15rem;
+  animation: word-in 0.25s ease-out;
+}
+.word-example {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.word-controls {
+  gap: 4px;
+}
+@keyframes word-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
 
 /* Progress overview: ring + one bar per skill. */
 .overview-head {
@@ -2775,6 +2795,12 @@ ins {
 .kbd-key--next .kbd-shift {
   color: inherit;
   opacity: 0.85;
+}
+.share-preview {
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
 }
 .typing-setup summary {
   display: flex;

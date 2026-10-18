@@ -1560,6 +1560,167 @@
           "answer": 0
         }
       ]
+    },
+    {
+      "id": "lm-online-share",
+      "title": "Họp online: chia sẻ màn hình",
+      "context": "Họp video giữa PM phía khách và BrSE, màn hình chia sẻ lúc đầu không hiện.",
+      "speakers": [
+        {
+          "id": "park",
+          "name": "박 책임 (PM phía khách)",
+          "voice": "male"
+        },
+        {
+          "id": "linh",
+          "name": "린 (BrSE phía Việt Nam)",
+          "voice": "female"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "park",
+          "ko": "린 씨, 제 목소리 잘 들리세요?",
+          "vi": "Linh, nghe rõ tiếng tôi không?"
+        },
+        {
+          "speaker": "linh",
+          "ko": "네, 잘 들립니다. 지금 화면 공유하겠습니다. 보이십니까?",
+          "vi": "Dạ, nghe rõ ạ. Bây giờ tôi chia sẻ màn hình. Anh thấy chưa ạ?"
+        },
+        {
+          "speaker": "park",
+          "ko": "아직 안 보이는데요. 검은 화면만 나와요.",
+          "vi": "Vẫn chưa thấy. Chỉ có màn hình đen thôi."
+        },
+        {
+          "speaker": "linh",
+          "ko": "죄송합니다. 다시 공유하겠습니다. 이제 보이십니까?",
+          "vi": "Xin lỗi anh. Tôi chia sẻ lại. Giờ anh thấy chưa ạ?"
+        },
+        {
+          "speaker": "park",
+          "ko": "네, 이제 보여요. 로그인 화면부터 설명해 주세요.",
+          "vi": "Rồi, giờ thấy rồi. Giải thích từ màn hình đăng nhập nhé."
+        },
+        {
+          "speaker": "linh",
+          "ko": "네, 이번 주에 로그인 화면 디자인을 수정했고, 비밀번호 찾기 기능을 추가했습니다.",
+          "vi": "Dạ, tuần này chúng tôi đã sửa thiết kế màn hình đăng nhập và thêm chức năng tìm lại mật khẩu."
+        }
+      ],
+      "questions": [
+        {
+          "q": "Lúc đầu khách thấy gì?",
+          "choices": [
+            "Màn hình đăng nhập",
+            "Màn hình đen",
+            "Không nghe được tiếng"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Khách muốn bắt đầu giải thích từ đâu?",
+          "choices": [
+            "Màn hình đăng nhập",
+            "Chức năng thanh toán",
+            "Trang quản trị"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Tuần này team đã thêm chức năng gì?",
+          "choices": [
+            "Đăng ký thành viên",
+            "Đăng nhập bằng mạng xã hội",
+            "Tìm lại mật khẩu"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "lm-phone-incident",
+      "title": "Gọi điện báo sự cố",
+      "context": "BrSE gọi điện cho trưởng phòng phía khách khi hệ thống thanh toán gặp lỗi.",
+      "speakers": [
+        {
+          "id": "thu",
+          "name": "투 (BrSE phía Việt Nam)",
+          "voice": "female"
+        },
+        {
+          "id": "choi",
+          "name": "최 부장 (trưởng phòng phía khách)",
+          "voice": "male"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "thu",
+          "ko": "여보세요, 최 부장님. 베트남 개발팀 투입니다. 지금 통화 괜찮으세요?",
+          "vi": "A lô, trưởng phòng Choi. Tôi là Thu của team phát triển Việt Nam. Bây giờ anh nghe máy được không ạ?"
+        },
+        {
+          "speaker": "choi",
+          "ko": "네, 괜찮아요. 무슨 일이에요?",
+          "vi": "Được, có chuyện gì vậy?"
+        },
+        {
+          "speaker": "thu",
+          "ko": "오늘 오후 두 시부터 운영 서버에서 결제 오류가 발생하고 있습니다.",
+          "vi": "Từ 2 giờ chiều nay server production bị lỗi thanh toán ạ."
+        },
+        {
+          "speaker": "choi",
+          "ko": "영향 범위는 어느 정도예요?",
+          "vi": "Phạm vi ảnh hưởng tới mức nào?"
+        },
+        {
+          "speaker": "thu",
+          "ko": "전체 결제의 약 10퍼센트가 실패하고 있고, 원인은 지금 확인 중입니다.",
+          "vi": "Khoảng 10% giao dịch thanh toán đang thất bại, nguyên nhân thì chúng tôi đang kiểm tra ạ."
+        },
+        {
+          "speaker": "choi",
+          "ko": "알겠어요. 30분마다 상황 공유해 주세요.",
+          "vi": "Tôi hiểu rồi. Cứ 30 phút cập nhật tình hình cho tôi nhé."
+        },
+        {
+          "speaker": "thu",
+          "ko": "네, 알겠습니다. 세 시까지 1차 보고드리겠습니다.",
+          "vi": "Vâng, tôi hiểu. Trước 3 giờ tôi sẽ báo cáo lần đầu ạ."
+        }
+      ],
+      "questions": [
+        {
+          "q": "Lỗi bắt đầu từ mấy giờ?",
+          "choices": [
+            "12 giờ trưa",
+            "2 giờ chiều",
+            "3 giờ chiều"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Khoảng bao nhiêu giao dịch thanh toán thất bại?",
+          "choices": [
+            "10%",
+            "1%",
+            "30%"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Trưởng phòng yêu cầu gì?",
+          "choices": [
+            "Rollback ngay",
+            "Gửi báo cáo vào ngày mai",
+            "Cứ 30 phút cập nhật tình hình"
+          ],
+          "answer": 2
+        }
+      ]
     }
   ]
 }
