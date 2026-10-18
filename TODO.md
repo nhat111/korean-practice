@@ -22,7 +22,7 @@ If few people come back after day 1, do **3** before **2**.
 - [x] Korean typing drill (`/typing`): 두벌식 key lessons, words, chat lines, 타수 + accuracy.
 - [ ] Content: workplace culture and forms of address (직급 호칭, 회식, refusing politely), more honorific grammar,
       online meetings (screen share, lag, recap), phone calls; more incident/release/security scenarios and emails.
-- [ ] "Cần nói gấp": search all content by Vietnamese meaning, with audio.
+- [x] "Cần nói gấp" (`/find`): search all content by Vietnamese meaning, with audio and copy.
 - [ ] Shareable progress card (image with streak and counts) for Facebook/Zalo.
 
 ## 2. AI correction of the learner's own Korean (needs the backend)
