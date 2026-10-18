@@ -893,6 +893,12 @@ export const vi = {
     next: 'Bài tiếp',
     toList: 'Về danh sách',
   },
+  domainMove: {
+    message: (host: string) =>
+      `KoDevTalk đã chuyển sang ${host}. Tiến độ lưu riêng theo từng địa chỉ: hãy tải file sao lưu ở đây rồi nhập lại bên địa chỉ mới.`,
+    backup: 'Sao lưu tiến độ',
+    open: 'Mở địa chỉ mới',
+  },
   update: {
     message: 'Đã có phiên bản mới (nội dung, tính năng).',
     reload: 'Tải lại',

@@ -11,10 +11,17 @@ export const DEFAULT_REMINDER_TIME: ReminderTime = '20:00';
 /** Length of the event in the prebuilt files. */
 export const REMINDER_MINUTES = 10;
 
-/** Production address written into the calendar event (same as the Open Graph tags in index.html). */
-export const APP_URL = 'https://kodevtalk.vercel.app';
+/**
+ * Production address used when VITE_SITE_URL is not set (vite.config.ts
+ * passes the resolved address to buildReminderIcs and index.html).
+ */
+export const DEFAULT_SITE_URL = 'https://kodevtalk.vercel.app';
 
-/** Same UID for every time, so importing another time can replace the old event. */
+/**
+ * Same UID for every time, so importing another time can replace the old event.
+ * Only an identifier, not a link: keep it unchanged when the domain changes, or
+ * learners who already added a reminder would end up with two events.
+ */
 const UID = 'daily-reminder@kodevtalk.vercel.app';
 
 /** First day of the repeating event; any past date works with a daily rule. */
@@ -68,7 +75,7 @@ function fold(line: string): string {
  * A daily event at `time` (floating local time: it follows the phone's time
  * zone) lasting `minutes`, with an alarm when it starts.
  */
-export function buildReminderIcs(time: ReminderTime, minutes: number, text: ReminderText, url: string = APP_URL): string {
+export function buildReminderIcs(time: ReminderTime, minutes: number, text: ReminderText, url: string = DEFAULT_SITE_URL): string {
   const link = `${url}/daily`;
   const lines = [
     'BEGIN:VCALENDAR',

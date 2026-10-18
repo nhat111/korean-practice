@@ -5,7 +5,7 @@ import { join, relative, resolve, sep } from 'node:path'
 import { execSync } from 'node:child_process'
 import { defineConfig, loadEnv, type Plugin } from 'vite'
 import { vi } from './src/i18n/vi.ts'
-import { buildReminderIcs, REMINDER_MINUTES, reminderIcsPath, REMINDER_TIMES } from './src/practice/reminder.ts'
+import { buildReminderIcs, DEFAULT_SITE_URL, REMINDER_MINUTES, reminderIcsPath, REMINDER_TIMES } from './src/practice/reminder.ts'
 
 /** Recursively lists files under `dir`. */
 function listFiles(dir: string): string[] {
@@ -88,9 +88,9 @@ function pwaPlugin(audio: string, fallback: string, build: string): Plugin {
  * /reminder/HHMM.ics. Static files, not blobs: iOS Safari only offers "Add to
  * Calendar" for a real text/calendar response. Served in dev too.
  */
-function reminderPlugin(): Plugin {
+function reminderPlugin(site: string): Plugin {
   const text = { title: vi.reminder.eventTitle, details: vi.reminder.eventDetails }
-  const files = new Map(REMINDER_TIMES.map((t) => [reminderIcsPath(t), buildReminderIcs(t, REMINDER_MINUTES, text)]))
+  const files = new Map(REMINDER_TIMES.map((t) => [reminderIcsPath(t), buildReminderIcs(t, REMINDER_MINUTES, text, site)]))
   return {
     name: 'kp-reminder',
     configureServer(server) {
@@ -107,7 +107,27 @@ function reminderPlugin(): Plugin {
   }
 }
 
-// https://vite.dev/config/
+/**
+ * Public address of the production site, without a trailing slash: the link in
+ * the reminder files, the Open Graph tags and the share image. Set
+ * VITE_SITE_URL on Vercel when the app moves to its own domain; unset keeps
+ * the original kodevtalk.vercel.app.
+ */
+function siteUrl(env: Record<string, string>): string {
+  const raw = (env.VITE_SITE_URL ?? '').trim().replace(/\/+$/, '')
+  if (raw === '') return DEFAULT_SITE_URL
+  if (!/^https?:\/\/[^/]+$/.test(raw)) throw new Error(`VITE_SITE_URL must be an origin like https://example.com, got "${raw}"`)
+  return raw
+}
+
+/** Fills %SITE_URL% in index.html (absolute Open Graph URLs). */
+function siteUrlPlugin(site: string): Plugin {
+  return {
+    name: 'kp-site-url',
+    transformIndexHtml: { order: 'pre', handler: (html) => html.replaceAll('%SITE_URL%', site) },
+  }
+}
+
 // Shown in Settings so the learner can tell which deploy is running.
 function appVersion(): string {
   let sha = process.env.VERCEL_GIT_COMMIT_SHA ?? ''
@@ -125,12 +145,14 @@ function appVersion(): string {
 // https://vite.dev/config/
 export default defineConfig(({ command, mode }) => {
   // loadEnv reads .env files and the process env (Vercel's project variables).
-  const audio = audioBase(command, loadEnv(mode, process.cwd(), 'VITE_'))
+  const env = loadEnv(mode, process.cwd(), 'VITE_')
+  const audio = audioBase(command, env)
+  const site = siteUrl(env)
   const fallback = audio === PAGES_AUDIO_BASE ? CDN_AUDIO_BASE : ''
   // One value for the bundle and dist/version.json, so they compare equal.
   const build = appVersion()
   return {
-    plugins: [react(), reminderPlugin(), pwaPlugin(audio, fallback, build)],
-    define: { __APP_VERSION__: JSON.stringify(build), __AUDIO_BASE__: JSON.stringify(audio), __AUDIO_FALLBACK__: JSON.stringify(fallback) },
+    plugins: [react(), siteUrlPlugin(site), reminderPlugin(site), pwaPlugin(audio, fallback, build)],
+    define: { __APP_VERSION__: JSON.stringify(build), __SITE_URL__: JSON.stringify(site), __AUDIO_BASE__: JSON.stringify(audio), __AUDIO_FALLBACK__: JSON.stringify(fallback) },
   }
 })

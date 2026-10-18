@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Link, Outlet, useLocation } from 'react-router';
 import { BackendBanner } from './BackendBanner';
+import { DomainMoveBanner } from './DomainMoveBanner';
 import { Icon, type IconName } from './Icon';
 import { UpdateBanner } from './UpdateBanner';
 import { vi } from '../i18n/vi';
@@ -49,6 +50,7 @@ export function Layout() {
           <Icon name="settings" size={22} />
         </Link>
       </header>
+      <DomainMoveBanner />
       <UpdateBanner />
       <BackendBanner />
       <main className="main" ref={mainRef}>
