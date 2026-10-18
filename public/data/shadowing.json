@@ -1990,6 +1990,395 @@
       "notes": [
         "부족한 → [부조칸] (격음화); 반영 → [바녕] (연음)."
       ]
+    },
+    {
+      "id": "cu-01",
+      "level": 1,
+      "topic": "culture",
+      "ko": "김 과장님, 잠깐 시간 괜찮으십니까?",
+      "pron": "[김 과장님 잠깐 시간 괜차느심니까]",
+      "vi": "Trưởng phòng Kim, anh có chút thời gian không ạ?",
+      "notes": [
+        "Gọi chức danh + 님 (과장님, 팀장님), không gọi tên trống.",
+        "괜찮으십니까 → [괜차느심니까] (ㅎ không đọc)."
+      ]
+    },
+    {
+      "id": "cu-02",
+      "level": 1,
+      "topic": "culture",
+      "ko": "처음 뵙겠습니다. 베트남 개발팀의 흐엉이라고 합니다.",
+      "pron": "[처음 뵙껟씀니다 베트남 개발티메 흐엉이라고 함니다]",
+      "vi": "Rất hân hạnh được gặp. Tôi là Hương của team phát triển Việt Nam.",
+      "notes": [
+        "뵙겠습니다 → [뵙껟씀니다]; trợ từ 의 thường đọc [에]."
+      ]
+    },
+    {
+      "id": "cu-03",
+      "level": 2,
+      "topic": "culture",
+      "ko": "혹시 직함을 어떻게 불러 드리면 될까요?",
+      "pron": "[혹씨 지카믈 어떠케 불러 드리면 될까요]",
+      "vi": "Xin hỏi tôi nên gọi chức danh của anh/chị thế nào ạ?",
+      "notes": [
+        "직함 → [지캄] (ㄱ + ㅎ → ㅋ).",
+        "Hỏi thẳng cách xưng hô là lịch sự, không bị coi là thất lễ."
+      ]
+    },
+    {
+      "id": "cu-04",
+      "level": 2,
+      "topic": "culture",
+      "ko": "팀장님께 먼저 보고드리고 다시 연락드리겠습니다.",
+      "pron": "[팀장님께 먼저 보고드리고 다시 열락뜨리겓씀니다]",
+      "vi": "Tôi sẽ báo cáo trưởng nhóm trước rồi liên lạc lại ạ.",
+      "notes": [
+        "연락 → [열락] (ㄴ + ㄹ → ㄹㄹ).",
+        "Báo cáo theo cấp bậc: không tự quyết thay cấp trên."
+      ]
+    },
+    {
+      "id": "cu-05",
+      "level": 3,
+      "topic": "culture",
+      "ko": "말씀하신 내용은 제가 결정할 수 있는 부분이 아니라서요.",
+      "pron": "[말씀하신 내용은 제가 결쩡할 쑤 인는 부부니 아니라서요]",
+      "vi": "Nội dung anh/chị nói không phải phần tôi có thể quyết định ạ.",
+      "notes": [
+        "-(으)ㄹ 수 → [ㄹ 쑤]; 있는 → [인는].",
+        "Từ chối mềm: nói rõ giới hạn quyền hạn, rồi đề xuất người có quyền quyết định."
+      ]
+    },
+    {
+      "id": "cu-06",
+      "level": 2,
+      "topic": "culture",
+      "ko": "죄송하지만 그 일정은 조금 어려울 것 같습니다.",
+      "pron": "[죄송하지만 그 일쩡은 조금 어려울 껃 갇씀니다]",
+      "vi": "Xin lỗi nhưng lịch đó có lẽ hơi khó ạ.",
+      "notes": [
+        "Người Hàn hiếm khi nói thẳng \"không được\"; 어려울 것 같습니다 là cách từ chối lịch sự.",
+        "-(으)ㄹ 것 → [ㄹ 껃]."
+      ]
+    },
+    {
+      "id": "cu-07",
+      "level": 1,
+      "topic": "culture",
+      "ko": "오늘 회식 자리에 불러 주셔서 감사합니다.",
+      "pron": "[오늘 회식 짜리에 불러 주셔서 감사함니다]",
+      "vi": "Cảm ơn anh/chị đã mời tôi buổi liên hoan hôm nay.",
+      "notes": [
+        "회식: buổi liên hoan của công ty sau giờ làm. 회식 자리 → [회식 짜리]."
+      ]
+    },
+    {
+      "id": "cu-08",
+      "level": 1,
+      "topic": "culture",
+      "ko": "제가 한 잔 따라 드리겠습니다.",
+      "pron": "[제가 한 잔 따라 드리겓씀니다]",
+      "vi": "Để tôi rót cho anh/chị một ly.",
+      "notes": [
+        "Rót cho cấp trên bằng hai tay; khi được rót cũng cầm ly bằng hai tay, uống thì hơi quay mặt đi."
+      ]
+    },
+    {
+      "id": "cu-09",
+      "level": 2,
+      "topic": "culture",
+      "ko": "내일 일찍 출근해야 해서 먼저 일어나 보겠습니다.",
+      "pron": "[내일 일찍 출근해야 해서 먼저 이러나 보겓씀니다]",
+      "vi": "Mai tôi phải đi làm sớm nên xin phép về trước ạ.",
+      "notes": [
+        "Xin về trước khi đang 회식: nêu lý do ngắn rồi dùng 먼저 일어나 보겠습니다."
+      ]
+    },
+    {
+      "id": "cu-10",
+      "level": 1,
+      "topic": "culture",
+      "ko": "이번 주 금요일에 연차를 써도 될까요?",
+      "pron": "[이번 주 그묘이레 연차를 써도 될까요]",
+      "vi": "Thứ Sáu tuần này tôi xin nghỉ phép được không ạ?",
+      "notes": [
+        "연차: ngày phép năm. Xin càng sớm càng tốt và báo luôn người làm thay."
+      ]
+    },
+    {
+      "id": "cu-11",
+      "level": 3,
+      "topic": "culture",
+      "ko": "제가 없는 동안에는 민 선임이 대신 대응할 예정입니다.",
+      "pron": "[제가 엄는 동아네는 민 서니미 대신 대응할 예정임니다]",
+      "vi": "Trong lúc tôi vắng, anh Minh (senior) sẽ xử lý thay ạ.",
+      "notes": [
+        "없는 → [엄는]; 선임이 → [서니미].",
+        "선임: người có thâm niên hơn. Khi nói với khách, gọi đồng nghiệp bằng tên + chức danh."
+      ]
+    },
+    {
+      "id": "cu-12",
+      "level": 1,
+      "topic": "culture",
+      "ko": "바쁘신데 시간 내 주셔서 감사합니다.",
+      "pron": "[바쁘신데 시간 내 주셔서 감사함니다]",
+      "vi": "Cảm ơn anh/chị đã dành thời gian dù đang bận."
+    },
+    {
+      "id": "cu-13",
+      "level": 3,
+      "topic": "culture",
+      "ko": "오해가 있으셨다면 제 설명이 부족했던 것 같습니다.",
+      "pron": "[오해가 이쓰셛따면 제 설명이 부조캗떤 걷 갇씀니다]",
+      "vi": "Nếu có hiểu lầm thì có lẽ do tôi giải thích chưa đủ ạ.",
+      "notes": [
+        "부족했던 → [부조캗떤] (ㄱ + ㅎ → ㅋ).",
+        "Nhận phần lỗi về mình khi có hiểu lầm giúp giữ quan hệ."
+      ]
+    },
+    {
+      "id": "on-01",
+      "level": 1,
+      "topic": "online",
+      "ko": "제 목소리 잘 들리십니까?",
+      "pron": "[제 목쏘리 잘 들리심니까]",
+      "vi": "Anh/chị nghe rõ tiếng tôi không ạ?",
+      "notes": [
+        "목소리 → [목쏘리] (경음화)."
+      ]
+    },
+    {
+      "id": "on-02",
+      "level": 1,
+      "topic": "online",
+      "ko": "화면 공유하겠습니다. 지금 화면 보이십니까?",
+      "pron": "[화면 공유하겓씀니다 지금 화면 보이심니까]",
+      "vi": "Tôi sẽ chia sẻ màn hình. Bây giờ anh/chị thấy màn hình chưa ạ?"
+    },
+    {
+      "id": "on-03",
+      "level": 2,
+      "topic": "online",
+      "ko": "죄송합니다, 소리가 끊겨서 잘 못 들었습니다.",
+      "pron": "[죄송함니다 소리가 끈켜서 잘 몯 뜨럳씀니다]",
+      "vi": "Xin lỗi, tiếng bị ngắt nên tôi nghe không rõ.",
+      "notes": [
+        "끊겨서 → [끈켜서] (ㅎ + ㄱ → ㅋ); 못 들었습니다 → [몯 뜨럳씀니다]."
+      ]
+    },
+    {
+      "id": "on-04",
+      "level": 2,
+      "topic": "online",
+      "ko": "마지막 부분을 한 번만 다시 말씀해 주시겠습니까?",
+      "pron": "[마지막 부부늘 한 번만 다시 말씀해 주시겓씀니까]",
+      "vi": "Anh/chị nói lại phần cuối giúp tôi một lần được không ạ?"
+    },
+    {
+      "id": "on-05",
+      "level": 2,
+      "topic": "online",
+      "ko": "인터넷이 불안정해서 카메라를 잠시 끄겠습니다.",
+      "pron": "[인터네시 부란정해서 카메라를 잠시 끄겓씀니다]",
+      "vi": "Mạng không ổn định nên tôi xin tắt camera một lát.",
+      "notes": [
+        "인터넷이 → [인터네시]; 불안정 → [부란정] (연음)."
+      ]
+    },
+    {
+      "id": "on-06",
+      "level": 2,
+      "topic": "online",
+      "ko": "제 화면이 멈춘 것 같은데, 다시 들어오겠습니다.",
+      "pron": "[제 화며니 멈춘 걷 가튼데 다시 드러오겓씀니다]",
+      "vi": "Hình như màn hình của tôi bị đứng, tôi sẽ vào lại."
+    },
+    {
+      "id": "on-07",
+      "level": 1,
+      "topic": "online",
+      "ko": "채팅창에 링크 공유드렸습니다.",
+      "pron": "[채팅창에 링크 공유드렫씀니다]",
+      "vi": "Tôi đã gửi link vào khung chat ạ."
+    },
+    {
+      "id": "on-08",
+      "level": 2,
+      "topic": "online",
+      "ko": "마이크가 켜져 있는 것 같습니다. 음소거 부탁드립니다.",
+      "pron": "[마이크가 켜져 인는 걷 갇씀니다 음소거 부탁뜨림니다]",
+      "vi": "Hình như micro đang bật. Phiền anh/chị tắt tiếng giúp ạ.",
+      "notes": [
+        "음소거: tắt tiếng (mute)."
+      ]
+    },
+    {
+      "id": "on-09",
+      "level": 2,
+      "topic": "online",
+      "ko": "회의 녹화를 시작해도 괜찮으시겠습니까?",
+      "pron": "[회이 노콰를 시자캐도 괜차느시겓씀니까]",
+      "vi": "Tôi bắt đầu ghi hình cuộc họp được không ạ?",
+      "notes": [
+        "녹화 → [노콰]; 시작해도 → [시자캐도] (ㄱ + ㅎ → ㅋ).",
+        "Xin phép trước khi ghi hình là phép lịch sự bắt buộc."
+      ]
+    },
+    {
+      "id": "on-10",
+      "level": 3,
+      "topic": "online",
+      "ko": "오늘 논의한 내용을 정리해서 회의록으로 공유드리겠습니다.",
+      "pron": "[오늘 노니한 내용을 정니해서 회이로그로 공유드리겓씀니다]",
+      "vi": "Tôi sẽ tổng hợp nội dung thảo luận hôm nay thành biên bản và chia sẻ ạ.",
+      "notes": [
+        "논의 → [노니]; 정리 → [정니]; 회의록 → [회이록]."
+      ]
+    },
+    {
+      "id": "on-11",
+      "level": 3,
+      "topic": "online",
+      "ko": "시간 관계상 나머지는 다음 회의에서 이어서 하겠습니다.",
+      "pron": "[시간 관게상 나머지는 다음 회이에서 이어서 하겓씀니다]",
+      "vi": "Vì thời gian có hạn, phần còn lại chúng ta tiếp tục ở cuộc họp sau ạ."
+    },
+    {
+      "id": "on-12",
+      "level": 3,
+      "topic": "online",
+      "ko": "잠시 연결이 끊겼었습니다. 어디까지 말씀하셨는지 여쭤봐도 될까요?",
+      "pron": "[잠시 연겨리 끈켜썯씀니다 어디까지 말씀하션는지 여쭤봐도 될까요]",
+      "vi": "Kết nối vừa bị ngắt. Cho tôi hỏi anh/chị đã nói tới đâu rồi ạ?",
+      "notes": [
+        "하셨는지 → [하션는지] (비음화).",
+        "여쭤보다: kính ngữ của 물어보다 (hỏi)."
+      ]
+    },
+    {
+      "id": "ph-01",
+      "level": 1,
+      "topic": "phone",
+      "ko": "여보세요, 베트남 개발팀 흐엉입니다.",
+      "pron": "[여보세요 베트남 개발팀 흐엉임니다]",
+      "vi": "A lô, Hương của team phát triển Việt Nam xin nghe.",
+      "notes": [
+        "Nhấc máy ở công ty: tên bộ phận + tên mình."
+      ]
+    },
+    {
+      "id": "ph-02",
+      "level": 2,
+      "topic": "phone",
+      "ko": "실례지만 누구신지 여쭤봐도 될까요?",
+      "pron": "[실레지만 누구신지 여쭤봐도 될까요]",
+      "vi": "Xin lỗi, cho tôi hỏi ai đang gọi ạ?",
+      "notes": [
+        "실례 → [실레]."
+      ]
+    },
+    {
+      "id": "ph-03",
+      "level": 1,
+      "topic": "phone",
+      "ko": "김 과장님 계십니까?",
+      "pron": "[김 과장님 게심니까]",
+      "vi": "Trưởng phòng Kim có ở đó không ạ?",
+      "notes": [
+        "계십니까 → [게심니까]."
+      ]
+    },
+    {
+      "id": "ph-04",
+      "level": 2,
+      "topic": "phone",
+      "ko": "지금 자리에 안 계신데, 메모 남겨 드릴까요?",
+      "pron": "[지금 자리에 안 게신데 메모 남겨 드릴까요]",
+      "vi": "Hiện anh ấy không có ở chỗ, tôi để lại lời nhắn giúp nhé?"
+    },
+    {
+      "id": "ph-05",
+      "level": 3,
+      "topic": "phone",
+      "ko": "돌아오시면 전화 부탁드린다고 전해 주시겠습니까?",
+      "pron": "[도라오시면 전화 부탁뜨린다고 저내 주시겓씀니까]",
+      "vi": "Khi anh ấy về, nhờ anh/chị nhắn gọi lại cho tôi được không ạ?",
+      "notes": [
+        "전해 → [저내] (ㅎ đọc rất nhẹ); 부탁드린다고 → [부탁뜨린다고]."
+      ]
+    },
+    {
+      "id": "ph-06",
+      "level": 1,
+      "topic": "phone",
+      "ko": "전화번호 다시 한번 불러 주시겠습니까?",
+      "pron": "[전화번호 다시 한번 불러 주시겓씀니까]",
+      "vi": "Anh/chị đọc lại số điện thoại giúp tôi được không ạ?"
+    },
+    {
+      "id": "ph-07",
+      "level": 2,
+      "topic": "phone",
+      "ko": "공일공, 일이삼사, 오육칠팔 맞으시죠?",
+      "pron": "[공일공 일이삼사 오육칠팔 마즈시죠]",
+      "vi": "010-1234-5678 đúng không ạ?",
+      "notes": [
+        "Số điện thoại đọc bằng số Hán Hàn, số 0 đọc là 공. Nhắc lại để xác nhận."
+      ]
+    },
+    {
+      "id": "ph-08",
+      "level": 2,
+      "topic": "phone",
+      "ko": "지금 통화 괜찮으세요? 급한 건이라서 연락드렸습니다.",
+      "pron": "[지금 통화 괜차느세요 그판 거니라서 열락뜨렫씀니다]",
+      "vi": "Bây giờ anh/chị nghe máy được không ạ? Tôi gọi vì có việc gấp.",
+      "notes": [
+        "급한 → [그판] (ㅂ + ㅎ → ㅍ); 연락 → [열락]."
+      ]
+    },
+    {
+      "id": "ph-09",
+      "level": 2,
+      "topic": "phone",
+      "ko": "운영 서버에 장애가 발생해서 전화드렸습니다.",
+      "pron": "[우녕 서버에 장애가 발쌩해서 전화드렫씀니다]",
+      "vi": "Tôi gọi vì server production đang gặp sự cố ạ.",
+      "notes": [
+        "운영 → [우녕]; 발생 → [발쌩]."
+      ]
+    },
+    {
+      "id": "ph-10",
+      "level": 2,
+      "topic": "phone",
+      "ko": "통화 내용은 정리해서 메일로 다시 보내 드리겠습니다.",
+      "pron": "[통화 내용은 정니해서 메일로 다시 보내 드리겓씀니다]",
+      "vi": "Tôi sẽ tổng hợp nội dung cuộc gọi và gửi lại qua email ạ.",
+      "notes": [
+        "Sau cuộc gọi quan trọng, gửi email tóm tắt để có bằng chứng bằng văn bản."
+      ]
+    },
+    {
+      "id": "ph-11",
+      "level": 3,
+      "topic": "phone",
+      "ko": "전화가 잘 안 들려서 그러는데, 다시 걸어 드려도 될까요?",
+      "pron": "[전화가 잘 안 들려서 그러는데 다시 거러 드려도 될까요]",
+      "vi": "Điện thoại nghe không rõ, tôi gọi lại cho anh/chị được không ạ?"
+    },
+    {
+      "id": "ph-12",
+      "level": 1,
+      "topic": "phone",
+      "ko": "네, 알겠습니다. 그럼 들어가세요.",
+      "pron": "[네 알겓씀니다 그럼 드러가세요]",
+      "vi": "Vâng, tôi hiểu rồi. Vậy chào anh/chị ạ.",
+      "notes": [
+        "들어가세요: câu chào khi kết thúc cuộc gọi (nghĩa đen \"anh/chị vào đi\")."
+      ]
     }
   ]
 }

@@ -2705,6 +2705,244 @@
           "explainVi": "-(으)ㄹ지도 모르다 nói một khả năng chưa chắc; -았/었습니다 là chuyện đã xảy ra, -(으)ㄹ 뻔하다 là \"suýt nữa\"."
         }
       ]
+    },
+    {
+      "id": "gr-gyesida",
+      "group": "honorific",
+      "pattern": "계시다 / 있으시다",
+      "meaningVi": "kính ngữ của 있다 (có, ở)",
+      "usageVi": "계시다 khi chính người đó \"ở\" đâu: 과장님 계십니까?, 자리에 안 계십니다. 있으시다 khi người đó \"có\" thứ gì: 시간 있으세요?, 질문 있으시면. Không nói 시간이 계세요.",
+      "levels": {
+        "peer": {
+          "ko": "지금 자리에 있어요?",
+          "vi": "Giờ có ở chỗ không?"
+        },
+        "lead": {
+          "ko": "팀장님, 지금 자리에 계세요?",
+          "vi": "Trưởng nhóm, giờ anh có ở chỗ không ạ?"
+        },
+        "client": {
+          "ko": "혹시 오늘 오후에 시간 있으십니까?",
+          "vi": "Chiều nay anh/chị có thời gian không ạ?"
+        }
+      },
+      "examples": [
+        {
+          "ko": "김 과장님은 지금 회의 중이셔서 자리에 안 계십니다.",
+          "vi": "Trưởng phòng Kim đang họp nên không có ở chỗ ạ."
+        },
+        {
+          "ko": "궁금하신 점 있으시면 편하게 말씀해 주세요.",
+          "vi": "Nếu có điều gì thắc mắc, anh/chị cứ thoải mái nói ạ."
+        },
+        {
+          "ko": "내일 오전에 사무실에 계실 예정이십니까?",
+          "vi": "Sáng mai anh/chị có ở văn phòng không ạ?"
+        }
+      ],
+      "mistake": {
+        "wrong": "혹시 내일 시간이 계십니까?",
+        "right": "혹시 내일 시간 있으십니까?",
+        "vi": "Mai anh/chị có thời gian không ạ?",
+        "noteVi": "Thời gian là thứ người đó \"có\", không phải người đó \"ở\": dùng 있으시다, không dùng 계시다."
+      },
+      "quiz": [
+        {
+          "q": "Gọi điện hỏi trưởng phòng Kim có ở chỗ không.",
+          "choices": [
+            "김 과장님 계십니까?",
+            "김 과장님 있으십니까?",
+            "김 과장님 있습니까?"
+          ],
+          "answer": 0,
+          "answerVi": "Trưởng phòng Kim có ở đó không ạ?",
+          "explainVi": "Hỏi chính người đó có mặt không → 계시다."
+        },
+        {
+          "q": "Hỏi khách còn câu hỏi nào nữa không.",
+          "choices": [
+            "더 질문 계십니까?",
+            "더 궁금하신 점 있으십니까?",
+            "더 질문 있습니까?"
+          ],
+          "answer": 1,
+          "answerVi": "Anh/chị còn điều gì thắc mắc nữa không ạ?",
+          "explainVi": "Câu hỏi là thứ khách \"có\" → 있으시다."
+        }
+      ]
+    },
+    {
+      "id": "gr-kke",
+      "group": "honorific",
+      "pattern": "N께",
+      "meaningVi": "cho / gửi tới (người trên), kính ngữ của 에게·한테",
+      "usageVi": "Dùng khi đưa, báo, gửi cho khách hoặc cấp trên, thường đi với 드리다: 과장님께 보고드리겠습니다, 고객님께 안내드렸습니다. Với đồng nghiệp ngang hàng dùng 한테/에게.",
+      "levels": {
+        "peer": {
+          "ko": "민 씨한테 전달할게요.",
+          "vi": "Tôi sẽ chuyển cho Minh."
+        },
+        "lead": {
+          "ko": "팀장님께 먼저 말씀드릴게요.",
+          "vi": "Tôi sẽ thưa với trưởng nhóm trước."
+        },
+        "client": {
+          "ko": "담당자님께 자료를 전달드리겠습니다.",
+          "vi": "Tôi sẽ chuyển tài liệu cho anh/chị phụ trách ạ."
+        }
+      },
+      "examples": [
+        {
+          "ko": "회의 결과는 부장님께 직접 보고드렸습니다.",
+          "vi": "Kết quả họp tôi đã báo cáo trực tiếp với trưởng phòng."
+        },
+        {
+          "ko": "수정된 견적서는 고객님께 메일로 보내 드렸습니다.",
+          "vi": "Bảng báo giá đã sửa tôi đã gửi email cho khách hàng."
+        },
+        {
+          "ko": "이 건은 과장님께 여쭤보고 다시 연락드리겠습니다.",
+          "vi": "Việc này tôi sẽ hỏi trưởng phòng rồi liên lạc lại ạ."
+        }
+      ],
+      "mistake": {
+        "wrong": "과장님한테 보고했어요.",
+        "right": "과장님께 보고드렸습니다.",
+        "vi": "Tôi đã báo cáo với trưởng phòng.",
+        "noteVi": "Người nhận là cấp trên: 한테 → 께, 하다 → 드리다."
+      },
+      "quiz": [
+        {
+          "q": "Nói với khách: tôi đã gửi tài liệu cho anh phụ trách.",
+          "choices": [
+            "담당자님한테 자료를 보냈어요.",
+            "담당자님께 자료를 보내 드렸습니다.",
+            "담당자님께서 자료를 보내 드렸습니다."
+          ],
+          "answer": 1,
+          "answerVi": "Tôi đã gửi tài liệu cho anh/chị phụ trách ạ.",
+          "explainVi": "Người nhận → 께. 께서 là chủ ngữ (người làm), không phải người nhận."
+        }
+      ]
+    },
+    {
+      "id": "gr-nim",
+      "group": "honorific",
+      "pattern": "N님",
+      "meaningVi": "hậu tố kính trọng gắn sau chức danh hoặc tên",
+      "usageVi": "Chức danh + 님 khi gọi hoặc nói về cấp trên, khách: 과장님, 팀장님, 부장님, 고객님, 담당자님. Tên + 씨 chỉ dùng cho người ngang hàng hoặc dưới; với khách chưa rõ chức danh dùng tên + 님 (흐엉 님) hoặc 담당자님.",
+      "levels": {
+        "peer": {
+          "ko": "민 씨, 이거 봤어요?",
+          "vi": "Minh, xem cái này chưa?"
+        },
+        "lead": {
+          "ko": "팀장님, 이거 보셨어요?",
+          "vi": "Trưởng nhóm, anh xem cái này chưa ạ?"
+        },
+        "client": {
+          "ko": "담당자님, 보내 드린 자료 확인 부탁드립니다.",
+          "vi": "Anh/chị phụ trách, phiền anh/chị xem tài liệu tôi gửi ạ."
+        }
+      },
+      "examples": [
+        {
+          "ko": "박 책임님, 오늘 회의 자료 공유드립니다.",
+          "vi": "Anh Park, tôi gửi tài liệu họp hôm nay ạ."
+        },
+        {
+          "ko": "고객님, 불편을 드려 죄송합니다.",
+          "vi": "Thưa quý khách, xin lỗi vì đã gây bất tiện."
+        },
+        {
+          "ko": "직급을 잘 몰라서 그런데, 담당자님이라고 불러도 될까요?",
+          "vi": "Tôi không rõ chức danh, gọi anh/chị là 담당자님 được không ạ?"
+        }
+      ],
+      "mistake": {
+        "wrong": "김 씨, 회의 시작할까요?",
+        "right": "김 과장님, 회의 시작할까요?",
+        "vi": "Trưởng phòng Kim, mình bắt đầu họp nhé?",
+        "noteVi": "Gọi cấp trên hay khách bằng họ + 씨 là thất lễ. Dùng họ + chức danh + 님."
+      },
+      "quiz": [
+        {
+          "q": "Gọi trưởng phòng khách tên Kim để bắt đầu họp.",
+          "choices": [
+            "김 씨, 시작하겠습니다.",
+            "김 과장님, 시작하겠습니다.",
+            "과장, 시작하겠습니다."
+          ],
+          "answer": 1,
+          "answerVi": "Trưởng phòng Kim, chúng ta bắt đầu ạ.",
+          "explainVi": "Cấp trên/khách: họ + chức danh + 님."
+        },
+        {
+          "q": "Viết email cho người phụ trách bên khách mà bạn chưa biết chức danh.",
+          "choices": [
+            "담당자님, 안녕하세요.",
+            "담당자 씨, 안녕하세요.",
+            "담당자, 안녕하세요."
+          ],
+          "answer": 0,
+          "answerVi": "Chào anh/chị phụ trách.",
+          "explainVi": "Chưa biết chức danh → 담당자님."
+        }
+      ]
+    },
+    {
+      "id": "gr-eupsida",
+      "group": "honorific",
+      "pattern": "-(으)ㅂ시다",
+      "meaningVi": "chúng ta hãy… (rủ rê ngang hàng hoặc người trên nói với người dưới)",
+      "usageVi": "Câu rủ rê này nghe như ra lệnh nhẹ, chỉ người trên nói với người dưới (김 과장: 목요일에 다시 확인합시다). Người dưới nói với cấp trên, khách thì đổi sang -(으)시죠, -(으)ㄹ까요? hoặc -는 게 어떠실까요?",
+      "levels": {
+        "peer": {
+          "ko": "점심 먹으러 가요.",
+          "vi": "Đi ăn trưa thôi."
+        },
+        "lead": {
+          "ko": "팀장님, 점심 드시러 가시죠.",
+          "vi": "Trưởng nhóm, mình đi ăn trưa ạ."
+        },
+        "client": {
+          "ko": "그럼 목요일에 다시 확인하는 게 어떠실까요?",
+          "vi": "Vậy thứ Năm mình kiểm tra lại có được không ạ?"
+        }
+      },
+      "examples": [
+        {
+          "ko": "다음 주 월요일에 다시 논의하시죠.",
+          "vi": "Thứ Hai tuần sau mình bàn lại ạ."
+        },
+        {
+          "ko": "일정은 이대로 진행할까요?",
+          "vi": "Lịch cứ tiến hành như vậy nhé ạ?"
+        },
+        {
+          "ko": "이 부분은 회의 끝나고 따로 이야기하는 게 어떠세요?",
+          "vi": "Phần này họp xong mình nói riêng được không ạ?"
+        }
+      ],
+      "mistake": {
+        "wrong": "부장님, 회의 시작합시다.",
+        "right": "부장님, 회의 시작하시죠.",
+        "vi": "Thưa trưởng phòng, mình bắt đầu họp ạ.",
+        "noteVi": "Nói -(으)ㅂ시다 với cấp trên nghe như ra lệnh. Dùng -(으)시죠 hoặc -(으)ㄹ까요?."
+      },
+      "quiz": [
+        {
+          "q": "Đề nghị khách để thứ Năm kiểm tra lại.",
+          "choices": [
+            "목요일에 다시 확인합시다.",
+            "목요일에 다시 확인하는 게 어떠실까요?",
+            "목요일에 다시 확인해."
+          ],
+          "answer": 1,
+          "answerVi": "Thứ Năm mình kiểm tra lại có được không ạ?",
+          "explainVi": "Với khách tránh -(으)ㅂ시다; hỏi ý kiến bằng -는 게 어떠실까요?."
+        }
+      ]
     }
   ]
 }
