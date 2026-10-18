@@ -391,7 +391,7 @@ export const vi = {
     recognitionUnsupported:
       'Trình duyệt này không hỗ trợ nhận dạng giọng nói (hãy thử Chrome, Edge hoặc Safari). Bạn vẫn có thể ghi âm ở phần Shadowing và tự so sánh với mẫu.',
     recognitionIosApp:
-      'Khi mở app từ màn hình chính iPhone, nhận dạng giọng nói của iOS không ổn định nên app chuyển sang ghi âm để bạn tự so sánh. Muốn được chấm điểm tự động, hãy mở kodevtalk.vercel.app bằng Safari hoặc Chrome.',
+      'Khi mở app từ màn hình chính iPhone, nhận dạng giọng nói của iOS không ổn định nên app chuyển sang ghi âm để bạn tự so sánh. Muốn được chấm điểm tự động, hãy mở kodevtalk.nhatlab.com bằng Safari hoặc Chrome.',
     recognitionNote: 'Nhận dạng giọng nói do trình duyệt xử lý (Chrome gửi âm thanh tới máy chủ của Google).',
     history: 'Lịch sử luyện nói',
     noHistory: 'Chưa có lần luyện nào.',

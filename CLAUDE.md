@@ -448,8 +448,10 @@ Test files (`src/**/*.test.ts`) are type-checked by `tsconfig.node.json`, not
     the Vercel project to receive data.
   - `InstallHint` on Home: native prompt where `beforeinstallprompt` exists (captured in `src/install.ts`),
     Share → Add to Home Screen steps on iOS; hidden when installed or closed.
-  - Link previews: Open Graph tags in `index.html` with the absolute `https://kodevtalk.vercel.app/og.jpg`
-    (1200×630). Update both if the domain changes.
+  - Domain: production is `https://kodevtalk.nhatlab.com` (`DEFAULT_SITE_URL` in `src/practice/reminder.ts`, overridable with
+    `VITE_SITE_URL`). The old `kodevtalk.vercel.app` keeps serving the app, never redirected (localStorage is per
+    origin), and `DomainMoveBanner` there points to the new address with a backup button.
+  - Link previews: Open Graph tags in `index.html` with the absolute `%SITE_URL%/og.jpg` (1200×630).
   - Daily reminder (`ReminderCard` in Settings, link from the Home today card until one is added): no push (a static
     site has no server, iOS allows Web Push only for Home Screen apps), the phone's calendar reminds instead.
     `src/practice/reminder.ts` (pure, tested) builds a daily repeating `.ics` (floating local time, `VALARM`) and a

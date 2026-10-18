@@ -15,7 +15,7 @@ export const REMINDER_MINUTES = 10;
  * Production address used when VITE_SITE_URL is not set (vite.config.ts
  * passes the resolved address to buildReminderIcs and index.html).
  */
-export const DEFAULT_SITE_URL = 'https://kodevtalk.vercel.app';
+export const DEFAULT_SITE_URL = 'https://kodevtalk.nhatlab.com';
 
 /**
  * Same UID for every time, so importing another time can replace the old event.

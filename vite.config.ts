@@ -110,8 +110,7 @@ function reminderPlugin(site: string): Plugin {
 /**
  * Public address of the production site, without a trailing slash: the link in
  * the reminder files, the Open Graph tags and the share image. Set
- * VITE_SITE_URL on Vercel when the app moves to its own domain; unset keeps
- * the original kodevtalk.vercel.app.
+ * VITE_SITE_URL to override; unset uses DEFAULT_SITE_URL (kodevtalk.nhatlab.com).
  */
 function siteUrl(env: Record<string, string>): string {
   const raw = (env.VITE_SITE_URL ?? '').trim().replace(/\/+$/, '')
