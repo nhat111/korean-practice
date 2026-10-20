@@ -2379,6 +2379,252 @@
       "notes": [
         "들어가세요: câu chào khi kết thúc cuộc gọi (nghĩa đen \"anh/chị vào đi\")."
       ]
+    },
+    {
+      "id": "iv-01",
+      "level": 1,
+      "topic": "interview",
+      "ko": "안녕하세요. 오늘 면접 기회를 주셔서 감사합니다.",
+      "pron": "[안녕하세요 오늘 면접 기회를 주셔서 감사함니다]",
+      "vi": "Xin chào. Cảm ơn anh/chị đã cho tôi cơ hội phỏng vấn hôm nay.",
+      "notes": [
+        "Câu mở đầu an toàn cho mọi buổi phỏng vấn, nói chậm và rõ."
+      ]
+    },
+    {
+      "id": "iv-02",
+      "level": 1,
+      "topic": "interview",
+      "ko": "간단하게 자기소개를 하겠습니다.",
+      "pron": "[간단하게 자기소개를 하겓씀니다]",
+      "vi": "Tôi xin giới thiệu ngắn gọn về bản thân."
+    },
+    {
+      "id": "iv-03",
+      "level": 2,
+      "topic": "interview",
+      "ko": "저는 자바 개발자로 8년 동안 일했습니다.",
+      "pron": "[저는 자바 개발자로 팔련 동안 일핻씀니다]",
+      "vi": "Tôi đã làm lập trình viên Java được 8 năm.",
+      "notes": [
+        "8년 đọc là 팔 년, phát âm [팔련] (유음화)."
+      ]
+    },
+    {
+      "id": "iv-04",
+      "level": 2,
+      "topic": "interview",
+      "ko": "주로 한국 고객사의 유지보수 업무를 담당했습니다.",
+      "pron": "[주로 한국 고객싸에 유지보수 엄무를 담당핻씀니다]",
+      "vi": "Tôi chủ yếu phụ trách mảng bảo trì cho khách hàng Hàn Quốc.",
+      "notes": [
+        "유지보수 = bảo trì; 고객사 = công ty khách hàng."
+      ]
+    },
+    {
+      "id": "iv-05",
+      "level": 2,
+      "topic": "interview",
+      "ko": "제 강점은 고객의 요구사항을 정확하게 파악하는 것입니다.",
+      "pron": "[제 강쩌믄 고개게 요구사항을 정화카게 파아카는 거심니다]",
+      "vi": "Điểm mạnh của tôi là nắm bắt chính xác yêu cầu của khách hàng."
+    },
+    {
+      "id": "iv-06",
+      "level": 3,
+      "topic": "interview",
+      "ko": "한국어로 소통할 수 있다는 점이 저의 가장 큰 장점이라고 생각합니다.",
+      "pron": "[한구거로 소통할 쑤 읻따는 저미 저에 가장 큰 장쩌미라고 생가캄니다]",
+      "vi": "Tôi nghĩ điểm mạnh lớn nhất của tôi là có thể giao tiếp bằng tiếng Hàn.",
+      "notes": [
+        "-다는 점: 'việc/điểm là...', rất hay dùng khi nêu ưu điểm."
+      ]
+    },
+    {
+      "id": "iv-07",
+      "level": 2,
+      "topic": "interview",
+      "ko": "질문을 다시 한번 말씀해 주시겠습니까?",
+      "pron": "[질무늘 다시 한번 말씀해 주시겓씀니까]",
+      "vi": "Anh/chị có thể nói lại câu hỏi một lần nữa được không ạ?",
+      "notes": [
+        "Hỏi lại lịch sự tốt hơn nhiều so với đoán mò rồi trả lời lệch."
+      ]
+    },
+    {
+      "id": "iv-08",
+      "level": 2,
+      "topic": "interview",
+      "ko": "죄송합니다. 질문을 제대로 이해했는지 확인하고 싶습니다.",
+      "pron": "[죄송함니다 질무늘 제대로 이해핸는지 화긴하고 십씀니다]",
+      "vi": "Xin lỗi, tôi muốn xác nhận xem mình đã hiểu đúng câu hỏi chưa.",
+      "notes": [
+        "Nói câu này rồi tóm tắt lại câu hỏi bằng lời của mình."
+      ]
+    },
+    {
+      "id": "iv-09",
+      "level": 2,
+      "topic": "interview",
+      "ko": "잠시만 생각을 정리해도 될까요?",
+      "pron": "[잠시만 생가글 정니해도 될까요]",
+      "vi": "Tôi xin vài giây để sắp xếp suy nghĩ được không ạ?",
+      "notes": [
+        "Dùng khi gặp câu khó; im lặng không giải thích sẽ gây ngượng."
+      ]
+    },
+    {
+      "id": "iv-10",
+      "level": 3,
+      "topic": "interview",
+      "ko": "그 부분은 실무에서 직접 써 본 적은 없지만, 개념은 알고 있습니다.",
+      "pron": "[그 부부는 실무에서 직쩝 써 본 저근 업찌만 개녀믄 알고 읻씀니다]",
+      "vi": "Phần đó tôi chưa dùng trực tiếp trong công việc, nhưng tôi biết khái niệm.",
+      "notes": [
+        "Trung thực + nói những gì mình biết: cách xử lý câu hỏi không biết."
+      ]
+    },
+    {
+      "id": "iv-11",
+      "level": 2,
+      "topic": "interview",
+      "ko": "그 프로젝트에서 저는 화면 개발과 DB 설계를 맡았습니다.",
+      "pron": "[그 프로젝트에서 저는 화면 개발과 디비 설계를 마탇씀니다]",
+      "vi": "Trong dự án đó tôi đảm nhận phát triển màn hình và thiết kế DB.",
+      "notes": [
+        "DB đọc là 디비. 맡다 = đảm nhận."
+      ]
+    },
+    {
+      "id": "iv-12",
+      "level": 3,
+      "topic": "interview",
+      "ko": "처리 시간을 10초에서 2초로 줄여서 고객에게 좋은 평가를 받았습니다.",
+      "pron": "[처리 시가늘 십초에서 이초로 주려서 고개게게 조은 평까를 바닫씀니다]",
+      "vi": "Tôi giảm thời gian xử lý từ 10 giây xuống 2 giây và được khách hàng đánh giá tốt.",
+      "notes": [
+        "Có con số trước/sau làm câu chuyện thuyết phục hơn nhiều."
+      ]
+    },
+    {
+      "id": "iv-13",
+      "level": 3,
+      "topic": "interview",
+      "ko": "문제가 생기면 혼자 해결하려고 하지 않고 바로 팀과 공유합니다.",
+      "pron": "[문제가 생기면 혼자 해결하려고 하지 안코 바로 팀과 공유함니다]",
+      "vi": "Khi có vấn đề, tôi không cố tự giải quyết một mình mà chia sẻ ngay với team."
+    },
+    {
+      "id": "iv-14",
+      "level": 2,
+      "topic": "interview",
+      "ko": "앞으로는 고객과 개발팀을 연결하는 역할을 하고 싶습니다.",
+      "pron": "[아프로는 고객꽈 개발티믈 연결하는 여카를 하고 십씀니다]",
+      "vi": "Sắp tới tôi muốn đảm nhận vai trò kết nối khách hàng và team phát triển.",
+      "notes": [
+        "Cách nói mục tiêu BrSE mà không cần dùng từ viết tắt."
+      ]
+    },
+    {
+      "id": "iv-15",
+      "level": 2,
+      "topic": "interview",
+      "ko": "입사 후에는 업무를 빨리 익혀서 팀에 도움이 되고 싶습니다.",
+      "pron": "[입싸 후에는 엄무를 빨리 이켜서 티메 도우미 되고 십씀니다]",
+      "vi": "Sau khi vào công ty, tôi muốn nhanh chóng làm quen công việc để giúp ích cho team."
+    },
+    {
+      "id": "iv-16",
+      "level": 3,
+      "topic": "interview",
+      "ko": "지금 회사에 인수인계 기간이 필요해서 한 달 후부터 출근할 수 있습니다.",
+      "pron": "[지금 회사에 인수인계 기가니 피료해서 한 달 후부터 출그날 쑤 읻씀니다]",
+      "vi": "Vì cần thời gian bàn giao ở công ty hiện tại nên tôi có thể đi làm sau một tháng.",
+      "notes": [
+        "인수인계 = bàn giao công việc. Người Hàn đánh giá cao việc nghỉ có trách nhiệm."
+      ]
+    },
+    {
+      "id": "iv-17",
+      "level": 3,
+      "topic": "interview",
+      "ko": "회사 내규에 따르겠지만, 희망 연봉은 협의 가능합니다.",
+      "pron": "[회사 내규에 따르겓찌만 히망 연봉은 혀비 가능함니다]",
+      "vi": "Tôi sẽ theo quy định của công ty, nhưng mức lương mong muốn có thể thương lượng.",
+      "notes": [
+        "희망 đọc [히망]; 협의 đọc [혀비]."
+      ]
+    },
+    {
+      "id": "iv-18",
+      "level": 2,
+      "topic": "interview",
+      "ko": "혹시 팀은 몇 명 정도로 구성되어 있나요?",
+      "pron": "[혹씨 티믄 면 명 정도로 구성되어 인나요]",
+      "vi": "Không biết team gồm khoảng bao nhiêu người ạ?",
+      "notes": [
+        "Câu hỏi ngược lại người phỏng vấn ở cuối buổi."
+      ]
+    },
+    {
+      "id": "iv-19",
+      "level": 2,
+      "topic": "interview",
+      "ko": "마지막으로 궁금한 점 하나 여쭤봐도 될까요?",
+      "pron": "[마지마그로 궁금한 점 하나 여쭤봐도 될까요]",
+      "vi": "Cuối cùng, tôi có thể hỏi một điều được không ạ?",
+      "notes": [
+        "여쭤보다 là kính ngữ của 물어보다."
+      ]
+    },
+    {
+      "id": "iv-20",
+      "level": 1,
+      "topic": "interview",
+      "ko": "오늘 시간 내 주셔서 정말 감사합니다.",
+      "pron": "[오늘 시간 내 주셔서 정말 감사함니다]",
+      "vi": "Cảm ơn anh/chị rất nhiều vì đã dành thời gian hôm nay."
+    },
+    {
+      "id": "iv-21",
+      "level": 3,
+      "topic": "interview",
+      "ko": "그 질문은 제 경험을 예로 들어서 말씀드리겠습니다.",
+      "pron": "[그 질무는 제 경허믈 예로 드러서 말씀드리겓씀니다]",
+      "vi": "Câu hỏi đó, tôi xin lấy kinh nghiệm của mình làm ví dụ để trả lời.",
+      "notes": [
+        "예로 들다 = lấy làm ví dụ."
+      ]
+    },
+    {
+      "id": "iv-22",
+      "level": 2,
+      "topic": "interview",
+      "ko": "그 경험을 통해서 꼼꼼하게 테스트하는 습관이 생겼습니다.",
+      "pron": "[그 경허믈 통해서 꼼꼼하게 테스트하는 습꽈니 생겯씀니다]",
+      "vi": "Qua kinh nghiệm đó tôi hình thành thói quen test cẩn thận.",
+      "notes": [
+        "-을/를 통해서: 'thông qua'. Hay dùng để kết thúc câu chuyện kinh nghiệm."
+      ]
+    },
+    {
+      "id": "iv-23",
+      "level": 3,
+      "topic": "interview",
+      "ko": "결과적으로 장애 건수가 절반으로 줄었습니다.",
+      "pron": "[결과저그로 장애 건쑤가 절바느로 주럳씀니다]",
+      "vi": "Kết quả là số sự cố giảm còn một nửa.",
+      "notes": [
+        "건수 đọc [건쑤]."
+      ]
+    },
+    {
+      "id": "iv-24",
+      "level": 2,
+      "topic": "interview",
+      "ko": "부족한 부분은 입사 후에 더 열심히 배우겠습니다.",
+      "pron": "[부조칸 부부는 입싸 후에 더 열씸히 배우겓씀니다]",
+      "vi": "Những phần còn thiếu, tôi sẽ học chăm chỉ hơn sau khi vào công ty."
     }
   ]
 }

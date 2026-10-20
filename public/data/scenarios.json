@@ -9256,6 +9256,1182 @@
           "modelAnswerVi": "Chúng tôi sẽ lập checklist thu hồi mọi tài khoản ngay trong ngày khi có người nghỉ việc, và rà soát định kỳ toàn bộ tài khoản vào tuần đầu mỗi tháng rồi chia sẻ kết quả."
         }
       ]
+    },
+    {
+      "id": "interview-why-leave",
+      "title": "Phỏng vấn: lý do chuyển việc",
+      "titleKo": "면접: 이직 사유",
+      "description": "Người phỏng vấn hỏi vì sao bạn muốn rời công ty hiện tại. Mục tiêu: trả lời tích cực, hướng về tương lai, không chê công ty cũ.",
+      "category": "interview",
+      "tags": [
+        "면접",
+        "이직",
+        "지원 동기"
+      ],
+      "turns": [
+        {
+          "client": "지금 다니시는 회사를 그만두려고 하는 이유가 있나요?",
+          "hint": "Hỏi lý do nghỉ việc. Đừng chê công ty cũ hay sếp cũ. Nói điều bạn muốn học/làm thêm ở nơi mới.",
+          "choices": [
+            {
+              "ko": "월급이 너무 적고 팀장님이 저를 싫어해서요.",
+              "correct": false,
+              "feedback": "Chê lương và sếp cũ là điểm trừ lớn. Người phỏng vấn sẽ nghĩ bạn cũng sẽ chê công ty họ."
+            },
+            {
+              "ko": "현재 회사에서는 주로 유지보수를 담당하고 있는데, 앞으로는 고객과 직접 소통하면서 신규 개발에 참여하고 싶어서 이직을 결심했습니다.",
+              "correct": true,
+              "feedback": "Tốt: nêu sự thật (đang làm bảo trì) và mục tiêu tích cực (giao tiếp trực tiếp với khách, làm dự án mới). '이직을 결심했습니다' rất tự nhiên."
+            },
+            {
+              "ko": "그냥 쉬고 싶어서요.",
+              "correct": false,
+              "feedback": "Thiếu động lực, nghe như bạn không muốn làm việc."
+            }
+          ],
+          "modelAnswer": "현재 회사에서는 주로 유지보수를 담당하고 있습니다. 앞으로는 고객과 직접 소통하면서 신규 개발에도 참여하고 싶어서 이직을 결심했습니다.",
+          "modelAnswerVi": "Ở công ty hiện tại tôi chủ yếu phụ trách bảo trì. Sắp tới tôi muốn giao tiếp trực tiếp với khách hàng và tham gia cả phát triển mới, nên tôi đã quyết định chuyển việc."
+        },
+        {
+          "client": "유지보수 경험도 중요한데, 그 경험에서 얻은 건 뭐라고 생각하세요?",
+          "hint": "Hỏi bạn học được gì từ việc bảo trì. Nêu 1-2 điểm cụ thể: đọc hiểu code cũ, phân tích nguyên nhân lỗi, cẩn thận khi sửa.",
+          "choices": [
+            {
+              "ko": "별로 배운 건 없습니다. 지루했어요.",
+              "correct": false,
+              "feedback": "Tự hạ thấp kinh nghiệm của mình. Luôn tìm điểm tích cực."
+            },
+            {
+              "ko": "남이 짠 코드를 빨리 읽고 이해하는 능력, 그리고 수정이 다른 기능에 주는 영향을 꼼꼼하게 확인하는 습관을 얻었습니다.",
+              "correct": true,
+              "feedback": "Rất tốt: hai kỹ năng cụ thể, đúng thứ mà dự án SI cần. '영향을 확인하다' (kiểm tra ảnh hưởng) là cụm chuẩn."
+            }
+          ],
+          "modelAnswer": "남이 작성한 코드를 빨리 읽고 이해하는 능력을 키웠고, 수정 사항이 다른 기능에 주는 영향을 꼼꼼하게 확인하는 습관이 생겼습니다.",
+          "modelAnswerVi": "Tôi đã rèn được khả năng đọc hiểu nhanh code người khác viết, và có thói quen kiểm tra kỹ ảnh hưởng của một thay đổi tới các chức năng khác."
+        },
+        {
+          "client": "그럼 저희 회사에 오시면 어떤 일을 해 보고 싶으세요?",
+          "hint": "Hỏi bạn muốn làm gì ở công ty mới. Kết nối với lý do chuyển việc: giao tiếp với khách bằng tiếng Hàn, tham gia từ giai đoạn yêu cầu.",
+          "choices": [
+            {
+              "ko": "아무거나 시켜 주시면 다 하겠습니다.",
+              "correct": false,
+              "feedback": "Nghe nhiệt tình nhưng không có định hướng. Người phỏng vấn muốn biết bạn có mục tiêu rõ ràng không."
+            },
+            {
+              "ko": "편한 일이요.",
+              "correct": false,
+              "feedback": "Thiếu chuyên nghiệp."
+            },
+            {
+              "ko": "요구사항 분석 단계부터 참여해서 한국 고객사와 직접 소통하는 역할을 해 보고 싶습니다. 개발 경험이 있으니까 기술적인 내용도 정확하게 전달할 수 있습니다.",
+              "correct": true,
+              "feedback": "Hay: mục tiêu rõ (từ giai đoạn phân tích yêu cầu, giao tiếp với khách) và lý do bạn làm được (có nền tảng dev)."
+            }
+          ],
+          "modelAnswer": "요구사항 분석 단계부터 참여해서 한국 고객사와 직접 소통하는 역할을 해 보고 싶습니다. 개발 경험이 있기 때문에 기술적인 내용도 정확하게 전달할 수 있다고 생각합니다.",
+          "modelAnswerVi": "Tôi muốn tham gia từ giai đoạn phân tích yêu cầu và đảm nhận vai trò giao tiếp trực tiếp với khách hàng Hàn Quốc. Vì có kinh nghiệm phát triển nên tôi nghĩ mình có thể truyền đạt chính xác cả nội dung kỹ thuật."
+        }
+      ]
+    },
+    {
+      "id": "interview-strength-weakness",
+      "title": "Phỏng vấn: điểm mạnh và điểm yếu",
+      "titleKo": "면접: 장점과 단점",
+      "description": "Câu hỏi kinh điển về điểm mạnh, điểm yếu. Điểm yếu nên là điểm thật nhưng có cách khắc phục.",
+      "category": "interview",
+      "tags": [
+        "면접",
+        "장점",
+        "단점"
+      ],
+      "turns": [
+        {
+          "client": "본인의 장점이 뭐라고 생각하세요?",
+          "hint": "Nói 1 điểm mạnh + ví dụ cụ thể. Đừng liệt kê 5-6 tính từ.",
+          "choices": [
+            {
+              "ko": "저는 성실하고, 꼼꼼하고, 긍정적이고, 리더십도 있고, 영어도 잘합니다.",
+              "correct": false,
+              "feedback": "Liệt kê quá nhiều mà không có ví dụ, nghe không đáng tin."
+            },
+            {
+              "ko": "저는 책임감이 강한 편입니다. 예를 들어 지난 프로젝트에서 장애가 났을 때 밤늦게까지 남아서 원인을 찾고 재발 방지 대책까지 정리했습니다.",
+              "correct": true,
+              "feedback": "Chuẩn: một điểm mạnh + ví dụ có thật. '-는 편이다' giúp câu khiêm tốn, tự nhiên."
+            }
+          ],
+          "modelAnswer": "저는 책임감이 강한 편입니다. 지난 프로젝트에서 장애가 발생했을 때 끝까지 남아서 원인을 찾았고, 재발 방지 대책까지 정리해서 공유했습니다.",
+          "modelAnswerVi": "Tôi là người khá có trách nhiệm. Ở dự án trước, khi xảy ra sự cố, tôi ở lại đến cùng để tìm nguyên nhân và còn tổng hợp, chia sẻ cả biện pháp ngăn tái phát."
+        },
+        {
+          "client": "그럼 단점은요?",
+          "hint": "Nêu một điểm yếu thật, không chí mạng với vị trí, và nói bạn đang khắc phục thế nào.",
+          "choices": [
+            {
+              "ko": "한 가지 일에 너무 집중하다 보면 진행 상황 공유가 늦어질 때가 있습니다. 그래서 요즘은 하루에 두 번 정해진 시간에 팀에 상황을 공유하고 있습니다.",
+              "correct": true,
+              "feedback": "Tốt: điểm yếu thật, có cách khắc phục cụ thể. '-다 보면' (cứ ... thì) dùng rất tự nhiên."
+            },
+            {
+              "ko": "단점은 없습니다.",
+              "correct": false,
+              "feedback": "Ai cũng có điểm yếu. Trả lời vậy nghe thiếu tự nhận thức."
+            },
+            {
+              "ko": "저는 완벽주의자라서 일을 너무 잘하는 게 단점입니다.",
+              "correct": false,
+              "feedback": "Câu trả lời 'giả khiêm tốn' quá quen thuộc, người phỏng vấn Hàn thường không thích."
+            }
+          ],
+          "modelAnswer": "한 가지 일에 너무 집중하다 보면 진행 상황 공유가 늦어질 때가 있습니다. 그래서 요즘은 오전과 오후에 한 번씩, 정해진 시간에 팀에 상황을 공유하고 있습니다.",
+          "modelAnswerVi": "Khi quá tập trung vào một việc, đôi khi tôi chia sẻ tiến độ bị muộn. Vì vậy dạo này tôi chia sẻ tình hình với team vào giờ cố định, sáng một lần và chiều một lần."
+        },
+        {
+          "client": "동료들은 본인을 어떤 사람이라고 말하나요?",
+          "hint": "Hỏi đồng nghiệp đánh giá bạn ra sao. Trích một nhận xét cụ thể, có thể dùng '-다고 하다' (gián tiếp).",
+          "choices": [
+            {
+              "ko": "잘 모르겠습니다. 동료들이랑 얘기를 별로 안 해서요.",
+              "correct": false,
+              "feedback": "Gợi ý bạn ít giao tiếp với team, điểm trừ cho công việc outsourcing."
+            },
+            {
+              "ko": "물어보면 친절하게 잘 알려 주는 사람이라고 합니다. 특히 신입 개발자들이 모르는 게 있으면 저한테 많이 물어봅니다.",
+              "correct": true,
+              "feedback": "Tự nhiên: dùng câu gián tiếp '-(이)라고 합니다' và có chi tiết (người mới hay hỏi bạn)."
+            }
+          ],
+          "modelAnswer": "모르는 걸 물어보면 친절하게 잘 알려 주는 사람이라고 합니다. 그래서 신입 개발자들이 저한테 질문을 많이 하는 편입니다.",
+          "modelAnswerVi": "Mọi người nói tôi là người hay chỉ dẫn tận tình khi được hỏi. Vì vậy các bạn lập trình viên mới thường hỏi tôi khá nhiều."
+        }
+      ]
+    },
+    {
+      "id": "interview-career-plan",
+      "title": "Phỏng vấn: kế hoạch nghề nghiệp 3-5 năm",
+      "titleKo": "면접: 향후 커리어 계획",
+      "description": "Người phỏng vấn hỏi về mục tiêu dài hạn. Bạn muốn đi từ developer sang BrSE/PM, cần nói sao cho hợp với vị trí đang ứng tuyển.",
+      "category": "interview",
+      "tags": [
+        "면접",
+        "커리어",
+        "목표"
+      ],
+      "turns": [
+        {
+          "client": "5년 후에 어떤 모습이 되고 싶으세요?",
+          "hint": "Mục tiêu dài hạn. Nói rõ hướng đi và nó liên quan thế nào tới công ty này.",
+          "choices": [
+            {
+              "ko": "5년 후에는 제 회사를 차리고 싶습니다.",
+              "correct": false,
+              "feedback": "Người phỏng vấn sẽ lo bạn nghỉ sớm. Mục tiêu khởi nghiệp nên giữ riêng."
+            },
+            {
+              "ko": "5년 후에는 한국 고객사와 베트남 개발팀 사이에서 프로젝트 전체를 관리하는 PM이 되고 싶습니다. 그래서 지금은 개발을 하면서 한국어와 프로젝트 관리를 같이 공부하고 있습니다.",
+              "correct": true,
+              "feedback": "Mục tiêu rõ, hợp với công ty outsourcing, và có hành động hiện tại để đạt mục tiêu."
+            },
+            {
+              "ko": "글쎄요, 그때 가 봐야 알 것 같습니다.",
+              "correct": false,
+              "feedback": "Không có định hướng."
+            }
+          ],
+          "modelAnswer": "5년 후에는 한국 고객사와 베트남 개발팀 사이에서 프로젝트 전체를 관리하는 PM이 되고 싶습니다. 그래서 지금은 개발 업무를 하면서 한국어와 프로젝트 관리를 같이 공부하고 있습니다.",
+          "modelAnswerVi": "Năm năm nữa tôi muốn trở thành PM quản lý toàn bộ dự án giữa khách hàng Hàn Quốc và team phát triển Việt Nam. Vì vậy hiện tại, vừa làm phát triển, tôi vừa học thêm tiếng Hàn và quản lý dự án."
+        },
+        {
+          "client": "개발자로 계속 일하는 건 생각 안 해 보셨어요?",
+          "hint": "Câu hỏi thử: sao không tiếp tục làm dev? Giải thích dev là nền tảng, không phải bỏ kỹ thuật.",
+          "choices": [
+            {
+              "ko": "개발은 이제 지겨워서 그만하고 싶습니다.",
+              "correct": false,
+              "feedback": "Nghe tiêu cực. Vị trí BrSE/PM vẫn cần hiểu kỹ thuật."
+            },
+            {
+              "ko": "개발 경험은 계속 큰 도움이 된다고 생각합니다. 기술을 알아야 일정이나 리스크를 정확하게 판단할 수 있기 때문에, 역할이 바뀌어도 기술 공부는 계속할 생각입니다.",
+              "correct": true,
+              "feedback": "Hay: khẳng định giá trị của nền tảng dev, '-기 때문에' giải thích lý do rõ ràng."
+            }
+          ],
+          "modelAnswer": "개발 경험은 앞으로도 큰 도움이 된다고 생각합니다. 기술을 알아야 일정이나 리스크를 정확하게 판단할 수 있기 때문에, 역할이 바뀌어도 기술 공부는 계속할 생각입니다.",
+          "modelAnswerVi": "Tôi nghĩ kinh nghiệm phát triển sẽ tiếp tục rất hữu ích. Vì phải hiểu kỹ thuật thì mới đánh giá chính xác được lịch trình hay rủi ro, nên dù vai trò thay đổi tôi vẫn định tiếp tục học kỹ thuật."
+        },
+        {
+          "client": "그 목표를 위해서 최근에 따로 노력하고 있는 게 있나요?",
+          "hint": "Hỏi hành động cụ thể. Nêu việc bạn đang làm: học tiếng Hàn, làm side project, đọc sách quản lý.",
+          "choices": [
+            {
+              "ko": "요즘 한국어 업무 표현을 연습하는 앱을 직접 만들어서 매일 쓰고 있습니다. 회의나 메일에서 자주 쓰는 표현을 정리해 두고 말하기 연습을 하고 있습니다.",
+              "correct": true,
+              "feedback": "Rất ấn tượng: hành động cụ thể, kết hợp dev và tiếng Hàn. Người phỏng vấn thường hỏi thêm về app."
+            },
+            {
+              "ko": "특별히 하는 건 없습니다. 입사하면 열심히 하겠습니다.",
+              "correct": false,
+              "feedback": "Không có hành động, nghe như mục tiêu chỉ để trả lời phỏng vấn."
+            }
+          ],
+          "modelAnswer": "요즘은 한국어 업무 표현을 연습하는 앱을 직접 만들어서 매일 사용하고 있습니다. 회의나 메일에서 자주 쓰는 표현을 정리해 두고 말하기 연습을 하고 있습니다.",
+          "modelAnswerVi": "Dạo này tôi tự làm một app luyện các mẫu câu tiếng Hàn công sở và dùng hằng ngày. Tôi tổng hợp các câu hay dùng trong họp và email rồi luyện nói."
+        }
+      ]
+    },
+    {
+      "id": "interview-salary",
+      "title": "Phỏng vấn: mức lương mong muốn và ngày bắt đầu",
+      "titleKo": "면접: 희망 연봉과 입사 가능일",
+      "description": "Cuối buổi phỏng vấn, HR hỏi mức lương mong muốn và khi nào bạn có thể bắt đầu. Cần lịch sự nhưng rõ ràng.",
+      "category": "interview",
+      "tags": [
+        "면접",
+        "연봉",
+        "처우"
+      ],
+      "turns": [
+        {
+          "client": "희망 연봉은 어느 정도 생각하고 계세요?",
+          "hint": "Hỏi mức lương mong muốn. Nên nói một khoảng có căn cứ (lương hiện tại, kinh nghiệm) và thể hiện sẵn sàng trao đổi.",
+          "choices": [
+            {
+              "ko": "많이 주시면 좋겠습니다.",
+              "correct": false,
+              "feedback": "Quá mơ hồ, không giúp HR làm việc."
+            },
+            {
+              "ko": "현재 연봉과 경력을 고려해서 지금보다 15% 정도 높은 수준을 희망합니다. 다만 회사 내규도 있으실 테니까 협의 가능합니다.",
+              "correct": true,
+              "feedback": "Chuẩn: có căn cứ, có con số tương đối, và mở để thương lượng. '협의 가능합니다' là cụm rất hay dùng."
+            },
+            {
+              "ko": "회사에서 알아서 주세요. 아무래도 괜찮습니다.",
+              "correct": false,
+              "feedback": "Nghe dễ chịu nhưng dễ bị trả thấp, và có vẻ bạn không biết giá trị của mình."
+            }
+          ],
+          "modelAnswer": "현재 연봉과 경력을 고려해서 지금보다 15% 정도 높은 수준을 희망합니다. 다만 회사 내규도 있으실 테니 협의는 가능합니다.",
+          "modelAnswerVi": "Cân nhắc lương hiện tại và kinh nghiệm, tôi mong muốn mức cao hơn hiện nay khoảng 15%. Tuy nhiên công ty chắc cũng có quy định nội bộ nên tôi có thể trao đổi thêm."
+        },
+        {
+          "client": "입사는 언제부터 가능하세요?",
+          "hint": "Ngày có thể bắt đầu. Nhắc đến thời gian bàn giao ở công ty cũ: người Hàn đánh giá cao việc bàn giao có trách nhiệm.",
+          "choices": [
+            {
+              "ko": "현재 회사에 인수인계 기간이 필요해서, 합격 통보를 받은 후 한 달 뒤부터 가능합니다.",
+              "correct": true,
+              "feedback": "Chuyên nghiệp: nêu lý do (bàn giao) và thời điểm cụ thể. '인수인계' là từ quan trọng."
+            },
+            {
+              "ko": "내일부터 바로 출근할 수 있습니다. 지금 회사는 그냥 안 나가면 됩니다.",
+              "correct": false,
+              "feedback": "Bỏ ngang công ty cũ khiến người phỏng vấn nghi ngờ tinh thần trách nhiệm của bạn."
+            }
+          ],
+          "modelAnswer": "현재 회사에서 인수인계할 기간이 필요해서, 합격 통보를 받은 후 한 달 뒤부터 출근 가능합니다.",
+          "modelAnswerVi": "Tôi cần thời gian bàn giao ở công ty hiện tại, nên có thể đi làm sau một tháng kể từ khi nhận thông báo trúng tuyển."
+        },
+        {
+          "client": "혹시 처우나 근무 조건에 대해 궁금한 점 있으세요?",
+          "hint": "Cơ hội hỏi về điều kiện làm việc. Hỏi 1-2 điều chuyên nghiệp: chế độ làm việc, đào tạo, onsite.",
+          "choices": [
+            {
+              "ko": "휴가는 며칠이에요? 야근은 많아요?",
+              "correct": false,
+              "feedback": "Hỏi về nghỉ phép, tăng ca ngay đầu tiên có thể tạo ấn tượng chỉ quan tâm quyền lợi. Hỏi được, nhưng nên lịch sự và sau câu về công việc."
+            },
+            {
+              "ko": "한 가지 여쭤봐도 될까요? 입사 후에 한국 현지 파견이나 교육 기회가 있는지 궁금합니다.",
+              "correct": true,
+              "feedback": "Lịch sự ('여쭤봐도 될까요') và cho thấy bạn quan tâm phát triển, không chỉ lương."
+            }
+          ],
+          "modelAnswer": "한 가지 여쭤봐도 될까요? 입사 후에 한국 현지 파견이나 교육을 받을 수 있는 기회가 있는지 궁금합니다.",
+          "modelAnswerVi": "Tôi có thể hỏi một điều được không ạ? Tôi muốn biết sau khi vào công ty có cơ hội được cử sang Hàn Quốc hay được đào tạo không ạ."
+        }
+      ]
+    },
+    {
+      "id": "interview-onsite-korea",
+      "title": "Phỏng vấn: đi onsite ở Hàn Quốc",
+      "titleKo": "면접: 한국 현지 파견",
+      "description": "Vị trí có thể phải sang Hàn làm onsite 3-6 tháng. Người phỏng vấn kiểm tra bạn có sẵn sàng không và hiểu môi trường làm việc ở Hàn đến đâu.",
+      "category": "interview",
+      "tags": [
+        "면접",
+        "파견",
+        "온사이트"
+      ],
+      "turns": [
+        {
+          "client": "이 포지션은 한국 고객사에 3개월 정도 파견 근무가 있을 수 있는데, 괜찮으세요?",
+          "hint": "Hỏi bạn có đi onsite được không. Nếu có hoàn cảnh gia đình, nói thật nhưng tích cực.",
+          "choices": [
+            {
+              "ko": "네, 가능합니다. 가족과도 미리 이야기했습니다. 다만 일정이 정해지면 조금 일찍 알려 주시면 준비하는 데 도움이 될 것 같습니다.",
+              "correct": true,
+              "feedback": "Tốt: đồng ý rõ, đã bàn với gia đình, và đề nghị hợp lý (báo trước lịch)."
+            },
+            {
+              "ko": "음... 가 봐야 알 것 같아요.",
+              "correct": false,
+              "feedback": "Câu trả lời lửng lơ khiến công ty không lên kế hoạch được."
+            }
+          ],
+          "modelAnswer": "네, 가능합니다. 가족과도 미리 이야기를 나눴습니다. 다만 일정이 정해지면 조금 일찍 알려 주시면 준비하는 데 도움이 될 것 같습니다.",
+          "modelAnswerVi": "Vâng, tôi đi được. Tôi cũng đã nói chuyện trước với gia đình. Chỉ là nếu lịch được chốt, anh/chị báo sớm một chút thì sẽ giúp tôi chuẩn bị tốt hơn."
+        },
+        {
+          "client": "한국 회사에서 일할 때 가장 신경 써야 할 점이 뭐라고 생각하세요?",
+          "hint": "Hỏi hiểu biết về văn hóa làm việc Hàn. Nêu: báo cáo thường xuyên (보고), tôn trọng cấp bậc, đúng hạn.",
+          "choices": [
+            {
+              "ko": "보고를 자주 하는 것이라고 생각합니다. 문제가 생기면 혼자 해결하려고 하지 않고, 작은 일이라도 먼저 공유해야 한다고 배웠습니다.",
+              "correct": true,
+              "feedback": "Rất đúng: văn hóa '보고·연락·상담' trong công ty Hàn. Có cả bài học cụ thể."
+            },
+            {
+              "ko": "한국 사람들은 성격이 급하니까 무조건 빨리 하면 됩니다.",
+              "correct": false,
+              "feedback": "Khái quát hóa văn hóa, có thể làm người phỏng vấn khó chịu."
+            },
+            {
+              "ko": "특별히 신경 쓸 건 없을 것 같습니다. 일은 어디서나 똑같으니까요.",
+              "correct": false,
+              "feedback": "Cho thấy bạn chưa tìm hiểu, chưa sẵn sàng thích nghi."
+            }
+          ],
+          "modelAnswer": "보고를 자주 하는 것이 가장 중요하다고 생각합니다. 문제가 생기면 혼자 해결하려고 하지 않고, 작은 일이라도 먼저 공유해야 한다고 배웠습니다.",
+          "modelAnswerVi": "Tôi nghĩ quan trọng nhất là báo cáo thường xuyên. Tôi đã học được rằng khi có vấn đề thì không nên cố tự giải quyết một mình, mà dù việc nhỏ cũng phải chia sẻ trước."
+        },
+        {
+          "client": "현지에서 고객이 갑자기 회식에 같이 가자고 하면 어떻게 하실 거예요?",
+          "hint": "Câu hỏi tình huống về 회식 (liên hoan công ty). Thể hiện thiện chí hòa nhập, biết giới hạn.",
+          "choices": [
+            {
+              "ko": "고객과 친해질 수 있는 좋은 기회라서 같이 가겠습니다. 다만 다음 날 업무에 지장이 없도록 적당히 조절하겠습니다.",
+              "correct": true,
+              "feedback": "Cân bằng: hòa đồng nhưng vẫn chuyên nghiệp. '지장이 없도록' là cấu trúc hay."
+            },
+            {
+              "ko": "술을 안 마셔서 회식은 무조건 안 갑니다.",
+              "correct": false,
+              "feedback": "Có thể từ chối uống rượu, nhưng từ chối hẳn việc tham gia làm mất cơ hội xây quan hệ. Có thể đi và uống nước ngọt."
+            }
+          ],
+          "modelAnswer": "고객과 가까워질 수 있는 좋은 기회라고 생각해서 같이 가겠습니다. 다만 다음 날 업무에 지장이 없도록 적당히 조절하겠습니다.",
+          "modelAnswerVi": "Tôi nghĩ đó là cơ hội tốt để gần gũi với khách hàng nên tôi sẽ đi cùng. Nhưng tôi sẽ điều chỉnh vừa phải để không ảnh hưởng đến công việc ngày hôm sau."
+        }
+      ]
+    },
+    {
+      "id": "interview-legacy-jsp",
+      "title": "Phỏng vấn: chuyển đổi frontend cũ sang JSP",
+      "titleKo": "면접: 레거시 화면 JSP 전환 경험",
+      "description": "Bạn kể kinh nghiệm chuyển màn hình từ một framework frontend cũ (Polymer) sang JSP. Người phỏng vấn hỏi cách làm, khó khăn và cách đảm bảo không lỗi.",
+      "category": "interview",
+      "tags": [
+        "면접",
+        "레거시",
+        "JSP",
+        "마이그레이션"
+      ],
+      "turns": [
+        {
+          "client": "이력서에 화면 전환 프로젝트를 하셨다고 되어 있는데, 어떤 작업이었나요?",
+          "hint": "Giới thiệu dự án chuyển đổi: từ gì sang gì, lý do, phạm vi. '전환하다' = chuyển đổi.",
+          "choices": [
+            {
+              "ko": "옛날 화면을 새로 만들었습니다.",
+              "correct": false,
+              "feedback": "Quá chung chung, không có công nghệ, lý do hay phạm vi."
+            },
+            {
+              "ko": "기존에 Polymer로 만든 화면들을 JSP로 전환하는 작업이었습니다. 라이브러리 지원이 끝나서 유지보수가 어려워졌기 때문에 진행했고, 저는 화면 30개 정도를 담당했습니다.",
+              "correct": true,
+              "feedback": "Đủ ý: trước/sau, lý do (thư viện hết hỗ trợ), phạm vi bạn phụ trách."
+            }
+          ],
+          "modelAnswer": "기존에 Polymer로 만든 화면들을 JSP로 전환하는 작업이었습니다. 라이브러리 지원이 종료돼서 유지보수가 어려워졌기 때문에 진행하게 됐고, 저는 그중 화면 30개 정도를 담당했습니다.",
+          "modelAnswerVi": "Đó là việc chuyển các màn hình làm bằng Polymer sang JSP. Vì thư viện hết được hỗ trợ nên việc bảo trì trở nên khó khăn, do đó dự án được tiến hành, và tôi phụ trách khoảng 30 màn hình trong số đó."
+        },
+        {
+          "client": "전환하면서 가장 어려웠던 점은 뭐였어요?",
+          "hint": "Kể một khó khăn cụ thể và cách bạn giải quyết. Cấu trúc: vấn đề → nguyên nhân → cách xử lý.",
+          "choices": [
+            {
+              "ko": "문서가 거의 없어서 기존 화면의 동작을 정확하게 파악하는 게 어려웠습니다. 그래서 화면마다 기존 동작을 먼저 체크리스트로 정리하고, 전환 후에 같은 항목으로 비교 테스트를 했습니다.",
+              "correct": true,
+              "feedback": "Rất tốt: vấn đề thật (thiếu tài liệu) và cách giải quyết có hệ thống (checklist + so sánh)."
+            },
+            {
+              "ko": "특별히 어려운 건 없었습니다.",
+              "correct": false,
+              "feedback": "Không ai tin dự án migration không có khó khăn. Mất cơ hội thể hiện năng lực."
+            },
+            {
+              "ko": "고객이 계속 요구사항을 바꿔서 힘들었습니다. 고객 잘못이었어요.",
+              "correct": false,
+              "feedback": "Đổ lỗi cho khách hàng là điều tối kỵ trong phỏng vấn outsourcing."
+            }
+          ],
+          "modelAnswer": "문서가 거의 없어서 기존 화면이 어떻게 동작하는지 정확하게 파악하는 게 어려웠습니다. 그래서 화면마다 기존 동작을 먼저 체크리스트로 정리하고, 전환 후에 같은 항목으로 비교 테스트를 진행했습니다.",
+          "modelAnswerVi": "Vì hầu như không có tài liệu nên việc nắm chính xác màn hình cũ hoạt động thế nào là khó nhất. Vì vậy với mỗi màn hình, tôi tổng hợp hành vi cũ thành checklist trước, sau khi chuyển đổi thì test so sánh theo đúng các mục đó."
+        },
+        {
+          "client": "그 과정에서 AI 도구 같은 걸 활용하셨나요?",
+          "hint": "Hỏi về việc dùng công cụ AI. Nói rõ dùng vào việc gì, và bạn vẫn tự review, kiểm tra.",
+          "choices": [
+            {
+              "ko": "네, AI가 다 해 줬습니다.",
+              "correct": false,
+              "feedback": "Nghe như bạn không hiểu code mình nộp. Rủi ro về chất lượng và bảo mật."
+            },
+            {
+              "ko": "네, 기존 코드 구조를 분석하거나 반복적인 변환 코드를 만들 때 AI 코딩 도구를 활용했습니다. 다만 생성된 코드는 반드시 직접 리뷰하고 테스트한 후에 반영했습니다.",
+              "correct": true,
+              "feedback": "Cân bằng: dùng AI để tăng năng suất nhưng vẫn chịu trách nhiệm về chất lượng. Người phỏng vấn rất thích nghe ý 'tự review'."
+            }
+          ],
+          "modelAnswer": "네, 기존 코드 구조를 분석하거나 반복적인 변환 코드를 작성할 때 AI 코딩 도구를 활용했습니다. 다만 생성된 코드는 반드시 직접 리뷰하고 테스트한 후에 반영했습니다.",
+          "modelAnswerVi": "Có, tôi dùng công cụ AI coding khi phân tích cấu trúc code cũ hoặc viết các đoạn code chuyển đổi lặp đi lặp lại. Tuy nhiên code được sinh ra thì tôi luôn tự review và test rồi mới đưa vào."
+        }
+      ]
+    },
+    {
+      "id": "interview-react",
+      "title": "Phỏng vấn: kinh nghiệm React",
+      "titleKo": "면접: 리액트 경험",
+      "description": "Vị trí cần frontend React. Bạn có kinh nghiệm React ở mức vừa phải. Cần trả lời trung thực về mức độ và giải thích khái niệm cơ bản.",
+      "category": "interview",
+      "tags": [
+        "면접",
+        "리액트",
+        "프론트엔드"
+      ],
+      "turns": [
+        {
+          "client": "리액트는 어느 정도 다뤄 보셨어요?",
+          "hint": "Hỏi mức độ kinh nghiệm React. Trả lời trung thực: dùng ở đâu, bao lâu, làm được gì.",
+          "choices": [
+            {
+              "ko": "실무에서는 1년 정도 사용했고, 주로 기존 화면에 컴포넌트를 추가하거나 수정하는 일을 했습니다. 개인 프로젝트에서는 처음부터 직접 설계해서 배포까지 해 봤습니다.",
+              "correct": true,
+              "feedback": "Trung thực và cụ thể: kinh nghiệm thực tế + dự án cá nhân làm trọn vẹn."
+            },
+            {
+              "ko": "리액트는 완벽하게 다 압니다.",
+              "correct": false,
+              "feedback": "Nói quá dễ bị hỏi vặn, và nếu không trả lời được sẽ mất uy tín."
+            }
+          ],
+          "modelAnswer": "실무에서는 1년 정도 사용했고, 주로 기존 화면에 컴포넌트를 추가하거나 수정하는 일을 했습니다. 개인 프로젝트에서는 처음부터 직접 설계해서 배포까지 해 봤습니다.",
+          "modelAnswerVi": "Trong công việc tôi dùng khoảng 1 năm, chủ yếu thêm hoặc sửa component cho các màn hình có sẵn. Trong dự án cá nhân thì tôi đã tự thiết kế từ đầu và deploy luôn."
+        },
+        {
+          "client": "useEffect는 언제 사용하나요?",
+          "hint": "Giải thích khái niệm kỹ thuật bằng tiếng Hàn đơn giản: side effect, gọi API, dependency array.",
+          "choices": [
+            {
+              "ko": "화면을 예쁘게 꾸밀 때 사용합니다.",
+              "correct": false,
+              "feedback": "Sai về kỹ thuật: đó là việc của CSS."
+            },
+            {
+              "ko": "렌더링이 끝난 후에 API 호출이나 이벤트 등록 같은 부수 효과를 처리할 때 사용합니다. 의존성 배열에 넣은 값이 바뀔 때만 다시 실행됩니다.",
+              "correct": true,
+              "feedback": "Chính xác và ngắn gọn. '부수 효과' = side effect, '의존성 배열' = dependency array."
+            }
+          ],
+          "modelAnswer": "렌더링이 끝난 후에 API 호출이나 이벤트 등록 같은 부수 효과를 처리할 때 사용합니다. 의존성 배열에 넣은 값이 바뀔 때만 다시 실행됩니다.",
+          "modelAnswerVi": "Dùng để xử lý side effect như gọi API hay đăng ký sự kiện sau khi render xong. Nó chỉ chạy lại khi giá trị trong dependency array thay đổi."
+        },
+        {
+          "client": "상태 관리는 어떻게 하셨어요? 라이브러리를 쓰셨나요?",
+          "hint": "Hỏi cách quản lý state. Nêu lựa chọn và lý do: dự án nhỏ dùng useState/Context, lớn mới cần thư viện.",
+          "choices": [
+            {
+              "ko": "라이브러리는 잘 몰라서 안 썼습니다.",
+              "correct": false,
+              "feedback": "Trả lời theo hướng thiếu hiểu biết. Nên giải thích lựa chọn bằng lý do kỹ thuật."
+            },
+            {
+              "ko": "리덕스를 무조건 써야 합니다.",
+              "correct": false,
+              "feedback": "Cứng nhắc, không xét quy mô dự án."
+            },
+            {
+              "ko": "규모가 크지 않아서 useState와 Context만으로 관리했습니다. 상태가 복잡해지면 그때 라이브러리 도입을 검토하는 게 맞다고 생각합니다.",
+              "correct": true,
+              "feedback": "Hay: có lý do kỹ thuật cho lựa chọn, thể hiện tư duy 'không thêm thứ không cần'."
+            }
+          ],
+          "modelAnswer": "프로젝트 규모가 크지 않아서 useState와 Context만으로 관리했습니다. 상태가 복잡해지면 그때 라이브러리 도입을 검토하는 게 맞다고 생각합니다.",
+          "modelAnswerVi": "Vì quy mô dự án không lớn nên tôi chỉ dùng useState và Context để quản lý. Tôi nghĩ khi state trở nên phức tạp thì lúc đó mới nên cân nhắc đưa thư viện vào."
+        }
+      ]
+    },
+    {
+      "id": "interview-sql-tuning",
+      "title": "Phỏng vấn: tối ưu câu SQL chậm",
+      "titleKo": "면접: 느린 쿼리 튜닝",
+      "description": "Người phỏng vấn kỹ thuật hỏi cách bạn xử lý một màn hình tra cứu bị chậm do SQL.",
+      "category": "interview",
+      "tags": [
+        "면접",
+        "SQL",
+        "성능",
+        "튜닝"
+      ],
+      "turns": [
+        {
+          "client": "조회 화면이 너무 느리다는 요청이 들어오면 어떻게 원인을 찾으세요?",
+          "hint": "Mô tả quy trình tìm nguyên nhân: đo thời gian, xác định phần chậm (SQL hay app), xem execution plan.",
+          "choices": [
+            {
+              "ko": "서버를 더 좋은 걸로 바꿔 달라고 합니다.",
+              "correct": false,
+              "feedback": "Không tìm nguyên nhân, đề xuất tốn tiền ngay. Người phỏng vấn muốn thấy khả năng phân tích."
+            },
+            {
+              "ko": "먼저 어느 구간이 느린지 로그로 시간을 측정합니다. 쿼리가 원인이면 실행 계획을 확인해서 풀 스캔이 일어나는지 봅니다.",
+              "correct": true,
+              "feedback": "Có quy trình rõ ràng: đo trước, rồi mới xem execution plan. '실행 계획' = execution plan."
+            }
+          ],
+          "modelAnswer": "먼저 어느 구간이 느린지 로그로 처리 시간을 측정합니다. 쿼리가 원인이라면 실행 계획을 확인해서 풀 스캔이 발생하는지 살펴봅니다.",
+          "modelAnswerVi": "Đầu tiên tôi đo thời gian xử lý bằng log xem đoạn nào chậm. Nếu nguyên nhân là query thì tôi kiểm tra execution plan xem có full scan không."
+        },
+        {
+          "client": "실제로 튜닝해서 개선한 사례가 있으면 말씀해 주세요.",
+          "hint": "Kể ví dụ có số liệu trước/sau. Con số làm câu trả lời thuyết phục.",
+          "choices": [
+            {
+              "ko": "주문 조회 쿼리에서 날짜 컬럼에 함수를 써서 인덱스를 못 타고 있었습니다. 조건을 범위 검색으로 바꿨더니 12초 걸리던 조회가 1초 이내로 줄었습니다.",
+              "correct": true,
+              "feedback": "Xuất sắc: nguyên nhân kỹ thuật cụ thể (dùng hàm trên cột làm mất index), cách sửa, và số liệu trước/sau."
+            },
+            {
+              "ko": "네, 많이 빨라졌습니다.",
+              "correct": false,
+              "feedback": "Thiếu nguyên nhân, cách làm và con số."
+            }
+          ],
+          "modelAnswer": "주문 조회 쿼리에서 날짜 컬럼에 함수를 사용해서 인덱스를 타지 못하고 있었습니다. 조건을 범위 검색으로 바꿨더니 12초 걸리던 조회가 1초 이내로 줄었습니다.",
+          "modelAnswerVi": "Ở query tra cứu đơn hàng, vì dùng hàm trên cột ngày nên không dùng được index. Tôi đổi điều kiện sang tìm theo khoảng thì lần tra cứu mất 12 giây giảm xuống dưới 1 giây."
+        },
+        {
+          "client": "인덱스를 많이 만들면 항상 좋은 건가요?",
+          "hint": "Câu hỏi bẫy. Trả lời: không, index làm chậm insert/update và tốn dung lượng.",
+          "choices": [
+            {
+              "ko": "네, 인덱스는 많을수록 빠릅니다.",
+              "correct": false,
+              "feedback": "Sai: quá nhiều index làm chậm việc ghi dữ liệu."
+            },
+            {
+              "ko": "잘 모르겠습니다. DBA가 알아서 할 것 같습니다.",
+              "correct": false,
+              "feedback": "Dev cũng cần hiểu cơ bản về index."
+            },
+            {
+              "ko": "아니요. 조회는 빨라질 수 있지만 등록이나 수정할 때마다 인덱스도 갱신해야 해서 오히려 느려질 수 있습니다. 그래서 자주 쓰는 조건 위주로 만드는 게 좋습니다.",
+              "correct": true,
+              "feedback": "Chính xác, có cả đánh đổi (trade-off) và cách làm hợp lý."
+            }
+          ],
+          "modelAnswer": "아니요. 조회는 빨라질 수 있지만 데이터를 등록하거나 수정할 때마다 인덱스도 갱신해야 해서 오히려 느려질 수 있습니다. 그래서 자주 사용하는 조건 위주로 만드는 게 좋다고 생각합니다.",
+          "modelAnswerVi": "Không ạ. Tra cứu có thể nhanh hơn, nhưng mỗi lần thêm hay sửa dữ liệu thì index cũng phải cập nhật nên có khi lại chậm đi. Vì vậy tôi nghĩ nên tạo chủ yếu cho các điều kiện hay dùng."
+        }
+      ]
+    },
+    {
+      "id": "interview-api-design",
+      "title": "Phỏng vấn: thiết kế REST API",
+      "titleKo": "면접: REST API 설계",
+      "description": "Phỏng vấn kỹ thuật về thiết kế API: URL, HTTP method, mã lỗi.",
+      "category": "interview",
+      "tags": [
+        "면접",
+        "API",
+        "설계"
+      ],
+      "turns": [
+        {
+          "client": "회원 정보를 수정하는 API를 만든다면 URL과 메서드를 어떻게 설계하시겠어요?",
+          "hint": "Mô tả bằng tiếng Hàn: dùng PUT/PATCH, URL theo tài nguyên. Đọc ký hiệu như người Hàn: 슬래시, 아이디.",
+          "choices": [
+            {
+              "ko": "PATCH 메서드로 /members/{id} 형태로 만들겠습니다. 일부 항목만 수정하는 경우가 많아서 PUT보다 PATCH가 더 맞다고 생각합니다.",
+              "correct": true,
+              "feedback": "Đúng chuẩn REST, và có lý do chọn PATCH thay vì PUT."
+            },
+            {
+              "ko": "GET 방식으로 /updateMember 를 만들겠습니다.",
+              "correct": false,
+              "feedback": "GET không dùng để sửa dữ liệu, và URL đặt theo động từ không đúng phong cách REST."
+            }
+          ],
+          "modelAnswer": "PATCH 메서드를 사용해서 /members/{id} 형태로 만들겠습니다. 일부 항목만 수정하는 경우가 많아서 PUT보다 PATCH가 더 적합하다고 생각합니다.",
+          "modelAnswerVi": "Tôi sẽ dùng method PATCH với dạng /members/{id}. Vì thường chỉ sửa một số trường nên tôi nghĩ PATCH phù hợp hơn PUT."
+        },
+        {
+          "client": "요청한 회원이 없으면 어떤 응답을 주시겠어요?",
+          "hint": "Mã lỗi HTTP: 404 khi không có tài nguyên, kèm body lỗi rõ ràng.",
+          "choices": [
+            {
+              "ko": "404 상태 코드를 주고, 응답 본문에 에러 코드와 메시지를 같이 내려 주겠습니다. 그래야 화면에서 상황에 맞는 안내를 할 수 있습니다.",
+              "correct": true,
+              "feedback": "Chuẩn: mã đúng + body có cấu trúc, và giải thích lợi ích cho frontend."
+            },
+            {
+              "ko": "200으로 주고 메시지에 '없음'이라고 쓰겠습니다.",
+              "correct": false,
+              "feedback": "Trả 200 cho lỗi khiến client khó xử lý, không đúng chuẩn HTTP."
+            },
+            {
+              "ko": "500 에러를 주겠습니다.",
+              "correct": false,
+              "feedback": "500 là lỗi server, không phải trường hợp tài nguyên không tồn tại."
+            }
+          ],
+          "modelAnswer": "404 상태 코드를 반환하고, 응답 본문에 에러 코드와 메시지를 같이 내려 주겠습니다. 그래야 화면에서 상황에 맞는 안내를 보여 줄 수 있습니다.",
+          "modelAnswerVi": "Tôi sẽ trả mã trạng thái 404 và gửi kèm mã lỗi cùng thông báo trong body. Như vậy màn hình mới hiển thị được hướng dẫn phù hợp với tình huống."
+        },
+        {
+          "client": "API 스펙이 바뀌면 프론트 팀과는 어떻게 맞추세요?",
+          "hint": "Hỏi về phối hợp. Nêu: cập nhật tài liệu API (Swagger), thông báo trước, giữ tương thích ngược.",
+          "choices": [
+            {
+              "ko": "바뀐 부분은 Swagger 문서에 먼저 반영하고, 변경 내용과 적용 일정을 프론트 팀에 미리 공유합니다. 가능하면 기존 필드는 한동안 유지해서 호환성을 지킵니다.",
+              "correct": true,
+              "feedback": "Rất chuyên nghiệp: tài liệu, thông báo, và tương thích ngược ('호환성')."
+            },
+            {
+              "ko": "코드를 바꾸면 프론트 팀이 알아서 확인할 겁니다.",
+              "correct": false,
+              "feedback": "Thiếu giao tiếp, dễ gây lỗi production."
+            }
+          ],
+          "modelAnswer": "변경된 부분은 Swagger 문서에 먼저 반영하고, 변경 내용과 적용 일정을 프론트 팀에 미리 공유합니다. 가능하면 기존 필드는 한동안 유지해서 호환성을 지키려고 합니다.",
+          "modelAnswerVi": "Phần thay đổi tôi cập nhật vào tài liệu Swagger trước, rồi chia sẻ trước nội dung thay đổi và lịch áp dụng cho team frontend. Nếu được, tôi giữ các trường cũ thêm một thời gian để đảm bảo tương thích."
+        }
+      ]
+    },
+    {
+      "id": "interview-git-review",
+      "title": "Phỏng vấn: Git và code review",
+      "titleKo": "면접: Git과 코드 리뷰",
+      "description": "Hỏi về quy trình làm việc với Git, xử lý conflict và cách nhận/đưa nhận xét khi review code.",
+      "category": "interview",
+      "tags": [
+        "면접",
+        "Git",
+        "코드 리뷰"
+      ],
+      "turns": [
+        {
+          "client": "팀에서 Git 브랜치는 어떻게 관리하셨어요?",
+          "hint": "Mô tả chiến lược branch: feature branch, PR, merge vào develop/main sau khi review.",
+          "choices": [
+            {
+              "ko": "다들 main에 바로 푸시했습니다.",
+              "correct": false,
+              "feedback": "Thể hiện quy trình thiếu kiểm soát, rủi ro cao."
+            },
+            {
+              "ko": "기능마다 브랜치를 따로 만들고, 작업이 끝나면 PR을 올려서 리뷰를 받은 후에 develop 브랜치에 머지했습니다. 배포할 때는 main에 합쳤습니다.",
+              "correct": true,
+              "feedback": "Rõ ràng, dùng đúng từ người Hàn hay dùng: 브랜치, PR을 올리다, 머지하다."
+            }
+          ],
+          "modelAnswer": "기능별로 브랜치를 따로 만들고, 작업이 끝나면 PR을 올려서 리뷰를 받은 후에 develop 브랜치에 머지했습니다. 배포할 때는 main 브랜치에 반영했습니다.",
+          "modelAnswerVi": "Chúng tôi tạo branch riêng cho từng chức năng, làm xong thì tạo PR, được review rồi mới merge vào branch develop. Khi deploy thì đưa vào branch main."
+        },
+        {
+          "client": "충돌이 나면 어떻게 해결하세요?",
+          "hint": "Cách xử lý conflict: xem cả hai thay đổi, hỏi người viết nếu không chắc, test lại.",
+          "choices": [
+            {
+              "ko": "충돌 난 부분에서 양쪽 변경 내용을 확인하고, 의도를 잘 모르겠으면 해당 코드를 작성한 사람에게 직접 물어봅니다. 해결한 후에는 꼭 다시 테스트합니다.",
+              "correct": true,
+              "feedback": "Cẩn thận, có giao tiếp và có kiểm tra lại."
+            },
+            {
+              "ko": "제 코드로 덮어씁니다.",
+              "correct": false,
+              "feedback": "Có thể xóa mất thay đổi của đồng nghiệp. Rất nguy hiểm."
+            },
+            {
+              "ko": "충돌이 나면 팀장님께 해결해 달라고 합니다.",
+              "correct": false,
+              "feedback": "Đẩy việc lên trên. Dev cần tự xử lý được conflict cơ bản."
+            }
+          ],
+          "modelAnswer": "충돌이 난 부분에서 양쪽 변경 내용을 모두 확인하고, 의도를 잘 모르겠으면 해당 코드를 작성한 분께 직접 물어봅니다. 해결한 후에는 반드시 다시 테스트합니다.",
+          "modelAnswerVi": "Ở chỗ bị conflict, tôi xem cả hai bên thay đổi, nếu không rõ ý đồ thì hỏi trực tiếp người viết đoạn code đó. Giải quyết xong thì nhất định test lại."
+        },
+        {
+          "client": "코드 리뷰에서 본인 코드에 지적을 많이 받으면 어떠세요?",
+          "hint": "Hỏi thái độ khi bị góp ý. Thể hiện cởi mở, coi đó là cơ hội học.",
+          "choices": [
+            {
+              "ko": "기분이 나쁘지만 참습니다.",
+              "correct": false,
+              "feedback": "Thật thà nhưng tiêu cực. Nên thể hiện cách bạn biến góp ý thành bài học."
+            },
+            {
+              "ko": "리뷰는 코드 품질을 높이는 과정이라고 생각해서 감사하게 받아들입니다. 이해가 안 되는 부분은 이유를 여쭤보고, 같은 지적을 다시 받지 않도록 정리해 둡니다.",
+              "correct": true,
+              "feedback": "Thái độ trưởng thành, có hành động cụ thể (hỏi lý do, ghi chú lại)."
+            }
+          ],
+          "modelAnswer": "리뷰는 코드 품질을 높이는 과정이라고 생각해서 감사하게 받아들입니다. 이해가 안 되는 부분은 이유를 여쭤보고, 같은 지적을 다시 받지 않도록 따로 정리해 둡니다.",
+          "modelAnswerVi": "Tôi coi review là quá trình nâng cao chất lượng code nên tiếp nhận một cách biết ơn. Chỗ nào chưa hiểu thì tôi hỏi lý do, và ghi chú lại riêng để không bị nhắc lại lỗi đó."
+        }
+      ]
+    },
+    {
+      "id": "interview-spec-change",
+      "title": "Phỏng vấn: khách đổi yêu cầu sát deadline",
+      "titleKo": "면접: 마감 직전 요구사항 변경",
+      "description": "Câu hỏi tình huống: khách hàng đổi yêu cầu khi gần đến hạn. Người phỏng vấn muốn xem bạn xử lý ra sao, không nói 'không' thẳng mà cũng không nhận bừa.",
+      "category": "interview",
+      "tags": [
+        "면접",
+        "요구사항",
+        "상황 질문"
+      ],
+      "turns": [
+        {
+          "client": "릴리스 3일 전에 고객이 기능을 바꿔 달라고 하면 어떻게 하시겠어요?",
+          "hint": "Quy trình: nắm rõ thay đổi → đánh giá ảnh hưởng (công số, lịch) → báo cáo và đưa phương án cho khách chọn.",
+          "choices": [
+            {
+              "ko": "고객이 원하니까 밤새서라도 무조건 다 맞춰 드립니다.",
+              "correct": false,
+              "feedback": "Nghe tận tụy nhưng thiếu đánh giá rủi ro. Làm vội sát release dễ gây lỗi."
+            },
+            {
+              "ko": "먼저 변경 내용을 정확하게 확인하고 영향 범위와 필요한 공수를 산정하겠습니다. 그다음에 이번 릴리스에 포함하는 안과 다음 릴리스로 미루는 안을 같이 말씀드리고 고객이 선택할 수 있게 하겠습니다.",
+              "correct": true,
+              "feedback": "Chuẩn BrSE: phân tích ảnh hưởng, ước lượng công số, đưa ra các phương án ('안') để khách quyết định."
+            },
+            {
+              "ko": "일정이 안 되니까 안 된다고 말씀드립니다.",
+              "correct": false,
+              "feedback": "Từ chối thẳng làm mất lòng khách và không đưa ra giải pháp."
+            }
+          ],
+          "modelAnswer": "먼저 변경 내용을 정확하게 확인하고, 영향 범위와 필요한 공수를 산정하겠습니다. 그다음에 이번 릴리스에 포함하는 안과 다음 릴리스로 미루는 안을 함께 말씀드리고, 고객이 선택하실 수 있게 하겠습니다.",
+          "modelAnswerVi": "Trước tiên tôi sẽ xác nhận chính xác nội dung thay đổi, rồi ước tính phạm vi ảnh hưởng và công số cần thiết. Sau đó tôi trình bày cả phương án đưa vào bản release lần này lẫn phương án dời sang lần sau, để khách hàng lựa chọn."
+        },
+        {
+          "client": "고객이 일정은 그대로 두고 무조건 넣어 달라고 하면요?",
+          "hint": "Khách ép. Đề xuất giảm phạm vi hoặc ưu tiên, nói rõ rủi ro và xin xác nhận bằng văn bản.",
+          "choices": [
+            {
+              "ko": "그럼 고객 책임이라고 말하고 그냥 하겠습니다.",
+              "correct": false,
+              "feedback": "Đổ trách nhiệm, giọng đối đầu, không tốt cho quan hệ lâu dài."
+            },
+            {
+              "ko": "그 경우에는 꼭 필요한 부분만 먼저 넣고 나머지는 다음에 반영하는 방법을 제안하겠습니다. 그리고 테스트 기간이 줄어드는 리스크도 말씀드리고, 결정 사항은 메일로 남기겠습니다.",
+              "correct": true,
+              "feedback": "Rất chuyên nghiệp: thu hẹp phạm vi, nói rõ rủi ro, lưu bằng email để tránh tranh cãi sau này."
+            }
+          ],
+          "modelAnswer": "그 경우에는 꼭 필요한 부분만 먼저 반영하고 나머지는 다음 릴리스에 넣는 방법을 제안하겠습니다. 그리고 테스트 기간이 줄어드는 리스크도 말씀드리고, 결정된 내용은 메일로 남겨 두겠습니다.",
+          "modelAnswerVi": "Trong trường hợp đó tôi sẽ đề xuất đưa vào trước những phần thật sự cần, phần còn lại để bản release sau. Tôi cũng nói rõ rủi ro do thời gian test bị rút ngắn, và lưu lại nội dung đã quyết định bằng email."
+        },
+        {
+          "client": "팀원들이 야근 때문에 불만이 많으면 어떻게 하실 거예요?",
+          "hint": "Quản lý team: lắng nghe, chia lại việc, nói chuyện với PM về bù trừ.",
+          "choices": [
+            {
+              "ko": "팀원들 이야기를 먼저 듣고, 업무를 다시 나눌 수 있는지 확인하겠습니다. 그리고 상황이 계속되면 PM과 일정이나 인원 조정에 대해 상의하겠습니다.",
+              "correct": true,
+              "feedback": "Thể hiện quan tâm team và biết leo thang (escalate) đúng lúc."
+            },
+            {
+              "ko": "회사 일이니까 참으라고 하겠습니다.",
+              "correct": false,
+              "feedback": "Bỏ qua cảm xúc team, dễ làm mất người."
+            }
+          ],
+          "modelAnswer": "팀원들 이야기를 먼저 들어 보고, 업무를 다시 분배할 수 있는지 확인하겠습니다. 그리고 그런 상황이 계속되면 PM과 일정이나 인원 조정에 대해 상의하겠습니다.",
+          "modelAnswerVi": "Tôi sẽ lắng nghe các thành viên trước, rồi xem có thể phân chia lại công việc được không. Nếu tình trạng đó kéo dài thì tôi sẽ bàn với PM về việc điều chỉnh lịch hoặc nhân sự."
+        }
+      ]
+    },
+    {
+      "id": "interview-pm-estimate",
+      "title": "Phỏng vấn PM: ước lượng và quản lý rủi ro",
+      "titleKo": "면접: PM 공수 산정과 리스크 관리",
+      "description": "Phỏng vấn cho vị trí PM/leader. Người phỏng vấn hỏi cách bạn ước lượng công số và theo dõi rủi ro dự án.",
+      "category": "interview",
+      "tags": [
+        "면접",
+        "PM",
+        "공수",
+        "리스크"
+      ],
+      "turns": [
+        {
+          "client": "공수 산정은 어떤 방식으로 하세요?",
+          "hint": "Mô tả phương pháp: chia nhỏ công việc (WBS), tham khảo dự án cũ, cộng buffer.",
+          "choices": [
+            {
+              "ko": "감으로 대충 정합니다.",
+              "correct": false,
+              "feedback": "Không có căn cứ, khách hàng Hàn rất ngại kiểu này."
+            },
+            {
+              "ko": "작업을 화면이나 API 단위로 잘게 나누고, 비슷한 과거 프로젝트의 실적을 참고해서 산정합니다. 불확실한 부분에는 버퍼를 따로 잡습니다.",
+              "correct": true,
+              "feedback": "Có phương pháp (chia nhỏ, dùng dữ liệu cũ, buffer). Từ vựng chuẩn: 산정하다, 실적, 버퍼."
+            }
+          ],
+          "modelAnswer": "작업을 화면이나 API 단위로 잘게 나누고, 비슷한 과거 프로젝트의 실적을 참고해서 산정합니다. 불확실한 부분에는 버퍼를 따로 잡아 둡니다.",
+          "modelAnswerVi": "Tôi chia nhỏ công việc theo đơn vị màn hình hoặc API, rồi tham khảo số liệu thực tế của các dự án tương tự trước đây để ước tính. Phần nào chưa chắc chắn thì tôi để riêng buffer."
+        },
+        {
+          "client": "진행 중에 일정이 밀릴 것 같으면 언제 고객에게 알리세요?",
+          "hint": "Nguyên tắc: báo sớm ngay khi thấy rủi ro, kèm nguyên nhân và kế hoạch đối phó.",
+          "choices": [
+            {
+              "ko": "지연 가능성이 보이는 시점에 바로 알립니다. 원인과 영향, 그리고 만회 계획을 같이 정리해서 보고합니다.",
+              "correct": true,
+              "feedback": "Đúng tinh thần '조기 보고' (báo cáo sớm), kèm nguyên nhân và kế hoạch bù lại."
+            },
+            {
+              "ko": "확실해질 때까지 기다렸다가 알립니다.",
+              "correct": false,
+              "feedback": "Báo muộn là lỗi lớn nhất trong mắt khách Hàn. Họ muốn biết rủi ro sớm."
+            },
+            {
+              "ko": "마지막 날에 말하면 고객도 어쩔 수 없을 겁니다.",
+              "correct": false,
+              "feedback": "Rất thiếu chuyên nghiệp, phá vỡ niềm tin."
+            }
+          ],
+          "modelAnswer": "지연 가능성이 보이는 시점에 바로 알립니다. 원인과 영향, 그리고 만회 계획을 같이 정리해서 보고드립니다.",
+          "modelAnswerVi": "Tôi báo ngay khi thấy có khả năng trễ. Tôi tổng hợp nguyên nhân, mức ảnh hưởng và kế hoạch bù lại rồi báo cáo cùng lúc."
+        },
+        {
+          "client": "리스크는 평소에 어떻게 관리하세요?",
+          "hint": "Theo dõi rủi ro: danh sách rủi ro, cập nhật hằng tuần, chia sẻ trong họp tuần.",
+          "choices": [
+            {
+              "ko": "문제가 생기면 그때 대응합니다.",
+              "correct": false,
+              "feedback": "Chỉ phản ứng sau khi xảy ra, không phải quản lý rủi ro."
+            },
+            {
+              "ko": "리스크 목록을 따로 만들어서 발생 가능성과 영향도를 적어 두고, 주간 회의 때마다 업데이트해서 고객과 공유합니다.",
+              "correct": true,
+              "feedback": "Có công cụ cụ thể (risk list), tiêu chí (khả năng xảy ra, mức ảnh hưởng) và nhịp cập nhật."
+            }
+          ],
+          "modelAnswer": "리스크 목록을 따로 만들어서 발생 가능성과 영향도를 적어 두고, 주간 회의 때마다 업데이트해서 고객과 공유합니다.",
+          "modelAnswerVi": "Tôi lập riêng danh sách rủi ro, ghi khả năng xảy ra và mức độ ảnh hưởng, rồi cập nhật mỗi buổi họp tuần và chia sẻ với khách hàng."
+        }
+      ]
+    },
+    {
+      "id": "interview-korean-check",
+      "title": "Phỏng vấn: kiểm tra trình độ tiếng Hàn",
+      "titleKo": "면접: 한국어 능력 확인",
+      "description": "Người phỏng vấn chuyển sang kiểm tra tiếng Hàn: hỏi TOPIK, nhờ nói chậm lại, và yêu cầu giải thích một việc bằng tiếng Hàn.",
+      "category": "interview",
+      "tags": [
+        "면접",
+        "한국어",
+        "TOPIK"
+      ],
+      "turns": [
+        {
+          "client": "한국어는 어떻게 공부하셨어요? TOPIK 급수가 있나요?",
+          "hint": "Nêu cấp TOPIK và cách bạn dùng tiếng Hàn trong công việc. Khiêm tốn nhưng tự tin.",
+          "choices": [
+            {
+              "ko": "TOPIK 3급이 있습니다. 업무에서 메일이나 메신저는 한국어로 처리하고 있고, 회의에서 말하는 건 아직 연습 중이라서 매일 따로 공부하고 있습니다.",
+              "correct": true,
+              "feedback": "Trung thực về điểm mạnh/yếu, cho thấy đang cải thiện. Đây là câu trả lời đáng tin."
+            },
+            {
+              "ko": "한국어는 원어민처럼 합니다.",
+              "correct": false,
+              "feedback": "Nói quá; người phỏng vấn sẽ nhận ra ngay khi nói chuyện tiếp."
+            }
+          ],
+          "modelAnswer": "TOPIK 3급을 가지고 있습니다. 업무에서 메일이나 메신저는 한국어로 처리하고 있고, 회의에서 말하는 건 아직 부족해서 매일 따로 연습하고 있습니다.",
+          "modelAnswerVi": "Tôi có TOPIK cấp 3. Trong công việc tôi xử lý email và tin nhắn bằng tiếng Hàn, còn nói trong họp thì vẫn chưa tốt nên hằng ngày tôi luyện riêng."
+        },
+        {
+          "client": "(빠르게) 그러면 지난번 프로젝트에서 고객사 요구사항이 바뀌었을 때 어떤 프로세스로 처리했는지 설명해 주실 수 있을까요?",
+          "hint": "Người phỏng vấn nói nhanh. Nếu chưa nghe rõ, hãy lịch sự nhờ nói lại hoặc xác nhận lại ý câu hỏi; đừng đoán mò.",
+          "choices": [
+            {
+              "ko": "죄송하지만 조금만 천천히 다시 말씀해 주시겠습니까? 요구사항이 바뀌었을 때 처리 과정을 여쭤보신 거 맞으시죠?",
+              "correct": true,
+              "feedback": "Rất tốt: xin nói chậm lại một cách lịch sự VÀ xác nhận lại ý câu hỏi. Đây chính là kỹ năng BrSE."
+            },
+            {
+              "ko": "네? 뭐라고요?",
+              "correct": false,
+              "feedback": "Quá suồng sã, nghe không lịch sự trong phỏng vấn."
+            },
+            {
+              "ko": "네, 네. 열심히 했습니다.",
+              "correct": false,
+              "feedback": "Giả vờ hiểu rồi trả lời lệch hướng là lỗi nặng hơn việc hỏi lại."
+            }
+          ],
+          "modelAnswer": "죄송하지만 조금만 천천히 다시 말씀해 주시겠습니까? 요구사항이 변경됐을 때의 처리 과정을 여쭤보신 게 맞으시죠?",
+          "modelAnswerVi": "Xin lỗi, anh/chị có thể nói lại chậm hơn một chút được không ạ? Anh/chị đang hỏi về quy trình xử lý khi yêu cầu thay đổi, đúng không ạ?"
+        },
+        {
+          "client": "네, 맞아요. 천천히 설명해 보세요.",
+          "hint": "Giờ trả lời. Dùng các từ nối thứ tự: 먼저, 그다음에, 마지막으로. Câu ngắn, rõ.",
+          "choices": [
+            {
+              "ko": "먼저 변경 내용을 메일로 받아서 정리했습니다. 그다음에 개발팀과 영향 범위를 확인하고 일정을 다시 산정했습니다. 마지막으로 고객 승인을 받은 후에 작업을 시작했습니다.",
+              "correct": true,
+              "feedback": "Rõ ràng, có thứ tự (먼저 → 그다음에 → 마지막으로), câu ngắn, hợp trình độ TOPIK 3 mà vẫn chuyên nghiệp."
+            },
+            {
+              "ko": "요구사항이 바뀌면 바뀐 대로 그냥 개발했습니다.",
+              "correct": false,
+              "feedback": "Thiếu quy trình xác nhận, đánh giá ảnh hưởng và phê duyệt."
+            }
+          ],
+          "modelAnswer": "먼저 변경 내용을 메일로 받아서 정리했습니다. 그다음에 개발팀과 영향 범위를 확인하고 일정을 다시 산정했습니다. 마지막으로 고객의 승인을 받은 후에 작업을 시작했습니다.",
+          "modelAnswerVi": "Đầu tiên tôi nhận nội dung thay đổi qua email và tổng hợp lại. Tiếp theo tôi cùng team phát triển kiểm tra phạm vi ảnh hưởng và ước tính lại lịch. Cuối cùng, sau khi khách hàng phê duyệt thì mới bắt đầu làm."
+        }
+      ]
+    },
+    {
+      "id": "interview-dont-know",
+      "title": "Phỏng vấn: gặp câu hỏi không biết",
+      "titleKo": "면접: 모르는 질문을 받았을 때",
+      "description": "Người phỏng vấn hỏi một công nghệ bạn chưa dùng. Cách trả lời trung thực mà vẫn ghi điểm.",
+      "category": "interview",
+      "tags": [
+        "면접",
+        "기술 질문",
+        "솔직함"
+      ],
+      "turns": [
+        {
+          "client": "Kafka 같은 메시지 큐를 사용해 본 경험이 있나요?",
+          "hint": "Bạn chưa dùng. Nói thật, nêu điều bạn biết ở mức khái niệm và kinh nghiệm gần nhất.",
+          "choices": [
+            {
+              "ko": "네, 많이 써 봤습니다.",
+              "correct": false,
+              "feedback": "Nói dối sẽ bị lộ ở câu hỏi tiếp theo."
+            },
+            {
+              "ko": "실무에서 직접 사용해 본 적은 없습니다. 다만 비동기로 메시지를 주고받아서 시스템 간 결합도를 낮춘다는 개념은 알고 있고, 비슷하게 배치 작업으로 데이터를 연동한 경험은 있습니다.",
+              "correct": true,
+              "feedback": "Trung thực + cho thấy hiểu khái niệm + nối với kinh nghiệm gần nhất. Cách trả lời rất được đánh giá cao."
+            },
+            {
+              "ko": "모릅니다.",
+              "correct": false,
+              "feedback": "Trung thực nhưng dừng lại quá sớm. Nên nói thêm bạn biết gì hoặc sẽ học thế nào."
+            }
+          ],
+          "modelAnswer": "실무에서 직접 사용해 본 적은 없습니다. 다만 메시지를 비동기로 주고받아서 시스템 간의 결합도를 낮춘다는 개념은 알고 있고, 비슷하게 배치 작업으로 시스템 간 데이터를 연동한 경험은 있습니다.",
+          "modelAnswerVi": "Trong công việc tôi chưa từng dùng trực tiếp. Tuy nhiên tôi biết khái niệm trao đổi message bất đồng bộ để giảm sự phụ thuộc giữa các hệ thống, và tôi từng có kinh nghiệm tương tự là liên kết dữ liệu giữa các hệ thống bằng batch job."
+        },
+        {
+          "client": "입사 후에 그 기술을 써야 한다면 어떻게 하실 거예요?",
+          "hint": "Kế hoạch học nhanh: tài liệu chính thức, làm thử nhỏ, hỏi người có kinh nghiệm trong team.",
+          "choices": [
+            {
+              "ko": "공식 문서로 기본 구조를 먼저 익히고, 작은 예제를 직접 만들어 보겠습니다. 그리고 팀 안에 경험 있는 분께 실제 프로젝트에서 주의할 점을 여쭤보겠습니다.",
+              "correct": true,
+              "feedback": "Có kế hoạch học cụ thể, chủ động và biết tận dụng người trong team."
+            },
+            {
+              "ko": "회사에서 교육을 시켜 주시면 배우겠습니다.",
+              "correct": false,
+              "feedback": "Thụ động, chờ được dạy."
+            }
+          ],
+          "modelAnswer": "공식 문서로 기본 구조를 먼저 익히고, 작은 예제를 직접 만들어 보겠습니다. 그리고 팀 안에 경험이 있는 분께 실제 프로젝트에서 주의할 점을 여쭤보겠습니다.",
+          "modelAnswerVi": "Tôi sẽ nắm cấu trúc cơ bản qua tài liệu chính thức trước, rồi tự làm thử một ví dụ nhỏ. Sau đó tôi sẽ hỏi người có kinh nghiệm trong team về những điểm cần chú ý ở dự án thực tế."
+        },
+        {
+          "client": "새로운 기술을 빨리 익힌 경험이 있으면 하나 말씀해 주세요.",
+          "hint": "Kể một ví dụ có thời gian cụ thể: học gì, trong bao lâu, đạt kết quả gì.",
+          "choices": [
+            {
+              "ko": "저는 새로운 걸 잘 배웁니다.",
+              "correct": false,
+              "feedback": "Chỉ khẳng định, không có ví dụ."
+            },
+            {
+              "ko": "이전 프로젝트에서 처음 써 보는 리포트 툴을 맡게 됐는데, 일주일 동안 샘플을 만들어 보면서 익혔고, 2주 만에 보고서 화면 10개를 일정 안에 완료했습니다.",
+              "correct": true,
+              "feedback": "Có công cụ, thời gian, kết quả bằng con số. '-게 되다', '만에' dùng tự nhiên."
+            }
+          ],
+          "modelAnswer": "이전 프로젝트에서 처음 써 보는 리포트 툴을 맡게 됐는데, 일주일 동안 샘플을 만들어 보면서 익혔고 2주 만에 보고서 화면 10개를 일정 안에 완료했습니다.",
+          "modelAnswerVi": "Ở dự án trước tôi được giao một công cụ làm báo cáo mà tôi chưa dùng bao giờ. Tôi làm thử các mẫu trong một tuần để làm quen, và sau 2 tuần đã hoàn thành 10 màn hình báo cáo đúng hạn."
+        }
+      ]
+    },
+    {
+      "id": "interview-online-trouble",
+      "title": "Phỏng vấn online: sự cố mạng, âm thanh",
+      "titleKo": "면접: 화상 면접 중 연결 문제",
+      "description": "Phỏng vấn qua Zoom/Teams thì hay gặp sự cố: mất tiếng, giật hình, rớt mạng. Các câu cần để xử lý bình tĩnh.",
+      "category": "interview",
+      "tags": [
+        "면접",
+        "화상 면접",
+        "온라인"
+      ],
+      "turns": [
+        {
+          "client": "(소리가 끊기면서) …그래서… 경험이… 말씀해…",
+          "hint": "Tiếng bị đứt quãng. Báo lịch sự là nghe không rõ và nhờ nói lại.",
+          "choices": [
+            {
+              "ko": "죄송합니다. 소리가 조금 끊겨서 잘 못 들었습니다. 한 번만 다시 말씀해 주시겠습니까?",
+              "correct": true,
+              "feedback": "Lịch sự, nêu rõ vấn đề (âm thanh bị ngắt) và nhờ nói lại một lần."
+            },
+            {
+              "ko": "안 들려요! 안 들려요!",
+              "correct": false,
+              "feedback": "Hốt hoảng, thiếu lịch sự."
+            }
+          ],
+          "modelAnswer": "죄송합니다. 소리가 조금 끊겨서 잘 못 들었습니다. 한 번만 다시 말씀해 주시겠습니까?",
+          "modelAnswerVi": "Xin lỗi ạ, âm thanh bị ngắt quãng một chút nên tôi nghe không rõ. Anh/chị có thể nói lại một lần nữa được không ạ?"
+        },
+        {
+          "client": "제 목소리는 잘 들리세요? 화면이 좀 멈춘 것 같은데요.",
+          "hint": "Người phỏng vấn báo hình bạn bị đơ. Đề nghị tắt camera tạm thời hoặc vào lại.",
+          "choices": [
+            {
+              "ko": "제 쪽 인터넷이 불안정한 것 같습니다. 괜찮으시다면 잠깐 나갔다가 바로 다시 들어오겠습니다.",
+              "correct": true,
+              "feedback": "Chủ động nhận vấn đề ở phía mình và đưa giải pháp, xin phép trước ('괜찮으시다면')."
+            },
+            {
+              "ko": "제 문제 아닌데요. 그쪽 인터넷 확인해 보세요.",
+              "correct": false,
+              "feedback": "Đổ lỗi, gây ấn tượng xấu dù có thể đúng."
+            },
+            {
+              "ko": "(아무 말 없이 나갔다가 들어온다)",
+              "correct": false,
+              "feedback": "Rời phòng không báo khiến người phỏng vấn bối rối."
+            }
+          ],
+          "modelAnswer": "제 쪽 인터넷 연결이 불안정한 것 같습니다. 괜찮으시다면 잠깐 나갔다가 바로 다시 들어오겠습니다.",
+          "modelAnswerVi": "Hình như kết nối internet bên tôi không ổn định. Nếu anh/chị không phiền, tôi xin ra ngoài một chút rồi vào lại ngay ạ."
+        },
+        {
+          "client": "네, 이제 잘 들려요. 아까 질문 이어서 답변해 주세요.",
+          "hint": "Kết nối lại xong. Cảm ơn, xin lỗi ngắn gọn rồi tiếp tục trả lời, có thể tóm tắt câu hỏi.",
+          "choices": [
+            {
+              "ko": "기다려 주셔서 감사합니다. 아까 질문하신 프로젝트 경험에 대해 이어서 말씀드리겠습니다.",
+              "correct": true,
+              "feedback": "Gọn gàng: cảm ơn vì đã chờ, nhắc lại chủ đề và tiếp tục."
+            },
+            {
+              "ko": "아, 질문이 뭐였죠? 다 까먹었어요.",
+              "correct": false,
+              "feedback": "Suồng sã và thiếu tập trung. Nếu quên, hãy hỏi lịch sự: '질문을 한 번만 다시 말씀해 주시겠습니까?'"
+            }
+          ],
+          "modelAnswer": "기다려 주셔서 감사합니다. 아까 질문하신 프로젝트 경험에 대해 이어서 말씀드리겠습니다.",
+          "modelAnswerVi": "Cảm ơn anh/chị đã chờ. Tôi xin tiếp tục trình bày về kinh nghiệm dự án mà anh/chị hỏi lúc nãy."
+        }
+      ]
+    },
+    {
+      "id": "interview-thank-you",
+      "title": "Sau phỏng vấn: cảm ơn và hỏi kết quả",
+      "titleKo": "면접 후: 감사 인사와 결과 문의",
+      "description": "Sau phỏng vấn bạn liên lạc với HR qua điện thoại: cảm ơn, hỏi khi nào có kết quả, và trả lời khi nhận offer.",
+      "category": "interview",
+      "tags": [
+        "면접",
+        "결과",
+        "HR"
+      ],
+      "turns": [
+        {
+          "client": "네, 인사팀 김민지입니다. 무슨 일로 연락 주셨어요?",
+          "hint": "Giới thiệu mình là ai, phỏng vấn ngày nào, cho vị trí gì, rồi nêu mục đích gọi.",
+          "choices": [
+            {
+              "ko": "저 합격했어요?",
+              "correct": false,
+              "feedback": "Đường đột, không giới thiệu bản thân."
+            },
+            {
+              "ko": "안녕하세요. 지난주 금요일에 Java 개발자 포지션으로 면접을 본 응우옌입니다. 결과 발표 일정이 궁금해서 연락드렸습니다.",
+              "correct": true,
+              "feedback": "Đủ thông tin để HR tra ngay: ngày phỏng vấn, vị trí, tên, mục đích."
+            }
+          ],
+          "modelAnswer": "안녕하세요. 지난주 금요일에 Java 개발자 포지션으로 면접을 본 응우옌이라고 합니다. 결과 발표 일정이 궁금해서 연락드렸습니다.",
+          "modelAnswerVi": "Xin chào. Tôi là Nguyễn, người đã phỏng vấn vị trí lập trình viên Java vào thứ Sáu tuần trước. Tôi liên lạc vì muốn biết lịch thông báo kết quả ạ."
+        },
+        {
+          "client": "아, 네. 결과는 이번 주 안에 메일로 안내드릴 예정이에요.",
+          "hint": "HR báo kết quả trong tuần qua email. Cảm ơn và chào kết thúc lịch sự.",
+          "choices": [
+            {
+              "ko": "네, 알겠습니다. 바쁘신데 확인해 주셔서 감사합니다. 좋은 하루 보내세요.",
+              "correct": true,
+              "feedback": "Lịch sự, ngắn gọn, cảm ơn vì đã dành thời gian."
+            },
+            {
+              "ko": "빨리 좀 알려 주세요.",
+              "correct": false,
+              "feedback": "Thúc ép, thiếu lịch sự."
+            }
+          ],
+          "modelAnswer": "네, 알겠습니다. 바쁘신데 확인해 주셔서 감사합니다. 좋은 하루 보내세요.",
+          "modelAnswerVi": "Vâng, tôi hiểu rồi. Cảm ơn chị đã kiểm tra giúp dù đang bận. Chúc chị một ngày tốt lành."
+        },
+        {
+          "client": "(며칠 후) 합격하셨습니다. 축하드려요. 처우 조건은 메일로 보내 드렸는데, 확인해 보시고 회신 부탁드립니다.",
+          "hint": "Nhận tin trúng tuyển. Cảm ơn, nói sẽ xem điều kiện và trả lời trước một thời hạn cụ thể.",
+          "choices": [
+            {
+              "ko": "네, 그럼 생각해 보고 나중에 연락할게요.",
+              "correct": false,
+              "feedback": "Không có thời hạn và dùng '-ㄹ게요' hơi thân mật với HR."
+            },
+            {
+              "ko": "우와, 대박! 감사해요!",
+              "correct": false,
+              "feedback": "Quá suồng sã ('대박') trong ngữ cảnh chính thức."
+            },
+            {
+              "ko": "정말 감사합니다! 보내 주신 조건은 꼼꼼히 확인해 보고 이번 주 수요일까지 회신드리겠습니다.",
+              "correct": true,
+              "feedback": "Vui vẻ nhưng chuyên nghiệp: có thời hạn trả lời cụ thể."
+            }
+          ],
+          "modelAnswer": "정말 감사합니다. 보내 주신 조건은 꼼꼼히 확인해 보고, 이번 주 수요일까지 회신드리겠습니다.",
+          "modelAnswerVi": "Thật sự cảm ơn chị. Tôi sẽ xem kỹ các điều kiện chị gửi và trả lời trước thứ Tư tuần này ạ."
+        }
+      ]
     }
   ]
 }

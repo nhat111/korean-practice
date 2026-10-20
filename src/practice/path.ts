@@ -56,6 +56,7 @@ export const BASE_PATH: PathStep[][] = [
     step('meetings', 'meetings'),
     step('meeting-ip', 'interpret', 'meeting', 'handover', 'cost'),
     step('meeting-talk', 'scenarios', 'meeting'),
+    step('interview-sh', 'shadowing', 'interview'),
     step('interview', 'scenarios', 'interview'),
   ],
 ];
@@ -65,7 +66,7 @@ export const ROLE_FIRST: Record<string, string[]> = {
   dev: ['tech'],
   brse: ['meeting-ip'],
   tester: ['qa', 'qa-talk'],
-  interview: ['interview'],
+  interview: ['interview-sh', 'interview'],
 };
 
 /** The four weeks for this role: its steps move to the end of week 1. */

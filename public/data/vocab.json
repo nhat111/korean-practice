@@ -9513,6 +9513,438 @@
         "title",
         "communication"
       ]
+    },
+    {
+      "id": "w-myeonjeop",
+      "ko": "면접",
+      "vi": "phỏng vấn",
+      "pron": "[면접]",
+      "type": "noun",
+      "collocation": "면접을 보다",
+      "example": {
+        "ko": "다음 주 화요일에 1차 면접을 볼 예정입니다.",
+        "vi": "Dự kiến thứ Ba tuần sau tôi sẽ phỏng vấn vòng 1.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄹ 예정이다",
+            "form": "볼 예정입니다",
+            "meaningVi": "dự định sẽ…"
+          }
+        ]
+      },
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "id": "w-myeonjeopgwan",
+      "ko": "면접관",
+      "vi": "người phỏng vấn",
+      "pron": "[면접관]",
+      "type": "noun",
+      "collocation": "면접관의 질문",
+      "example": {
+        "ko": "면접관이 프로젝트 경험을 자세히 물어봤습니다.",
+        "vi": "Người phỏng vấn đã hỏi chi tiết về kinh nghiệm dự án."
+      },
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "id": "w-jagisogae",
+      "ko": "자기소개",
+      "vi": "tự giới thiệu",
+      "pron": "[자기소개]",
+      "type": "noun",
+      "collocation": "자기소개를 하다",
+      "example": {
+        "ko": "1분 정도로 자기소개를 준비해 두세요.",
+        "vi": "Hãy chuẩn bị sẵn phần tự giới thiệu khoảng 1 phút.",
+        "grammar": [
+          {
+            "pattern": "-아/어 두다",
+            "form": "준비해 두세요",
+            "meaningVi": "làm sẵn, để sẵn"
+          }
+        ]
+      },
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "id": "w-jiwondonggi",
+      "ko": "지원 동기",
+      "vi": "lý do ứng tuyển",
+      "pron": "[지원 동기]",
+      "type": "phrase",
+      "collocation": "지원 동기를 말하다",
+      "example": {
+        "ko": "지원 동기는 한국 고객과 직접 일해 보고 싶어서입니다.",
+        "vi": "Lý do ứng tuyển là vì tôi muốn thử làm việc trực tiếp với khách hàng Hàn Quốc.",
+        "grammar": [
+          {
+            "pattern": "-고 싶다",
+            "form": "일해 보고 싶어서",
+            "meaningVi": "muốn…"
+          }
+        ]
+      },
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "id": "w-ijik",
+      "ko": "이직",
+      "vi": "chuyển việc, nhảy việc",
+      "pron": "[이직]",
+      "type": "noun",
+      "collocation": "이직을 준비하다",
+      "example": {
+        "ko": "요즘 이직을 준비하면서 한국어 공부를 다시 시작했습니다.",
+        "vi": "Dạo này vừa chuẩn bị chuyển việc tôi vừa bắt đầu học lại tiếng Hàn.",
+        "grammar": [
+          {
+            "pattern": "-(으)면서",
+            "form": "준비하면서",
+            "meaningVi": "vừa… vừa…"
+          }
+        ]
+      },
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "id": "w-gyeongnyeok",
+      "ko": "경력",
+      "vi": "kinh nghiệm làm việc (số năm)",
+      "pron": "[경녁]",
+      "type": "noun",
+      "collocation": "경력이 있다",
+      "example": {
+        "ko": "자바 개발 경력은 8년입니다.",
+        "vi": "Kinh nghiệm phát triển Java của tôi là 8 năm."
+      },
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "id": "w-gyeongnyeokjik",
+      "ko": "경력직",
+      "vi": "vị trí tuyển người có kinh nghiệm",
+      "pron": "[경녁찍]",
+      "type": "noun",
+      "collocation": "경력직으로 지원하다",
+      "example": {
+        "ko": "이번에는 신입이 아니라 경력직으로 지원했습니다.",
+        "vi": "Lần này tôi ứng tuyển vị trí có kinh nghiệm chứ không phải người mới.",
+        "grammar": [
+          {
+            "pattern": "N이/가 아니라",
+            "form": "신입이 아니라",
+            "meaningVi": "không phải N mà là…"
+          }
+        ]
+      },
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "id": "w-sinip",
+      "ko": "신입",
+      "vi": "người mới (mới ra trường / mới vào)",
+      "pron": "[시닙]",
+      "type": "noun",
+      "collocation": "신입 사원",
+      "example": {
+        "ko": "신입 때는 선배들에게 질문을 많이 했습니다.",
+        "vi": "Hồi còn là người mới tôi hỏi các tiền bối rất nhiều."
+      },
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "id": "w-gangjeom",
+      "ko": "강점",
+      "vi": "điểm mạnh",
+      "pron": "[강쩜]",
+      "type": "noun",
+      "collocation": "강점을 살리다",
+      "example": {
+        "ko": "제 강점은 문제를 끝까지 파고드는 것입니다.",
+        "vi": "Điểm mạnh của tôi là đào sâu vấn đề đến cùng."
+      },
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "id": "w-danjeom",
+      "ko": "단점",
+      "vi": "điểm yếu, nhược điểm",
+      "pron": "[단쩜]",
+      "type": "noun",
+      "collocation": "단점을 보완하다",
+      "example": {
+        "ko": "단점을 보완하기 위해서 매일 진행 상황을 기록하고 있습니다.",
+        "vi": "Để khắc phục điểm yếu, ngày nào tôi cũng ghi lại tiến độ.",
+        "grammar": [
+          {
+            "pattern": "-기 위해서",
+            "form": "보완하기 위해서",
+            "meaningVi": "để…"
+          }
+        ]
+      },
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "id": "w-iryeokseo",
+      "ko": "이력서",
+      "vi": "sơ yếu lý lịch, CV",
+      "pron": "[이력써]",
+      "type": "noun",
+      "collocation": "이력서를 제출하다",
+      "example": {
+        "ko": "이력서에는 최근 프로젝트부터 순서대로 적었습니다.",
+        "vi": "Trong CV tôi ghi theo thứ tự từ dự án gần nhất."
+      },
+      "tags": [
+        "interview",
+        "document"
+      ]
+    },
+    {
+      "id": "w-poteupollio",
+      "ko": "포트폴리오",
+      "vi": "portfolio",
+      "pron": "[포트폴리오]",
+      "type": "noun",
+      "collocation": "포트폴리오를 보여 주다",
+      "example": {
+        "ko": "개인 프로젝트는 포트폴리오에 링크를 넣어 두었습니다.",
+        "vi": "Dự án cá nhân thì tôi đã chèn link vào portfolio."
+      },
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "id": "w-hapgyeok",
+      "ko": "합격",
+      "vi": "đỗ, trúng tuyển",
+      "pron": "[합껵]",
+      "type": "noun",
+      "collocation": "합격 통보",
+      "example": {
+        "ko": "서류 전형에 합격해서 다음 주에 면접을 봅니다.",
+        "vi": "Tôi đã qua vòng hồ sơ nên tuần sau đi phỏng vấn.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "합격해서",
+            "meaningVi": "vì… nên… (nối nguyên nhân)"
+          }
+        ]
+      },
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "id": "w-seoryujeonhyeong",
+      "ko": "서류 전형",
+      "vi": "vòng xét hồ sơ",
+      "pron": "[서류 전형]",
+      "type": "phrase",
+      "collocation": "서류 전형을 통과하다",
+      "example": {
+        "ko": "서류 전형 결과는 메일로 안내드리겠습니다.",
+        "vi": "Kết quả vòng hồ sơ sẽ được thông báo qua email."
+      },
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "id": "w-huimangyeonbong",
+      "ko": "희망 연봉",
+      "vi": "mức lương mong muốn (theo năm)",
+      "pron": "[히망 연봉]",
+      "type": "phrase",
+      "collocation": "희망 연봉을 말하다",
+      "example": {
+        "ko": "희망 연봉은 회사 내규에 맞춰 협의하고 싶습니다.",
+        "vi": "Về mức lương mong muốn, tôi muốn thương lượng theo quy định nội bộ của công ty.",
+        "grammar": [
+          {
+            "pattern": "N에 맞추다",
+            "form": "내규에 맞춰",
+            "meaningVi": "theo, cho khớp với N"
+          }
+        ]
+      },
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "id": "w-cheou",
+      "ko": "처우",
+      "vi": "đãi ngộ (lương, chế độ)",
+      "pron": "[처우]",
+      "type": "noun",
+      "collocation": "처우 조건",
+      "example": {
+        "ko": "처우 조건은 메일로 확인했습니다.",
+        "vi": "Tôi đã xem điều kiện đãi ngộ qua email."
+      },
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "id": "w-ipsa",
+      "ko": "입사",
+      "vi": "vào công ty, bắt đầu đi làm",
+      "pron": "[입싸]",
+      "type": "noun",
+      "collocation": "입사 가능일",
+      "example": {
+        "ko": "입사 후 3개월은 수습 기간입니다.",
+        "vi": "Ba tháng đầu sau khi vào công ty là thời gian thử việc."
+      },
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "id": "w-toesa",
+      "ko": "퇴사",
+      "vi": "nghỉ việc",
+      "pron": "[퇴사]",
+      "type": "noun",
+      "collocation": "퇴사 의사를 밝히다",
+      "example": {
+        "ko": "팀장님께 먼저 퇴사 의사를 말씀드렸습니다.",
+        "vi": "Tôi đã báo trước với trưởng nhóm ý định nghỉ việc."
+      },
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "id": "w-susupgigan",
+      "ko": "수습 기간",
+      "vi": "thời gian thử việc",
+      "pron": "[수습 기간]",
+      "type": "phrase",
+      "collocation": "수습 기간이 끝나다",
+      "example": {
+        "ko": "수습 기간 동안에는 급여의 90%를 받습니다.",
+        "vi": "Trong thời gian thử việc sẽ nhận 90% lương."
+      },
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "id": "w-pagyeon",
+      "ko": "파견",
+      "vi": "cử đi công tác dài hạn, onsite",
+      "pron": "[파견]",
+      "type": "noun",
+      "collocation": "현지에 파견되다",
+      "example": {
+        "ko": "프로젝트 초기에는 한국 고객사에 두 달 동안 파견됩니다.",
+        "vi": "Giai đoạn đầu dự án sẽ được cử sang công ty khách ở Hàn trong hai tháng."
+      },
+      "tags": [
+        "interview",
+        "si"
+      ]
+    },
+    {
+      "id": "w-yeokryang",
+      "ko": "역량",
+      "vi": "năng lực",
+      "pron": "[영냥]",
+      "type": "noun",
+      "collocation": "역량을 키우다",
+      "example": {
+        "ko": "고객과 소통하는 역량을 키우고 싶습니다.",
+        "vi": "Tôi muốn nâng cao năng lực giao tiếp với khách hàng."
+      },
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "id": "w-seonggwa",
+      "ko": "성과",
+      "vi": "thành quả, kết quả đạt được",
+      "pron": "[성꽈]",
+      "type": "noun",
+      "collocation": "성과를 내다",
+      "example": {
+        "ko": "그 프로젝트에서 낸 가장 큰 성과는 장애 건수를 절반으로 줄인 것입니다.",
+        "vi": "Thành quả lớn nhất ở dự án đó là giảm số sự cố còn một nửa.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄴ 것",
+            "form": "줄인 것",
+            "meaningVi": "việc đã… (danh từ hóa)"
+          }
+        ]
+      },
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "id": "w-jimu",
+      "ko": "직무",
+      "vi": "công việc chuyên môn, vị trí công việc",
+      "pron": "[징무]",
+      "type": "noun",
+      "collocation": "직무 경험",
+      "example": {
+        "ko": "이번 직무에 필요한 경험을 중심으로 말씀드리겠습니다.",
+        "vi": "Tôi xin trình bày tập trung vào kinh nghiệm cần cho vị trí này."
+      },
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "id": "w-chaeyong",
+      "ko": "채용",
+      "vi": "tuyển dụng",
+      "pron": "[채용]",
+      "type": "noun",
+      "collocation": "채용 공고",
+      "example": {
+        "ko": "채용 공고를 보고 지원하게 되었습니다.",
+        "vi": "Tôi xem thông báo tuyển dụng và đã ứng tuyển.",
+        "grammar": [
+          {
+            "pattern": "-게 되다",
+            "form": "지원하게 되었습니다",
+            "meaningVi": "trở nên, đã đến mức… (kết quả tự nhiên)"
+          }
+        ]
+      },
+      "tags": [
+        "interview"
+      ]
     }
   ]
 }
