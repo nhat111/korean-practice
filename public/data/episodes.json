@@ -580,6 +580,213 @@
       ]
     },
     {
+      "id": "ep-interview",
+      "hash": "0433d1b6e00588ed",
+      "duration": 868.5,
+      "lines": [
+        {
+          "ko": "안녕하세요. 오늘 면접 기회를 주셔서 감사합니다.",
+          "vi": "Xin chào. Cảm ơn anh/chị đã cho tôi cơ hội phỏng vấn hôm nay.",
+          "start": 0.0
+        },
+        {
+          "ko": "간단하게 자기소개를 하겠습니다.",
+          "vi": "Tôi xin giới thiệu ngắn gọn về bản thân.",
+          "start": 25.74
+        },
+        {
+          "ko": "저는 자바 개발자로 8년 동안 일했습니다.",
+          "vi": "Tôi đã làm lập trình viên Java được 8 năm.",
+          "start": 41.76
+        },
+        {
+          "ko": "주로 한국 고객사의 유지보수 업무를 담당했습니다.",
+          "vi": "Tôi chủ yếu phụ trách mảng bảo trì cho khách hàng Hàn Quốc.",
+          "start": 60.56
+        },
+        {
+          "ko": "제 강점은 고객의 요구사항을 정확하게 파악하는 것입니다.",
+          "vi": "Điểm mạnh của tôi là nắm bắt chính xác yêu cầu của khách hàng.",
+          "start": 81.17
+        },
+        {
+          "ko": "한국어로 소통할 수 있다는 점이 저의 가장 큰 장점이라고 생각합니다.",
+          "vi": "Tôi nghĩ điểm mạnh lớn nhất của tôi là có thể giao tiếp bằng tiếng Hàn.",
+          "start": 103.55
+        },
+        {
+          "ko": "질문을 다시 한번 말씀해 주시겠습니까?",
+          "vi": "Anh/chị có thể nói lại câu hỏi một lần nữa được không ạ?",
+          "start": 127.46
+        },
+        {
+          "ko": "죄송합니다. 질문을 제대로 이해했는지 확인하고 싶습니다.",
+          "vi": "Xin lỗi, tôi muốn xác nhận xem mình đã hiểu đúng câu hỏi chưa.",
+          "start": 145.55
+        },
+        {
+          "ko": "잠시만 생각을 정리해도 될까요?",
+          "vi": "Tôi xin vài giây để sắp xếp suy nghĩ được không ạ?",
+          "start": 171.53
+        },
+        {
+          "ko": "그 부분은 실무에서 직접 써 본 적은 없지만, 개념은 알고 있습니다.",
+          "vi": "Phần đó tôi chưa dùng trực tiếp trong công việc, nhưng tôi biết khái niệm.",
+          "start": 187.91
+        },
+        {
+          "ko": "그 프로젝트에서 저는 화면 개발과 DB 설계를 맡았습니다.",
+          "vi": "Trong dự án đó tôi đảm nhận phát triển màn hình và thiết kế DB.",
+          "start": 213.24
+        },
+        {
+          "ko": "처리 시간을 10초에서 2초로 줄여서 고객에게 좋은 평가를 받았습니다.",
+          "vi": "Tôi giảm thời gian xử lý từ 10 giây xuống 2 giây và được khách hàng đánh giá tốt.",
+          "start": 236.12
+        },
+        {
+          "ko": "문제가 생기면 혼자 해결하려고 하지 않고 바로 팀과 공유합니다.",
+          "vi": "Khi có vấn đề, tôi không cố tự giải quyết một mình mà chia sẻ ngay với team.",
+          "start": 262.01
+        },
+        {
+          "ko": "앞으로는 고객과 개발팀을 연결하는 역할을 하고 싶습니다.",
+          "vi": "Sắp tới tôi muốn đảm nhận vai trò kết nối khách hàng và team phát triển.",
+          "start": 286.93
+        },
+        {
+          "ko": "입사 후에는 업무를 빨리 익혀서 팀에 도움이 되고 싶습니다.",
+          "vi": "Sau khi vào công ty, tôi muốn nhanh chóng làm quen công việc để giúp ích cho team.",
+          "start": 309.41
+        },
+        {
+          "ko": "지금 회사에 인수인계 기간이 필요해서 한 달 후부터 출근할 수 있습니다.",
+          "vi": "Vì cần thời gian bàn giao ở công ty hiện tại nên tôi có thể đi làm sau một tháng.",
+          "start": 333.06
+        },
+        {
+          "ko": "회사 내규에 따르겠지만, 희망 연봉은 협의 가능합니다.",
+          "vi": "Tôi sẽ theo quy định của công ty, nhưng mức lương mong muốn có thể thương lượng.",
+          "start": 358.49
+        },
+        {
+          "ko": "혹시 팀은 몇 명 정도로 구성되어 있나요?",
+          "vi": "Không biết team gồm khoảng bao nhiêu người ạ?",
+          "start": 381.59
+        },
+        {
+          "ko": "마지막으로 궁금한 점 하나 여쭤봐도 될까요?",
+          "vi": "Cuối cùng, tôi có thể hỏi một điều được không ạ?",
+          "start": 399.05
+        },
+        {
+          "ko": "오늘 시간 내 주셔서 정말 감사합니다.",
+          "vi": "Cảm ơn anh/chị rất nhiều vì đã dành thời gian hôm nay.",
+          "start": 417.42
+        },
+        {
+          "ko": "그 질문은 제 경험을 예로 들어서 말씀드리겠습니다.",
+          "vi": "Câu hỏi đó, tôi xin lấy kinh nghiệm của mình làm ví dụ để trả lời.",
+          "start": 435.77
+        },
+        {
+          "ko": "그 경험을 통해서 꼼꼼하게 테스트하는 습관이 생겼습니다.",
+          "vi": "Qua kinh nghiệm đó tôi hình thành thói quen test cẩn thận.",
+          "start": 457.28
+        },
+        {
+          "ko": "결과적으로 장애 건수가 절반으로 줄었습니다.",
+          "vi": "Kết quả là số sự cố giảm còn một nửa.",
+          "start": 478.13
+        },
+        {
+          "ko": "부족한 부분은 입사 후에 더 열심히 배우겠습니다.",
+          "vi": "Những phần còn thiếu, tôi sẽ học chăm chỉ hơn sau khi vào công ty.",
+          "start": 497.03
+        },
+        {
+          "ko": "넥사크로에서는 데이터셋에 데이터를 담고 그리드에 바인딩합니다.",
+          "vi": "Trong Nexacro, dữ liệu được đưa vào Dataset rồi bind lên Grid.",
+          "start": 518.5
+        },
+        {
+          "ko": "수정된 행만 서버로 보내서 저장하도록 구현했습니다.",
+          "vi": "Tôi đã làm để chỉ gửi những dòng đã sửa lên server để lưu.",
+          "start": 543.16
+        },
+        {
+          "ko": "공통 함수로 에러 처리를 한 곳에 모았습니다.",
+          "vi": "Tôi đã gom xử lý lỗi về một chỗ bằng hàm dùng chung.",
+          "start": 564.02
+        },
+        {
+          "ko": "스프링 부트는 자동 설정 덕분에 설정 파일을 많이 줄일 수 있습니다.",
+          "vi": "Nhờ auto-configuration, Spring Boot giúp giảm nhiều file cấu hình.",
+          "start": 583.07
+        },
+        {
+          "ko": "같은 클래스 안에서 호출하면 트랜잭션이 적용되지 않습니다.",
+          "vi": "Nếu gọi trong cùng một class thì transaction không được áp dụng.",
+          "start": 606.67
+        },
+        {
+          "ko": "예외는 전역 예외 처리 클래스에서 한 번에 처리합니다.",
+          "vi": "Exception được xử lý một lần ở class xử lý exception toàn cục.",
+          "start": 629.34
+        },
+        {
+          "ko": "복잡한 통계 쿼리가 많아서 마이바티스를 선택했습니다.",
+          "vi": "Vì có nhiều query thống kê phức tạp nên tôi chọn MyBatis.",
+          "start": 651.5
+        },
+        {
+          "ko": "실행 계획을 확인해서 인덱스를 타는지 봤습니다.",
+          "vi": "Tôi đã kiểm tra execution plan để xem có dùng index không.",
+          "start": 673.43
+        },
+        {
+          "ko": "비밀번호는 단방향 해시로 저장합니다.",
+          "vi": "Mật khẩu được lưu bằng hash một chiều.",
+          "start": 693.84
+        },
+        {
+          "ko": "화면에서 버튼을 숨겨도 서버에서 권한을 다시 확인해야 합니다.",
+          "vi": "Dù ẩn nút trên màn hình thì server vẫn phải kiểm tra lại quyền.",
+          "start": 711.16
+        },
+        {
+          "ko": "배치가 실패하면 실패한 지점부터 다시 실행할 수 있습니다.",
+          "vi": "Nếu batch thất bại thì có thể chạy lại từ điểm bị lỗi.",
+          "start": 733.61
+        },
+        {
+          "ko": "금액 계산 로직은 반드시 단위 테스트를 작성합니다.",
+          "vi": "Logic tính tiền thì tôi nhất định viết unit test.",
+          "start": 755.82
+        },
+        {
+          "ko": "싱글톤 빈에 상태를 저장하면 요청끼리 값이 섞일 수 있습니다.",
+          "vi": "Nếu lưu trạng thái trong bean singleton thì giá trị giữa các request có thể bị lẫn.",
+          "start": 776.93
+        },
+        {
+          "ko": "힙 덤프를 분석해서 메모리 누수 원인을 찾았습니다.",
+          "vi": "Tôi đã phân tích heap dump và tìm ra nguyên nhân rò rỉ bộ nhớ.",
+          "start": 801.08
+        },
+        {
+          "ko": "운영 배포는 고객 승인을 받은 후에 진행합니다.",
+          "vi": "Deploy production chỉ tiến hành sau khi được khách hàng phê duyệt.",
+          "start": 822.29
+        },
+        {
+          "ko": "문제가 생기면 먼저 이전 버전으로 롤백해서 서비스를 복구하겠습니다.",
+          "vi": "Nếu có vấn đề, tôi sẽ rollback về phiên bản trước để khôi phục dịch vụ trước.",
+          "start": 842.46
+        }
+      ]
+    },
+    {
       "id": "ep-grammar",
       "hash": "3809398b655fc87e",
       "duration": 1028.9,
