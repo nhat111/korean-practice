@@ -451,6 +451,14 @@ Test files (`src/**/*.test.ts`) are type-checked by `tsconfig.node.json`, not
   - Domain: production is `https://kodevtalk.nhatlab.com` (`DEFAULT_SITE_URL` in `src/practice/reminder.ts`, overridable with
     `VITE_SITE_URL`). The old `kodevtalk.vercel.app` keeps serving the app, never redirected (localStorage is per
     origin), and `DomainMoveBanner` there points to the new address with a backup button.
+  - SEO (`src/seo/`): `Layout` sets `document.title` (`pageTitle`, strings in `vi.seo.titles` / `sectionTitles`) and the
+    `<link rel="canonical">` (`canonicalUrl`, always `__SITE_URL__`, so the old vercel.app copy points at the real domain).
+    `seoPlugin` in `vite.config.ts` emits `robots.txt`, `sitemap.xml` (`SITEMAP_ROUTES` + guide pages) and static guide
+    pages built from `public/data` by `src/seo/pages.ts` (pure, tested): `/hoc/phong-van-it-tieng-han` = every
+    `interview` scenario (question, hint, model answer + Vietnamese, link to `/scenarios/<id>`), grouped by
+    `interviewGroup`. They exist because the SPA's content is fetched after load and search engines barely see it.
+    `vercel.json` maps `/hoc/:slug` → `hoc/:slug.html`; the service worker does not precache `hoc/`, `robots.txt`,
+    `sitemap.xml`. Add a guide page = an entry in `GUIDE_PAGES` + a builder + a `files` entry in `seoPlugin`.
   - Link previews: Open Graph tags in `index.html` with the absolute `%SITE_URL%/og.jpg` (1200×630).
   - Daily reminder (`ReminderCard` in Settings, link from the Home today card until one is added): no push (a static
     site has no server, iOS allows Web Push only for Home Screen apps), the phone's calendar reminds instead.

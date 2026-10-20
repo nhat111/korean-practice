@@ -5,6 +5,7 @@ import { DomainMoveBanner } from './DomainMoveBanner';
 import { Icon, type IconName } from './Icon';
 import { UpdateBanner } from './UpdateBanner';
 import { vi } from '../i18n/vi';
+import { canonicalUrl, pageTitle } from '../seo/title';
 
 // Five tabs; each also covers related pages (`also`) so the right tab stays
 // highlighted. Pages without a tab (grammar, emails…) are reached from Home or a tab page.
@@ -32,6 +33,10 @@ export function Layout() {
     if (target) target.scrollIntoView({ block: 'start' });
     else mainRef.current?.scrollTo(0, 0);
   }, [pathname, hash]);
+  useEffect(() => {
+    document.title = pageTitle(pathname, vi.seo);
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', canonicalUrl(__SITE_URL__, pathname));
+  }, [pathname]);
 
   return (
     <div className="app">
