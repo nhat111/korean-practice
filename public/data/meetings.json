@@ -1721,6 +1721,186 @@
           "answer": 2
         }
       ]
+    },
+    {
+      "id": "lm-interview-dev",
+      "title": "Phỏng vấn lập trình viên Java",
+      "context": "Phỏng vấn online vòng 1 cho vị trí lập trình viên Java ở một dự án SI. Trưởng nhóm phía Hàn hỏi về kinh nghiệm và lý do chuyển việc.",
+      "speakers": [
+        {
+          "id": "park",
+          "name": "박 팀장 (người phỏng vấn)",
+          "voice": "male"
+        },
+        {
+          "id": "minh",
+          "name": "민 (ứng viên)",
+          "voice": "female"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "park",
+          "ko": "안녕하세요. 화면 잘 보이시죠? 먼저 간단하게 자기소개 부탁드립니다.",
+          "vi": "Xin chào. Chị thấy màn hình rõ chứ? Trước tiên xin mời chị tự giới thiệu ngắn gọn."
+        },
+        {
+          "speaker": "minh",
+          "ko": "네, 안녕하세요. 저는 자바 개발자로 6년 동안 일한 민입니다. 최근 4년은 한국 고객사의 유통 시스템을 개발했습니다.",
+          "vi": "Vâng, xin chào. Tôi là Minh, đã làm lập trình viên Java 6 năm. 4 năm gần đây tôi phát triển hệ thống bán lẻ cho khách hàng Hàn Quốc."
+        },
+        {
+          "speaker": "park",
+          "ko": "그 프로젝트에서는 주로 어떤 역할을 하셨어요?",
+          "vi": "Ở dự án đó chị chủ yếu đảm nhận vai trò gì?"
+        },
+        {
+          "speaker": "minh",
+          "ko": "백엔드 API 개발을 주로 맡았고, 작년부터는 신입 개발자 두 명의 코드 리뷰도 하고 있습니다.",
+          "vi": "Tôi chủ yếu phụ trách phát triển API backend, và từ năm ngoái còn review code cho hai lập trình viên mới."
+        },
+        {
+          "speaker": "park",
+          "ko": "좋네요. 그런데 지금 회사를 옮기시려는 이유가 있을까요?",
+          "vi": "Tốt quá. Nhưng chị có lý do gì muốn chuyển công ty không?"
+        },
+        {
+          "speaker": "minh",
+          "ko": "지금은 유지보수 위주라서, 앞으로는 설계 단계부터 참여해 보고 싶어서 지원하게 됐습니다.",
+          "vi": "Hiện tại chủ yếu là bảo trì, nên tôi ứng tuyển vì sắp tới muốn tham gia từ giai đoạn thiết kế."
+        },
+        {
+          "speaker": "park",
+          "ko": "알겠습니다. 다음 면접 일정은 이번 주 안에 메일로 알려 드릴게요.",
+          "vi": "Tôi hiểu rồi. Lịch phỏng vấn vòng sau sẽ báo cho chị qua email trong tuần này."
+        }
+      ],
+      "questions": [
+        {
+          "q": "Ứng viên có bao nhiêu năm kinh nghiệm Java?",
+          "choices": [
+            "4 năm",
+            "6 năm",
+            "2 năm"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Ngoài phát triển API, ứng viên còn làm gì?",
+          "choices": [
+            "Review code cho hai lập trình viên mới",
+            "Phụ trách test",
+            "Làm PM cho dự án"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Ứng viên muốn chuyển việc vì sao?",
+          "choices": [
+            "Muốn lương cao hơn",
+            "Muốn đi onsite ở Hàn",
+            "Muốn tham gia từ giai đoạn thiết kế"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "lm-interview-brse",
+      "title": "Phỏng vấn vị trí BrSE",
+      "context": "Phỏng vấn trực tiếp vị trí BrSE. Hai người phỏng vấn: trưởng phòng phát triển và nhân viên nhân sự. Có câu hỏi tình huống, lương và ngày bắt đầu.",
+      "speakers": [
+        {
+          "id": "lee",
+          "name": "이 부장 (trưởng phòng)",
+          "voice": "male"
+        },
+        {
+          "id": "kim",
+          "name": "김 대리 (nhân sự)",
+          "voice": "female"
+        },
+        {
+          "id": "tuan",
+          "name": "뚜안 (ứng viên)",
+          "voice": "male"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "lee",
+          "ko": "고객이 요청한 기능이 일정 안에 어렵다고 개발팀이 말하면, 고객에게 어떻게 전달하시겠어요?",
+          "vi": "Nếu team phát triển nói chức năng khách yêu cầu khó làm kịp lịch, anh sẽ truyền đạt cho khách thế nào?"
+        },
+        {
+          "speaker": "tuan",
+          "ko": "먼저 어려운 이유와 필요한 기간을 정리해서 말씀드리고, 기능을 나눠서 일부만 먼저 제공하는 방법도 같이 제안하겠습니다.",
+          "vi": "Trước tiên tôi sẽ tổng hợp lý do khó và thời gian cần thiết để báo, đồng thời đề xuất cách chia nhỏ chức năng và cung cấp trước một phần."
+        },
+        {
+          "speaker": "lee",
+          "ko": "좋습니다. 한국어로 회의 통역을 해 본 경험도 있나요?",
+          "vi": "Tốt. Anh đã từng phiên dịch họp bằng tiếng Hàn chưa?"
+        },
+        {
+          "speaker": "tuan",
+          "ko": "네, 주간 회의에서 1년 정도 통역을 맡았습니다. 모르는 용어가 나오면 회의 후에 다시 확인해서 정리해 두었습니다.",
+          "vi": "Có, tôi phụ trách phiên dịch họp tuần khoảng 1 năm. Gặp thuật ngữ không biết thì sau họp tôi kiểm tra lại và ghi chép lại."
+        },
+        {
+          "speaker": "kim",
+          "ko": "희망 연봉과 입사 가능일을 여쭤봐도 될까요?",
+          "vi": "Tôi có thể hỏi mức lương mong muốn và ngày có thể bắt đầu không ạ?"
+        },
+        {
+          "speaker": "tuan",
+          "ko": "연봉은 내규에 따라 협의하고 싶습니다. 입사는 인수인계가 끝나는 다음 달 15일부터 가능합니다.",
+          "vi": "Về lương tôi muốn thương lượng theo quy định nội bộ. Tôi có thể bắt đầu từ ngày 15 tháng sau, khi bàn giao xong."
+        },
+        {
+          "speaker": "kim",
+          "ko": "네, 알겠습니다. 결과는 다음 주 월요일까지 연락드리겠습니다.",
+          "vi": "Vâng, tôi hiểu rồi. Kết quả chúng tôi sẽ liên lạc trước thứ Hai tuần sau."
+        }
+      ],
+      "questions": [
+        {
+          "q": "Ứng viên đề xuất gì khi chức năng không kịp lịch?",
+          "choices": [
+            "Từ chối yêu cầu của khách",
+            "Chia chức năng, cung cấp trước một phần",
+            "Bắt team tăng ca"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Ứng viên đã phiên dịch họp tuần bao lâu?",
+          "choices": [
+            "Khoảng 1 năm",
+            "Khoảng 3 tháng",
+            "Khoảng 2 năm"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Ứng viên có thể bắt đầu đi làm khi nào?",
+          "choices": [
+            "Ngay tuần sau",
+            "Thứ Hai tuần sau",
+            "Ngày 15 tháng sau"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "Khi nào công ty báo kết quả?",
+          "choices": [
+            "Trước thứ Hai tuần sau",
+            "Trong hôm nay",
+            "Cuối tháng"
+          ],
+          "answer": 0
+        }
+      ]
     }
   ]
 }

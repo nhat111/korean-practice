@@ -5,7 +5,7 @@
 import type { Grade } from '../srs/sm2';
 
 /** Shadowing decks, in display order. Labels live in vi.shadowing.topics. */
-export const SHADOWING_TOPICS = ['survival', 'progress', 'bug', 'schedule', 'request', 'meeting', 'online', 'phone', 'tech', 'cushion', 'culture', 'qa', 'lead'] as const;
+export const SHADOWING_TOPICS = ['survival', 'progress', 'bug', 'schedule', 'request', 'meeting', 'online', 'phone', 'tech', 'cushion', 'culture', 'qa', 'lead', 'interview'] as const;
 export type ShadowingTopic = (typeof SHADOWING_TOPICS)[number];
 
 /** Topics drawn for the "shadowing" part of the daily session (survival has its own slot). */
@@ -23,7 +23,7 @@ export const ROLE_FOCUS: Record<string, DailyFocus> = {
   dev: { shadowingTopic: 'tech' },
   brse: { shadowingTopic: 'meeting' },
   tester: { shadowingTopic: 'qa', scenarioCategory: 'qa' },
-  interview: { scenarioCategory: 'interview' },
+  interview: { shadowingTopic: 'interview', scenarioCategory: 'interview' },
 };
 
 /** Interpreting topics, in display order. Labels live in vi.interpret.topics. */
