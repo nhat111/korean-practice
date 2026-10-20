@@ -5,11 +5,24 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/((?!data/|audio/|assets/|icons/|reminder/|sw\\.js|version\\.json|manifest\\.webmanifest|favicon\\.svg|og\\.jpg).*)",
+      "source": "/hoc/:slug",
+      "destination": "/hoc/:slug.html"
+    },
+    {
+      "source": "/((?!data/|audio/|assets/|icons/|reminder/|hoc/|robots\\.txt|sitemap\\.xml|sw\\.js|version\\.json|manifest\\.webmanifest|favicon\\.svg|og\\.jpg).*)",
       "destination": "/index.html"
     }
   ],
   "headers": [
+    {
+      "source": "/hoc/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
     {
       "source": "/assets/(.*)",
       "headers": [

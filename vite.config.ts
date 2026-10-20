@@ -5,6 +5,8 @@ import { join, relative, resolve, sep } from 'node:path'
 import { execSync } from 'node:child_process'
 import { defineConfig, loadEnv, type Plugin } from 'vite'
 import { vi } from './src/i18n/vi.ts'
+import { buildInterviewGuide, buildRobots, buildSitemap, GUIDE_PAGES, SITEMAP_ROUTES } from './src/seo/pages.ts'
+import type { Scenario } from './src/types.ts'
 import { buildReminderIcs, DEFAULT_SITE_URL, REMINDER_MINUTES, reminderIcsPath, REMINDER_TIMES } from './src/practice/reminder.ts'
 
 /** Recursively lists files under `dir`. */
@@ -64,7 +66,7 @@ function pwaPlugin(audio: string, fallback: string, build: string): Plugin {
       if (audio !== '') rmSync(join(outDir, 'audio'), { recursive: true, force: true })
       const files = listFiles(outDir)
         .map((f) => relative(outDir, f).split(sep).join('/'))
-        .filter((f) => f !== 'sw.js' && f !== 'version.json' && !f.endsWith('.map') && !f.startsWith('audio/') && !f.startsWith('reminder/'))
+        .filter((f) => f !== 'sw.js' && f !== 'version.json' && !f.endsWith('.map') && !f.startsWith('audio/') && !f.startsWith('reminder/') && !f.startsWith('hoc/') && f !== 'robots.txt' && f !== 'sitemap.xml')
         .sort()
       const hash = createHash('sha256')
       for (const f of files) hash.update(f).update(readFileSync(join(outDir, f)))
@@ -103,6 +105,37 @@ function reminderPlugin(site: string): Plugin {
     },
     generateBundle() {
       for (const [path, source] of files) this.emitFile({ type: 'asset', fileName: path.slice(1), source })
+    },
+  }
+}
+
+/**
+ * Search-engine files (src/seo/pages.ts): robots.txt, sitemap.xml and static guide pages
+ * built from public/data, because the SPA's content is only fetched after load.
+ * Served by the dev server too; /hoc/<slug> maps to hoc/<slug>.html in vercel.json.
+ */
+function seoPlugin(site: string): Plugin {
+  const scenarios = (JSON.parse(readFileSync(resolve(process.cwd(), 'public/data/scenarios.json'), 'utf8')) as { items: Scenario[] }).items
+  const today = new Date().toISOString().slice(0, 10)
+  const guides = Object.values(GUIDE_PAGES)
+  const files = new Map<string, { type: string; body: string }>([
+    ['/robots.txt', { type: 'text/plain; charset=utf-8', body: buildRobots(site) }],
+    ['/sitemap.xml', { type: 'application/xml; charset=utf-8', body: buildSitemap(site, [...SITEMAP_ROUTES, ...guides.map((g) => g.path)], today) }],
+    [GUIDE_PAGES.interview.path, { type: 'text/html; charset=utf-8', body: buildInterviewGuide(site, scenarios, vi.seo.interviewGuide) }],
+  ])
+  const fileName = (path: string) => guides.find((g) => g.path === path)?.file ?? path.slice(1)
+  return {
+    name: 'kp-seo',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        const file = files.get((req.url ?? '').split('?')[0])
+        if (file === undefined) return next()
+        res.setHeader('Content-Type', file.type)
+        res.end(file.body)
+      })
+    },
+    generateBundle() {
+      for (const [path, file] of files) this.emitFile({ type: 'asset', fileName: fileName(path), source: file.body })
     },
   }
 }
@@ -151,7 +184,7 @@ export default defineConfig(({ command, mode }) => {
   // One value for the bundle and dist/version.json, so they compare equal.
   const build = appVersion()
   return {
-    plugins: [react(), siteUrlPlugin(site), reminderPlugin(site), pwaPlugin(audio, fallback, build)],
+    plugins: [react(), siteUrlPlugin(site), reminderPlugin(site), seoPlugin(site), pwaPlugin(audio, fallback, build)],
     define: { __APP_VERSION__: JSON.stringify(build), __SITE_URL__: JSON.stringify(site), __AUDIO_BASE__: JSON.stringify(audio), __AUDIO_FALLBACK__: JSON.stringify(fallback) },
   }
 })
