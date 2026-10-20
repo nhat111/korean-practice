@@ -9945,6 +9945,320 @@
       "tags": [
         "interview"
       ]
+    },
+    {
+      "id": "t-jadong-seoljeong",
+      "ko": "자동 설정",
+      "vi": "auto-configuration (Spring Boot)",
+      "pron": "[자동 설정]",
+      "type": "noun",
+      "collocation": "자동 설정이 적용되다",
+      "example": {
+        "ko": "스프링 부트는 의존성만 추가하면 자동 설정이 적용됩니다.",
+        "vi": "Với Spring Boot, chỉ cần thêm dependency là auto-configuration được áp dụng."
+      },
+      "tags": [
+        "spring",
+        "dev",
+        "interview"
+      ]
+    },
+    {
+      "id": "t-naejang-tomkaet",
+      "ko": "내장 톰캣",
+      "vi": "Tomcat nhúng",
+      "pron": "[내장 톰캗]",
+      "type": "noun",
+      "collocation": "내장 톰캣으로 실행하다",
+      "example": {
+        "ko": "내장 톰캣이 있어서 jar 파일만으로 서버를 실행할 수 있습니다.",
+        "vi": "Có Tomcat nhúng nên chỉ với file jar là chạy được server.",
+        "grammar": [
+          {
+            "pattern": "-(으)ㄹ 수 있다",
+            "form": "실행할 수 있습니다",
+            "meaningVi": "có thể…"
+          }
+        ]
+      },
+      "tags": [
+        "spring",
+        "server",
+        "interview"
+      ]
+    },
+    {
+      "id": "t-peuropail",
+      "ko": "프로파일",
+      "vi": "profile (cấu hình theo môi trường)",
+      "pron": "[프로파일]",
+      "type": "noun",
+      "collocation": "프로파일을 지정하다",
+      "example": {
+        "ko": "운영 서버에서는 prod 프로파일로 실행합니다.",
+        "vi": "Trên server production thì chạy với profile prod."
+      },
+      "tags": [
+        "spring",
+        "deploy",
+        "interview"
+      ]
+    },
+    {
+      "id": "t-gongtong-hamsu",
+      "ko": "공통 함수",
+      "vi": "hàm dùng chung",
+      "pron": "[공통 함수]",
+      "type": "noun",
+      "collocation": "공통 함수로 만들다",
+      "example": {
+        "ko": "에러 메시지 표시는 공통 함수로 만들어서 모든 화면에서 씁니다.",
+        "vi": "Việc hiển thị thông báo lỗi được làm thành hàm chung và dùng ở mọi màn hình.",
+        "grammar": [
+          {
+            "pattern": "-아/어서",
+            "form": "만들어서",
+            "meaningVi": "rồi (nối hành động theo trình tự)"
+          }
+        ]
+      },
+      "tags": [
+        "dev",
+        "ui",
+        "interview"
+      ]
+    },
+    {
+      "id": "t-deiteoset",
+      "ko": "데이터셋",
+      "vi": "Dataset (Nexacro)",
+      "pron": "[데이터섿]",
+      "type": "noun",
+      "collocation": "데이터셋에 바인딩하다",
+      "example": {
+        "ko": "조회 결과는 데이터셋에 담기고 그리드에 바인딩됩니다.",
+        "vi": "Kết quả tra cứu được đưa vào Dataset và bind lên Grid."
+      },
+      "tags": [
+        "ui",
+        "dev",
+        "interview"
+      ]
+    },
+    {
+      "id": "t-geurideu",
+      "ko": "그리드",
+      "vi": "Grid (bảng dữ liệu trên màn hình)",
+      "pron": "[그리드]",
+      "type": "noun",
+      "collocation": "그리드에 표시하다",
+      "example": {
+        "ko": "그리드에서 수정한 행만 서버로 보냅니다.",
+        "vi": "Chỉ gửi lên server những dòng đã sửa trên Grid."
+      },
+      "tags": [
+        "ui",
+        "dev",
+        "interview"
+      ]
+    },
+    {
+      "id": "t-kolbaek",
+      "ko": "콜백",
+      "vi": "callback",
+      "pron": "[콜백]",
+      "type": "noun",
+      "collocation": "콜백 함수",
+      "example": {
+        "ko": "트랜잭션이 끝나면 콜백 함수에서 오류 여부를 확인합니다.",
+        "vi": "Khi transaction kết thúc, kiểm tra có lỗi hay không trong hàm callback.",
+        "grammar": [
+          {
+            "pattern": "-(으)면",
+            "form": "끝나면",
+            "meaningVi": "khi/nếu…"
+          }
+        ]
+      },
+      "tags": [
+        "dev",
+        "ui",
+        "interview"
+      ]
+    },
+    {
+      "id": "t-eksel-daunrodeu",
+      "ko": "엑셀 다운로드",
+      "vi": "tải xuống Excel",
+      "pron": "[엑쎌 다운로드]",
+      "type": "phrase",
+      "collocation": "엑셀 다운로드 기능",
+      "example": {
+        "ko": "대량 데이터는 서버에서 엑셀 파일을 만들어서 다운로드하게 했습니다.",
+        "vi": "Với dữ liệu lớn, tôi cho tạo file Excel ở server rồi tải xuống.",
+        "grammar": [
+          {
+            "pattern": "-게 하다",
+            "form": "다운로드하게 했습니다",
+            "meaningVi": "cho/để (ai) làm…"
+          }
+        ]
+      },
+      "tags": [
+        "ui",
+        "dev",
+        "interview"
+      ]
+    },
+    {
+      "id": "t-cheongkeu",
+      "ko": "청크",
+      "vi": "chunk (khối xử lý trong batch)",
+      "pron": "[청크]",
+      "type": "noun",
+      "collocation": "청크 단위로 커밋하다",
+      "example": {
+        "ko": "배치는 1,000건씩 청크 단위로 커밋합니다.",
+        "vi": "Batch commit theo từng chunk 1.000 bản ghi."
+      },
+      "tags": [
+        "dev",
+        "db",
+        "interview"
+      ]
+    },
+    {
+      "id": "t-seukejulleo",
+      "ko": "스케줄러",
+      "vi": "scheduler (bộ lập lịch chạy job)",
+      "pron": "[스케줄러]",
+      "type": "noun",
+      "collocation": "스케줄러에 등록하다",
+      "example": {
+        "ko": "매일 새벽 2시에 실행되도록 스케줄러에 등록했습니다.",
+        "vi": "Tôi đã đăng ký vào scheduler để chạy lúc 2 giờ sáng hằng ngày.",
+        "grammar": [
+          {
+            "pattern": "-도록",
+            "form": "실행되도록",
+            "meaningVi": "để cho…"
+          }
+        ]
+      },
+      "tags": [
+        "server",
+        "dev",
+        "interview"
+      ]
+    },
+    {
+      "id": "t-peurokssi",
+      "ko": "프록시",
+      "vi": "proxy",
+      "pron": "[프록씨]",
+      "type": "noun",
+      "collocation": "프록시를 거치다",
+      "example": {
+        "ko": "같은 클래스 안에서 호출하면 프록시를 거치지 않습니다.",
+        "vi": "Nếu gọi trong cùng class thì không đi qua proxy."
+      },
+      "tags": [
+        "spring",
+        "dev",
+        "interview"
+      ]
+    },
+    {
+      "id": "t-pechi-join",
+      "ko": "페치 조인",
+      "vi": "fetch join (JPA)",
+      "pron": "[페치 조인]",
+      "type": "noun",
+      "collocation": "페치 조인으로 해결하다",
+      "example": {
+        "ko": "N+1 문제는 페치 조인으로 해결했습니다.",
+        "vi": "Vấn đề N+1 đã được giải quyết bằng fetch join."
+      },
+      "tags": [
+        "db",
+        "java",
+        "interview"
+      ]
+    },
+    {
+      "id": "t-rak",
+      "ko": "락",
+      "vi": "lock (khóa dữ liệu)",
+      "pron": "[락]",
+      "type": "noun",
+      "collocation": "락이 걸리다",
+      "example": {
+        "ko": "배치가 오래 돌면서 테이블에 락이 걸렸습니다.",
+        "vi": "Batch chạy lâu nên bảng bị khóa.",
+        "grammar": [
+          {
+            "pattern": "-(으)면서",
+            "form": "돌면서",
+            "meaningVi": "trong lúc…, vừa…"
+          }
+        ]
+      },
+      "tags": [
+        "db",
+        "performance",
+        "interview"
+      ]
+    },
+    {
+      "id": "t-hip-deompeu",
+      "ko": "힙 덤프",
+      "vi": "heap dump",
+      "pron": "[힙 덤프]",
+      "type": "noun",
+      "collocation": "힙 덤프를 분석하다",
+      "example": {
+        "ko": "힙 덤프를 분석해서 메모리를 많이 쓰는 객체를 찾았습니다.",
+        "vi": "Tôi phân tích heap dump và tìm ra đối tượng dùng nhiều bộ nhớ."
+      },
+      "tags": [
+        "java",
+        "incident",
+        "interview"
+      ]
+    },
+    {
+      "id": "t-mok-gaekche",
+      "ko": "목 객체",
+      "vi": "mock object",
+      "pron": "[목 객체]",
+      "type": "noun",
+      "collocation": "목 객체로 바꾸다",
+      "example": {
+        "ko": "외부 API는 목 객체로 바꿔서 테스트했습니다.",
+        "vi": "API bên ngoài được thay bằng mock object để test."
+      },
+      "tags": [
+        "test",
+        "java",
+        "interview"
+      ]
+    },
+    {
+      "id": "t-teureiseu-rogeu",
+      "ko": "트레이스 로그",
+      "vi": "trace log",
+      "pron": "[트레이스 로그]",
+      "type": "noun",
+      "collocation": "트레이스 로그를 확인하다",
+      "example": {
+        "ko": "화면 오류는 트레이스 로그에서 먼저 확인합니다.",
+        "vi": "Lỗi màn hình thì kiểm tra trước trong trace log."
+      },
+      "tags": [
+        "ui",
+        "bug",
+        "interview"
+      ]
     }
   ]
 }

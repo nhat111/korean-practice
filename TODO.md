@@ -23,8 +23,8 @@ If few people come back after day 1, do **3** before **2**.
 - [x] Content: workplace culture and forms of address, online meetings, phone calls (shadowing `cu-`/`on-`/`ph-`,
       2 meetings, 4 honorific grammar lessons, 11 vocab, episode `ep-online`).
 - [x] Content: incident/release/security scenarios (+9), emails (+3) and chat messages (+6).
-- [x] Content: interviews (+16 scenarios, `iv-` shadowing deck + episode `ep-interview`, 24 vocab tagged `interview`,
-      2 mock-interview listening items).
+- [x] Content: interviews (+30 scenarios incl. Nexacro / Spring Boot / Java / ops technical rounds, `iv-` shadowing deck
+      (40 lines) + episode `ep-interview`, 40 vocab tagged `interview`, 2 mock-interview listening items).
 - [ ] Content: phone and online-meeting chat messages; a native speaker review of the `cu-`/`on-`/`ph-` decks.
 - [x] "Cần nói gấp" (`/find`): search all content by Vietnamese meaning, with audio and copy.
 - [x] Shareable progress card ("Chia sẻ tiến độ" on Progress): PNG with streak and counts, Web Share or download.

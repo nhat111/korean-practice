@@ -2625,6 +2625,158 @@
       "ko": "부족한 부분은 입사 후에 더 열심히 배우겠습니다.",
       "pron": "[부조칸 부부는 입싸 후에 더 열씸히 배우겓씀니다]",
       "vi": "Những phần còn thiếu, tôi sẽ học chăm chỉ hơn sau khi vào công ty."
+    },
+    {
+      "id": "iv-25",
+      "level": 2,
+      "topic": "interview",
+      "ko": "넥사크로에서는 데이터셋에 데이터를 담고 그리드에 바인딩합니다.",
+      "pron": "[넥싸크로에서는 데이터세세 데이터를 담꼬 그리드에 바인딩함니다]",
+      "vi": "Trong Nexacro, dữ liệu được đưa vào Dataset rồi bind lên Grid."
+    },
+    {
+      "id": "iv-26",
+      "level": 3,
+      "topic": "interview",
+      "ko": "수정된 행만 서버로 보내서 저장하도록 구현했습니다.",
+      "pron": "[수정된 행만 서버로 보내서 저장하도록 구현핻씀니다]",
+      "vi": "Tôi đã làm để chỉ gửi những dòng đã sửa lên server để lưu.",
+      "notes": [
+        "-도록 구현하다: 'làm sao cho…', hay dùng khi mô tả cách mình xây dựng chức năng."
+      ]
+    },
+    {
+      "id": "iv-27",
+      "level": 2,
+      "topic": "interview",
+      "ko": "공통 함수로 에러 처리를 한 곳에 모았습니다.",
+      "pron": "[공통 함수로 에러 처리를 한 고세 모앋씀니다]",
+      "vi": "Tôi đã gom xử lý lỗi về một chỗ bằng hàm dùng chung."
+    },
+    {
+      "id": "iv-28",
+      "level": 3,
+      "topic": "interview",
+      "ko": "스프링 부트는 자동 설정 덕분에 설정 파일을 많이 줄일 수 있습니다.",
+      "pron": "[스프링 부트는 자동 설정 덕부네 설정 파이를 마니 줄일 쑤 읻씀니다]",
+      "vi": "Nhờ auto-configuration, Spring Boot giúp giảm nhiều file cấu hình.",
+      "notes": [
+        "N 덕분에: 'nhờ có N' (nghĩa tích cực)."
+      ]
+    },
+    {
+      "id": "iv-29",
+      "level": 3,
+      "topic": "interview",
+      "ko": "같은 클래스 안에서 호출하면 트랜잭션이 적용되지 않습니다.",
+      "pron": "[가튼 클래스 아네서 호출하면 트랜잭쎠니 저굥되지 안씀니다]",
+      "vi": "Nếu gọi trong cùng một class thì transaction không được áp dụng.",
+      "notes": [
+        "Câu trả lời ngắn cho câu hỏi bẫy về self-invocation của @Transactional."
+      ]
+    },
+    {
+      "id": "iv-30",
+      "level": 2,
+      "topic": "interview",
+      "ko": "예외는 전역 예외 처리 클래스에서 한 번에 처리합니다.",
+      "pron": "[예외는 저녁 예외 처리 클래스에서 한 버네 처리함니다]",
+      "vi": "Exception được xử lý một lần ở class xử lý exception toàn cục.",
+      "notes": [
+        "전역 đọc [저녁] (연음)."
+      ]
+    },
+    {
+      "id": "iv-31",
+      "level": 3,
+      "topic": "interview",
+      "ko": "복잡한 통계 쿼리가 많아서 마이바티스를 선택했습니다.",
+      "pron": "[복짜판 통계 쿼리가 마나서 마이바티스를 선태캗씀니다]",
+      "vi": "Vì có nhiều query thống kê phức tạp nên tôi chọn MyBatis."
+    },
+    {
+      "id": "iv-32",
+      "level": 3,
+      "topic": "interview",
+      "ko": "실행 계획을 확인해서 인덱스를 타는지 봤습니다.",
+      "pron": "[실행 게회글 화긴해서 인덱쓰를 타는지 봗씀니다]",
+      "vi": "Tôi đã kiểm tra execution plan để xem có dùng index không.",
+      "notes": [
+        "인덱스를 타다: cách nói của dev Hàn cho 'query dùng index'."
+      ]
+    },
+    {
+      "id": "iv-33",
+      "level": 2,
+      "topic": "interview",
+      "ko": "비밀번호는 단방향 해시로 저장합니다.",
+      "pron": "[비밀번호는 단방향 해시로 저장함니다]",
+      "vi": "Mật khẩu được lưu bằng hash một chiều."
+    },
+    {
+      "id": "iv-34",
+      "level": 3,
+      "topic": "interview",
+      "ko": "화면에서 버튼을 숨겨도 서버에서 권한을 다시 확인해야 합니다.",
+      "pron": "[화면에서 버트늘 숨겨도 서버에서 권하늘 다시 화긴해야 함니다]",
+      "vi": "Dù ẩn nút trên màn hình thì server vẫn phải kiểm tra lại quyền.",
+      "notes": [
+        "-아/어도: 'dù… vẫn…'."
+      ]
+    },
+    {
+      "id": "iv-35",
+      "level": 3,
+      "topic": "interview",
+      "ko": "배치가 실패하면 실패한 지점부터 다시 실행할 수 있습니다.",
+      "pron": "[배치가 실패하면 실패한 지점부터 다시 실행할 쑤 읻씀니다]",
+      "vi": "Nếu batch thất bại thì có thể chạy lại từ điểm bị lỗi."
+    },
+    {
+      "id": "iv-36",
+      "level": 2,
+      "topic": "interview",
+      "ko": "금액 계산 로직은 반드시 단위 테스트를 작성합니다.",
+      "pron": "[그맥 계산 로지근 반드시 다뉘 테스트를 작썽함니다]",
+      "vi": "Logic tính tiền thì tôi nhất định viết unit test."
+    },
+    {
+      "id": "iv-37",
+      "level": 3,
+      "topic": "interview",
+      "ko": "싱글톤 빈에 상태를 저장하면 요청끼리 값이 섞일 수 있습니다.",
+      "pron": "[싱글톤 비네 상태를 저장하면 요청끼리 갑씨 서낄 쑤 읻씀니다]",
+      "vi": "Nếu lưu trạng thái trong bean singleton thì giá trị giữa các request có thể bị lẫn.",
+      "notes": [
+        "값이 đọc [갑씨]."
+      ]
+    },
+    {
+      "id": "iv-38",
+      "level": 3,
+      "topic": "interview",
+      "ko": "힙 덤프를 분석해서 메모리 누수 원인을 찾았습니다.",
+      "pron": "[힙 덤프를 분서캐서 메모리 누수 워니늘 차잗씀니다]",
+      "vi": "Tôi đã phân tích heap dump và tìm ra nguyên nhân rò rỉ bộ nhớ."
+    },
+    {
+      "id": "iv-39",
+      "level": 2,
+      "topic": "interview",
+      "ko": "운영 배포는 고객 승인을 받은 후에 진행합니다.",
+      "pron": "[운영 배포는 고객 승이늘 바든 후에 진행함니다]",
+      "vi": "Deploy production chỉ tiến hành sau khi được khách hàng phê duyệt."
+    },
+    {
+      "id": "iv-40",
+      "level": 3,
+      "topic": "interview",
+      "ko": "문제가 생기면 먼저 이전 버전으로 롤백해서 서비스를 복구하겠습니다.",
+      "pron": "[문제가 생기면 먼저 이전 버저느로 롤배캐서 서비스를 복꾸하겓씀니다]",
+      "vi": "Nếu có vấn đề, tôi sẽ rollback về phiên bản trước để khôi phục dịch vụ trước.",
+      "notes": [
+        "Trong sự cố, người Hàn đánh giá cao việc ưu tiên khôi phục (복구) trước rồi mới phân tích."
+      ]
     }
   ]
 }
