@@ -265,7 +265,7 @@ Korean either.
   don't count, so the goal matches the recipe chips) against `dailyTarget(minutes / 5)` (= the daily plan size), what the session contains
   (`planRecipe`, chips), Monday-to-Sunday `WeekDots`, one start button to `/daily`; then "Từ vựng hôm nay"
   (`WordRotator`: `itemsOfDay(vocab, today, 20)` = the word of the day first, then a set fixed for the day; a new word
-  every 3 s, paused while the mouse is over it, the tab is hidden, after any tap on the word, and from the start under
+  every 5 s, paused while the mouse is over it, the tab is hidden, after any tap on the word, and from the start under
   `prefers-reduced-motion`; prev / pause-play / next buttons; the slide has a fixed min-height so the card never jumps). The six section cards carry an item count from the content files. Progress starts with
   an overview (`skillProgress`: items practiced at least once per skill, grammar included, `ProgressRing` + one bar per skill), then one
   compact "Chi tiết" stats card. Helpers are pure in `src/practice/today.ts`.

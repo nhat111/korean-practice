@@ -6,7 +6,7 @@ import { Icon } from './Icon';
 import { KoreanLine, SpeakButton } from './SpeakButton';
 
 /** How long each word stays before the next one. */
-const ROTATE_MS = 3000;
+const ROTATE_MS = 5000;
 
 function prefersReducedMotion(): boolean {
   return typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
