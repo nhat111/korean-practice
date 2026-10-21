@@ -3,7 +3,7 @@
 // The app itself is a client-rendered SPA whose content is fetched after load,
 // so these pages are what search engines can actually read. Pure; no DOM.
 
-import type { Scenario } from '../types';
+import type { EmailExercise, MessageExercise, Politeness, Scenario } from '../types';
 
 /** App routes listed in the sitemap (public, useful without any progress). */
 export const SITEMAP_ROUTES = [
@@ -25,6 +25,8 @@ export const SITEMAP_ROUTES = [
 /** Static guide pages: URL path → file emitted into dist/. */
 export const GUIDE_PAGES = {
   interview: { path: '/hoc/phong-van-it-tieng-han', file: 'hoc/phong-van-it-tieng-han.html' },
+  email: { path: '/hoc/email-tieng-han-cong-viec', file: 'hoc/email-tieng-han-cong-viec.html' },
+  messages: { path: '/hoc/tin-nhan-slack-tieng-han', file: 'hoc/tin-nhan-slack-tieng-han.html' },
 } as const;
 
 export function buildRobots(site: string): string {
@@ -56,21 +58,12 @@ export function interviewGroup(id: string): InterviewGroup {
   return INTERVIEW_GROUPS.find((g) => g.test.test(id))?.key ?? 'general';
 }
 
-export interface GuideText {
-  title: string;
-  description: string;
-  h1: string;
-  intro: string;
+export interface GuideText extends GuideShell {
   groups: Record<InterviewGroup, string>;
   question: string;
   hint: string;
   answer: string;
-  practice: string;
-  openApp: string;
-  ctaTitle: string;
-  ctaText: string;
   count: (n: number) => string;
-  footer: string;
 }
 
 /** Drops the "Phỏng vấn: " style prefix from a scenario title for use as a heading. */
@@ -80,16 +73,112 @@ export function shortTitle(title: string): string {
 
 export function buildInterviewGuide(site: string, scenarios: readonly Scenario[], t: GuideText): string {
   const items = scenarios.filter((s) => s.category === 'interview');
-  const url = site + GUIDE_PAGES.interview.path;
   const sections = GROUP_ORDER.map((key) => {
     const inGroup = items.filter((s) => interviewGroup(s.id) === key);
     if (inGroup.length === 0) return '';
     const cards = inGroup.map((s) => scenarioCard(s, t)).join('\n');
-    return `<section id="${key}">\n<h2>${esc(t.groups[key])} <span class="n">${inGroup.length}</span></h2>\n${cards}\n</section>`;
+    return section(key, t.groups[key], inGroup.length, cards);
   }).join('\n');
-  const toc = GROUP_ORDER.filter((key) => items.some((s) => interviewGroup(s.id) === key))
-    .map((key) => `<a href="#${key}">${esc(t.groups[key])}</a>`)
-    .join('');
+  const toc = GROUP_ORDER.filter((key) => items.some((s) => interviewGroup(s.id) === key)).map((key) => ({ id: key, label: t.groups[key] }));
+  return guidePage(site, GUIDE_PAGES.interview.path, '// 면접 준비', t, t.count(items.length), toc, sections, '/scenarios?cat=interview');
+}
+
+/** Text shared by every guide page (strings in vi.seo.*Guide). */
+export interface GuideShell {
+  title: string;
+  description: string;
+  h1: string;
+  intro: string;
+  practice: string;
+  openApp: string;
+  ctaTitle: string;
+  ctaText: string;
+  footer: string;
+  /** Labels of the guide pages, for the links at the bottom of each one. */
+  links: Record<GuideKey, string>;
+}
+
+export type GuideKey = keyof typeof GUIDE_PAGES;
+
+export interface EmailGuideText extends GuideShell {
+  situation: string;
+  politeness: Record<Politeness, string>;
+  model: string;
+  mistakes: string;
+  count: (n: number) => string;
+}
+
+/** Email guide: each exercise's corrected email, then the draft's mistakes (wrong → right, why). */
+export function buildEmailGuide(site: string, emails: readonly EmailExercise[], t: EmailGuideText): string {
+  const cards = emails
+    .map((e) => {
+      const fixes = e.corrections
+        .map((c) => `<li><span class="wrong" lang="ko">${esc(c.wrong)}</span> → <span class="right" lang="ko">${esc(c.right)}</span><br><span class="vi">${esc(c.explanation)}</span></li>`)
+        .join('\n');
+      return `<article class="card" id="${esc(e.id)}">
+<h3>${esc(e.title)}</h3>
+<p class="desc"><span class="label">${esc(t.situation)}</span> ${esc(e.situation)}</p>
+<p class="muted">${esc(t.politeness[e.politeness])}. ${esc(e.politenessNote)}</p>
+<p class="label">${esc(t.model)}</p>
+<p class="ko answer pre" lang="ko">${esc(e.corrected)}</p>
+<p class="label">${esc(t.mistakes)}</p>
+<ul class="fixes">${fixes}</ul>
+<a class="link" href="/emails/${encodeURIComponent(e.id)}">${esc(t.practice)} →</a>
+</article>`;
+    })
+    .join('\n');
+  return guidePage(site, GUIDE_PAGES.email.path, '// 업무 메일', t, t.count(emails.length), [], cards, '/emails');
+}
+
+export interface MessageGuideText extends GuideShell {
+  topics: Record<string, string>;
+  to: string;
+  phrases: string;
+  count: (n: number) => string;
+}
+
+/** Chat message guide, grouped by topic in the given order (MESSAGE_TOPICS). */
+export function buildMessageGuide(site: string, messages: readonly MessageExercise[], topics: readonly string[], t: MessageGuideText): string {
+  const used = topics.filter((topic) => messages.some((m) => m.topic === topic));
+  const sections = used
+    .map((topic) => {
+      const inTopic = messages.filter((m) => m.topic === topic);
+      const cards = inTopic
+        .map((m) => {
+          const phrases = m.phrases.map((p) => `<li><span lang="ko">${esc(p.ko)}</span>: <span class="vi">${esc(p.vi)}</span></li>`).join('');
+          return `<article class="card" id="${esc(m.id)}">
+<p class="desc">${esc(m.situation)}</p>
+<p class="muted"><span class="label">${esc(t.to)}</span> <span lang="ko">${esc(m.to)}</span></p>
+<p class="ko answer pre" lang="ko">${esc(m.model)}</p>
+<p class="label">${esc(t.phrases)}</p>
+<ul class="fixes">${phrases}</ul>${m.note === undefined ? '' : `\n<p class="hint">${esc(m.note)}</p>`}
+</article>`;
+        })
+        .join('\n');
+      const link = `<a class="link" href="/messages?topic=${encodeURIComponent(topic)}">${esc(t.practice)} →</a>`;
+      return section(topic, t.topics[topic] ?? topic, inTopic.length, `${cards}\n${link}`);
+    })
+    .join('\n');
+  const toc = used.map((topic) => ({ id: topic, label: t.topics[topic] ?? topic }));
+  return guidePage(site, GUIDE_PAGES.messages.path, '// 메신저', t, t.count(messages.length), toc, sections, '/messages');
+}
+
+function section(id: string, title: string, n: number, body: string): string {
+  return `<section id="${esc(id)}">\n<h2>${esc(title)} <span class="n">${n}</span></h2>\n${body}\n</section>`;
+}
+
+/** The HTML document around a guide page's body: meta tags, JSON-LD, header, table of contents, call to action. */
+function guidePage(
+  site: string,
+  path: string,
+  kicker: string,
+  t: GuideShell,
+  count: string,
+  toc: readonly { id: string; label: string }[],
+  body: string,
+  appLink: string,
+): string {
+  const url = site + path;
   const jsonLd = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'LearningResource',
@@ -101,6 +190,11 @@ export function buildInterviewGuide(site: string, scenarios: readonly Scenario[]
     isAccessibleForFree: true,
     provider: { '@type': 'Organization', name: 'KoDevTalk', url: site },
   }).replace(/</g, '\\u003c');
+  const related = (Object.keys(GUIDE_PAGES) as GuideKey[])
+    .filter((k) => GUIDE_PAGES[k].path !== path)
+    .map((k) => `<a href="${GUIDE_PAGES[k].path}">${esc(t.links[k])}</a>`)
+    .join('');
+  const nav = toc.length === 0 ? '' : `\n<nav class="toc">${toc.map((x) => `<a href="#${esc(x.id)}">${esc(x.label)}</a>`).join('')}</nav>`;
 
   return `<!doctype html>
 <html lang="vi">
@@ -126,13 +220,13 @@ export function buildInterviewGuide(site: string, scenarios: readonly Scenario[]
 <body>
 <header class="top"><a class="brand" href="/" lang="ko">코데<b>톡</b><i></i></a><a class="btn" href="/">${esc(t.openApp)}</a></header>
 <main>
-<p class="kicker mono" lang="ko">// 면접 준비</p>
+<p class="kicker mono" lang="ko">${esc(kicker)}</p>
 <h1>${esc(t.h1)}</h1>
 <p class="lead">${esc(t.intro)}</p>
-<p class="muted mono">${esc(t.count(items.length))}</p>
-<nav class="toc">${toc}</nav>
-${sections}
-<aside class="cta"><h2>${esc(t.ctaTitle)}</h2><p>${esc(t.ctaText)}</p><a class="btn" href="/scenarios?cat=interview">${esc(t.practice)}</a></aside>
+<p class="muted mono">${esc(count)}</p>${nav}
+${body}
+<aside class="cta"><h2>${esc(t.ctaTitle)}</h2><p>${esc(t.ctaText)}</p><a class="btn" href="${esc(appLink)}">${esc(t.practice)}</a></aside>
+<nav class="more">${related}</nav>
 </main>
 <footer><p>${esc(t.footer)}</p></footer>
 </body>
@@ -199,6 +293,10 @@ ol{padding-left:20px;margin:0}li{margin:0 0 16px}
 .answer{background:var(--soft);border-left:3px solid var(--primary);padding:8px 12px;border-radius:0 8px 8px 0}
 .vi{color:var(--muted);margin:4px 0 0}
 .hint{font-size:14px;color:var(--muted);margin:6px 0 0}
+.pre{white-space:pre-line}
+.fixes{padding-left:20px;margin:4px 0 0}.fixes li{margin:0 0 8px}
+.wrong{text-decoration:line-through;color:var(--red)}.right{font-weight:600}
+.more{display:flex;flex-wrap:wrap;gap:16px}.more a{color:var(--primary)}
 .link{color:var(--primary);font-weight:600;text-decoration:none;display:inline-block;padding:10px 0}
 .btn{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:10px;background:var(--primary);color:#fff;text-decoration:none;font-weight:600}
 @media (prefers-color-scheme:dark){.btn{color:#0b1220}}

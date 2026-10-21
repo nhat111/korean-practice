@@ -1,12 +1,16 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { vi } from '../i18n/vi';
-import type { Scenario } from '../types';
-import { buildInterviewGuide, buildRobots, buildSitemap, esc, GUIDE_PAGES, interviewGroup, shortTitle, SITEMAP_ROUTES } from './pages';
+import { MESSAGE_TOPICS } from '../practice/decks';
+import type { EmailExercise, MessageExercise, Scenario } from '../types';
+import { buildEmailGuide, buildInterviewGuide, buildMessageGuide, buildRobots, buildSitemap, esc, GUIDE_PAGES, interviewGroup, shortTitle, SITEMAP_ROUTES } from './pages';
 import { canonicalUrl, pageTitle } from './title';
 
 const SITE = 'https://kodevtalk.nhatlab.com';
-const scenarios = (JSON.parse(readFileSync('public/data/scenarios.json', 'utf8')) as { items: Scenario[] }).items;
+const load = <T,>(name: string) => (JSON.parse(readFileSync(`public/data/${name}`, 'utf8')) as { items: T[] }).items;
+const scenarios = load<Scenario>('scenarios.json');
+const emails = load<EmailExercise>('emails.json');
+const messages = load<MessageExercise>('messages.json');
 
 describe('robots and sitemap', () => {
   it('points robots.txt at the sitemap', () => {
@@ -53,6 +57,27 @@ describe('interview guide', () => {
     expect(shortTitle('Phỏng vấn: kiến thức Java cơ bản')).toBe('kiến thức Java cơ bản');
     expect(shortTitle('Phỏng vấn BrSE: vai trò cầu nối')).toBe('vai trò cầu nối');
     expect(shortTitle('Không có tiền tố')).toBe('Không có tiền tố');
+  });
+});
+
+describe('email and message guides', () => {
+  const emailHtml = buildEmailGuide(SITE, emails, vi.seo.emailGuide);
+  const messageHtml = buildMessageGuide(SITE, messages, MESSAGE_TOPICS, { ...vi.seo.messageGuide, topics: vi.messages.topics });
+
+  it('has one card per item, a self canonical and links into the app', () => {
+    expect(emailHtml).toContain(`<link rel="canonical" href="${SITE}${GUIDE_PAGES.email.path}">`);
+    expect(emailHtml.match(/<article class="card"/g)).toHaveLength(emails.length);
+    for (const e of emails) expect(emailHtml).toContain(`href="/emails/${e.id}"`);
+    expect(messageHtml).toContain(`<link rel="canonical" href="${SITE}${GUIDE_PAGES.messages.path}">`);
+    expect(messageHtml.match(/<article class="card"/g)).toHaveLength(messages.length);
+    for (const t of new Set(messages.map((m) => m.topic))) expect(messageHtml).toContain(`href="/messages?topic=${t}"`);
+  });
+
+  it('links every guide page to the others', () => {
+    for (const html of [emailHtml, messageHtml, buildInterviewGuide(SITE, scenarios, vi.seo.interviewGuide)]) {
+      const self = html.match(/rel="canonical" href="[^"]+(\/hoc\/[^"]+)"/)?.[1];
+      for (const g of Object.values(GUIDE_PAGES)) if (g.path !== self) expect(html).toContain(`<a href="${g.path}">`);
+    }
   });
 });
 

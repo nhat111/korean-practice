@@ -2,6 +2,16 @@
 
 import type { CorrectionType, Politeness } from '../types';
 
+/** Link labels between the static guide pages (/hoc/*, src/seo/pages.ts). */
+const guideLinks = {
+  interview: 'Câu hỏi phỏng vấn IT tiếng Hàn',
+  email: 'Mẫu email tiếng Hàn công việc',
+  messages: 'Mẫu tin nhắn Slack / KakaoWork tiếng Hàn',
+};
+
+const guideFooter =
+  'KoDevTalk · dự án cá nhân, phi thương mại. Nội dung do người học tiếng Hàn biên soạn; hãy góp ý nếu bạn thấy câu nào chưa tự nhiên.';
+
 export const vi = {
   appName: 'KoDevTalk',
   appNameKo: '코데톡',
@@ -88,7 +98,49 @@ export const vi = {
       ctaText:
         'Trong KoDevTalk bạn nghe giọng người Hàn đọc câu hỏi, tự trả lời bằng giọng nói và được chấm điểm. Miễn phí, không cần tài khoản, dùng ngay trên điện thoại.',
       count: (n: number) => `${n} tình huống phỏng vấn · mỗi tình huống 2–3 câu hỏi`,
-      footer: 'KoDevTalk · dự án cá nhân, phi thương mại. Nội dung do người học tiếng Hàn biên soạn; hãy góp ý nếu bạn thấy câu nào chưa tự nhiên.',
+      footer: guideFooter,
+      links: guideLinks,
+    },
+    emailGuide: {
+      title: 'Mẫu email tiếng Hàn trong công việc IT: báo lỗi, báo cáo, xin lỗi | KoDevTalk',
+      description:
+        'Mẫu email tiếng Hàn cho dev, BrSE, tester làm với khách Hàn: báo lỗi, báo cáo tuần, xin lùi lịch, thông báo deploy, xin lỗi. Có bản sửa chuẩn 하십시오체 và giải thích lỗi hay gặp bằng tiếng Việt.',
+      h1: 'Mẫu email tiếng Hàn trong công việc IT',
+      intro:
+        'Mỗi mẫu là một tình huống thật khi làm outsource với khách Hàn: email chuẩn để tham khảo, rồi các lỗi người Việt hay mắc trong bản nháp (sai kính ngữ, ngữ pháp, định dạng) và cách sửa. Trình độ TOPIK 3–4.',
+      situation: 'Tình huống:',
+      politeness: {
+        hasipsio: 'Dùng 하십시오체 (trang trọng)',
+        haeyo: 'Dùng 해요체 (lịch sự, thân thiện)',
+      } satisfies Record<Politeness, string>,
+      model: 'Email mẫu',
+      mistakes: 'Lỗi hay gặp trong bản nháp',
+      practice: 'Tự sửa email này trong app',
+      openApp: 'Mở app',
+      ctaTitle: 'Tự sửa thử trước khi xem đáp án',
+      ctaText:
+        'Trong KoDevTalk bạn nhận bản nháp có lỗi, tự sửa trực tiếp rồi so với bản chuẩn. Miễn phí, không cần tài khoản, dùng ngay trên điện thoại.',
+      count: (n: number) => `${n} mẫu email · mỗi mẫu kèm các lỗi cần sửa`,
+      footer: guideFooter,
+      links: guideLinks,
+    },
+    messageGuide: {
+      title: 'Mẫu tin nhắn Slack, KakaoWork tiếng Hàn cho dân IT | KoDevTalk',
+      description:
+        'Tin nhắn tiếng Hàn ngắn gửi khách Hàn: báo tiến độ, báo bug, xin lùi lịch, deploy, xin lỗi, họp online, gọi điện. Câu mẫu 하십시오체, cụm từ nên dùng và nghĩa tiếng Việt.',
+      h1: 'Mẫu tin nhắn Slack / KakaoWork tiếng Hàn',
+      intro:
+        'Tin nhắn chat với khách Hàn cần ngắn mà vẫn lịch sự. Mỗi mẫu có tình huống bằng tiếng Việt, tin nhắn tiếng Hàn tự nhiên, các cụm nên học thuộc và lưu ý về kính ngữ. Trình độ TOPIK 3–4.',
+      to: 'Gửi cho:',
+      phrases: 'Cụm nên dùng',
+      practice: 'Tự viết tin nhắn chủ đề này',
+      openApp: 'Mở app',
+      ctaTitle: 'Tự viết rồi so với mẫu',
+      ctaText:
+        'Trong KoDevTalk bạn đọc tình huống, tự gõ tin nhắn tiếng Hàn, app đánh dấu các cụm bạn đã dùng đúng và nhắc ôn lại câu khó. Miễn phí, không cần tài khoản.',
+      count: (n: number) => `${n} tin nhắn mẫu`,
+      footer: guideFooter,
+      links: guideLinks,
     },
   },
   nav: {
@@ -225,6 +277,7 @@ export const vi = {
       meeting: 'Shadowing: câu trong họp',
       lead: 'Shadowing: chủ động lên tiếng',
       meetings: 'Nghe họp',
+      'call-msg': 'Tin nhắn: họp online, điện thoại',
       'meeting-ip': 'Phiên dịch: họp, bàn giao, chi phí',
       'meeting-talk': 'Hội thoại: họp',
       'interview-sh': 'Shadowing: câu phỏng vấn',
@@ -657,6 +710,8 @@ export const vi = {
       request: 'Nhờ & hỏi',
       deploy: 'Deploy',
       apology: 'Xin lỗi',
+      meeting: 'Họp online',
+      phone: 'Điện thoại',
     } as Record<string, string>,
     allTopics: (n: number) => `Tất cả chủ đề (${n})`,
     to: 'Gửi cho',

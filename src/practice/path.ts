@@ -54,6 +54,7 @@ export const BASE_PATH: PathStep[][] = [
     step('meeting', 'shadowing', 'meeting'),
     step('lead', 'shadowing', 'lead'),
     step('meetings', 'meetings'),
+    step('call-msg', 'messages', 'meeting', 'phone'),
     step('meeting-ip', 'interpret', 'meeting', 'handover', 'cost'),
     step('meeting-talk', 'scenarios', 'meeting'),
     step('interview-sh', 'shadowing', 'interview'),
