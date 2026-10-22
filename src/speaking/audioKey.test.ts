@@ -22,6 +22,7 @@ describe('audioKey', () => {
       emails: load('emails'),
       grammar: load('grammar'),
       shadowing: load('shadowing'),
+      basics: load('basics'),
       numbers: load('numbers'),
       interpret: load('interpret'),
       messages: load('messages'),

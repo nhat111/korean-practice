@@ -15,6 +15,7 @@ import { WEAK_LIMIT, weakKeys } from '../practice/weak';
 import { splitParts } from '../speaking/segments';
 import { getProgressSnapshot } from '../storage/progress';
 import type {
+  BasicLesson,
   GrammarLesson,
   InterpretItem,
   MeetingItem,
@@ -36,9 +37,10 @@ interface Content {
   messages: MessageExercise[];
   meetings: MeetingItem[];
   grammar: GrammarLesson[];
+  basics: BasicLesson[];
 }
 
-type WeakKind = 'shadowing' | 'pattern' | 'scenario' | 'vocab' | 'listen' | 'interpret' | 'message' | 'meeting' | 'grammar';
+type WeakKind = 'shadowing' | 'pattern' | 'scenario' | 'vocab' | 'listen' | 'interpret' | 'message' | 'meeting' | 'grammar' | 'basic';
 
 interface WeakItem {
   key: string;
@@ -108,6 +110,10 @@ function resolve(key: string, c: Content): WeakItem | null {
       const v = c.vocab.find((x) => x.id === id);
       return v ? { key, kind: 'vocab', ko: v.ko, render: (r) => lineDrill(key, v.ko, v.vi, r) } : null;
     }
+    case 'basic': {
+      const l = c.basics.find((x) => x.id === id)?.lines[Number(rest[1])];
+      return l ? { key, kind: 'basic', ko: l.ko, render: (r) => lineDrill(key, l.ko, l.vi, r) } : null;
+    }
     case 'message': {
       const m = c.messages.find((x) => x.id === id);
       return m ? { key, kind: 'message', ko: m.model, render: (r) => <MessageCard item={m} onRated={r} /> } : null;
@@ -131,6 +137,9 @@ function resolve(key: string, c: Content): WeakItem | null {
       } else if (src === 'grammar') {
         const ex = c.grammar.find((g) => g.id === sid)?.examples[Number(a)];
         line = ex && { ko: ex.ko, vi: ex.vi };
+      } else if (src === 'basic') {
+        const l = c.basics.find((x) => x.id === sid)?.lines[Number(a)];
+        line = l && { ko: l.ko, vi: l.vi };
       } else if (src === 'number') {
         const n = c.numbers.find((x) => x.id === sid);
         line = n && { ko: n.ko, vi: n.vi };
@@ -181,7 +190,8 @@ export function WeakPage() {
   const messages = useContent('messages');
   const meetings = useContent('meetings');
   const grammar = useContent('grammar');
-  const states = [shadowing, patterns, scenarios, vocab, numbers, interpret, messages, meetings, grammar];
+  const basics = useContent('basics');
+  const states = [shadowing, patterns, scenarios, vocab, numbers, interpret, messages, meetings, grammar, basics];
 
   return (
     <div className="stack">
@@ -197,7 +207,8 @@ export function WeakPage() {
       interpret.status === 'ready' &&
       messages.status === 'ready' &&
       meetings.status === 'ready' &&
-      grammar.status === 'ready' ? (
+      grammar.status === 'ready' &&
+      basics.status === 'ready' ? (
         <WeakSession
           content={{
             shadowing: shadowing.items,
@@ -209,6 +220,7 @@ export function WeakPage() {
             messages: messages.items,
             meetings: meetings.items,
             grammar: grammar.items,
+            basics: basics.items,
           }}
         />
       ) : states.some((s) => s.status === 'error') ? (

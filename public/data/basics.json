@@ -1,0 +1,273 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "bs-greet",
+      "level": 1,
+      "title": "Chào hỏi và giới thiệu bản thân",
+      "intro": "Ngày đầu gặp khách hoặc đồng nghiệp Hàn: chào, nói tên, nói mình làm gì.",
+      "words": [
+        { "ko": "안녕하세요", "vi": "xin chào" },
+        { "ko": "이름", "vi": "tên" },
+        { "ko": "베트남 사람", "vi": "người Việt Nam" },
+        { "ko": "개발자", "vi": "lập trình viên" },
+        { "ko": "반갑습니다", "vi": "rất vui được gặp" }
+      ],
+      "lines": [
+        { "ko": "안녕하세요.", "pron": "[안녕하세요]", "vi": "Xin chào." },
+        { "ko": "처음 뵙겠습니다.", "pron": "[처음 뵙껟씀니다]", "vi": "Lần đầu được gặp anh/chị.", "note": "Câu chào rất lịch sự khi gặp lần đầu, hợp với khách hàng." },
+        { "ko": "제 이름은 안이에요.", "pron": "[제 이르믄 아니에요]", "vi": "Tên tôi là An.", "note": "Thay 안 bằng tên của bạn. 이름은 → [이르믄]: patchim ㅁ nối sang nguyên âm sau." },
+        { "ko": "저는 베트남 사람이에요.", "pron": "[저는 베트남 사라미에요]", "vi": "Tôi là người Việt Nam." },
+        { "ko": "저는 개발자예요.", "pron": "[저는 개발자에요]", "vi": "Tôi là lập trình viên.", "note": "Sau từ không có patchim dùng -예요, có patchim dùng -이에요 (사람이에요)." },
+        { "ko": "만나서 반갑습니다.", "pron": "[만나서 반갑씀니다]", "vi": "Rất vui được gặp anh/chị." },
+        { "ko": "잘 부탁드립니다.", "pron": "[잘 부탁뜨림니다]", "vi": "Mong anh/chị giúp đỡ.", "note": "Câu kết lời giới thiệu, gần như luôn được nói." }
+      ]
+    },
+    {
+      "id": "bs-company",
+      "level": 1,
+      "title": "Công ty và nhóm của tôi",
+      "intro": "Nói công ty ở đâu, nhóm có mấy người, mình làm dự án gì.",
+      "words": [
+        { "ko": "회사", "vi": "công ty" },
+        { "ko": "팀", "vi": "nhóm, team" },
+        { "ko": "팀장님", "vi": "trưởng nhóm" },
+        { "ko": "프로젝트", "vi": "dự án" },
+        { "ko": "일하다", "vi": "làm việc" },
+        { "ko": "어디", "vi": "ở đâu" }
+      ],
+      "lines": [
+        { "ko": "저는 IT 회사에서 일해요.", "pron": "[저는 아이티 회사에서 일해요]", "vi": "Tôi làm việc ở một công ty IT.", "note": "N에서 + động từ: làm gì ở đâu." },
+        { "ko": "회사는 하노이에 있어요.", "pron": "[회사는 하노이에 이써요]", "vi": "Công ty ở Hà Nội.", "note": "N에 있어요: ở đâu đó. 있어요 → [이써요]." },
+        { "ko": "회사가 어디에 있어요?", "pron": "[회사가 어디에 이써요]", "vi": "Công ty ở đâu?" },
+        { "ko": "우리 팀은 다섯 명이에요.", "pron": "[우리 티믄 다섣 명이에요]", "vi": "Nhóm chúng tôi có năm người.", "note": "Đếm người dùng số thuần Hàn + 명: 한 명, 두 명, 세 명…" },
+        { "ko": "팀장님은 한국 사람이에요.", "pron": "[팀장니믄 한국 사라미에요]", "vi": "Trưởng nhóm là người Hàn Quốc." },
+        { "ko": "한국 프로젝트를 해요.", "pron": "[한국 프로젝트를 해요]", "vi": "Tôi làm dự án của Hàn Quốc." }
+      ]
+    },
+    {
+      "id": "bs-time",
+      "level": 1,
+      "title": "Giờ và ngày",
+      "intro": "Hỏi giờ, nói giờ họp, giờ đi làm và tan làm.",
+      "words": [
+        { "ko": "시", "vi": "giờ" },
+        { "ko": "분", "vi": "phút" },
+        { "ko": "오늘", "vi": "hôm nay" },
+        { "ko": "내일", "vi": "ngày mai" },
+        { "ko": "출근하다", "vi": "đi làm" },
+        { "ko": "퇴근하다", "vi": "tan làm" }
+      ],
+      "lines": [
+        { "ko": "지금 몇 시예요?", "pron": "[지금 멷 씨에요]", "vi": "Bây giờ là mấy giờ?", "note": "몇 시 → [멷 씨]: sau patchim ㄷ, ㅅ đọc căng thành ㅆ." },
+        { "ko": "아홉 시에 출근해요.", "pron": "[아홉 씨에 출근해요]", "vi": "Tôi đi làm lúc chín giờ.", "note": "Giờ dùng số thuần Hàn (한 시, 두 시, 아홉 시), phút dùng số Hán Hàn (삼십 분)." },
+        { "ko": "회의는 두 시예요.", "pron": "[회의는 두 시에요]", "vi": "Cuộc họp lúc hai giờ." },
+        { "ko": "오늘은 월요일이에요.", "pron": "[오느른 워료이리에요]", "vi": "Hôm nay là thứ Hai." },
+        { "ko": "내일 세 시 삼십 분에 만나요.", "pron": "[내일 세 시 삼십 뿌네 만나요]", "vi": "Mai gặp nhau lúc ba giờ ba mươi." },
+        { "ko": "여섯 시에 퇴근해요.", "pron": "[여섣 씨에 퇴근해요]", "vi": "Sáu giờ tôi tan làm." }
+      ]
+    },
+    {
+      "id": "bs-office",
+      "level": 1,
+      "title": "Trong văn phòng: có / không có",
+      "intro": "Hỏi phòng họp ở đâu, có màn hình không, mật khẩu wifi là gì.",
+      "words": [
+        { "ko": "회의실", "vi": "phòng họp" },
+        { "ko": "노트북", "vi": "laptop" },
+        { "ko": "모니터", "vi": "màn hình" },
+        { "ko": "있다", "vi": "có, ở" },
+        { "ko": "없다", "vi": "không có" },
+        { "ko": "여기", "vi": "ở đây" }
+      ],
+      "lines": [
+        { "ko": "회의실이 어디예요?", "pron": "[회의시리 어디에요]", "vi": "Phòng họp ở đâu?" },
+        { "ko": "회의실은 삼 층에 있어요.", "pron": "[회의시른 삼 층에 이써요]", "vi": "Phòng họp ở tầng ba.", "note": "Tầng dùng số Hán Hàn: 일 층, 이 층, 삼 층." },
+        { "ko": "모니터가 하나 더 있어요?", "pron": "[모니터가 하나 더 이써요]", "vi": "Có thêm một màn hình nữa không?" },
+        { "ko": "지금 빈 회의실이 없어요.", "pron": "[지금 빈 회의시리 업써요]", "vi": "Bây giờ không còn phòng họp trống.", "note": "없어요 → [업써요]: patchim ㅄ, ㅅ đọc sang âm sau thành ㅆ." },
+        { "ko": "제 노트북이 여기 있어요.", "pron": "[제 노트부기 여기 이써요]", "vi": "Laptop của tôi ở đây." },
+        { "ko": "와이파이 비밀번호가 뭐예요?", "pron": "[와이파이 비밀번호가 뭐에요]", "vi": "Mật khẩu wifi là gì?" }
+      ]
+    },
+    {
+      "id": "bs-again",
+      "level": 1,
+      "title": "Khi chưa nghe rõ",
+      "intro": "Không hiểu thì nói ngay: nhờ nói lại, nói chậm, hoặc viết qua chat.",
+      "words": [
+        { "ko": "다시", "vi": "lại, lần nữa" },
+        { "ko": "천천히", "vi": "chậm" },
+        { "ko": "말씀", "vi": "lời nói (kính ngữ)" },
+        { "ko": "모르다", "vi": "không biết" },
+        { "ko": "알다", "vi": "biết, hiểu" },
+        { "ko": "뜻", "vi": "nghĩa" }
+      ],
+      "lines": [
+        { "ko": "다시 한번 말씀해 주세요.", "pron": "[다시 한번 말씀해 주세요]", "vi": "Xin anh/chị nói lại một lần nữa." },
+        { "ko": "천천히 말씀해 주세요.", "pron": "[천천히 말씀해 주세요]", "vi": "Xin anh/chị nói chậm lại." },
+        { "ko": "죄송합니다, 잘 모르겠어요.", "pron": "[죄송함니다 잘 모르게써요]", "vi": "Xin lỗi, tôi không rõ lắm.", "note": "모르겠어요 mềm hơn 몰라요, nên dùng ở công ty." },
+        { "ko": "이 단어가 무슨 뜻이에요?", "pron": "[이 다너가 무슨 뜨시에요]", "vi": "Từ này nghĩa là gì?" },
+        { "ko": "채팅으로 써 주시겠어요?", "pron": "[채팅으로 써 주시게써요]", "vi": "Anh/chị viết qua chat giúp tôi được không?" },
+        { "ko": "네, 알겠습니다.", "pron": "[네 알겓씀니다]", "vi": "Vâng, tôi hiểu rồi.", "note": "Câu trả lời chuẩn khi nhận việc, lịch sự hơn 알았어요." }
+      ]
+    },
+    {
+      "id": "bs-thanks",
+      "level": 1,
+      "title": "Cảm ơn, xin lỗi, chào về",
+      "intro": "Những câu ngắn nói mỗi ngày ở công ty.",
+      "words": [
+        { "ko": "감사하다", "vi": "cảm ơn" },
+        { "ko": "죄송하다", "vi": "xin lỗi" },
+        { "ko": "괜찮다", "vi": "không sao, ổn" },
+        { "ko": "늦다", "vi": "muộn" },
+        { "ko": "도와주다", "vi": "giúp đỡ" },
+        { "ko": "먼저", "vi": "trước" }
+      ],
+      "lines": [
+        { "ko": "감사합니다.", "pron": "[감사함니다]", "vi": "Cảm ơn anh/chị.", "note": "합니다 → [함니다]: ㅂ trước ㄴ đọc thành ㅁ." },
+        { "ko": "도와주셔서 감사합니다.", "pron": "[도와주셔서 감사함니다]", "vi": "Cảm ơn anh/chị đã giúp." },
+        { "ko": "늦어서 죄송합니다.", "pron": "[느저서 죄송함니다]", "vi": "Xin lỗi vì tôi đến muộn.", "note": "-아/어서 + 죄송합니다: xin lỗi vì lý do gì." },
+        { "ko": "괜찮아요.", "pron": "[괜차나요]", "vi": "Không sao đâu." },
+        { "ko": "수고하셨습니다.", "pron": "[수고하셛씀니다]", "vi": "Anh/chị vất vả rồi.", "note": "Nói khi xong việc, cuối cuộc họp hoặc cuối ngày." },
+        { "ko": "먼저 가 보겠습니다.", "pron": "[먼저 가 보겓씀니다]", "vi": "Tôi xin phép về trước.", "note": "Câu chào khi về trước đồng nghiệp." }
+      ]
+    },
+    {
+      "id": "bs-lunch",
+      "level": 1,
+      "title": "Ăn trưa và cà phê",
+      "intro": "Rủ đồng nghiệp đi ăn, gọi món, khen ngon.",
+      "words": [
+        { "ko": "점심", "vi": "bữa trưa" },
+        { "ko": "같이", "vi": "cùng nhau" },
+        { "ko": "먹다", "vi": "ăn" },
+        { "ko": "마시다", "vi": "uống" },
+        { "ko": "맛있다", "vi": "ngon" },
+        { "ko": "주세요", "vi": "cho tôi" }
+      ],
+      "lines": [
+        { "ko": "점심 같이 먹어요.", "pron": "[점심 가치 머거요]", "vi": "Cùng ăn trưa nhé.", "note": "같이 → [가치]: ㅌ trước 이 đọc thành ㅊ." },
+        { "ko": "뭐 먹을까요?", "pron": "[뭐 머글까요]", "vi": "Mình ăn gì nhỉ?", "note": "-(으)ㄹ까요?: rủ hoặc hỏi ý người nghe." },
+        { "ko": "저는 김치찌개 먹을게요.", "pron": "[저는 김치찌개 머글께요]", "vi": "Tôi ăn canh kimchi." },
+        { "ko": "커피 마실래요?", "pron": "[커피 마실래요]", "vi": "Uống cà phê không?" },
+        { "ko": "아이스 아메리카노 주세요.", "pron": "[아이스 아메리카노 주세요]", "vi": "Cho tôi một ly Americano đá." },
+        { "ko": "정말 맛있어요.", "pron": "[정말 마시써요]", "vi": "Ngon thật." },
+        { "ko": "오늘은 제가 살게요.", "pron": "[오느른 제가 살께요]", "vi": "Hôm nay để tôi mời.", "note": "-(으)ㄹ게요: hứa sẽ làm gì cho người nghe. 살게요 → [살께요]." }
+      ]
+    },
+    {
+      "id": "bs-request",
+      "level": 2,
+      "title": "Nhờ vả và xin phép",
+      "intro": "-아/어 주세요 để nhờ, -아/어도 돼요? để xin phép.",
+      "words": [
+        { "ko": "보내다", "vi": "gửi" },
+        { "ko": "확인하다", "vi": "kiểm tra, xác nhận" },
+        { "ko": "설명하다", "vi": "giải thích" },
+        { "ko": "질문하다", "vi": "hỏi" },
+        { "ko": "잠깐", "vi": "một chút" },
+        { "ko": "바꾸다", "vi": "đổi" }
+      ],
+      "lines": [
+        { "ko": "파일 좀 보내 주세요.", "pron": "[파일 좀 보내 주세요]", "vi": "Gửi giúp tôi file nhé.", "note": "좀 làm lời nhờ mềm hơn." },
+        { "ko": "이거 좀 확인해 주세요.", "pron": "[이거 좀 화긴해 주세요]", "vi": "Kiểm tra giúp tôi cái này." },
+        { "ko": "이 부분 좀 설명해 주시겠어요?", "pron": "[이 부분 좀 설명해 주시게써요]", "vi": "Anh/chị giải thích giúp tôi phần này được không?", "note": "-아/어 주시겠어요? lịch sự hơn -아/어 주세요, hợp khi nói với khách." },
+        { "ko": "잠깐 질문해도 돼요?", "pron": "[잠깐 질문해도 돼요]", "vi": "Tôi hỏi một chút được không?" },
+        { "ko": "지금 시간 괜찮으세요?", "pron": "[지금 시간 괜차느세요]", "vi": "Bây giờ anh/chị có rảnh không?" },
+        { "ko": "회의를 다음 주로 바꿔도 돼요?", "pron": "[회의를 다음 쭈로 바꿔도 돼요]", "vi": "Đổi cuộc họp sang tuần sau được không?" },
+        { "ko": "내일 쉬어도 될까요?", "pron": "[내일 쉬어도 될까요]", "vi": "Ngày mai tôi nghỉ được không ạ?", "note": "-아/어도 될까요? nhẹ nhàng hơn -아/어도 돼요?, nên dùng với cấp trên." }
+      ]
+    },
+    {
+      "id": "bs-work",
+      "level": 2,
+      "title": "Đang làm gì, xong chưa",
+      "intro": "-고 있어요 cho việc đang làm, 다 했어요 / 아직 안 했어요 cho tiến độ.",
+      "words": [
+        { "ko": "만들다", "vi": "làm, tạo" },
+        { "ko": "고치다", "vi": "sửa" },
+        { "ko": "끝나다", "vi": "xong, kết thúc" },
+        { "ko": "아직", "vi": "vẫn, vẫn chưa" },
+        { "ko": "어렵다", "vi": "khó" },
+        { "ko": "도움", "vi": "sự giúp đỡ" }
+      ],
+      "lines": [
+        { "ko": "지금 로그인 화면을 만들고 있어요.", "pron": "[지금 로그인 화며늘 만들고 이써요]", "vi": "Tôi đang làm màn hình đăng nhập.", "note": "V-고 있어요: đang làm gì." },
+        { "ko": "버그를 고치고 있어요.", "pron": "[버그를 고치고 이써요]", "vi": "Tôi đang sửa bug." },
+        { "ko": "테스트는 다 끝났어요.", "pron": "[테스트는 다 끈나써요]", "vi": "Test xong hết rồi.", "note": "끝났어요 → [끈나써요]: ㅌ trước ㄴ đọc thành ㄴ." },
+        { "ko": "아직 안 끝났어요.", "pron": "[아직 안 끈나써요]", "vi": "Vẫn chưa xong." },
+        { "ko": "오늘 오후까지 할 수 있어요.", "pron": "[오늘 오후까지 할 쑤 이써요]", "vi": "Tôi làm xong được trong chiều nay.", "note": "V-(으)ㄹ 수 있어요: có thể làm. 할 수 → [할 쑤]." },
+        { "ko": "조금 어려워요.", "pron": "[조금 어려워요]", "vi": "Hơi khó." },
+        { "ko": "도움이 필요해요.", "pron": "[도우미 피료해요]", "vi": "Tôi cần được giúp." }
+      ]
+    },
+    {
+      "id": "bs-plan",
+      "level": 2,
+      "title": "Kế hoạch sắp tới",
+      "intro": "-(으)ㄹ 거예요 cho việc sẽ làm, -(으)려고 해요 cho việc định làm.",
+      "words": [
+        { "ko": "배포", "vi": "deploy, phát hành" },
+        { "ko": "다음 주", "vi": "tuần sau" },
+        { "ko": "휴가", "vi": "kỳ nghỉ" },
+        { "ko": "출장", "vi": "công tác" },
+        { "ko": "기능", "vi": "tính năng" },
+        { "ko": "시작하다", "vi": "bắt đầu" }
+      ],
+      "lines": [
+        { "ko": "내일 배포할 거예요.", "pron": "[내일 배포할 꺼에요]", "vi": "Ngày mai sẽ deploy.", "note": "V-(으)ㄹ 거예요: sẽ làm. 할 거예요 → [할 꺼에요]." },
+        { "ko": "다음 주에 휴가를 갈 거예요.", "pron": "[다음 쭈에 휴가를 갈 꺼에요]", "vi": "Tuần sau tôi sẽ đi nghỉ." },
+        { "ko": "금요일에 한국에 출장 가요.", "pron": "[그묘이레 한구게 출짱 가요]", "vi": "Thứ Sáu tôi đi công tác Hàn Quốc." },
+        { "ko": "새 기능은 언제 시작해요?", "pron": "[새 기능은 언제 시자캐요]", "vi": "Tính năng mới khi nào bắt đầu?", "note": "시작해요 → [시자캐요]: ㄱ gặp ㅎ thành ㅋ." },
+        { "ko": "이번 주에 끝내려고 해요.", "pron": "[이번 쭈에 끈내려고 해요]", "vi": "Tôi định làm xong trong tuần này.", "note": "V-(으)려고 해요: định làm." },
+        { "ko": "오후에 회의가 있을 거예요.", "pron": "[오후에 회의가 이쓸 꺼에요]", "vi": "Chiều nay sẽ có cuộc họp." }
+      ]
+    },
+    {
+      "id": "bs-leave",
+      "level": 2,
+      "title": "Ốm, nghỉ phép, làm ở nhà",
+      "intro": "Báo ốm, xin nghỉ, xin về sớm với -아/어서 và -고 싶어요.",
+      "words": [
+        { "ko": "아프다", "vi": "đau, ốm" },
+        { "ko": "병원", "vi": "bệnh viện" },
+        { "ko": "감기", "vi": "cảm cúm" },
+        { "ko": "연차", "vi": "ngày phép năm" },
+        { "ko": "일찍", "vi": "sớm" },
+        { "ko": "재택근무", "vi": "làm việc ở nhà" }
+      ],
+      "lines": [
+        { "ko": "머리가 아파서 병원에 가요.", "pron": "[머리가 아파서 병워네 가요]", "vi": "Tôi đau đầu nên đi bệnh viện.", "note": "A/V-아/어서: vì… nên…" },
+        { "ko": "감기에 걸렸어요.", "pron": "[감기에 걸려써요]", "vi": "Tôi bị cảm." },
+        { "ko": "오늘 일찍 퇴근해도 될까요?", "pron": "[오늘 일찍 퇴근해도 될까요]", "vi": "Hôm nay tôi về sớm được không ạ?" },
+        { "ko": "내일 연차를 쓰고 싶어요.", "pron": "[내일 연차를 쓰고 시퍼요]", "vi": "Ngày mai tôi muốn nghỉ phép.", "note": "연차를 쓰다: dùng ngày phép. V-고 싶어요: muốn làm." },
+        { "ko": "내일은 재택근무를 해요.", "pron": "[내이른 재택끈무를 해요]", "vi": "Ngày mai tôi làm ở nhà." },
+        { "ko": "몸은 좀 괜찮아요?", "pron": "[모믄 좀 괜차나요]", "vi": "Anh/chị đỡ mệt chưa?", "note": "Câu hỏi thăm khi đồng nghiệp ốm." }
+      ]
+    },
+    {
+      "id": "bs-meeting",
+      "level": 2,
+      "title": "Họp online đơn giản",
+      "intro": "Kiểm tra tiếng, chia sẻ màn hình, hỏi câu hỏi, kết thúc họp.",
+      "words": [
+        { "ko": "목소리", "vi": "giọng nói" },
+        { "ko": "들리다", "vi": "nghe thấy" },
+        { "ko": "화면", "vi": "màn hình" },
+        { "ko": "보이다", "vi": "nhìn thấy" },
+        { "ko": "공유하다", "vi": "chia sẻ" },
+        { "ko": "생각", "vi": "suy nghĩ, ý" }
+      ],
+      "lines": [
+        { "ko": "회의를 시작하겠습니다.", "pron": "[회의를 시자카겓씀니다]", "vi": "Chúng ta bắt đầu họp." },
+        { "ko": "제 목소리 들리세요?", "pron": "[제 목쏘리 들리세요]", "vi": "Mọi người có nghe tôi nói không?" },
+        { "ko": "화면 공유하겠습니다.", "pron": "[화면 공유하겓씀니다]", "vi": "Tôi sẽ chia sẻ màn hình." },
+        { "ko": "화면이 보이세요?", "pron": "[화며니 보이세요]", "vi": "Mọi người có thấy màn hình không?" },
+        { "ko": "질문 있으세요?", "pron": "[질문 이쓰세요]", "vi": "Có ai có câu hỏi không ạ?" },
+        { "ko": "저도 같은 생각이에요.", "pron": "[저도 가튼 생가기에요]", "vi": "Tôi cũng nghĩ như vậy." },
+        { "ko": "오늘 회의는 여기까지 하겠습니다.", "pron": "[오늘 회의는 여기까지 하겓씀니다]", "vi": "Cuộc họp hôm nay đến đây là kết thúc." }
+      ]
+    }
+  ]
+}

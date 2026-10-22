@@ -3,6 +3,7 @@ import { Layout } from './components/Layout';
 import { vi } from './i18n/vi';
 import { AboutPage } from './pages/AboutPage';
 import { AiRoleplayPage } from './pages/AiRoleplayPage';
+import { BasicLessonPage, BasicsPage } from './pages/BasicsPage';
 import { CustomPage } from './pages/CustomPage';
 import { CustomPracticePage } from './pages/CustomPracticePage';
 import { DailyPage } from './pages/DailyPage';
@@ -50,6 +51,8 @@ export function App() {
         <Route path="daily" element={<DailyPage />} />
         <Route path="find" element={<FindPage />} />
         <Route path="weak" element={<WeakPage />} />
+        <Route path="basics" element={<BasicsPage />} />
+        <Route path="basics/:id" element={<BasicLessonPage />} />
         <Route path="grammar" element={<GrammarPage />} />
         <Route path="grammar/:id" element={<GrammarLessonPage />} />
         {/* The K-pop songs section was replaced by grammar; keep old links working. */}

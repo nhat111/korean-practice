@@ -4,6 +4,7 @@
 
 import { patternProblems } from '../patterns/fill';
 import type {
+  BasicLesson,
   CorrectionType,
   EmailCorrection,
   EmailExercise,
@@ -199,6 +200,40 @@ export function validateShadowing(v: unknown): string[] {
   if (isNonEmptyString(v.pron) && !isPron(v.pron)) errors.push(`${path}.pron: phải có dạng [...]`);
   if (v.notes !== undefined && !(isStringArray(v.notes) && v.notes.every(isNonEmptyString))) {
     errors.push(`${path}.notes: phải là mảng chuỗi không rỗng`);
+  }
+  return errors;
+}
+
+export function validateBasic(v: unknown): string[] {
+  const errors: string[] = [];
+  if (!isObj(v)) return ['basic: phải là object'];
+  const path = `basic(${String(v.id)})`;
+  requireStrings(v, ['id', 'title', 'intro'], path, errors);
+  if (v.level !== 1 && v.level !== 2) errors.push(`${path}.level: phải là 1 hoặc 2`);
+  if (!Array.isArray(v.words) || v.words.length < 3 || v.words.length > 8) {
+    errors.push(`${path}.words: cần 3-8 từ`);
+  } else {
+    v.words.forEach((w: unknown, i) => {
+      if (!isObj(w)) errors.push(`${path}.words[${i}]: phải là object { ko, vi }`);
+      else requireStrings(w, ['ko', 'vi'], `${path}.words[${i}]`, errors);
+    });
+  }
+  if (!Array.isArray(v.lines) || v.lines.length < 4 || v.lines.length > 10) {
+    errors.push(`${path}.lines: cần 4-10 câu`);
+  } else {
+    v.lines.forEach((l: unknown, i) => {
+      const lp = `${path}.lines[${i}]`;
+      if (!isObj(l)) {
+        errors.push(`${lp}: phải là object`);
+        return;
+      }
+      requireStrings(l, ['ko', 'pron', 'vi'], lp, errors);
+      if (isNonEmptyString(l.pron) && !isPron(l.pron)) errors.push(`${lp}.pron: phải có dạng [...]`);
+      if (l.note !== undefined && !isNonEmptyString(l.note)) errors.push(`${lp}.note: phải là chuỗi không rỗng`);
+    });
+    // The listening quiz needs distinct meanings for its options.
+    const meanings = v.lines.map((l: unknown) => (isObj(l) ? l.vi : undefined));
+    if (new Set(meanings).size !== meanings.length) errors.push(`${path}.lines: nghĩa tiếng Việt bị trùng`);
   }
   return errors;
 }
@@ -450,6 +485,10 @@ export function parseVocab(data: unknown): ParseResult<VocabItem> {
 
 export function parseShadowing(data: unknown): ParseResult<ShadowingItem> {
   return parseContentFile<ShadowingItem>(data, validateShadowing);
+}
+
+export function parseBasics(data: unknown): ParseResult<BasicLesson> {
+  return parseContentFile<BasicLesson>(data, validateBasic);
 }
 
 export function parsePatterns(data: unknown): ParseResult<PatternItem> {

@@ -6,6 +6,7 @@ import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { SCENARIO_CATEGORIES } from './scenarioFilter';
 import {
+  parseBasics,
   parseEmails,
   parseEpisodes,
   parseGrammar,
@@ -33,6 +34,7 @@ const files: [string, (data: unknown) => ParseResult<{ id: string }>][] = [
   ['vocab.json', parseVocab],
   ['grammar.json', parseGrammar],
   ['shadowing.json', parseShadowing],
+  ['basics.json', parseBasics],
   ['patterns.json', parsePatterns],
   ['numbers.json', parseNumbers],
   ['interpret.json', parseInterpret],

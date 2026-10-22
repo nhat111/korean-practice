@@ -49,6 +49,8 @@ export const srsKey = {
   message: (id: string) => `message:${id}`,
   /** Grammar lesson quiz: grade 4 when every question is right, else 1. */
   grammar: (id: string) => `grammar:${id}`,
+  /** Beginner lesson line, said aloud (listening it is `listen:basic:<id>:<i>`). */
+  basic: (id: string, line: number) => `basic:${id}:${line}`,
 };
 
 /** SM-2 grade for a self-rating: not yet → again tomorrow, close → hard, good → good. */
