@@ -62,6 +62,8 @@ const SUGGESTIONS: Record<Role, { to: string; icon: IconName }> = {
   interview: { to: '/scenarios?cat=interview', icon: 'chat' },
 };
 
+const BEGINNER_SUGGESTION = { to: '/basics', icon: 'book' } as const;
+
 // Six main entries; the rest (patterns, grammar, progress…) live under the tabs.
 const SECTIONS: Section[] = [
   { to: '/shadowing', art: 'shadowing', icon: 'waves', title: vi.shadowing.title, desc: vi.home.cards.shadowing, tone: 'blue',
@@ -99,7 +101,9 @@ export function HomePage() {
   const prefs = usePrefs();
   if (!prefs.onboarded) return <Welcome />;
   const minutes = prefs.profile?.minutes ?? 5;
-  const suggestion = prefs.profile ? SUGGESTIONS[prefs.profile.role] : null;
+  // TOPIK 2 learners start with the beginner lessons, whatever their role.
+  const beginner = prefs.profile?.level === 2;
+  const suggestion = prefs.profile ? (beginner ? BEGINNER_SUGGESTION : SUGGESTIONS[prefs.profile.role]) : null;
   const target = dailyTarget(minutes / 5);
   // Only steps of the daily plan count, so the goal matches the recipe shown under it.
   const done = todayStats?.planSteps ?? 0;
@@ -191,7 +195,7 @@ export function HomePage() {
             </span>
             <div>
               <h2>{vi.growth.suggestTitle}</h2>
-              <p className="muted">{vi.growth.suggest[prefs.profile.role]}</p>
+              <p className="muted">{beginner ? vi.basics.suggest : vi.growth.suggest[prefs.profile.role]}</p>
             </div>
           </Link>
         )}

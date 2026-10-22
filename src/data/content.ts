@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from 'react';
 import type {
+  BasicLesson,
   EmailExercise,
   Episode,
   GrammarLesson,
@@ -16,6 +17,7 @@ import type {
   VocabItem,
 } from '../types';
 import {
+  parseBasics,
   parseEmails,
   parseEpisodes,
   parseGrammar,
@@ -36,6 +38,7 @@ interface ContentMap {
   vocab: VocabItem;
   grammar: GrammarLesson;
   shadowing: ShadowingItem;
+  basics: BasicLesson;
   patterns: PatternItem;
   numbers: NumberItem;
   interpret: InterpretItem;
@@ -52,6 +55,7 @@ const parsers: { [K in ContentKind]: (data: unknown) => ParseResult<ContentMap[K
   vocab: parseVocab,
   grammar: parseGrammar,
   shadowing: parseShadowing,
+  basics: parseBasics,
   patterns: parsePatterns,
   numbers: parseNumbers,
   interpret: parseInterpret,

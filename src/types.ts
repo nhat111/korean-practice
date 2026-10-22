@@ -183,6 +183,31 @@ export interface ShadowingItem {
   notes?: string[];
 }
 
+// ---------- Beginner lessons (TOPIK 1-2) ----------
+
+export interface BasicLine {
+  ko: string;
+  /** Actual pronunciation of the whole sentence, e.g. "[감사함니다]". */
+  pron: string;
+  vi: string;
+  /** Grammar or pronunciation tip (Vietnamese). */
+  note?: string;
+}
+
+export interface BasicLesson {
+  /** Stable id ("bs-..."). Never rename. */
+  id: string;
+  /** TOPIK level the lesson targets: 1 or 2. */
+  level: number;
+  /** Vietnamese title and one-line intro. */
+  title: string;
+  intro: string;
+  /** 3-8 key words. */
+  words: KoVi[];
+  /** 4-10 lines. SRS keys use the index (basic:<id>:<i>): only append, never reorder or remove. */
+  lines: BasicLine[];
+}
+
 // ---------- Sentence patterns ----------
 
 /** A word that can fill a slot, with its meaning for the Vietnamese cue. */

@@ -10,6 +10,7 @@ export const SITEMAP_ROUTES = [
   '/',
   '/scenarios',
   '/shadowing',
+  '/basics',
   '/listening',
   '/interpret',
   '/emails',

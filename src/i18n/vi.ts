@@ -40,6 +40,7 @@ export const vi = {
     '/ai-roleplay': 'AI 롤플레이',
     '/typing': '타자 연습',
     '/find': '빠른 검색',
+    '/basics': '기초 회화',
   } as Record<string, string>,
   // Page titles (document.title, set by Layout) and the static guide pages built by src/seo/pages.ts.
   seo: {
@@ -67,6 +68,7 @@ export const vi = {
       '/ai-roleplay': 'Luyện hội thoại với AI',
       '/typing': 'Luyện gõ tiếng Hàn',
       '/find': 'Tra câu tiếng Hàn cần nói gấp',
+      '/basics': 'Nghe nói tiếng Hàn sơ cấp TOPIK 1–2 cho dân IT',
     } as Record<string, string>,
     /** Prefix → title for detail pages (/scenarios/:id …). */
     sectionTitles: {
@@ -74,6 +76,7 @@ export const vi = {
       '/grammar/': 'Ngữ pháp tiếng Hàn công sở',
       '/emails/': 'Email tiếng Hàn',
       '/custom/': 'Luyện câu hỏi của tôi',
+      '/basics/': 'Nghe nói sơ cấp',
     } as Record<string, string>,
     interviewGuide: {
       title: 'Câu hỏi phỏng vấn IT bằng tiếng Hàn và câu trả lời mẫu | KoDevTalk',
@@ -842,6 +845,7 @@ export const vi = {
       message: 'Tin nhắn',
       meeting: 'Nghe họp',
       grammar: 'Ngữ pháp',
+      basic: 'Sơ cấp',
     },
     emptyTitle: 'Không có câu yếu',
     empty: 'Bạn chưa có câu nào bị chấm "Chưa được". Cứ luyện tiếp, câu khó sẽ được gom vào đây.',
@@ -983,6 +987,19 @@ export const vi = {
     transcript: 'Lời đọc',
     lockHint: 'Bấm Phát rồi khóa màn hình: âm thanh vẫn tiếp tục. Điều khiển từ màn hình khóa.',
     toList: 'Các tập khác',
+  },
+  basics: {
+    title: 'Nghe nói sơ cấp',
+    card: 'TOPIK 1–2: câu ngắn, nói chậm, từng bài nhỏ',
+    intro: 'Câu ngắn hằng ngày ở công ty cho người mới học (TOPIK 1–2). Mỗi bài: học từ, nghe và nói theo từng câu, rồi nghe chọn nghĩa.',
+    levelTitle: (level: number) => `TOPIK ${level}`,
+    toList: 'Các bài sơ cấp',
+    tabs: { words: 'Từ vựng', speak: 'Nghe & nói', listen: 'Nghe hiểu' },
+    words: 'Từ cần biết',
+    startSpeak: 'Nghe & nói từng câu',
+    startListen: 'Kiểm tra nghe hiểu',
+    nextLesson: 'Bài tiếp',
+    suggest: 'Mới học? Bắt đầu với Nghe nói sơ cấp: câu ngắn, nói chậm',
   },
   grammar: {
     title: 'Ngữ pháp công sở',
