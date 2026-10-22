@@ -11455,6 +11455,597 @@
           "modelAnswerVi": "Trước tiên tôi rollback về phiên bản trước theo quy trình đã chuẩn bị sẵn để khôi phục dịch vụ. Đồng thời chia sẻ tình hình với khách hàng, còn nguyên nhân thì phân tích trên môi trường phát triển."
         }
       ]
+    },
+    {
+      "id": "basic-first-day",
+      "title": "Ngày đầu đi làm: chào team",
+      "titleKo": "첫 출근 인사",
+      "description": "Ngày đầu tiên bạn vào dự án. Trưởng nhóm phía Hàn (김 팀장님) chào và hỏi chuyện bạn.",
+      "category": "basic",
+      "tags": [
+        "첫 출근",
+        "자기소개"
+      ],
+      "turns": [
+        {
+          "client": "안녕하세요. 오늘부터 같이 일하는 분이죠? 이름이 뭐예요?",
+          "hint": "Trưởng nhóm chào và hỏi tên. Hãy chào, nói tên và nghề của bạn.",
+          "choices": [
+            {
+              "ko": "안녕하세요. 저는 안이에요. 베트남에서 온 개발자예요. 잘 부탁드립니다.",
+              "correct": true,
+              "feedback": "Tốt: chào, nói tên, nghề, rồi kết bằng 잘 부탁드립니다."
+            },
+            {
+              "ko": "안이야. 개발자야.",
+              "correct": false,
+              "feedback": "반말 với trưởng nhóm là thất lễ. Dùng -이에요/예요."
+            },
+            {
+              "ko": "네, 개발자이에요.",
+              "correct": false,
+              "feedback": "Chưa nói tên, và 개발자 không có patchim nên phải là 개발자예요."
+            }
+          ],
+          "modelAnswer": "안녕하세요. 저는 안이에요. 베트남에서 온 개발자예요. 잘 부탁드립니다.",
+          "modelAnswerVi": "Xin chào. Tôi là An, lập trình viên đến từ Việt Nam. Mong anh giúp đỡ."
+        },
+        {
+          "client": "한국어 잘하네요. 한국어는 얼마나 공부했어요?",
+          "hint": "Trưởng nhóm khen tiếng Hàn của bạn và hỏi bạn đã học bao lâu. Đáp khiêm tốn rồi nói thời gian.",
+          "choices": [
+            {
+              "ko": "네, 저 한국어 잘해요.",
+              "correct": false,
+              "feedback": "Nhận lời khen thẳng như vậy nghe hơi tự cao. Người Hàn thường đáp khiêm tốn."
+            },
+            {
+              "ko": "아니에요, 아직 잘 못해요. 일 년 동안 공부했어요.",
+              "correct": true,
+              "feedback": "Đáp khiêm tốn (아니에요, 아직 잘 못해요) rất tự nhiên, rồi trả lời bằng quá khứ -았/었어요."
+            }
+          ],
+          "modelAnswer": "아니에요, 아직 잘 못해요. 일 년 동안 공부했어요.",
+          "modelAnswerVi": "Không đâu ạ, tôi vẫn chưa giỏi. Tôi đã học một năm."
+        },
+        {
+          "client": "모르는 거 있으면 언제든지 물어보세요.",
+          "hint": "Trưởng nhóm nói có gì không biết thì cứ hỏi. Hãy cảm ơn.",
+          "choices": [
+            {
+              "ko": "알았어.",
+              "correct": false,
+              "feedback": "반말, không hợp khi nói với trưởng nhóm."
+            },
+            {
+              "ko": "네, 감사합니다. 모르는 거 있으면 물어볼게요.",
+              "correct": true,
+              "feedback": "Cảm ơn và hứa sẽ hỏi bằng -(으)ㄹ게요. Lịch sự hơn nữa: 여쭤볼게요."
+            },
+            {
+              "ko": "네, 몰라요.",
+              "correct": false,
+              "feedback": "Nghe như \"vâng, tôi không biết\", lệch ý."
+            }
+          ],
+          "modelAnswer": "네, 감사합니다. 모르는 거 있으면 물어볼게요.",
+          "modelAnswerVi": "Vâng, cảm ơn anh. Có gì không biết tôi sẽ hỏi."
+        }
+      ]
+    },
+    {
+      "id": "basic-ask-again",
+      "title": "Nghe không rõ khi gọi điện",
+      "titleKo": "다시 말씀해 달라고 하기",
+      "description": "Khách gọi qua Teams và nói hơi nhanh. Bạn nghe không rõ, cần nhờ nói lại và xác nhận giờ họp.",
+      "category": "basic",
+      "tags": [
+        "전화",
+        "확인"
+      ],
+      "turns": [
+        {
+          "client": "안 씨, 내일 오전 열 시에 회의 가능해요?",
+          "hint": "Khách hỏi mai 10 giờ sáng họp được không, nhưng bạn nghe không rõ giờ. Hãy xin nói lại.",
+          "choices": [
+            {
+              "ko": "뭐라고?",
+              "correct": false,
+              "feedback": "반말, nghe cộc lốc."
+            },
+            {
+              "ko": "네, 가능해요.",
+              "correct": false,
+              "feedback": "Đồng ý khi chưa nghe rõ giờ rất dễ nhầm lịch. Hãy hỏi lại."
+            },
+            {
+              "ko": "죄송합니다, 잘 못 들었어요. 다시 한번 말씀해 주세요.",
+              "correct": true,
+              "feedback": "Xin lỗi, nói rõ là không nghe được (잘 못 들었어요) và nhờ nói lại bằng -아/어 주세요."
+            }
+          ],
+          "modelAnswer": "죄송합니다, 잘 못 들었어요. 다시 한번 말씀해 주세요.",
+          "modelAnswerVi": "Xin lỗi, tôi nghe không rõ. Anh nói lại giúp tôi một lần nữa."
+        },
+        {
+          "client": "내일 오전 열 시요. 회의 가능해요?",
+          "hint": "Khách nói lại: 10 giờ sáng mai. Hãy nhắc lại giờ để xác nhận rồi đồng ý.",
+          "choices": [
+            {
+              "ko": "네, 내일 오전 열 시요. 가능해요.",
+              "correct": true,
+              "feedback": "Nhắc lại giờ (N이요/요) để xác nhận là thói quen tốt khi chưa chắc."
+            },
+            {
+              "ko": "네, 열 시 반이요. 가능해요.",
+              "correct": false,
+              "feedback": "Khách nói 열 시 (10 giờ), không phải 열 시 반 (10 giờ rưỡi)."
+            }
+          ],
+          "modelAnswer": "네, 내일 오전 열 시요. 가능해요.",
+          "modelAnswerVi": "Vâng, 10 giờ sáng mai ạ. Tôi họp được."
+        },
+        {
+          "client": "좋아요. 그럼 회의 링크는 채팅으로 보낼게요.",
+          "hint": "Khách nói sẽ gửi link họp qua chat. Hãy cảm ơn và chào.",
+          "choices": [
+            {
+              "ko": "네, 링크 보내요.",
+              "correct": false,
+              "feedback": "보내요 nghe như bạn tự gửi, hoặc như ra lệnh. Hãy cảm ơn."
+            },
+            {
+              "ko": "네, 감사합니다. 내일 뵙겠습니다.",
+              "correct": true,
+              "feedback": "감사합니다 + 내일 뵙겠습니다 (hẹn gặp ngày mai, lịch sự)."
+            }
+          ],
+          "modelAnswer": "네, 감사합니다. 내일 뵙겠습니다.",
+          "modelAnswerVi": "Vâng, cảm ơn anh. Hẹn gặp anh ngày mai."
+        }
+      ]
+    },
+    {
+      "id": "basic-progress",
+      "title": "Báo tiến độ đơn giản",
+      "titleKo": "간단한 진행 상황 보고",
+      "description": "Buổi sáng, trưởng nhóm hỏi bạn đang làm gì, bao giờ xong và có chỗ nào khó không.",
+      "category": "basic",
+      "tags": [
+        "진행 상황",
+        "보고"
+      ],
+      "turns": [
+        {
+          "client": "안 씨, 지금 뭐 하고 있어요?",
+          "hint": "Leader hỏi bạn đang làm gì. Trả lời bằng -고 있어요.",
+          "choices": [
+            {
+              "ko": "지금 로그인 화면을 만들었어요.",
+              "correct": false,
+              "feedback": "Quá khứ là \"đã làm xong\", không phải \"đang làm\"."
+            },
+            {
+              "ko": "지금 로그인 화면을 만들고 있어요.",
+              "correct": true,
+              "feedback": "Đúng: việc đang làm dùng -고 있어요."
+            },
+            {
+              "ko": "지금 로그인 화면을 만들 거예요.",
+              "correct": false,
+              "feedback": "Là \"sẽ làm\", tức là chưa bắt đầu."
+            }
+          ],
+          "modelAnswer": "지금 로그인 화면을 만들고 있어요.",
+          "modelAnswerVi": "Tôi đang làm màn hình đăng nhập."
+        },
+        {
+          "client": "언제까지 할 수 있어요?",
+          "hint": "Leader hỏi bao giờ xong. Nói mốc thời gian với -(으)ㄹ 수 있어요.",
+          "choices": [
+            {
+              "ko": "내일 오후까지 할 수 있어요.",
+              "correct": true,
+              "feedback": "Rõ ràng: mốc thời gian + 할 수 있어요."
+            },
+            {
+              "ko": "몰라요.",
+              "correct": false,
+              "feedback": "Trả lời cụt và thiếu trách nhiệm. Nếu chưa chắc, nói 확인하고 말씀드릴게요."
+            },
+            {
+              "ko": "어제까지 했어요.",
+              "correct": false,
+              "feedback": "Mốc thời gian sai (어제 là hôm qua) và lại dùng quá khứ."
+            }
+          ],
+          "modelAnswer": "내일 오후까지 할 수 있어요.",
+          "modelAnswerVi": "Tôi làm xong được trước chiều mai."
+        },
+        {
+          "client": "좋아요. 어려운 부분은 없어요?",
+          "hint": "Leader hỏi có chỗ nào khó không. Nói thật phần khó và nhờ giúp.",
+          "choices": [
+            {
+              "ko": "없어요. 다 쉬워요.",
+              "correct": false,
+              "feedback": "Có chỗ khó mà giấu đi thì sau dễ trễ hạn. Nói sớm là chuyên nghiệp hơn."
+            },
+            {
+              "ko": "API 부분이 조금 어려워요. 시간 있을 때 좀 봐 주세요.",
+              "correct": true,
+              "feedback": "Nói rõ phần khó và nhờ giúp nhẹ nhàng bằng 좀 -아/어 주세요."
+            }
+          ],
+          "modelAnswer": "API 부분이 조금 어려워요. 시간 있을 때 좀 봐 주세요.",
+          "modelAnswerVi": "Phần API hơi khó. Lúc nào anh rảnh xem giúp tôi nhé."
+        }
+      ]
+    },
+    {
+      "id": "basic-lunch",
+      "title": "Đồng nghiệp rủ đi ăn trưa",
+      "titleKo": "점심 같이 먹기",
+      "description": "Đến giờ trưa, đồng nghiệp người Hàn (이 대리님) rủ bạn đi ăn.",
+      "category": "basic",
+      "tags": [
+        "점심",
+        "식사"
+      ],
+      "turns": [
+        {
+          "client": "안 씨, 점심 먹었어요? 같이 먹을까요?",
+          "hint": "Đồng nghiệp hỏi bạn ăn trưa chưa và rủ ăn cùng. Hãy nhận lời.",
+          "choices": [
+            {
+              "ko": "네, 먹을까요.",
+              "correct": false,
+              "feedback": "-(으)ㄹ까요 là câu rủ. Khi nhận lời hãy nói 좋아요 hoặc 같이 가요."
+            },
+            {
+              "ko": "아니요, 안 먹어요.",
+              "correct": false,
+              "feedback": "Nghe như \"tôi không ăn\", giống từ chối. \"Chưa ăn\" là 아직 안 먹었어요."
+            },
+            {
+              "ko": "아니요, 아직 안 먹었어요. 같이 가요!",
+              "correct": true,
+              "feedback": "Đúng: 아직 안 먹었어요 (chưa ăn) rồi nhận lời 같이 가요."
+            }
+          ],
+          "modelAnswer": "아니요, 아직 안 먹었어요. 같이 가요!",
+          "modelAnswerVi": "Chưa, tôi chưa ăn. Mình đi cùng nhé!"
+        },
+        {
+          "client": "뭐 먹고 싶어요? 김치찌개 어때요?",
+          "hint": "Đồng nghiệp hỏi bạn muốn ăn gì và gợi ý canh kimchi. Bạn không quen ăn cay: nói nhẹ nhàng.",
+          "choices": [
+            {
+              "ko": "좋아요. 그런데 저는 매운 음식을 잘 못 먹어요. 안 매운 메뉴도 있어요?",
+              "correct": true,
+              "feedback": "Đồng ý trước, rồi nói nhẹ nhàng (잘 못 먹어요) và hỏi món khác."
+            },
+            {
+              "ko": "김치찌개 싫어요.",
+              "correct": false,
+              "feedback": "싫어요 nghe như chê lựa chọn của người rủ."
+            }
+          ],
+          "modelAnswer": "좋아요. 그런데 저는 매운 음식을 잘 못 먹어요. 안 매운 메뉴도 있어요?",
+          "modelAnswerVi": "Được ạ. Nhưng tôi không ăn cay giỏi lắm. Có món không cay không?"
+        },
+        {
+          "client": "그럼 비빔밥 먹어요. 오늘은 제가 살게요.",
+          "hint": "Đồng nghiệp đề nghị ăn bibimbap và nói hôm nay sẽ mời. Cảm ơn và hẹn lần sau bạn mời.",
+          "choices": [
+            {
+              "ko": "네, 사세요.",
+              "correct": false,
+              "feedback": "Nghe như bảo \"anh trả đi\". Hãy cảm ơn."
+            },
+            {
+              "ko": "감사합니다! 다음에는 제가 살게요.",
+              "correct": true,
+              "feedback": "Cảm ơn và hẹn lần sau mình mời (-(으)ㄹ게요): cách đáp rất tự nhiên."
+            }
+          ],
+          "modelAnswer": "감사합니다! 다음에는 제가 살게요.",
+          "modelAnswerVi": "Cảm ơn anh! Lần sau để tôi mời."
+        }
+      ]
+    },
+    {
+      "id": "basic-sick-leave",
+      "title": "Gọi điện xin nghỉ ốm",
+      "titleKo": "아파서 쉬겠다고 말하기",
+      "description": "Sáng nay bạn bị sốt. Bạn gọi cho trưởng nhóm để xin nghỉ.",
+      "category": "basic",
+      "tags": [
+        "병가",
+        "전화"
+      ],
+      "turns": [
+        {
+          "client": "여보세요, 안 씨? 무슨 일이에요?",
+          "hint": "Trưởng nhóm nghe máy và hỏi có chuyện gì. Nói lý do bằng -아/어서 và xin nghỉ.",
+          "choices": [
+            {
+              "ko": "팀장님, 열이 많이 나서 오늘 쉬어도 될까요?",
+              "correct": true,
+              "feedback": "Nêu lý do bằng -아/어서 và xin phép lịch sự bằng -아/어도 될까요?"
+            },
+            {
+              "ko": "오늘 안 가요.",
+              "correct": false,
+              "feedback": "Chỉ báo không đi, không có lý do và không xin phép."
+            },
+            {
+              "ko": "팀장님, 아파요. 쉬세요.",
+              "correct": false,
+              "feedback": "쉬세요 là bảo trưởng nhóm nghỉ, sai ý."
+            }
+          ],
+          "modelAnswer": "팀장님, 열이 많이 나서 오늘 쉬어도 될까요?",
+          "modelAnswerVi": "Trưởng nhóm ơi, tôi sốt cao nên hôm nay xin nghỉ được không ạ?"
+        },
+        {
+          "client": "괜찮아요? 병원에는 갔어요?",
+          "hint": "Trưởng nhóm hỏi thăm và hỏi bạn đã đi khám chưa. Bạn chưa đi, buổi sáng sẽ đi.",
+          "choices": [
+            {
+              "ko": "네, 병원에 갈 거예요.",
+              "correct": false,
+              "feedback": "Câu hỏi là \"đã đi chưa\"; đáp 네 rồi nói \"sẽ đi\" là mâu thuẫn."
+            },
+            {
+              "ko": "아니요, 아직 안 갔어요. 오전에 갈 거예요.",
+              "correct": true,
+              "feedback": "아직 안 갔어요 (chưa đi) + kế hoạch bằng -(으)ㄹ 거예요."
+            }
+          ],
+          "modelAnswer": "아니요, 아직 안 갔어요. 오전에 갈 거예요.",
+          "modelAnswerVi": "Chưa ạ, tôi chưa đi. Sáng nay tôi sẽ đi."
+        },
+        {
+          "client": "알겠어요. 오늘은 푹 쉬세요. 급한 일은 제가 확인할게요.",
+          "hint": "Trưởng nhóm cho nghỉ và nói sẽ lo việc gấp. Cảm ơn và nói sẽ liên lạc lại.",
+          "choices": [
+            {
+              "ko": "감사합니다. 내일 다시 연락드릴게요.",
+              "correct": true,
+              "feedback": "Cảm ơn và hứa liên lạc lại. 연락드릴게요 là dạng khiêm tốn của 연락할게요."
+            },
+            {
+              "ko": "네, 확인하세요.",
+              "correct": false,
+              "feedback": "Nghe như bạn ra lệnh cho trưởng nhóm."
+            }
+          ],
+          "modelAnswer": "감사합니다. 내일 다시 연락드릴게요.",
+          "modelAnswerVi": "Cảm ơn anh. Ngày mai tôi sẽ liên lạc lại."
+        }
+      ]
+    },
+    {
+      "id": "basic-meeting-room",
+      "title": "Đặt phòng họp",
+      "titleKo": "회의실 예약하기",
+      "description": "Chiều nay bạn cần phòng họp để họp với khách. Bạn hỏi người phụ trách hành chính (총무팀 박 주임님).",
+      "category": "basic",
+      "tags": [
+        "회의실",
+        "예약"
+      ],
+      "turns": [
+        {
+          "client": "네, 무슨 일이세요?",
+          "hint": "Người phụ trách hỏi bạn cần gì. Nói bạn muốn dùng phòng họp lúc mấy giờ.",
+          "choices": [
+            {
+              "ko": "회의실 줘.",
+              "correct": false,
+              "feedback": "반말 và nghe như ra lệnh."
+            },
+            {
+              "ko": "회의실이 있어요.",
+              "correct": false,
+              "feedback": "Nghe như câu kể \"có phòng họp\", không phải lời nhờ."
+            },
+            {
+              "ko": "오늘 오후 세 시에 회의실을 쓰고 싶어요. 예약할 수 있어요?",
+              "correct": true,
+              "feedback": "Nói mong muốn bằng -고 싶어요 rồi hỏi khả năng bằng -(으)ㄹ 수 있어요?"
+            }
+          ],
+          "modelAnswer": "오늘 오후 세 시에 회의실을 쓰고 싶어요. 예약할 수 있어요?",
+          "modelAnswerVi": "Tôi muốn dùng phòng họp lúc 3 giờ chiều nay. Đặt được không ạ?"
+        },
+        {
+          "client": "몇 명이 써요?",
+          "hint": "Hỏi bao nhiêu người dùng phòng. Trả lời số người (số thuần Hàn + 명).",
+          "choices": [
+            {
+              "ko": "여섯 명이요.",
+              "correct": true,
+              "feedback": "Đếm người dùng số thuần Hàn: 여섯 명. Trả lời ngắn bằng N이요 là tự nhiên."
+            },
+            {
+              "ko": "육 명이요.",
+              "correct": false,
+              "feedback": "Đếm người dùng số thuần Hàn (여섯 명), không dùng số Hán Hàn 육."
+            }
+          ],
+          "modelAnswer": "여섯 명이요.",
+          "modelAnswerVi": "Sáu người ạ."
+        },
+        {
+          "client": "삼 층 큰 회의실 예약했어요. 모니터도 있어요.",
+          "hint": "Đã đặt phòng lớn ở tầng 3, có cả màn hình. Hãy cảm ơn.",
+          "choices": [
+            {
+              "ko": "모니터 있어요?",
+              "correct": false,
+              "feedback": "Người ta vừa nói có màn hình rồi. Hãy cảm ơn."
+            },
+            {
+              "ko": "정말 감사합니다. 잘 쓸게요.",
+              "correct": true,
+              "feedback": "잘 쓸게요 (tôi sẽ dùng cẩn thận) là câu cảm ơn tự nhiên khi mượn phòng hoặc đồ."
+            }
+          ],
+          "modelAnswer": "정말 감사합니다. 잘 쓸게요.",
+          "modelAnswerVi": "Cảm ơn chị nhiều. Tôi sẽ dùng cẩn thận."
+        }
+      ]
+    },
+    {
+      "id": "basic-bug-report",
+      "title": "Báo lỗi đơn giản",
+      "titleKo": "간단한 버그 보고",
+      "description": "Bạn thấy lỗi ở trang đăng nhập. Trưởng nhóm phía Hàn gọi hỏi tình hình.",
+      "category": "basic",
+      "tags": [
+        "버그",
+        "보고"
+      ],
+      "turns": [
+        {
+          "client": "안 씨, 무슨 문제 있어요?",
+          "hint": "Leader hỏi có vấn đề gì. Nói ngắn gọn lỗi xảy ra khi nào.",
+          "choices": [
+            {
+              "ko": "네, 로그인 버튼을 누르면 에러가 나요.",
+              "correct": true,
+              "feedback": "Rõ ràng: làm gì (-(으)면) thì lỗi xuất hiện (에러가 나요)."
+            },
+            {
+              "ko": "로그인 망했어요.",
+              "correct": false,
+              "feedback": "망했어요 là tiếng lóng (\"toang rồi\"), không hợp nơi làm việc."
+            },
+            {
+              "ko": "에러예요.",
+              "correct": false,
+              "feedback": "Quá ngắn, leader không biết lỗi ở đâu."
+            }
+          ],
+          "modelAnswer": "네, 로그인 버튼을 누르면 에러가 나요.",
+          "modelAnswerVi": "Vâng, bấm nút đăng nhập thì bị lỗi ạ."
+        },
+        {
+          "client": "언제부터 그래요?",
+          "hint": "Leader hỏi bị từ khi nào. Nói thời điểm với 부터.",
+          "choices": [
+            {
+              "ko": "내일부터 그래요.",
+              "correct": false,
+              "feedback": "내일 là ngày mai, sai thời gian."
+            },
+            {
+              "ko": "오늘 아침부터 그랬어요. 어제는 괜찮았어요.",
+              "correct": true,
+              "feedback": "Mốc thời gian + 부터, và nói thêm hôm qua vẫn ổn để leader dễ tìm nguyên nhân."
+            }
+          ],
+          "modelAnswer": "오늘 아침부터 그랬어요. 어제는 괜찮았어요.",
+          "modelAnswerVi": "Bị từ sáng nay ạ. Hôm qua vẫn bình thường."
+        },
+        {
+          "client": "알겠어요. 오늘 안에 고칠 수 있어요?",
+          "hint": "Leader hỏi sửa trong hôm nay được không. Trả lời được và hứa báo lại.",
+          "choices": [
+            {
+              "ko": "네, 오늘 오후까지 고칠게요. 끝나면 말씀드릴게요.",
+              "correct": true,
+              "feedback": "Hứa bằng -(으)ㄹ게요 và nói sẽ báo lại khi xong."
+            },
+            {
+              "ko": "네, 고치세요.",
+              "correct": false,
+              "feedback": "고치세요 là bảo leader sửa."
+            },
+            {
+              "ko": "네, 고쳤어요.",
+              "correct": false,
+              "feedback": "Chưa sửa mà nói 고쳤어요 (đã sửa) là sai sự thật."
+            }
+          ],
+          "modelAnswer": "네, 오늘 오후까지 고칠게요. 끝나면 말씀드릴게요.",
+          "modelAnswerVi": "Vâng, tôi sẽ sửa xong trong chiều nay. Xong tôi sẽ báo anh."
+        }
+      ]
+    },
+    {
+      "id": "basic-leaving",
+      "title": "Chào về cuối ngày",
+      "titleKo": "퇴근 인사",
+      "description": "Sáu giờ chiều, bạn xong việc và muốn về trước trưởng nhóm.",
+      "category": "basic",
+      "tags": [
+        "퇴근",
+        "인사"
+      ],
+      "turns": [
+        {
+          "client": "안 씨, 오늘 일 다 끝났어요?",
+          "hint": "Leader hỏi bạn xong việc hôm nay chưa. Trả lời đã xong và báo ngắn kết quả.",
+          "choices": [
+            {
+              "ko": "아니요, 다 끝났어요.",
+              "correct": false,
+              "feedback": "아니요 rồi lại nói đã xong là mâu thuẫn."
+            },
+            {
+              "ko": "네, 다 끝났어요. 테스트 결과는 메일로 보냈어요.",
+              "correct": true,
+              "feedback": "Báo đã xong và kết quả đã gửi, dùng quá khứ -았/었어요."
+            },
+            {
+              "ko": "네, 끝날 거예요.",
+              "correct": false,
+              "feedback": "끝날 거예요 là \"sẽ xong\", tức là chưa xong."
+            }
+          ],
+          "modelAnswer": "네, 다 끝났어요. 테스트 결과는 메일로 보냈어요.",
+          "modelAnswerVi": "Vâng, xong hết rồi ạ. Kết quả test tôi đã gửi qua email."
+        },
+        {
+          "client": "수고했어요. 내일은 몇 시에 와요?",
+          "hint": "Leader khen bạn vất vả và hỏi mai mấy giờ đến. Trả lời giờ.",
+          "choices": [
+            {
+              "ko": "내일은 회의가 있어서 여덟 시 반에 올게요.",
+              "correct": true,
+              "feedback": "Lý do bằng -아/어서, giờ đến bằng -(으)ㄹ게요."
+            },
+            {
+              "ko": "내일은 팔 시 삼십 분에 와요.",
+              "correct": false,
+              "feedback": "Giờ dùng số thuần Hàn: 여덟 시, không nói 팔 시."
+            }
+          ],
+          "modelAnswer": "내일은 회의가 있어서 여덟 시 반에 올게요.",
+          "modelAnswerVi": "Mai có họp nên tôi sẽ đến lúc tám giờ rưỡi."
+        },
+        {
+          "client": "네, 조심히 들어가요.",
+          "hint": "Leader chào \"về cẩn thận nhé\". Chào lại trước khi về.",
+          "choices": [
+            {
+              "ko": "네, 들어가요.",
+              "correct": false,
+              "feedback": "Lặp lại câu của leader nghe lạ. Hãy chào về trước."
+            },
+            {
+              "ko": "감사합니다. 먼저 가 보겠습니다. 내일 뵙겠습니다.",
+              "correct": true,
+              "feedback": "Câu chào chuẩn khi về trước: 먼저 가 보겠습니다 + hẹn mai gặp."
+            }
+          ],
+          "modelAnswer": "감사합니다. 먼저 가 보겠습니다. 내일 뵙겠습니다.",
+          "modelAnswerVi": "Cảm ơn anh. Tôi xin phép về trước. Mai gặp lại anh."
+        }
+      ]
     }
   ]
 }

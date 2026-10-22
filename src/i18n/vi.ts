@@ -304,6 +304,7 @@ export const vi = {
       meeting: 'Họp',
       'daily-life': 'Đời sống công sở',
       interview: 'Phỏng vấn',
+      basic: 'Sơ cấp TOPIK 1–2',
     } as Record<string, string>,
     statusLabel: 'Trạng thái',
     status: {
@@ -1000,6 +1001,11 @@ export const vi = {
     startListen: 'Kiểm tra nghe hiểu',
     nextLesson: 'Bài tiếp',
     suggest: 'Mới học? Bắt đầu với Nghe nói sơ cấp: câu ngắn, nói chậm',
+    more: 'Học tiếp ở trình độ sơ cấp',
+    grammarLink: 'Ngữ pháp sơ cấp',
+    grammarDesc: 'Đuôi câu, thì, phủ định, nhờ vả: mỗi mẫu có ví dụ công sở và bài luyện nhanh',
+    dialogueLink: 'Hội thoại sơ cấp',
+    dialogueDesc: 'Tình huống ngắn: ngày đầu đi làm, ăn trưa, xin nghỉ, báo lỗi',
   },
   grammar: {
     title: 'Ngữ pháp công sở',
@@ -1010,6 +1016,7 @@ export const vi = {
       explain: 'Giải thích & xin lỗi',
       request: 'Nhờ vả & đề xuất',
       honorific: 'Kính ngữ',
+      basic: 'Sơ cấp TOPIK 1–2',
     } as Record<string, string>,
     practiced: 'Đã luyện',
     usage: 'Khi nào dùng',

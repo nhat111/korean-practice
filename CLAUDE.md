@@ -164,6 +164,9 @@ Korean either.
   Three tabs (`?tab=`): words, "Nghe & nói" (`SpeakPractice`, SRS `basic:<id>:<i>`) and "Nghe hiểu" (hear, pick the
   meaning among the lesson's lines, `listen:basic:<id>:<i>`; `src/practice/basics.ts`, pure, tested). Lines are keyed
   by index: only append, never reorder or remove. Both keys feed "Câu cần luyện lại". Not part of the daily plan.
+  Beginner grammar lives in `grammar.json` (group `basic`, ids `gr-b-`, at the end of the file) and beginner dialogues in
+  `scenarios.json` (category `basic`, ids `basic-`, short 해요체 turns); `/basics` links to `/grammar?group=basic`
+  (the grammar list reads `?group=`) and `/scenarios?cat=basic`.
 - `grammar.json` (`GrammarLesson`, pages `/grammar` and `/grammar/:id` "Ngữ pháp công sở", link on the Flashcards page;
   replaced the K-pop songs section, `/songs/*` redirects here): `id` (`gr-`, ASCII), `group` (one of `GRAMMAR_GROUPS` in
   `src/practice/decks.ts`, labels in `vi.grammar.groups`; tested), `pattern` (TOPIK notation, tested like vocab; vocab

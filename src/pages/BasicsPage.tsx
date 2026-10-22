@@ -28,6 +28,25 @@ export function BasicsPage() {
         <p className="muted">{vi.basics.intro}</p>
       </header>
       <ContentGate state={state}>{(items) => <BasicsList items={items} />}</ContentGate>
+      <section className="stack-sm">
+        <h2 className="section-title">{vi.basics.more}</h2>
+        <div className="list list--cards">
+          <Link to="/grammar?group=basic" className="card card--link">
+            <span className="card-icon card-icon--amber">
+              <Icon name="book" />
+            </span>
+            <h3>{vi.basics.grammarLink}</h3>
+            <p className="muted small">{vi.basics.grammarDesc}</p>
+          </Link>
+          <Link to="/scenarios?cat=basic" className="card card--link">
+            <span className="card-icon card-icon--red">
+              <Icon name="chat" />
+            </span>
+            <h3>{vi.basics.dialogueLink}</h3>
+            <p className="muted small">{vi.basics.dialogueDesc}</p>
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

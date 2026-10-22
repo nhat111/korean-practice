@@ -2943,6 +2943,690 @@
           "explainVi": "Với khách tránh -(으)ㅂ시다; hỏi ý kiến bằng -는 게 어떠실까요?."
         }
       ]
+    },
+    {
+      "id": "gr-b-ieyo",
+      "group": "basic",
+      "pattern": "N이에요/예요",
+      "meaningVi": "là N",
+      "usageVi": "Câu giới thiệu cơ bản ở 해요체. Danh từ có patchim + 이에요 (사람이에요), không có patchim + 예요 (개발자예요). Trang trọng hơn khi nói với khách: N입니다.",
+      "levels": {
+        "peer": {
+          "ko": "저 안이에요.",
+          "vi": "Mình là An nè."
+        },
+        "lead": {
+          "ko": "저는 안이에요.",
+          "vi": "Em là An ạ."
+        },
+        "client": {
+          "ko": "저는 개발팀의 안입니다.",
+          "vi": "Tôi là An bên team phát triển."
+        }
+      },
+      "examples": [
+        {
+          "ko": "저는 베트남 개발자예요.",
+          "vi": "Tôi là lập trình viên người Việt Nam."
+        },
+        {
+          "ko": "제 이름은 투이예요.",
+          "vi": "Tên tôi là Thủy."
+        },
+        {
+          "ko": "오늘은 금요일이에요.",
+          "vi": "Hôm nay là thứ Sáu."
+        }
+      ],
+      "mistake": {
+        "wrong": "저는 개발자이에요.",
+        "right": "저는 개발자예요.",
+        "vi": "Tôi là lập trình viên.",
+        "noteVi": "개발자 không có patchim nên dùng 예요; 이에요 chỉ dùng sau danh từ có patchim (사람이에요)."
+      },
+      "quiz": [
+        {
+          "q": "Chọn câu đúng: \"Đây là phòng họp.\"",
+          "choices": [
+            "여기는 회의실이에요.",
+            "여기는 회의실예요.",
+            "여기는 회의실 있어요."
+          ],
+          "answer": 0,
+          "explainVi": "회의실 có patchim ㄹ nên + 이에요. 있어요 nghĩa là \"có / ở\", không phải \"là\".",
+          "answerVi": "Đây là phòng họp."
+        }
+      ]
+    },
+    {
+      "id": "gr-b-ayo",
+      "group": "basic",
+      "pattern": "-아/어요",
+      "meaningVi": "đuôi câu lịch sự thân mật (해요체), thì hiện tại",
+      "usageVi": "Thân có ㅏ/ㅗ + 아요 (가요, 봐요), còn lại + 어요 (먹어요), 하다 → 해요. Dùng với đồng nghiệp và cấp trên khi nói hằng ngày; với khách hàng nên dùng -(스)ㅂ니다.",
+      "examples": [
+        {
+          "ko": "저는 매일 아홉 시에 출근해요.",
+          "vi": "Ngày nào tôi cũng đi làm lúc chín giờ."
+        },
+        {
+          "ko": "점심은 회사 근처에서 먹어요.",
+          "vi": "Bữa trưa tôi ăn gần công ty."
+        },
+        {
+          "ko": "보통 자바로 개발해요.",
+          "vi": "Tôi thường lập trình bằng Java."
+        }
+      ],
+      "mistake": {
+        "wrong": "저는 커피를 마시어요.",
+        "right": "저는 커피를 마셔요.",
+        "vi": "Tôi uống cà phê.",
+        "noteVi": "마시 + 어요 rút gọn thành 마셔요 (ㅣ + ㅓ → ㅕ). Tương tự: 기다리다 → 기다려요."
+      },
+      "quiz": [
+        {
+          "q": "\"Tôi làm việc ở Hà Nội.\"",
+          "choices": [
+            "저는 하노이에서 일하어요.",
+            "저는 하노이에서 일해요.",
+            "저는 하노이에 일해요."
+          ],
+          "answer": 1,
+          "explainVi": "하다 luôn thành 해요. Nơi diễn ra hành động dùng 에서, không dùng 에.",
+          "answerVi": "Tôi làm việc ở Hà Nội."
+        }
+      ]
+    },
+    {
+      "id": "gr-b-asseoyo",
+      "group": "basic",
+      "pattern": "-았/었어요",
+      "meaningVi": "đã (làm), thì quá khứ",
+      "usageVi": "Thân có ㅏ/ㅗ + 았어요 (갔어요, 봤어요), còn lại + 었어요 (먹었어요), 하다 → 했어요. Hay dùng để báo việc đã xong: 보냈어요, 다 했어요. Với khách: -았/었습니다.",
+      "levels": {
+        "peer": {
+          "ko": "파일 보냈어요.",
+          "vi": "Gửi file rồi nhé."
+        },
+        "lead": {
+          "ko": "팀장님, 파일 보냈어요.",
+          "vi": "Trưởng nhóm, em gửi file rồi ạ."
+        },
+        "client": {
+          "ko": "파일을 보내 드렸습니다.",
+          "vi": "Tôi đã gửi file cho anh/chị."
+        }
+      },
+      "examples": [
+        {
+          "ko": "어제 버그를 고쳤어요.",
+          "vi": "Hôm qua tôi đã sửa bug."
+        },
+        {
+          "ko": "회의 자료를 메일로 보냈어요.",
+          "vi": "Tôi đã gửi tài liệu họp qua email."
+        },
+        {
+          "ko": "점심 먹었어요?",
+          "vi": "Anh/chị ăn trưa chưa?"
+        }
+      ],
+      "mistake": {
+        "wrong": "어제 테스트해요.",
+        "right": "어제 테스트했어요.",
+        "vi": "Hôm qua tôi đã test.",
+        "noteVi": "Có 어제 (hôm qua) thì động từ phải chia quá khứ. Tiếng Việt không đổi dạng động từ nên người Việt hay quên."
+      },
+      "quiz": [
+        {
+          "q": "Leader hỏi bạn đã gửi file chưa. Bạn trả lời: \"Vâng, tôi gửi rồi.\"",
+          "choices": [
+            "네, 보내요.",
+            "네, 보낼 거예요.",
+            "네, 보냈어요."
+          ],
+          "answer": 2,
+          "explainVi": "보내요 là hiện tại, 보낼 거예요 là \"sẽ gửi\". Việc đã làm xong dùng -았/었어요.",
+          "answerVi": "Vâng, tôi gửi rồi."
+        }
+      ]
+    },
+    {
+      "id": "gr-b-l-geoyeyo",
+      "group": "basic",
+      "pattern": "-(으)ㄹ 거예요",
+      "meaningVi": "sẽ (làm): dự định, dự đoán",
+      "usageVi": "Nói kế hoạch hoặc đoán điều sắp xảy ra. Thân không có patchim + ㄹ 거예요 (할 거예요), có patchim + 을 거예요 (먹을 거예요). 거 đọc là [꺼]. Với khách: -(으)ㄹ 예정입니다 hoặc -겠습니다.",
+      "levels": {
+        "peer": {
+          "ko": "내일 배포할 거예요.",
+          "vi": "Mai deploy nhé."
+        },
+        "lead": {
+          "ko": "내일 오후에 배포할 거예요.",
+          "vi": "Chiều mai em sẽ deploy ạ."
+        },
+        "client": {
+          "ko": "내일 오후에 배포할 예정입니다.",
+          "vi": "Chúng tôi dự kiến deploy vào chiều mai."
+        }
+      },
+      "examples": [
+        {
+          "ko": "다음 주에 휴가를 갈 거예요.",
+          "vi": "Tuần sau tôi sẽ đi nghỉ."
+        },
+        {
+          "ko": "오늘은 로그인 기능을 만들 거예요.",
+          "vi": "Hôm nay tôi sẽ làm chức năng đăng nhập."
+        },
+        {
+          "ko": "아마 금요일에 끝날 거예요.",
+          "vi": "Chắc thứ Sáu sẽ xong."
+        }
+      ],
+      "mistake": {
+        "wrong": "내일 테스트하을 거예요.",
+        "right": "내일 테스트할 거예요.",
+        "vi": "Ngày mai tôi sẽ test.",
+        "noteVi": "하다 không có patchim nên + ㄹ 거예요 → 할 거예요. 을 거예요 chỉ dùng sau patchim (먹을 거예요)."
+      },
+      "quiz": [
+        {
+          "q": "\"Ngày mai tôi sẽ sửa lỗi này.\"",
+          "choices": [
+            "내일 이 버그를 고칠 거예요.",
+            "내일 이 버그를 고쳤어요.",
+            "내일 이 버그를 고치을 거예요."
+          ],
+          "answer": 0,
+          "explainVi": "고쳤어요 là quá khứ. 고치 không có patchim nên là 고칠 거예요, không phải 고치을.",
+          "answerVi": "Ngày mai tôi sẽ sửa lỗi này."
+        }
+      ]
+    },
+    {
+      "id": "gr-b-an",
+      "group": "basic",
+      "pattern": "안 / -지 않다",
+      "meaningVi": "không (làm): phủ định",
+      "usageVi": "안 + động từ (안 가요) dùng nhiều khi nói; -지 않아요 / -지 않습니다 nghe trang trọng hơn, hợp email và khi nói với khách. Với động từ N하다, 안 đứng trước 하다: 확인 안 했어요.",
+      "levels": {
+        "peer": {
+          "ko": "아직 안 끝났어요.",
+          "vi": "Vẫn chưa xong đâu."
+        },
+        "lead": {
+          "ko": "아직 끝나지 않았어요.",
+          "vi": "Vẫn chưa xong ạ."
+        },
+        "client": {
+          "ko": "아직 완료되지 않았습니다.",
+          "vi": "Hiện vẫn chưa hoàn thành."
+        }
+      },
+      "examples": [
+        {
+          "ko": "오늘은 야근 안 해요.",
+          "vi": "Hôm nay tôi không làm thêm giờ."
+        },
+        {
+          "ko": "서버가 아직 응답하지 않아요.",
+          "vi": "Server vẫn chưa phản hồi."
+        },
+        {
+          "ko": "저는 커피를 안 마셔요.",
+          "vi": "Tôi không uống cà phê."
+        }
+      ],
+      "mistake": {
+        "wrong": "아직 안 확인했어요.",
+        "right": "아직 확인 안 했어요.",
+        "vi": "Tôi vẫn chưa kiểm tra.",
+        "noteVi": "Với động từ N하다 (확인하다, 공유하다), 안 đứng ngay trước 하다: 확인 안 했어요. Cũng có thể nói 확인하지 않았어요."
+      },
+      "quiz": [
+        {
+          "q": "Nói với đồng nghiệp: \"Tôi vẫn chưa gửi email.\"",
+          "choices": [
+            "아직 메일을 보냈어요.",
+            "아직 메일을 안 보냈어요.",
+            "아직 메일을 안 보내요."
+          ],
+          "answer": 1,
+          "explainVi": "아직 + 안 + quá khứ = vẫn chưa làm. 안 보내요 là \"không gửi\" (thói quen hoặc từ chối).",
+          "answerVi": "Tôi vẫn chưa gửi email."
+        }
+      ]
+    },
+    {
+      "id": "gr-b-go-sipda",
+      "group": "basic",
+      "pattern": "-고 싶다",
+      "meaningVi": "muốn (làm)",
+      "usageVi": "Nói mong muốn của mình: V-고 싶어요. Hỏi người trên: -고 싶으세요? Khi xin phép thì -아/어도 될까요? lịch sự hơn là chỉ nói mình muốn.",
+      "examples": [
+        {
+          "ko": "한국어를 더 잘하고 싶어요.",
+          "vi": "Tôi muốn giỏi tiếng Hàn hơn."
+        },
+        {
+          "ko": "이 기능에 대해 더 알고 싶어요.",
+          "vi": "Tôi muốn biết thêm về chức năng này."
+        },
+        {
+          "ko": "다음 달에 연차를 쓰고 싶어요.",
+          "vi": "Tháng sau tôi muốn nghỉ phép."
+        }
+      ],
+      "mistake": {
+        "wrong": "저는 커피 싶어요.",
+        "right": "저는 커피 마시고 싶어요.",
+        "vi": "Tôi muốn uống cà phê.",
+        "noteVi": "싶다 phải đi sau động từ + 고. Muốn một món đồ thì nói N 주세요 hoặc N을/를 원해요."
+      },
+      "quiz": [
+        {
+          "q": "\"Tôi muốn học Spring Boot.\"",
+          "choices": [
+            "스프링 부트를 배우 싶어요.",
+            "스프링 부트를 배워고 싶어요.",
+            "스프링 부트를 배우고 싶어요."
+          ],
+          "answer": 2,
+          "explainVi": "Thân động từ (배우) + 고 싶어요. Không chia 아/어 trước 고, và không bỏ 고.",
+          "answerVi": "Tôi muốn học Spring Boot."
+        }
+      ]
+    },
+    {
+      "id": "gr-b-euseyo",
+      "group": "basic",
+      "pattern": "-(으)세요",
+      "meaningVi": "kính ngữ: mời / xin hãy…, hỏi về việc của người trên",
+      "usageVi": "Hai cách dùng: mời hoặc nhờ lịch sự (잠깐만 기다리세요), và hỏi về việc của người trên (내일 오세요?). Thân không có patchim + 세요 (오세요), có patchim + 으세요 (앉으세요). Một số từ riêng: 먹다/마시다 → 드세요, 있다 → 계세요.",
+      "examples": [
+        {
+          "ko": "잠깐만 기다리세요.",
+          "vi": "Anh/chị chờ một chút nhé."
+        },
+        {
+          "ko": "여기 앉으세요.",
+          "vi": "Mời anh/chị ngồi đây."
+        },
+        {
+          "ko": "팀장님, 내일 회의에 오세요?",
+          "vi": "Trưởng nhóm, mai anh có đến họp không ạ?"
+        }
+      ],
+      "mistake": {
+        "wrong": "팀장님, 점심 먹으세요.",
+        "right": "팀장님, 점심 드세요.",
+        "vi": "Mời trưởng nhóm dùng bữa trưa ạ.",
+        "noteVi": "먹다, 마시다 với người trên dùng từ kính ngữ 드시다 → 드세요."
+      },
+      "quiz": [
+        {
+          "q": "Khách đến công ty. Bạn mời: \"Mời anh vào ạ.\"",
+          "choices": [
+            "들어와.",
+            "들어오세요.",
+            "들어와요?"
+          ],
+          "answer": 1,
+          "explainVi": "들어와 là 반말. 들어와요? là câu hỏi \"anh vào à?\". Mời lịch sự dùng -(으)세요.",
+          "answerVi": "Mời anh vào ạ."
+        }
+      ]
+    },
+    {
+      "id": "gr-b-a-juseyo",
+      "group": "basic",
+      "pattern": "-아/어 주세요",
+      "meaningVi": "làm ơn (làm) giúp tôi",
+      "usageVi": "Nhờ ai làm gì cho mình. Thêm 좀 cho mềm hơn: 좀 봐 주세요. Với cấp trên hoặc khách, lịch sự hơn: -아/어 주시겠어요?, -아/어 주시면 감사하겠습니다.",
+      "levels": {
+        "peer": {
+          "ko": "이거 좀 봐 주세요.",
+          "vi": "Xem giúp mình cái này nhé."
+        },
+        "lead": {
+          "ko": "이것 좀 확인해 주시겠어요?",
+          "vi": "Anh xem giúp em cái này được không ạ?"
+        },
+        "client": {
+          "ko": "확인해 주시면 감사하겠습니다.",
+          "vi": "Mong anh/chị kiểm tra giúp."
+        }
+      },
+      "examples": [
+        {
+          "ko": "파일을 다시 보내 주세요.",
+          "vi": "Gửi lại file giúp tôi nhé."
+        },
+        {
+          "ko": "천천히 말해 주세요.",
+          "vi": "Nói chậm giúp tôi với."
+        },
+        {
+          "ko": "회의실 좀 예약해 주세요.",
+          "vi": "Đặt phòng họp giúp tôi nhé."
+        }
+      ],
+      "mistake": {
+        "wrong": "저를 도와요.",
+        "right": "저 좀 도와주세요.",
+        "vi": "Giúp tôi với.",
+        "noteVi": "도와요 chỉ là câu kể \"giúp\". Muốn nhờ ai giúp mình thì phải có 주세요."
+      },
+      "quiz": [
+        {
+          "q": "Nói với đồng nghiệp: \"Kiểm tra giúp tôi đoạn code này nhé.\"",
+          "choices": [
+            "이 코드 좀 확인해 주세요.",
+            "이 코드 좀 확인해요.",
+            "이 코드 좀 확인하세요."
+          ],
+          "answer": 0,
+          "explainVi": "확인해요 là câu kể. 확인하세요 nghe như bảo người ta làm việc của họ. Nhờ giúp mình thì dùng -아/어 주세요.",
+          "answerVi": "Kiểm tra giúp tôi đoạn code này nhé."
+        }
+      ]
+    },
+    {
+      "id": "gr-b-l-su-itda",
+      "group": "basic",
+      "pattern": "-(으)ㄹ 수 있다/없다",
+      "meaningVi": "có thể / không thể (làm)",
+      "usageVi": "Nói khả năng hoặc điều kiện. 수 đọc là [쑤]. Khi từ chối, câu mềm hơn là 오늘은 좀 어려울 것 같아요 thay vì nói thẳng 할 수 없어요.",
+      "examples": [
+        {
+          "ko": "오늘까지 할 수 있어요.",
+          "vi": "Tôi làm xong được trong hôm nay."
+        },
+        {
+          "ko": "지금은 서버에 접속할 수 없어요.",
+          "vi": "Bây giờ không truy cập server được."
+        },
+        {
+          "ko": "한국어로 조금 말할 수 있어요.",
+          "vi": "Tôi nói được một chút tiếng Hàn."
+        }
+      ],
+      "mistake": {
+        "wrong": "저는 한국어 할 수 있어요 조금.",
+        "right": "저는 한국어를 조금 할 수 있어요.",
+        "vi": "Tôi biết nói một chút tiếng Hàn.",
+        "noteVi": "Tiếng Hàn đặt động từ ở cuối câu; 조금 đứng trước động từ."
+      },
+      "quiz": [
+        {
+          "q": "\"Hôm nay tôi không đi họp được.\"",
+          "choices": [
+            "오늘 회의에 갈 수 있어요.",
+            "오늘 회의에 가 수 없어요.",
+            "오늘 회의에 갈 수 없어요."
+          ],
+          "answer": 2,
+          "explainVi": "갈 수 있어요 là \"đi được\". 가 không có patchim nên + ㄹ 수 → 갈 수.",
+          "answerVi": "Hôm nay tôi không đi họp được."
+        }
+      ]
+    },
+    {
+      "id": "gr-b-l-kkayo",
+      "group": "basic",
+      "pattern": "-(으)ㄹ까요?",
+      "meaningVi": "… nhé? / … không ạ?: rủ, đề nghị, hỏi ý",
+      "usageVi": "Rủ cùng làm (같이 갈까요?), đề nghị làm giúp (제가 할까요?), hỏi ý người nghe (몇 시에 할까요?). Khi trả lời đừng lặp lại -(으)ㄹ까요: nói 네, 좋아요 hoặc 네, 그렇게 해 주세요.",
+      "examples": [
+        {
+          "ko": "점심 같이 먹을까요?",
+          "vi": "Mình cùng ăn trưa nhé?"
+        },
+        {
+          "ko": "제가 회의록을 쓸까요?",
+          "vi": "Để tôi viết biên bản họp nhé?"
+        },
+        {
+          "ko": "회의는 몇 시에 할까요?",
+          "vi": "Mình họp lúc mấy giờ ạ?"
+        }
+      ],
+      "mistake": {
+        "wrong": "같이 커피 마시을까요?",
+        "right": "같이 커피 마실까요?",
+        "vi": "Cùng uống cà phê nhé?",
+        "noteVi": "마시 không có patchim nên + ㄹ까요 → 마실까요. 을까요 chỉ dùng sau patchim (먹을까요)."
+      },
+      "quiz": [
+        {
+          "q": "Bạn muốn đề nghị: \"Để tôi chia sẻ màn hình nhé?\"",
+          "choices": [
+            "제가 화면을 공유할까요?",
+            "제가 화면을 공유해요?",
+            "제가 화면을 공유했어요?"
+          ],
+          "answer": 0,
+          "explainVi": "공유해요? là hỏi \"tôi chia sẻ à?\", 공유했어요? là \"tôi đã chia sẻ chưa?\". Đề nghị làm giúp dùng -(으)ㄹ까요?",
+          "answerVi": "Để tôi chia sẻ màn hình nhé?"
+        }
+      ]
+    },
+    {
+      "id": "gr-b-jiman",
+      "group": "basic",
+      "pattern": "-지만",
+      "meaningVi": "nhưng",
+      "usageVi": "Nối hai ý trái nhau trong một câu. Gắn thẳng vào thân: 어렵지만, 했지만; sau danh từ: N이지만. Đầu câu mới thì dùng 하지만 hoặc 그런데.",
+      "examples": [
+        {
+          "ko": "일이 많지만 재미있어요.",
+          "vi": "Việc nhiều nhưng thú vị."
+        },
+        {
+          "ko": "테스트는 했지만 버그가 또 나왔어요.",
+          "vi": "Đã test rồi nhưng lại có bug."
+        },
+        {
+          "ko": "한국어는 어렵지만 계속 공부할 거예요.",
+          "vi": "Tiếng Hàn khó nhưng tôi sẽ tiếp tục học."
+        }
+      ],
+      "mistake": {
+        "wrong": "어려워지만 재미있어요.",
+        "right": "어렵지만 재미있어요.",
+        "vi": "Khó nhưng thú vị.",
+        "noteVi": "-지만 gắn trực tiếp vào thân (어렵 + 지만), không chia 아/어 trước nó."
+      },
+      "quiz": [
+        {
+          "q": "\"Tôi muốn đi nhưng hôm nay bận.\"",
+          "choices": [
+            "가고 싶어서 오늘은 바빠요.",
+            "가고 싶지만 오늘은 바빠요.",
+            "가고 싶고 오늘은 바빠요."
+          ],
+          "answer": 1,
+          "explainVi": "-아/어서 là \"vì… nên\", -고 là \"và\". Hai ý trái nhau dùng -지만.",
+          "answerVi": "Tôi muốn đi nhưng hôm nay bận."
+        }
+      ]
+    },
+    {
+      "id": "gr-b-a-ya-hada",
+      "group": "basic",
+      "pattern": "-아/어야 하다",
+      "meaningVi": "phải (làm)",
+      "usageVi": "Nói việc bắt buộc. Khi nói, 해야 해요 và 해야 돼요 đều dùng được; với khách: -아/어야 합니다. Không cần làm thì nói 안 -아/어도 돼요.",
+      "examples": [
+        {
+          "ko": "오늘 여섯 시까지 배포해야 해요.",
+          "vi": "Hôm nay phải deploy trước sáu giờ."
+        },
+        {
+          "ko": "이 부분은 다시 확인해야 돼요.",
+          "vi": "Phần này phải kiểm tra lại."
+        },
+        {
+          "ko": "내일 일찍 출근해야 해요.",
+          "vi": "Mai tôi phải đi làm sớm."
+        }
+      ],
+      "mistake": {
+        "wrong": "저는 이 버그를 고쳐야 있어요.",
+        "right": "저는 이 버그를 고쳐야 해요.",
+        "vi": "Tôi phải sửa bug này.",
+        "noteVi": "\"Phải\" là -아/어야 해요 (hoặc 돼요), không dùng 있어요."
+      },
+      "quiz": [
+        {
+          "q": "\"Phải gửi báo cáo trước thứ Sáu.\"",
+          "choices": [
+            "금요일까지 보고서를 보내야 해요.",
+            "금요일까지 보고서를 보내도 돼요.",
+            "금요일까지 보고서를 보낼 수 있어요."
+          ],
+          "answer": 0,
+          "explainVi": "-아/어도 돼요 là \"được phép\", -(으)ㄹ 수 있어요 là \"có thể\". \"Phải\" là -아/어야 해요.",
+          "answerVi": "Phải gửi báo cáo trước thứ Sáu."
+        }
+      ]
+    },
+    {
+      "id": "gr-b-e-eseo",
+      "group": "basic",
+      "pattern": "N에 / N에서",
+      "meaningVi": "ở, đến, lúc / ở (nơi làm việc gì)",
+      "usageVi": "N에: nơi có hoặc ở (회사에 있어요), nơi đến (회사에 가요), thời gian (세 시에). N에서: nơi diễn ra hành động (회사에서 일해요) hoặc điểm xuất phát (집에서 와요).",
+      "examples": [
+        {
+          "ko": "저는 지금 회의실에 있어요.",
+          "vi": "Tôi đang ở phòng họp."
+        },
+        {
+          "ko": "오후 두 시에 회의가 있어요.",
+          "vi": "Hai giờ chiều có cuộc họp."
+        },
+        {
+          "ko": "오늘은 집에서 일해요.",
+          "vi": "Hôm nay tôi làm việc ở nhà."
+        }
+      ],
+      "mistake": {
+        "wrong": "저는 하노이에 일해요.",
+        "right": "저는 하노이에서 일해요.",
+        "vi": "Tôi làm việc ở Hà Nội.",
+        "noteVi": "일하다 là hành động nên dùng 에서. 에 dùng với 있다/없다, 가다/오다 và thời gian."
+      },
+      "quiz": [
+        {
+          "q": "\"Tôi ăn trưa ở căng tin công ty.\"",
+          "choices": [
+            "회사 식당에 점심을 먹어요.",
+            "회사 식당에서 점심을 먹어요.",
+            "회사 식당을 점심에 먹어요."
+          ],
+          "answer": 1,
+          "explainVi": "Ăn là hành động nên nơi ăn dùng 에서.",
+          "answerVi": "Tôi ăn trưa ở căng tin công ty."
+        }
+      ]
+    },
+    {
+      "id": "gr-b-go",
+      "group": "basic",
+      "pattern": "-고",
+      "meaningVi": "và, rồi (nối hai ý, hai việc)",
+      "usageVi": "Nối hai ý ngang nhau (일이 많고 어려워요) hoặc hai việc theo thứ tự (밥을 먹고 회의해요). Thì quá khứ thường chỉ chia ở cuối câu: 먹고 갔어요.",
+      "examples": [
+        {
+          "ko": "코드를 수정하고 다시 테스트할게요.",
+          "vi": "Tôi sẽ sửa code rồi test lại."
+        },
+        {
+          "ko": "우리 팀은 친절하고 열심히 일해요.",
+          "vi": "Nhóm chúng tôi thân thiện và làm việc chăm chỉ."
+        },
+        {
+          "ko": "회의가 끝나고 점심을 먹었어요.",
+          "vi": "Họp xong rồi chúng tôi đi ăn trưa."
+        }
+      ],
+      "mistake": {
+        "wrong": "커피를 마셔고 일해요.",
+        "right": "커피를 마시고 일해요.",
+        "vi": "Tôi uống cà phê rồi làm việc.",
+        "noteVi": "-고 gắn trực tiếp vào thân (마시 + 고), không chia 아/어 trước nó."
+      },
+      "quiz": [
+        {
+          "q": "\"Tôi họp xong rồi sẽ gọi điện.\"",
+          "choices": [
+            "회의하지만 전화할게요.",
+            "회의해서 전화할게요.",
+            "회의하고 전화할게요."
+          ],
+          "answer": 2,
+          "explainVi": "-지만 là \"nhưng\". 회의해서 nghe như \"vì họp nên gọi\". Hai việc nối tiếp dùng -고.",
+          "answerVi": "Tôi họp xong rồi sẽ gọi điện."
+        }
+      ]
+    },
+    {
+      "id": "gr-b-l-geyo",
+      "group": "basic",
+      "pattern": "-(으)ㄹ게요",
+      "meaningVi": "tôi sẽ (làm): hứa với người nghe",
+      "usageVi": "Người nói hứa hoặc báo sẽ làm gì cho người nghe: 확인할게요, 보낼게요. Chỉ dùng cho chính mình. 게 đọc là [께]. Với khách: -겠습니다.",
+      "levels": {
+        "peer": {
+          "ko": "금방 보낼게요.",
+          "vi": "Mình gửi ngay nhé."
+        },
+        "lead": {
+          "ko": "바로 확인할게요.",
+          "vi": "Em kiểm tra ngay ạ."
+        },
+        "client": {
+          "ko": "바로 확인하겠습니다.",
+          "vi": "Tôi sẽ kiểm tra ngay."
+        }
+      },
+      "examples": [
+        {
+          "ko": "제가 회의실을 예약할게요.",
+          "vi": "Để tôi đặt phòng họp."
+        },
+        {
+          "ko": "오늘 안에 수정할게요.",
+          "vi": "Tôi sẽ sửa trong hôm nay."
+        },
+        {
+          "ko": "먼저 갈게요. 내일 봬요.",
+          "vi": "Tôi về trước nhé. Mai gặp lại."
+        }
+      ],
+      "mistake": {
+        "wrong": "팀장님이 확인할게요.",
+        "right": "팀장님이 확인하실 거예요.",
+        "vi": "Trưởng nhóm sẽ kiểm tra.",
+        "noteVi": "-(으)ㄹ게요 chỉ dùng khi chính mình hứa làm. Nói về người khác dùng -(으)ㄹ 거예요 (kính ngữ: -(으)실 거예요)."
+      },
+      "quiz": [
+        {
+          "q": "Leader nhờ sửa bug. Bạn nhận lời: \"Vâng, tôi sẽ sửa ngay.\"",
+          "choices": [
+            "네, 바로 고칠게요.",
+            "네, 바로 고쳤어요.",
+            "네, 바로 고치세요."
+          ],
+          "answer": 0,
+          "explainVi": "고쳤어요 là đã sửa xong, 고치세요 là bảo người khác sửa. Hứa sẽ làm dùng -(으)ㄹ게요.",
+          "answerVi": "Vâng, tôi sẽ sửa ngay."
+        }
+      ]
     }
   ]
 }
