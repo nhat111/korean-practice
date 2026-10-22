@@ -1184,6 +1184,242 @@
         }
       ],
       "note": "Xin lỗi kèm ba thông tin: đã xử lý gì, có ảnh hưởng không (log đăng nhập), và kế hoạch rà soát có hạn."
+    },
+    {
+      "id": "msg-meeting-01",
+      "topic": "meeting",
+      "to": "김 과장님 – PM phía khách",
+      "situation": "Gửi link họp online cho buổi review lúc 2 giờ chiều nay, nhờ khách vào sớm 5 phút để kiểm tra âm thanh.",
+      "model": "김 과장님, 오늘 오후 2시 리뷰 회의 링크 공유드립니다.\n[Teams 링크]\n음성 확인을 위해 5분 정도 일찍 접속해 주시면 감사하겠습니다.",
+      "phrases": [
+        {
+          "ko": "회의 링크 공유드립니다",
+          "vi": "xin gửi link họp"
+        },
+        {
+          "ko": "일찍 접속해 주시면 감사하겠습니다",
+          "vi": "rất cảm ơn nếu anh/chị vào sớm"
+        }
+      ],
+      "note": "Gửi link kèm giờ họp và tên buổi họp để khách tìm lại tin nhắn dễ hơn."
+    },
+    {
+      "id": "msg-meeting-02",
+      "topic": "meeting",
+      "to": "박 대리님 – phía khách",
+      "situation": "Báo sẽ vào họp trễ khoảng 5 phút vì buổi họp trước kéo dài, nhờ bắt đầu trước.",
+      "model": "박 대리님, 앞 회의가 길어져서 5분 정도 늦게 들어갈 것 같습니다.\n죄송하지만 먼저 시작해 주시면 바로 합류하겠습니다.",
+      "phrases": [
+        {
+          "ko": "늦게 들어갈 것 같습니다",
+          "vi": "có lẽ sẽ vào muộn"
+        },
+        {
+          "ko": "먼저 시작해 주시면",
+          "vi": "nếu anh/chị bắt đầu trước"
+        },
+        {
+          "ko": "바로 합류하겠습니다",
+          "vi": "sẽ tham gia ngay"
+        }
+      ],
+      "note": "Báo trước khi giờ họp bắt đầu, nói rõ trễ bao lâu. '합류하다' = tham gia giữa chừng."
+    },
+    {
+      "id": "msg-meeting-03",
+      "topic": "meeting",
+      "to": "김 과장님 – PM phía khách",
+      "situation": "Đang họp thì mất tiếng/mạng chập chờn: nhắn trong chat là sẽ thoát ra vào lại ngay.",
+      "model": "김 과장님, 지금 제 쪽 음성이 끊기는 것 같습니다.\n잠시 나갔다가 바로 다시 접속하겠습니다.",
+      "phrases": [
+        {
+          "ko": "음성이 끊기는 것 같습니다",
+          "vi": "hình như tiếng bị ngắt"
+        },
+        {
+          "ko": "다시 접속하겠습니다",
+          "vi": "tôi sẽ vào lại"
+        }
+      ],
+      "note": "Nhắn ngay trong khung chat của cuộc họp; câu ngắn, không cần xin lỗi dài."
+    },
+    {
+      "id": "msg-meeting-04",
+      "topic": "meeting",
+      "to": "이 팀장님 – trưởng nhóm phía khách",
+      "situation": "Trong họp khách nói không thấy màn hình chia sẻ: nhắn hỏi bây giờ đã thấy chưa sau khi chia sẻ lại.",
+      "model": "이 팀장님, 화면 공유를 다시 시작했습니다.\n지금은 화면이 잘 보이시는지 확인 부탁드립니다.",
+      "phrases": [
+        {
+          "ko": "화면 공유",
+          "vi": "chia sẻ màn hình"
+        },
+        {
+          "ko": "잘 보이시는지",
+          "vi": "có thấy rõ không"
+        }
+      ],
+      "note": "'보이시다' là kính ngữ của '보이다' (nhìn thấy) khi hỏi người trên."
+    },
+    {
+      "id": "msg-meeting-05",
+      "topic": "meeting",
+      "to": "참석자 여러분 – mọi người dự họp",
+      "situation": "Sau buổi họp online, gửi biên bản và nhờ mọi người góp ý nếu có chỗ sai trước thứ Năm.",
+      "model": "오늘 회의에 참석해 주셔서 감사합니다.\n회의록 첨부드리니, 수정할 내용이 있으면 목요일까지 말씀 부탁드립니다.",
+      "phrases": [
+        {
+          "ko": "참석해 주셔서 감사합니다",
+          "vi": "cảm ơn đã tham dự"
+        },
+        {
+          "ko": "회의록 첨부드리니",
+          "vi": "xin gửi kèm biên bản họp"
+        },
+        {
+          "ko": "말씀 부탁드립니다",
+          "vi": "xin hãy cho biết"
+        }
+      ],
+      "note": "Biên bản gửi trong ngày, nêu hạn góp ý để biên bản được chốt."
+    },
+    {
+      "id": "msg-meeting-06",
+      "topic": "meeting",
+      "to": "김 과장님 – PM phía khách",
+      "situation": "Đề nghị dời buổi họp online sáng mai sang chiều vì server test đang bảo trì, hỏi 3 giờ có được không.",
+      "model": "김 과장님, 내일 오전 회의 관련해서 연락드립니다.\n테스트 서버 점검 때문에 데모가 어려워서, 오후 3시로 변경 가능하실까요?",
+      "phrases": [
+        {
+          "ko": "관련해서 연락드립니다",
+          "vi": "tôi liên lạc về việc"
+        },
+        {
+          "ko": "변경 가능하실까요",
+          "vi": "có thể đổi được không ạ"
+        }
+      ],
+      "note": "Nêu lý do ngắn gọn và đề xuất sẵn một giờ cụ thể để khách chỉ cần trả lời có/không."
+    },
+    {
+      "id": "msg-phone-01",
+      "topic": "phone",
+      "to": "박 대리님 – phía khách",
+      "situation": "Lỡ cuộc gọi của khách vì đang họp, nhắn xin lỗi và hẹn 10 phút nữa gọi lại.",
+      "model": "박 대리님, 회의 중이라 전화를 못 받았습니다. 죄송합니다.\n10분 후에 다시 전화드리겠습니다.",
+      "phrases": [
+        {
+          "ko": "전화를 못 받았습니다",
+          "vi": "không nghe máy được"
+        },
+        {
+          "ko": "다시 전화드리겠습니다",
+          "vi": "tôi sẽ gọi lại"
+        }
+      ],
+      "note": "'전화드리다' là dạng khiêm nhường của '전화하다', dùng khi mình gọi cho người trên."
+    },
+    {
+      "id": "msg-phone-02",
+      "topic": "phone",
+      "to": "김 과장님 – PM phía khách",
+      "situation": "Hỏi khách có thể gọi điện nói chuyện 10 phút lúc 4 giờ chiều không, vì chuyện spec khó giải thích qua tin nhắn.",
+      "model": "김 과장님, 화면 사양 관련해서 메시지로 설명드리기가 어려울 것 같습니다.\n오늘 오후 4시쯤 10분 정도 통화 가능하실까요?",
+      "phrases": [
+        {
+          "ko": "메시지로 설명드리기가 어려울 것 같습니다",
+          "vi": "có lẽ khó giải thích qua tin nhắn"
+        },
+        {
+          "ko": "통화 가능하실까요",
+          "vi": "có thể nói chuyện điện thoại được không ạ"
+        }
+      ],
+      "note": "Người Hàn thích hẹn trước khi gọi; nói rõ chủ đề và thời lượng."
+    },
+    {
+      "id": "msg-phone-03",
+      "topic": "phone",
+      "to": "김 과장님 – PM phía khách",
+      "situation": "Sau cuộc gọi, tóm tắt lại nội dung đã thống nhất: nút xuất Excel làm trong tuần này, phân quyền để sang tuần sau.",
+      "model": "김 과장님, 방금 통화한 내용 정리해서 공유드립니다.\n1. 엑셀 다운로드 버튼: 이번 주 내 반영\n2. 권한 설정: 다음 주로 일정 조정\n혹시 다르게 이해한 부분이 있으면 말씀 부탁드립니다.",
+      "phrases": [
+        {
+          "ko": "방금 통화한 내용 정리해서 공유드립니다",
+          "vi": "xin gửi tóm tắt nội dung vừa trao đổi qua điện thoại"
+        },
+        {
+          "ko": "다르게 이해한 부분",
+          "vi": "chỗ hiểu khác nhau"
+        }
+      ],
+      "note": "Nói qua điện thoại xong nên nhắn lại bằng chữ để có bằng chứng, tránh hiểu nhầm."
+    },
+    {
+      "id": "msg-phone-04",
+      "topic": "phone",
+      "to": "이 팀장님 – trưởng nhóm phía khách",
+      "situation": "Khách gọi lúc mình không nghe rõ (ồn, mạng yếu): nhắn xin lỗi và nhờ gửi lại nội dung chính bằng tin nhắn.",
+      "model": "이 팀장님, 아까 통화 중에 잡음이 심해서 잘 못 들었습니다. 죄송합니다.\n번거로우시겠지만 요점만 메시지로 보내 주실 수 있을까요?",
+      "phrases": [
+        {
+          "ko": "잘 못 들었습니다",
+          "vi": "tôi không nghe rõ"
+        },
+        {
+          "ko": "번거로우시겠지만",
+          "vi": "dù có hơi phiền"
+        },
+        {
+          "ko": "요점만",
+          "vi": "chỉ ý chính"
+        }
+      ],
+      "note": "'번거로우시겠지만' là từ đệm lịch sự trước khi nhờ người khác làm thêm việc."
+    },
+    {
+      "id": "msg-phone-05",
+      "topic": "phone",
+      "to": "운영팀 – đội vận hành phía khách",
+      "situation": "Báo đội vận hành: nếu có sự cố ngoài giờ thì gọi số trực của bên mình, kèm số điện thoại.",
+      "model": "운영팀 여러분, 업무 시간 외 장애 발생 시에는 아래 비상 연락처로 전화 부탁드립니다.\n비상 연락처: 010-1234-5678 (당직 담당자)",
+      "phrases": [
+        {
+          "ko": "업무 시간 외",
+          "vi": "ngoài giờ làm việc"
+        },
+        {
+          "ko": "비상 연락처",
+          "vi": "số liên lạc khẩn cấp"
+        },
+        {
+          "ko": "당직 담당자",
+          "vi": "người trực"
+        }
+      ],
+      "note": "Thông báo cho cả nhóm nên dùng '여러분'; ghi số điện thoại ở dòng riêng cho dễ chép."
+    },
+    {
+      "id": "msg-phone-06",
+      "topic": "phone",
+      "to": "박 대리님 – phía khách",
+      "situation": "Đang đi ra ngoài không nghe máy được, nhắn là 30 phút nữa về chỗ sẽ gọi lại, việc gấp thì nhắn trước.",
+      "model": "박 대리님, 지금 이동 중이라 통화가 어렵습니다.\n30분 후에 자리에 돌아가서 연락드리겠습니다. 급한 건이면 메시지로 남겨 주세요.",
+      "phrases": [
+        {
+          "ko": "통화가 어렵습니다",
+          "vi": "khó nói chuyện điện thoại"
+        },
+        {
+          "ko": "자리에 돌아가서",
+          "vi": "về lại chỗ ngồi"
+        },
+        {
+          "ko": "메시지로 남겨 주세요",
+          "vi": "xin để lại tin nhắn"
+        }
+      ],
+      "note": "'급한 건' = việc gấp. Đưa ra cách liên lạc khác để khách không phải chờ."
     }
   ]
 }

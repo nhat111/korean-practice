@@ -456,7 +456,9 @@ Test files (`src/**/*.test.ts`) are type-checked by `tsconfig.node.json`, not
     `seoPlugin` in `vite.config.ts` emits `robots.txt`, `sitemap.xml` (`SITEMAP_ROUTES` + guide pages) and static guide
     pages built from `public/data` by `src/seo/pages.ts` (pure, tested): `/hoc/phong-van-it-tieng-han` = every
     `interview` scenario (question, hint, model answer + Vietnamese, link to `/scenarios/<id>`), grouped by
-    `interviewGroup`. They exist because the SPA's content is fetched after load and search engines barely see it.
+    `interviewGroup`; `/hoc/email-tieng-han-cong-viec` = every email (corrected email + the draft's mistakes, link to
+    `/emails/<id>`); `/hoc/tin-nhan-slack-tieng-han` = every chat message grouped by `MESSAGE_TOPICS` (link to
+    `/messages?topic=`). The three share one shell (`guidePage`) and link to each other. They exist because the SPA's content is fetched after load and search engines barely see it.
     `vercel.json` maps `/hoc/:slug` → `hoc/:slug.html`; the service worker does not precache `hoc/`, `robots.txt`,
     `sitemap.xml`. Add a guide page = an entry in `GUIDE_PAGES` + a builder + a `files` entry in `seoPlugin`.
   - Link previews: Open Graph tags in `index.html` with the absolute `%SITE_URL%/og.jpg` (1200×630).

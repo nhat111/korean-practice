@@ -5,8 +5,9 @@ import { join, relative, resolve, sep } from 'node:path'
 import { execSync } from 'node:child_process'
 import { defineConfig, loadEnv, type Plugin } from 'vite'
 import { vi } from './src/i18n/vi.ts'
-import { buildInterviewGuide, buildRobots, buildSitemap, GUIDE_PAGES, SITEMAP_ROUTES } from './src/seo/pages.ts'
-import type { Scenario } from './src/types.ts'
+import { buildEmailGuide, buildInterviewGuide, buildMessageGuide, buildRobots, buildSitemap, GUIDE_PAGES, SITEMAP_ROUTES } from './src/seo/pages.ts'
+import { MESSAGE_TOPICS } from './src/practice/decks.ts'
+import type { EmailExercise, MessageExercise, Scenario } from './src/types.ts'
 import { buildReminderIcs, DEFAULT_SITE_URL, REMINDER_MINUTES, reminderIcsPath, REMINDER_TIMES } from './src/practice/reminder.ts'
 
 /** Recursively lists files under `dir`. */
@@ -115,13 +116,18 @@ function reminderPlugin(site: string): Plugin {
  * Served by the dev server too; /hoc/<slug> maps to hoc/<slug>.html in vercel.json.
  */
 function seoPlugin(site: string): Plugin {
-  const scenarios = (JSON.parse(readFileSync(resolve(process.cwd(), 'public/data/scenarios.json'), 'utf8')) as { items: Scenario[] }).items
+  const data = <T,>(name: string) => (JSON.parse(readFileSync(resolve(process.cwd(), `public/data/${name}`), 'utf8')) as { items: T[] }).items
+  const scenarios = data<Scenario>('scenarios.json')
+  const emails = data<EmailExercise>('emails.json')
+  const messages = data<MessageExercise>('messages.json')
   const today = new Date().toISOString().slice(0, 10)
   const guides = Object.values(GUIDE_PAGES)
   const files = new Map<string, { type: string; body: string }>([
     ['/robots.txt', { type: 'text/plain; charset=utf-8', body: buildRobots(site) }],
     ['/sitemap.xml', { type: 'application/xml; charset=utf-8', body: buildSitemap(site, [...SITEMAP_ROUTES, ...guides.map((g) => g.path)], today) }],
     [GUIDE_PAGES.interview.path, { type: 'text/html; charset=utf-8', body: buildInterviewGuide(site, scenarios, vi.seo.interviewGuide) }],
+    [GUIDE_PAGES.email.path, { type: 'text/html; charset=utf-8', body: buildEmailGuide(site, emails, vi.seo.emailGuide) }],
+    [GUIDE_PAGES.messages.path, { type: 'text/html; charset=utf-8', body: buildMessageGuide(site, messages, MESSAGE_TOPICS, { ...vi.seo.messageGuide, topics: vi.messages.topics }) }],
   ])
   const fileName = (path: string) => guides.find((g) => g.path === path)?.file ?? path.slice(1)
   return {
