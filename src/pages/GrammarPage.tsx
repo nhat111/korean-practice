@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Link, useParams } from 'react-router';
+import { Link, useParams, useSearchParams } from 'react-router';
 import { ContentGate } from '../components/ContentGate';
 import { GrammarQuiz } from '../components/GrammarQuiz';
 import { ReportButton } from '../components/ReportButton';
@@ -26,7 +25,9 @@ export function GrammarPage() {
 }
 
 function GrammarList({ items }: { items: GrammarLesson[] }) {
-  const [group, setGroup] = useState('');
+  const [params, setParams] = useSearchParams();
+  const group = params.get('group') ?? '';
+  const setGroup = (g: string) => setParams(g ? { group: g } : {}, { replace: true });
   const { srs } = useProgress();
   const groups = GRAMMAR_GROUPS.filter((g) => items.some((l) => l.group === g));
   const shown = group ? items.filter((l) => l.group === group) : items;

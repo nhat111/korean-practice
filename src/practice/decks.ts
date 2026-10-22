@@ -33,7 +33,7 @@ export const INTERPRET_TOPICS = ['meeting', 'schedule', 'bug', 'scope', 'cost', 
 export const MESSAGE_TOPICS = ['progress', 'bug', 'schedule', 'request', 'deploy', 'apology', 'meeting', 'phone'] as const;
 
 /** Grammar lesson groups, in display order. Labels live in vi.grammar.groups. */
-export const GRAMMAR_GROUPS = ['report', 'explain', 'request', 'honorific'] as const;
+export const GRAMMAR_GROUPS = ['report', 'explain', 'request', 'honorific', 'basic'] as const;
 
 /** Keys in Progress.srs: "<type>:<id>". */
 export const srsKey = {
