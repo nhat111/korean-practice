@@ -43,6 +43,7 @@ interface ContentFiles {
   grammar: { levels?: Record<'peer' | 'lead' | 'client', { ko: string }>; examples: { ko: string }[]; mistake?: { right: string } }[];
   shadowing: { ko: string }[];
   basics: { words: { ko: string }[]; lines: { ko: string }[] }[];
+  hangul: { letters: { syllable: string }[]; words: { ko: string }[] }[];
   numbers: { ko: string }[];
   interpret: { ko: string }[];
   messages: { model: string }[];
@@ -75,6 +76,10 @@ export function spokenTexts(c: ContentFiles): string[] {
   for (const b of c.basics) {
     for (const w of b.words) out.add(w.ko);
     for (const l of b.lines) addWithParts(out, l.ko);
+  }
+  for (const h of c.hangul) {
+    for (const l of h.letters) out.add(l.syllable);
+    for (const w of h.words) out.add(w.ko);
   }
   for (const s of c.patternSentences) out.add(s);
   for (const n of c.numbers) out.add(n.ko);

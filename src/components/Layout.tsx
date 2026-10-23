@@ -11,7 +11,7 @@ import { canonicalUrl, pageTitle } from '../seo/title';
 // highlighted. Pages without a tab (grammar, emails…) are reached from Home or a tab page.
 const NAV: { to: string; label: string; icon: IconName; also: string[] }[] = [
   { to: '/', label: vi.nav.home, icon: 'home', also: ['/daily', '/find'] },
-  { to: '/speaking', label: vi.nav.speaking, icon: 'mic', also: ['/basics', '/shadowing', '/patterns', '/listening', '/interpret', '/passive'] },
+  { to: '/speaking', label: vi.nav.speaking, icon: 'mic', also: ['/hangul', '/basics', '/shadowing', '/patterns', '/listening', '/interpret', '/passive'] },
   { to: '/scenarios', label: vi.nav.scenarios, icon: 'chat', also: ['/custom', '/emails', '/messages', '/typing', '/ai-roleplay'] },
   { to: '/flashcards', label: vi.nav.flashcards, icon: 'cards', also: ['/grammar'] },
   { to: '/progress', label: vi.nav.progress, icon: 'chart', also: ['/weak'] },

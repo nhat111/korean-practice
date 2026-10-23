@@ -7,6 +7,7 @@ import type {
   EmailExercise,
   Episode,
   GrammarLesson,
+  HangulLesson,
   InterpretItem,
   MeetingItem,
   MessageExercise,
@@ -21,6 +22,7 @@ import {
   parseEmails,
   parseEpisodes,
   parseGrammar,
+  parseHangul,
   parseInterpret,
   parseMeetings,
   parseMessages,
@@ -39,6 +41,7 @@ interface ContentMap {
   grammar: GrammarLesson;
   shadowing: ShadowingItem;
   basics: BasicLesson;
+  hangul: HangulLesson;
   patterns: PatternItem;
   numbers: NumberItem;
   interpret: InterpretItem;
@@ -56,6 +59,7 @@ const parsers: { [K in ContentKind]: (data: unknown) => ParseResult<ContentMap[K
   grammar: parseGrammar,
   shadowing: parseShadowing,
   basics: parseBasics,
+  hangul: parseHangul,
   patterns: parsePatterns,
   numbers: parseNumbers,
   interpret: parseInterpret,

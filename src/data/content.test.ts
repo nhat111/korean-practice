@@ -7,6 +7,7 @@ import { describe, expect, it } from 'vitest';
 import { SCENARIO_CATEGORIES } from './scenarioFilter';
 import {
   parseBasics,
+  parseHangul,
   parseEmails,
   parseEpisodes,
   parseGrammar,
@@ -35,6 +36,7 @@ const files: [string, (data: unknown) => ParseResult<{ id: string }>][] = [
   ['grammar.json', parseGrammar],
   ['shadowing.json', parseShadowing],
   ['basics.json', parseBasics],
+  ['hangul.json', parseHangul],
   ['patterns.json', parsePatterns],
   ['numbers.json', parseNumbers],
   ['interpret.json', parseInterpret],
