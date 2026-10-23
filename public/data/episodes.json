@@ -788,8 +788,8 @@
     },
     {
       "id": "ep-grammar",
-      "hash": "3809398b655fc87e",
-      "duration": 1028.9,
+      "hash": "f5e53f87ad690ef4",
+      "duration": 1243.5,
       "lines": [
         {
           "ko": "현재 결제 모듈을 개발하고 있습니다.",
@@ -1060,6 +1060,81 @@
           "ko": "다음 주 월요일에 다시 논의하시죠.",
           "vi": "Thứ Hai tuần sau mình bàn lại ạ.",
           "start": 1012.81
+        },
+        {
+          "ko": "저는 베트남 개발자예요.",
+          "vi": "Tôi là lập trình viên người Việt Nam.",
+          "start": 1028.86
+        },
+        {
+          "ko": "저는 매일 아홉 시에 출근해요.",
+          "vi": "Ngày nào tôi cũng đi làm lúc chín giờ.",
+          "start": 1043.48
+        },
+        {
+          "ko": "어제 버그를 고쳤어요.",
+          "vi": "Hôm qua tôi đã sửa bug.",
+          "start": 1059.19
+        },
+        {
+          "ko": "다음 주에 휴가를 갈 거예요.",
+          "vi": "Tuần sau tôi sẽ đi nghỉ.",
+          "start": 1072.93
+        },
+        {
+          "ko": "오늘은 야근 안 해요.",
+          "vi": "Hôm nay tôi không làm thêm giờ.",
+          "start": 1087.32
+        },
+        {
+          "ko": "한국어를 더 잘하고 싶어요.",
+          "vi": "Tôi muốn giỏi tiếng Hàn hơn.",
+          "start": 1100.65
+        },
+        {
+          "ko": "잠깐만 기다리세요.",
+          "vi": "Anh/chị chờ một chút nhé.",
+          "start": 1115.18
+        },
+        {
+          "ko": "파일을 다시 보내 주세요.",
+          "vi": "Gửi lại file giúp tôi nhé.",
+          "start": 1128.56
+        },
+        {
+          "ko": "오늘까지 할 수 있어요.",
+          "vi": "Tôi làm xong được trong hôm nay.",
+          "start": 1142.47
+        },
+        {
+          "ko": "점심 같이 먹을까요?",
+          "vi": "Mình cùng ăn trưa nhé?",
+          "start": 1155.83
+        },
+        {
+          "ko": "일이 많지만 재미있어요.",
+          "vi": "Việc nhiều nhưng thú vị.",
+          "start": 1169.21
+        },
+        {
+          "ko": "오늘 여섯 시까지 배포해야 해요.",
+          "vi": "Hôm nay phải deploy trước sáu giờ.",
+          "start": 1183.12
+        },
+        {
+          "ko": "저는 지금 회의실에 있어요.",
+          "vi": "Tôi đang ở phòng họp.",
+          "start": 1198.75
+        },
+        {
+          "ko": "코드를 수정하고 다시 테스트할게요.",
+          "vi": "Tôi sẽ sửa code rồi test lại.",
+          "start": 1212.97
+        },
+        {
+          "ko": "제가 회의실을 예약할게요.",
+          "vi": "Để tôi đặt phòng họp.",
+          "start": 1229.33
         }
       ]
     }
