@@ -5,6 +5,7 @@
 import { patternProblems } from '../patterns/fill';
 import type {
   BasicLesson,
+  HangulLesson,
   CorrectionType,
   EmailCorrection,
   EmailExercise,
@@ -487,8 +488,68 @@ export function parseShadowing(data: unknown): ParseResult<ShadowingItem> {
   return parseContentFile<ShadowingItem>(data, validateShadowing);
 }
 
+const HANGUL_SYLLABLES = /^[\uac00-\ud7a3]+$/;
+
+export function validateHangul(v: unknown): string[] {
+  const errors: string[] = [];
+  if (!isObj(v)) return ['hangul: phải là object'];
+  const path = `hangul(${String(v.id)})`;
+  requireStrings(v, ['id', 'title', 'intro'], path, errors);
+  if (v.tips !== undefined && !(isStringArray(v.tips) && v.tips.every(isNonEmptyString))) {
+    errors.push(`${path}.tips: phải là mảng chuỗi không rỗng`);
+  }
+  const confuse = (o: Record<string, unknown>, own: unknown, p: string) => {
+    if (o.confuse === undefined) return;
+    if (!isStringArray(o.confuse) || o.confuse.length === 0 || o.confuse.length > 3) {
+      errors.push(`${p}.confuse: cần 1-3 chuỗi`);
+    } else if (o.confuse.includes(String(own)) || new Set(o.confuse).size !== o.confuse.length) {
+      errors.push(`${p}.confuse: không được trùng nhau hay trùng đáp án`);
+    }
+  };
+  if (!Array.isArray(v.letters) || v.letters.length > 8) {
+    errors.push(`${path}.letters: cần 0-8 chữ`);
+  } else {
+    v.letters.forEach((l: unknown, i) => {
+      const lp = `${path}.letters[${i}]`;
+      if (!isObj(l)) {
+        errors.push(`${lp}: phải là object`);
+        return;
+      }
+      requireStrings(l, ['char', 'sound', 'syllable'], lp, errors);
+      if (isNonEmptyString(l.syllable) && !HANGUL_SYLLABLES.test(l.syllable)) {
+        errors.push(`${lp}.syllable: phải là âm tiết Hangul`);
+      }
+      if (l.name !== undefined && !isNonEmptyString(l.name)) errors.push(`${lp}.name: phải là chuỗi không rỗng`);
+      if (l.note !== undefined && !isNonEmptyString(l.note)) errors.push(`${lp}.note: phải là chuỗi không rỗng`);
+      confuse(l, l.syllable, lp);
+    });
+  }
+  if (!Array.isArray(v.words) || v.words.length < 4 || v.words.length > 12) {
+    errors.push(`${path}.words: cần 4-12 từ`);
+  } else {
+    v.words.forEach((w: unknown, i) => {
+      const wp = `${path}.words[${i}]`;
+      if (!isObj(w)) {
+        errors.push(`${wp}: phải là object`);
+        return;
+      }
+      requireStrings(w, ['ko', 'vi'], wp, errors);
+      if (w.pron !== undefined && !(isNonEmptyString(w.pron) && isPron(w.pron))) errors.push(`${wp}.pron: phải có dạng [...]`);
+      if (w.note !== undefined && !isNonEmptyString(w.note)) errors.push(`${wp}.note: phải là chuỗi không rỗng`);
+      confuse(w, w.ko, wp);
+    });
+    const kos = v.words.map((w: unknown) => (isObj(w) ? w.ko : undefined));
+    if (new Set(kos).size !== kos.length) errors.push(`${path}.words: từ bị trùng`);
+  }
+  return errors;
+}
+
 export function parseBasics(data: unknown): ParseResult<BasicLesson> {
   return parseContentFile<BasicLesson>(data, validateBasic);
+}
+
+export function parseHangul(data: unknown): ParseResult<HangulLesson> {
+  return parseContentFile<HangulLesson>(data, validateHangul);
 }
 
 export function parsePatterns(data: unknown): ParseResult<PatternItem> {

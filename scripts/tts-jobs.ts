@@ -13,6 +13,7 @@ const texts = spokenTexts({
   grammar: load('grammar'),
   shadowing: load('shadowing'),
   basics: load('basics'),
+  hangul: load('hangul'),
   numbers: load('numbers'),
   interpret: load('interpret'),
   messages: load('messages'),

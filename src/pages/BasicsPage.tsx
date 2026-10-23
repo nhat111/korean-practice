@@ -27,6 +27,15 @@ export function BasicsPage() {
         <h1>{vi.basics.title}</h1>
         <p className="muted">{vi.basics.intro}</p>
       </header>
+      <Link to="/hangul" className="card card--link suggest-card">
+        <span className="card-icon card-icon--blue">
+          <Icon name="languages" />
+        </span>
+        <div>
+          <h2>{vi.hangul.title}</h2>
+          <p className="muted">{vi.hangul.suggest}</p>
+        </div>
+      </Link>
       <ContentGate state={state}>{(items) => <BasicsList items={items} />}</ContentGate>
       <section className="stack-sm">
         <h2 className="section-title">{vi.basics.more}</h2>

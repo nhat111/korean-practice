@@ -3154,3 +3154,107 @@ a.grammar-title {
   border-left-color: var(--accent-red);
   background: var(--primary-soft);
 }
+
+/* Hangul alphabet (/hangul) */
+.tips-list {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  line-height: 1.55;
+}
+.letter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.letter-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+  height: 100%;
+  min-height: 44px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.letter-tile:hover,
+.letter-tile:focus-visible {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+  outline: none;
+}
+.letter-char {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary);
+}
+.letter-play {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: var(--muted);
+}
+.builder-result {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.builder-syllable {
+  min-width: 72px;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--primary);
+  text-align: center;
+}
+.builder-result .stack-xs {
+  flex: 1;
+}
+.jamo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  gap: 6px;
+}
+.jamo-btn {
+  min-height: 44px;
+  padding: 0 6px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.jamo-btn:not([lang]) {
+  font-size: 0.85rem;
+}
+.jamo-btn--on {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--primary-text);
+}
+.jamo-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+.hangul-quiz .choice {
+  font-size: 1.35rem;
+  font-weight: 600;
+  text-align: center;
+}

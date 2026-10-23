@@ -41,6 +41,7 @@ export const vi = {
     '/typing': '타자 연습',
     '/find': '빠른 검색',
     '/basics': '기초 회화',
+    '/hangul': '한글',
   } as Record<string, string>,
   // Page titles (document.title, set by Layout) and the static guide pages built by src/seo/pages.ts.
   seo: {
@@ -69,6 +70,7 @@ export const vi = {
       '/typing': 'Luyện gõ tiếng Hàn',
       '/find': 'Tra câu tiếng Hàn cần nói gấp',
       '/basics': 'Nghe nói tiếng Hàn sơ cấp TOPIK 1–2 cho dân IT',
+      '/hangul': 'Học bảng chữ cái tiếng Hàn (Hangul) từ con số 0',
     } as Record<string, string>,
     /** Prefix → title for detail pages (/scenarios/:id …). */
     sectionTitles: {
@@ -77,6 +79,7 @@ export const vi = {
       '/emails/': 'Email tiếng Hàn',
       '/custom/': 'Luyện câu hỏi của tôi',
       '/basics/': 'Nghe nói sơ cấp',
+      '/hangul/': 'Bảng chữ cái Hangul',
     } as Record<string, string>,
     interviewGuide: {
       title: 'Câu hỏi phỏng vấn IT bằng tiếng Hàn và câu trả lời mẫu | KoDevTalk',
@@ -1006,6 +1009,38 @@ export const vi = {
     grammarDesc: 'Đuôi câu, thì, phủ định, nhờ vả: mỗi mẫu có ví dụ công sở và bài luyện nhanh',
     dialogueLink: 'Hội thoại sơ cấp',
     dialogueDesc: 'Tình huống ngắn: ngày đầu đi làm, ăn trưa, xin nghỉ, báo lỗi',
+  },
+  hangul: {
+    title: 'Bảng chữ cái Hangul',
+    card: 'Mới tinh? Học đọc chữ Hàn từ nguyên âm, phụ âm đến patchim',
+    intro:
+      'Từ con số 0 đến đọc được chữ Hàn: nguyên âm, phụ âm, patchim và vài quy tắc đọc. Mỗi bài: xem chữ và nghe, tập đọc từ, rồi nghe chọn chữ đúng.',
+    lessons: 'Các bài',
+    toList: 'Bảng chữ cái',
+    tabs: { letters: 'Chữ cái', words: 'Tập đọc', listen: 'Nghe chọn chữ' },
+    tips: 'Ghi nhớ',
+    letters: 'Chữ trong bài',
+    noLetters: 'Bài này không có chữ mới: đọc kỹ phần ghi nhớ rồi tập đọc các từ.',
+    wordsHint: 'Tự đọc từng từ trước, rồi bấm để xem nghĩa và nghe lại.',
+    showAnswer: 'Xem cách đọc',
+    readAs: 'Đọc là',
+    startWords: 'Tập đọc từ',
+    startListen: 'Nghe chọn chữ',
+    pick: 'Nghe rồi chọn chữ bạn nghe được',
+    nextLesson: 'Bài tiếp',
+    builder: 'Ghép chữ',
+    builderHint: 'Chọn phụ âm đầu, nguyên âm và phụ âm cuối để xem khối chữ và nghe thử.',
+    initial: 'Phụ âm đầu',
+    vowel: 'Nguyên âm',
+    final: 'Phụ âm cuối',
+    noFinal: 'Không',
+    finalReadAs: (sound: string) => `Phụ âm cuối đọc là [${sound}]`,
+    next: 'Học tiếp',
+    typingLink: 'Luyện gõ bàn phím Hàn',
+    typingDesc: 'Học vị trí phím 두벌식 để gõ chữ Hàn trên máy tính',
+    basicsLink: 'Nghe nói sơ cấp',
+    basicsDesc: 'Đọc được chữ rồi? Sang câu ngắn ở công ty, TOPIK 1–2',
+    suggest: 'Chưa đọc được chữ Hàn? Bắt đầu từ bảng chữ cái',
   },
   grammar: {
     title: 'Ngữ pháp công sở',

@@ -12,6 +12,7 @@ import { EmailsPage } from './pages/EmailsPage';
 import { FindPage } from './pages/FindPage';
 import { FlashcardsPage } from './pages/FlashcardsPage';
 import { GrammarLessonPage, GrammarPage } from './pages/GrammarPage';
+import { HangulLessonPage, HangulPage } from './pages/HangulPage';
 import { HomePage } from './pages/HomePage';
 import { InterpretPage } from './pages/InterpretPage';
 import { ListeningPage } from './pages/ListeningPage';
@@ -53,6 +54,8 @@ export function App() {
         <Route path="weak" element={<WeakPage />} />
         <Route path="basics" element={<BasicsPage />} />
         <Route path="basics/:id" element={<BasicLessonPage />} />
+        <Route path="hangul" element={<HangulPage />} />
+        <Route path="hangul/:id" element={<HangulLessonPage />} />
         <Route path="grammar" element={<GrammarPage />} />
         <Route path="grammar/:id" element={<GrammarLessonPage />} />
         {/* The K-pop songs section was replaced by grammar; keep old links working. */}

@@ -11,12 +11,14 @@ import { SpeakPractice } from '../components/SpeakPractice';
 import { StatusPanel } from '../components/StatusPanel';
 import { useContent } from '../data/content';
 import { vi } from '../i18n/vi';
+import { hangulItem } from '../practice/hangul';
 import { WEAK_LIMIT, weakKeys } from '../practice/weak';
 import { splitParts } from '../speaking/segments';
 import { getProgressSnapshot } from '../storage/progress';
 import type {
   BasicLesson,
   GrammarLesson,
+  HangulLesson,
   InterpretItem,
   MeetingItem,
   MessageExercise,
@@ -38,6 +40,7 @@ interface Content {
   meetings: MeetingItem[];
   grammar: GrammarLesson[];
   basics: BasicLesson[];
+  hangul: HangulLesson[];
 }
 
 type WeakKind = 'shadowing' | 'pattern' | 'scenario' | 'vocab' | 'listen' | 'interpret' | 'message' | 'meeting' | 'grammar' | 'basic';
@@ -140,6 +143,9 @@ function resolve(key: string, c: Content): WeakItem | null {
       } else if (src === 'basic') {
         const l = c.basics.find((x) => x.id === sid)?.lines[Number(a)];
         line = l && { ko: l.ko, vi: l.vi };
+      } else if (src === 'hangul') {
+        const h = c.hangul.find((x) => x.id === sid);
+        line = h && hangulItem(h, a);
       } else if (src === 'number') {
         const n = c.numbers.find((x) => x.id === sid);
         line = n && { ko: n.ko, vi: n.vi };
@@ -191,7 +197,8 @@ export function WeakPage() {
   const meetings = useContent('meetings');
   const grammar = useContent('grammar');
   const basics = useContent('basics');
-  const states = [shadowing, patterns, scenarios, vocab, numbers, interpret, messages, meetings, grammar, basics];
+  const hangul = useContent('hangul');
+  const states = [shadowing, patterns, scenarios, vocab, numbers, interpret, messages, meetings, grammar, basics, hangul];
 
   return (
     <div className="stack">
@@ -208,7 +215,8 @@ export function WeakPage() {
       messages.status === 'ready' &&
       meetings.status === 'ready' &&
       grammar.status === 'ready' &&
-      basics.status === 'ready' ? (
+      basics.status === 'ready' &&
+      hangul.status === 'ready' ? (
         <WeakSession
           content={{
             shadowing: shadowing.items,
@@ -221,6 +229,7 @@ export function WeakPage() {
             meetings: meetings.items,
             grammar: grammar.items,
             basics: basics.items,
+            hangul: hangul.items,
           }}
         />
       ) : states.some((s) => s.status === 'error') ? (

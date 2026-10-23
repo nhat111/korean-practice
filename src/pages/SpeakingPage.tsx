@@ -26,6 +26,7 @@ function vocabLines(items: VocabItem[]): SpeakingLine[] {
 
 /** Hub cards, coloured like the matching home sections. */
 const DRILLS = [
+  { to: '/hangul', icon: 'languages', tone: 'blue', title: vi.hangul.title, desc: vi.hangul.card },
   { to: '/basics', icon: 'book', tone: 'blue', title: vi.basics.title, desc: vi.basics.card },
   { to: '/shadowing', icon: 'waves', tone: 'blue', title: vi.shadowing.title, desc: vi.home.cards.shadowing },
   { to: '/patterns', icon: 'puzzle', tone: 'amber', title: vi.patterns.title, desc: vi.speaking.patternsDesc },

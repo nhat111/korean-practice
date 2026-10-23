@@ -1,0 +1,238 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "hg-vowels-1",
+      "title": "Nguyên âm cơ bản (1)",
+      "intro": "Sáu nguyên âm đầu tiên và cách ghép một âm tiết. Bắt đầu từ đây nếu bạn chưa đọc được chữ Hàn.",
+      "tips": [
+        "Chữ Hàn viết theo khối: mỗi khối là một âm tiết, gồm phụ âm đầu + nguyên âm (+ phụ âm cuối).",
+        "Âm tiết không có phụ âm đầu thì viết ㅇ ở chỗ đó. ㅇ đứng đầu không đọc: 아 đọc là [a].",
+        "Nguyên âm dọc (ㅏ ㅓ ㅣ) đứng bên phải ㅇ, nguyên âm ngang (ㅗ ㅜ ㅡ) đứng bên dưới: 아, 오."
+      ],
+      "letters": [
+        { "char": "ㅏ", "sound": "a", "syllable": "아", "confuse": ["어"] },
+        { "char": "ㅓ", "sound": "ơ, miệng mở rộng (gần 'o' trong 'to')", "syllable": "어", "confuse": ["오", "아"], "note": "Không tròn môi. Khác ㅗ là phải tròn môi." },
+        { "char": "ㅗ", "sound": "ô, tròn môi", "syllable": "오", "confuse": ["어", "우"] },
+        { "char": "ㅜ", "sound": "u", "syllable": "우", "confuse": ["오", "으"] },
+        { "char": "ㅡ", "sound": "ư", "syllable": "으", "confuse": ["우"], "note": "Môi kéo ngang, không tròn." },
+        { "char": "ㅣ", "sound": "i", "syllable": "이", "confuse": ["으"] }
+      ],
+      "words": [
+        { "ko": "아이", "vi": "đứa trẻ" },
+        { "ko": "오이", "vi": "dưa chuột" },
+        { "ko": "이", "vi": "số hai; cái răng" },
+        { "ko": "오", "vi": "số năm" },
+        { "ko": "우아", "vi": "thanh lịch (trong 우아하다)" }
+      ]
+    },
+    {
+      "id": "hg-vowels-2",
+      "title": "Nguyên âm cơ bản (2): ㅑ ㅕ ㅛ ㅠ ㅐ ㅔ",
+      "intro": "Thêm một nét là thêm âm 'y' phía trước. Học thêm ㅐ và ㅔ (âm 'e').",
+      "tips": [
+        "ㅏ → ㅑ, ㅓ → ㅕ, ㅗ → ㅛ, ㅜ → ㅠ: thêm một nét nhỏ = đọc thêm [y] phía trước.",
+        "ㅐ và ㅔ ngày nay người Hàn đọc gần như giống nhau, chỉ khác khi viết. Gặp từ mới thì nhớ luôn cách viết."
+      ],
+      "letters": [
+        { "char": "ㅑ", "sound": "ya", "syllable": "야", "confuse": ["아", "여"] },
+        { "char": "ㅕ", "sound": "yơ", "syllable": "여", "confuse": ["어", "요"] },
+        { "char": "ㅛ", "sound": "yô", "syllable": "요", "confuse": ["오", "유"] },
+        { "char": "ㅠ", "sound": "yu", "syllable": "유", "confuse": ["우", "요"] },
+        { "char": "ㅐ ㅔ", "sound": "e (hai chữ đọc gần như nhau)", "syllable": "에", "confuse": ["이", "어"], "note": "애 (đứa bé) và 에 (trợ từ 'ở, tới') nghe giống nhau." }
+      ],
+      "words": [
+        { "ko": "우유", "vi": "sữa" },
+        { "ko": "여우", "vi": "con cáo", "confuse": ["여유", "이유"] },
+        { "ko": "이유", "vi": "lý do", "confuse": ["여유", "여우"] },
+        { "ko": "여유", "vi": "sự thong thả, thời gian rảnh", "confuse": ["여우", "이유"] },
+        { "ko": "아야", "vi": "ui da! (khi bị đau)" },
+        { "ko": "에이", "vi": "chữ A (khổ giấy 에이포 = A4)" }
+      ]
+    },
+    {
+      "id": "hg-consonants-1",
+      "title": "Phụ âm cơ bản (1): ㄱ ㄴ ㄷ ㄹ ㅁ ㅂ ㅅ",
+      "intro": "Bảy phụ âm thường gặp nhất. Ghép với nguyên âm đã học là đọc được rất nhiều từ.",
+      "tips": [
+        "Tên chữ (기역, 니은…) dùng khi đánh vần. Khi đọc từ chỉ cần âm của nó.",
+        "ㄱ ㄷ ㅂ đứng đầu từ đọc nhẹ gần [k], [t], [p]; nằm giữa hai nguyên âm thì đọc rõ [g], [đ], [b]: 고기 [kô-ghi], 바다 [pa-đa].",
+        "ㄹ đầu âm tiết đọc giữa [r] và [l], lưỡi chạm nhẹ một lần: 나라, 머리."
+      ],
+      "letters": [
+        { "char": "ㄱ", "name": "기역", "sound": "g / k nhẹ", "syllable": "가", "confuse": ["나", "다"] },
+        { "char": "ㄴ", "name": "니은", "sound": "n", "syllable": "나", "confuse": ["다", "라"] },
+        { "char": "ㄷ", "name": "디귿", "sound": "đ / t nhẹ", "syllable": "다", "confuse": ["나", "라"] },
+        { "char": "ㄹ", "name": "리을", "sound": "r / l", "syllable": "라", "confuse": ["나", "다"] },
+        { "char": "ㅁ", "name": "미음", "sound": "m", "syllable": "마", "confuse": ["바", "나"] },
+        { "char": "ㅂ", "name": "비읍", "sound": "b / p nhẹ", "syllable": "바", "confuse": ["마", "다"] },
+        { "char": "ㅅ", "name": "시옷", "sound": "x / s (trước ㅣ gần 'shi')", "syllable": "사", "confuse": ["다", "가"], "note": "시 đọc gần [shi]." }
+      ],
+      "words": [
+        { "ko": "나무", "vi": "cái cây" },
+        { "ko": "바다", "vi": "biển" },
+        { "ko": "나라", "vi": "đất nước" },
+        { "ko": "머리", "vi": "cái đầu; tóc" },
+        { "ko": "다리", "vi": "cái chân; cây cầu" },
+        { "ko": "고기", "vi": "thịt" },
+        { "ko": "가구", "vi": "đồ nội thất" },
+        { "ko": "소리", "vi": "âm thanh" },
+        { "ko": "버스", "vi": "xe buýt" },
+        { "ko": "서버", "vi": "server, máy chủ", "note": "Từ IT mượn tiếng Anh, viết theo âm Hàn." }
+      ]
+    },
+    {
+      "id": "hg-consonants-2",
+      "title": "Phụ âm cơ bản (2): ㅈ ㅊ ㅋ ㅌ ㅍ ㅎ",
+      "intro": "Phụ âm còn lại, trong đó có bốn âm bật hơi. Nhiều từ IT (코드, 테스트, 데이터) dùng các chữ này.",
+      "tips": [
+        "ㅊ ㅋ ㅌ ㅍ là bản bật hơi của ㅈ ㄱ ㄷ ㅂ: thêm một nét = thêm hơi.",
+        "Thử đặt tờ giấy trước miệng: đọc 카 thì giấy rung mạnh, đọc 가 thì gần như không.",
+        "ㅌ giống 'th' tiếng Việt (tha). ㅋ là [k] bật hơi, không phải 'kh' tiếng Việt."
+      ],
+      "letters": [
+        { "char": "ㅈ", "name": "지읒", "sound": "ch nhẹ (gần 'j' tiếng Anh)", "syllable": "자", "confuse": ["차", "사"] },
+        { "char": "ㅊ", "name": "치읓", "sound": "ch bật hơi", "syllable": "차", "confuse": ["자", "사"] },
+        { "char": "ㅋ", "name": "키읔", "sound": "k bật hơi", "syllable": "카", "confuse": ["가", "하"] },
+        { "char": "ㅌ", "name": "티읕", "sound": "th (như 'tha')", "syllable": "타", "confuse": ["다", "카"] },
+        { "char": "ㅍ", "name": "피읖", "sound": "p bật hơi (như 'p' tiếng Anh)", "syllable": "파", "confuse": ["바", "하"] },
+        { "char": "ㅎ", "name": "히읗", "sound": "h", "syllable": "하", "confuse": ["아", "카"] }
+      ],
+      "words": [
+        { "ko": "커피", "vi": "cà phê" },
+        { "ko": "코드", "vi": "code, mã nguồn", "confuse": ["카드", "고도"] },
+        { "ko": "카드", "vi": "thẻ (thẻ ngân hàng, thẻ nhân viên)", "confuse": ["코드", "가드"] },
+        { "ko": "테스트", "vi": "test, kiểm thử" },
+        { "ko": "데이터", "vi": "dữ liệu (data)" },
+        { "ko": "하나", "vi": "một (số đếm)" },
+        { "ko": "지도", "vi": "bản đồ" },
+        { "ko": "치즈", "vi": "phô mai" },
+        { "ko": "타자", "vi": "gõ phím (타자 치다)", "confuse": ["다자"] }
+      ]
+    },
+    {
+      "id": "hg-consonants-tense",
+      "title": "Phụ âm căng: ㄲ ㄸ ㅃ ㅆ ㅉ",
+      "intro": "Bộ ba thường – bật hơi – căng (가 · 카 · 까) là chỗ người Việt hay nghe nhầm nhất. Luyện nghe kỹ bài này.",
+      "tips": [
+        "Phụ âm căng viết bằng hai chữ giống nhau, đọc gọn, căng cổ họng và không có hơi.",
+        "Tin vui cho người Việt: ㄲ gần như 'c' trong 'cá', ㄸ như 't' trong 'tá', ㅉ như 'ch' trong 'cha'.",
+        "Đổi một chữ là đổi nghĩa: 사다 (mua) – 싸다 (rẻ), 자다 (ngủ) – 짜다 (mặn)."
+      ],
+      "letters": [
+        { "char": "ㄲ", "name": "쌍기역", "sound": "c / k không hơi (như 'cá')", "syllable": "까", "confuse": ["가", "카"] },
+        { "char": "ㄸ", "name": "쌍디귿", "sound": "t không hơi (như 'tá')", "syllable": "따", "confuse": ["다", "타"] },
+        { "char": "ㅃ", "name": "쌍비읍", "sound": "p không hơi, căng", "syllable": "빠", "confuse": ["바", "파"] },
+        { "char": "ㅆ", "name": "쌍시옷", "sound": "s mạnh, căng", "syllable": "싸", "confuse": ["사", "자"] },
+        { "char": "ㅉ", "name": "쌍지읒", "sound": "ch không hơi (như 'cha')", "syllable": "짜", "confuse": ["자", "차"] }
+      ],
+      "words": [
+        { "ko": "아빠", "vi": "bố" },
+        { "ko": "오빠", "vi": "anh (em gái gọi anh trai)" },
+        { "ko": "아까", "vi": "lúc nãy" },
+        { "ko": "토끼", "vi": "con thỏ" },
+        { "ko": "꼬리", "vi": "cái đuôi" },
+        { "ko": "따로", "vi": "riêng ra, tách riêng" },
+        { "ko": "사다", "vi": "mua", "confuse": ["싸다", "자다"] },
+        { "ko": "싸다", "vi": "rẻ", "confuse": ["사다", "짜다"] },
+        { "ko": "비싸다", "vi": "đắt" },
+        { "ko": "자다", "vi": "ngủ", "confuse": ["짜다", "차다"] },
+        { "ko": "짜다", "vi": "mặn", "confuse": ["자다", "차다"] },
+        { "ko": "바빠요", "vi": "(tôi) bận", "note": "Câu trả lời hay gặp khi bị hỏi 요즘 어때요? (dạo này thế nào?)." }
+      ]
+    },
+    {
+      "id": "hg-vowels-compound",
+      "title": "Nguyên âm ghép",
+      "intro": "Ghép hai nguyên âm thành một: ㅗ + ㅏ = ㅘ. Có trong những từ đi làm ngày nào cũng gặp: 회사, 회의.",
+      "tips": [
+        "Đọc nhanh hai nguyên âm thành một: ㅜ + ㅓ = ㅝ [uơ], ㅜ + ㅣ = ㅟ [uy].",
+        "ㅙ ㅞ ㅚ ngày nay đọc gần như giống nhau [uê]: 왜, 웹, 회사.",
+        "ㅢ: đầu từ đọc [ưi] (의사); sau phụ âm hoặc ở giữa từ thường đọc [i] (회의 [회이]); trợ từ 의 (của) thường đọc [에].",
+        "ㅖ sau phụ âm thường đọc như ㅔ: 시계 [시게]."
+      ],
+      "letters": [
+        { "char": "ㅘ", "sound": "oa", "syllable": "와", "confuse": ["워", "아"] },
+        { "char": "ㅝ", "sound": "uơ", "syllable": "워", "confuse": ["와", "오"] },
+        { "char": "ㅙ ㅞ ㅚ", "sound": "uê (ba chữ đọc gần như nhau)", "syllable": "왜", "confuse": ["와", "위"] },
+        { "char": "ㅟ", "sound": "uy", "syllable": "위", "confuse": ["이", "우"] },
+        { "char": "ㅢ", "sound": "ưi", "syllable": "의", "confuse": ["이", "으"] },
+        { "char": "ㅒ ㅖ", "sound": "ye", "syllable": "예", "confuse": ["에", "여"], "note": "예 = vâng (lịch sự)." }
+      ],
+      "words": [
+        { "ko": "회사", "vi": "công ty" },
+        { "ko": "회의", "vi": "cuộc họp", "pron": "[회이]" },
+        { "ko": "사과", "vi": "quả táo; lời xin lỗi" },
+        { "ko": "과자", "vi": "bánh kẹo, snack" },
+        { "ko": "뭐", "vi": "cái gì (văn nói)" },
+        { "ko": "의사", "vi": "bác sĩ" },
+        { "ko": "의자", "vi": "cái ghế" },
+        { "ko": "쉬다", "vi": "nghỉ ngơi" },
+        { "ko": "귀", "vi": "cái tai" },
+        { "ko": "돼지", "vi": "con lợn" },
+        { "ko": "시계", "vi": "đồng hồ", "pron": "[시게]" }
+      ]
+    },
+    {
+      "id": "hg-batchim",
+      "title": "Patchim: phụ âm cuối",
+      "intro": "Phụ âm nằm dưới đáy khối chữ (받침). Có nhiều chữ nhưng chỉ đọc thành 7 âm.",
+      "tips": [
+        "Patchim đọc tắt, không bật hơi ra, giống âm cuối tiếng Việt: 악 ≈ 'ác', 압 ≈ 'áp', 앗 ≈ 'át'.",
+        "7 âm cuối: [k] ㄱ ㅋ ㄲ · [n] ㄴ · [t] ㄷ ㅅ ㅆ ㅈ ㅊ ㅌ ㅎ · [l] ㄹ · [m] ㅁ · [p] ㅂ ㅍ · [ng] ㅇ.",
+        "ㅇ đứng đầu thì câm, nhưng đứng cuối đọc [ng]: 앙 = 'ang'.",
+        "ㄹ cuối đọc [l], lưỡi cong chạm vòm miệng và giữ lại: 물, 일."
+      ],
+      "letters": [
+        { "char": "ㄱ ㅋ ㄲ", "sound": "k tắt (như 'ác')", "syllable": "악", "confuse": ["앙", "앗"] },
+        { "char": "ㄴ", "sound": "n (như 'an')", "syllable": "안", "confuse": ["앙", "암"] },
+        { "char": "ㄷ ㅅ ㅆ ㅈ ㅊ ㅌ ㅎ", "sound": "t tắt (như 'át')", "syllable": "앗", "confuse": ["악", "압"] },
+        { "char": "ㄹ", "sound": "l giữ lưỡi", "syllable": "알", "confuse": ["안", "아"] },
+        { "char": "ㅁ", "sound": "m (như 'am')", "syllable": "암", "confuse": ["안", "압"] },
+        { "char": "ㅂ ㅍ", "sound": "p tắt (như 'áp')", "syllable": "압", "confuse": ["암", "악"] },
+        { "char": "ㅇ", "sound": "ng (như 'ang')", "syllable": "앙", "confuse": ["안", "악"] }
+      ],
+      "words": [
+        { "ko": "한국", "vi": "Hàn Quốc" },
+        { "ko": "밥", "vi": "cơm", "confuse": ["밤", "방"] },
+        { "ko": "방", "vi": "căn phòng", "confuse": ["반", "밥"] },
+        { "ko": "물", "vi": "nước" },
+        { "ko": "집", "vi": "nhà" },
+        { "ko": "책", "vi": "quyển sách" },
+        { "ko": "옷", "vi": "quần áo", "pron": "[옫]" },
+        { "ko": "꽃", "vi": "bông hoa", "pron": "[꼳]" },
+        { "ko": "앱", "vi": "app, ứng dụng" },
+        { "ko": "팀", "vi": "team, nhóm" },
+        { "ko": "개발", "vi": "phát triển (phần mềm)" },
+        { "ko": "질문", "vi": "câu hỏi" }
+      ]
+    },
+    {
+      "id": "hg-sound-change",
+      "title": "Nối âm và biến âm cơ bản",
+      "intro": "Viết một đằng, đọc một nẻo: vài quy tắc giúp bạn đọc đúng như người Hàn nói. Phần [ ] là cách đọc thật.",
+      "tips": [
+        "Nối âm (연음): patchim + âm tiết bắt đầu bằng ㅇ → patchim chuyển sang đọc cùng âm sau. 한국어 → [한구거].",
+        "Mũi hoá (비음화): ㅂ ㄷ ㄱ cuối gặp ㄴ ㅁ → đọc thành ㅁ ㄴ ㅇ. 합니다 → [함니다].",
+        "ㄴ + ㄹ hoặc ㄹ + ㄴ → đọc [ㄹㄹ]: 연락 → [열락].",
+        "ㅎ gặp ㄱ ㄷ ㅈ → thành âm bật hơi; ㅎ trước nguyên âm thường câm: 좋아요 → [조아요].",
+        "Patchim [k t p] + ㄱ ㄷ ㅂ ㅅ ㅈ → âm sau thành âm căng: 학교 → [학꾜]."
+      ],
+      "letters": [],
+      "words": [
+        { "ko": "한국어", "vi": "tiếng Hàn", "pron": "[한구거]", "note": "Nối âm: ㄱ chuyển sang âm tiết sau." },
+        { "ko": "음악", "vi": "âm nhạc", "pron": "[으막]" },
+        { "ko": "있어요", "vi": "có", "pron": "[이써요]", "note": "ㅆ nối sang âm sau." },
+        { "ko": "읽어요", "vi": "đọc", "pron": "[일거요]", "note": "Patchim kép ㄺ: ㄹ ở lại, ㄱ nối sang âm sau." },
+        { "ko": "감사합니다", "vi": "cảm ơn", "pron": "[감사함니다]", "note": "Mũi hoá: ㅂ + ㄴ → [ㅁㄴ]." },
+        { "ko": "입니다", "vi": "là (đuôi câu lịch sự)", "pron": "[임니다]" },
+        { "ko": "작년", "vi": "năm ngoái", "pron": "[장년]", "note": "Mũi hoá: ㄱ + ㄴ → [ㅇㄴ]." },
+        { "ko": "연락", "vi": "liên lạc", "pron": "[열락]", "note": "ㄴ + ㄹ → [ㄹㄹ]. Gặp nhiều trong 연락드리겠습니다." },
+        { "ko": "좋아요", "vi": "tốt; thích", "pron": "[조아요]", "note": "ㅎ trước nguyên âm thì câm." },
+        { "ko": "축하해요", "vi": "chúc mừng", "pron": "[추카해요]", "note": "ㄱ + ㅎ → [ㅋ]." },
+        { "ko": "학교", "vi": "trường học", "pron": "[학꾜]", "note": "Âm căng: ㄱ cuối làm ㄱ sau thành [ㄲ]." },
+        { "ko": "같이", "vi": "cùng nhau", "pron": "[가치]", "note": "ㅌ + 이 → [치]." }
+      ]
+    }
+  ]
+}

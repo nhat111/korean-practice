@@ -208,6 +208,45 @@ export interface BasicLesson {
   lines: BasicLine[];
 }
 
+// ---------- Hangul alphabet (from zero to TOPIK 1) ----------
+
+export interface HangulLetter {
+  /** The letter taught, or letters that sound the same ("ㅐ ㅔ", "ㄱ ㅋ ㄲ" as a final). */
+  char: string;
+  /** Korean letter name used when spelling (기역), consonants only. */
+  name?: string;
+  /** Closest sound in Vietnamese terms (Vietnamese). */
+  sound: string;
+  /** One Hangul syllable that shows the sound: read aloud and used in the quiz (가). */
+  syllable: string;
+  note?: string;
+  /** Syllables that sound close, used as quiz options. */
+  confuse?: string[];
+}
+
+export interface HangulWord {
+  ko: string;
+  vi: string;
+  /** Actual pronunciation when it differs from the spelling, e.g. "[한구거]". */
+  pron?: string;
+  note?: string;
+  /** Words that sound close, used as quiz options. */
+  confuse?: string[];
+}
+
+export interface HangulLesson {
+  /** Stable id ("hg-..."). Never rename. */
+  id: string;
+  title: string;
+  intro: string;
+  /** Short rules (Vietnamese). */
+  tips?: string[];
+  /** 0-8 letters. Quiz keys use the index (hangul:<id>:l<i>): only append. */
+  letters: HangulLetter[];
+  /** 4-12 words to read. Quiz keys use the index (hangul:<id>:w<i>): only append. */
+  words: HangulWord[];
+}
+
 // ---------- Sentence patterns ----------
 
 /** A word that can fill a slot, with its meaning for the Vietnamese cue. */
