@@ -434,6 +434,42 @@ Run `npm run check` before considering a change done.
 Test files (`src/**/*.test.ts`) are type-checked by `tsconfig.node.json`, not
 `tsconfig.app.json`.
 
+## Review guide for every PR
+
+The owner merges the PRs and a merge deploys straight to production, so a
+PR must be reviewable in about ten minutes without reading every line. Every
+PR description, and the closing chat summary of any code change, ends with a
+**"Hướng dẫn review"** section, written in Vietnamese:
+
+- **Tóm tắt** (3–4 lines): what the user saw, the root cause, and why this
+  change fixes that cause. For a feature: what it does and why this approach
+  over the obvious alternative.
+- **Giả định của test**: the assumption the new tests encode. Tests written
+  in the same PR come from the same understanding as the code, so green CI
+  does not prove the requirement was understood; the owner checks this line.
+- **Đọc file nào**: the one or two files holding the core logic, with the
+  line range that matters, and which files can be skipped (docs, generated
+  files, fixtures).
+- **Rủi ro**: `thấp`, `trung bình` or `cao`, plus what could break. Anything
+  in the high-risk list below is `cao`; say so in the first line of the PR
+  description too.
+- **Kiểm tra sau khi merge**: concrete steps in production and what the
+  owner should see.
+- **Câu hỏi tự kiểm tra**: 2–3 questions the owner should be able to answer
+  before merging (about this change's behaviour, not trivia), with the
+  answers inside a collapsed `<details>` block.
+
+Keep it short and concrete; it replaces reading the whole diff, not the code
+comments or the project docs.
+
+High-risk (`cao`) here: anything under `src/storage/` or a change to a
+stored shape (learner progress can be lost), progress import/sync, the
+service worker and `version.json` update flow (a broken worker keeps serving
+a stale app), `audioKey` and audio hosting, `src/api/client.ts`, and backend
+auth, CORS or secrets. Post-merge checks usually name the page on
+`https://kodevtalk.nhatlab.com`, on a phone where the change is about iOS
+or audio.
+
 ## Deployment
 
 - **Vercel**: `vercel.json` runs `npm run check` (so invalid content blocks a deploy),
